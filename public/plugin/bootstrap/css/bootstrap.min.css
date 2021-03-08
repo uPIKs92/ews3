@@ -8618,6 +8618,10 @@ button.bg-dark:hover {
     height: auto !important;
 }
 
+.h-Custom1 {
+    height: 210px !important;
+}
+
 .mw-100 {
     max-width: 100% !important;
 }
@@ -8728,7 +8732,7 @@ button.bg-dark:hover {
 
 .mr-3,
 .mx-3 {
-    margin-right: 0 !important;
+    margin-right: 1rem !important;
 }
 
 .mb-3,
@@ -8738,7 +8742,7 @@ button.bg-dark:hover {
 
 .ml-3,
 .mx-3 {
-    margin-left: 0 !important;
+    margin-left: 1rem !important;
 }
 
 .m-4 {
@@ -8834,7 +8838,7 @@ button.bg-dark:hover {
 
 .pl-1,
 .px-1 {
-    padding-left: 0 !important;
+    padding-left: 0.25rem !important;
 }
 
 .p-2 {

@@ -10,113 +10,117 @@
         <div class="card border border-secondary bg-transparent mt-1">
             <p class="underline p-1 m-0 bg-white">Data Received</p>
             <div class="wrapTable">
+                <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
+                    <div class="col-4" style="font-size: 12px;">Variable</div>
+                    <div class="col pl-3" style="font-size: 12px;">Value</div>
+                </div>
                 <div class="wrapCol h-100 text-white pb-0">
                     <div class="row">
-                        <div class="col-4 bg-dark">TNB</div>
+                        <div class="col-4 bg-secondary">TNB</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">DTC</div>
+                        <div class="col-4 bg-secondary">DTC</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">X</div>
+                        <div class="col-4 bg-secondary">X</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Y</div>
+                        <div class="col-4 bg-secondary">Y</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Vx</div>
+                        <div class="col-4 bg-secondary">Vx</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Vy</div>
+                        <div class="col-4 bg-secondary">Vy</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">QUA</div>
+                        <div class="col-4 bg-secondary">QUA</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">SRC</div>
+                        <div class="col-4 bg-secondary">SRC</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">ALT</div>
+                        <div class="col-4 bg-secondary">ALT</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">MODE C</div>
+                        <div class="col-4 bg-secondary">MODE C</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Type</div>
+                        <div class="col-4 bg-secondary">Type</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">MODE 1</div>
+                        <div class="col-4 bg-secondary">MODE 1</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">MODE 2</div>
+                        <div class="col-4 bg-secondary">MODE 2</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">MODE 3</div>
+                        <div class="col-4 bg-secondary">MODE 3</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Callsign</div>
+                        <div class="col-4 bg-secondary">Callsign</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Track ID</div>
+                        <div class="col-4 bg-secondary">Track ID</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Track Sts</div>
+                        <div class="col-4 bg-secondary">Track Sts</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Track Index</div>
+                        <div class="col-4 bg-secondary">Track Index</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Label 1</div>
+                        <div class="col-4 bg-secondary">Label 1</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Track Symbol</div>
+                        <div class="col-4 bg-secondary">Track Symbol</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Track Life</div>
+                        <div class="col-4 bg-secondary">Track Life</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Track Time</div>
+                        <div class="col-4 bg-secondary">Track Time</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">NormTrack</div>
+                        <div class="col-4 bg-secondary">NormTrack</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">SimFlight</div>
+                        <div class="col-4 bg-secondary">SimFlight</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Man Track</div>
+                        <div class="col-4 bg-secondary">Man Track</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">Total Track</div>
+                        <div class="col-4 bg-secondary">Total Track</div>
                         <div class="col pl-3">0</div>
                     </div>
                     <div class="row">
-                        <div class="col-4 bg-dark">iNTrack</div>
+                        <div class="col-4 bg-secondary">iNTrack</div>
                         <div class="col pl-3">0</div>
                     </div>
                 </div>

@@ -60,6 +60,7 @@ Route::get('/master_t','RadarController@master_t')->name('master_t');
 Route::get('/thomson','RadarController@thomson')->name('thomson');
 Route::get('/thomson/map','RadarController@map_control')->name('map-menu');
 Route::get('/thomson/radar','RadarController@radar_control')->name('radar-menu');
+Route::get('/thomson/second_screen','RadarController@second_screen')->name('second-screen');
 
 Route::get('/thomson/intercept','RadarController@intercept')->name('intercept-menu');
 Route::get('/thomson/intercept-ground','RadarController@intercept_ground')->name('intercept-ground-menu');

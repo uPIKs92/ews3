@@ -18,6 +18,10 @@ class RadarController extends Controller
     {
         return view('radar.thomson.index');
     }
+    public function second_screen()
+    {
+        return view('radar.thomson.panel.second-screen');
+    }
     public function map_control()
     {
         return view('radar.thomson.menu.map-menu');
