@@ -2,11 +2,16 @@
 @section('content')
     @include('assets.form-modal.custom-css')
     <div class="clearfix">
-        <div class="float-left w-50">
-            <div class="card h-100 bg-dark"></div>
+        <div class="float-left w-50 pt-2 pl-2">
+            <div class="card no-border h-Custom4 p-1" style="background-color: #d7d7d7;">
+			</div>
         </div>
-        <div class="float-right w-50">
-            <div class="card no-border m-2 p-2" style="background-color: #d7d7d7;">
+		<div class="float-right w-50 h-Custom2 pt-2 pl-2 pr-2">
+			<div class="card no-border h-100 p-1" style="background-color: #d7d7d7;">
+			</div>
+		</div>
+        <div class="float-right w-50 h-Custom3 pt-2 pl-2 pr-2">
+            <div class="card no-border p-1" style="background-color: #d7d7d7;">
                 <div class="card-header p-0 solid-bordered mb-1" style="background-color: #f0f0f0;">
                     <div class="rows no-border m-0">
                         <div class="col-12 p-0">
@@ -16,39 +21,39 @@
                             <div class="card-body p-1">
                                 <p class="underline"></p>
                                 <div class="input-group m-2">
-                                    <div class="input-group-prepend bg-warning border border-dark p-1 pl-2 pr-2">
-                                        <div class="form-check form-check-inline pl-1">
+                                    <div class="input-group-prepend bg-warning border border-dark p-1 pl-3 w-50">
+                                        <div class="form-check form-check-inline w-Custom10 pl-1">
                                             <input class="form-check-input" type="radio" name="window-radio-Options"
                                                 id="window-radio-1" value="option1" checked>
                                             <label class="form-check-label" for="window-radio-1">W1</label>
                                         </div>
-                                        <div class="form-check form-check-inline pl-1">
+                                        <div class="form-check form-check-inline w-Custom10 pl-1">
                                             <input class="form-check-input" type="radio" name="window-radio-Options"
                                                 id="window-radio-2" value="option2">
                                             <label class="form-check-label" for="window-radio-2">W2</label>
                                         </div>
-                                        <div class="form-check form-check-inline pl-1">
+                                        <div class="form-check form-check-inline w-Custom10 pl-1">
                                             <input class="form-check-input" type="radio" name="window-radio-Options"
                                                 id="window-radio-3" value="option3">
                                             <label class="form-check-label" for="window-radio-3">W3</label>
                                         </div>
-                                        <div class="form-check form-check-inline pl-1">
+                                        <div class="form-check form-check-inline w-Custom10 pl-1">
                                             <input class="form-check-input" type="radio" name="window-radio-Options"
-                                                id="window-radio-4" value="option1">
+                                                id="window-radio-4" value="option4">
                                             <label class="form-check-label" for="window-radio-4">W4</label>
                                         </div>
-                                        <div class="form-check form-check-inline pl-1">
+                                        <div class="form-check form-check-inline w-Custom10 pl-1">
                                             <input class="form-check-input" type="radio" name="window-radio-Options"
-                                                id="window-radio-4" value="option2">
+                                                id="window-radio-5" value="option5">
                                             <label class="form-check-label" for="window-radio-5">W5</label>
                                         </div>
-                                        <div class="form-check form-check-inline pl-1">
+                                        <div class="form-check form-check-inline w-Custom10 pl-1">
                                             <input class="form-check-input" type="radio" name="window-radio-Options"
-                                                id="window-radio-5" value="option3">
+                                                id="window-radio-6" value="option6">
                                             <label class="form-check-label" for="window-radio-6">W6</label>
                                         </div>
                                     </div>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                    <div class="btn-group w-50" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-light w-Custom10 p-0 pl-2 pr-2">Offset</button>
                                         <button type="button" class="btn btn-light w-Custom10 p-0 pl-2 pr-2">Clear</button>
                                         <button type="button" class="btn btn-light w-Custom10 p-0 pl-2 pr-2">Close</button>
@@ -73,7 +78,7 @@
                                     <div class="col pl-3" style="font-size: 12px;">Value</div>
                                     <div class="col pl-3" style="font-size: 12px;">Unit</div>
                                 </div>
-                                <div class="wrapCol text-white pb-0 h-Custom1">
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
                                     <div class="row">
                                         <div class="col-4 bg-secondary">Track ID</div>
                                         <div class="col pl-3">0</div>
@@ -144,7 +149,7 @@
                                     <div class="col pl-3" style="font-size: 12px;">Value</div>
                                     <div class="col pl-3" style="font-size: 12px;">Unit</div>
                                 </div>
-                                <div class="wrapCol text-white pb-0 h-Custom1">
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
                                     <div class="row">
                                         <div class="col-4 bg-secondary">Track ID</div>
                                         <div class="col pl-3">0</div>
@@ -215,7 +220,7 @@
                                     <div class="col pl-3" style="font-size: 12px;">Value</div>
                                     <div class="col pl-3" style="font-size: 12px;">Unit</div>
                                 </div>
-                                <div class="wrapCol text-white pb-0 h-Custom1">
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
                                     <div class="row">
                                         <div class="col-4 bg-secondary">Track ID</div>
                                         <div class="col pl-3">0</div>
@@ -286,7 +291,7 @@
                                     <div class="col pl-3" style="font-size: 12px;">Value</div>
                                     <div class="col pl-3" style="font-size: 12px;">Unit</div>
                                 </div>
-                                <div class="wrapCol text-white pb-0 h-Custom1">
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
                                     <div class="row">
                                         <div class="col-4 bg-secondary">Track ID</div>
                                         <div class="col pl-3">0</div>
@@ -357,7 +362,7 @@
                                     <div class="col pl-3" style="font-size: 12px;">Value</div>
                                     <div class="col pl-3" style="font-size: 12px;">Unit</div>
                                 </div>
-                                <div class="wrapCol text-white pb-0 h-Custom1">
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
                                     <div class="row">
                                         <div class="col-4 bg-secondary">Track ID</div>
                                         <div class="col pl-3">0</div>
@@ -428,7 +433,7 @@
                                     <div class="col pl-3" style="font-size: 12px;">Value</div>
                                     <div class="col pl-3" style="font-size: 12px;">Unit</div>
                                 </div>
-                                <div class="wrapCol text-white pb-0 h-Custom1">
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
                                     <div class="row">
                                         <div class="col-4 bg-secondary">Track ID</div>
                                         <div class="col pl-3">0</div>
@@ -494,8 +499,18 @@
                         </div>
                     </div>
                 </dir>
-                <div class="card-footer p-0 m-0 solid-bordered" style="background-color: #f0f0f0;">
-                    tes
+                <div class="card-footer h-Custom1 p-0 m-0 solid-bordered" style="background-color: #f0f0f0;">
+                    <div class="row">
+						<div class="col-12 rows">
+
+						</div>
+						<div class="col-12 rows">
+
+						</div>
+						<div class="col-12 rows">
+
+						</div>
+					</div>
                 </div>
             </div>
         </div>

@@ -8618,8 +8618,24 @@ button.bg-dark:hover {
     height: auto !important;
 }
 
+.h-Custom-sm-1 {
+    height: 177px !important;
+}
+
 .h-Custom1 {
     height: 210px !important;
+}
+
+.h-Custom2 {
+    height: 320px !important;
+}
+
+.h-Custom3 {
+    height: 550px !important;
+}
+
+.h-Custom4 {
+    height: 1064px !important;
 }
 
 .mw-100 {
