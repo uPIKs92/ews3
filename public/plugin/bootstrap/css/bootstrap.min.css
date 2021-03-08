@@ -2725,9 +2725,9 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-    color: rgb(27, 27, 27);
+    color: #fff;
     background-color: #007bff;
-    border-color: #00254d;
+    border-color: #0062cc;
 }
 
 .btn-primary:hover {
@@ -2973,7 +2973,7 @@ fieldset:disabled a.btn {
 .btn-light {
     color: #000;
     background-color: #808080;
-    border-color: #000;
+    border-color: #606060;
 }
 
 .btn-light:hover {
@@ -2984,7 +2984,7 @@ fieldset:disabled a.btn {
 .btn-light:focus {
     color: #212529;
     background-color: #606060;
-    border-color: #000;
+    border-color: #606060;
     box-shadow: 0 0 0 1px rgba(216, 217, 219, 0.5);
 }
 
@@ -8567,11 +8567,11 @@ button.bg-dark:hover {
 }
 
 .w-Custom4 {
-    width: 278.33px !important;
+    width: 265.33px !important;
 }
 
 .w-Custom5 {
-    width: 170.67px !important;
+    width: 162.67px !important;
 }
 
 .w-Custom6 {
@@ -8592,6 +8592,10 @@ button.bg-dark:hover {
 
 .w-Custom10 {
     width: 60px !important;
+}
+
+.w-Custom11 {
+    width: 50px !important;
 }
 
 .w-auto {

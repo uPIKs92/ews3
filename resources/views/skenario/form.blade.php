@@ -6,7 +6,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-12 pb-3 mb-3 ml-3 mr-3">
+                    <div class="col-md-12 pb-3 mb-3 ml-0 mr-0">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
                                 value="option1" checked>
@@ -15,7 +15,7 @@
                             </label>
                         </div>
                     </div>
-                    <div class="col-md-12 pb-3 mb-3 ml-3 mr-3">
+                    <div class="col-md-12 pb-3 mb-3 ml-0 mr-0">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
                                 value="option2">
@@ -44,7 +44,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="col-md-12 pb-3 mb-3 ml-3 mr-3">
+                    <div class="col-md-12 pb-3 mb-3 ml-0 mr-0">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
                                 value="option3">
@@ -74,7 +74,7 @@
             <form method="post" action="{{ route('skenario.store') }}">
                 @csrf
                 <div class="modal-body">
-                    <div class="form-group input-group">
+                    <div class="form-group input-group m-0 mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">Mission</div>
                         </div>
@@ -82,14 +82,14 @@
                         <input type="text" name="scenario_name" class="form-control" autocomplete="off"
                             value="{{ $scenario ? $scenario->mission : null }}">
                     </div>
-                    <div class="form-group input-group">
+                    <div class="form-group input-group m-0 mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">Creator</div>
                         </div>
                         <input type="text" name="creator" class="form-control" autocomplete="off"
                             value="{{ $scenario ? $scenario->creator : null }}">
                     </div>
-                    <div class="form-group input-group">
+                    <div class="form-group input-group m-0 mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">Description</div>
                         </div>
@@ -123,7 +123,7 @@
                       </div> -->
                         <div class="card col-sm-12">
                             <div class="card-body">
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Type</div>
                                     </div>
@@ -135,7 +135,7 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Call Sign</div>
                                     </div>
@@ -143,7 +143,7 @@
                                     <input type="text" class="form-control" name="name" id="name_aircraft" required
                                         autocomplete="off">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Home Base</div>
                                     </div>
@@ -153,7 +153,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Start Time</div>
                                     </div>
@@ -161,7 +161,7 @@
                                         value="0">
                                     <h6>Minutes</h6>
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Altitude</div>
                                     </div>
@@ -169,7 +169,7 @@
                                         value="0">
                                     <h6>Feet</h6>
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Heading</div>
                                     </div>
@@ -177,7 +177,7 @@
                                         value="0">
                                     <h6>Degrees</h6>
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Speed</div>
                                     </div>
@@ -185,7 +185,7 @@
                                         value="0">
                                     <h6>Knots</h6>
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Fuel</div>
                                     </div>
@@ -193,7 +193,7 @@
                                     <h6>Lbs</h6>
                                 </div>
 
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Status SSR</div>
                                     </div>
@@ -202,7 +202,7 @@
                                         data-onstyle="outline-primary" data-offstyle="outline-secondary">
                                 </div>
                                 <p class="mt-3 underline"><strong>Jammer</strong></p>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Barrage</div>
                                     </div>
@@ -210,7 +210,7 @@
                                         data-toggle="toggle" data-width="100" data-height="40"
                                         data-onstyle="outline-primary" data-offstyle="outline-secondary">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Spot</div>
                                     </div>
@@ -218,7 +218,7 @@
                                         data-toggle="toggle" data-width="100" data-height="40"
                                         data-onstyle="outline-primary" data-offstyle="outline-secondary">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Sweep Spot</div>
                                     </div>
@@ -226,7 +226,7 @@
                                         data-toggle="toggle" data-width="100" data-height="40"
                                         data-onstyle="outline-primary" data-offstyle="outline-secondary">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Chaff</div>
                                     </div>
@@ -234,7 +234,7 @@
                                         data-toggle="toggle" data-width="100" data-height="40"
                                         data-onstyle="outline-primary" data-offstyle="outline-secondary">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Deception</div>
                                     </div>
@@ -242,7 +242,7 @@
                                         data-toggle="toggle" data-width="100" data-height="40"
                                         data-onstyle="outline-primary" data-offstyle="outline-secondary">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Continous Wave</div>
                                     </div>
@@ -250,7 +250,7 @@
                                         data-toggle="toggle" data-width="100" data-height="40"
                                         data-onstyle="outline-primary" data-offstyle="outline-secondary">
                                 </div>
-                                <div class="mt-3 form-group input-group">
+                                <div class="mt-3 form-group input-group m-0 mb-2">
                                     <p class="underline"><strong>Coordinate</strong></p>
                                     <input type="hidden" name="long" id="long_aircraft" value="">
                                     <input type="hidden" name="lat" id="lat_aircraft" value="">
@@ -285,7 +285,7 @@
                       </div> -->
                         <div class="card col-sm-12">
                             <div class="card-body">
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Name</div>
                                     </div>
@@ -297,7 +297,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Type</div>
                                     </div>
@@ -307,49 +307,49 @@
                                         <option value="3">Master T</option>
                                     </select>
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Kosek</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="kosek_radar"
                                         id="kosek_radar" value="0">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Sat Rad</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="satrad_radar"
                                         id="satrad_radar" value="0">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Range</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="range_radar"
                                         id="range_radar" value="0">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Altitude</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="altitude_radar"
                                         id="altitude_radar" value="0">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Elevation Min.</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="elevation_min_radar"
                                         id="elevation_min_radar" value="0">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Elevation Max</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="elevation_max_radar"
                                         id="elevation_max_radar" value="0">
                                 </div>
-                                <div class="mt-3 form-group input-group">
+                                <div class="mt-3 form-group input-group m-0 mb-2">
                                     <p class="underline"><strong>Coordinate</strong></p>
                                     <input type="hidden" name="long" id="long_radar" value="">
                                     <input type="hidden" name="lat" id="lat_radar" value="">
@@ -384,7 +384,7 @@
                       </div> -->
                         <div class="card col-sm-12">
                             <div class="card-body">
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Name</div>
                                     </div>
@@ -396,55 +396,55 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Type</div>
                                     </div>
                                     <input readonly type="text" class="form-control" name="type_kri" id="type_kri">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Kosek</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="kosek_kri" id="kosek_kri"
                                         value="0">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Sat Rad</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="satrad_kri" id="satrad_kri"
                                         value="0">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Range</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="range_kri" id="range_kri"
                                         value="0">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Altitude</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="altitude_kri"
                                         id="altitude_kri" value="0">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Elevation Min.</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="elevation_min_kri"
                                         id="elevation_min_kri" value="0">
                                 </div>
-                                <div class="form-group input-group">
+                                <div class="form-group input-group m-0 mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">Elevation Max</div>
                                     </div>
                                     <input readonly type="number" class="form-control" name="elevation_max_kri"
                                         id="elevation_max_kri" value="0">
                                 </div>
-                                <div class="mt-3 form-group input-group">
+                                <div class="mt-3 form-group input-group m-0 mb-2">
                                     <p class="underline"><strong>Coordinate</strong></p>
                                     <input type="hidden" name="long" id="long_kri" value="">
                                     <input type="hidden" name="lat" id="lat_kri" value="">

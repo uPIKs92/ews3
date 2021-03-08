@@ -99,6 +99,231 @@
                     </div>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <div class="rows no-border m-0">
+                        <div class="col-12 p-0 solid-bordered">
+                            <div class="card-subtitle pt-2 pl-sm-2 pb-sm-1">
+                                <Small class="d-inline">PPI Control</Small>
+                            </div>
+                            <div class="form-inline card-body clearfix p-1 w-100">
+                                <p class="underline"></p>
+                                <div class="form-inline float-left w-75 text-center ">
+                                    <div class="mr-2 align-self-start">
+                                        <div class="card bg-transparent border border-secondary">
+                                            <p class="underline p-0 m-0">Rng Bearing</p>
+                                            <div class="m-1">
+                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                    <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                        <input type="radio" name="interceptRadios" id="interceptRadio3">
+                                                        Set
+                                                    </label>
+                                                    <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                        <input type="radio" name="interceptRadios" id="interceptRadio4">
+                                                        Ctrl
+                                                    </label>
+                                                    <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                        <input type="radio" name="interceptRadios" id="interceptRadio5">
+                                                        Clr
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body mt-2">
+                                            <button type="button" class="btn btn-light m-0 p-1 w-100">
+                                                Stand By
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card border border-secondary bg-transparent w-25 mr-2">
+                                        <p class="underline p-0 m-0">LASA</p>
+                                        <div class="m-1">
+                                            <div class="btn-group btn-group-vertical btn-group-toggle"
+                                                data-toggle="buttons">
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
+                                                    Set
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
+                                                    UnSet
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio5">
+                                                    Reset
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card border border-secondary bg-transparent w-25">
+                                        <p class="underline p-0 m-0">T. Path</p>
+                                        <div class="m-1">
+                                            <div class="btn-group btn-group-vertical btn-group-toggle"
+                                                data-toggle="buttons">
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
+                                                    Set
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
+                                                    UnSet
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio5">
+                                                    Reset
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card border border-secondary bg-transparent mt-1 mr-2 align-self-start"
+                                        style="width: 81.52px;">
+                                        <div class="m-1">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
+                                                    1
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
+                                                    2
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio5">
+                                                    3
+                                                </label>
+                                            </div>
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
+                                                    4
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
+                                                    5
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio5">
+                                                    6
+                                                </label>
+                                            </div>
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
+                                                    7
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
+                                                    8
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio5">
+                                                    9
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card border border-secondary bg-transparent mt-1 mr-2 w-25">
+                                        <p class="underline p-0 m-0">Print</p>
+                                        <div class="m-1">
+                                            <div class="btn-group btn-group-vertical btn-group-toggle"
+                                                data-toggle="buttons">
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
+                                                    LASA
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
+                                                    TSheet
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card border border-secondary bg-transparent mt-1 w-25">
+                                        <p class="underline p-0 m-0">AntiCo</p>
+                                        <div class="m-1">
+                                            <div class="btn-group btn-group-vertical btn-group-toggle"
+                                                data-toggle="buttons">
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
+                                                    Protect
+                                                </label>
+                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
+                                                    UnProt.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="float-left w-25 text-center align-self-start">
+                                    <div class="card border border-secondary bg-transparent w-100"
+                                        style="height: 139px">
+                                        <p class="underline p-0 m-0">T. Hook</p>
+                                        <div class="m-1">
+                                            <input type="text" class="form-control w-100 mb-2" aria-label="hook input">
+                                            <div class="btn-group btn-group-vertical btn-group-toggle text-center w-100">
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    Squawk</button>
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    Hook</button>
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    UnHook</button>
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    InterMark</button>
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    Off-Ctr</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border border-secondary bg-transparent m-1">
+                                <p class="underline p-1 m-0 bg-white">Cursor Position</p>
+                                <div class="form-inline m-1">
+                                    <div class="input-group w-45 mr-4 mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="w-Custom7 pt-sm-1">Lon :</span>
+                                        </div>
+                                        <input type="text" class="form-control w-50" aria-label="ident input" readonly>
+                                    </div>
+                                    <div class="input-group w-45 mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="w-Custom11 pt-sm-1">Range :</span>
+                                        </div>
+                                        <input type="text" class="form-control w-50" aria-label="ident input" readonly>
+                                    </div>
+                                    <div class="input-group w-45 mr-4 mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="w-Custom7 pt-sm-1">Lat :</span>
+                                        </div>
+                                        <input type="text" class="form-control w-50" aria-label="ident input" readonly>
+                                    </div>
+                                    <div class="input-group w-45 mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="w-Custom11 pt-sm-1">Bearing :</span>
+                                        </div>
+                                        <input type="text" class="form-control w-50" aria-label="ident input" readonly>
+                                    </div>
+                                    <div class="input-group w-45 mr-4">
+                                        <div class="input-group-prepend">
+                                            <span class="w-Custom7 pt-sm-1">Georef :</span>
+                                        </div>
+                                        <input type="text" class="form-control w-50" aria-label="ident input" readonly>
+                                    </div>
+                                    <div class="input-group w-45">
+                                        <div class="input-group-prepend">
+                                            <span class="w-Custom11 pt-sm-1">Scale :</span>
+                                        </div>
+                                        <input type="text" class="form-control w-20" aria-label="ident input" readonly>
+                                        <span class="w-Custom2 text-center">:</span>
+                                        <input type="text" class="form-control w-20" aria-label="ident input" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
     </div>
     {{-- <div class="panel-footer"></div> --}}
 </div>

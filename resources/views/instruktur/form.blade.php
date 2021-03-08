@@ -6,7 +6,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-12 pb-1 ml-3 mr-3">
+                    <div class="col-md-12 pb-1 ml-0 mr-0">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
                                 value="option1" checked>
@@ -15,7 +15,7 @@
                             </label>
                         </div>
                     </div>
-                    <div class="col-md-12 pb-1 ml-3 mr-3">
+                    <div class="col-md-12 pb-1 ml-0 mr-0">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
                                 value="option2">
@@ -44,7 +44,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="col-md-12 pb-1 ml-3 mr-3">
+                    <div class="col-md-12 pb-1 ml-0 mr-0">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
                                 value="option3">
@@ -725,7 +725,7 @@
                 </div>
                 <div class="card card-title">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 p-0 pt-2">
                             <form id="playSpeed-radio" class="m-auto p-0">
                                 <div
                                     class="form-check form-check-inline badge badge-warning ml-2 mr-2 p-2 w-20 text-left">
@@ -795,7 +795,7 @@
                 <div class="card card-title">
                     <div class="row">
                         <div class="col-12 p-0 m-auto no-border">
-                            <div class="form-group input-group">
+                            <div class="form-group input-group m-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text w-auto">Category : </div>
                                 </div>
@@ -836,7 +836,7 @@
                 <div class="card card-title">
                     <div class="row">
                         <div class="col-12 p-0 m-auto no-border">
-                            <div class="form-group input-group">
+                            <div class="form-group input-group m-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text w-auto">Line 1 : </div>
                                 </div>
@@ -852,7 +852,7 @@
                             </div>
                         </div>
                         <div class="col-12 p-0 m-auto no-border">
-                            <div class="form-group input-group">
+                            <div class="form-group input-group m-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text w-auto">Line 2 : </div>
                                 </div>
@@ -868,7 +868,7 @@
                             </div>
                         </div>
                         <div class="col-12 p-0 m-auto no-border">
-                            <div class="form-group input-group">
+                            <div class="form-group input-group m-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text w-auto">Line 3 : </div>
                                 </div>
