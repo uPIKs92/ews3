@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <dir class="card-body p-0 m-0 solid-bordered mb-1" style="background-color: #f0f0f0;">
-                    <div class="row p-1 pb-2">
+                    {{-- <div class="row p-1 pb-2">
                         <div class="col-4  rows p-1">
                             <div class="wrapTable w-100 m-0">
                                 <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
@@ -497,7 +497,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </dir>
                 <div class="card-footer p-0 m-0 solid-bordered" style="background-color: #f0f0f0;">
                     <div class="rows no-border mt-3 mb-3">
