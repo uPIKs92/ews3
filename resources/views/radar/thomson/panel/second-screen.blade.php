@@ -21,7 +21,8 @@
                             <div class="card-body p-1">
                                 <p class="underline"></p>
                                 <div class="input-group m-2">
-                                    <div class="input-group-prepend bg-secondary text-white border border-dark p-1 pl-3 w-50">
+                                    <div
+                                        class="input-group-prepend bg-secondary text-white border border-dark p-1 pl-3 w-50">
                                         <div class="form-check form-check-inline w-Custom10 pl-1">
                                             <input class="form-check-input" type="radio" name="window-radio-Options"
                                                 id="window-radio-1" value="option1" checked>
@@ -54,14 +55,19 @@
                                         </div>
                                     </div>
                                     <div class="btn-group w-50" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-primary text-white w-Custom10 p-0 pl-2 pr-2">Offset</button>
-                                        <button type="button" class="btn btn-primary text-white w-Custom10 p-0 pl-2 pr-2">Clear</button>
-                                        <button type="button" class="btn btn-primary text-white w-Custom10 p-0 pl-2 pr-2">Close</button>
-                                        <button type="button" class="btn btn-primary text-white w-Custom10 p-0 pl-2 pr-2">Ttl
+                                        <button type="button"
+                                            class="btn btn-primary text-white w-Custom10 p-0 pl-2 pr-2">Offset</button>
+                                        <button type="button"
+                                            class="btn btn-primary text-white w-Custom10 p-0 pl-2 pr-2">Clear</button>
+                                        <button type="button"
+                                            class="btn btn-primary text-white w-Custom10 p-0 pl-2 pr-2">Close</button>
+                                        <button type="button"
+                                            class="btn btn-primary text-white w-Custom10 p-0 pl-2 pr-2">Ttl
                                             Color</button>
                                         <button type="button" class="btn btn-primary text-white w-Custom10 p-0 pl-2 pr-2">Bg
                                             Color</button>
-                                        <button type="button" class="btn btn-primary text-white w-Custom10 p-0 pl-2 pr-2">Txt
+                                        <button type="button"
+                                            class="btn btn-primary text-white w-Custom10 p-0 pl-2 pr-2">Txt
                                             Color</button>
                                     </div>
                                 </div>
@@ -498,6 +504,330 @@
                             </div>
                         </div>
                     </div> --}}
+                    <div class="row p-1 pb-2">
+                        <div class="col-4 rows p-1">
+                            <div class="wrapTable w-100 m-0">
+                                <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
+                                    <div class="col-4" style="font-size: 12px;">Fighter</div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                </div>
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Track ID</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Heading</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Deg</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Speed</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Kts/Mach</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">ALT (primer)</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">ft</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Quality</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Source</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">MODE 1</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">MODE 2</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">MODE 3</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">MODE C</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">nm</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Callsign</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Bearing</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Range</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Georeff</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 rows p-1">
+                            <div class="wrapTable w-100 m-0">
+                                <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
+                                    <div class="col-4" style="font-size: 12px;">Interception</div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                </div>
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Tyco</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Callsign</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Number</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">IFF</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Airbased</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Profile</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Tactic</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 rows p-1">
+                            <div class="wrapTable w-100 m-0">
+                                <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
+                                    <div class="col-4" style="font-size: 12px;">Target</div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                </div>
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Track ID</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Heading</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Deg</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Speed</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Kts</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Speed</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Mach</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Altitude</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">ft</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Georeff</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">MODE C</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">MODE 3</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col pl-3">x100ft</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="col-3 rows p-1">
+                            <div class="wrapTable w-100 m-0">
+                                <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
+                                    <div class="col-4" style="font-size: 12px;">Order</div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                </div>
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Heading</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Deg</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Speed</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Kts</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Speed</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Mach</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Altitude</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">ft</div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-4 bg-secondary">TURN</div>
+                                        <div class="col pl-3">:</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Heading</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Deg</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Inclin</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Deg</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="col-3 rows p-1">
+                            <div class="wrapTable w-100 m-0">
+                                <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
+                                    <div class="col-5 pl-2" style="font-size: 12px;">Time & Fuel</div>
+                                    <div class="col" style="font-size: 12px;"></div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                </div>
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">TIME</div>
+                                        <div class="col pl-3">:</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Phase</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">min</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Kill</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">min</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Turn</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">min</div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-4 bg-secondary">FUEL</div>
+                                        <div class="col pl-3">:</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Present</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">lbs</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Killing</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">lbs</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Final</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">lbs</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="col-3 rows p-1">
+                            <div class="wrapTable w-100 m-0">
+                                <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
+                                    <div class="col-4" style="font-size: 12px;">Final</div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                </div>
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Att.Angle</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Deg</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">X.Range</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">Knm</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">F.Length</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">kts</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Delta Alt</div>
+                                        <div class="col pl-3">0</div>
+                                        <div class="col">ft</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">F.Speed</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Side</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="col-3 rows p-1">
+                            <div class="wrapTable w-100 m-0">
+                                <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
+                                    <div class="col-4" style="font-size: 12px;">RTB</div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                    <div class="col pl-3" style="font-size: 12px;"></div>
+                                </div>
+                                <div class="wrapCol text-white pb-0 h-Custom-sm-1">
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Airbase</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">QFU</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Weather</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Strange</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 bg-secondary">Range</div>
+                                        <div class="col pl-3">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </dir>
                 <div class="card-footer p-0 m-0 solid-bordered" style="background-color: #f0f0f0;">
                     <div class="rows no-border mt-3 mb-3">
