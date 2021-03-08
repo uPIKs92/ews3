@@ -8602,6 +8602,10 @@ button.bg-dark:hover {
     height: 25% !important;
 }
 
+.h-33 {
+    height: 33.33% !important;
+}
+
 .h-50 {
     height: 50% !important;
 }

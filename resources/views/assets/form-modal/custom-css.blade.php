@@ -403,7 +403,7 @@ right: -10px;
         background: rgb(0, 0, 0);
     }
 
-    .btnToggle{
+    .btnToggle {
         /* transform: translateX(227%); */
     }
 
@@ -429,6 +429,25 @@ right: -10px;
         border-top-color: #000;
         border-left-color: #000;
         /* box-shadow: 0 0 0 1px rgba(216, 217, 219, 0.5); */
+    }
+
+    #ul-btn li {
+        margin: 0.25rem;
+    }
+
+    #ul-btn li a {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+    }
+
+    #ul-btn img {
+        filter: sepia(100%);
+    }
+
+    #ul-btn img:hover {
+        filter: sepia(0%);
+        box-shadow: 0 0 0 0.2rem rgba(29, 29, 29, 0.5);
     }
 
 </style>
