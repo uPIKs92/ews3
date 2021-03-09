@@ -469,6 +469,10 @@ small {
     font-size: 10px;
 }
 
+.tiny-2 {
+    font-size: 12px !important;
+}
+
 .mark,
 mark {
     padding: 0.2em;
@@ -8628,6 +8632,10 @@ button.bg-dark:hover {
 
 .h-Custom-sm-1 {
     height: 177px !important;
+}
+
+.h-Custom-sm-2 {
+    height: 202px !important;
 }
 
 .h-Custom1 {

@@ -22,6 +22,26 @@ class RadarController extends Controller
     {
         return view('radar.thomson.panel.second-screen');
     }
+    public function airbase_view()
+    {
+        return view('radar.thomson.table-view.airbase-view');
+    }
+    public function antico_view()
+    {
+        return view('radar.thomson.table-view.antico-view');
+    }
+    public function cfp_view()
+    {
+        return view('radar.thomson.table-view.cfp-view');
+    }
+    public function intercept_view()
+    {
+        return view('radar.thomson.table-view.intercept-view');
+    }
+    public function workload_view()
+    {
+        return view('radar.thomson.table-view.workload-view');
+    }
     public function map_control()
     {
         return view('radar.thomson.menu.map-menu');

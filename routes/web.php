@@ -55,12 +55,20 @@ Route::post('/aircraft/load','AssetBuilderController@load_aircraft')->name('load
 Route::post('/aircraft/update','AssetBuilderController@update_aircraft')->name('update_aircraft');
 Route::post('/aircraft/delete','AssetBuilderController@delete_aircraft')->name('delete_aircraft');
 
+Route::get('/instruktur','InstrukturController@index')->name('instruktur.index');
+
 Route::get('/master_t','RadarController@master_t')->name('master_t');
 
 Route::get('/thomson','RadarController@thomson')->name('thomson');
 Route::get('/thomson/map','RadarController@map_control')->name('map-menu');
 Route::get('/thomson/radar','RadarController@radar_control')->name('radar-menu');
 Route::get('/thomson/second_screen','RadarController@second_screen')->name('second-screen');
+
+Route::get('/thomson/intercept_view','RadarController@intercept_view')->name('intercept-view');
+Route::get('/thomson/antico_view','RadarController@antico_view')->name('antico-view');
+Route::get('/thomson/workload_view','RadarController@workload_view')->name('workload-view');
+Route::get('/thomson/cfp_view','RadarController@cfp_view')->name('cfp-view');
+Route::get('/thomson/airbase_view','RadarController@airbase_view')->name('airbase-view');
 
 Route::get('/thomson/intercept','RadarController@intercept')->name('intercept-menu');
 Route::get('/thomson/intercept-ground','RadarController@intercept_ground')->name('intercept-ground-menu');
@@ -76,5 +84,3 @@ Route::get('/thomson/t-ident','RadarController@track_ident')->name('track-ident-
 Route::get('/thomson/t-filter','RadarController@track_filter')->name('track-filter-menu');
 Route::get('/thomson/aux','RadarController@aux')->name('aux-menu');
 Route::get('/thomson/debug','RadarController@debug')->name('debug-menu');
-
-Route::get('/instruktur','InstrukturController@index')->name('instruktur.index');

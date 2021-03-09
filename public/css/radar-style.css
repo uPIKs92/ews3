@@ -269,6 +269,13 @@
     padding-left: 10px;
 }
 
+.wrapTable thead th,
+.wrapTable td,
+.wrapTable th {
+    border: none;
+    padding: 0.25rem;
+}
+
 .rows .wrapCol {
     height: 90px;
     overflow-y: auto;

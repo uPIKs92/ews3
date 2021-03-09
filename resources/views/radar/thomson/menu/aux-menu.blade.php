@@ -3,9 +3,9 @@
     @include('assets.form-modal.custom-css')
 @section('menu')
     <div class="wrapTable">
-        <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
-            <div class="col-4" style="font-size: 12px;">Variable</div>
-            <div class="col pl-3" style="font-size: 12px;">Value</div>
+        <div class="row text-white mr-3" style="background-color: #333333;">
+            <div class="col-4 tiny-2">Variable</div>
+            <div class="col pl-3 tiny-2">Value</div>
         </div>
         <div class="wrapCol h-100 text-white pb-0">
             <div class="row">
@@ -64,9 +64,9 @@
     </div>
 
     <div class="wrapTable mt-4">
-        <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
-            <div class="col-4" style="font-size: 12px;">Variable</div>
-            <div class="col pl-3" style="font-size: 12px;">Value</div>
+        <div class="row text-white mr-3" style="background-color: #333333;">
+            <div class="col-4 tiny-2">Variable</div>
+            <div class="col pl-3 tiny-2">Value</div>
         </div>
         <div class="wrapCol h-100 text-white pb-0">
             <div class="row">

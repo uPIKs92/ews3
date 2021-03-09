@@ -779,10 +779,10 @@
             <tr>
                 <td class="rows">
                     <div class="wrapTable">
-                        <div class="row" style="background-color: #333333; color: white; margin-right: 17px;">
-                            <div class="col-4" style="font-size: 12px;">Variable</div>
+                        <div class="row text-white mr-3" style="background-color: #333333;">
+                            <div class="col-4 tiny-2">Variable</div>
                             <div class="col-1"></div>
-                            <div class="col" style="font-size: 12px;">Value</div>
+                            <div class="col tiny-2">Value</div>
                         </div>
                         <div class="wrapCol">
                             <div class="row">
@@ -862,8 +862,8 @@
             <tr>
                 <td class="rows">
                     <div class="wrapTable-flat">
-                        <div class="row" style="background-color: #a8a8a8; color: white;">
-                            <div class="col-12" style="font-size: 12px;">Operator Message</div>
+                        <div class="row text-white" style="background-color: #a8a8a8;">
+                            <div class="col-12 tiny-2">Operator Message</div>
                         </div>
                         <div class="wrapCol-flat">
                             <div class="row">
@@ -899,7 +899,7 @@
             <tr>
                 <td class="rows">
                     <div class="wrapTable-flat">
-                        <div class="row" style="background-color: #a8a8a8; color: white; text-align: center;">
+                        <div class="row text-center text-white" style="background-color: #a8a8a8;">
                             <div class="col-5" style="font-size: 12px; 
                             margin-right: 20px;">System Message</div>
                             <div class="col-2">
