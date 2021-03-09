@@ -103,7 +103,7 @@
             </ul>
         </li>
     </ul>
-    @include('assets.builder.footer')
+    @include('instruktur.footer')
 @endsection
 @section('js')
     <script>

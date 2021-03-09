@@ -2,14 +2,25 @@
     <div class="navbar-brand">
         <img src="{{ asset('ico/scenario.png') }}" img alt="logo app">publisher
     </div>
-
+    <form class="form-inline my-2 my-lg-0">
+        <button data-item="" class="btn btn-outline-success my-2 my-sm-0" type="button"><i
+                class="fa fa-save fa-md"></i>&nbsp;Save Gameplay</button>
+    </form>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto ">
-            <li class="nav-item dropdown active">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('skenario.editor') }}">Skenario Editor</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('asset.builder') }}">Asset Builder</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('instruktur.index') }}">Publisher</a>
+            </li>
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Menu
-                    <i class="far fa-bars w-Custom2"></i>
+                    aria-haspopup="true" aria-expanded="false" aria-label="ddBars">
+                    <i class="fa fa-bars fa-lg"></i>
                 </a>
                 <ul id="nav-dropdown" class="dropdown-menu dropdown-menu-right text-right">
                     <li>

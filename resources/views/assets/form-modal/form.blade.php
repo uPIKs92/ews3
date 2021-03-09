@@ -1,6 +1,6 @@
 <div id="modal-coordinate" class="modal fade modal-custom" data-backdrop="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 500px;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: 500px;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Select Coordinate Type</h5>
             </div>
@@ -66,8 +66,8 @@
 </div>
 <!-- MODAL AIRFIELD -->
 <div id="modal-add-airfield" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="width: 600px;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: 600px;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Asset Airfield</h5>
             </div>
@@ -195,8 +195,8 @@
 </div>
 <!-- MODAL RADAR -->
 <div id="modal-add-radar" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="width: 400px;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: 400px;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Asset Radar</h5>
             </div>
@@ -281,8 +281,8 @@
 </div>
 <!-- MODAL DAHANUD -->
 <div id="modal-add-dahanud" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="width: 400px;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: 400px;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Asset Dahanud</h5>
             </div>
@@ -370,8 +370,8 @@
 </div>
 <!-- MODAL KRI -->
 <div id="modal-add-kri" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="width: 400px;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: 400px;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Asset KRI</h5>
             </div>
@@ -456,8 +456,8 @@
 </div>
 <!-- MODAL MISSILE -->
 <div id="modal-add-missile" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="width: 400px;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: 400px;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Asset Missile</h5>
             </div>
@@ -521,8 +521,8 @@
 </div>
 <!-- MODAL LIST ASSET -->
 <div id="modal-list-asset" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content m-auto">
             <!-- <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">List Asset</h5>
             </div> -->
@@ -1015,8 +1015,8 @@
 </div>
 <!-- MODAL AIRCRAFT/TYCO -->
 <div id="modal-aircraft" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 400px;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: 400px;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Asset Aircraft</h5>
             </div>
@@ -1044,8 +1044,8 @@
     </div>
 </div>
 <div id="modal-aircraft-list" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content m-auto">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Aircraft List</h5>
             </div>

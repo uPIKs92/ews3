@@ -25,7 +25,7 @@
             <tr>
                 <td>
                     <div class="rows no-border m-0">
-                        <div class="col-12 p-0 solid-bordered" style="min-height: 665px;">
+                        <div class="col-12 p-0 solid-bordered" style="min-height: 645px;">
                             @yield('menu', \View::make('radar.thomson.menu.clear-menu'))
                         </div>
                     </div>
@@ -113,23 +113,17 @@
                                         <div class="card bg-transparent border border-secondary">
                                             <p class="underline p-0 m-0">Rng Bearing</p>
                                             <div class="m-1">
-                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                    <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                        <input type="radio" name="interceptRadios" id="interceptRadio3">
-                                                        Set
-                                                    </label>
-                                                    <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                        <input type="radio" name="interceptRadios" id="interceptRadio4">
-                                                        Ctrl
-                                                    </label>
-                                                    <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                        <input type="radio" name="interceptRadios" id="interceptRadio5">
-                                                        Clr
-                                                    </label>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                        Set</button>
+                                                    <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                        Ctrl</button>
+                                                    <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                        Clr</button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body mt-2">
+                                        <div class="card-body" style="margin-top: 6px;">
                                             <button type="button" class="btn btn-light m-0 p-1 w-100">
                                                 Stand By
                                             </button>
@@ -138,119 +132,104 @@
                                     <div class="card border border-secondary bg-transparent w-25 mr-2">
                                         <p class="underline p-0 m-0">LASA</p>
                                         <div class="m-1">
-                                            <div class="btn-group btn-group-vertical btn-group-toggle"
-                                                data-toggle="buttons">
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
-                                                    Set
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
-                                                    UnSet
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio5">
-                                                    Reset
-                                                </label>
+                                            <div class="btn-group btn-group-vertical">
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    Set</button>
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    UnSet</button>
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    Reset</button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card border border-secondary bg-transparent w-25">
                                         <p class="underline p-0 m-0">T. Path</p>
                                         <div class="m-1">
-                                            <div class="btn-group btn-group-vertical btn-group-toggle"
-                                                data-toggle="buttons">
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
-                                                    Set
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
-                                                    UnSet
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio5">
-                                                    Reset
-                                                </label>
+                                            <div class="btn-group btn-group-vertical">
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    Set</button>
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    UnSet</button>
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    Reset</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card border border-secondary bg-transparent mt-1 mr-2 align-self-start"
-                                        style="width: 81.52px;">
-                                        <div class="m-1">
-                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
-                                                    1
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
-                                                    2
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio5">
-                                                    3
-                                                </label>
-                                            </div>
-                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
-                                                    4
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
-                                                    5
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio5">
-                                                    6
-                                                </label>
-                                            </div>
-                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
-                                                    7
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
-                                                    8
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio5">
-                                                    9
-                                                </label>
-                                            </div>
+                                    <div class="card no-border bg-transparent mt-1 mr-2 align-self-start"
+                                        style="width: 82.17px;">
+                                        <div class="m-0">
+                                            <ul class="mini-btn navbar-nav p-0 m-auto justify-content-center">
+                                                <li class="page-item mr-1">
+                                                    <a class="btn btn-light p-0" href="#">
+                                                        OC
+                                                    </a>
+                                                </li>
+                                                <li class="page-item mr-1">
+                                                    <a class="btn btn-light p-0" href="#">
+                                                        <i class="fas fa-caret-up"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="btn btn-light p-0" href="#">
+                                                        <i class="fal fa-bullseye"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="mini-btn navbar-nav p-0 m-auto justify-content-center">
+                                                <li class="page-item mr-1 mt-1">
+                                                    <a class="btn btn-light p-0" href="#">
+                                                        <i class="fas fa-caret-left"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item mr-1 mt-1">
+                                                    <a class="btn btn-light p-0" href="#">
+                                                        <i class="far fa-scrubber"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item mt-1">
+                                                    <a class="btn btn-light p-0" href="#">
+                                                        <i class="fas fa-caret-right"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="mini-btn navbar-nav p-0 m-auto justify-content-center">
+                                                <li class="page-item mr-1 mt-1">
+                                                    <a class="btn btn-light p-0" href="#">
+                                                        <i class="fas fa-search-minus"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item mr-1 mt-1">
+                                                    <a class="btn btn-light p-0" href="#">
+                                                        <i class="fas fa-caret-down"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item mt-1">
+                                                    <a class="btn btn-light p-0" href="#">
+                                                        <i class="fas fa-search-plus"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="card border border-secondary bg-transparent mt-1 mr-2 w-25">
                                         <p class="underline p-0 m-0">Print</p>
                                         <div class="m-1">
-                                            <div class="btn-group btn-group-vertical btn-group-toggle"
-                                                data-toggle="buttons">
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
-                                                    LASA
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
-                                                    TSheet
-                                                </label>
+                                            <div class="btn-group btn-group-vertical">
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    LASA</button>
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    TSheet</button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card border border-secondary bg-transparent mt-1 w-25">
                                         <p class="underline p-0 m-0">AntiCo</p>
                                         <div class="m-1">
-                                            <div class="btn-group btn-group-vertical btn-group-toggle"
-                                                data-toggle="buttons">
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio3">
-                                                    Protect
-                                                </label>
-                                                <label class="btn btn-light m-0 p-0 pl-1 pr-1">
-                                                    <input type="radio" name="interceptRadios" id="interceptRadio4">
-                                                    UnProt.
-                                                </label>
+                                            <div class="btn-group btn-group-vertical">
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    Protect</button>
+                                                <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                                    UnProt.</button>
                                             </div>
                                         </div>
                                     </div>
@@ -261,7 +240,7 @@
                                         <p class="underline p-0 m-0">T. Hook</p>
                                         <div class="m-1">
                                             <input type="text" class="form-control w-100 mb-2" aria-label="hook input">
-                                            <div class="btn-group btn-group-vertical btn-group-toggle text-center w-100">
+                                            <div class="btn-group btn-group-vertical text-center w-100">
                                                 <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
                                                     Squawk</button>
                                                 <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">

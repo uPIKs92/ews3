@@ -30,7 +30,7 @@
                     <option value="1"></option>
                 </select>
             </div>
-            <div class="input-group mb-2 w-100">
+            <div class="input-group mb-1 w-100">
                 <div class="input-group-prepend">
                     <span class="w-Custom6 pt-sm-1">Pilot/Co-pilot :</span>
                 </div>
@@ -84,7 +84,7 @@
                     <span class="w-Custom2">kts</span>
                 </div>
             </div>
-            <div class="input-group mb-2 mt-2 w-100">
+            <div class="input-group mb-2 mt-1 w-100">
                 <div class="input-group-prepend">
                     <span class="w-Custom6 pt-sm-1">Profile :</span>
                 </div>
@@ -100,7 +100,7 @@
                 <input type="number" class="form-control w-25 mr-2 text-right" aria-label="fuel input" value="0">
                 <span class="w-Custom7">lbs</span>
             </div>
-            <div class="input-group mb-2 w-100">
+            <div class="input-group mb-1 w-100">
                 <div class="input-group-prepend">
                     <span class="w-Custom6 pt-sm-1">Time to 180 Turn :</span>
                 </div>
@@ -109,7 +109,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center m-2 mt-3">
+    <div class="text-center m-2 mt-2">
         <button type="button" class="btn btn-light text-white w-Custom10">New</button>
         <button type="button" class="btn btn-light text-white w-Custom10">Edit</button>
         <button type="button" class="btn btn-light text-white w-Custom10">Delete</button>

@@ -2,6 +2,11 @@
     <div class="navbar-brand">
         <img src="{{ asset('ico/scenario.png') }}">Scenario Editor
     </div>
+    <!-- <form class="form-inline my-2 my-lg-0" method="POST">
+        @csrf
+        <input class="form-control mr-sm-2" type="text" name="scenario_name" placeholder="New Scenario Name">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-save fa-md"></i>&nbsp;Save</button>
+    </form> -->
     <form class="form-inline my-2 my-lg-0">
         <button onclick="saveScenario(this)" data-item="" class="btn btn-outline-success my-2 my-sm-0" type="button"><i
                 class="fa fa-save fa-md"></i>&nbsp;Save Scenario</button>
@@ -13,6 +18,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('asset.builder') }}">Asset Builder</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('instruktur.index') }}">Publisher</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

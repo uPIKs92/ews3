@@ -170,12 +170,42 @@ right: -10px;
     }
 
     .formFooter {
-        position: absolute;
-        z-index: 400;
-        bottom: 0%;
-        width: 100%;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 750;
         height: 40px;
         background-color: #393E46;
+    }
+
+    .menuFooter {
+        position: absolute;
+        left: 20px;
+        bottom: 70px;
+        width: fit-content;
+        cursor: pointer;
+        z-index: 400;
+    }
+
+    .formFooter li {
+        display: inline-block;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .formFooter .input-group-text {
+        width: 100%;
+        padding: 5px;
+        margin: auto;
+        text-align: center;
+        border-radius: 0;
+        border-top-color: #bebebe;
+        border-left-color: #bebebe;
+        border-bottom-color: #606060;
+        border-right-color: #606060;
+        border-width: 2px; 
+        font-size: 12px;
     }
 
     #runwayForm .form-group {
@@ -431,23 +461,28 @@ right: -10px;
         /* box-shadow: 0 0 0 1px rgba(216, 217, 219, 0.5); */
     }
 
-    #ul-btn li {
+    .ul-btn li {
         margin: 0.25rem;
     }
 
-    #ul-btn li a {
+    .ul-btn li a {
         height: 100%;
         width: 100%;
         padding: 0;
     }
 
-    #ul-btn img {
+    .ul-btn img {
         filter: sepia(100%);
     }
 
-    #ul-btn img:hover {
+    .ul-btn img:hover {
         filter: sepia(0%);
         box-shadow: 0 0 0 0.2rem rgba(29, 29, 29, 0.5);
+    }
+
+    .mini-btn li a {
+        width: 22px;
+        height: 17px;
     }
 
 </style>

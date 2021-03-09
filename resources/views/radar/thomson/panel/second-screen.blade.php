@@ -1005,7 +1005,7 @@
                 </dir>
                 <div class="card-footer p-0 m-0 solid-bordered" style="background-color: #f0f0f0;">
                     <div class="rows no-border mt-3 mb-3">
-                        <ul id="ul-btn" class="navbar-nav p-0 justify-content-center">
+                        <ul class="ul-btn navbar-nav p-0 justify-content-center">
                             <li class="page-item">
                                 <a class="btn btn-light" href="#">
                                     <img src="{{ asset('ico_btn/1.bmp') }}">
@@ -1061,7 +1061,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <ul id="ul-btn" class="navbar-nav p-0 justify-content-center">
+                        <ul class="ul-btn navbar-nav p-0 justify-content-center">
                             <li class="page-item">
                                 <a class="btn btn-light" href="#">
                                     <img src="{{ asset('ico_btn/11.bmp') }}">
@@ -1138,7 +1138,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <ul id="ul-btn" class="navbar-nav p-0 justify-content-center">
+                        <ul class="ul-btn navbar-nav p-0 justify-content-center">
                             <li class="page-item">
                                 <a class="btn btn-light" href="#">
                                     <img src="{{ asset('ico_btn/26.bmp') }}">

@@ -11,14 +11,14 @@
         <div class="card border border-secondary bg-transparent mt-1">
             <p class="underline p-1 m-0 bg-white">Cursor Track Attribute</p>
             <div class="form-inline m-1">
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 pt-sm-1">Track ID :</span>
                     </div>
                     <input type="text" class="form-control w-30" aria-label="track input" readonly>
                     <div class="w-30 ml-2"></div>
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 mb-1">ALT (x100ft) :</span>
                     </div>
@@ -26,7 +26,7 @@
                     <input type="range" class="custom-range w-30" min="0" max="100" value="0" id="trackSim1"
                         oninput="trackSimOut1.value = trackSim1.value">
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 mb-1">Heading (deg) :</span>
                     </div>
@@ -34,7 +34,7 @@
                     <input type="range" class="custom-range w-30" min="0" max="100" value="0" id="trackSim2"
                         oninput="trackSimOut2.value = trackSim2.value">
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 mb-1">Speed (kts) :</span>
                     </div>
@@ -42,7 +42,7 @@
                     <input type="range" class="custom-range w-30" min="0" max="100" value="0" id="trackSim3"
                         oninput="trackSimOut3.value = trackSim3.value">
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 pt-sm-1">Speed (mach) :</span>
                     </div>
@@ -62,49 +62,49 @@
                         <div class="btn btn-light w-Custom9 p-0 pt-1 pb-1">D</div>
                     </div>
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom7 pt-sm-1">Lat :</span>
                     </div>
                     <input type="text" class="form-control w-30" aria-label="lat input" readonly>
                     <div class="w-30 ml-2"></div>
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom7 pt-sm-1">Long :</span>
                     </div>
                     <input type="text" class="form-control w-30" aria-label="long input" readonly>
                     <div class="w-30 ml-2"></div>
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 pt-sm-1">Quality :</span>
                     </div>
                     <input type="text" class="form-control w-30" aria-label="qly input">
                     <div class="w-30 ml-2"></div>
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 pt-sm-1">Mode 1 :</span>
                     </div>
                     <input type="text" class="form-control w-30" aria-label="m1 input">
                     <div class="w-30 ml-2"></div>
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 pt-sm-1">Mode 2 :</span>
                     </div>
                     <input type="text" class="form-control w-30" aria-label="m2 input">
                     <div class="w-30 ml-2"></div>
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 pt-sm-1">Mode 3/A :</span>
                     </div>
                     <input type="text" class="form-control w-30" aria-label="m3 input">
                     <div class="w-30 ml-2"></div>
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 mb-1">Mode C :</span>
                     </div>
@@ -112,14 +112,14 @@
                     <input type="range" class="custom-range w-30" min="0" max="100" value="0" id="trackSim4"
                         oninput="trackSimOut4.value = trackSim4.value">
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 pt-sm-1">Callsign :</span>
                     </div>
                     <input type="text" class="form-control w-30" aria-label="csign input">
                     <div class="w-30 ml-2"></div>
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 pt-sm-1">Main Symbol :</span>
                     </div>
@@ -136,7 +136,7 @@
                         <option value="10">Faker</option>
                     </select>
                 </div>
-                <div class="input-group mb-2 w-100">
+                <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
                         <span class="w-Custom6 pt-sm-1">Comp. Symbol :</span>
                     </div>

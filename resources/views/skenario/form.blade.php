@@ -1,6 +1,6 @@
 <div id="modal-coordinate" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 500px;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: 500px;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Select Coordinate Type</h5>
             </div>
@@ -66,8 +66,8 @@
 </div>
 <!-- MODAL SCENARIO -->
 <div id="modal-scenario" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 550px;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: 550px;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Save Scenario</h5>
             </div>
@@ -107,8 +107,8 @@
 </div>
 <!-- MODAL AIRCRAFT -->
 <div id="modal-add-aircraft" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="width: 500px;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: 500px;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Deploy Aircraft</h5>
             </div>
@@ -269,8 +269,8 @@
 </div>
 <!-- MODAL RADAR -->
 <div id="modal-add-radar" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="width: fit-content;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: fit-content;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Deploy Radar</h5>
             </div>
@@ -368,8 +368,8 @@
 </div>
 <!-- MODAL KRI -->
 <div id="modal-add-kri" class="modal fade" data-backdrop="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="width: fit-content;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-auto" style="width: fit-content;">
             <div class="modal-header bg-warning">
                 <h5 class="modal-title text-white">Deploy KRI</h5>
             </div>

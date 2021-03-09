@@ -77,4 +77,4 @@ Route::get('/thomson/t-filter','RadarController@track_filter')->name('track-filt
 Route::get('/thomson/aux','RadarController@aux')->name('aux-menu');
 Route::get('/thomson/debug','RadarController@debug')->name('debug-menu');
 
-Route::get('/instruktur','InstrukturController@index')->name('instruktur');
+Route::get('/instruktur','InstrukturController@index')->name('instruktur.index');
