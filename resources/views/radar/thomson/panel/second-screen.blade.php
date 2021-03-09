@@ -3,7 +3,7 @@
     @include('assets.form-modal.custom-css')
     <div class="clearfix">
         <div class="float-left w-50 pt-2 pl-2">
-            <div class="card no-border h-Custom4 p-1" style="background-color: #d7d7d7;">
+            <div id="panel-TCCR" class="card no-border h-Custom4 p-1">
             </div>
         </div>
         <div class="float-right w-50 h-Custom2 pt-2 pl-2 pr-2">

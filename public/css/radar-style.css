@@ -652,3 +652,11 @@
     background-color: #DEF;
     color: #333;
 }
+
+#panel-TCCR {
+    background-color: #47484c;
+    background-image: url(../TCCRicon/background.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
