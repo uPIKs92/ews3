@@ -16,7 +16,7 @@
                         <div class="col tiny-2">JAM</div>
                         <div class="col tiny-2">INF</div>
                     </div>
-                    <div class="wrapCol text-white pb-0" style="height: 387px;">
+                    <div class="wrapCol text-white pb-0 h-Custom-sm-2">
                         <div class="row border-white">
                             <div class="col-4 bg-secondary">Hostile</div>
                             <div class="col">0</div>
