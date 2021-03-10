@@ -4624,6 +4624,8 @@ input[type="submit"].btn-block {
     src: url("../../../fonts/Airborne_II-Regular.ttf") format("truetype");
     font-family: "track ident";
     src: url("../../../fonts/LASA.TTF") format("truetype");
+    font-family: "arial narrow bold";
+    src: url("../../../fonts/arial-narrow-bold.ttf") format("truetype");
 }
 
 .navbar-brand {
@@ -8602,8 +8604,16 @@ button.bg-dark:hover {
     width: 50px !important;
 }
 
+.w-Custom12 {
+    width: 30px !important;
+}
+
 .w-auto {
     width: auto !important;
+}
+
+.w-fit {
+    width: fit-content !important;
 }
 
 .h-25 {
