@@ -9131,6 +9131,10 @@ button.bg-dark:hover {
     border-style: none !important;
 }
 
+.no-radius {
+    border-radius: 0px !important;
+}
+
 .allow-border {
     border-style: dashed !important;
 }

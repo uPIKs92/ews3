@@ -389,6 +389,7 @@ right: -10px;
     .col-4,
     .col-5,
     .col-6,
+    .col-7,
     .col-8,
     .col-10,
     .col-12 {
