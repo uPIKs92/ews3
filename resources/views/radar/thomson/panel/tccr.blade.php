@@ -1,6 +1,6 @@
 <div id="panel-TCCR" class="card no-border h-Custom4 p-1">
     <div class="form-inline">
-        <div class="card-body no-border p-0 m-0" style="width: 200px;">
+        <div class="p-0 m-0" style="width: 555px;">
             <div class="row">
                 <div class="col-12 mt-5 mb-4">
                     <span class="dot d-block" style="margin-left: 171px;"></span>
@@ -80,7 +80,7 @@
                         <span class="dot mt-1 ml-1 mr-3"></span>
                         <span class="dot mt-1 ml-3"></span>
                     </div>
-                    <div class="d-block mt-3">
+                    <div class="d-block mt-3 pl-1">
                         <button type="button" class="btn btn-panel p-0 m-0">
                             <span class="w-Custom12">Reset</span>
                         </button>
@@ -148,8 +148,65 @@
                 </div>
             </div>
         </div>
-        <div class="card-body rows">
-            tes
+        <div class="p-0 m-0 h-100" style="width: 380.5px;">
+            <div class="row">
+                <div class="col-5 mt-4 ml-4 mb-3">
+                    <button type="button" class="btn btn-panel p-0 m-0">
+                        <span class="w-Custom12">STOP</span>
+                    </button>
+                </div>
+                <div class="col-6 mt-4 pl-5">
+                    <div class="btn-group btn-panel" data-toggle="buttons" style="margin-left: 11px;">
+                        <label class="btn btn-panel p-0 m-0 active">
+                            <input type="radio">
+                            <span class="w-Custom12">
+                                Radar Head
+                            </span>
+                        </label>
+                        <label class="btn btn-panel p-0 m-0 down">
+                            <input type="radio" checked>
+                            <span class="w-Custom12">
+                                Radar Head
+                            </span>
+                        </label>
+                    </div>
+                    <div class="btn-group btn-panel" data-toggle="buttons" style="margin-left: 11px;">
+                        <label class="btn btn-panel p-0 m-0 active">
+                            <input type="radio">
+                            <span class="w-Custom12">
+                                MCRC
+                            </span>
+                        </label>
+                        <label class="btn btn-panel p-0 m-0 down">
+                            <input type="radio" checked>
+                            <span class="w-Custom12">
+                                MCRC
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-3 ml-4 mt-3">
+                    <span class="dot ml-4 mt-3"></span>
+                </div>
+                <div class="col-4 ml-1 mt-3">
+                    <div class="btn-group btn-panel" data-toggle="buttons" style="margin-left: 11px;">
+                        <label class="btn btn-panel p-0 m-0 active">
+                            <input type="radio">
+                            <span class="w-Custom12">
+                                Lamp Test
+                            </span>
+                        </label>
+                        <label class="btn btn-panel p-0 m-0 down">
+                            <input type="radio" checked>
+                            <span class="w-Custom12">
+                                Lamp Test
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-6"></div>
+                <div class="col-6"></div>
+            </div>
         </div>
     </div>
 </div>
