@@ -78,215 +78,262 @@
                     @yield('table-view', \View::make('radar.thomson.table-view.track-view'))
                 </dir>
                 <div class="card-footer p-0 m-0 solid-bordered" style="background-color: #f0f0f0;">
-                    <div class="rows no-border mt-3 mb-3">
-                        <ul class="ul-btn navbar-nav p-0 justify-content-center">
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/1.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/2.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/3.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/4.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/5.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item" style="width: 293px">
-                                <a class="btn btn-secondary" href="#">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/6.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/7.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/8.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/9.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/10.bmp') }}">
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="ul-btn navbar-nav p-0 justify-content-center">
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/11.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/12.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/13.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/14.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/15.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/16.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="{{ route('second-screen') }}">
-                                    <img src="{{ asset('ico_btn/17.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="{{ route('intercept-view') }}">
-                                    <img src="{{ asset('ico_btn/18.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="{{ route('workload-view') }}">
-                                    <img src="{{ asset('ico_btn/19.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/20.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/21.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/22.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/23.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/24.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/25.bmp') }}">
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="ul-btn navbar-nav p-0 justify-content-center">
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/26.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/27.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/28.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/29.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/30.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item" style="width: 53px">
-                                <a class="btn btn-secondary" href="#">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="{{ route('antico-view') }}">
-                                    <img src="{{ asset('ico_btn/31.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="{{ route('cfp-view') }}">
-                                    <img src="{{ asset('ico_btn/32.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="{{ route('airbase-view') }}">
-                                    <img src="{{ asset('ico_btn/33.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item" style="width: 53px">
-                                <a class="btn btn-secondary" href="#">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/34.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/35.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/36.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/37.bmp') }}">
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="btn btn-light" href="#">
-                                    <img src="{{ asset('ico_btn/38.bmp') }}">
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="container">
+                        <div class="row no-gutters rows no-border">
+                            <div class="col-4">
+                                <div class="row no-gutters ul-btn">
+                                    <div class="col-12">
+                                        <div class="row no-gutters">
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/1.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/2.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/3.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/4.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/5.bmp') }}">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row no-gutters">
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/11.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/12.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/13.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/14.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/15.bmp') }}">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row no-gutters">
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/26.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/27.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/28.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/29.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/30.bmp') }}">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="row no-gutters ul-btn">
+                                    <div class="col-12">
+                                        <div class="row no-gutters">
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/_space.png') }}" style="width: 289px;">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row no-gutters">
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/16.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="{{ route('second-screen') }}">
+                                                    <img src="{{ asset('ico_btn/17.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="{{ route('intercept-view') }}">
+                                                    <img src="{{ asset('ico_btn/18.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="{{ route('workload-view') }}">
+                                                    <img src="{{ asset('ico_btn/19.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/20.bmp') }}">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row no-gutters">
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/_none.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="{{ route('antico-view') }}">
+                                                    <img src="{{ asset('ico_btn/31.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="{{ route('cfp-view') }}">
+                                                    <img src="{{ asset('ico_btn/32.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="{{ route('airbase-view') }}">
+                                                    <img src="{{ asset('ico_btn/33.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/_none.bmp') }}">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="row no-gutters ul-btn">
+                                    <div class="col-12">
+                                        <div class="row no-gutters">
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/6.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/7.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/8.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/9.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/10.bmp') }}">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row no-gutters">
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/21.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/22.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/23.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/24.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/25.bmp') }}">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row no-gutters">
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/34.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/35.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/36.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/37.bmp') }}">
+                                                </a>
+                                            </div>
+                                            <div class="col">
+                                                <a class="btn btn-light p-0" href="#">
+                                                    <img src="{{ asset('ico_btn/38.bmp') }}">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

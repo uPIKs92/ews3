@@ -8616,6 +8616,10 @@ button.bg-dark:hover {
     width: fit-content !important;
 }
 
+.w-max-fit {
+    max-width: fit-content !important;
+}
+
 .h-25 {
     height: 25% !important;
 }
@@ -8653,7 +8657,7 @@ button.bg-dark:hover {
 }
 
 .h-Custom2 {
-    height: 320px !important;
+    height: 337px !important;
 }
 
 .h-Custom3 {
@@ -8662,6 +8666,14 @@ button.bg-dark:hover {
 
 .h-Custom4 {
     height: 1064px !important;
+}
+
+.h-Custom5 {
+    height: 60px !important;
+}
+
+.h-Custom6 {
+    height: 80px !important;
 }
 
 .mw-100 {
