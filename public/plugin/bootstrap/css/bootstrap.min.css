@@ -465,6 +465,10 @@ small {
     font-weight: 400;
 }
 
+.tiny-sm {
+    font-size: 8px;
+}
+
 .tiny {
     font-size: 10px;
 }
@@ -10627,6 +10631,10 @@ button.bg-dark:hover {
     .text-xl-center {
         text-align: center !important;
     }
+}
+
+.text-none {
+    text-transform: none !important;
 }
 
 .text-lowercase {

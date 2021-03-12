@@ -1,7 +1,7 @@
 @extends('template.master')
 @section('content')
     @include('assets.form-modal.custom-css')
-    <div class="clearfix">
+    <div class="clearfix overflow-hidden">
         <div class="float-left w-50 pt-2 pl-2">
             @include('radar.thomson.panel.tccr')
         </div>
