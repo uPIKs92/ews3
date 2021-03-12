@@ -670,6 +670,15 @@
     display: inline-block;
 }
 
+.dot-lg {
+    height: 48px;
+    width: 48px;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px dashed #fff;
+}
+
 .btn-panel {
     color: #aeaead;
     font-family: "arial narrow bold" !important;
@@ -678,8 +687,8 @@
     background-image: url(../TCCRicon/kosong.bmp);
     border-color: #7c7c7c;
     border-radius: 0px !important;
-    width: 47px;
-    height: 47px;
+    width: 48px;
+    height: 48px;
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -749,4 +758,13 @@
 
 .custom-offset-1 {
     margin-left: 32.6%;
+}
+
+.v-line-graph {
+    width: 10px;
+    border-left: 2px solid #fff;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
