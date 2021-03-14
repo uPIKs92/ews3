@@ -8640,6 +8640,10 @@ button.bg-dark:hover {
     height: 75% !important;
 }
 
+.h-85 {
+    height: 85% !important;
+}
+
 .h-100 {
     height: 100% !important;
 }
@@ -8665,11 +8669,12 @@ button.bg-dark:hover {
 }
 
 .h-Custom3 {
-    height: 550px !important;
+    max-height: 732px !important;
 }
 
 .h-Custom4 {
-    height: 1064px !important;
+    height: 1068px !important;
+    max-height: 1068px !important;
 }
 
 .h-Custom5 {

@@ -679,6 +679,14 @@
     border: 1px dashed #fff;
 }
 
+.square {
+    height: 154.2px;
+    width: 31.1875px;
+    background-color: #000;
+    display: inline-block;
+    border: 1px dashed #fff;
+}
+
 .btn-panel {
     color: #aeaead;
     font-family: "arial narrow bold" !important;
@@ -762,9 +770,24 @@
 
 .v-line-graph {
     width: 10px;
+    height: 144px;
     border-left: 2px solid #fff;
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
     border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.v-line-graph-top {
+    width: 2px;
+    border-left: 2px solid #fff;
+    border-top: 2px solid #fff;
+    border-top-left-radius: 1rem;
+}
+
+.v-line-graph-bottom {
+    width: 2px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
     border-bottom-left-radius: 1rem;
 }
