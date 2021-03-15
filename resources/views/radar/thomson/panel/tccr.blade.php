@@ -102,11 +102,11 @@
                                             <input type="radio" name="controls" id="control-up-1">
                                         </label>
                                         <label class="btn btn-panel p-0 m-0">
-                                            <input type="radio" name="controls" id="control-up-2">
+                                            <input type="radio" name="controls" >
                                             <span class="w-Custom12">ANT ON</span>
                                         </label>
                                         <label class="btn btn-panel p-0 m-0">
-                                            <input type="radio" name="controls" id="control-up-3">
+                                            <input type="radio" name="controls">
                                             <span class="w-Custom12">ANT OFF</span>
                                         </label>
                                     </div>
@@ -128,13 +128,13 @@
                                         style="left: 100px; bottom: -4px;">
                                         <label class="btn btn-panel p-0 m-0 active">
                                             <input type="radio">
-                                            <span class="w-Custom12">
+                                            <span class="w-Custom7">
                                                 STAND BY
                                             </span>
                                         </label>
                                         <label class="btn btn-panel p-0 m-0 down">
                                             <input type="radio" checked>
-                                            <span class="w-Custom12">
+                                            <span class="w-Custom7">
                                                 STAND BY
                                             </span>
                                         </label>
@@ -323,103 +323,40 @@
                                         <span class="d-block tiny">mode de fonctionnement</span>
                                     </div>
                                     <div class="card-body form-inline p-1" style="width: 344px;">
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom2">
-                                                    ewp
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom2">
-                                                    ewp
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                                <span class="w-Custom12 text-uppercase">ewp</span>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom2">
-                                                    rs
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom2">
-                                                    rs
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                                <span class="w-Custom12 text-uppercase">rs</span>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom2">
-                                                    ew
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom2">
-                                                    ew
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                                <span class="w-Custom12 text-uppercase">ew</span>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom2">
-                                                    sil
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom2">
-                                                    sil
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                                <span class="w-Custom12 text-uppercase">sil</span>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom2">
-                                                    sea
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom2">
-                                                    sea
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                                <span class="w-Custom12 text-uppercase">sea</span>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom2">
-                                                    bt
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom2">
-                                                    bt
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                                <span class="w-Custom12 text-uppercase">bt</span>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom2">
-                                                    ac
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom2">
-                                                    ac
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                                <span class="w-Custom12 text-uppercase">ac</span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -430,61 +367,25 @@
                                         <span class="d-block tiny">mode emission</span>
                                     </div>
                                     <div class="card-body form-inline p-1">
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active text-none">
-                                                <input type="radio">
-                                                <span class="w-Custom12">
-                                                    Fx
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down text-none">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom12">
-                                                    Fx
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                <span class="w-Custom12 text-none">Fx</span>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active text-none">
-                                                <input type="radio">
-                                                <span class="w-Custom12">
-                                                    Fxy
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down text-none">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom12">
-                                                    Fxy
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                <span class="w-Custom12 text-none">Fxy</span>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom12">
-                                                    rm
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom12">
-                                                    rm
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                <span class="w-Custom12 text-none">RM</span>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom12">
-                                                    R
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom12">
-                                                    R
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                <span class="w-Custom12 text-none">R</span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -522,317 +423,127 @@
                                 </div>
                                 <div class="float-left card bg-transparent no-border mr-2 mt-2">
                                     <div class="card-body form-inline p-1" style="width: 344px;">
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom2">
-                                                    sec
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom2">
-                                                    sec
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                <span class="w-Custom12 text-none">SEC</span>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active text-none">
-                                                <input type="radio">
-                                                <span class="w-Custom2 pl-1 pr-1">
-                                                    Az S
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down text-none">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom2 pl-1 pr-1">
-                                                    Az S
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                <div class="w-Custom2 text-none pl-1 pr-1 m-auto">Az S</div>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active text-none">
-                                                <input type="radio">
-                                                <span class="w-Custom2 pl-1 pr-1">
-                                                    Az E
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down text-none">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom2 pl-1 pr-1">
-                                                    Az E
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                <div class="w-Custom2 text-none pl-1 pr-1 m-auto">Az E</div>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active text-none">
-                                                <input type="radio">
-                                                <span class="w-Custom12">
-                                                    Range S
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down text-none">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom12">
-                                                    Range S
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                <div class="w-Custom12 text-none m-auto">Range S</div>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active text-none">
-                                                <input type="radio">
-                                                <span class="w-Custom12">
-                                                    Range E
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down text-none">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom12">
-                                                    Range E
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                <div class="w-Custom12 text-none m-auto">Range E</div>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom12">
-                                                    elev
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom12">
-                                                    elev
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                <span class="w-Custom12 text-none">ELEV</span>
+                                            </button>
                                         </div>
-                                        <div class="btn-group btn-panel" data-toggle="buttons">
-                                            <label class="btn btn-panel p-0 m-0 active">
-                                                <input type="radio">
-                                                <span class="w-Custom12">
-                                                    page
-                                                </span>
-                                            </label>
-                                            <label class="btn btn-panel p-0 m-0 down">
-                                                <input type="radio" checked>
-                                                <span class="w-Custom12">
-                                                    page
-                                                </span>
-                                            </label>
+                                        <div class="btn-group btn-panel">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                <span class="w-Custom12 text-none">PAGE</span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-4 p-0">
                                 <div class="clearfix ml-2 pl-2">
-                                    <div class="float-left card bg-transparent border border-white rounded"
+                                    <div class="float-left card bg-transparent no-border"
                                         style="width: 156px;">
                                         <div class="card-body p-1">
                                             <div class="form-inline">
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            7
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            7
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">7</span>
+                                                    </button>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            8
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            8
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">8</span>
+                                                    </button>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            9
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            9
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">9</span>
+                                                    </button>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            4
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            4
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">4</span>
+                                                    </button>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            5
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            6
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">5</span>
+                                                    </button>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            6
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            6
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">6</span>
+                                                    </button>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            1
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            1
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">1</span>
+                                                    </button>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            2
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            2
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">2</span>
+                                                    </button>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            3
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            3
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">3</span>
+                                                    </button>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active text-none">
-                                                        <input type="radio">
-                                                        <span class="w-Custom12">
-                                                            Clear
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down text-none">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom12">
-                                                            Clear
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">Clear</span>
+                                                    </button>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            0
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            0
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">0</span>
+                                                    </button>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            c. e.
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            c. e.
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">C. E.</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="float-left card bg-transparent no-border mt-2"
-                                        style="width: 156px;">
+                                    <div class="float-left card bg-transparent no-border mt-2" style="width: 156px; padding-top: 2px;">
                                         <div class="card-body p-1">
                                             <div class="form-inline">
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            val
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            val
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">VAL</span>
+                                                    </button>
                                                 </div>
                                                 <div class="btn-panel invisible">
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active text-none">
-                                                        <input type="radio">
-                                                        <span class="w-Custom12">
-                                                            Reset
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down text-none">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom12">
-                                                            Reset
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                        <span class="w-Custom12 text-none">Reset</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1486,32 +1197,14 @@
                                                 <span class="d-block tiny">commande</span>
                                             </div>
                                             <div class="form-inline p-1">
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom12">
-                                                            sil
-                                                        </span>
+                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                    <label class="btn btn-panel p-0 m-0">
+                                                        <input type="radio" name="controls">
+                                                        <span class="w-Custom12">sil</span>
                                                     </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom12">
-                                                            sil
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2 border-top border-white">
-                                                            sil
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2 border-top border-white">
-                                                            sil
-                                                        </span>
+                                                    <label class="btn btn-panel p-0 m-0">
+                                                        <input type="radio" name="controls" >
+                                                        <span class="w-Custom2 border-top border-white">sil</span>
                                                     </label>
                                                 </div>
                                                 <div class="btn-group btn-panel" data-toggle="buttons">
@@ -1528,47 +1221,20 @@
                                                         </span>
                                                     </label>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active text-none">
-                                                        <input type="radio">
-                                                        <span class="w-Custom2">
-                                                            Tx ON
-                                                        </span>
+                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                    <label class="btn btn-panel p-0 m-0 text-none">
+                                                        <input type="radio" name="controls">
+                                                        <span class="w-Custom2">Tx ON</span>
                                                     </label>
-                                                    <label class="btn btn-panel p-0 m-0 down text-none">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom2">
-                                                            Tx ON
-                                                        </span>
+                                                    <label class="btn btn-panel p-0 m-0 text-none">
+                                                        <input type="radio" name="controls" id="control-up-3">
+                                                        <span class="w-Custom2">Tx OFF</span>
                                                     </label>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active text-none">
-                                                        <input type="radio">
-                                                        <span class="w-Custom12">
-                                                            Tx OFF
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down text-none">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom12">
-                                                            Tx OFF
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 active text-none">
-                                                        <input type="radio">
-                                                        <span class="w-Custom12">
-                                                            Reset
-                                                        </span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 down text-none">
-                                                        <input type="radio" checked>
-                                                        <span class="w-Custom12">
-                                                            Reset
-                                                        </span>
-                                                    </label>
+                                                <div class="btn-group btn-panel">
+                                                    <button type="button" class="btn btn-panel p-0 m-0">
+                                                        <span class="w-Custom12 text-none">Reset</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
