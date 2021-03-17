@@ -25,8 +25,12 @@
     <!-- DATATABLE -->
     <link rel="stylesheet" href="{{ asset('plugin/dataTables/datatables.min.css') }}">
     <script src="{{ asset('plugin/dataTables/datatables.min.js') }}"></script>
+
     <!-- RADAR STYLE -->
     <link rel="stylesheet" href="{{ asset('css/radar-style.css') }}">
+
+    {{-- pagination 
+    <script src="{{ asset('plugin/pagination/pagination.js') }}"></script>--}}
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="{{ asset('fontawesomePro/css/all.css') }}">

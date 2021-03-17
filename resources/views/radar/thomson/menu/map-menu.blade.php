@@ -110,7 +110,7 @@
                 <div class="col-12">Reporting Point :</div>
                 <div class="col-12">
                     <div class="form-check form-check-inline m-0">
-                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio7" value="option9"
+                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio9" value="option9"
                             aria-label="mapGRadio">
                     </div>
                     <div class="form-check form-check-inline">
@@ -120,7 +120,7 @@
                 </div>
                 <div class="col-12">
                     <div class="form-check form-check-inline m-0">
-                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio8" value="option10"
+                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio10" value="option10"
                             aria-label="mapGRadio">
                     </div>
                     <div class="form-check form-check-inline">
@@ -232,7 +232,7 @@
                 </div>
                 <div class="col-5">
                     <div class="form-check form-check-inline m-0">
-                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio19" value="option19"
+                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio20" value="option19"
                             aria-label="mapGRadio">
                     </div>
                     <div class="form-check form-check-inline">
@@ -242,7 +242,7 @@
                 </div>
                 <div class="col-5">
                     <div class="form-check form-check-inline m-0">
-                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio20" value="option20"
+                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio21" value="option20"
                             aria-label="mapGRadio">
                     </div>
                     <div class="form-check form-check-inline">
@@ -252,7 +252,7 @@
                 </div>
                 <div class="col-5">
                     <div class="form-check form-check-inline m-0">
-                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio21" value="option21"
+                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio22" value="option21"
                             aria-label="mapGRadio">
                     </div>
                     <div class="form-check form-check-inline">
@@ -262,7 +262,7 @@
                 </div>
                 <div class="col-5">
                     <div class="form-check form-check-inline m-0">
-                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio22" value="option22"
+                        <input class="form-check-input m-0" type="radio" name="mapGRadio" id="mapGRadio23" value="option22"
                             aria-label="mapGRadio">
                     </div>
                     <div class="form-check form-check-inline">
@@ -314,4 +314,60 @@
     </div>
 @endsection
 @include('radar.thomson.panel.side-panel')
+@endsection
+@section('js')
+<script>
+    var body = document.body,
+        r = document.querySelector('#r'),
+        g = document.querySelector('#g'),
+        b = document.querySelector('#b'),
+        r_out = document.querySelector('#r_out'),
+        g_out = document.querySelector('#g_out'),
+        b_out = document.querySelector('#b_out'),
+        hex_out = document.querySelector('#hex');
+
+    function setColor() {
+        var r_hex = parseInt(r.value, 10).toString(16),
+            g_hex = parseInt(g.value, 10).toString(16),
+            b_hex = parseInt(b.value, 10).toString(16),
+            hex = "#" + pad(r_hex) + pad(g_hex) + pad(b_hex);
+        hex_out.style.backgroundColor = hex;
+        //hex_out.value = hex;
+    }
+
+    function pad(n) {
+        return (n.length < 2) ? "0" + n : n;
+    }
+
+    r.addEventListener('change', function() {
+        setColor();
+        r_out.value = r.value;
+    }, false);
+
+    r.addEventListener('input', function() {
+        setColor();
+        r_out.value = r.value;
+    }, false);
+
+    g.addEventListener('change', function() {
+        setColor();
+        g_out.value = g.value;
+    }, false);
+
+    g.addEventListener('input', function() {
+        setColor();
+        g_out.value = g.value;
+    }, false);
+
+    b.addEventListener('change', function() {
+        setColor();
+        b_out.value = b.value;
+    }, false);
+
+    b.addEventListener('input', function() {
+        setColor();
+        b_out.value = b.value;
+    }, false);
+
+</script>
 @endsection

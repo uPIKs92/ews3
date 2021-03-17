@@ -24,7 +24,7 @@
                     </div>
                     <input type="text" class="form-control w-30 mr-2" aria-label="alt input" id="trackSimOut1" value="0">
                     <input type="range" class="custom-range w-30" min="0" max="100" value="0" id="trackSim1"
-                        oninput="trackSimOut1.value = trackSim1.value">
+                        oninput="trackSimOut1.value = trackSim1.value" aria-label="trackSimOut1">
                 </div>
                 <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
@@ -32,7 +32,7 @@
                     </div>
                     <input type="text" class="form-control w-30 mr-2" aria-label="hdg input" id="trackSimOut2" value="0">
                     <input type="range" class="custom-range w-30" min="0" max="100" value="0" id="trackSim2"
-                        oninput="trackSimOut2.value = trackSim2.value">
+                        oninput="trackSimOut2.value = trackSim2.value" aria-label="trackSimOut2">
                 </div>
                 <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
@@ -40,7 +40,7 @@
                     </div>
                     <input type="text" class="form-control w-30 mr-2" aria-label="spd input" id="trackSimOut3" value="0">
                     <input type="range" class="custom-range w-30" min="0" max="100" value="0" id="trackSim3"
-                        oninput="trackSimOut3.value = trackSim3.value">
+                        oninput="trackSimOut3.value = trackSim3.value" aria-label="trackSimOut3">
                 </div>
                 <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">
@@ -110,7 +110,7 @@
                     </div>
                     <input type="text" class="form-control w-30 mr-2" aria-label="mC input" id="trackSimOut4" value="0">
                     <input type="range" class="custom-range w-30" min="0" max="100" value="0" id="trackSim4"
-                        oninput="trackSimOut4.value = trackSim4.value">
+                        oninput="trackSimOut4.value = trackSim4.value" aria-label="trackSimOut4">
                 </div>
                 <div class="input-group mb-1 w-100">
                     <div class="input-group-prepend">

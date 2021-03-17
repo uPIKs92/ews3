@@ -27,7 +27,7 @@
                 <input class="form-check-input" type="checkbox" id="fadeCheckbox" value="option1">
                 <label class="form-check-label" for="fadeCheckbox">Off</label>
                 <div class="w-75 text-right ml-4">
-                    <input type="number" class="form-control w-75 text-right" value="0">
+                    <input type="number" class="form-control w-75 text-right" value="0" aria-label="fadeCtrlOut">
                     <span>Revs</span>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                         <span class="w-Custom6 mb-1">Gain :</span>
                     </div>
                     <input type="range" class="custom-range w-50" min="0" max="100" value="0" id="GO1"
-                        oninput="gainOut.value = GO1.value">
+                        oninput="gainOut.value = GO1.value" aria-label="gainOut">
                     <input type="text" class="form-control w-20 ml-2" aria-label="gain input" id="gainOut" value="0">
                 </div>
                 <div class="input-group mb-2 w-45 float-right">
@@ -111,7 +111,7 @@
                         <span class="w-Custom6 mb-1">Offset :</span>
                     </div>
                     <input type="range" class="custom-range w-50" min="0" max="100" value="0" id="GO2"
-                        oninput="offsetOut.value = GO2.value">
+                        oninput="offsetOut.value = GO2.value" aria-label="offsetOut">
                     <input type="text" class="form-control w-20 ml-2" aria-label="offset input" id="offsetOut" value="0">
                 </div>
                 <button type="button" class="btn btn-dark p-0 pl-3 pr-3 w-100">Set</button>
@@ -151,4 +151,60 @@
     </div>
 @endsection
 @include('radar.thomson.panel.side-panel')
+@endsection
+@section('js')
+<script>
+    var body = document.body,
+        r = document.querySelector('#r'),
+        g = document.querySelector('#g'),
+        b = document.querySelector('#b'),
+        r_out = document.querySelector('#r_out'),
+        g_out = document.querySelector('#g_out'),
+        b_out = document.querySelector('#b_out'),
+        hex_out = document.querySelector('#hex');
+
+    function setColor() {
+        var r_hex = parseInt(r.value, 10).toString(16),
+            g_hex = parseInt(g.value, 10).toString(16),
+            b_hex = parseInt(b.value, 10).toString(16),
+            hex = "#" + pad(r_hex) + pad(g_hex) + pad(b_hex);
+        hex_out.style.backgroundColor = hex;
+        //hex_out.value = hex;
+    }
+
+    function pad(n) {
+        return (n.length < 2) ? "0" + n : n;
+    }
+
+    r.addEventListener('change', function() {
+        setColor();
+        r_out.value = r.value;
+    }, false);
+
+    r.addEventListener('input', function() {
+        setColor();
+        r_out.value = r.value;
+    }, false);
+
+    g.addEventListener('change', function() {
+        setColor();
+        g_out.value = g.value;
+    }, false);
+
+    g.addEventListener('input', function() {
+        setColor();
+        g_out.value = g.value;
+    }, false);
+
+    b.addEventListener('change', function() {
+        setColor();
+        b_out.value = b.value;
+    }, false);
+
+    b.addEventListener('input', function() {
+        setColor();
+        b_out.value = b.value;
+    }, false);
+
+</script>
 @endsection

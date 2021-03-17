@@ -99,10 +99,11 @@
                                     </div>
                                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                         <label class="btn btn-panel btn-panel-none p-0 m-0">
-                                            <input type="radio" name="controls" id="control-up-1">
+                                            <input type="radio" name="controls" id="control-up-1"
+                                                aria-label="control-up-1">
                                         </label>
                                         <label class="btn btn-panel p-0 m-0">
-                                            <input type="radio" name="controls" >
+                                            <input type="radio" name="controls">
                                             <span class="w-Custom12">ANT ON</span>
                                         </label>
                                         <label class="btn btn-panel p-0 m-0">
@@ -112,7 +113,8 @@
                                     </div>
                                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                         <label class="btn btn-panel btn-panel-none p-0 m-0">
-                                            <input type="radio" name="controls" id="control-down-1">
+                                            <input type="radio" name="controls" id="control-down-1"
+                                                aria-label="control-down-1">
                                         </label>
                                         <label class="btn btn-panel p-0 m-0">
                                             <input type="radio" name="controls" id="control-down-2">
@@ -256,7 +258,7 @@
                     </div>
                     <div class="col-12 p-2">
                         <div class="rows no-border" style="height: 267px;">
-                            <div class="wrapTable row text-dark m-0 pr-3 border-bottom-0 bg-warning">
+                            <div class="wrapTable row text-warning m-0 border-bottom-0 bg-secondary">
                                 <div class="col tiny-2">Sector</div>
                                 <div class="col tiny-2">Mode</div>
                                 <div class="col tiny-2">TxMode</div>
@@ -266,11 +268,11 @@
                                 <div class="col tiny-2">RngE</div>
                                 <div class="col tiny-2">Elev</div>
                             </div>
-                            <div class="wrapTable w-100 m-0 border-top-0" style="overflow-y: scroll">
-                                <table class="table table-responsive-sm text-white text-center mb-0">
+                            <div class="wrapTable w-100 m-0 border-top-0">
+                                <table id="tccr-screen" class="table table-responsive-sm text-warning text-center mb-0">
                                     <tbody class="wrapCol bg-dark">
                                         <tr class="tiny border-bottom border-white">
-                                            <th>1</th>
+                                            <td>1</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -280,7 +282,7 @@
                                             <td>0</td>
                                         </tr>
                                         <tr class="tiny border-bottom border-white">
-                                            <th>2</th>
+                                            <td>2</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -290,7 +292,7 @@
                                             <td>0</td>
                                         </tr>
                                         <tr class="tiny border-bottom border-white">
-                                            <th>3</th>
+                                            <td>3</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -300,7 +302,47 @@
                                             <td>0</td>
                                         </tr>
                                         <tr class="tiny border-bottom border-white">
-                                            <th>4</th>
+                                            <td>4</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr class="tiny border-bottom border-white">
+                                            <td>5</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr class="tiny border-bottom border-white">
+                                            <td>6</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr class="tiny border-bottom border-white">
+                                            <td>7</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr class="tiny border-bottom border-white">
+                                            <td>8</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -453,18 +495,15 @@
                                                 <span class="w-Custom12 text-none">ELEV</span>
                                             </button>
                                         </div>
-                                        <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
-                                                <span class="w-Custom12 text-none">PAGE</span>
-                                            </button>
-                                        </div>
+                                        {{-- <div id="page_nav" class="btn-group btn-panel" data-toggle="buttons">
+                                            pagination btn
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
                             <div class="col-4 p-0">
                                 <div class="clearfix ml-2 pl-2">
-                                    <div class="float-left card bg-transparent no-border"
-                                        style="width: 156px;">
+                                    <div class="float-left card bg-transparent no-border" style="width: 156px;">
                                         <div class="card-body p-1">
                                             <div class="form-inline">
                                                 <div class="btn-group btn-panel">
@@ -530,7 +569,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="float-left card bg-transparent no-border mt-2" style="width: 156px; padding-top: 2px;">
+                                    <div class="float-left card bg-transparent no-border mt-2"
+                                        style="width: 156px; padding-top: 2px;">
                                         <div class="card-body p-1">
                                             <div class="form-inline">
                                                 <div class="btn-group btn-panel">
@@ -1197,17 +1237,42 @@
                                                 <span class="d-block tiny">commande</span>
                                             </div>
                                             <div class="form-inline p-1">
-                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0">
-                                                        <input type="radio" name="controls">
-                                                        <span class="w-Custom12">sil</span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0">
-                                                        <input type="radio" name="controls" >
-                                                        <span class="w-Custom2 border-top border-white">sil</span>
-                                                    </label>
+                                                <div class="btn-group-toggle form-check" data-toggle="buttons">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-4 p-0">
+                                                            <div class="btn btn-panel p-0 m-0">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="inlineRadioOptions" id="inlineRadio1"
+                                                                    value="option1">
+                                                                <label class="form-check-label w-Custom2 h-100 m-auto"
+                                                                    for="inlineRadio1">sil</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4 p-0">
+                                                            <div class="btn btn-panel p-0 m-0">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="inlineRadioOptions" id="inlineRadio2"
+                                                                    value="option2">
+                                                                <label class="form-check-label w-Custom2 h-100 m-auto"
+                                                                    for="inlineRadio2">
+                                                                    <span class="border-top border-white">sil</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4 p-0">
+                                                            <div
+                                                                class="btn btn-panel btn-panel-none p-0 m-0 text-none invisible">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="inlineRadioOptions" id="inlineRadio6"
+                                                                    value="option6">
+                                                                <label class="form-check-label w-Custom12 h-100 m-auto"
+                                                                    for="inlineRadio6">Reset</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="btn-group btn-panel" data-toggle="buttons">
+                                                <div class="btn-group btn-panel position-absolute align-self-start"
+                                                    data-toggle="buttons" style="right: 5px;">
                                                     <label class="btn btn-panel p-0 m-0 active text-none">
                                                         <input type="radio">
                                                         <span class="w-Custom12">
@@ -1221,20 +1286,38 @@
                                                         </span>
                                                     </label>
                                                 </div>
-                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                    <label class="btn btn-panel p-0 m-0 text-none">
-                                                        <input type="radio" name="controls">
-                                                        <span class="w-Custom2">Tx ON</span>
-                                                    </label>
-                                                    <label class="btn btn-panel p-0 m-0 text-none">
-                                                        <input type="radio" name="controls" id="control-up-3">
-                                                        <span class="w-Custom2">Tx OFF</span>
-                                                    </label>
-                                                </div>
-                                                <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0">
-                                                        <span class="w-Custom12 text-none">Reset</span>
-                                                    </button>
+                                                <div class="btn-group-toggle form-check" data-toggle="buttons">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-4 p-0">
+                                                            <div class="btn btn-panel p-0 m-0 text-none">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="inlineRadioOptions" id="inlineRadio4"
+                                                                    value="option4">
+                                                                <label class="form-check-label w-Custom2 h-100 m-auto"
+                                                                    for="inlineRadio4">Tx
+                                                                    ON</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4 p-0">
+                                                            <div class="btn btn-panel p-0 m-0 text-none">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="inlineRadioOptions" id="inlineRadio5"
+                                                                    value="option5">
+                                                                <label class="form-check-label w-Custom2 h-100 m-auto"
+                                                                    for="inlineRadio5">Tx
+                                                                    OFF</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4 p-0">
+                                                            <div class="btn btn-panel btn-panel-none p-0 m-0 text-none">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="inlineRadioOptions" id="inlineRadio6"
+                                                                    value="option6">
+                                                                <label class="form-check-label w-Custom12 h-100 m-auto"
+                                                                    for="inlineRadio6">Reset</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

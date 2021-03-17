@@ -95,7 +95,8 @@
         border-spacing: 0 4em;
         background: #ECECEC;
         border-bottom: 5px solid transparent;
-        background-clip: padding-box
+        background-clip: padding-box;
+        -webkit-background-clip: padding-box;
     }
 
     .table-cs,
@@ -184,6 +185,7 @@ right: -10px;
         left: 20px;
         bottom: 70px;
         width: fit-content;
+        width: -moz-fit-content;
         cursor: pointer;
         z-index: 400;
     }
@@ -395,7 +397,7 @@ right: -10px;
     .col-9,
     .col-10,
     .col-12,
-    .col{
+    .col {
         border-style: none;
         padding: 10px
     }
@@ -480,6 +482,37 @@ right: -10px;
     .mini-btn li a {
         width: 22px;
         height: 17px;
+    }
+
+    .pagination li:hover {
+        cursor: pointer;
+    }
+
+    table tbody tr {
+        display: none;
+    }
+
+    #page_nav a,
+    #page_nav a:active{
+        text-decoration: none;
+        color: #aeaead;
+        margin-top: 14px;
+        padding-bottom: 15px;
+        display: block;
+    }
+
+    #page_nav a:hover{
+        text-decoration: none;
+        color: #eefd00;
+    }
+
+    .z-pos-up{
+        z-index: 5;
+        margin-left: 20px;
+    }
+
+    .z-pos-down{
+        z-index: 4;
     }
 
 </style>
