@@ -593,7 +593,6 @@ pre code {
 .container {
     width: 100%;
     margin: auto;
-    padding: 7px;
     text-align: center;
 }
 
@@ -8673,7 +8672,7 @@ button.bg-dark:hover {
 }
 
 .h-Custom2 {
-    height: 337px !important;
+    height: 351px !important;
 }
 
 .h-Custom3 {

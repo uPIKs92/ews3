@@ -717,7 +717,7 @@
                 <div class="col-12 p-0 pt-1 mt-1 ml-2">
                     <div class="clearfix">
                         <div class="float-left card bg-transparent border border-white rounded mr-1 pb-2"
-                            style="width: 210.75px; height: 847.75px; padding-top: 31px;">
+                            style="width: 210.75px; min-height: 847.75px; padding-top: 31px;">
                             <div class="row no-gutters pt-2">
                                 <div class="col-12 p-0 pb-4">
                                     <div class="clearfix">

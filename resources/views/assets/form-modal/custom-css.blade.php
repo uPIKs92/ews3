@@ -37,7 +37,7 @@
         position: absolute;
         /* max-height: 400px; */
         /* overflow-y: scroll;
- overflow-x: hidden; */
+        overflow-x: hidden; */
         background-color: #393e4670;
     }
 
@@ -493,7 +493,7 @@ right: -10px;
     }
 
     #page_nav a,
-    #page_nav a:active{
+    #page_nav a:active {
         text-decoration: none;
         color: #aeaead;
         margin-top: 9px;
@@ -501,7 +501,7 @@ right: -10px;
         display: block;
     }
 
-    #page_nav a:hover{
+    #page_nav a:hover {
         text-decoration: none;
         color: #eefd00;
     }

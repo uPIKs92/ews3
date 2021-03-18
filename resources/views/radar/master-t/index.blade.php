@@ -1,66 +1,70 @@
 @extends('template.master')
 @section('content')
-    <div id="radar-screen">
-        <ul class='custom-menu'>
-            <li data-action="list-1">Arrow</li>
-            <li data-action="list-2">Hand</li>
-            <li data-action="list-3">Zoom In</li>
-            <li data-action="list-4">Zoom Out</li>
-            <li class="dropdown-submenu-right p-0">
-                <a href="" data-toggle="dropdown" class="dropdown-item">
-                    Scale
-                </a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-item p-0">
-                        <a href="#" class="dropdown-item">8</a>
-                    </li>
-                    <li class="dropdown-item p-0">
-                        <a href="#" class="dropdown-item">12</a>
-                    </li>
-                    <li class="dropdown-item p-0">
-                        <a href="#" class="dropdown-item">16</a>
-                    </li>
-                    <li class="dropdown-item p-0">
-                        <a href="#" class="dropdown-item">24</a>
-                    </li>
-                    <li class="dropdown-item p-0">
-                        <a href="#" class="dropdown-item">32</a>
-                    </li>
-                    <li class="dropdown-item p-0">
-                        <a href="#" class="dropdown-item">48</a>
-                    </li>
-                    <li class="dropdown-item p-0">
-                        <a href="#" class="dropdown-item">64</a>
-                    </li>
-                    <li class="dropdown-item p-0">
-                        <a href="#" class="dropdown-item">96</a>
-                    </li>
-                    <li class="dropdown-item p-0">
-                        <a href="#" class="dropdown-item">128</a>
-                    </li>
-                    <li class="dropdown-item p-0">
-                        <a href="#" class="dropdown-item">192</a>
-                    </li>
-                    <li class="dropdown-item p-0">
-                        <a href="#" class="dropdown-item">256</a>
-                    </li>
-                </ul>
-            </li>
-            <li data-action="list-6">Save Current</li>
-            <li data-action="list-7">Restore Save</li>
-            <li data-action="list-8">Restore Reference</li>
-            <li data-action="list-9">Cet Center</li>
-            <li data-action="list-10">Create DB Vector</li>
-            <li data-action="list-11">Create RB Vector</li>
-            <li>
-                <a href="#" role="button" data-toggle="modal" onclick="openForm('#modal-manual-track')">
-                    Manual Track</a>
-            </li>
-        </ul>
+    <div class="container-fluid clearfix p-0">
+        <div class="float-left bg-black h-100" style="width: 1621px;">
+            <ul class='custom-menu'>
+                <li data-action="list-1">Arrow</li>
+                <li data-action="list-2">Hand</li>
+                <li data-action="list-3">Zoom In</li>
+                <li data-action="list-4">Zoom Out</li>
+                <li class="dropdown-submenu-right p-0">
+                    <a href="" data-toggle="dropdown" class="dropdown-item">
+                        Scale
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item p-0">
+                            <a href="#" class="dropdown-item">8</a>
+                        </li>
+                        <li class="dropdown-item p-0">
+                            <a href="#" class="dropdown-item">12</a>
+                        </li>
+                        <li class="dropdown-item p-0">
+                            <a href="#" class="dropdown-item">16</a>
+                        </li>
+                        <li class="dropdown-item p-0">
+                            <a href="#" class="dropdown-item">24</a>
+                        </li>
+                        <li class="dropdown-item p-0">
+                            <a href="#" class="dropdown-item">32</a>
+                        </li>
+                        <li class="dropdown-item p-0">
+                            <a href="#" class="dropdown-item">48</a>
+                        </li>
+                        <li class="dropdown-item p-0">
+                            <a href="#" class="dropdown-item">64</a>
+                        </li>
+                        <li class="dropdown-item p-0">
+                            <a href="#" class="dropdown-item">96</a>
+                        </li>
+                        <li class="dropdown-item p-0">
+                            <a href="#" class="dropdown-item">128</a>
+                        </li>
+                        <li class="dropdown-item p-0">
+                            <a href="#" class="dropdown-item">192</a>
+                        </li>
+                        <li class="dropdown-item p-0">
+                            <a href="#" class="dropdown-item">256</a>
+                        </li>
+                    </ul>
+                </li>
+                <li data-action="list-6">Save Current</li>
+                <li data-action="list-7">Restore Save</li>
+                <li data-action="list-8">Restore Reference</li>
+                <li data-action="list-9">Cet Center</li>
+                <li data-action="list-10">Create DB Vector</li>
+                <li data-action="list-11">Create RB Vector</li>
+                <li>
+                    <a href="#" role="button" data-toggle="modal" onclick="openForm('#modal-manual-track')">
+                        Manual Track</a>
+                </li>
+            </ul>
+        </div>
+        <div class="side-panel float-left h-100">
+            @include('radar.master-t.panel.side-panel')
+        </div>
+        @include('radar.master-t.panel.form-modal')
+        @include('radar.master-t.panel.frequency-detail')
     </div>
-    @include('radar.master-t.panel.side-panel')
-    @include('radar.master-t.panel.form-modal')
-    @include('radar.master-t.panel.frequency-detail')
 @endsection
 @section('js')
     <script>

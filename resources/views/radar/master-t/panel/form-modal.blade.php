@@ -13,12 +13,12 @@
                     </div>
                     <div class="btnCustom" data-toggle="buttons" aria-label="Collapse">
                         <label class="btn btn-flat active" data-toggle="collapse"
-                            data-target="#modal-jamming-analisis #formContent">
+                            data-target="#form-content-jamming-analisis">
                             <input type="radio">
                             <i class="fad fa-diamond"></i> I
                         </label>
                         <label class="btn btn-flat-down" data-toggle="collapse"
-                            data-target="#modal-jamming-analisis #formContent">
+                            data-target="#form-content-jamming-analisis">
                             <input type="radio" checked>
                             <i class="fad fa-diamond" style="color: brown;"></i> I
                         </label>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="formContent" class="collapse">
+                    <div id="form-content-jamming-analisis" class="collapse">
                         <div class="rows">
                             <div class="row">
                                 <div class="col-6" style="margin: auto;">
@@ -77,12 +77,12 @@
                     </div>
                     <div class="btnCustom" data-toggle="buttons" aria-label="Collapse">
                         <label class="btn btn-flat active" data-toggle="collapse"
-                            data-target="#modal-clutter-sector #formContent">
+                            data-target="#form-content-clutter-sector">
                             <input type="radio">
                             <i class="fad fa-diamond"></i> I
                         </label>
                         <label class="btn btn-flat-down" data-toggle="collapse"
-                            data-target="#modal-clutter-sector #formContent">
+                            data-target="#form-content-clutter-sector">
                             <input type="radio" checked>
                             <i class="fad fa-diamond" style="color: brown;"></i> I
                         </label>
@@ -105,7 +105,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="formContent" class="collapse">
+                    <div id="form-content-clutter-sector" class="collapse">
                         <div class="rows">
                             <div class="row" style="padding-top: 10px">
                                 <div class="col-sm-3">
@@ -249,12 +249,12 @@
                     </div>
                     <div class="btnCustom" data-toggle="buttons" aria-label="Collapse">
                         <label class="btn btn-flat active" data-toggle="collapse"
-                            data-target="#modal-frek-sector #formContent">
+                            data-target="#form-content-frek-sector">
                             <input type="radio">
                             <i class="fad fa-diamond"></i> I
                         </label>
                         <label class="btn btn-flat-down" data-toggle="collapse"
-                            data-target="#modal-frek-sector #formContent">
+                            data-target="#form-content-frek-sector">
                             <input type="radio" checked>
                             <i class="fad fa-diamond" style="color: brown;"></i> I
                         </label>
@@ -277,7 +277,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="formContent" class="collapse">
+                    <div id="form-content-frek-sector" class="collapse">
                         <div class="rows">
                             <div class="row" style="padding-top: 10px">
                                 <div class="col-sm-3">
@@ -366,12 +366,12 @@
                     </div>
                     <div class="btnCustom" data-toggle="buttons" aria-label="Collapse">
                         <label class="btn btn-flat active" data-toggle="collapse"
-                            data-target="#modal-tilt-sector #formContent">
+                            data-target="#form-content-tilt-sector">
                             <input type="radio">
                             <i class="fad fa-diamond"></i> I
                         </label>
                         <label class="btn btn-flat-down" data-toggle="collapse"
-                            data-target="#modal-tilt-sector #formContent">
+                            data-target="#form-content-tilt-sector">
                             <input type="radio" checked>
                             <i class="fad fa-diamond" style="color: brown;"></i> I
                         </label>
@@ -394,7 +394,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="formContent" class="collapse">
+                    <div id="form-content-tilt-sector" class="collapse">
                         <div class="rows">
                             <div class="row" style="padding-top: 10px">
                                 <div class="col-sm-3">
@@ -496,12 +496,12 @@
                     </div>
                     <div class="btnCustom" data-toggle="buttons" aria-label="Collapse">
                         <label class="btn btn-flat active" data-toggle="collapse"
-                            data-target="#modal-frekuensi-filter #formContent">
+                            data-target="#form-content-frekuensi-filter">
                             <input type="radio">
                             <i class="fad fa-diamond"></i> I
                         </label>
                         <label class="btn btn-flat-down" data-toggle="collapse"
-                            data-target="#modal-frekuensi-filter #formContent">
+                            data-target="#form-content-frekuensi-filter">
                             <input type="radio" checked>
                             <i class="fad fa-diamond" style="color: brown;"></i> I
                         </label>
@@ -514,11 +514,11 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="formContent" class="collapse">
+                    <div id="form-content-frekuensi-filter" class="collapse">
                         <div class="rows" style="padding-left: 20px;">
                             <div class="row">
                                 <div class="col-12">
-                                    <div id="bFMode-1" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -534,7 +534,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div id="bFMode-2" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -550,7 +550,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div id="bFMode-3" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -566,7 +566,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div id="bFMode-4" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -582,7 +582,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div id="bFMode-5" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -598,7 +598,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div id="bFMode-6" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -614,7 +614,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div id="bFMode-7" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -630,7 +630,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div id="bFMode-8" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -646,7 +646,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div id="bFMode-9" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -859,12 +859,12 @@
                     </div>
                     <div class="btnCustom" data-toggle="buttons" aria-label="Collapse">
                         <label class="btn btn-flat active" data-toggle="collapse"
-                            data-target="#modal-track-filter #formContent">
+                            data-target="#form-content-track-filter">
                             <input type="radio">
                             <i class="fad fa-diamond"></i> I
                         </label>
                         <label class="btn btn-flat-down" data-toggle="collapse"
-                            data-target="#modal-track-filter #formContent">
+                            data-target="#form-content-track-filter">
                             <input type="radio" checked>
                             <i class="fad fa-diamond" style="color: brown;"></i> I
                         </label>
@@ -887,7 +887,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="formContent" class="collapse">
+                    <div id="form-content-track-filter" class="collapse">
                         <div class="rows" style="padding-left: 20px;">
                             <div class="row">
                                 <div class="col-12">
@@ -962,12 +962,12 @@
                     </div>
                     <div class="btnCustom" data-toggle="buttons" aria-label="Collapse">
                         <label class="btn btn-flat active" data-toggle="collapse"
-                            data-target="#modal-cinematic-filter #formContent">
+                            data-target="#form-content-cinematic-filter">
                             <input type="radio">
                             <i class="fad fa-diamond"></i> I
                         </label>
                         <label class="btn btn-flat-down" data-toggle="collapse"
-                            data-target="#modal-cinematic-filter #formContent">
+                            data-target="#form-content-cinematic-filter">
                             <input type="radio" checked>
                             <i class="fad fa-diamond" style="color: brown;"></i> I
                         </label>
@@ -990,7 +990,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="formContent" class="collapse">
+                    <div id="form-content-cinematic-filter" class="collapse">
                         <div class="rows" style="padding-left: 20px;">
                             <div class="row">
                                 <div class="col-4">
@@ -1241,7 +1241,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <table id="trackInfo" class="table table-sm">
+                    <table id="plotInfo" class="table table-sm">
                         <tbody>
                             <tr>
                                 <th scope="row">kind</th>
@@ -1318,12 +1318,12 @@
                     </div>
                     <div class="btnCustom" data-toggle="buttons" aria-label="Collapse">
                         <label class="btn btn-flat active" data-toggle="collapse"
-                            data-target="#modal-plot-filter #formContent">
+                            data-target="#form-content-plot-filter">
                             <input type="radio">
                             <i class="fad fa-diamond"></i> I
                         </label>
                         <label class="btn btn-flat-down" data-toggle="collapse"
-                            data-target="#modal-plot-filter #formContent">
+                            data-target="#form-content-plot-filter">
                             <input type="radio" checked>
                             <i class="fad fa-diamond" style="color: brown;"></i> I
                         </label>
@@ -1346,7 +1346,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="formContent" class="collapse">
+                    <div id="form-content-plot-filter" class="collapse">
                         <div class="rows" style="padding-left: 20px;">
                             <div class="row">
                                 <div class="col-12">
@@ -1421,12 +1421,12 @@
                     </div>
                     <div class="btnCustom" data-toggle="buttons" aria-label="Collapse">
                         <label class="btn btn-flat active" data-toggle="collapse"
-                            data-target="#modal-map-filter #formContent">
+                            data-target="#form-content-map-filter">
                             <input type="radio">
                             <i class="fad fa-diamond"></i> I
                         </label>
                         <label class="btn btn-flat-down" data-toggle="collapse"
-                            data-target="#modal-map-filter #formContent">
+                            data-target="#form-content-map-filter">
                             <input type="radio" checked>
                             <i class="fad fa-diamond" style="color: brown;"></i> I
                         </label>
@@ -1439,11 +1439,11 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="formContent" class="collapse">
+                    <div id="form-content-map-filter" class="collapse">
                         <div class="rows" style="padding-left: 20px;">
                             <div class="row">
                                 <div class="col-12">
-                                    <div id="bFMode-1" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -1459,7 +1459,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div id="bFMode-2" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -1475,7 +1475,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div id="bFMode-3" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -1491,7 +1491,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div id="bFMode-4" class="btnSquare" data-toggle="buttons">
+                                    <div class="btnSquare" data-toggle="buttons">
                                         <label class="btn btn-green active">
                                             <input type="radio">
                                             <label class="form-check-label">
@@ -1536,17 +1536,17 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="formContent" class="collapsed">
+                    <div id="form-content-manual-track" class="collapsed">
                         <div class="rows">
                             <div class="row">
                                 <div class="col-3">
                                     distance
                                 </div>
                                 <div class="col-4" style="margin-right: 20px;">
-                                    <input type="text" class="form-control" value="0" id="distOut">
+                                    <input type="text" class="form-control" value="0" id="distOut" aria-label="distOut">
                                 </div>
                                 <div class="col-4">
-                                    <input type="range" class="custom-range" min="0" max="1000" value="0" id="cr1"
+                                    <input type="range" class="custom-range" min="0" max="1000" value="0" id="cr1" aria-label="cr1"
                                         oninput="distOut.value = cr1.value">
                                 </div>
                             </div>
@@ -1555,10 +1555,10 @@
                                     azimuth
                                 </div>
                                 <div class="col-4" style="margin-right: 20px;">
-                                    <input type="text" class="form-control" value="0" id="aziOut">
+                                    <input type="text" class="form-control" value="0" id="aziOut" aria-label="aziOut">
                                 </div>
                                 <div class="col-4">
-                                    <input type="range" class="custom-range" min="0" max="100" value="0" id="cr2"
+                                    <input type="range" class="custom-range" min="0" max="100" value="0" id="cr2" aria-label="cr2"
                                         oninput="aziOut.value = cr2.value">
                                 </div>
                             </div>
@@ -1567,10 +1567,10 @@
                                     heading
                                 </div>
                                 <div class="col-4" style="margin-right: 20px;">
-                                    <input type="text" class="form-control" value="0" id="headOut">
+                                    <input type="text" class="form-control" value="0" id="headOut" aria-label="headOut">
                                 </div>
                                 <div class="col-4">
-                                    <input type="range" class="custom-range" min="0" max="360" value="0" id="cr3"
+                                    <input type="range" class="custom-range" min="0" max="360" value="0" id="cr3" aria-label="cr3"
                                         oninput="headOut.value = cr3.value">
                                 </div>
                             </div>
@@ -1579,10 +1579,10 @@
                                     speed
                                 </div>
                                 <div class="col-4" style="margin-right: 20px;">
-                                    <input type="text" class="form-control" value="0" id="speedOut">
+                                    <input type="text" class="form-control" value="0" id="speedOut" aria-label="speedOut">
                                 </div>
                                 <div class="col-4">
-                                    <input type="range" class="custom-range" min="0" max="5000" value="0" id="cr4"
+                                    <input type="range" class="custom-range" min="0" max="5000" value="0" id="cr4" aria-label="cr4"
                                         oninput="speedOut.value = cr4.value">
                                 </div>
                             </div>
