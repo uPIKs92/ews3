@@ -496,23 +496,14 @@ right: -10px;
     #page_nav a:active{
         text-decoration: none;
         color: #aeaead;
-        margin-top: 14px;
-        padding-bottom: 15px;
+        margin-top: 9px;
+        padding-bottom: 20px;
         display: block;
     }
 
     #page_nav a:hover{
         text-decoration: none;
         color: #eefd00;
-    }
-
-    .z-pos-up{
-        z-index: 5;
-        margin-left: 20px;
-    }
-
-    .z-pos-down{
-        z-index: 4;
     }
 
 </style>

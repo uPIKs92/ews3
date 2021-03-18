@@ -7251,6 +7251,10 @@ button.bg-dark:hover {
     background-color: #fff !important;
 }
 
+.bg-black {
+    background-color: #181818 !important;
+}
+
 .bg-transparent {
     background-color: transparent !important;
 }
@@ -7325,6 +7329,10 @@ button.bg-dark:hover {
 
 .border-dark {
     border-color: #343a40 !important;
+}
+
+.border-black {
+    border-color: #000 !important;
 }
 
 .border-white {

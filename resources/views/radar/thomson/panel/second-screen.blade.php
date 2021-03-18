@@ -344,30 +344,51 @@
 @section('js')
     <script>
         $(document).ready(function() {
-            $('#tccr-screen').after('<div id="page_nav" class="btn group"></div>');
+            // $('#tccr-screen').after('<div class="btn group"><label id="page_nav" class="btn btn-panel p-0 m-0"></label></div>');
             var rowsShown = 4;
             var rowsTotal = $('#tccr-screen tbody tr').length;
             var numPages = rowsTotal / rowsShown;
             for (i = 0; i < numPages; i++) {
                 var pageNum = i + 1;
                 // $('#page_nav').append('<a href="#" rel="' + i + '">' + pageNum + '</a> ');
-                $('#page_nav').append('<label class="btn btn-panel p-0 m-0"><input type="radio"><a href="#" rel="' + i + '">' + 'PAGE' + '</a></label>');
+                $('#page_nav').append('<a href="#" rel="' + i + '">' + 'PAGE' + '</a>');
             }
             $('#tccr-screen tbody tr').hide();
             $('#tccr-screen tbody tr').slice(0, rowsShown).show();
-            $('#page_nav a:first').addClass('active');
+            $('#page_nav a:first').addClass('active').hide();
             $('#page_nav a').bind('click', function() {
 
-                $('#page_nav a').removeClass('active');
-                $(this).addClass('active');
+                $('#page_nav a').removeClass('active').show();
+                $(this).addClass('active').hide();
                 var currPage = $(this).attr('rel');
                 var startItem = currPage * rowsShown;
                 var endItem = startItem + rowsShown;
                 $('#tccr-screen tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
                 css('display', 'table-row').animate({
                     opacity: 1
-                }, 300);
+                }, 100);
             });
+        });
+
+    </script>
+
+    <script>
+        function appendText(id) {
+            var btnName = id;
+            $("#tccr-out").append('<span class="pr-3 float-left">' + btnName + '</span>');
+        }
+
+        $("#clrBtn").click(function() {
+            $("#tccr-out span").remove();
+        });
+
+        $("#clrEntryBtn").click(function() {
+            $("#tccr-out span:last").remove();
+        });
+
+        $("#resetBtn").click(function() {
+            $("#tccr-out span").remove();
+            $("#tccr-out").append('<span class="pr-3 float-left">RESET</span>');
         });
 
     </script>

@@ -256,9 +256,9 @@
                         <span class="d-block tiny-2">primary radar operating controls</span>
                         <span class="d-block tiny-2">commandes operationnelles radar primaire</span>
                     </div>
-                    <div class="col-12 p-2">
-                        <div class="rows no-border" style="height: 267px;">
-                            <div class="wrapTable row text-warning m-0 border-bottom-0 bg-secondary">
+                    <div class="col-12 p-2" style="height: 300px;">
+                        <div class="rows border border-white">
+                            <div class="row text-warning bg-black h6 m-0">
                                 <div class="col tiny-2">Sector</div>
                                 <div class="col tiny-2">Mode</div>
                                 <div class="col tiny-2">TxMode</div>
@@ -268,11 +268,11 @@
                                 <div class="col tiny-2">RngE</div>
                                 <div class="col tiny-2">Elev</div>
                             </div>
-                            <div class="wrapTable w-100 m-0 border-top-0">
+                            <div class="wrapTable w-100 border-0 m-0">
                                 <table id="tccr-screen" class="table table-responsive-sm text-warning text-center mb-0">
                                     <tbody class="wrapCol bg-dark">
-                                        <tr class="tiny border-bottom border-white">
-                                            <td>1</td>
+                                        <tr class="tiny border-bottom border-black">
+                                            <th class="bg-warning text-dark">1</th>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -281,8 +281,8 @@
                                             <td>0</td>
                                             <td>0</td>
                                         </tr>
-                                        <tr class="tiny border-bottom border-white">
-                                            <td>2</td>
+                                        <tr class="tiny border-bottom border-black">
+                                            <th class="bg-warning text-dark">2</th>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -291,8 +291,8 @@
                                             <td>0</td>
                                             <td>0</td>
                                         </tr>
-                                        <tr class="tiny border-bottom border-white">
-                                            <td>3</td>
+                                        <tr class="tiny border-bottom border-black">
+                                            <th class="bg-warning text-dark">3</th>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -301,8 +301,8 @@
                                             <td>0</td>
                                             <td>0</td>
                                         </tr>
-                                        <tr class="tiny border-bottom border-white">
-                                            <td>4</td>
+                                        <tr class="tiny border-bottom border-black">
+                                            <th class="bg-warning text-dark">4</th>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -311,8 +311,8 @@
                                             <td>0</td>
                                             <td>0</td>
                                         </tr>
-                                        <tr class="tiny border-bottom border-white">
-                                            <td>5</td>
+                                        <tr class="tiny border-bottom border-black">
+                                            <th class="bg-warning text-dark">5</th>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -321,8 +321,8 @@
                                             <td>0</td>
                                             <td>0</td>
                                         </tr>
-                                        <tr class="tiny border-bottom border-white">
-                                            <td>6</td>
+                                        <tr class="tiny border-bottom border-black">
+                                            <th class="bg-warning text-dark">6</th>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -331,8 +331,8 @@
                                             <td>0</td>
                                             <td>0</td>
                                         </tr>
-                                        <tr class="tiny border-bottom border-white">
-                                            <td>7</td>
+                                        <tr class="tiny border-bottom border-black">
+                                            <th class="bg-warning text-dark">7</th>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -341,8 +341,8 @@
                                             <td>0</td>
                                             <td>0</td>
                                         </tr>
-                                        <tr class="tiny border-bottom border-white">
-                                            <td>8</td>
+                                        <tr class="tiny border-bottom border-black">
+                                            <th class="bg-warning text-dark">8</th>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>0</td>
@@ -353,6 +353,19 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class="clearfix w-100 d-block bg-black text-warning text-none p-1">
+                                <div class="w-50 float-left tiny">
+                                    <span class="mr-2">Basic</span>
+                                    <span class="mr-2">OpMode</span>
+                                    <span class="mr-2">RS</span>
+                                </div>
+                                <div class="w-50 float-left tiny">TxMode: Tx</div>
+                            </div>
+                            <div class="w-100 d-block bg-black text-warning text-none p-1">
+                                <div id="tccr-out" class="clearfix w-auto tiny pl-3">
+                                    {{-- text out --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -366,37 +379,37 @@
                                     </div>
                                     <div class="card-body form-inline p-1" style="width: 344px;">
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                            <button type="button" class="btn btn-panel p-0 m-0" value="EWP" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-uppercase">ewp</span>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                            <button type="button" class="btn btn-panel p-0 m-0" value="RS" onclick="appendText(value)" >
                                                 <span class="w-Custom12 text-uppercase">rs</span>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                            <button type="button" class="btn btn-panel p-0 m-0" value="EW" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-uppercase">ew</span>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                            <button type="button" class="btn btn-panel p-0 m-0" value="SIL" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-uppercase">sil</span>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                            <button type="button" class="btn btn-panel p-0 m-0" value="SEA" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-uppercase">sea</span>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                            <button type="button" class="btn btn-panel p-0 m-0" value="BT" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-uppercase">bt</span>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0">
+                                            <button type="button" class="btn btn-panel p-0 m-0" value="AC" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-uppercase">ac</span>
                                             </button>
                                         </div>
@@ -410,22 +423,22 @@
                                     </div>
                                     <div class="card-body form-inline p-1">
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none" value="Fx" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-none">Fx</span>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none" value="Fxy" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-none">Fxy</span>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none" value="RM" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-none">RM</span>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none" value="R" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-none">R</span>
                                             </button>
                                         </div>
@@ -466,38 +479,40 @@
                                 <div class="float-left card bg-transparent no-border mr-2 mt-2">
                                     <div class="card-body form-inline p-1" style="width: 344px;">
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none" value="SEC" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-none">SEC</span>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none" value="AzS" onclick="appendText(value)">
                                                 <div class="w-Custom2 text-none pl-1 pr-1 m-auto">Az S</div>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none" value="AzE" onclick="appendText(value)">
                                                 <div class="w-Custom2 text-none pl-1 pr-1 m-auto">Az E</div>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none" value="RangeS" onclick="appendText(value)">
                                                 <div class="w-Custom12 text-none m-auto">Range S</div>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none" value="RangeE" onclick="appendText(value)">
                                                 <div class="w-Custom12 text-none m-auto">Range E</div>
                                             </button>
                                         </div>
                                         <div class="btn-group btn-panel">
-                                            <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                            <button type="button" class="btn btn-panel p-0 m-0 text-none" value="Elev" onclick="appendText(value)">
                                                 <span class="w-Custom12 text-none">ELEV</span>
                                             </button>
                                         </div>
-                                        {{-- <div id="page_nav" class="btn-group btn-panel" data-toggle="buttons">
-                                            pagination btn
-                                        </div> --}}
+                                        <div class="btn group btn-panel">
+                                            <label id="page_nav" class="p-0 m-0">
+                                                {{-- pagination --}}
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -507,62 +522,62 @@
                                         <div class="card-body p-1">
                                             <div class="form-inline">
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none" value="7" onclick="appendText(value)">
                                                         <span class="w-Custom12 text-none">7</span>
                                                     </button>
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none" value="8" onclick="appendText(value)">
                                                         <span class="w-Custom12 text-none">8</span>
                                                     </button>
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none" value="9" onclick="appendText(value)">
                                                         <span class="w-Custom12 text-none">9</span>
                                                     </button>
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none" value="4" onclick="appendText(value)">
                                                         <span class="w-Custom12 text-none">4</span>
                                                     </button>
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none" value="5" onclick="appendText(value)">
                                                         <span class="w-Custom12 text-none">5</span>
                                                     </button>
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none" value="6" onclick="appendText(value)">
                                                         <span class="w-Custom12 text-none">6</span>
                                                     </button>
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none" value="1" onclick="appendText(value)">
                                                         <span class="w-Custom12 text-none">1</span>
                                                     </button>
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none" value="2" onclick="appendText(value)">
                                                         <span class="w-Custom12 text-none">2</span>
                                                     </button>
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none" value="3" onclick="appendText(value)">
                                                         <span class="w-Custom12 text-none">3</span>
                                                     </button>
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button id="clrBtn" type="button" class="btn btn-panel p-0 m-0 text-none">
                                                         <span class="w-Custom12 text-none">Clear</span>
                                                     </button>
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none" value="0" onclick="appendText(value)">
                                                         <span class="w-Custom12 text-none">0</span>
                                                     </button>
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button id="clrEntryBtn" type="button" class="btn btn-panel p-0 m-0 text-none">
                                                         <span class="w-Custom12 text-none">C. E.</span>
                                                     </button>
                                                 </div>
@@ -581,7 +596,7 @@
                                                 <div class="btn-panel invisible">
                                                 </div>
                                                 <div class="btn-group btn-panel">
-                                                    <button type="button" class="btn btn-panel p-0 m-0 text-none">
+                                                    <button id="resetBtn" type="button" class="btn btn-panel p-0 m-0 text-none">
                                                         <span class="w-Custom12 text-none">Reset</span>
                                                     </button>
                                                 </div>
