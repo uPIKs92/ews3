@@ -250,7 +250,7 @@
                     </div>
                 </div>
             </div>
-            <div class="border rounded-lg border-white mt-2 mb-2" style="height: 694;">
+            <div class="border rounded-lg border-white mt-2 mb-2" style="height: 698px;">
                 <div class="row no-gutters">
                     <div class="col-12 p-2">
                         <span class="d-block tiny-2">primary radar operating controls</span>
@@ -717,9 +717,9 @@
                 <div class="col-12 p-0 pt-1 mt-1 ml-2">
                     <div class="clearfix">
                         <div class="float-left card bg-transparent border border-white rounded mr-1 pb-2"
-                            style="width: 210.75px; min-height: 847.75px; padding-top: 31px;">
+                            style="width: 210.75px; min-height: 851.75px; padding-top: 16px;">
                             <div class="row no-gutters pt-2">
-                                <div class="col-12 p-0 pb-4">
+                                <div class="col-12 p-0 pb-4 mb-3">
                                     <div class="clearfix">
                                         <div class="float-left" style="width: 142px;">
                                             <span class="dot d-block m-auto"></span>

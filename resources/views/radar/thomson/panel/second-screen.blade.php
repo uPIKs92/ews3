@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <dir class="card-body p-0 m-0 solid-bordered mb-1" style="background-color: #f0f0f0;">
+                <dir class="card-body p-0 m-0 solid-bordered mb-1" style="background-color: #f0f0f0; min-height: 441.38px;">
                     @yield('table-view', \View::make('radar.thomson.table-view.track-view'))
                 </dir>
                 <div class="card-footer p-0 m-0 solid-bordered" style="background-color: #f0f0f0;">

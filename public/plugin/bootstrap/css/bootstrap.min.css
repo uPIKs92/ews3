@@ -7278,6 +7278,11 @@ button.bg-dark:hover {
     border-left: 1px solid #dee2e6 !important;
 }
 
+.solid-bordered {
+    border-width: 2px !important;
+    border-color: #babdc0 !important;
+}
+
 .border-0 {
     border: 0 !important;
 }
@@ -8668,11 +8673,11 @@ button.bg-dark:hover {
 }
 
 .h-Custom-sm-1 {
-    height: 177px !important;
+    height: 177.7px !important;
 }
 
 .h-Custom-sm-2 {
-    height: 387px !important;
+    height: 417px !important;
 }
 
 .h-Custom1 {
@@ -9173,10 +9178,6 @@ button.bg-dark:hover {
 
 .allow-border {
     border-style: dashed !important;
-}
-
-.solid-bordered {
-    border: 2px solid #babdc0 !important;
 }
 
 @media (min-width: 576px) {

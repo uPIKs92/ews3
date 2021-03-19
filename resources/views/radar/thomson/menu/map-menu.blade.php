@@ -275,7 +275,7 @@
         <div class="card border border-secondary bg-transparent mt-1">
             <div class="row">
                 <div class="col-12 text-center">
-                    <button type="button" class="btn btn-light bg-warning w-100 p-0" data-toggle="collapse"
+                    <button type="button" class="btn btn-light bg-warning w-100 p-1" data-toggle="collapse"
                         data-target="#collapseColor" role="button" aria-expanded="false" aria-controls="collapseColor">
                         Adjust Color
                     </button>
@@ -302,7 +302,7 @@
                         <div class="card-body float-right pr-3">
                             <output id="hex" class="p-4 w-100"></output>
                         </div>
-                        <div class="btn-group w-100 pl-3 pr-3 pt-1 pb-0" role="group" aria-label="Basic example">
+                        <div class="btn-group w-100 pl-3 pr-3 pt-2 pb-2" role="group" aria-label="Basic example">
                             <button type="button" class="btn btn-light text-white">Save</button>
                             <button type="button" class="btn btn-light text-white">Default</button>
                         </div>

@@ -5,7 +5,7 @@
     <div class="row p-1">
         <div class="float-left w-50 mb-1">
             <div class="col-12 rows no-border p-1">
-                <div class="wrapTable w-100 m-0">
+                <div class="wrapTable w-100 h-Custom-sm-2 m-0">
                     <div class="row text-white" style="background-color: #333333; ">
                         <div class="col-4 tiny-2">Ident</div>
                         <div class="col tiny-2">NBR</div>
@@ -16,7 +16,7 @@
                         <div class="col tiny-2">JAM</div>
                         <div class="col tiny-2">INF</div>
                     </div>
-                    <div class="wrapCol text-white pb-0 h-Custom-sm-2">
+                    <div class="wrapCol text-white pb-0 h-auto">
                         <div class="row border-white">
                             <div class="col-4 bg-secondary">Hostile</div>
                             <div class="col">0</div>

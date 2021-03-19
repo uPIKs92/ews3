@@ -159,15 +159,15 @@
             <div class="wrapTable w-100 h-Custom-sm-1 m-0 border-top-0" style="overflow-y: scroll">
                 <table class="table table-responsive-sm text-white mb-0">
                     <tbody class="wrapCol">
-                        <tr class="tiny border-bottom border-white">
-                            <th>1</th>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                        <tr class="row tiny border-bottom border-white">
+                            <th class="col">1</th>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
                         </tr>
                     </tbody>
                 </table>
@@ -187,15 +187,15 @@
             <div class="wrapTable w-100 h-Custom-sm-1 m-0 border-top-0" style="overflow-y: scroll">
                 <table class="table table-responsive-sm text-white mb-0">
                     <tbody class="wrapCol">
-                        <tr class="tiny border-bottom border-white">
-                            <th>1</th>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                        <tr class="row tiny border-bottom border-white">
+                            <th class="col">1</th>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
+                            <td class="col">0</td>
                         </tr>
                     </tbody>
                 </table>

@@ -13,13 +13,13 @@
         </div> --}}
         <div class="panel-body p-1 bg-transparent">
             <div class="row rows no-border m-0">
-                <div class="col-12 solid-bordered text-white bg-info">
+                <div class="col-12 border solid-bordered border-bottom-0 text-white bg-info">
                     <h6>EWS - Radar Thomson Console</h6>
                 </div>
-                <div class="col-12 p-0 solid-bordered" style="min-height: 645px;">
+                <div class="col-12 p-0 border solid-bordered border-bottom-0" style="min-height: 665px;">
                     @yield('menu', \View::make('radar.thomson.menu.clear-menu'))
                 </div>
-                <div class="col-12 p-0 solid-bordered">
+                <div class="col-12 p-0 border solid-bordered border-bottom-0">
                     <div class="card-subtitle pt-2 pl-sm-2 pb-sm-1">
                         <Small class="d-inline">Selection Menu Control</Small>
                     </div>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 p-0 solid-bordered">
+                <div class="col-12 p-0 border solid-bordered">
                     <div class="card-subtitle pt-2 pl-sm-2 pb-sm-1">
                         <Small class="d-inline">PPI Control</Small>
                     </div>
