@@ -8547,6 +8547,10 @@ button.bg-dark:hover {
     width: 30% !important;
 }
 
+.w-40 {
+    width: 40% !important;
+}
+
 .w-45 {
     width: 45% !important;
 }
@@ -8557,6 +8561,10 @@ button.bg-dark:hover {
 
 .w-50 {
     width: 50% !important;
+}
+
+.w-70 {
+    width: 70% !important;
 }
 
 .w-75 {
