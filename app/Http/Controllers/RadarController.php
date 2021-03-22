@@ -98,4 +98,8 @@ class RadarController extends Controller
     {
         return view('radar.thomson.menu.debug-menu');
     }
+    public function lbow()
+    {
+        return view('radar.lbow.index');
+    }
 }

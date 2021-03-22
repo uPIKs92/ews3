@@ -781,3 +781,17 @@
     border-bottom: 2px solid #fff;
     border-bottom-left-radius: 1rem;
 }
+
+.plessey-frame {
+    background-image: url(../img/bg_pat.png);
+    background-repeat: repeat-x;
+    background-position: top;
+    background-size: contain;
+}
+
+.radar-ring {
+    background-image: url(../img/radar_rng.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}

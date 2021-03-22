@@ -84,3 +84,5 @@ Route::get('/thomson/t-ident','RadarController@track_ident')->name('track-ident-
 Route::get('/thomson/t-filter','RadarController@track_filter')->name('track-filter-menu');
 Route::get('/thomson/aux','RadarController@aux')->name('aux-menu');
 Route::get('/thomson/debug','RadarController@debug')->name('debug-menu');
+
+Route::get('/lbow','RadarController@lbow')->name('lbow');
