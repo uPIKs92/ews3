@@ -757,7 +757,7 @@ pre code {
     position: relative;
     width: 100%;
     padding: 15px;
-    border: 3px dashed #ebebeb;
+    /* border: 3px dashed #ebebeb; */
 }
 
 .col {
@@ -4629,6 +4629,8 @@ input[type="submit"].btn-block {
     src: url("../../../fonts/LASA.TTF") format("truetype");
     font-family: "arial narrow bold";
     src: url("../../../fonts/arial-narrow-bold.ttf") format("truetype");
+    font-family: "pixelmix";
+    src: url("../../../fonts/pixelmix.ttf") format("truetype");
 }
 
 .navbar-brand {
@@ -7225,7 +7227,7 @@ button.bg-danger:hover {
 }
 
 .bg-light {
-    background-color: #29a19c !important;
+    background-color: #f0f0f0 !important;
 }
 
 a.bg-light:focus,
@@ -7320,7 +7322,8 @@ button.bg-dark:hover {
 }
 
 .border-warning {
-    border-color: #ffc107 !important;
+    /* border-color: #ffc107 !important; */
+    border-color: #e6812a !important;
 }
 
 .border-danger {

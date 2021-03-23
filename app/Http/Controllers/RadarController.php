@@ -18,7 +18,7 @@ class RadarController extends Controller
     {
         return view('radar.thomson.index');
     }
-    public function second_screen()
+    public function thomson_2nd_scr()
     {
         return view('radar.thomson.panel.second-screen');
     }
@@ -101,5 +101,9 @@ class RadarController extends Controller
     public function lbow()
     {
         return view('radar.lbow.index');
+    }
+    public function lbow_2nd_scr()
+    {
+        return view('radar.lbow.panel.second-screen');
     }
 }

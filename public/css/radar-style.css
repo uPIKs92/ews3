@@ -787,11 +787,121 @@
     background-repeat: repeat-x;
     background-position: top;
     background-size: contain;
+    height: 100%;
 }
 
 .radar-ring {
     background-image: url(../img/radar_rng.png);
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 998px;
+    height: 998px;
+}
+
+.metal {
+    position: relative;
+    outline: none;
+    font: bold 6em/2em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    text-align: center;
+    color: hsla(0, 0%, 20%, 1);
+    text-shadow: hsla(0, 0%, 40%, 0.5) 0 -1px 0, hsla(0, 0%, 100%, 0.6) 0 2px 1px;
+    background-color: hsl(0, 0%, 90%);
+    box-shadow: inset rgb(49, 49, 49) 0 0px 0px 4px, /* border */
+    inset hsla(0, 0%, 15%, 0.8) 0 -1px 5px 4px, /* soft SD */
+    /*inset hsla(0, 0%, 0%, .25) 0 -1px 0px 7px,  bottom SD */
+    /*inset hsla(0, 0%, 100%, .7) 0 2px 1px 7px,  top HL */
+    hsla(0, 0%, 0%, 0.15) 0 -5px 6px 4px, /* outer SD */
+    hsla(0, 0%, 100%, 0.5) 0 5px 6px 4px;
+    /* outer HL */
+    transition: color 0.2s;
+}
+
+.metal.linear {
+    width: 100px;
+    font-size: 4em;
+    height: 80px;
+    border-radius: 0.5em;
+    background-image: -webkit-repeating-linear-gradient( left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 6%, hsla(0, 0%, 100%, 0.1) 7.5%), -webkit-repeating-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla( 0, 0%, 0%, 0) 4%, hsla(0, 0%, 0%, 0.03) 4.5%), -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla( 0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, 0.15) 2.2%), linear-gradient( 180deg, hsl(0, 0%, 78%) 0%, hsl(0, 0%, 90%) 47%, hsl(0, 0%, 78%) 53%, hsl(0, 0%, 70%) 100%);
+}
+
+.brushed-metal {
+    background-image: linear-gradient( 135deg, rgba(62, 68, 74, 0.5), rgba(192, 192, 192, 0.4), rgba(91, 96, 105, 0.5)), repeating-linear-gradient( 135deg, rgba(1, 5, 8, 0.26), rgba(189, 189, 189, 0.4) 2.5px), repeating-linear-gradient( 135deg, rgba(2, 23, 38, 0.32), rgba(192, 192, 192, 0.4) 2.7px), repeating-linear-gradient( 135deg, rgba(58, 65, 71, 0.6), rgba(224, 226, 227, 0.3) 3px), repeating-linear-gradient( 135deg, rgba(91, 95, 98, 0.5), rgba(55, 170, 233, 0.26) 4.5px);
+    box-shadow: inset rgb(49, 49, 49) 0 0px 0px 4px, /* border */
+    inset hsla(0, 0%, 15%, 0.8) 0 -1px 5px 4px, /* soft SD */
+    /*inset hsla(0, 0%, 0%, .25) 0 -1px 0px 7px,  bottom SD */
+    /*inset hsla(0, 0%, 100%, .7) 0 2px 1px 7px, top HL */
+    hsla(0, 0%, 0%, 0.15) 0 -5px 6px 4px, /* outer SD */
+    hsla(0, 0%, 100%, 0.5) 0 5px 6px 4px;
+}
+
+.carbon-fibre {
+    background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+    background-color: #444444;
+    background-size: 16px 16px;
+}
+
+.box-shadow {
+    border: 3px solid #c5c5c5;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.inner-shadow {
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.btn-plessey {
+    color: #000000;
+    font-weight: bold !important;
+    font-size: 12px !important;
+    background-image: url(../img/btn_plessey.BMP);
+    border-color: #000000;
+    border-radius: 0px !important;
+    width: 110px;
+    height: 110px;
+    background-repeat: no-repeat;
     background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-plessey:hover {
+    color: #fff;
+    border-color: #fd7a00;
+}
+
+.btn-plessey.focus,
+.btn-plessey:focus {
+    color: #fff;
+    border-color: #fd7a00;
+    box-shadow: 0 2.8px 2.2px #fdad0028, 0 6.7px 5.3px #fdad000c, 0 12.5px 10px #fdad000f, 0 22.3px 17.9px #fdad0012, 0 41.8px 33.4px #fdad0016, 0 100px 80px #fdad001f;
+}
+
+.btn-box {
+    color: #e6812a;
+    border: 2px solid #e6812a;
+    border-radius: 0px !important;
+    width: 91.17px;
+    height: 91.17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-box:hover {
+    color: #000;
+    background-color: #e6812a;
+}
+
+.custom-box {
+    width: 91.17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

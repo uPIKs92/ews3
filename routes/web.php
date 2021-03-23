@@ -62,7 +62,7 @@ Route::get('/master_t','RadarController@master_t')->name('master_t');
 Route::get('/thomson','RadarController@thomson')->name('thomson');
 Route::get('/thomson/map','RadarController@map_control')->name('map-menu');
 Route::get('/thomson/radar','RadarController@radar_control')->name('radar-menu');
-Route::get('/thomson/second_screen','RadarController@second_screen')->name('second-screen');
+Route::get('/thomson/second_screen','RadarController@thomson_2nd_scr')->name('thomson-2nd-scr');
 
 Route::get('/thomson/intercept_view','RadarController@intercept_view')->name('intercept-view');
 Route::get('/thomson/antico_view','RadarController@antico_view')->name('antico-view');
@@ -86,3 +86,4 @@ Route::get('/thomson/aux','RadarController@aux')->name('aux-menu');
 Route::get('/thomson/debug','RadarController@debug')->name('debug-menu');
 
 Route::get('/lbow','RadarController@lbow')->name('lbow');
+Route::get('/lbow/second_screen','RadarController@lbow_2nd_scr')->name('lbow-2nd-scr');

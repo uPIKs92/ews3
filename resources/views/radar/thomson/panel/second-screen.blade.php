@@ -11,7 +11,7 @@
         </div>
         <div class="float-right w-50 h-Custom3 pt-2 pl-2 pr-2">
             <div class="card no-border p-1" style="background-color: #d7d7d7;">
-                <div class="card-header p-0 solid-bordered mb-1" style="background-color: #f0f0f0;">
+                <div class="card-header p-0 solid-bordered bg-light mb-1">
                     <div class="rows no-border m-0">
                         <div class="col-12 p-0">
                             <div class="card-subtitle pt-2 pl-sm-2 pb-sm-1">
@@ -74,6 +74,7 @@
                         </div>
                     </div>
                 </div>
+
                 <dir class="card-body p-0 m-0 solid-bordered mb-1" style="background-color: #f0f0f0; min-height: 441.38px;">
                     @yield('table-view', \View::make('radar.thomson.table-view.track-view'))
                 </dir>
@@ -191,7 +192,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="btn btn-light p-0" href="{{ route('second-screen') }}">
+                                                <a class="btn btn-light p-0" href="{{ route('thomson-2nd-scr') }}">
                                                     <img src="{{ asset('ico_btn/17.bmp') }}" alt="ico_17">
                                                 </a>
                                             </div>
