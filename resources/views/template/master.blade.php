@@ -21,7 +21,7 @@
     <script src="{{ asset('plugin/bootstrap/js/bootstrap.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('plugin/bootstrap/css/bootstrap4-toggle.min.css') }}">
     <script src="{{ asset('plugin/bootstrap/js/bootstrap4-toggle.min.js') }}"></script>
-    
+
     <!-- DATATABLE -->
     <link rel="stylesheet" href="{{ asset('plugin/dataTables/datatables.min.css') }}">
     <script src="{{ asset('plugin/dataTables/datatables.min.js') }}"></script>
@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{{ asset('css/radar-style.css') }}">
 
     {{-- pagination 
-    <script src="{{ asset('plugin/pagination/pagination.js') }}"></script>--}}
+    <script src="{{ asset('plugin/pagination/pagination.js') }}"></script> --}}
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="{{ asset('fontawesomePro/css/all.css') }}">
@@ -38,6 +38,14 @@
     <!-- SweetAlert -->
     <link rel="stylesheet" type="text/css" href="{{ asset('plugin/sweetalert/sweetalert.css') }}" />
     <script type="text/javascript" src="{{ asset('plugin/sweetalert/sweetalert.min.js') }}"></script>
+
+    {{-- jquery stack menu 
+    <link href="{{ asset('plugin/jquery-stack-menu/dist/jquery-stack-menu.min.css') }}" rel="stylesheet" />
+    <script src="{{ asset('plugin/jquery-stack-menu/dist/jquery-stack-menu.min.js') }}"></script> --}}
+
+    {{-- layer js --}}
+    <script src="{{ asset('plugin/layerjs/layerjs-0.6.2.min.js') }}"></script>
+    <link href="{{ asset('plugin/layerjs/layerjs-0.6.2.css') }}" type="text/css" rel="stylesheet" />
 
     <!-- LEAFLET -->
     <link rel="stylesheet" href="{{ asset('plugin/leaflet/leaflet.css') }}">

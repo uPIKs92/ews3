@@ -57,89 +57,38 @@
                     </div>
                     <div class="col-12 p-0">
                         <div class="row no-gutters p-1 mb-3">
-                            <div class="col p-0">
-                                menu text
+                            <div class="col p-0" style="min-height: 50px;">
+                                {{-- menu text --}}
                             </div>
                         </div>
                     </div>
                     <div class="col-12 p-0">
                         <div class="row no-gutters p-1">
-                            <div class="col p-0">
-                                input text
+                            <div id="input-btn-out" class="col p-0" style="min-height: 21px;">
+                                {{-- input text --}}
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 clearfix p-1">
+                    <div class="col-12 clearfix p-1" onload="printBtn();">
                         <div class="float-left">
-                            <ul class="m-0 p-0 form-inline">
-                                <li class="btn btn-box">tes</li>
-                                <li class="btn btn-box border-left-0">tes</li>
-                                <li class="btn btn-box border-left-0">tes</li>
-                                <li class="btn btn-box border-left-0">tes</li>
-                                <li class="btn btn-box border-left-0">tes</li>
-                                <li class="btn btn-box border-left-0">tes</li>
-                                <li class="btn btn-box border-left-0">tes</li>
-                                <li class="btn btn-box border-left-0">tes</li>
-                                <li class="btn btn-box border-left-0">tes</li>
-                                <li class="btn btn-box border-left-0">tes</li>
-                            </ul>
-                            <ul class="m-0 p-0 form-inline">
-                                <li class="btn btn-box border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                            </ul>
-                            <ul class="m-0 p-0 form-inline">
-                                <li class="btn btn-box border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                            </ul>
-                            <ul class="m-0 p-0 form-inline">
-                                <li class="btn btn-box border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                                <li class="btn btn-box border-left-0 border-top-0">tes</li>
-                            </ul>
-                            <ul class="m-0 p-0 form-inline">
-                                <li class="btn btn-box border-top-0">abort</li>
-                                <li class="btn btn-box border-left-0 border-top-0">.</li>
-                                <li class="btn btn-box border-left-0 border-top-0">home</li>
-                                <li class="btn btn-box border-left-0 border-top-0">&emsp;</li>
-                                <li class="btn btn-box border-left-0 border-top-0">alpha</li>
-                                <li class="btn btn-box border-left-0 border-top-0">&emsp;</li>
-                                <li class="btn btn-box border-left-0 border-top-0">&emsp;</li>
-                                <li class="btn btn-box border-left-0 border-top-0">bakspc</li>
-                                <li class="btn btn-box border-left-0 border-top-0">dltfld</li>
-                                <li class="btn btn-box border-left-0 border-top-0">enter</li>
-                            </ul>
+                            <div class="border-top border-right border-left border-warning" style="margin-left: -1px;">
+                                @yield('btn-menu-view', \View::make('radar.lbow.menu.main-menu'))
+                                {{-- <ul id="dynamic-menu-btn" class="m-0 p-0 form-inline"></ul> --}}
+                                {{-- <div lj-type="stage" style="max-width: 911.57px; height:100%;">
+                                    <div lj-type="layer" lj-default-frame="alpha-menu">
+                                        <div lj-type="frame" lj-name="alpha-menu" lj-transition="up">
+                                            
+                                        </div>
+                                    </div>
+                                </div> --}}
+                            </div>
+                            <div style="margin-top: -2px;">
+                                <ul id="bottom-menu-btn" class="m-0 p-0 form-inline border-top border-right border-warning">
+                                </ul>
+                            </div>
                         </div>
-                        <div class="float-right">
-                            <ul class="m-0 p-0">
-                                <li class="btn btn-box">tes</li>
-                                <li class="btn btn-box border-top-0">tes</li>
-                                <li class="btn btn-box border-top-0">tes</li>
-                                <li class="btn btn-box border-top-0">tes</li>
-                                <li class="btn btn-box border-top-0">tes</li>
-                            </ul>
+                        <div class="float-right" style="max-width: 91.17px;">
+                            <ul id="right-menu-btn" class="m-0 p-0 form-inline border-top border-right border-warning"></ul>
                         </div>
                     </div>
                 </div>
@@ -335,6 +284,177 @@
             displayTime();
             setInterval(displayTime, 1000);
         });
+
+    </script>
+    <script>
+        $(function() {
+            $('div[onload]').trigger('onload');
+        });
+
+        var listBtnRight = [
+            'settrk', 'labpos', 'trksel', 'dimsel', 'page'
+        ];
+
+        var listBtnBottom = [
+            'abort', '.', 'home', '', 'alpha', 'close', '', 'bakspc', 'dltfld', 'enter'
+        ];
+
+        var listBtnMain = [
+            'logon', '', 'lbow', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', ''
+        ];
+
+        var listBtnLogon = [
+            'logoff', 'setpwd', '', '', 'maps', 'totes', 'track', 'weapon', 'radcon', 'radplt',
+            '', '', 'ppibrt', 'commet', 'dimsel', '', '', '', '', '',
+            '', '', '', 'movbtm', 'labpos', 'trklin', 'settrk', '', 'histry', '',
+            '', 'stbsel', '', '', 'trklab', 'trksel', 'trkldr', '', '', 'pltsel'
+        ];
+
+        var listBtnSetpwd = [
+            'pswrd', 'verify', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', ''
+        ];
+
+        function printBtn() {
+
+            for (varMain = 0; varMain < listBtnMain.length; varMain++) {
+                $('#main-menu-btn').append('<li ' + 'id="btnMain-' + varMain + '" class="btn btn-box"><span>' +
+                    listBtnMain[varMain] + '</span></li>');
+                /**/
+                (function(varMain) {
+                    switch (varMain) {
+                        case 0: {
+                            $('#btnMain-' + 0).on('click', function() {
+                                // alert("Handler for .click() btn " + j);
+                                window.location = '#logon-menu&t=0.5s';
+                            });
+                            return;
+                        }
+                    }
+                })(varMain);
+            }
+
+            for (varLogon = 0; varLogon < listBtnLogon.length; varLogon++) {
+                $('#logon-menu-btn').append('<li ' + 'id="btnLogon-' + varLogon + '" class="btn btn-box"><span>' +
+                    listBtnLogon[varLogon] + '</span></li>');
+
+                (function(varLogon) {
+                    switch (varLogon) {
+                        case 0: {
+                            $('#btnLogon-' + 0).on('click', function() {
+                                // alert("Handler for .click() btn " + j);
+                                window.location = '#main-menu&t=0.5s';
+                                $('#btnBottom-0').off();
+                                $('#btnBottom-2').off();
+                            });
+                            return;
+                        }
+                        case 1: {
+                            $('#btnLogon-' + 1).on('click', function() {
+                                // alert("Handler for .click() btn " + j);
+                                window.location = '#setpwd-menu&t=0.5s';
+                                $('#btnBottom-4 span').fadeTo("fast", 1, function() {
+                                    $('#btnBottom-4').on('click', function() {
+                                        window.location = '#sidemenu&t=0.5s';
+                                        $('#btnBottom-5 span').fadeTo("fast", 1, function() {
+                                            $('#btnBottom-5').on('click', function() {
+                                                window.location =
+                                                    '#closed&t=0.5s';
+                                                    $('#btnBottom-5 span').fadeTo("slow", 0);
+                                                    showBtmNav();
+                                            });
+                                        });
+                                        hideBtmNav();
+                                    });
+
+                                    backNav();
+                                });
+                            });
+                            return;
+                        }
+                    }
+                })(varLogon);
+            }
+
+            for (varSetpwd = 0; varSetpwd < listBtnSetpwd.length; varSetpwd++) {
+                $('#setpwd-menu-btn').append('<li ' + 'id="btnSetpwd-' + varSetpwd + '" class="btn btn-box"><span>' +
+                    listBtnSetpwd[varSetpwd] + '</span></li>');
+
+                (function(varSetpwd) {
+                    switch (varSetpwd) {
+                        case 0: {
+                            $('#btnSetpwd-' + 0).on('click', function() {
+                                alert("Handler for .click() btn " + varSetpwd);
+                                //window.location = '#frame1';
+                            });
+                            return;
+                        }
+                        case 1: {
+                            $('#btnSetpwd-' + 1).on('click', function() {
+                                alert("Handler for .click() btn " + varSetpwd);
+                                //window.location = '#frame1';
+                            });
+                            return;
+                        }
+                    }
+                })(varSetpwd);
+            }
+
+            for (i = 0; i < listBtnBottom.length; i++) {
+                $('#bottom-menu-btn').append('<li ' + 'id="btnBottom-' + i + '" class="btn btn-box"><span>' +
+                    listBtnBottom[i] + '</span></li>');
+            }
+
+            for (j = 0; j < listBtnRight.length; j++) {
+                $('#right-menu-btn').append('<li ' + 'id="btnRight-' + j + '" class="btn btn-box"><span>' +
+                    listBtnRight[j] + '</span></li>');
+            }
+
+            $('#btnBottom-4 span').css("opacity", "0");
+            $('#btnBottom-5 span').css("opacity", "0");
+        }
+
+        function backNav() {
+            $('#btnBottom-0').on('click', function() {
+                window.location = '#logon-menu&t=1s';
+                $('#btnBottom-4 span').fadeTo("slow", 0, function() {
+                    $('#btnBottom-4').off();
+                    $('#btnBottom-5').off();
+                });
+
+            });
+            $('#btnBottom-2').on('click', function() {
+                window.location = '#logon-menu&t=1s';
+                $('#btnBottom-4 span').fadeTo("slow", 0, function() {
+                    $('#btnBottom-4').off();
+                    $('#btnBottom-5').off();
+                });
+
+            });
+        }
+
+        function hideBtmNav() {
+            for (i = 0; i < 5; i++) {
+                $('#btnBottom-' + i).children('span').fadeTo("fast", 0);
+            }
+            for (i = 6; i < 10; i++) {
+                $('#btnBottom-' + i).children('span').fadeTo("fast", 0);
+            }
+        }
+
+        function showBtmNav() {
+            for (i = 0; i < 5; i++) {
+                $('#btnBottom-' + i).children('span').fadeTo("fast", 1);
+            }
+            for (i = 6; i < 10; i++) {
+                $('#btnBottom-' + i).children('span').fadeTo("fast", 1);
+            }
+        }
 
     </script>
 @endsection

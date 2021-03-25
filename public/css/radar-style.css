@@ -885,18 +885,63 @@
 
 .btn-box {
     color: #e6812a;
-    border: 2px solid #e6812a;
+    border-left: 1px solid #e6812a;
+    border-bottom: 1px solid #e6812a;
     border-radius: 0px !important;
     width: 91.17px;
     height: 91.17px;
+    padding: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.4s;
+}
+
+.btn-box-sm {
+    width: 82.87px;
+    height: 73.4px;
+    color: #e6812a;
+    border-left: 1px solid #e6812a;
+    border-bottom: 1px solid #e6812a;
+    border-radius: 0px !important;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.btn-box-sm:hover {
+    color: #fff;
+}
+
+.btn-box-sm:active {
+    background-color: #e6812a;
+    color: #000;
+}
+
+.btn-box-sm-half {
+    width: 41.435px;
+    height: 73.4px;
+    border-left: 1px solid #e6812a;
+    border-bottom: 1px solid #e6812a;
+    border-radius: 0px !important;
+    padding: 0px;
+    list-style: none;
+}
+
+.btn-box span.active {
+    display: inline-block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #000;
+    background-color: #e6812a;
 }
 
 .btn-box:hover {
     color: #000;
     background-color: #e6812a;
+    transition: 0.4s;
 }
 
 .custom-box {
@@ -904,4 +949,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.plessey-frame ul>li {
+    margin: -1px;
 }
