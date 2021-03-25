@@ -320,8 +320,28 @@
             '', '', '', '', '', '', '', '', '', ''
         ];
 
-        function printBtn() {
+        var listBtnPpibrt = [
+            'bakgnd', '1stvid', 'logvid', 'rrings', 'synth', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', '',
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+        ];
 
+        var listBtnCommet = [
+            '', 'zone', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', '',
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+        ];
+
+        var listBtnMovbtm = [
+            '', 'georef', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', ''
+        ];
+
+        function printBtn() {
             for (varMain = 0; varMain < listBtnMain.length; varMain++) {
                 $('#main-menu-btn').append('<li ' + 'id="btnMain-' + varMain + '" class="btn btn-box"><span>' +
                     listBtnMain[varMain] + '</span></li>');
@@ -331,13 +351,15 @@
                         case 0: {
                             $('#btnMain-' + 0).on('click', function() {
                                 // alert("Handler for .click() btn " + j);
-                                window.location = '#logon-menu&t=0.5s';
+                                window.location = '#logon-menu&t=0.3s';
                             });
                             return;
                         }
                     }
                 })(varMain);
             }
+
+            $('#btnMain-' + 2).children('span').addClass('active')
 
             for (varLogon = 0; varLogon < listBtnLogon.length; varLogon++) {
                 $('#logon-menu-btn').append('<li ' + 'id="btnLogon-' + varLogon + '" class="btn btn-box"><span>' +
@@ -348,7 +370,7 @@
                         case 0: {
                             $('#btnLogon-' + 0).on('click', function() {
                                 // alert("Handler for .click() btn " + j);
-                                window.location = '#main-menu&t=0.5s';
+                                window.location = '#main-menu&t=0.3s';
                                 $('#btnBottom-0').off();
                                 $('#btnBottom-2').off();
                             });
@@ -357,16 +379,60 @@
                         case 1: {
                             $('#btnLogon-' + 1).on('click', function() {
                                 // alert("Handler for .click() btn " + j);
-                                window.location = '#setpwd-menu&t=0.5s';
+                                window.location = '#setpwd-menu&t=0.3s';
                                 $('#btnBottom-4 span').fadeTo("fast", 1, function() {
                                     $('#btnBottom-4').on('click', function() {
-                                        window.location = '#sidemenu&t=0.5s';
+                                        window.location = '#sidemenu&t=0.3s';
                                         $('#btnBottom-5 span').fadeTo("fast", 1, function() {
                                             $('#btnBottom-5').on('click', function() {
                                                 window.location =
-                                                    '#closed&t=0.5s';
-                                                    $('#btnBottom-5 span').fadeTo("slow", 0);
-                                                    showBtmNav();
+                                                    '#closed&t=0.3s';
+                                                $('#btnBottom-5 span').fadeTo(
+                                                    "slow", 0);
+                                                showBtmNav();
+                                            });
+                                        });
+                                        hideBtmNav();
+                                    });
+
+                                    backNav();
+                                });
+                            });
+                            return;
+                        }
+
+                        case 12: {
+                            $('#btnLogon-' + 12).on('click', function() {
+                                // alert("Handler for .click() btn " + j);
+                                window.location = '#ppibrt-menu&t=0.3s';
+                                backNav();
+                            });
+                            return;
+                        }
+
+                        case 13: {
+                            $('#btnLogon-' + 13).on('click', function() {
+                                // alert("Handler for .click() btn " + j);
+                                window.location = '#commet-menu&t=0.3s';
+                                backNav();
+                            });
+                            return;
+                        }
+
+                        case 23: {
+                            $('#btnLogon-' + 23).on('click', function() {
+                                // alert("Handler for .click() btn " + j);
+                                window.location = '#movbtm-menu&t=0.3s';
+                                $('#btnBottom-4 span').fadeTo("fast", 1, function() {
+                                    $('#btnBottom-4').on('click', function() {
+                                        window.location = '#sidemenu&t=0.3s';
+                                        $('#btnBottom-5 span').fadeTo("fast", 1, function() {
+                                            $('#btnBottom-5').on('click', function() {
+                                                window.location =
+                                                    '#closed&t=0.3s';
+                                                $('#btnBottom-5 span').fadeTo(
+                                                    "slow", 0);
+                                                showBtmNav();
                                             });
                                         });
                                         hideBtmNav();
@@ -389,14 +455,14 @@
                     switch (varSetpwd) {
                         case 0: {
                             $('#btnSetpwd-' + 0).on('click', function() {
-                                alert("Handler for .click() btn " + varSetpwd);
+                                alert("Handler for .click() btn " + listBtnSetpwd[varSetpwd].toString());
                                 //window.location = '#frame1';
                             });
                             return;
                         }
                         case 1: {
                             $('#btnSetpwd-' + 1).on('click', function() {
-                                alert("Handler for .click() btn " + varSetpwd);
+                                alert("Handler for .click() btn " + listBtnSetpwd[varSetpwd].toString());
                                 //window.location = '#frame1';
                             });
                             return;
@@ -404,6 +470,89 @@
                     }
                 })(varSetpwd);
             }
+
+            for (varPpibrt = 0; varPpibrt < listBtnPpibrt.length; varPpibrt++) {
+                $('#ppibrt-menu-btn').append('<li ' + 'id="btnPpibrt-' + varPpibrt + '" class="btn btn-box"><span>' +
+                    listBtnPpibrt[varPpibrt] + '</span></li>');
+
+                (function(varPpibrt) {
+                    switch (varPpibrt) {
+                        case 0: {
+                            $('#btnPpibrt-' + 0).on('click', function() {
+                                alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
+                                //window.location = '#frame1';
+                            });
+                            return;
+                        }
+                        case 1: {
+                            $('#btnPpibrt-' + 1).on('click', function() {
+                                alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
+                                //window.location = '#frame1';
+                            });
+                            return;
+                        }
+                        case 2: {
+                            $('#btnPpibrt-' + 2).on('click', function() {
+                                alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
+                                //window.location = '#frame1';
+                            });
+                            return;
+                        }
+                        case 3: {
+                            $('#btnPpibrt-' + 3).on('click', function() {
+                                alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
+                                //window.location = '#frame1';
+                            });
+                            return;
+                        }
+                        case 4: {
+                            $('#btnPpibrt-' + 4).on('click', function() {
+                                alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
+                                //window.location = '#frame1';
+                            });
+                            return;
+                        }
+                    }
+                })(varPpibrt);
+            }
+
+            for (varCommet = 0; varCommet < listBtnCommet.length; varCommet++) {
+                $('#commet-menu-btn').append('<li ' + 'id="btnCommet-' + varCommet + '" class="btn btn-box"><span>' +
+                    listBtnCommet[varCommet] + '</span></li>');
+
+                (function(varCommet) {
+                    switch (varCommet) {
+                        case 1: {
+                            $('#btnCommet-' + 1).on('click', function() {
+                                alert("Handler for .click() btn " + listBtnCommet[varCommet].toString());
+                                //window.location = '#frame1';
+                            });
+                            return;
+                        }
+                    }
+                })(varCommet);
+            }
+
+            $('#btnCommet-' + 1).children('span').addClass('active')
+
+            for (varMovbtm = 0; varMovbtm < listBtnMovbtm.length; varMovbtm++) {
+                $('#movbtm-menu-btn').append('<li ' + 'id="btnMovbtm-' + varMovbtm + '" class="btn btn-box"><span>' +
+                    listBtnMovbtm[varMovbtm] + '</span></li>');
+
+                (function(varMovbtm) {
+                    switch (varMovbtm) {
+                        case 0: {
+                            $('#btnMovbtm-' + 0).on('click', function() {
+                                alert("Handler for .click() btn " + listBtnMovbtm[varMovbtm].toString());
+                                //window.location = '#frame1';
+                            });
+                            return;
+                        }
+                    }
+                })(varMovbtm);
+            }
+
+            $('#btnMovbtm-' + 1).children('span').addClass('active')
 
             for (i = 0; i < listBtnBottom.length; i++) {
                 $('#bottom-menu-btn').append('<li ' + 'id="btnBottom-' + i + '" class="btn btn-box"><span>' +

@@ -1,13 +1,22 @@
 <div lj-type="stage" style="max-width: 911.57px; height:358.62px;">
     <div lj-type="layer" lj-default-frame="main-menu" style="overflow: hidden;">
         <div lj-type="frame" lj-name="main-menu" lj-transition="fade">
-            <ul id="main-menu-btn" class="m-0 p-0 form-inline bg-black"></ul>
+            <ul id="main-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="logon-menu" lj-transition="fade">
-            <ul id="logon-menu-btn" class="m-0 p-0 form-inline bg-black"></ul>
+            <ul id="logon-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="setpwd-menu" lj-transition="fade">
-            <ul id="setpwd-menu-btn" class="m-0 p-0 form-inline bg-black"></ul>
+            <ul id="setpwd-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="ppibrt-menu" lj-transition="fade">
+            <ul id="ppibrt-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
+        </div>
+        <div lj-type="frame" lj-name="commet-menu" lj-transition="fade">
+            <ul id="commet-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="movbtm-menu" lj-transition="fade">
+            <ul id="movbtm-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
     </div>
     <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false">

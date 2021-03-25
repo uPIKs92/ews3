@@ -932,8 +932,8 @@
 
 .btn-box span.active {
     display: inline-block;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
     color: #000;
     background-color: #e6812a;
 }
