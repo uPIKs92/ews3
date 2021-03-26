@@ -87,3 +87,62 @@
         </div>
     </div>
 </div>
+
+
+{{-- <div id="vKeyboard" name="vKeyboard">
+    <li class="btnbtn-box-sm vKeyboard-number" id="keyboard-1" value="1">1</li>
+    <li class="btnbtn-box-sm vKeyboard-number" id="keyboard-2" value="2">2</li>
+    <li class="btnbtn-box-sm vKeyboard-number" id="keyboard-3" value="3">3</li>
+    <li class="btnbtn-box-sm vKeyboard-number" id="keyboard-4" value="4">4</li>
+    <li class="btnbtn-box-sm vKeyboard-number" id="keyboard-5" value="5">5</li>
+    <li class="btnbtn-box-sm vKeyboard-number" id="keyboard-6" value="6">6</li>
+    <li class="btnbtn-box-sm vKeyboard-number" id="keyboard-7" value="7">7</li>
+    <li class="btnbtn-box-sm vKeyboard-number" id="keyboard-8" value="8">8</li>
+    <li class="btnbtn-box-sm vKeyboard-number" id="keyboard-9" value="9">9</li>
+    <li class="btnbtn-box-sm vKeyboard-number vKeyboard-double" id="keyboard-0" value="0">0</li>
+    <li class="btnbtn-box-sm vKeyboard-symbol" id="keyboard-tiret" value="-">-</li>
+    <li class="btn-box-sm-half"></li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-Q" value="Q">q</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-W" value="W">w</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-E" value="E">e</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-R" value="R">r</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-T" value="T">t</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-Y" value="Y">y</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-U" value="U">u</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-I" value="I">i</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-O" value="O">o</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-P" value="P">p</li>
+    <li class="btn-box-sm-half"></li>
+    <li class="btnbtn-box-sm"></li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-A" value="A">a</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-S" value="S">s</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-D" value="D">d</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-F" value="F">f</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-G" value="G">g</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-H" value="H">h</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-J" value="J">j</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-K" value="K">k</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-L" value="L">l</li>
+    <li class="btnbtn-box-sm"></li>
+    <li class="btn-box-sm-half"></li>
+    <li class="btnbtn-box-sm"></li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-Z" value="Z">z</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-X" value="X">x</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-C" value="C">c</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-V" value="V">v</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-B" value="B">b</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-N" value="N">n</li>
+    <li class="btnbtn-box-sm vKeyboard-letter" id="keyboard-M" value="M">m</li>
+    <li class="btnbtn-box-sm"></li>
+    <li class="btnbtn-box-sm vKeyboard-number vKeyboard-symbol vKeyboard-pad" id="keyboard-." value=".">.</li>
+    <li class="btn-box-sm-half"></li>
+    <li class="btnbtn-box-sm">abort</li>
+    <li class="btnbtn-box-sm"></li>
+    <li class="btnbtn-box-sm">nxfld</li>
+    <li class="btnbtn-box-sm vKeyboard-symbol vKeyboard-space" id="keyboard-space" value=" " style="width: 405.35px;">
+        space
+    </li>
+    <li class="btnbtn-box-sm vKeyboard-return vKeyboard-numOk vKeyboard-double" id="keyboard-return" value="">bkspc</li>
+    <li class="btnbtn-box-sm">dlfld</li>
+    <li class="btnbtn-box-sm vKeyboard-enter vKeyboard-double" disabled="disabled" id="keyboard-enter">enter</li>
+</div> --}}

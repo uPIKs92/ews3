@@ -39,10 +39,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('plugin/sweetalert/sweetalert.css') }}" />
     <script type="text/javascript" src="{{ asset('plugin/sweetalert/sweetalert.min.js') }}"></script>
 
-    {{-- jquery stack menu 
-    <link href="{{ asset('plugin/jquery-stack-menu/dist/jquery-stack-menu.min.css') }}" rel="stylesheet" />
-    <script src="{{ asset('plugin/jquery-stack-menu/dist/jquery-stack-menu.min.js') }}"></script> --}}
-
     <!-- LEAFLET -->
     <link rel="stylesheet" href="{{ asset('plugin/leaflet/leaflet.css') }}">
     <script src="{{ asset('plugin/leaflet/leaflet.js') }}"></script>

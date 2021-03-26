@@ -967,6 +967,14 @@
     transition: 0.4s;
 }
 
+.btn-box.active  > span {
+    display: inline-block;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    color: #000;
+    background-color: #e6812a;
+}
+
 .btn-box-sm {
     width: 82.87px;
     height: 73.4px;
@@ -1006,6 +1014,12 @@
     transition: 0.4s;
 }
 
+.btn-box:active {
+    color: #000;
+    background-color: #fff;
+    transition: 0.2s;
+}
+
 .custom-box {
     width: 91.17px;
     display: flex;
@@ -1015,4 +1029,33 @@
 
 .plessey-frame ul > li {
     margin: -1px;
+}
+
+.cursor {
+    position: relative;
+}
+.cursor i {
+    position: absolute;
+    width: 4px;
+    height: 80%;
+    background-color: #e6812a;
+    left: 1rem;
+    top: 10%;
+    animation-name: blink;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    opacity: 1;
+}
+
+.cursor input:focus + i {
+    display: none;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }

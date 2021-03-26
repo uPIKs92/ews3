@@ -3,7 +3,8 @@
     {{-- extra script --}}
     <script src="{{ asset('plugin/layerjs/layerjs-0.6.2.min.js') }}"></script>
     <link href="{{ asset('plugin/layerjs/layerjs-0.6.2.css') }}" type="text/css" rel="stylesheet" />
-    <script src="{{ asset('plugin/WriteItJS/WriteIt.min.js') }}"></script>
+    <script src="{{ asset('plugin/azerty-vk/js/jquery.caret-1.5.2.js') }}"></script>
+    <script src="{{ asset('plugin/azerty-vk/js/main.js') }}"></script>
     <script src="{{ asset('js/nav-menu.js') }}"></script>
     {{-- end of --}}
 
@@ -78,7 +79,7 @@
                     </div>
                     <div class="col-12 p-0">
                         <div class="row no-gutters p-1">
-                            <div id="input-btn-out" class="col p-0 " style="min-height: 21px;">
+                            <div id="input-btn-out" class="col p-0 form-inline" style="min-height: 38px;">
                                 {{-- input text --}}
                             </div>
                         </div>
@@ -89,12 +90,12 @@
                                 @yield('btn-menu-view', \View::make('radar.lbow.menu.main-menu'))
                                 {{-- <ul id="dynamic-menu-btn" class="m-0 p-0 form-inline"></ul> --}}
                                 {{-- <div lj-type="stage" style="max-width: 911.57px; height:100%;">
-                                    <div lj-type="layer" lj-default-frame="alpha-menu">
-                                        <div lj-type="frame" lj-name="alpha-menu" lj-transition="up">
-                                            
+                                        <div lj-type="layer" lj-default-frame="alpha-menu">
+                                            <div lj-type="frame" lj-name="alpha-menu" lj-transition="up">
+                                                
+                                            </div>
                                         </div>
-                                    </div>
-                                </div> --}}
+                                    </div> --}}
                             </div>
                             <div style="margin-top: -2px;">
                                 <ul id="bottom-menu-btn" class="m-0 p-0 form-inline border-top border-right border-warning">
@@ -102,7 +103,8 @@
                             </div>
                         </div>
                         <div class="float-right" style="max-width: 91.17px;">
-                            <ul id="right-menu-btn" class="m-0 p-0 form-inline border-top border-right border-warning"></ul>
+                            <ul id="right-menu-btn" class="m-0 p-0 form-inline border-top border-right border-warning">
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -258,6 +260,10 @@
             </div>
         </div>
     </div>
+    {{-- <div writeit-autostart>
+        <script src="{{ asset('plugin/WriteItJS/WriteIt.min.js') }}"></script>
+    </div> --}}
+
 @endsection
 @section('js')
     <script>

@@ -60,9 +60,7 @@ function printBtn() {
 			listBtnMain[varMain][0] + '</span></li>');
 
 		if (listBtnMain[varMain][1] === 'active') {
-			html += '<span class="active">' + listBtnMain[varMain][0] + '</span>';
-			$('#btnMain-' + varMain).children('span').addClass('active');
-			document.getElementById('input-btn-out').innerHTML += html;
+			printBtnLabel(listBtnMain[varMain][0]);
 		}
 		/**/
 		(function (varMain) {
@@ -105,7 +103,7 @@ function printBtn() {
 										window.location =
 											'#closed&t=0.3s';
 										$('#btnBottom-5 span').fadeTo(
-											"slow", 0);
+											"fast", 0);
 										showBtmNav();
 									});
 								});
@@ -147,7 +145,7 @@ function printBtn() {
 										window.location =
 											'#closed&t=0.3s';
 										$('#btnBottom-5 span').fadeTo(
-											"slow", 0);
+											"fast", 0);
 										showBtmNav();
 									});
 								});
@@ -171,8 +169,6 @@ function printBtn() {
 }
 
 function callContent(idContent) {
-	let html = '';
-
 	switch (idContent) {
 		case 'setpwd': {
 			for (let varSetpwd = 0; varSetpwd < listBtnSetpwd.length; varSetpwd++) {
@@ -180,43 +176,33 @@ function callContent(idContent) {
 					listBtnSetpwd[varSetpwd][0] + '</span></li>');
 
 				if (listBtnSetpwd[varSetpwd][1] === 'active') {
-					html += '<span class="active">' + listBtnSetpwd[varSetpwd][0] + '</span>';
-					html += '<span writeit-animate class="pl-2"></span>'
-					$('#btnSetpwd-' + varSetpwd).children('span').addClass('active');
-					document.getElementById('input-btn-out').innerHTML += html;
+					printBtnLabel(listBtnSetpwd[varSetpwd][0]);
+					$('#btnSetpwd-' + varSetpwd).addClass('active');
 				}
 
-				(function (varSetpwd) {
-					switch (varSetpwd) {
-						case 0: {
-							$('#btnSetpwd-' + 0).on('click', function () {
-								//window.location = '#frame1';
-							});
-							return;
-						}
-						case 1: {
-							$('#btnSetpwd-' + 1).on('click', function () {
-								//window.location = '#frame1';
-							});
-							return;
-						}
-					}
-				})(varSetpwd);
+				$('#btnSetpwd-' + varSetpwd).on('click', function () {
+					$(this).siblings('.active').removeClass('active');
+					$(this).addClass('active');
+					clearContent();
+					printBtnLabel(listBtnSetpwd[varSetpwd][0]);
+				});
+
 			}
+
 			return;
 		}
 	}
 }
 
 function makeMenuBtm() {
-	for (i = 0; i < listBtnBottom.length; i++) {
+	for (let i = 0; i < listBtnBottom.length; i++) {
 		$('#bottom-menu-btn').append('<li ' + 'id="btnBottom-' + i + '" class="btn btn-box"><span>' +
 			listBtnBottom[i] + '</span></li>');
 	}
 }
 
 function makeMenuRight() {
-	for (j = 0; j < listBtnRight.length; j++) {
+	for (let j = 0; j < listBtnRight.length; j++) {
 		$('#right-menu-btn').append('<li ' + 'id="btnRight-' + j + '" class="btn btn-box"><span>' +
 			listBtnRight[j] + '</span></li>');
 	}
@@ -225,15 +211,16 @@ function makeMenuRight() {
 function backNav() {
 	$('#btnBottom-0').on('click', function () {
 		window.location = '#logon-menu&t=1s';
-		$('#btnBottom-4 span').fadeTo("slow", 0, function () {
+		$('#btnBottom-4 span').fadeTo("fast", 0, function () {
 			$('#btnBottom-4').off();
 			$('#btnBottom-5').off();
+			clearContent();
 		});
 
 	});
 	$('#btnBottom-2').on('click', function () {
 		window.location = '#logon-menu&t=1s';
-		$('#btnBottom-4 span').fadeTo("slow", 0, function () {
+		$('#btnBottom-4 span').fadeTo("fast", 0, function () {
 			$('#btnBottom-4').off();
 			$('#btnBottom-5').off();
 		});
@@ -249,20 +236,114 @@ function clearContent() {
 	}
 }
 
+function printBtnLabel(labelArr) {
+	let html = '';
+
+	html += '<span class="active">' + labelArr + '</span>';
+	html += '<div class="cursor"><input class="form-control bg-transparent border-0 pl-3" type="text" name="keyboardTest" id="keyboardTest" readonly><i></i></div>';
+	document.getElementById('input-btn-out').innerHTML += html;
+}
+
 function hideBtmNav() {
-	for (i = 0; i < 5; i++) {
+	for (let i = 0; i < 5; i++) {
 		$('#btnBottom-' + i).children('span').fadeTo("fast", 0);
 	}
-	for (i = 6; i < 10; i++) {
-		$('#btnBottom-' + i).children('span').fadeTo("fast", 0);
+	for (let j = 6; j < 10; j++) {
+		$('#btnBottom-' + j).children('span').fadeTo("fast", 0);
 	}
+
 }
 
 function showBtmNav() {
-	for (i = 0; i < 5; i++) {
+	for (let i = 0; i < 5; i++) {
 		$('#btnBottom-' + i).children('span').fadeTo("fast", 1);
 	}
-	for (i = 6; i < 10; i++) {
-		$('#btnBottom-' + i).children('span').fadeTo("fast", 1);
+	for (let j = 6; j < 10; j++) {
+		$('#btnBottom-' + j).children('span').fadeTo("fast", 1);
 	}
 }
+
+/*
+for (varPpibrt = 0; varPpibrt < listBtnPpibrt.length; varPpibrt++) {
+	$('#ppibrt-menu-btn').append('<li ' + 'id="btnPpibrt-' + varPpibrt + '" class="btn btn-box"><span>' +
+		listBtnPpibrt[varPpibrt] + '</span></li>');
+
+	(function(varPpibrt) {
+		switch (varPpibrt) {
+			case 0: {
+				$('#btnPpibrt-' + 0).on('click', function() {
+					alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
+					//window.location = '#frame1';
+				});
+				return;
+			}
+			case 1: {
+				$('#btnPpibrt-' + 1).on('click', function() {
+					alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
+					//window.location = '#frame1';
+				});
+				return;
+			}
+			case 2: {
+				$('#btnPpibrt-' + 2).on('click', function() {
+					alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
+					//window.location = '#frame1';
+				});
+				return;
+			}
+			case 3: {
+				$('#btnPpibrt-' + 3).on('click', function() {
+					alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
+					//window.location = '#frame1';
+				});
+				return;
+			}
+			case 4: {
+				$('#btnPpibrt-' + 4).on('click', function() {
+					alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
+					//window.location = '#frame1';
+				});
+				return;
+			}
+		}
+	})(varPpibrt);
+}
+
+for (varCommet = 0; varCommet < listBtnCommet.length; varCommet++) {
+	$('#commet-menu-btn').append('<li ' + 'id="btnCommet-' + varCommet + '" class="btn btn-box"><span>' +
+		listBtnCommet[varCommet] + '</span></li>');
+
+	(function(varCommet) {
+		switch (varCommet) {
+			case 1: {
+				$('#btnCommet-' + 1).on('click', function() {
+					alert("Handler for .click() btn " + listBtnCommet[varCommet].toString());
+					//window.location = '#frame1';
+				});
+				return;
+			}
+		}
+	})(varCommet);
+}
+
+$('#btnCommet-' + 1).children('span').addClass('active')
+
+for (varMovbtm = 0; varMovbtm < listBtnMovbtm.length; varMovbtm++) {
+	$('#movbtm-menu-btn').append('<li ' + 'id="btnMovbtm-' + varMovbtm + '" class="btn btn-box"><span>' +
+		listBtnMovbtm[varMovbtm] + '</span></li>');
+
+	(function(varMovbtm) {
+		switch (varMovbtm) {
+			case 0: {
+				$('#btnMovbtm-' + 0).on('click', function() {
+					alert("Handler for .click() btn " + listBtnMovbtm[varMovbtm].toString());
+					//window.location = '#frame1';
+				});
+				return;
+			}
+		}
+	})(varMovbtm);
+}
+
+$('#btnMovbtm-' + 1).children('span').addClass('active')
+*/
