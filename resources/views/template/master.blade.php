@@ -43,10 +43,6 @@
     <link href="{{ asset('plugin/jquery-stack-menu/dist/jquery-stack-menu.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('plugin/jquery-stack-menu/dist/jquery-stack-menu.min.js') }}"></script> --}}
 
-    {{-- layer js --}}
-    <script src="{{ asset('plugin/layerjs/layerjs-0.6.2.min.js') }}"></script>
-    <link href="{{ asset('plugin/layerjs/layerjs-0.6.2.css') }}" type="text/css" rel="stylesheet" />
-
     <!-- LEAFLET -->
     <link rel="stylesheet" href="{{ asset('plugin/leaflet/leaflet.css') }}">
     <script src="{{ asset('plugin/leaflet/leaflet.js') }}"></script>
@@ -135,7 +131,7 @@
     </style>
 </head>
 
-<body>
+<body >
     @yield('content')
 
     @yield('js')

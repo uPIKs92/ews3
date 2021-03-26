@@ -118,10 +118,9 @@
     border-radius: 0.25rem;
 }
 
-
 /* drop ke kanan*/
 
-.dropdown-submenu-right>.dropdown-menu {
+.dropdown-submenu-right > .dropdown-menu {
     top: 153px;
     left: 99%;
     margin-top: -6px;
@@ -129,14 +128,13 @@
     border-radius: 0.25rem;
 }
 
-.dropdown-submenu-right:hover>.dropdown-menu {
+.dropdown-submenu-right:hover > .dropdown-menu {
     display: block;
 }
 
-
 /*  panah ke kanan*/
 
-.dropdown-submenu-right>a:after {
+.dropdown-submenu-right > a:after {
     display: block;
     content: " ";
     float: right;
@@ -150,10 +148,9 @@
     margin-right: -10px;
 }
 
-
 /* drop ke kiri*/
 
-.dropdown-submenu>.dropdown-menu {
+.dropdown-submenu > .dropdown-menu {
     top: 5px;
     left: -101%;
     margin-top: -6px;
@@ -161,11 +158,11 @@
     border-radius: 0.25rem;
 }
 
-.dropdown-submenu:hover>.dropdown-menu {
+.dropdown-submenu:hover > .dropdown-menu {
     display: block;
 }
 
-.dropdown-submenu:hover>a:after {
+.dropdown-submenu:hover > a:after {
     border-left-color: #fff;
 }
 
@@ -173,16 +170,15 @@
     float: none;
 }
 
-.dropdown-submenu.pull-left>.dropdown-menu {
+.dropdown-submenu.pull-left > .dropdown-menu {
     left: 100%;
     margin-left: 10px;
     border-radius: 0.25rem;
 }
 
-
 /*  panah ke kiri */
 
-.dropdown-submenu>a:after {
+.dropdown-submenu > a:after {
     display: block;
     content: " ";
     float: left;
@@ -425,7 +421,6 @@
     border-left: 0.3em solid transparent;
 }
 
-
 /* .customDD {
     padding: 0;
 } */
@@ -607,7 +602,6 @@
     border-radius: 0.25rem;
 }
 
-
 /* Each of the items in the list */
 
 .custom-menu ul {
@@ -695,7 +689,9 @@
     color: #eefd00;
     background-image: url(../TCCRicon/kosongOn.bmp);
     border-color: #eefd00;
-    box-shadow: 0 2.8px 2.2px #eefd0028, 0 6.7px 5.3px #eefd000c, 0 12.5px 10px #eefd000f, 0 22.3px 17.9px #eefd0012, 0 41.8px 33.4px #eefd0016, 0 100px 80px #eefd001f;
+    box-shadow: 0 2.8px 2.2px #eefd0028, 0 6.7px 5.3px #eefd000c,
+        0 12.5px 10px #eefd000f, 0 22.3px 17.9px #eefd0012,
+        0 41.8px 33.4px #eefd0016, 0 100px 80px #eefd001f;
 }
 
 .btn-panel:hover {
@@ -707,7 +703,9 @@
 .btn-panel:focus {
     color: #eefd00;
     border-color: #eefd00;
-    box-shadow: 0 2.8px 2.2px #eefd0028, 0 6.7px 5.3px #eefd000c, 0 12.5px 10px #eefd000f, 0 22.3px 17.9px #eefd0012, 0 41.8px 33.4px #eefd0016, 0 100px 80px #eefd001f;
+    box-shadow: 0 2.8px 2.2px #eefd0028, 0 6.7px 5.3px #eefd000c,
+        0 12.5px 10px #eefd000f, 0 22.3px 17.9px #eefd0012,
+        0 41.8px 33.4px #eefd0016, 0 100px 80px #eefd001f;
 }
 
 .btn-panel.disabled,
@@ -718,22 +716,26 @@
 
 .btn-panel:not(:disabled):not(.disabled).active,
 .btn-panel:not(:disabled):not(.disabled):active,
-.show>.btn-panel.dropdown-toggle {
+.show > .btn-panel.dropdown-toggle {
     color: #eefd00;
     background-image: url(../TCCRicon/kosongOn.bmp);
     border-color: #eefd00;
-    box-shadow: 0 2.8px 2.2px #eefd0028, 0 6.7px 5.3px #eefd000c, 0 12.5px 10px #eefd000f, 0 22.3px 17.9px #eefd0012, 0 41.8px 33.4px #eefd0016, 0 100px 80px #eefd001f;
+    box-shadow: 0 2.8px 2.2px #eefd0028, 0 6.7px 5.3px #eefd000c,
+        0 12.5px 10px #eefd000f, 0 22.3px 17.9px #eefd0012,
+        0 41.8px 33.4px #eefd0016, 0 100px 80px #eefd001f;
 }
 
 .btn-panel:not(:disabled):not(.disabled).active:focus,
 .btn-panel:not(:disabled):not(.disabled):active:focus,
-.show>.btn-panel.dropdown-toggle:focus {
-    box-shadow: 0 2.8px 2.2px #eefd0080, 0 6.7px 5.3px #eefd000c, 0 12.5px 10px #eefd000f, 0 22.3px 17.9px #eefd0012, 0 41.8px 33.4px #eefd0016, 0 100px 80px #eefd001f;
+.show > .btn-panel.dropdown-toggle:focus {
+    box-shadow: 0 2.8px 2.2px #eefd0080, 0 6.7px 5.3px #eefd000c,
+        0 12.5px 10px #eefd000f, 0 22.3px 17.9px #eefd0012,
+        0 41.8px 33.4px #eefd0016, 0 100px 80px #eefd001f;
 }
 
 .btn-panel-none:not(:disabled):not(.disabled).active,
 .btn-panel-none:not(:disabled):not(.disabled):active,
-.show>.btn-panel.dropdown-toggle {
+.show > .btn-panel.dropdown-toggle {
     color: #aeaead;
     border-color: #7c7c7c;
     background-image: url(../TCCRicon/kosong.bmp);
@@ -790,6 +792,14 @@
     height: 100%;
 }
 
+.plessey-frame span.active {
+    display: inline-block;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    color: #000;
+    background-color: #e6812a;
+}
+
 .radar-ring {
     background-image: url(../img/radar_rng.png);
     background-position: center;
@@ -808,14 +818,15 @@
     font: bold 6em/2em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
     text-align: center;
     color: hsla(0, 0%, 20%, 1);
-    text-shadow: hsla(0, 0%, 40%, 0.5) 0 -1px 0, hsla(0, 0%, 100%, 0.6) 0 2px 1px;
+    text-shadow: hsla(0, 0%, 40%, 0.5) 0 -1px 0,
+        hsla(0, 0%, 100%, 0.6) 0 2px 1px;
     background-color: hsl(0, 0%, 90%);
-    box-shadow: inset rgb(49, 49, 49) 0 0px 0px 4px, /* border */
-    inset hsla(0, 0%, 15%, 0.8) 0 -1px 5px 4px, /* soft SD */
-    /*inset hsla(0, 0%, 0%, .25) 0 -1px 0px 7px,  bottom SD */
-    /*inset hsla(0, 0%, 100%, .7) 0 2px 1px 7px,  top HL */
-    hsla(0, 0%, 0%, 0.15) 0 -5px 6px 4px, /* outer SD */
-    hsla(0, 0%, 100%, 0.5) 0 5px 6px 4px;
+    box-shadow: inset rgb(49, 49, 49) 0 0px 0px 4px,
+        /* border */ inset hsla(0, 0%, 15%, 0.8) 0 -1px 5px 4px,
+        /* soft SD */ /*inset hsla(0, 0%, 0%, .25) 0 -1px 0px 7px,  bottom SD */
+            /*inset hsla(0, 0%, 100%, .7) 0 2px 1px 7px,  top HL */
+            hsla(0, 0%, 0%, 0.15) 0 -5px 6px 4px,
+        /* outer SD */ hsla(0, 0%, 100%, 0.5) 0 5px 6px 4px;
     /* outer HL */
     transition: color 0.2s;
 }
@@ -825,28 +836,85 @@
     font-size: 4em;
     height: 80px;
     border-radius: 0.5em;
-    background-image: -webkit-repeating-linear-gradient( left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 6%, hsla(0, 0%, 100%, 0.1) 7.5%), -webkit-repeating-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla( 0, 0%, 0%, 0) 4%, hsla(0, 0%, 0%, 0.03) 4.5%), -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla( 0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, 0.15) 2.2%), linear-gradient( 180deg, hsl(0, 0%, 78%) 0%, hsl(0, 0%, 90%) 47%, hsl(0, 0%, 78%) 53%, hsl(0, 0%, 70%) 100%);
+    background-image: -webkit-repeating-linear-gradient(
+            left,
+            hsla(0, 0%, 100%, 0) 0%,
+            hsla(0, 0%, 100%, 0) 6%,
+            hsla(0, 0%, 100%, 0.1) 7.5%
+        ),
+        -webkit-repeating-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(
+                        0,
+                        0%,
+                        0%,
+                        0
+                    )
+                    4%, hsla(0, 0%, 0%, 0.03) 4.5%),
+        -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(
+                        0,
+                        0%,
+                        100%,
+                        0
+                    )
+                    1.2%, hsla(0, 0%, 100%, 0.15) 2.2%),
+        linear-gradient(
+            180deg,
+            hsl(0, 0%, 78%) 0%,
+            hsl(0, 0%, 90%) 47%,
+            hsl(0, 0%, 78%) 53%,
+            hsl(0, 0%, 70%) 100%
+        );
 }
 
 .brushed-metal {
-    background-image: linear-gradient( 135deg, rgba(62, 68, 74, 0.5), rgba(192, 192, 192, 0.4), rgba(91, 96, 105, 0.5)), repeating-linear-gradient( 135deg, rgba(1, 5, 8, 0.26), rgba(189, 189, 189, 0.4) 2.5px), repeating-linear-gradient( 135deg, rgba(2, 23, 38, 0.32), rgba(192, 192, 192, 0.4) 2.7px), repeating-linear-gradient( 135deg, rgba(58, 65, 71, 0.6), rgba(224, 226, 227, 0.3) 3px), repeating-linear-gradient( 135deg, rgba(91, 95, 98, 0.5), rgba(55, 170, 233, 0.26) 4.5px);
-    box-shadow: inset rgb(49, 49, 49) 0 0px 0px 4px, /* border */
-    inset hsla(0, 0%, 15%, 0.8) 0 -1px 5px 4px, /* soft SD */
-    /*inset hsla(0, 0%, 0%, .25) 0 -1px 0px 7px,  bottom SD */
-    /*inset hsla(0, 0%, 100%, .7) 0 2px 1px 7px, top HL */
-    hsla(0, 0%, 0%, 0.15) 0 -5px 6px 4px, /* outer SD */
-    hsla(0, 0%, 100%, 0.5) 0 5px 6px 4px;
+    background-image: linear-gradient(
+            135deg,
+            rgba(62, 68, 74, 0.5),
+            rgba(192, 192, 192, 0.4),
+            rgba(91, 96, 105, 0.5)
+        ),
+        repeating-linear-gradient(
+            135deg,
+            rgba(1, 5, 8, 0.26),
+            rgba(189, 189, 189, 0.4) 2.5px
+        ),
+        repeating-linear-gradient(
+            135deg,
+            rgba(2, 23, 38, 0.32),
+            rgba(192, 192, 192, 0.4) 2.7px
+        ),
+        repeating-linear-gradient(
+            135deg,
+            rgba(58, 65, 71, 0.6),
+            rgba(224, 226, 227, 0.3) 3px
+        ),
+        repeating-linear-gradient(
+            135deg,
+            rgba(91, 95, 98, 0.5),
+            rgba(55, 170, 233, 0.26) 4.5px
+        );
+    box-shadow: inset rgb(49, 49, 49) 0 0px 0px 4px,
+        /* border */ inset hsla(0, 0%, 15%, 0.8) 0 -1px 5px 4px,
+        /* soft SD */ /*inset hsla(0, 0%, 0%, .25) 0 -1px 0px 7px,  bottom SD */
+            /*inset hsla(0, 0%, 100%, .7) 0 2px 1px 7px, top HL */
+            hsla(0, 0%, 0%, 0.15) 0 -5px 6px 4px,
+        /* outer SD */ hsla(0, 0%, 100%, 0.5) 0 5px 6px 4px;
 }
 
 .carbon-fibre {
-    background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+    background: radial-gradient(black 15%, transparent 16%) 0 0,
+        radial-gradient(black 15%, transparent 16%) 8px 8px,
+        radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+        radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
     background-color: #444444;
     background-size: 16px 16px;
 }
 
 .box-shadow {
     border: 3px solid #c5c5c5;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 .inner-shadow {
@@ -880,7 +948,9 @@
 .btn-plessey:focus {
     color: #fff;
     border-color: #fd7a00;
-    box-shadow: 0 2.8px 2.2px #fdad0028, 0 6.7px 5.3px #fdad000c, 0 12.5px 10px #fdad000f, 0 22.3px 17.9px #fdad0012, 0 41.8px 33.4px #fdad0016, 0 100px 80px #fdad001f;
+    box-shadow: 0 2.8px 2.2px #fdad0028, 0 6.7px 5.3px #fdad000c,
+        0 12.5px 10px #fdad000f, 0 22.3px 17.9px #fdad0012,
+        0 41.8px 33.4px #fdad0016, 0 100px 80px #fdad001f;
 }
 
 .btn-box {
@@ -930,14 +1000,6 @@
     list-style: none;
 }
 
-.btn-box span.active {
-    display: inline-block;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-    color: #000;
-    background-color: #e6812a;
-}
-
 .btn-box:hover {
     color: #000;
     background-color: #e6812a;
@@ -951,6 +1013,6 @@
     align-items: center;
 }
 
-.plessey-frame ul>li {
+.plessey-frame ul > li {
     margin: -1px;
 }

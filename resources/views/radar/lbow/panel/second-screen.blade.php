@@ -1,5 +1,12 @@
 @extends('template.master')
 @section('content')
+    {{-- extra script --}}
+    <script src="{{ asset('plugin/layerjs/layerjs-0.6.2.min.js') }}"></script>
+    <link href="{{ asset('plugin/layerjs/layerjs-0.6.2.css') }}" type="text/css" rel="stylesheet" />
+    <script src="{{ asset('plugin/WriteItJS/WriteIt.min.js') }}"></script>
+    <script src="{{ asset('js/nav-menu.js') }}"></script>
+    {{-- end of --}}
+
     <div class="plessey-frame container-fluid h-auto p-4">
         <div class="row h-auto">
             <div class="col-12 box-shadow inner-shadow bg-secondary rounded-lg mb-4" style="min-height: 224px;"></div>
@@ -56,15 +63,22 @@
                         </div>
                     </div>
                     <div class="col-12 p-0">
-                        <div class="row no-gutters p-1 mb-3">
-                            <div class="col p-0" style="min-height: 50px;">
-                                {{-- menu text --}}
+                        <div class="row no-gutters p-1">
+                            <div id="tree-btn-out" class="col p-0 ml-2 mr-2" style="min-height: 21px;">
+                                {{-- btn tree text --}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0">
+                        <div class="row no-gutters p-1 mt-2 mb-2">
+                            <div id="message-btn-out" class="col p-0 text-center" style="min-height: 21px;">
+                                {{-- message text --}}
                             </div>
                         </div>
                     </div>
                     <div class="col-12 p-0">
                         <div class="row no-gutters p-1">
-                            <div id="input-btn-out" class="col p-0" style="min-height: 21px;">
+                            <div id="input-btn-out" class="col p-0 " style="min-height: 21px;">
                                 {{-- input text --}}
                             </div>
                         </div>
@@ -284,326 +298,6 @@
             displayTime();
             setInterval(displayTime, 1000);
         });
-
-    </script>
-    <script>
-        $(function() {
-            $('div[onload]').trigger('onload');
-        });
-
-        var listBtnRight = [
-            'settrk', 'labpos', 'trksel', 'dimsel', 'page'
-        ];
-
-        var listBtnBottom = [
-            'abort', '.', 'home', '', 'alpha', 'close', '', 'bakspc', 'dltfld', 'enter'
-        ];
-
-        var listBtnMain = [
-            'logon', '', 'lbow', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', ''
-        ];
-
-        var listBtnLogon = [
-            'logoff', 'setpwd', '', '', 'maps', 'totes', 'track', 'weapon', 'radcon', 'radplt',
-            '', '', 'ppibrt', 'commet', 'dimsel', '', '', '', '', '',
-            '', '', '', 'movbtm', 'labpos', 'trklin', 'settrk', '', 'histry', '',
-            '', 'stbsel', '', '', 'trklab', 'trksel', 'trkldr', '', '', 'pltsel'
-        ];
-
-        var listBtnSetpwd = [
-            'pswrd', 'verify', '', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', ''
-        ];
-
-        var listBtnPpibrt = [
-            'bakgnd', '1stvid', 'logvid', 'rrings', 'synth', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', '',
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
-        ];
-
-        var listBtnCommet = [
-            '', 'zone', '', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', '',
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
-        ];
-
-        var listBtnMovbtm = [
-            '', 'georef', '', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', '',
-            '', '', '', '', '', '', '', '', '', ''
-        ];
-
-        function printBtn() {
-            for (varMain = 0; varMain < listBtnMain.length; varMain++) {
-                $('#main-menu-btn').append('<li ' + 'id="btnMain-' + varMain + '" class="btn btn-box"><span>' +
-                    listBtnMain[varMain] + '</span></li>');
-                /**/
-                (function(varMain) {
-                    switch (varMain) {
-                        case 0: {
-                            $('#btnMain-' + 0).on('click', function() {
-                                // alert("Handler for .click() btn " + j);
-                                window.location = '#logon-menu&t=0.3s';
-                            });
-                            return;
-                        }
-                    }
-                })(varMain);
-            }
-
-            $('#btnMain-' + 2).children('span').addClass('active')
-
-            for (varLogon = 0; varLogon < listBtnLogon.length; varLogon++) {
-                $('#logon-menu-btn').append('<li ' + 'id="btnLogon-' + varLogon + '" class="btn btn-box"><span>' +
-                    listBtnLogon[varLogon] + '</span></li>');
-
-                (function(varLogon) {
-                    switch (varLogon) {
-                        case 0: {
-                            $('#btnLogon-' + 0).on('click', function() {
-                                // alert("Handler for .click() btn " + j);
-                                window.location = '#main-menu&t=0.3s';
-                                $('#btnBottom-0').off();
-                                $('#btnBottom-2').off();
-                            });
-                            return;
-                        }
-                        case 1: {
-                            $('#btnLogon-' + 1).on('click', function() {
-                                // alert("Handler for .click() btn " + j);
-                                window.location = '#setpwd-menu&t=0.3s';
-                                $('#btnBottom-4 span').fadeTo("fast", 1, function() {
-                                    $('#btnBottom-4').on('click', function() {
-                                        window.location = '#sidemenu&t=0.3s';
-                                        $('#btnBottom-5 span').fadeTo("fast", 1, function() {
-                                            $('#btnBottom-5').on('click', function() {
-                                                window.location =
-                                                    '#closed&t=0.3s';
-                                                $('#btnBottom-5 span').fadeTo(
-                                                    "slow", 0);
-                                                showBtmNav();
-                                            });
-                                        });
-                                        hideBtmNav();
-                                    });
-
-                                    backNav();
-                                });
-                            });
-                            return;
-                        }
-
-                        case 12: {
-                            $('#btnLogon-' + 12).on('click', function() {
-                                // alert("Handler for .click() btn " + j);
-                                window.location = '#ppibrt-menu&t=0.3s';
-                                backNav();
-                            });
-                            return;
-                        }
-
-                        case 13: {
-                            $('#btnLogon-' + 13).on('click', function() {
-                                // alert("Handler for .click() btn " + j);
-                                window.location = '#commet-menu&t=0.3s';
-                                backNav();
-                            });
-                            return;
-                        }
-
-                        case 23: {
-                            $('#btnLogon-' + 23).on('click', function() {
-                                // alert("Handler for .click() btn " + j);
-                                window.location = '#movbtm-menu&t=0.3s';
-                                $('#btnBottom-4 span').fadeTo("fast", 1, function() {
-                                    $('#btnBottom-4').on('click', function() {
-                                        window.location = '#sidemenu&t=0.3s';
-                                        $('#btnBottom-5 span').fadeTo("fast", 1, function() {
-                                            $('#btnBottom-5').on('click', function() {
-                                                window.location =
-                                                    '#closed&t=0.3s';
-                                                $('#btnBottom-5 span').fadeTo(
-                                                    "slow", 0);
-                                                showBtmNav();
-                                            });
-                                        });
-                                        hideBtmNav();
-                                    });
-
-                                    backNav();
-                                });
-                            });
-                            return;
-                        }
-                    }
-                })(varLogon);
-            }
-
-            for (varSetpwd = 0; varSetpwd < listBtnSetpwd.length; varSetpwd++) {
-                $('#setpwd-menu-btn').append('<li ' + 'id="btnSetpwd-' + varSetpwd + '" class="btn btn-box"><span>' +
-                    listBtnSetpwd[varSetpwd] + '</span></li>');
-
-                (function(varSetpwd) {
-                    switch (varSetpwd) {
-                        case 0: {
-                            $('#btnSetpwd-' + 0).on('click', function() {
-                                alert("Handler for .click() btn " + listBtnSetpwd[varSetpwd].toString());
-                                //window.location = '#frame1';
-                            });
-                            return;
-                        }
-                        case 1: {
-                            $('#btnSetpwd-' + 1).on('click', function() {
-                                alert("Handler for .click() btn " + listBtnSetpwd[varSetpwd].toString());
-                                //window.location = '#frame1';
-                            });
-                            return;
-                        }
-                    }
-                })(varSetpwd);
-            }
-
-            for (varPpibrt = 0; varPpibrt < listBtnPpibrt.length; varPpibrt++) {
-                $('#ppibrt-menu-btn').append('<li ' + 'id="btnPpibrt-' + varPpibrt + '" class="btn btn-box"><span>' +
-                    listBtnPpibrt[varPpibrt] + '</span></li>');
-
-                (function(varPpibrt) {
-                    switch (varPpibrt) {
-                        case 0: {
-                            $('#btnPpibrt-' + 0).on('click', function() {
-                                alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
-                                //window.location = '#frame1';
-                            });
-                            return;
-                        }
-                        case 1: {
-                            $('#btnPpibrt-' + 1).on('click', function() {
-                                alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
-                                //window.location = '#frame1';
-                            });
-                            return;
-                        }
-                        case 2: {
-                            $('#btnPpibrt-' + 2).on('click', function() {
-                                alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
-                                //window.location = '#frame1';
-                            });
-                            return;
-                        }
-                        case 3: {
-                            $('#btnPpibrt-' + 3).on('click', function() {
-                                alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
-                                //window.location = '#frame1';
-                            });
-                            return;
-                        }
-                        case 4: {
-                            $('#btnPpibrt-' + 4).on('click', function() {
-                                alert("Handler for .click() btn " + listBtnPpibrt[varPpibrt].toString());
-                                //window.location = '#frame1';
-                            });
-                            return;
-                        }
-                    }
-                })(varPpibrt);
-            }
-
-            for (varCommet = 0; varCommet < listBtnCommet.length; varCommet++) {
-                $('#commet-menu-btn').append('<li ' + 'id="btnCommet-' + varCommet + '" class="btn btn-box"><span>' +
-                    listBtnCommet[varCommet] + '</span></li>');
-
-                (function(varCommet) {
-                    switch (varCommet) {
-                        case 1: {
-                            $('#btnCommet-' + 1).on('click', function() {
-                                alert("Handler for .click() btn " + listBtnCommet[varCommet].toString());
-                                //window.location = '#frame1';
-                            });
-                            return;
-                        }
-                    }
-                })(varCommet);
-            }
-
-            $('#btnCommet-' + 1).children('span').addClass('active')
-
-            for (varMovbtm = 0; varMovbtm < listBtnMovbtm.length; varMovbtm++) {
-                $('#movbtm-menu-btn').append('<li ' + 'id="btnMovbtm-' + varMovbtm + '" class="btn btn-box"><span>' +
-                    listBtnMovbtm[varMovbtm] + '</span></li>');
-
-                (function(varMovbtm) {
-                    switch (varMovbtm) {
-                        case 0: {
-                            $('#btnMovbtm-' + 0).on('click', function() {
-                                alert("Handler for .click() btn " + listBtnMovbtm[varMovbtm].toString());
-                                //window.location = '#frame1';
-                            });
-                            return;
-                        }
-                    }
-                })(varMovbtm);
-            }
-
-            $('#btnMovbtm-' + 1).children('span').addClass('active')
-
-            for (i = 0; i < listBtnBottom.length; i++) {
-                $('#bottom-menu-btn').append('<li ' + 'id="btnBottom-' + i + '" class="btn btn-box"><span>' +
-                    listBtnBottom[i] + '</span></li>');
-            }
-
-            for (j = 0; j < listBtnRight.length; j++) {
-                $('#right-menu-btn').append('<li ' + 'id="btnRight-' + j + '" class="btn btn-box"><span>' +
-                    listBtnRight[j] + '</span></li>');
-            }
-
-            $('#btnBottom-4 span').css("opacity", "0");
-            $('#btnBottom-5 span').css("opacity", "0");
-        }
-
-        function backNav() {
-            $('#btnBottom-0').on('click', function() {
-                window.location = '#logon-menu&t=1s';
-                $('#btnBottom-4 span').fadeTo("slow", 0, function() {
-                    $('#btnBottom-4').off();
-                    $('#btnBottom-5').off();
-                });
-
-            });
-            $('#btnBottom-2').on('click', function() {
-                window.location = '#logon-menu&t=1s';
-                $('#btnBottom-4 span').fadeTo("slow", 0, function() {
-                    $('#btnBottom-4').off();
-                    $('#btnBottom-5').off();
-                });
-
-            });
-        }
-
-        function hideBtmNav() {
-            for (i = 0; i < 5; i++) {
-                $('#btnBottom-' + i).children('span').fadeTo("fast", 0);
-            }
-            for (i = 6; i < 10; i++) {
-                $('#btnBottom-' + i).children('span').fadeTo("fast", 0);
-            }
-        }
-
-        function showBtmNav() {
-            for (i = 0; i < 5; i++) {
-                $('#btnBottom-' + i).children('span').fadeTo("fast", 1);
-            }
-            for (i = 6; i < 10; i++) {
-                $('#btnBottom-' + i).children('span').fadeTo("fast", 1);
-            }
-        }
 
     </script>
 @endsection
