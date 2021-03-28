@@ -3,8 +3,6 @@
     {{-- extra script --}}
     <script src="{{ asset('plugin/layerjs/layerjs-0.6.2.min.js') }}"></script>
     <link href="{{ asset('plugin/layerjs/layerjs-0.6.2.css') }}" type="text/css" rel="stylesheet" />
-    <script src="{{ asset('plugin/azerty-vk/js/jquery.caret-1.5.2.js') }}"></script>
-    <script src="{{ asset('plugin/azerty-vk/js/main.js') }}"></script>
     <script src="{{ asset('js/nav-menu.js') }}"></script>
     {{-- end of --}}
 
@@ -79,8 +77,17 @@
                     </div>
                     <div class="col-12 p-0">
                         <div class="row no-gutters p-1">
-                            <div id="input-btn-out" class="col p-0 form-inline" style="min-height: 38px;">
-                                {{-- input text --}}
+                            <div class="col p-0 clearfix" style="min-height: 38px;">
+                                <div id="input-btn-out" class="float-left" style="width: 8%;">
+                                    {{-- input text --}}
+                                </div>
+                                <div class="float-left" style="width: 92%;">
+                                    <div class="cursor">
+                                        <i class="d-none" style="left: 0px;"></i>
+                                        <input id="input-VK" class="bg-transparent border-0 w-100" type="text"
+                                            style="height: 21px; color:#e6812a;" readonly>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -260,10 +267,12 @@
             </div>
         </div>
     </div>
+
+    <script src="{{ asset('plugin/azerty-vk/js/jquery.caret-1.5.2.js') }}"></script>
+    <script src="{{ asset('plugin/azerty-vk/js/main.js') }}"></script>
     {{-- <div writeit-autostart>
         <script src="{{ asset('plugin/WriteItJS/WriteIt.min.js') }}"></script>
     </div> --}}
-
 @endsection
 @section('js')
     <script>

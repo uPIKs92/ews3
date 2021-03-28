@@ -797,7 +797,7 @@
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     color: #000;
-    background-color: #e6812a;
+    background-color: #fd9727;
 }
 
 .radar-ring {
@@ -954,9 +954,9 @@
 }
 
 .btn-box {
-    color: #e6812a;
-    border-left: 1px solid #e6812a;
-    border-bottom: 1px solid #e6812a;
+    color: #fd9727;
+    border-left: 1px solid #fd9727;
+    border-bottom: 1px solid #fd9727;
     border-radius: 0px !important;
     width: 91.17px;
     height: 91.17px;
@@ -972,15 +972,15 @@
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     color: #000;
-    background-color: #e6812a;
+    background-color: #fd9727;
 }
 
 .btn-box-sm {
     width: 82.87px;
     height: 73.4px;
-    color: #e6812a;
-    border-left: 1px solid #e6812a;
-    border-bottom: 1px solid #e6812a;
+    color: #fd9727;
+    border-left: 1px solid #fd9727;
+    border-bottom: 1px solid #fd9727;
     border-radius: 0px !important;
     padding: 0px;
     display: flex;
@@ -994,15 +994,15 @@
 }
 
 .btn-box-sm:active {
-    background-color: #e6812a;
+    background-color: #fd9727;
     color: #000;
 }
 
 .btn-box-sm-half {
     width: 41.435px;
     height: 73.4px;
-    border-left: 1px solid #e6812a;
-    border-bottom: 1px solid #e6812a;
+    border-left: 1px solid #fd9727;
+    border-bottom: 1px solid #fd9727;
     border-radius: 0px !important;
     padding: 0px;
     list-style: none;
@@ -1010,7 +1010,7 @@
 
 .btn-box:hover {
     color: #000;
-    background-color: #e6812a;
+    background-color: #fd9727;
     transition: 0.4s;
 }
 
@@ -1036,10 +1036,10 @@
 }
 .cursor i {
     position: absolute;
-    width: 4px;
+    width: 2px;
     height: 80%;
-    background-color: #e6812a;
-    left: 1rem;
+    background-color: #fd9727;
+    left: 0px;
     top: 10%;
     animation-name: blink;
     animation-duration: 800ms;

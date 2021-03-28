@@ -1,7 +1,8 @@
 ///// Configuration //////
 
 //These vars tell the virtual keyboard where to point its inputs
-let currentInputField = undefined;
+//let currentInputField = undefined;
+let currentInputField = 'input-VK';
 let currentCaretField = 0;
 let selectedInput;
 
@@ -76,7 +77,7 @@ $(document.body).click(function (e) {
   if ($(e.target).is("input")) {
     return false;
   }
-  hideKeyboard();
+  //hideKeyboard();
 });
 
 $("input").on("click change input", function (e) {
@@ -92,6 +93,7 @@ $(
   e.preventDefault();
   onVirtualKeyboardPress(e);
   $(`#${currentInputField}`).focus();
+  //$('.cursor i').css('left', '+=12px');
 });
 
 function onVirtualKeyboardPress(event) {
@@ -103,6 +105,12 @@ function onVirtualKeyboardPress(event) {
     part2 = str.substring(char_pos + 1, str.length);
     $(`#${currentInputField}`).val(part1 + part2);
     $(`#${currentInputField}`).caret(currentCaretField - 1);
+    $('.cursor i').css('left', '-=10.5px');
+  } else if(event.target.id === "keyboard-return" && currentCaretField === 0) {
+    $('.cursor i').css('left', '0');
+  }
+   else {
+    $('.cursor i').css('left', '+=10.5px');
   }
 
   $(`#${currentInputField}`).caret(event.target.value);

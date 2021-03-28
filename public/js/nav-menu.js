@@ -55,107 +55,89 @@ const listBtnMovbtm = [
 function printBtn() {
 	let html = '';
 
-	for (let varMain = 0; varMain < listBtnMain.length; varMain++) {
-		$('#main-menu-btn').append('<li ' + 'id="btnMain-' + varMain + '" class="btn btn-box"><span>' +
-			listBtnMain[varMain][0] + '</span></li>');
-
-		if (listBtnMain[varMain][1] === 'active') {
-			printBtnLabel(listBtnMain[varMain][0]);
-		}
-		/**/
-		(function (varMain) {
-			switch (varMain) {
-				case 0: {
-					$('#btnMain-' + 0).on('click', function () {
-						clearContent();
-						window.location = '#logon-menu&t=0.3s';
-					});
-					return;
-				}
-			}
-		})(varMain);
-	}
+	callContent('main-menu');
 
 	for (let varLogon = 0; varLogon < listBtnLogon.length; varLogon++) {
 		$('#logon-menu-btn').append('<li ' + 'id="btnLogon-' + varLogon + '" class="btn btn-box"><span>' +
 			listBtnLogon[varLogon] + '</span></li>');
 
 		(function (varLogon) {
-			switch (varLogon) {
-				case 0: {
-					$('#btnLogon-' + 0).on('click', function () {
-						window.location = '#main-menu&t=0.3s';
-						$('#btnBottom-0').off();
-						$('#btnBottom-2').off();
-						clearContent();
-					});
-					return;
-				}
-				case 1: {
-					$('#btnLogon-' + 1).on('click', function () {
-						window.location = '#setpwd-menu&t=0.3s';
-						callContent('setpwd');
-						$('#btnBottom-4 span').fadeTo("fast", 1, function () {
-							$('#btnBottom-4').on('click', function () {
-								window.location = '#sidemenu&t=0.3s';
-								$('#btnBottom-5 span').fadeTo("fast", 1, function () {
-									$('#btnBottom-5').on('click', function () {
-										window.location =
-											'#closed&t=0.3s';
-										$('#btnBottom-5 span').fadeTo(
-											"fast", 0);
-										showBtmNav();
+			if (listBtnLogon[varLogon] != '') {
+				switch (varLogon) {
+					case 0: {
+						$('#btnLogon-' + 0).on('click', function () {
+							window.location = '#main-menu&t=0.2s';
+							callContent('main-menu');
+							$('#btnBottom-0').off();
+							$('#btnBottom-2').off();
+							clearContent();
+						});
+						return;
+					}
+					case 1: {
+						$('#btnLogon-' + 1).on('click', function () {
+							window.location = '#setpwd-menu&t=0.2s';
+							callContent('setpwd');
+							$('#btnBottom-4 span').fadeTo(200, 1, function () {
+								$('#btnBottom-4').on('click', function () {
+									window.location = '#sidemenu&t=0.2s';
+									$('#btnBottom-5 span').fadeTo(200, 1, function () {
+										$('#btnBottom-5').on('click', function () {
+											window.location =
+												'#closed&t=0.2s';
+											$('#btnBottom-5 span').fadeTo(
+												200, 0);
+											showBtmNav();
+										});
 									});
+									hideBtmNav();
 								});
-								hideBtmNav();
 							});
+						});
+						return;
+					}
+
+					case 12: {
+						$('#btnLogon-' + 12).on('click', function () {
+							// alert("Handler for .click() btn " + j);
+							window.location = '#ppibrt-menu&t=0.2s';
 							backNav();
 						});
-					});
-					return;
-				}
+						return;
+					}
 
-				case 12: {
-					$('#btnLogon-' + 12).on('click', function () {
-						// alert("Handler for .click() btn " + j);
-						window.location = '#ppibrt-menu&t=0.3s';
-						backNav();
-					});
-					return;
-				}
-
-				case 13: {
-					$('#btnLogon-' + 13).on('click', function () {
-						// alert("Handler for .click() btn " + j);
-						window.location = '#commet-menu&t=0.3s';
-						backNav();
-					});
-					return;
-				}
-
-				case 23: {
-					$('#btnLogon-' + 23).on('click', function () {
-						// alert("Handler for .click() btn " + j);
-						window.location = '#movbtm-menu&t=0.3s';
-						$('#btnBottom-4 span').fadeTo("fast", 1, function () {
-							$('#btnBottom-4').on('click', function () {
-								window.location = '#sidemenu&t=0.3s';
-								$('#btnBottom-5 span').fadeTo("fast", 1, function () {
-									$('#btnBottom-5').on('click', function () {
-										window.location =
-											'#closed&t=0.3s';
-										$('#btnBottom-5 span').fadeTo(
-											"fast", 0);
-										showBtmNav();
-									});
-								});
-								hideBtmNav();
-							});
-
+					case 13: {
+						$('#btnLogon-' + 13).on('click', function () {
+							// alert("Handler for .click() btn " + j);
+							window.location = '#commet-menu&t=0.2s';
 							backNav();
 						});
-					});
-					return;
+						return;
+					}
+
+					case 23: {
+						$('#btnLogon-' + 23).on('click', function () {
+							// alert("Handler for .click() btn " + j);
+							window.location = '#movbtm-menu&t=0.2s';
+							$('#btnBottom-4 span').fadeTo(200, 1, function () {
+								$('#btnBottom-4').on('click', function () {
+									window.location = '#sidemenu&t=0.2s';
+									$('#btnBottom-5 span').fadeTo(200, 1, function () {
+										$('#btnBottom-5').on('click', function () {
+											window.location =
+												'#closed&t=0.2s';
+											$('#btnBottom-5 span').fadeTo(
+												200, 0);
+											showBtmNav();
+										});
+									});
+									hideBtmNav();
+								});
+								backNav();
+							});
+						});
+						return;
+					}
 				}
 			}
 		})(varLogon);
@@ -164,31 +146,50 @@ function printBtn() {
 	makeMenuBtm();
 	makeMenuRight();
 
-	$('#btnBottom-4 span').css("opacity", "0");
-	$('#btnBottom-5 span').css("opacity", "0");
+	$('#btnBottom-4 span, #btnBottom-5 span').css("opacity", "0");
 }
 
 function callContent(idContent) {
 	switch (idContent) {
+		case 'main-menu': {
+			for (let varMain = 0; varMain < listBtnMain.length; varMain++) {
+				$('#main-menu-btn').append('<li ' + 'id="btnMain-' + varMain + '" class="btn btn-box"><span>' +
+					listBtnMain[varMain][0] + '</span></li>');
+
+				(function (varMain) {
+					switch (varMain) {
+						case 0: {
+							$('#btnMain-' + 0).on('click', function () {
+								clearContent();
+								window.location = '#logon-menu&t=0.2s';
+							});
+							return;
+						}
+					}
+				})(varMain);
+			}
+			setBtnActive('#btnMain-', listBtnMain);
+			return;
+		}
 		case 'setpwd': {
 			for (let varSetpwd = 0; varSetpwd < listBtnSetpwd.length; varSetpwd++) {
 				$('#setpwd-menu-btn').append('<li ' + 'id="btnSetpwd-' + varSetpwd + '" class="btn btn-box"><span>' +
 					listBtnSetpwd[varSetpwd][0] + '</span></li>');
 
-				if (listBtnSetpwd[varSetpwd][1] === 'active') {
-					printBtnLabel(listBtnSetpwd[varSetpwd][0]);
-					$('#btnSetpwd-' + varSetpwd).addClass('active');
+				if (listBtnSetpwd[varSetpwd][0] != '') {
+					$('#btnSetpwd-' + varSetpwd).on('click', function () {
+						$(this).siblings('.active').removeClass('active');
+						$(this).addClass('active');
+						clearContent();
+						printBtnLabel(listBtnSetpwd[varSetpwd][0]);
+						$('.cursor i').removeClass('d-none');
+					});
 				}
-
-				$('#btnSetpwd-' + varSetpwd).on('click', function () {
-					$(this).siblings('.active').removeClass('active');
-					$(this).addClass('active');
-					clearContent();
-					printBtnLabel(listBtnSetpwd[varSetpwd][0]);
-				});
-
 			}
-
+			setBtnActive('#btnSetpwd-', listBtnSetpwd);
+			$('.cursor i').removeClass('d-none');
+			document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+			backNav('#btnSetpwd-', listBtnSetpwd.length);
 			return;
 		}
 	}
@@ -208,23 +209,19 @@ function makeMenuRight() {
 	}
 }
 
-function backNav() {
-	$('#btnBottom-0').on('click', function () {
-		window.location = '#logon-menu&t=1s';
-		$('#btnBottom-4 span').fadeTo("fast", 0, function () {
+function backNav(labelBtn, arrLen) {
+	$('#btnBottom-0, #btnBottom-2').on('click', function () {
+		window.location = '#logon-menu&t=0.2s';
+		$('#btnBottom-4 span').fadeTo(100, 0, function () {
 			$('#btnBottom-4').off();
 			$('#btnBottom-5').off();
 			clearContent();
-		});
+			document.getElementById('input-VK').placeholder = '';
 
-	});
-	$('#btnBottom-2').on('click', function () {
-		window.location = '#logon-menu&t=1s';
-		$('#btnBottom-4 span').fadeTo("fast", 0, function () {
-			$('#btnBottom-4').off();
-			$('#btnBottom-5').off();
+			for (let i = 0; i < arrLen; i++) {
+				$(labelBtn + i).removeClass('active');
+			}
 		});
-
 	});
 }
 
@@ -234,32 +231,42 @@ function clearContent() {
 	while (div.firstChild) {
 		div.removeChild(div.firstChild);
 	}
+
+	document.getElementById('input-VK').value = '';	
+	$('.cursor i').addClass('d-none');
 }
 
 function printBtnLabel(labelArr) {
 	let html = '';
 
 	html += '<span class="active">' + labelArr + '</span>';
-	html += '<div class="cursor"><input class="form-control bg-transparent border-0 pl-3" type="text" name="keyboardTest" id="keyboardTest" readonly><i></i></div>';
 	document.getElementById('input-btn-out').innerHTML += html;
+}
+
+function setBtnActive(labelBtn, arrName) {
+	for (let i = 0; i < arrName.length; i++) {
+		if (arrName[i][1] === 'active') {
+			printBtnLabel(arrName[i][0]);
+			$(labelBtn + i).addClass('active');
+		}
+	}
 }
 
 function hideBtmNav() {
 	for (let i = 0; i < 5; i++) {
-		$('#btnBottom-' + i).children('span').fadeTo("fast", 0);
+		$('#btnBottom-' + i).children('span').fadeTo(200, 0);
 	}
 	for (let j = 6; j < 10; j++) {
-		$('#btnBottom-' + j).children('span').fadeTo("fast", 0);
+		$('#btnBottom-' + j).children('span').fadeTo(200, 0);
 	}
-
 }
 
 function showBtmNav() {
 	for (let i = 0; i < 5; i++) {
-		$('#btnBottom-' + i).children('span').fadeTo("fast", 1);
+		$('#btnBottom-' + i).children('span').fadeTo(200, 1);
 	}
 	for (let j = 6; j < 10; j++) {
-		$('#btnBottom-' + j).children('span').fadeTo("fast", 1);
+		$('#btnBottom-' + j).children('span').fadeTo(200, 1);
 	}
 }
 
