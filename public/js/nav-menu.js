@@ -68,16 +68,18 @@ function printBtn() {
 						$('#btnLogon-' + 0).on('click', function () {
 							window.location = '#main-menu&t=0.2s';
 							callContent('main-menu');
-							$('#btnBottom-0').off();
-							$('#btnBottom-2').off();
+							$('#btnBottom-0, #btnBottom-2').off();
 							clearContent();
 						});
 						return;
 					}
 					case 1: {
 						$('#btnLogon-' + 1).on('click', function () {
+							$('#message-btn-out').empty();
 							window.location = '#setpwd-menu&t=0.2s';
 							callContent('setpwd');
+							printBtnTree(listBtnLogon[varLogon]);
+
 							$('#btnBottom-4 span').fadeTo(200, 1, function () {
 								$('#btnBottom-4').on('click', function () {
 									window.location = '#sidemenu&t=0.2s';
@@ -172,6 +174,8 @@ function callContent(idContent) {
 			return;
 		}
 		case 'setpwd': {
+			let attempt = 0;
+
 			for (let varSetpwd = 0; varSetpwd < listBtnSetpwd.length; varSetpwd++) {
 				$('#setpwd-menu-btn').append('<li ' + 'id="btnSetpwd-' + varSetpwd + '" class="btn btn-box"><span>' +
 					listBtnSetpwd[varSetpwd][0] + '</span></li>');
@@ -180,12 +184,50 @@ function callContent(idContent) {
 					$('#btnSetpwd-' + varSetpwd).on('click', function () {
 						$(this).siblings('.active').removeClass('active');
 						$(this).addClass('active');
+
+						if (!$('#tree-' + varSetpwd).length) {
+							$('#sub-tree').append('<span id="tree-' + varSetpwd + '" ' + 'class="ml-2 mr-2">' + listBtnSetpwd[varSetpwd][0] + '</span>');
+						}
+
 						clearContent();
 						printBtnLabel(listBtnSetpwd[varSetpwd][0]);
 						$('.cursor i').removeClass('d-none');
 					});
 				}
 			}
+
+			$('#keyboard-enter').on('click', function () {
+				window.location = '#closed&t=0.2s';
+				$('#btnBottom-5 span').fadeTo(200, 0);
+				showBtmNav();
+			});
+
+			$('#btnBottom-9').on('click', function () {
+				let value = $('#input-VK').val();
+				let valPrev = $('#tree-val').text();
+
+				$('#btnSetpwd-1').addClass('active');
+				$('#btnSetpwd-1').siblings('.active').removeClass('active');
+
+				clearContent();
+				printBtnLabel(listBtnSetpwd[1][0]);
+
+				if (attempt === 0) {
+					$('#sub-tree').append('<span class="ml-2 mr-2">' + listBtnSetpwd[0][0] + '</span>');
+					$('#tree-val').append('<span class="ml-2 mr-2">' + value + '</span>');
+					attempt += 1;
+				} else {
+					if (value != valPrev) {
+						document.getElementById('message-btn-out').innerHTML = "PASSWORD didn't match ..";
+					} else {
+						document.getElementById('message-btn-out').innerHTML = "COMMAND OK";
+
+						$('#btnSetpwd-1').removeClass('active');
+						forceBack();
+					}
+				}
+			});
+
 			setBtnActive('#btnSetpwd-', listBtnSetpwd);
 			$('.cursor i').removeClass('d-none');
 			document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
@@ -211,29 +253,41 @@ function makeMenuRight() {
 
 function backNav(labelBtn, arrLen) {
 	$('#btnBottom-0, #btnBottom-2').on('click', function () {
-		window.location = '#logon-menu&t=0.2s';
-		$('#btnBottom-4 span').fadeTo(100, 0, function () {
-			$('#btnBottom-4').off();
-			$('#btnBottom-5').off();
-			clearContent();
-			document.getElementById('input-VK').placeholder = '';
-
-			for (let i = 0; i < arrLen; i++) {
-				$(labelBtn + i).removeClass('active');
-			}
-		});
+		forceBack(labelBtn, arrLen);
 	});
 }
 
 function clearContent() {
-	let div = document.getElementById('input-btn-out');
+	let inputDiv = document.getElementById('input-btn-out');
 
-	while (div.firstChild) {
-		div.removeChild(div.firstChild);
+	while (inputDiv.firstChild) {
+		inputDiv.removeChild(inputDiv.firstChild);
 	}
 
-	document.getElementById('input-VK').value = '';	
+	document.getElementById('input-VK').value = '';
 	$('.cursor i').addClass('d-none');
+	$('.cursor i').css('left', '0');
+}
+
+function forceBack(labelBtn, arrLen) {
+	window.location = '#logon-menu&t=0.2s';
+	$('#btnBottom-4 span').fadeTo(100, 0, function () {
+		$('#btnBottom-0, #btnBottom-2, #btnBottom-4, #btnBottom-5, #btnBottom-9').off();
+		clearContent();
+		$('#tree-btn-out, #sub-tree, #tree-val').empty();
+		document.getElementById('input-VK').placeholder = '';
+
+		for (let i = 0; i < arrLen; i++) {
+			$(labelBtn + i).removeClass('active');
+		}
+	});
+}
+
+function printBtnTree(labelBtn) {
+	let html = '';
+
+	html += '<span class="mr-3">' + labelBtn + '</span>';
+	document.getElementById('tree-btn-out').innerHTML += html;
 }
 
 function printBtnLabel(labelArr) {

@@ -32,54 +32,90 @@
             <div id="alpha-menu-btn" class="m-0 p-0">
                 <div class="vKeyboard" id="vKeyboard" name="vKeyboard">
                     <ul class="m-0 p-0 form-inline bg-dark list-unstyled" style="width: 911.57px;">
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-1" value="1">1</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-2" value="2">2</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-3" value="3">3</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-4" value="4">4</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-5" value="5">5</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-6" value="6">6</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-7" value="7">7</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-8" value="8">8</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-9" value="9">9</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-number vKeyboard-double" id="keyboard-0"
-                                value="0">0</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-symbol" id="keyboard-tiret" value="-">-</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-1"
+                                value="1">1</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-2"
+                                value="2">2</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-3"
+                                value="3">3</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-4"
+                                value="4">4</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-5"
+                                value="5">5</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-6"
+                                value="6">6</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-7"
+                                value="7">7</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-8"
+                                value="8">8</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-number" id="keyboard-9"
+                                value="9">9</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-number vKeyboard-double"
+                                id="keyboard-0" value="0">0</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-symbol" id="keyboard-tiret"
+                                value="-">-</button></li>
                         <li class="btn-box-sm-half"></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-Q" value="Q">Q</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-W" value="W">W</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-E" value="E">E</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-R" value="R">R</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-T" value="T">T</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-Y" value="Y">Y</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-U" value="U">U</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-I" value="I">I</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-O" value="O">O</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-P" value="P">P</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-Q"
+                                value="Q">Q</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-W"
+                                value="W">W</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-E"
+                                value="E">E</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-R"
+                                value="R">R</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-T"
+                                value="T">T</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-Y"
+                                value="Y">Y</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-U"
+                                value="U">U</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-I"
+                                value="I">I</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-O"
+                                value="O">O</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-P"
+                                value="P">P</button></li>
                         <li class="btn-box-sm-half"></li>
                         <li class="btn btn-box-sm"></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-A" value="A">A</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-S" value="S">S</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-D" value="D">D</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-F" value="F">F</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-G" value="G">G</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-H" value="H">H</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-J" value="J">J</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-K" value="K">K</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-L" value="L">L</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-A"
+                                value="A">A</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-S"
+                                value="S">S</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-D"
+                                value="D">D</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-F"
+                                value="F">F</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-G"
+                                value="G">G</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-H"
+                                value="H">H</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-J"
+                                value="J">J</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-K"
+                                value="K">K</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-L"
+                                value="L">L</button></li>
                         <li class="btn btn-box-sm"></li>
                         <li class="btn-box-sm-half"></li>
                         <li class="btn btn-box-sm"></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-Z" value="Z">Z</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-X" value="X">X</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-C" value="C">C</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-V" value="V">V</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-B" value="B">B</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-N" value="N">N</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-M" value="M">M</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-Z"
+                                value="Z">Z</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-X"
+                                value="X">X</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-C"
+                                value="C">C</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-V"
+                                value="V">V</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-B"
+                                value="B">B</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-N"
+                                value="N">N</button></li>
+                        <li><button type="button" class="btn btn-box-sm vKeyboard-letter" id="keyboard-M"
+                                value="M">M</button></li>
                         <li class="btn btn-box-sm"></li>
                         <li>
-                            <button type="button" class="btn btn-box-sm vKeyboard-number vKeyboard-symbol vKeyboard-pad" id="keyboard-."
-                                value=".">
+                            <button type="button" class="btn btn-box-sm vKeyboard-number vKeyboard-symbol vKeyboard-pad"
+                                id="keyboard-." value=".">
                                 .
                             </button>
                         </li>
@@ -87,13 +123,26 @@
                         <li class="btn btn-box-sm">abort</li>
                         <li class="btn btn-box-sm"></li>
                         <li class="btn btn-box-sm">nxfld</li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-symbol vKeyboard-space" id="keyboard-space" value=" "
-                                style="width: 405.35px;">space</button></li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-return vKeyboard-numOk vKeyboard-double"
-                                id="keyboard-return" value="">bkspc</button></li>
+                        <li>
+                            <button type="button" class="btn btn-box-sm vKeyboard-symbol vKeyboard-space"
+                                id="keyboard-space" value=" " style="width: 405.35px;">
+                                space
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button"
+                                class="btn btn-box-sm vKeyboard-return vKeyboard-numOk vKeyboard-double"
+                                id="keyboard-return" value="">
+                                bkspc
+                            </button>
+                        </li>
                         <li class="btn btn-box-sm">dlfld</li>
-                        <li><button type="button" class="btn btn-box-sm vKeyboard-enter vKeyboard-double"
-                                id="keyboard-enter">enter</button></li>
+                        <li>
+                            <button type="button" class="btn btn-box-sm vKeyboard-enter vKeyboard-double"
+                                id="keyboard-enter">
+                                OK
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>

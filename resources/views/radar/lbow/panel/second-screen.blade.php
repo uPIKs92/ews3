@@ -63,8 +63,10 @@
                     </div>
                     <div class="col-12 p-0">
                         <div class="row no-gutters p-1">
-                            <div id="tree-btn-out" class="col p-0 ml-2 mr-2" style="min-height: 21px;">
-                                {{-- btn tree text --}}
+                            <div class="col p-0 ml-2 mr-2 form-inline" style="min-height: 21px;">
+                                <div id="tree-btn-out"></div>
+                                <div id="sub-tree"></div>
+                                <div id="tree-val"></div>
                             </div>
                         </div>
                     </div>
