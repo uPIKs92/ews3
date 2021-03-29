@@ -223,7 +223,7 @@ function callContent(idContent) {
 			return;
 		}
 		case 'ppibrt': {
-			let attempt = 0;
+			let cout = 0;
 			let count = 0;
 			let val = '';
 
@@ -238,22 +238,15 @@ function callContent(idContent) {
 						'<span id="treeNum-' + varPpibrt + '" class="ml-2">' + '</span>' +
 						'</div>';
 
-						$('#tree-' + varPpibrt).hide();
+					$('#tree-' + varPpibrt).hide();
 				}
 
-				/*
 				if ((listBtnPpibrt[varPpibrt][0] != '') && (varPpibrt < 30)) {
 					$('#btnPpibrt-' + varPpibrt).on('click', function () {
 						$(this).siblings('.active').removeClass('active');
 						$(this).addClass('active');
-
-						if (!$('#tree-' + varPpibrt).length) {
-							document.getElementById('sub-tree').innerHTML +=
-								'<div id="tree-' + varPpibrt + '" class="mr-3">' +
-								'<span>' + listBtnPpibrt[varPpibrt][0] + '</span>' +
-								'<span id="treeNum-' + varPpibrt + '" class="ml-2">' + '</span>' +
-								'</div>';
-						}
+						$('#tree-' + varPpibrt).show();
+						count = varPpibrt;
 
 						clearContent();
 						printBtnLabel(listBtnPpibrt[varPpibrt][0]);
@@ -261,30 +254,40 @@ function callContent(idContent) {
 					});
 				} else {
 					$('#btnPpibrt-' + varPpibrt).on('click', function () {
-						count++;
+						$('#input-VK').val(listBtnPpibrt[varPpibrt][0].toString());
+						$('.cursor i').css('left', '10.5px');
+						val = $('#input-VK').val();
 
-						if (count < 5) {
-							printBtnLabel(listBtnPpibrt[count][0]);
-							$('#btnPpibrt-' + count).addClass('active');
-							$('#btnPpibrt-' + count).siblings('.active').removeClass('active');
-							document.getElementById('sub-tree').innerHTML +=
-								'<span id="treeNum-' + (varPpibrt - 30) + '" ' + 'class="ml-2 mr-2">' +
-								listBtnPpibrt[(count - 1)][0] + '	' + listBtnPpibrt[varPpibrt][0] + '</span>';
-						} else if (count === 5) {
-							$('#input-VK').val(listBtnPpibrt[varPpibrt][0].toString());
+						if (cout < 5) {
+							cout++;
+							$('#tree-' + (cout-1)).show();
+							document.getElementById('treeNum-' + (cout-1)).innerHTML = val;
 						}
 					});
+					delChar();
 				}
-				*/
 			}
 
-
 			$('#btnBottom-9').on('click', function () {
-				count++;
-
-				if (count < 5) {
-					$('#btnPpibrt-' + count).addClass('active');
-					$('#btnPpibrt-' + count).siblings('.active').removeClass('active');
+				if ($('#input-VK').val() != '') {
+					$('#tree-' + count).show();
+					document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+					document.getElementById('input-VK').value = '';
+					$('.cursor i').css('left', '0');
+				} else {
+					if (count < 4) {
+						count++;
+						$('#btnPpibrt-' + count).addClass('active');
+						$('#btnPpibrt-' + count).siblings('.active').removeClass('active');
+						$('#tree-' + (count - 1)).show();
+						printBtnLabel(listBtnPpibrt[count][0]);
+					} else {
+						$('#btnBottom-9').off();
+						document.getElementById('message-btn-out').innerHTML = "<span>" + "COMMAND OK" + "</span>";
+						$('#btnSetpwd-1').removeClass('active');
+						forceBack();
+						return count;
+					}
 				}
 			});
 
@@ -380,6 +383,13 @@ function callAlphaVK() {
 			});
 			hideBtmNav();
 		});
+	});
+}
+
+function delChar() {
+	$('#btnBottom-7').on('click', function () {
+		document.getElementById('input-VK').value = '';
+		$('.cursor i').css('left', '0');
 	});
 }
 
