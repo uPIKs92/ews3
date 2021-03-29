@@ -65,7 +65,7 @@
                         <div class="row no-gutters p-1">
                             <div class="col p-0 ml-2 mr-2 form-inline" style="min-height: 21px;">
                                 <div id="tree-btn-out"></div>
-                                <div id="sub-tree"></div>
+                                <div id="sub-tree" class="form-inline"></div>
                                 <div id="tree-val"></div>
                             </div>
                         </div>
