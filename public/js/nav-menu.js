@@ -161,25 +161,95 @@ function callContent(idContent) {
 			return;
 		}
 		case 'setpwd': {
+			let count = 0;
 			let attempt = 0;
+			let varA = '';
+			let varB = '';
 
 			for (let varSetpwd = 0; varSetpwd < listBtnSetpwd.length; varSetpwd++) {
 				$('#setpwd-menu-btn').append('<li ' + 'id="btnSetpwd-' + varSetpwd + '" class="btn btn-box"><span>' +
 					listBtnSetpwd[varSetpwd][0] + '</span></li>');
+				$('#btnSetpwd-' + varSetpwd).siblings('.active').removeClass('active');
 
-				if (listBtnSetpwd[varSetpwd][0] != '') {
+				if ((varSetpwd < 2)) {
+					document.getElementById('sub-tree').innerHTML +=
+						'<div id="tree-' + varSetpwd + '" class="mr-3">' +
+						'<span>' + listBtnSetpwd[varSetpwd][0] + '</span>' +
+						'<span id="treeNum-' + varSetpwd + '" class="ml-2">' + '</span>' +
+						'</div>';
+
+					$('#tree-' + varSetpwd).hide();
+				}
+
+				if ((listBtnSetpwd[varSetpwd][0] != '') && (varSetpwd < 2)) {
 					$('#btnSetpwd-' + varSetpwd).on('click', function () {
 						$(this).siblings('.active').removeClass('active');
 						$(this).addClass('active');
-
-						if (!$('#tree-' + varSetpwd).length) {
-							document.getElementById('sub-tree').innerHTML = '<span id="tree-' + varSetpwd + '" ' + 'class="ml-2 mr-2">' + listBtnSetpwd[varSetpwd][0] + '</span>';
-						}
+						$('#tree-' + varSetpwd).show();
+						count = varSetpwd;
 
 						clearContent();
 						printBtnLabel(listBtnSetpwd[varSetpwd][0]);
 						$('.cursor i').removeClass('d-none');
+
+						if ($('#btnSetpwd-1').hasClass('active')) {
+							$('#btnBottom-9').off();
+						} else {
+							$('#btnBottom-9').on('click', function () {
+								doClick();
+							});
+						}
 					});
+				}
+			}
+
+			$('#btnBottom-9').on('click', function () {
+				doClick();
+			});
+
+			function doClick() {
+				if (($('#input-VK').val() != '')) {
+					$('#tree-' + count).show();
+					document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+					document.getElementById('input-VK').value = '';
+					$('.cursor i').css('left', '0');
+
+					count++;
+					nextStep(count, '#btnSetpwd-', listBtnSetpwd);
+					varA = $('#treeNum-' + 0).text();
+					varB = $('#treeNum-' + 1).text();
+
+					if (attempt === 0) {
+						attempt++;
+					} else {
+						if ((varA != varB)) {
+							printMessage("PASSWORD didn't match ..");
+							printBtnLabel(listBtnSetpwd[count - 1][0]);
+							$('#btnBottom-9').off();
+						}
+						else {
+							printMessage("COMMAND OK");
+							printBtnLabel(listBtnSetpwd[count - 1][0]);
+							$('#btnSetpwd-' + count).removeClass('active');
+							attempt = 0;
+							forceBack();
+						}
+					}
+				} else if ((varA != '') && (varB === '')) {
+					printMessage("PASSWORD didn't match ..");
+					printBtnLabel(listBtnSetpwd[count][0]);
+					$('#btnBottom-9').off();
+				} else {
+					if (count < 1) {
+						count++;
+						nextStep(count, '#btnSetpwd-', listBtnSetpwd);
+						$('#tree-' + (count - 1)).show();
+					} else {
+						printMessage("COMMAND OK")
+						$('#btnSetpwd-' + count).removeClass('active');
+						forceBack();
+						count = 0;
+					}
 				}
 			}
 
@@ -187,33 +257,6 @@ function callContent(idContent) {
 				window.location = '#closed&t=0.2s';
 				$('#btnBottom-5 span').fadeTo(200, 0);
 				showBtmNav();
-			});
-
-			$('#btnBottom-9').on('click', function () {
-				let value = $('#input-VK').val();
-				let valPrev = $('#tree-val').text();
-
-				$('#btnSetpwd-1').addClass('active');
-				$('#btnSetpwd-1').siblings('.active').removeClass('active');
-
-				clearContent();
-				printBtnLabel(listBtnSetpwd[1][0]);
-
-				if (attempt === 0) {
-					document.getElementById('sub-tree').innerHTML = '<span class="ml-2 mr-2">' + listBtnSetpwd[0][0] + '</span>';
-					document.getElementById('tree-val').innerHTML = '<span class="ml-2 mr-2">' + value + '</span>';
-					attempt += 1;
-				} else {
-					if (value != valPrev) {
-						document.getElementById('message-btn-out').innerHTML = "<span>" + "PASSWORD didn't match .." + "</span>";
-					} else {
-						document.getElementById('message-btn-out').innerHTML = "<span>" + "COMMAND OK" + "</span>";
-
-						$('#btnSetpwd-1').removeClass('active');
-						attempt = 0;
-						forceBack();
-					}
-				}
 			});
 
 			setBtnActive('#btnSetpwd-', listBtnSetpwd);
@@ -254,32 +297,13 @@ function callContent(idContent) {
 						$('.cursor i').removeClass('d-none');
 					});
 				}
-				
+
 				if ((varPpibrt >= 30) && (varPpibrt <= 40)) {
 					cout = 0;
 					$('#btnPpibrt-' + varPpibrt).on('click', function () {
 						$('#input-VK').val(listBtnPpibrt[varPpibrt][0].toString());
 						$('.cursor i').css('left', '10.5px');
 						val = $('#input-VK').val();
-						cout++;
-
-						/*
-						if (cout < 5) {
-							$('#btnPpibrt-' + cout).siblings('.active').removeClass('active');
-							$('#btnPpibrt-' + cout).addClass('active');
-							$('#tree-' + (cout - 1)).show();
-							$('#tree-' + (cout - 1)).next().hide();
-							printBtnLabel(listBtnPpibrt[cout][0]);
-							document.getElementById('treeNum-' + (cout - 1)).innerHTML = val;
-						} else {
-							$('#btnPpibrt-' + (cout - 1)).off();
-							$('#btnPpibrt-' + (cout - 1)).removeClass('active');
-							forceBack();
-							document.getElementById('message-btn-out').innerHTML = "<span>" + "COMMAND OK" + "</span>";
-							cout += 0;
-							cout = 0;
-						}
-						*/
 					});
 					delChar();
 				}
@@ -294,12 +318,10 @@ function callContent(idContent) {
 				} else {
 					if (count < 4) {
 						count++;
-						$('#btnPpibrt-' + count).siblings('.active').removeClass('active');
-						$('#btnPpibrt-' + count).addClass('active');
+						nextStep(count, '#btnPpibrt-', listBtnPpibrt);
 						$('#tree-' + (count - 1)).show();
-						printBtnLabel(listBtnPpibrt[count][0]);
 					} else {
-						document.getElementById('message-btn-out').innerHTML = "<span>" + "COMMAND OK" + "</span>";
+						printMessage("COMMAND OK");
 						$('#btnPpibrt-' + count).removeClass('active');
 						forceBack();
 						count = 0;
@@ -360,6 +382,17 @@ function forceBack(labelBtn, arrLen) {
 			$(labelBtn + i).off();
 		}
 	});
+}
+
+function nextStep(counter, btnName, arrName) {
+	$(btnName + counter).siblings('.active').removeClass('active');
+	$(btnName + counter).addClass('active');
+	printBtnLabel(arrName[counter][0]);
+}
+
+function printMessage(msgVal){
+	document.getElementById('message-btn-out').innerHTML = "<span>" + msgVal + "</span>";
+	document.getElementById('input-VK').value = '';
 }
 
 function printBtnTree(labelBtn) {
