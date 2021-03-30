@@ -241,7 +241,7 @@ function callContent(idContent) {
 					$('#tree-' + varPpibrt).hide();
 				}
 
-				if ((listBtnPpibrt[varPpibrt][0] != '') && (varPpibrt < 30)) {
+				if ((listBtnPpibrt[varPpibrt][0] != '') && (varPpibrt < 5)) {
 					$('#btnPpibrt-' + varPpibrt).on('click', function () {
 						$(this).siblings('.active').removeClass('active');
 						$(this).addClass('active');
@@ -252,16 +252,20 @@ function callContent(idContent) {
 						printBtnLabel(listBtnPpibrt[varPpibrt][0]);
 						$('.cursor i').removeClass('d-none');
 					});
-				} else {
+				} else if((varPpibrt <= 40) && (varPpibrt >= 30)){
+					cout = 0;
 					$('#btnPpibrt-' + varPpibrt).on('click', function () {
 						$('#input-VK').val(listBtnPpibrt[varPpibrt][0].toString());
 						$('.cursor i').css('left', '10.5px');
 						val = $('#input-VK').val();
+						cout++;
 
-						if (cout < 5) {
-							cout++;
-							$('#tree-' + (cout-1)).show();
-							document.getElementById('treeNum-' + (cout-1)).innerHTML = val;
+						if (cout <= 5) {
+							$('#btnPpibrt-' + cout).siblings('.active').removeClass('active');
+							$('#btnPpibrt-' + cout).addClass('active');
+							$('#tree-' + (cout - 1)).show();
+							$('#tree-' + (cout - 1)).next().hide();
+							document.getElementById('treeNum-' + (cout - 1)).innerHTML = val;
 						}
 					});
 					delChar();
@@ -275,18 +279,18 @@ function callContent(idContent) {
 					document.getElementById('input-VK').value = '';
 					$('.cursor i').css('left', '0');
 				} else {
-					if (count < 4) {
+					if (count < 5) {
 						count++;
-						$('#btnPpibrt-' + count).addClass('active');
 						$('#btnPpibrt-' + count).siblings('.active').removeClass('active');
+						$('#btnPpibrt-' + count).addClass('active');
 						$('#tree-' + (count - 1)).show();
 						printBtnLabel(listBtnPpibrt[count][0]);
 					} else {
 						$('#btnBottom-9').off();
 						document.getElementById('message-btn-out').innerHTML = "<span>" + "COMMAND OK" + "</span>";
-						$('#btnSetpwd-1').removeClass('active');
+						$('#btnPpibrt-' + count).removeClass('active');
 						forceBack();
-						return count;
+						count = 0;
 					}
 				}
 			});

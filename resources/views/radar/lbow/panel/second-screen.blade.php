@@ -12,7 +12,7 @@
             <div class="col box-shadow inner-shadow bg-black rounded-lg d-flex align-items-center mr-3"
                 style="min-height: 784px;">
                 <div class="row no-gutters text-uppercase"
-                    style="font-family: 'pixelmix'; font-size: 14px; color: #e6812a;">
+                    style="font-family: 'pixelmix'; font-size: 14px; color: #fd9727;">
                     <div class="col-12 p-0 pb-3">
                         <div class="row no-gutters border-bottom border-warning pb-1">
                             <div class="col-3 p-0">op live</div>
