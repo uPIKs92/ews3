@@ -230,6 +230,7 @@ function callContent(idContent) {
 			for (let varPpibrt = 0; varPpibrt < listBtnPpibrt.length; varPpibrt++) {
 				$('#ppibrt-menu-btn').append('<li ' + 'id="btnPpibrt-' + varPpibrt + '" class="btn btn-box"><span>' +
 					listBtnPpibrt[varPpibrt][0] + '</span></li>');
+				$('#btnPpibrt-' + varPpibrt).siblings('.active').removeClass('active');
 
 				if ((varPpibrt < 5)) {
 					document.getElementById('sub-tree').innerHTML +=
@@ -252,7 +253,9 @@ function callContent(idContent) {
 						printBtnLabel(listBtnPpibrt[varPpibrt][0]);
 						$('.cursor i').removeClass('d-none');
 					});
-				} else if((varPpibrt <= 40) && (varPpibrt >= 30)){
+				}
+				
+				if ((varPpibrt >= 30) && (varPpibrt <= 40)) {
 					cout = 0;
 					$('#btnPpibrt-' + varPpibrt).on('click', function () {
 						$('#input-VK').val(listBtnPpibrt[varPpibrt][0].toString());
@@ -260,13 +263,23 @@ function callContent(idContent) {
 						val = $('#input-VK').val();
 						cout++;
 
-						if (cout <= 5) {
+						/*
+						if (cout < 5) {
 							$('#btnPpibrt-' + cout).siblings('.active').removeClass('active');
 							$('#btnPpibrt-' + cout).addClass('active');
 							$('#tree-' + (cout - 1)).show();
 							$('#tree-' + (cout - 1)).next().hide();
+							printBtnLabel(listBtnPpibrt[cout][0]);
 							document.getElementById('treeNum-' + (cout - 1)).innerHTML = val;
+						} else {
+							$('#btnPpibrt-' + (cout - 1)).off();
+							$('#btnPpibrt-' + (cout - 1)).removeClass('active');
+							forceBack();
+							document.getElementById('message-btn-out').innerHTML = "<span>" + "COMMAND OK" + "</span>";
+							cout += 0;
+							cout = 0;
 						}
+						*/
 					});
 					delChar();
 				}
@@ -279,14 +292,13 @@ function callContent(idContent) {
 					document.getElementById('input-VK').value = '';
 					$('.cursor i').css('left', '0');
 				} else {
-					if (count < 5) {
+					if (count < 4) {
 						count++;
 						$('#btnPpibrt-' + count).siblings('.active').removeClass('active');
 						$('#btnPpibrt-' + count).addClass('active');
 						$('#tree-' + (count - 1)).show();
 						printBtnLabel(listBtnPpibrt[count][0]);
 					} else {
-						$('#btnBottom-9').off();
 						document.getElementById('message-btn-out').innerHTML = "<span>" + "COMMAND OK" + "</span>";
 						$('#btnPpibrt-' + count).removeClass('active');
 						forceBack();
@@ -345,6 +357,7 @@ function forceBack(labelBtn, arrLen) {
 
 		for (let i = 0; i < arrLen; i++) {
 			$(labelBtn + i).removeClass('active');
+			$(labelBtn + i).off();
 		}
 	});
 }
