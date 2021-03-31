@@ -52,6 +52,13 @@ const listBtnMovbtm = [
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '']
 ];
 
+const listBtnLabPos = [
+	['nw', 'active'], ['', ''], ['ne', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['auto', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['sw', ''], ['', ''], ['se', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '']
+];
+
 function printBtn() {
 	let html = '';
 
@@ -84,7 +91,6 @@ function printBtn() {
 						});
 						return;
 					}
-
 					case 12: {
 						$('#btnLogon-' + 12).on('click', function () {
 							$('#message-btn-out').empty();
@@ -94,7 +100,6 @@ function printBtn() {
 						});
 						return;
 					}
-
 					case 13: {
 						$('#btnLogon-' + 13).on('click', function () {
 							window.location = '#commet-menu&t=0.2s';
@@ -103,7 +108,6 @@ function printBtn() {
 						});
 						return;
 					}
-
 					case 23: {
 						$('#btnLogon-' + 23).on('click', function () {
 							// alert("Handler for .click() btn " + j);
@@ -112,6 +116,16 @@ function printBtn() {
 							callContent('movbtm');
 							printBtnTree(listBtnLogon[varLogon]);
 							callAlphaVK();
+						});
+						return;
+					}
+					case 24: {
+						$('#btnLogon-' + 24).on('click', function () {
+							// alert("Handler for .click() btn " + j);
+							$('#message-btn-out').empty();
+							window.location = '#labPos-menu&t=0.2s';
+							callContent('labPos');
+							printBtnTree(listBtnLogon[varLogon]);
 						});
 						return;
 					}
@@ -124,6 +138,7 @@ function printBtn() {
 	makeMenuRight();
 
 	$('#btnBottom-4 span, #btnBottom-5 span').css("opacity", "0");
+	$('#toggle-box-out').hide();
 }
 
 function callContent(idContent) {
@@ -250,7 +265,7 @@ function callContent(idContent) {
 			setBtnActive('#btnSetpwd-', listBtnSetpwd);
 			$('.cursor i').removeClass('d-none');
 			document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-			backNav('#btnSetpwd-', listBtnSetpwd.length);
+			backNav('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn');
 			return;
 		}
 		case 'ppibrt': {
@@ -319,7 +334,7 @@ function callContent(idContent) {
 
 			setBtnActive('#btnPpibrt-', listBtnPpibrt);
 			$('.cursor i').removeClass('d-none');
-			backNav('#btnPpibrt-', listBtnPpibrt.length);
+			backNav('#btnPpibrt-', listBtnPpibrt.length, '#ppibrt-menu-btn');
 			return;
 		}
 		case 'commet': {
@@ -355,7 +370,7 @@ function callContent(idContent) {
 					});
 				}
 
-				if ((varCommet >= 30) && (varCommet<= 40)) {
+				if ((varCommet >= 30) && (varCommet <= 40)) {
 					cout = 0;
 					$('#btnCommet-' + varCommet).on('click', function () {
 						$('#input-VK').val(listBtnCommet[varCommet][0].toString());
@@ -388,29 +403,20 @@ function callContent(idContent) {
 
 			setBtnActive('#btnCommet-', listBtnCommet);
 			$('.cursor i').removeClass('d-none');
-			backNav('#btnCommet-', listBtnCommet.length);
+			backNav('#btnCommet-', listBtnCommet.length, '#commet-menu-btn');
 			return;
 		}
 		case 'movbtm': {
-			let count = 0;
+			/*let count = 0;
 			let attempt = 0;
 			let varA = '';
 			let varB = '';
+			*/
 
 			for (let varMovbtm = 0; varMovbtm < listBtnMovbtm.length; varMovbtm++) {
 				$('#movbtm-menu-btn').append('<li ' + 'id="btnMovbtm-' + varMovbtm + '" class="btn btn-box"><span>' +
 					listBtnMovbtm[varMovbtm][0] + '</span></li>');
 				$('#btnMovbtm-' + varMovbtm).siblings('.active').removeClass('active');
-
-				if ((varMovbtm < 2)) {
-					document.getElementById('sub-tree').innerHTML +=
-						'<div id="tree-' + varMovbtm + '" class="mr-3">' +
-						'<span>' + listBtnMovbtm[varMovbtm][0] + '</span>' +
-						'<span id="treeNum-' + varMovbtm + '" class="ml-2">' + '</span>' +
-						'</div>';
-
-					$('#tree-' + varMovbtm).hide();
-				}
 
 				if ((listBtnMovbtm[varMovbtm][0] != '') && (varMovbtm < 2)) {
 					$('#btnMovbtm-' + varMovbtm).on('click', function () {
@@ -424,7 +430,51 @@ function callContent(idContent) {
 						$('.cursor i').removeClass('d-none');
 					});
 				}
+
+				if (varMovbtm === 1) {
+					let toggLabelA = listBtnMovbtm[1][0];
+					let toggLabelB = 'lating';
+
+					$('#btnMovbtm-' + varMovbtm).addClass('toggle-btn');
+					$('#btnMovbtm-' + varMovbtm).children('span').remove()
+					$('#btnMovbtm-' + varMovbtm).append('<a href="javascript:">' + listBtnMovbtm[varMovbtm][0] + '</a>')
+
+					$('#btnMovbtm-' + varMovbtm).toggleButton({
+						on: function () {
+							$('#toggle-box-b').addClass('active');
+							$('#toggle-box-b').siblings('.active').removeClass('active');
+							$('#toggle-divider').show();
+
+							if (varMovbtm === 1) {
+								printBtnToggleLabel(1, ('#btnMovbtm-' + varMovbtm), toggLabelB, toggLabelA, toggLabelB);
+							}
+						},
+						off: function () {
+							$('#toggle-box-a').addClass('active');
+							$('#toggle-box-a').siblings('.active').removeClass('active');
+							$('#toggle-divider').show();
+
+							if (varMovbtm === 1) {
+								printBtnToggleLabel(1, ('#btnMovbtm-' + varMovbtm), toggLabelA, toggLabelA, toggLabelB);
+							} 
+						}
+					});
+				}
+
+				if ((varMovbtm < 2)) {
+					document.getElementById('sub-tree').innerHTML +=
+						'<div id="tree-' + varMovbtm + '" class="mr-3">' +
+						'<span>' + listBtnMovbtm[varMovbtm][0] + '</span>' +
+						'<span id="treeNum-' + varMovbtm + '" class="ml-2">' + '</span>' +
+						'</div>';
+
+					$('#tree-' + varMovbtm).hide();
+				}
 			}
+
+			$('#btnBottom-9').on('click', function () {
+				//fungsi enter here
+			});
 
 			$('#keyboard-enter').on('click', function () {
 				window.location = '#closed&t=0.2s';
@@ -435,7 +485,11 @@ function callContent(idContent) {
 			setBtnActive('#btnMovbtm-', listBtnMovbtm);
 			$('.cursor i').removeClass('d-none');
 			document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-			backNav('#btnMovbtm-', listBtnMovbtm.length);
+			backNav('#btnMovbtm-', listBtnMovbtm.length, '#movbtm-menu-btn');
+			return;
+		}
+		case 'labPos': {
+
 			return;
 		}
 	}
@@ -455,9 +509,9 @@ function makeMenuRight() {
 	}
 }
 
-function backNav(labelBtn, arrLen) {
+function backNav(labelBtn, arrLen, menuName) {
 	$('#btnBottom-0, #btnBottom-2').on('click', function () {
-		forceBack(labelBtn, arrLen);
+		forceBack(labelBtn, arrLen, menuName);
 	});
 }
 
@@ -468,18 +522,26 @@ function clearContent() {
 		inputDiv.removeChild(inputDiv.firstChild);
 	}
 
+	$('#toggle-box-a, #toggle-box-b').empty();
+	$('#toggle-divider').hide();
 	document.getElementById('input-VK').value = '';
 	$('.cursor i').addClass('d-none');
 	$('.cursor i').css('left', '0');
 }
 
-function forceBack(labelBtn, arrLen) {
+function clearMenu(menuName) {
+	$(menuName).empty();
+}
+
+function forceBack(labelBtn, arrLen, menuName) {
 	window.location = '#logon-menu&t=0.2s';
 	$('#btnBottom-4 span').fadeTo(100, 0, function () {
 		$('#btnBottom-0, #btnBottom-2, #btnBottom-4, #btnBottom-5, #btnBottom-9').off();
 		clearContent();
-		$('#tree-btn-out, #sub-tree, #tree-val').empty();
+		$('#tree-btn-out, #sub-tree, #tree-val, #toggle-box-a, #toggle-box-b').empty();
+		$('#toggle-box-out').hide();
 		document.getElementById('input-VK').placeholder = '';
+		clearMenu(menuName);
 
 		for (let i = 0; i < arrLen; i++) {
 			$(labelBtn + i).removeClass('active');
@@ -494,7 +556,7 @@ function nextStep(counter, btnName, arrName) {
 	printBtnLabel(arrName[counter][0]);
 }
 
-function printMessage(msgVal){
+function printMessage(msgVal) {
 	document.getElementById('message-btn-out').innerHTML = "<span>" + msgVal + "</span>";
 	document.getElementById('input-VK').value = '';
 }
@@ -511,6 +573,15 @@ function printBtnLabel(labelArr) {
 
 	html += '<span class="active">' + labelArr + '</span>';
 	document.getElementById('input-btn-out').innerHTML = html;
+}
+
+function printBtnToggleLabel(btnId, btnName, labelBtn, labelBtnLeft, labelBtnRight) {
+	$('#toggle-box-out').show();
+	$(btnName).children('a').html(labelBtn);
+	document.getElementById('input-btn-out').innerHTML = '<span class="active">' + labelBtn + '</span>';
+	document.getElementById('tree-' + btnId).innerHTML = labelBtn;
+	document.getElementById('toggle-box-a').innerHTML = labelBtnLeft;
+	document.getElementById('toggle-box-b').innerHTML = labelBtnRight;
 }
 
 function setBtnActive(labelBtn, arrName) {

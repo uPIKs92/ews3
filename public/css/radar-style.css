@@ -967,7 +967,7 @@
     transition: 0.4s;
 }
 
-.btn-box.active  > span {
+.btn-box.active > span {
     display: inline-block;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
@@ -1058,4 +1058,28 @@
     to {
         opacity: 0;
     }
+}
+
+.toggle-btn > a {
+    display: inline;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    color: #fd9727;
+}
+
+.toggle-btn.active > a {
+    color: #000;
+    background-color: #fd9727;
+}
+
+.toggle-btn a:hover {
+    text-decoration: none;
+}
+
+.toggle-btn > a.toggle_button__on {
+    display: inline;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    color: #000;
+    background-color: #fd9727;
 }
