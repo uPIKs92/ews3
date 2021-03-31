@@ -102,6 +102,7 @@ function printBtn() {
 					}
 					case 13: {
 						$('#btnLogon-' + 13).on('click', function () {
+							$('#message-btn-out').empty();
 							window.location = '#commet-menu&t=0.2s';
 							callContent('commet');
 							printBtnTree(listBtnLogon[varLogon]);
@@ -110,7 +111,6 @@ function printBtn() {
 					}
 					case 23: {
 						$('#btnLogon-' + 23).on('click', function () {
-							// alert("Handler for .click() btn " + j);
 							$('#message-btn-out').empty();
 							window.location = '#movbtm-menu&t=0.2s';
 							callContent('movbtm');
@@ -121,11 +121,11 @@ function printBtn() {
 					}
 					case 24: {
 						$('#btnLogon-' + 24).on('click', function () {
-							// alert("Handler for .click() btn " + j);
 							$('#message-btn-out').empty();
 							window.location = '#labPos-menu&t=0.2s';
 							callContent('labPos');
 							printBtnTree(listBtnLogon[varLogon]);
+							document.getElementById('input-btn-out').innerHTML = listBtnLogon[varLogon];
 						});
 						return;
 					}
@@ -422,7 +422,7 @@ function callContent(idContent) {
 					$('#btnMovbtm-' + varMovbtm).on('click', function () {
 						$(this).siblings('.active').removeClass('active');
 						$(this).addClass('active');
-						$('#tree-' + varMovbtm).show();
+						//$('#tree-' + varMovbtm).show();
 						count = varMovbtm;
 
 						clearContent();
@@ -456,7 +456,7 @@ function callContent(idContent) {
 
 							if (varMovbtm === 1) {
 								printBtnToggleLabel(1, ('#btnMovbtm-' + varMovbtm), toggLabelA, toggLabelA, toggLabelB);
-							} 
+							}
 						}
 					});
 				}
@@ -489,7 +489,60 @@ function callContent(idContent) {
 			return;
 		}
 		case 'labPos': {
+			let count = 0;
 
+			for (let varLabPos = 0; varLabPos < listBtnLabPos.length; varLabPos++) {
+				$('#labPos-menu-btn').append('<li ' + 'id="btnLabPos-' + varLabPos + '" class="btn btn-box"><span>' +
+					listBtnLabPos[varLabPos][0] + '</span></li>');
+				$('#btnLabPos-' + varLabPos).siblings('.active').removeClass('active');
+
+				if ((listBtnLabPos[varLabPos][0] != '') && (varLabPos < 30)) {
+					$('#btnLabPos-' + varLabPos).on('click', function () {
+						$(this).siblings('.active').removeClass('active');
+						$(this).addClass('active');
+						//$('#tree-' + varLabPos).show();
+
+						//clearContent();
+						//printBtnLabel(listBtnLabPos[varLabPos][0]);
+						document.getElementById('input-VK').value = listBtnLabPos[varLabPos][0];
+						$('.cursor i').removeClass('d-none');
+					});
+				}
+
+				if ((varLabPos < 30)) {
+					document.getElementById('sub-tree').innerHTML +=
+						'<div id="tree-' + varLabPos + '" class="mr-3">' +
+						'<span>' + listBtnLabPos[varLabPos][0] + '</span>' +
+						'</div>';
+
+					$('#tree-' + varLabPos).hide();
+				}
+			}
+
+			$('#btnBottom-9').on('click', function () {
+				if ($('#input-VK').val() != '') {
+					$('#tree-' + count).show();
+					document.getElementById('tree-' + count).innerHTML = '<span>' + $('#input-VK').val() + '</span>';
+					document.getElementById('input-VK').value = '';
+					$('.cursor i').css('left', '0');
+				} else {
+					if (count === 1) {
+						count++;
+						nextStep(count, '#btnLabPos-', listBtnLabPos);
+						$('#tree-' + (count - 1)).show();
+					} else {
+						printMessage("COMMAND OK");
+						$('#btnLabPos-' + count).removeClass('active');
+						forceBack();
+						count = 0;
+					}
+				}
+			});
+
+			//setBtnActive('#btnLabPos-', listBtnLabPos);
+			$('.cursor i').removeClass('d-none');
+			backNav('#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn');
+			delChar();
 			return;
 		}
 	}
@@ -612,7 +665,7 @@ function callAlphaVK() {
 }
 
 function delChar() {
-	$('#btnBottom-7').on('click', function () {
+	$('#btnBottom-7, #btnBottom-8').on('click', function () {
 		document.getElementById('input-VK').value = '';
 		$('.cursor i').css('left', '0');
 	});
