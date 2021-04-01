@@ -164,10 +164,7 @@ function callContent(idContent) {
 			return;
 		}
 		case 'setpwd': {
-			let count = 0;
-			let attempt = 0;
-			let varA = '';
-			let varB = '';
+			let count = 0, attempt = 0, varA = '', varB = '';
 
 			for (let varSetpwd = 0; varSetpwd < listBtnSetpwd.length; varSetpwd++) {
 				$('#setpwd-menu-btn').append('<li ' + 'id="btnSetpwd-' + varSetpwd + '" class="btn btn-box"><span>' +
@@ -214,8 +211,7 @@ function callContent(idContent) {
 				if (($('#input-VK').val() != '')) {
 					$('#tree-' + count).show();
 					document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-					document.getElementById('input-VK').value = '';
-					$('.cursor i').css('left', '0');
+					clearVK();
 
 					count++;
 					nextStep(count, '#btnSetpwd-', listBtnSetpwd);
@@ -269,9 +265,7 @@ function callContent(idContent) {
 			return;
 		}
 		case 'ppibrt': {
-			let cout = 0;
-			let count = 0;
-			let val = '';
+			let cout = 0, count = 0, val = '';
 
 			for (let varPpibrt = 0; varPpibrt < listBtnPpibrt.length; varPpibrt++) {
 				$('#ppibrt-menu-btn').append('<li ' + 'id="btnPpibrt-' + varPpibrt + '" class="btn btn-box"><span>' +
@@ -316,8 +310,7 @@ function callContent(idContent) {
 				if ($('#input-VK').val() != '') {
 					$('#tree-' + count).show();
 					document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-					document.getElementById('input-VK').value = '';
-					$('.cursor i').css('left', '0');
+					clearVK();
 				} else {
 					if (count < 4) {
 						count++;
@@ -338,9 +331,7 @@ function callContent(idContent) {
 			return;
 		}
 		case 'commet': {
-			let cout = 0;
-			let count = 0;
-			let val = '';
+			let cout = 0, count = 0, val = '';
 
 			for (let varCommet = 0; varCommet < listBtnCommet.length; varCommet++) {
 				$('#commet-menu-btn').append('<li ' + 'id="btnCommet-' + varCommet + '" class="btn btn-box"><span>' +
@@ -385,8 +376,7 @@ function callContent(idContent) {
 				if ($('#input-VK').val() != '') {
 					$('#tree-' + count).show();
 					document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-					document.getElementById('input-VK').value = '';
-					$('.cursor i').css('left', '0');
+					clearVK();
 				} else {
 					if (count === 1) {
 						count++;
@@ -407,11 +397,20 @@ function callContent(idContent) {
 			return;
 		}
 		case 'movbtm': {
-			/*let count = 0;
-			let attempt = 0;
-			let varA = '';
-			let varB = '';
-			*/
+			let toggLabelA = listBtnMovbtm[1][0];
+			let toggLabelB = 'lating';
+			let getInput = '', currBtn = '';
+			let char = /[A-Z]/g;
+			let num = /[0-9]/g;
+			let charLat = /N|S/g;
+			let charLong = /E|W/g;
+			let charCount = 0, numCount = 0;
+
+			$('#toggle-box-out').show();
+			$('#toggle-divider').show();
+			document.getElementById('toggle-box-a').innerHTML = toggLabelA;
+			document.getElementById('toggle-box-b').innerHTML = toggLabelB;
+			$('#toggle-box-a').addClass('active');
 
 			for (let varMovbtm = 0; varMovbtm < listBtnMovbtm.length; varMovbtm++) {
 				$('#movbtm-menu-btn').append('<li ' + 'id="btnMovbtm-' + varMovbtm + '" class="btn btn-box"><span>' +
@@ -432,9 +431,6 @@ function callContent(idContent) {
 				}
 
 				if (varMovbtm === 1) {
-					let toggLabelA = listBtnMovbtm[1][0];
-					let toggLabelB = 'lating';
-
 					$('#btnMovbtm-' + varMovbtm).addClass('toggle-btn');
 					$('#btnMovbtm-' + varMovbtm).children('span').remove()
 					$('#btnMovbtm-' + varMovbtm).append('<a href="javascript:">' + listBtnMovbtm[varMovbtm][0] + '</a>')
@@ -473,7 +469,144 @@ function callContent(idContent) {
 			}
 
 			$('#btnBottom-9').on('click', function () {
-				//fungsi enter here
+				getInput = $('#input-VK').val();
+				currBtn = $('#input-btn-out').text();
+
+				if (currBtn === toggLabelA) {
+					let cekCharFirst = getInput.substring(0, 4);
+					let cekNumLast = getInput.substring(4, 9);
+					const charArr = [], numArr = [];
+
+					for (let i = 0; i < 4; i++) {
+						let cekChar = (cekCharFirst.charAt(i)).match(char);
+						let cekNum = (cekNumLast.charAt(i)).match(num);
+						charArr.push(cekChar);
+						numArr.push(cekNum);
+					}
+
+					$.each(charArr, function (i, v) {
+						if (!(v == null)) {
+							charCount += 1;
+						}
+					})
+
+					$.each(numArr, function (i, v) {
+						if (!(v == null)) {
+							numCount += 1;
+						}
+					})
+
+					if ((charCount != 0 || numCount != 0)) {
+						if (getInput.length != 8) {
+							printMessage("INVALID " + toggLabelA);
+						} else {
+							if (charCount < 4 || numCount < 4) {
+								printMessage("INVALID " + toggLabelA);
+							} else {
+								printMessage("COMMAND OK");
+							}
+						}
+						console.log('>> ' + cekCharFirst + ' : ' + cekNumLast)
+						console.log(charArr + ' : ' + numArr)
+						console.log(charCount + ' : ' + numCount);
+					} else {
+						//printMessage("INVALID " + toggLabelA);
+						clearVK();
+						$('#message-btn-out').empty();
+					}
+				} else if (currBtn === toggLabelB) {
+					//format lat-long -> ddmmssa-dddmmssa
+					let latDD = getInput.substring(0, 2); //<=90
+					let latMM = getInput.substring(2, 4); //<=59
+					let latSS = getInput.substring(4, 6); //<=59
+					let latA = getInput.substring(6, 7); //N-S
+					let longDDD = getInput.substring(7, 10); //<=180
+					let longMM = getInput.substring(10, 12); //<=59
+					let longSS = getInput.substring(12, 14); //<=59
+					let longA = getInput.substring(14, 15); //E-W
+					const latDDArr = [], latMMArr = [], latSSArr = [], latAArr = [],
+						longDDDArr = [], longMMArr = [], longSSArr = [], longAArr = [];
+					let latACount = 0, longACount = 0;
+
+					for (let j = 0; j < 2; j++) {
+						let cekLatDD = (latDD.charAt(j)).match(num);
+						let cekLatMM = (latMM.charAt(j)).match(num);
+						let cekLatSS = (latSS.charAt(j)).match(num);
+						let cekLatA = (latA.charAt(j)).match(charLat);
+						let cekLongDDD = (longDDD.charAt(j)).match(num);
+						let cekLongMM = (longMM.charAt(j)).match(num);
+						let cekLongSS = (longSS.charAt(j)).match(num);
+						let cekLongA = (longA.charAt(j)).match(charLat);
+						latDDArr.push(cekLatDD);
+						latMMArr.push(cekLatMM);
+						latSSArr.push(cekLatSS);
+						latAArr.push(cekLatA);
+						latDDArr.push(cekLongDDD);
+						latMMArr.push(cekLongMM);
+						latSSArr.push(cekLongSS);
+						latAArr.push(cekLongA);
+					}
+
+					// var sums = 0;
+					// $.each(DD, function () { sums += parseFloat(this) || 0; });
+
+					if ((parseInt(latDDArr[0] + latDDArr[1])) <= 90) {
+						console.log('lat dd ok')
+					} else {
+						console.log('lat dd kelebihen')
+					}
+					if (parseInt(latMMArr[0] + latMMArr[1]) <= 59) {
+						console.log('lat MM ok')
+					} else {
+						console.log('lat mm kelebihen')
+					}
+					if (parseInt(latSSArr[0] + latSSArr[1]) <= 59) {
+						console.log('lat SS ok')
+					} else {
+						console.log('lat ss kelebihen')
+					}
+					if ((parseInt(longDDDArr[0] + longDDDArr[1] + longDDDArr[2])) <= 180) {
+						console.log('long ddd ok')
+					} else {
+						console.log('long ddd kelebihen')
+					}
+					if (parseInt(longMMArr[0] + longMMArr[1]) <= 59) {
+						console.log('long MM ok')
+					} else {
+						console.log('long mm kelebihen')
+					}
+					if (parseInt(longSSArr[0] + longSSArr[1]) <= 59) {
+						console.log('long SS ok')
+					} else {
+						console.log('long ss kelebihen')
+					}
+
+					$.each(latAArr, function (i, v) {
+						if (!(v == null)) {
+							latACount += 1;
+						}
+					})
+
+					$.each(longAArr, function (i, v) {
+						if (!(v == null)) {
+							longACount += 1;
+						}
+					})
+
+					/*
+					if ((latACount != 0) || (longACount != 0)) {
+						if (latAArr[0].toString() === 'N' || latAArr[0].toString() === 'S') {
+							console.log('lat A ok')
+						}
+						if (longAArr[0].toString() === 'E' || longAArr[0].toString() === 'W') {
+							console.log('long A ok')
+						}
+					} else {
+						console.log('A gak sesuai')
+					}*/
+
+					console.log((latDDArr[0] + latDDArr[1]) + ' : ' + (latMMArr[0] + latMMArr[1]) + ' : ' + (latSSArr[0] + latSSArr[1]) + ' : ' + latAArr[0])
+				}
 			});
 
 			$('#keyboard-enter').on('click', function () {
@@ -486,6 +619,7 @@ function callContent(idContent) {
 			$('.cursor i').removeClass('d-none');
 			document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 			backNav('#btnMovbtm-', listBtnMovbtm.length, '#movbtm-menu-btn');
+			delChar();
 			return;
 		}
 		case 'labPos': {
@@ -523,8 +657,7 @@ function callContent(idContent) {
 				if ($('#input-VK').val() != '') {
 					$('#tree-' + count).show();
 					document.getElementById('tree-' + count).innerHTML = '<span>' + $('#input-VK').val() + '</span>';
-					document.getElementById('input-VK').value = '';
-					$('.cursor i').css('left', '0');
+					clearVK();
 				} else {
 					if (count === 1) {
 						count++;
@@ -577,9 +710,8 @@ function clearContent() {
 
 	$('#toggle-box-a, #toggle-box-b').empty();
 	$('#toggle-divider').hide();
-	document.getElementById('input-VK').value = '';
 	$('.cursor i').addClass('d-none');
-	$('.cursor i').css('left', '0');
+	clearVK();
 }
 
 function clearMenu(menuName) {
@@ -600,6 +732,8 @@ function forceBack(labelBtn, arrLen, menuName) {
 			$(labelBtn + i).removeClass('active');
 			$(labelBtn + i).off();
 		}
+
+		$('#toggle-box-a, #toggle-box-b').siblings('.active').removeClass('active');
 	});
 }
 
@@ -611,7 +745,7 @@ function nextStep(counter, btnName, arrName) {
 
 function printMessage(msgVal) {
 	document.getElementById('message-btn-out').innerHTML = "<span>" + msgVal + "</span>";
-	document.getElementById('input-VK').value = '';
+	clearVK();
 }
 
 function printBtnTree(labelBtn) {
@@ -664,10 +798,14 @@ function callAlphaVK() {
 	});
 }
 
+function clearVK() {
+	document.getElementById('input-VK').value = '';
+	$('.cursor i').css('left', '0');
+}
+
 function delChar() {
 	$('#btnBottom-7, #btnBottom-8').on('click', function () {
-		document.getElementById('input-VK').value = '';
-		$('.cursor i').css('left', '0');
+		clearVK();
 	});
 }
 
