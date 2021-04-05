@@ -31,6 +31,27 @@ const listBtnSetpwd = [
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '']
 ];
 
+const listBtnMaps = [
+	'return', '', 'rrings', 'polar', 'georef', '', 'updown', ' ', ' ', 'delitm',
+	'', 'adtmap', 'sstnmap', 'ownmap', 'topog', '', 'updstn', '', 'creftr', 'crecir',
+	'', 'secbnd', 'mti', 'tis', 'burn', '', 'endupd', '', 'crevec', 'crearc',
+	'', 'nai', 'nac', 'cps', 'psa', '', '', '', '', ''
+];
+
+const listBtnRrings = [
+	['', ''], ['rrings', 'active'], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', '']
+];
+
+const listBtnCreftr = [
+	['dim', 'active'], ['size', ''], ['steady', ''], ['symbol', ''], ['text', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', '']
+];
+
 const listBtnPpibrt = [
 	['bakgnd', 'active'], ['1stvid', ''], ['logvid', ''], ['rrings', ''], ['synth', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
@@ -72,7 +93,7 @@ function printBtn() {
 			if (listBtnLogon[varLogon] != '') {
 				switch (varLogon) {
 					case 0: {
-						$('#btnLogon-' + 0).on('click', function () {
+						$('#btnLogon-' + varLogon).on('click', function () {
 							$('#message-btn-out').empty();
 							window.location = '#main-menu&t=0.2s';
 							callContent('main-menu');
@@ -82,7 +103,7 @@ function printBtn() {
 						return;
 					}
 					case 1: {
-						$('#btnLogon-' + 1).on('click', function () {
+						$('#btnLogon-' + varLogon).on('click', function () {
 							$('#message-btn-out').empty();
 							window.location = '#setpwd-menu&t=0.2s';
 							callContent('setpwd');
@@ -91,8 +112,17 @@ function printBtn() {
 						});
 						return;
 					}
+					case 4: {
+						$('#btnLogon-' + varLogon).on('click', function () {
+							$('#message-btn-out').empty();
+							window.location = '#maps-menu&t=0.2s';
+							callContent('maps');
+							printBtnTree(listBtnLogon[varLogon]);
+						});
+						return;
+					}
 					case 12: {
-						$('#btnLogon-' + 12).on('click', function () {
+						$('#btnLogon-' + varLogon).on('click', function () {
 							$('#message-btn-out').empty();
 							window.location = '#ppibrt-menu&t=0.2s';
 							callContent('ppibrt');
@@ -101,7 +131,7 @@ function printBtn() {
 						return;
 					}
 					case 13: {
-						$('#btnLogon-' + 13).on('click', function () {
+						$('#btnLogon-' + varLogon).on('click', function () {
 							$('#message-btn-out').empty();
 							window.location = '#commet-menu&t=0.2s';
 							callContent('commet');
@@ -110,7 +140,7 @@ function printBtn() {
 						return;
 					}
 					case 23: {
-						$('#btnLogon-' + 23).on('click', function () {
+						$('#btnLogon-' + varLogon).on('click', function () {
 							$('#message-btn-out').empty();
 							window.location = '#movbtm-menu&t=0.2s';
 							callContent('movbtm');
@@ -120,7 +150,7 @@ function printBtn() {
 						return;
 					}
 					case 24: {
-						$('#btnLogon-' + 24).on('click', function () {
+						$('#btnLogon-' + varLogon).on('click', function () {
 							$('#message-btn-out').empty();
 							window.location = '#labPos-menu&t=0.2s';
 							callContent('labPos');
@@ -151,7 +181,7 @@ function callContent(idContent) {
 				(function (varMain) {
 					switch (varMain) {
 						case 0: {
-							$('#btnMain-' + 0).on('click', function () {
+							$('#btnMain-' + varMain).on('click', function () {
 								clearContent();
 								window.location = '#logon-menu&t=0.2s';
 							});
@@ -231,7 +261,7 @@ function callContent(idContent) {
 							printBtnLabel(listBtnSetpwd[count - 1][0]);
 							$('#btnSetpwd-' + count).removeClass('active');
 							attempt = 0;
-							forceBack();
+							forceBack('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.2s');
 						}
 					}
 				} else if ((varA != '') && (varB === '')) {
@@ -246,7 +276,7 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK")
 						$('#btnSetpwd-' + count).removeClass('active');
-						forceBack();
+						forceBack('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.2s');
 						count = 0;
 					}
 				}
@@ -261,7 +291,210 @@ function callContent(idContent) {
 			setBtnActive('#btnSetpwd-', listBtnSetpwd);
 			$('.cursor i').removeClass('d-none');
 			document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-			backNav('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.2s');
+			return;
+		}
+		case 'maps': {
+			for (let varMaps = 0; varMaps < listBtnMaps.length; varMaps++) {
+				$('#maps-menu-btn').append('<li ' + 'id="btnMaps-' + varMaps + '" class="btn btn-box"><span>' +
+					listBtnMaps[varMaps] + '</span></li>');
+
+				(function (varMaps) {
+					if (listBtnMaps[varMaps] != '') {
+						switch (varMaps) {
+							case 0: {
+								$('#btnMaps-' + varMaps).on('click', function () {
+									forceBack('#btnMaps-', listBtnMaps.length, '#maps-menu-btn', '#logon-menu&t=0.2s');
+								});
+								return;
+							}
+							case 2: {
+								$('#btnMaps-' + varMaps).on('click', function () {
+									$('#message-btn-out').empty();
+									window.location = '#rrings-menu&t=0.2s';
+									callContent('rrings');
+									printBtnTree(listBtnMaps[varMaps]);
+								});
+								return;
+							}
+							case 6: {
+								$('#btnMaps-' + varMaps).on('click', function () {
+									$('#message-btn-out').empty();
+									printMessage("OPERATORS MAP BEING AMENDED");
+									clearMessage('#btnBottom-0');
+								});
+								return;
+							}
+							case 16: {
+								$('#btnMaps-' + varMaps).on('click', function () {
+									$('#message-btn-out').empty();
+									printMessage("OPERATORS MAP BEING AMENDED");
+									clearMessage('#btnBottom-0');
+								});
+								return;
+							}
+							case 18: {
+								$('#btnMaps-' + varMaps).on('click', function () {
+									$('#message-btn-out').empty();
+									window.location = '#creftr-menu&t=0.2s';
+									callContent('creftr');
+									printBtnTree(listBtnMaps[varMaps]);
+								});
+								return;
+							}
+						}
+					}
+				})(varMaps);
+			}
+
+			backNav('#btnBottom-0, #btnBottom-2', '#btnCreftr-', listBtnCreftr.length, '#Creftr-menu-btn', '#logon-menu&t=0.2s');
+			return;
+		}
+		case 'rrings': {
+			let cout = 0, count = 0, val = '';
+
+			for (let varRrings = 0; varRrings < listBtnRrings.length; varRrings++) {
+				$('#rrings-menu-btn').append('<li ' + 'id="btnRrings-' + varRrings + '" class="btn btn-box"><span>' +
+					listBtnRrings[varRrings][0] + '</span></li>');
+				$('#btnRrings-' + varRrings).siblings('.active').removeClass('active');
+
+				/**/
+				if ((varRrings < 1)) {
+					document.getElementById('sub-tree').innerHTML +=
+						'<div id="tree-' + varRrings + '" class="mr-3">' +
+						'<span>' + listBtnRrings[varRrings][0] + '</span>' +
+						'<span id="treeNum-' + varRrings + '" class="ml-2">' + '</span>' +
+						'</div>';
+
+					$('#tree-' + varRrings).hide();
+				}
+
+				if ((listBtnRrings[varRrings][0] != '') && (varRrings < 1)) {
+					$('#btnRrings-' + varRrings).on('click', function () {
+						$(this).siblings('.active').removeClass('active');
+						$(this).addClass('active');
+						$('#tree-' + varRrings).show();
+						count = varRrings;
+
+						clearContent();
+						printBtnLabel(listBtnRrings[varRrings][0]);
+						$('.cursor i').removeClass('d-none');
+					});
+				}
+
+				if ((varRrings >= 30) && (varRrings <= 40)) {
+					cout = 0;
+					$('#btnRrings-' + varRrings).on('click', function () {
+						$('#input-VK').val(listBtnRrings[varRrings][0].toString());
+						$('.cursor i').css('left', '10.5px');
+						val = $('#input-VK').val();
+					});
+					delChar();
+				}
+			}
+
+			$('#btnBottom-9').on('click', function () {
+				if ($('#input-VK').val() != '') {
+					$('#tree-' + count).show();
+					document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+					clearVK();
+				} else {
+					if (count === 1) {
+						count++;
+						nextStep(count, '#btnRrings-', listBtnRrings);
+						$('#tree-' + (count - 1)).show();
+					} else {
+						printMessage("COMMAND OK");
+						$('#btnRrings-' + count).removeClass('active');
+						forceBack('#btnRrings-', listBtnRrings.length, '#rrings-menu-btn', '#maps-menu&t=0.2s');
+						count = 0;
+					}
+				}
+			});
+
+			setBtnActive('#btnRrings-', listBtnRrings);
+			hideRightNav();
+			$('.cursor i').removeClass('d-none');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnCreftr-', listBtnCreftr.length, '#Creftr-menu-btn', '#logon-menu&t=0.2s');
+			//backNav('#btnBottom-2', '#btnRrings-, #btnMaps-', listBtnRrings.length, '#rrings-menu-btn, #maps-menu-btn', '#logon-menu&t=0.2s');
+			//$('#btnBottom-0').on('click', function () {
+			//	forceBack1Step('#btnRrings-', listBtnRrings.length, '#rrings-menu-btn', '#maps-menu&t=0.2s')
+			//});
+			return;
+		}
+		case 'creftr': {
+			let cout = 0, count = 0, val = '';
+
+			for (let varCreftr = 0; varCreftr < listBtnCreftr.length; varCreftr++) {
+				$('#creftr-menu-btn').append('<li ' + 'id="btnCreftr-' + varCreftr + '" class="btn btn-box"><span>' +
+					listBtnCreftr[varCreftr][0] + '</span></li>');
+				$('#btnCreftr-' + varCreftr).siblings('.active').removeClass('active');
+
+				if ((varCreftr < 5)) {
+					document.getElementById('sub-tree').innerHTML +=
+						'<div id="tree-' + varCreftr + '" class="mr-3">' +
+						'<span>' + listBtnCreftr[varCreftr][0] + '</span>' +
+						'<span id="treeNum-' + varCreftr + '" class="ml-2">' + '</span>' +
+						'</div>';
+
+					$('#tree-' + varCreftr).hide();
+				}
+
+				if ((listBtnCreftr[varCreftr][0] != '') && (varCreftr < 5)) {
+					$('#btnCreftr-' + varCreftr).on('click', function () {
+						$(this).siblings('.active').removeClass('active');
+						$(this).addClass('active');
+						$('#tree-' + varCreftr).show();
+						count = varCreftr;
+
+						clearContent();
+						printBtnLabel(listBtnCreftr[varCreftr][0]);
+						$('.cursor i').removeClass('d-none');
+					});
+				}
+
+				if ((varCreftr >= 30) && (varCreftr <= 40)) {
+					cout = 0;
+					$('#btnCreftr-' + varCreftr).on('click', function () {
+						$('#input-VK').val(listBtnCreftr[varCreftr][0].toString());
+						$('.cursor i').css('left', '10.5px');
+						val = $('#input-VK').val();
+					});
+					delChar();
+				}
+			}
+
+			if (count === 4) {
+				for (let a = 30; a <= 40; a++) {
+					$('#btnCreftr-' + a).children('span').fadeOut(100, 0);
+					$('#btnCreftr-' + a).off();
+				}
+				callAlphaVK();
+			}
+
+
+			$('#btnBottom-9').on('click', function () {
+				if ($('#input-VK').val() != '') {
+					$('#tree-' + count).show();
+					document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+					clearVK();
+				} else {
+					if (count < 4) {
+						count++;
+						nextStep(count, '#btnCreftr-', listBtnCreftr);
+						$('#tree-' + (count - 1)).show();
+					} else {
+						printMessage("COMMAND OK");
+						$('#btnCreftr-' + count).removeClass('active');
+						forceBack('#btnCreftr-', listBtnCreftr.length, '#Creftr-menu-btn', '#logon-menu&t=0.2s');
+						count = 0;
+					}
+				}
+			});
+
+			setBtnActive('#btnCreftr-', listBtnCreftr);
+			$('.cursor i').removeClass('d-none');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnCreftr-', listBtnCreftr.length, '#Creftr-menu-btn', '#logon-menu&t=0.2s');
 			return;
 		}
 		case 'ppibrt': {
@@ -319,7 +552,7 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK");
 						$('#btnPpibrt-' + count).removeClass('active');
-						forceBack();
+						forceBack('#btnPpibrt-', listBtnPpibrt.length, '#ppibrt-menu-btn', '#logon-menu&t=0.2s');
 						count = 0;
 					}
 				}
@@ -327,7 +560,7 @@ function callContent(idContent) {
 
 			setBtnActive('#btnPpibrt-', listBtnPpibrt);
 			$('.cursor i').removeClass('d-none');
-			backNav('#btnPpibrt-', listBtnPpibrt.length, '#ppibrt-menu-btn');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnPpibrt-', listBtnPpibrt.length, '#ppibrt-menu-btn', '#logon-menu&t=0.2s');
 			return;
 		}
 		case 'commet': {
@@ -385,15 +618,16 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK");
 						$('#btnCommet-' + count).removeClass('active');
-						forceBack();
+						forceBack('#btnCommet-', listBtnCommet.length, '#commet-menu-btn', '#logon-menu&t=0.2s');
 						count = 0;
 					}
 				}
 			});
 
 			setBtnActive('#btnCommet-', listBtnCommet);
+			hideRightNav();
 			$('.cursor i').removeClass('d-none');
-			backNav('#btnCommet-', listBtnCommet.length, '#commet-menu-btn');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnCommet-', listBtnCommet.length, '#commet-menu-btn', '#logon-menu&t=0.2s');
 			return;
 		}
 		case 'movbtm': {
@@ -616,9 +850,10 @@ function callContent(idContent) {
 			});
 
 			setBtnActive('#btnMovbtm-', listBtnMovbtm);
+			hideRightNav();
 			$('.cursor i').removeClass('d-none');
 			document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-			backNav('#btnMovbtm-', listBtnMovbtm.length, '#movbtm-menu-btn');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnMovbtm-', listBtnMovbtm.length, '#movbtm-menu-btn', '#logon-menu&t=0.2s');
 			delChar();
 			return;
 		}
@@ -666,7 +901,7 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK");
 						$('#btnLabPos-' + count).removeClass('active');
-						forceBack();
+						forceBack('#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn', '#logon-menu&t=0.2s');
 						count = 0;
 					}
 				}
@@ -674,7 +909,7 @@ function callContent(idContent) {
 
 			//setBtnActive('#btnLabPos-', listBtnLabPos);
 			$('.cursor i').removeClass('d-none');
-			backNav('#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn', '#logon-menu&t=0.2s');
 			delChar();
 			return;
 		}
@@ -695,9 +930,10 @@ function makeMenuRight() {
 	}
 }
 
-function backNav(labelBtn, arrLen, menuName) {
-	$('#btnBottom-0, #btnBottom-2').on('click', function () {
-		forceBack(labelBtn, arrLen, menuName);
+function backNav(btnTarget, labelBtn, arrLen, menuName, url) {
+	$(btnTarget).on('click', function () {
+		forceBack(labelBtn, arrLen, menuName, url);
+		showRightNav();
 	});
 }
 
@@ -718,8 +954,8 @@ function clearMenu(menuName) {
 	$(menuName).empty();
 }
 
-function forceBack(labelBtn, arrLen, menuName) {
-	window.location = '#logon-menu&t=0.2s';
+function forceBack(labelBtn, arrLen, menuName, url) {
+	window.location = url;
 	$('#btnBottom-4 span').fadeTo(100, 0, function () {
 		$('#btnBottom-0, #btnBottom-2, #btnBottom-4, #btnBottom-5, #btnBottom-9').off();
 		clearContent();
@@ -737,6 +973,23 @@ function forceBack(labelBtn, arrLen, menuName) {
 	});
 }
 
+function forceBack1Step(labelBtn, arrLen, menuName, url) {
+	window.location = url;
+	$('#btnBottom-4 span').fadeTo(100, 0, function () {
+		clearContent();
+		$('#btnBottom-0, #btnBottom-4, #btnBottom-5, #btnBottom-9').off();
+		$('#sub-tree, #tree-val, #toggle-box-a, #toggle-box-b').empty();
+		$('#tree-btn-out').children().last().remove();
+		document.getElementById('input-VK').placeholder = '';
+		clearMenu(menuName);
+
+		for (let i = 0; i < arrLen; i++) {
+			$(labelBtn + i).removeClass('active');
+			$(labelBtn + i).off();
+		}
+	});
+}
+
 function nextStep(counter, btnName, arrName) {
 	$(btnName + counter).siblings('.active').removeClass('active');
 	$(btnName + counter).addClass('active');
@@ -746,6 +999,12 @@ function nextStep(counter, btnName, arrName) {
 function printMessage(msgVal) {
 	document.getElementById('message-btn-out').innerHTML = "<span>" + msgVal + "</span>";
 	clearVK();
+}
+
+function clearMessage(btnTarget) {
+	$(btnTarget).on('click', function () {
+		$('#message-btn-out').empty();
+	});
 }
 
 function printBtnTree(labelBtn) {
@@ -784,6 +1043,7 @@ function callAlphaVK() {
 	$('#btnBottom-4 span').fadeTo(200, 1, function () {
 		$('#btnBottom-4').on('click', function () {
 			window.location = '#sidemenu&t=0.2s';
+			console.log('vk showed')
 			$('#btnBottom-5 span').fadeTo(200, 1, function () {
 				$('#btnBottom-5').on('click', function () {
 					window.location =
@@ -824,5 +1084,17 @@ function showBtmNav() {
 	}
 	for (let j = 6; j < 10; j++) {
 		$('#btnBottom-' + j).children('span').fadeTo(200, 1);
+	}
+}
+
+function hideRightNav() {
+	for (let k = 0; k < 3; k++) {
+		$('#btnRight-' + k).children('span').fadeTo(200, 0);
+	}
+}
+
+function showRightNav() {
+	for (let k = 0; k < 3; k++) {
+		$('#btnRight-' + k).children('span').fadeTo(200, 1);
 	}
 }

@@ -9,6 +9,15 @@
         <div lj-type="frame" lj-name="setpwd-menu" lj-transition="fade">
             <ul id="setpwd-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="maps-menu" lj-transition="fade">
+            <ul id="maps-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="rrings-menu" lj-transition="fade">
+            <ul id="rrings-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="creftr-menu" lj-transition="fade">
+            <ul id="creftr-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="ppibrt-menu" lj-transition="fade">
             <ul id="ppibrt-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
         </div>
