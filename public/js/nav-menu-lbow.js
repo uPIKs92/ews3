@@ -52,6 +52,20 @@ const listBtnCreftr = [
 	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', '']
 ];
 
+const listBtnCrevec = [
+	['line', 'active'], ['dim', ''], ['steady', ''], ['BTM16', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '']
+];
+
+const listBtnLine = [
+	['solid', ''], ['', ''], ['dotted', ''], ['', ''], ['chain', ''], ['', ''], ['dashed', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '']
+];
+
 const listBtnPpibrt = [
 	['bakgnd', 'active'], ['1stvid', ''], ['logvid', ''], ['rrings', ''], ['synth', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
@@ -282,7 +296,7 @@ function callContent(idContent) {
 
 			$('#keyboard-enter').on('click', function () {
 				window.location = '#closed&t=0.2s';
-				$('#btnBottom-5 span').fadeTo(200, 0);
+				$('#btnBottom-5 span').fadeTo(100, 0);
 				showBtmNav();
 			});
 
@@ -340,6 +354,17 @@ function callContent(idContent) {
 
 							$('#btnBottom-0').on('click', function () {
 								forceBack1Step('#btnCreftr-', listBtnCreftr.length, '#creftr-menu-btn', '#maps-menu&t=0.2s');
+							});
+							return;
+						}
+						case 'btnMaps-28': {
+							$('#message-btn-out').empty();
+							window.location = '#crevec-menu&t=0.2s';
+							callContent('crevec');
+							printBtnTree(listBtnMaps[curNum]);
+
+							$('#btnBottom-0').on('click', function () {
+								forceBack1Step('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#maps-menu&t=0.2s');
 							});
 							return;
 						}
@@ -426,7 +451,7 @@ function callContent(idContent) {
 			$('#toggle-box-a').addClass('active');
 
 			for (let varCreftr = 0; varCreftr < listBtnCreftr.length; varCreftr++) {
-				$('#creftr-menu-btn').append('<li ' + 'id="btnCreftr-' + varCreftr + '" class="btn btn-box"><span>' +
+				$('#creftr-menu-btn').append('<li ' + 'id="btnCreftr-' + varCreftr + '" class="btn btn-box text-none"><span>' +
 					listBtnCreftr[varCreftr][0] + '</span></li>');
 				$('#btnCreftr-' + varCreftr).siblings('.active').removeClass('active');
 
@@ -555,13 +580,103 @@ function callContent(idContent) {
 
 			$('#keyboard-enter').on('click', function () {
 				window.location = '#closed&t=0.2s';
-				$('#btnBottom-5 span').fadeTo(200, 0);
+				$('#btnBottom-5 span').fadeTo(100, 0);
 				showBtmNav();
 			});
 
 			setBtnActive('#btnCreftr-', listBtnCreftr);
 			hideNumBtn('#btnCreftr-', 30, 40);
 			disableBtnNumber('#btnCreftr-');
+			return;
+		}
+		case 'crevec': {
+			for (let varCrevec = 0; varCrevec < listBtnCrevec.length; varCrevec++) {
+				$('#crevec-menu-btn').append('<li ' + 'id="btnCrevec-' + varCrevec + '" class="btn btn-box text-none"><span>' +
+					listBtnCrevec[varCrevec][0] + '</span></li>');
+				$('#btnCrevec-' + varCrevec).siblings('.active').removeClass('active');
+			
+				if ((varCrevec < 4)) {
+					document.getElementById('sub-tree').innerHTML +=
+						'<div id="tree-' + varCrevec + '" class="mr-3">' +
+						'<span>' + listBtnCrevec[varCrevec][0] + '</span>' +
+						'<span id="treeNum-' + varCrevec + '" class="ml-2">' + '</span>' +
+						'</div>';
+			
+					$('#tree-' + varCrevec).hide();
+				}
+			}
+			
+			$("#crevec-menu-btn li").on('click', function (e) {
+				let idClicked = e.currentTarget.id;
+				let curNum = idClicked.replace('btnCrevec-', '');
+			
+				if ($(e.currentTarget).text() != '') {
+					switch (idClicked) {
+						case 'btnCrevec-0': {
+							clearContent();
+							window.location = '#line-menu&t=0.2s';
+							callContent('line');
+							return;
+						}
+						case 'btnCrevec-1': {
+							clearContent();
+							return;
+						}
+						case 'btnCrevec-2': {
+							clearContent();
+							return;
+						}
+						case 'btnCrevec-3': {
+							clearContent();
+							return;
+						}
+					}
+				}
+			});
+			return;
+		}
+		case 'line': {
+			for (let varLine = 0; varLine < listBtnLine.length; varLine++) {
+				$('#line-menu-btn').append('<li ' + 'id="btnLine-' + varLine + '" class="btn btn-box text-none"><span>' +
+					listBtnLine[varLine][0] + '</span></li>');
+				$('#btnLine-' + varLine).siblings('.active').removeClass('active');
+			
+				if ((varLine < 7)) {
+					document.getElementById('sub-tree').innerHTML +=
+						'<div id="tree-' + varLine + '" class="mr-3">' +
+						'<span>' + listBtnLine[varLine][0] + '</span>' +
+						'<span id="treeNum-' + varLine + '" class="ml-2">' + '</span>' +
+						'</div>';
+			
+					$('#tree-' + varLine).hide();
+				}
+			}
+			
+			$("#line-menu-btn li").on('click', function (e) {
+				let idClicked = e.currentTarget.id;
+				let curNum = idClicked.replace('btnLine-', '');
+			
+				if ($(e.currentTarget).text() != '') {
+					switch (idClicked) {
+						case 'btnLine-0': {
+							clearContent();
+							return;
+						}
+						case 'btnLine-2': {
+							clearContent();
+							return;
+						}
+						case 'btnLine-4': {
+							clearContent();
+							return;
+						}
+						case 'btnLine-6': {
+							clearContent();
+							return;
+						}
+					}
+				}
+			});
 			return;
 		}
 		case 'ppibrt': {
@@ -913,7 +1028,7 @@ function callContent(idContent) {
 
 			$('#keyboard-enter').on('click', function () {
 				window.location = '#closed&t=0.2s';
-				$('#btnBottom-5 span').fadeTo(200, 0);
+				$('#btnBottom-5 span').fadeTo(100, 0);
 				showBtmNav();
 			});
 
@@ -1181,14 +1296,14 @@ function setBtnActive(labelBtn, arrName) {
 }
 
 function callAlphaVK() {
-	$('#btnBottom-4 span').fadeTo(200, 1, function () {
+	$('#btnBottom-4 span').fadeTo(100, 1, function () {
 		$('#btnBottom-4').on('click', function () {
 			window.location = '#sidemenu&t=0.2s';
 			console.log('vk showed')
-			$('#btnBottom-5 span').fadeTo(200, 1, function () {
+			$('#btnBottom-5 span').fadeTo(100, 1, function () {
 				$('#btnBottom-5').on('click', function () {
 					window.location = '#closed&t=0.2s';
-					$('#btnBottom-5 span').fadeTo(200, 0);
+					$('#btnBottom-5 span').fadeTo(100, 0);
 					showBtmNav();
 				});
 			});
@@ -1226,30 +1341,30 @@ function delChar() {
 
 function hideBtmNav() {
 	for (let i = 0; i < 5; i++) {
-		$('#btnBottom-' + i).children('span').fadeTo(200, 0);
+		$('#btnBottom-' + i).children('span').fadeTo(100, 0);
 	}
 	for (let j = 6; j < 10; j++) {
-		$('#btnBottom-' + j).children('span').fadeTo(200, 0);
+		$('#btnBottom-' + j).children('span').fadeTo(100, 0);
 	}
 }
 
 function showBtmNav() {
 	for (let i = 0; i < 5; i++) {
-		$('#btnBottom-' + i).children('span').fadeTo(200, 1);
+		$('#btnBottom-' + i).children('span').fadeTo(100, 1);
 	}
 	for (let j = 6; j < 10; j++) {
-		$('#btnBottom-' + j).children('span').fadeTo(200, 1);
+		$('#btnBottom-' + j).children('span').fadeTo(100, 1);
 	}
 }
 
 function hideRightNav() {
 	for (let k = 0; k < 3; k++) {
-		$('#btnRight-' + k).children('span').fadeTo(200, 0);
+		$('#btnRight-' + k).children('span').fadeTo(100, 0);
 	}
 }
 
 function showRightNav() {
 	for (let k = 0; k < 3; k++) {
-		$('#btnRight-' + k).children('span').fadeTo(200, 1);
+		$('#btnRight-' + k).children('span').fadeTo(100, 1);
 	}
 }

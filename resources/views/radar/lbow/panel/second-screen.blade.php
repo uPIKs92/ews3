@@ -107,7 +107,7 @@
                                 @yield('btn-menu-view', \View::make('radar.lbow.menu.main-menu'))
                             </div>
                             <div style="margin-top: -2px;">
-                                <ul id="bottom-menu-btn" class="m-0 p-0 form-inline border-top border-right border-warning">
+                                <ul id="bottom-menu-btn" class="m-0 p-0 form-inline border-right border-warning">
                                 </ul>
                             </div>
                         </div>
