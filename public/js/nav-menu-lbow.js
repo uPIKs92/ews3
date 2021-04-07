@@ -124,6 +124,7 @@ function printBtn() {
 					callContent('setpwd');
 					printBtnTree(listBtnLogon[curNum]);
 					callAlphaVK();
+					addBack()
 					return;
 				}
 				case 'btnLogon-4': {
@@ -303,7 +304,7 @@ function callContent(idContent) {
 			setBtnActive('#btnSetpwd-', listBtnSetpwd);
 			$('.cursor i').removeClass('d-none');
 			document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-			backNav('#btnBottom-0, #btnBottom-2', '#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.2s');
+			//backNav('#btnBottom-0, #btnBottom-2', '#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.2s');
 			return;
 		}
 		case 'maps': {
@@ -363,9 +364,14 @@ function callContent(idContent) {
 							callContent('crevec');
 							printBtnTree(listBtnMaps[curNum]);
 
+
+							$('#btnBottom-0').children().last().remove();
+							$('#btnBottom-0').addClass('toggle-btn').append('<a href="javascript:">' + 'abort' + '</a>');
+							togggleBtn('#btnBottom-', '0', 'abort', 'aborts');
+
 							$('#btnBottom-0').on('click', function () {
 								forceBack1Step('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#maps-menu&t=0.2s');
-							});
+							});/**/
 							return;
 						}
 					}
@@ -521,8 +527,8 @@ function callContent(idContent) {
 				}
 			});
 
-			togggleBtn('#btnCreftr-', '0', toggLabelA, toggLabelB)
-			togggleBtn('#btnCreftr-', '2', toggLabelC, toggLabelD)
+			togggleBtn('#btnCreftr-', '0', toggLabelA, toggLabelB);
+			togggleBtn('#btnCreftr-', '2', toggLabelC, toggLabelD);
 
 			$('#btnBottom-9').on('click', function () {
 				if ($('#input-VK').val() != '') {
@@ -590,93 +596,172 @@ function callContent(idContent) {
 			return;
 		}
 		case 'crevec': {
+			let toggLabelA = listBtnCrevec[0][0];
+			let toggLabelB = 'bright';
+			let toggLabelC = listBtnCrevec[2][0];
+			let toggLabelD = 'flash';
+			let idClicked;
+			let count = 0;
+			let curNum = 0;
+
 			for (let varCrevec = 0; varCrevec < listBtnCrevec.length; varCrevec++) {
 				$('#crevec-menu-btn').append('<li ' + 'id="btnCrevec-' + varCrevec + '" class="btn btn-box text-none"><span>' +
 					listBtnCrevec[varCrevec][0] + '</span></li>');
 				$('#btnCrevec-' + varCrevec).siblings('.active').removeClass('active');
-			
+
 				if ((varCrevec < 4)) {
 					document.getElementById('sub-tree').innerHTML +=
 						'<div id="tree-' + varCrevec + '" class="mr-3">' +
 						'<span>' + listBtnCrevec[varCrevec][0] + '</span>' +
 						'<span id="treeNum-' + varCrevec + '" class="ml-2">' + '</span>' +
 						'</div>';
-			
+
 					$('#tree-' + varCrevec).hide();
 				}
 			}
-			
+
 			$("#crevec-menu-btn li").on('click', function (e) {
-				let idClicked = e.currentTarget.id;
-				let curNum = idClicked.replace('btnCrevec-', '');
-			
-				if ($(e.currentTarget).text() != '') {
+				idClicked = e.currentTarget.id;
+				curNum = idClicked.replace('btnCrevec-', '');
+
+				if (($(e.currentTarget).text() != '') && (curNum < 4)) {
+					$(this).siblings('.active').removeClass('active');
+					$(this).addClass('active');
+					$('#tree-' + curNum).show();
+					count = curNum;
+					console.log(count + curNum)
+
+					clearContent();
+					printBtnLabel(listBtnCrevec[curNum][0]);
+
 					switch (idClicked) {
 						case 'btnCrevec-0': {
-							clearContent();
 							window.location = '#line-menu&t=0.2s';
 							callContent('line');
+
+							$('#btnBottom-0').on('click', function () {
+								forceBack1Step('#btnLine-', listBtnLine.length, '#line-menu-btn', '#crevec-menu&t=0.2s');
+							});
 							return;
 						}
 						case 'btnCrevec-1': {
-							clearContent();
+							$(this).children().last().remove();
+							$(this).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrevec[curNum][0] + '</a>');
 							return;
 						}
 						case 'btnCrevec-2': {
-							clearContent();
+							$(this).children().last().remove();
+							$(this).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrevec[curNum][0] + '</a>');
 							return;
 						}
 						case 'btnCrevec-3': {
-							clearContent();
+							console.log(idClicked);
 							return;
 						}
 					}
 				}
 			});
+
+			togggleBtn('#btnCrevec-', '1', toggLabelA, toggLabelB);
+			togggleBtn('#btnCrevec-', '2', toggLabelC, toggLabelD);
+
+			$('#btnBottom-9').on('click', function () {
+				if ($('#input-VK').val() != '') {
+					$('#tree-' + count).show();
+					document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+					clearVK();
+				} else {
+					if (count < 4) {
+						count++;
+						nextStep(count, '#btnCrevec-', listBtnCrevec);
+						$('#tree-' + (count - 1)).show();
+						$('#toggle-box-out').hide();
+					} else {
+						printMessage("COMMAND OK");
+						$('#btnCrevec-' + count).removeClass('active');
+						forceBack1Step('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#maps-menu&t=0.2s');
+						count = 0;
+					}
+				}
+			});
+
+			setBtnActive('#btnCrevec-', listBtnCrevec);
 			return;
 		}
 		case 'line': {
+			let count = 0;
+
 			for (let varLine = 0; varLine < listBtnLine.length; varLine++) {
 				$('#line-menu-btn').append('<li ' + 'id="btnLine-' + varLine + '" class="btn btn-box text-none"><span>' +
 					listBtnLine[varLine][0] + '</span></li>');
 				$('#btnLine-' + varLine).siblings('.active').removeClass('active');
-			
+
 				if ((varLine < 7)) {
 					document.getElementById('sub-tree').innerHTML +=
 						'<div id="tree-' + varLine + '" class="mr-3">' +
 						'<span>' + listBtnLine[varLine][0] + '</span>' +
 						'<span id="treeNum-' + varLine + '" class="ml-2">' + '</span>' +
 						'</div>';
-			
+
 					$('#tree-' + varLine).hide();
 				}
 			}
-			
+
 			$("#line-menu-btn li").on('click', function (e) {
 				let idClicked = e.currentTarget.id;
 				let curNum = idClicked.replace('btnLine-', '');
-			
-				if ($(e.currentTarget).text() != '') {
+
+				if (($(e.currentTarget).text() != '') && (curNum < 7)) {
+					$(this).siblings('.active').removeClass('active');
+					$(this).addClass('active');
+
+					document.getElementById('input-VK').value = listBtnLine[curNum][0];
+					$('.cursor i').removeClass('d-none');
+
 					switch (idClicked) {
 						case 'btnLine-0': {
-							clearContent();
+							console.log(idClicked);
 							return;
 						}
 						case 'btnLine-2': {
-							clearContent();
+							console.log(idClicked);
 							return;
 						}
 						case 'btnLine-4': {
-							clearContent();
+							console.log(idClicked);
 							return;
 						}
 						case 'btnLine-6': {
-							clearContent();
+							console.log(idClicked);
 							return;
 						}
 					}
 				}
 			});
+
+			$('#btnBottom-9').on('click', function () {
+				if ($('#input-VK').val() != '') {
+					$('#tree-' + count).show();
+					document.getElementById('tree-' + count).innerHTML = '<span>' + $('#input-VK').val() + '</span>';
+					clearVK();
+				} else {
+					if (count === 7) {
+						count++;
+						nextStep(count, '#btnLine-', listBtnLine);
+						$('#tree-' + (count - 1)).show();
+					} else {
+						printMessage("COMMAND OK");
+						$('#btnLine-' + count).removeClass('active');
+						forceBack1Step('#btnLine-', listBtnLine.length, '#line-menu-btn', '#crevec-menu&t=0.2s');
+						count = 0;
+					}
+				}
+			});
+
+			setBtnActive('#btnLine-', listBtnLine);
+			$('#input-VK').val('SOLID');
+			$('.cursor i').removeClass('d-none');
+			delChar();
 			return;
 		}
 		case 'ppibrt': {
@@ -1182,6 +1267,21 @@ function togggleBtn(btnName, num, toggLabelA, toggLabelB) {
 			printBtnToggleLabel(num, btn, toggLabelA, toggLabelA, toggLabelB);
 		}
 	});
+}
+
+function addBack() {
+	let urls = $(location).attr('href').toString();
+
+	$('#btnBottom-0').on('click', function () {
+		switch (urls) {
+			case 'http://localhost/ews2/public/lbow/second_screen#setpwd-menu&t=0.2s': {
+				alert('jancok');
+				return;
+			}
+		}
+	});
+	/*backNav('#btnBottom-0, #btnBottom-2', '#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.2s');
+	*/
 }
 
 function backNav(btnTarget, labelBtn, arrLen, menuName, url) {
