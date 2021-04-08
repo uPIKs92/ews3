@@ -1,4 +1,4 @@
-<div lj-type="stage" style="max-width: 911.57px; height:358.62px;">
+<div id="stage" lj-type="stage" style="max-width: 911.57px; height:446.78px;">
     <div lj-type="layer" lj-default-frame="main-menu" style="overflow: hidden;">
         <div lj-type="frame" lj-name="main-menu" lj-transition="fade">
             <ul id="main-menu-btn" class="m-0 p-0 form-inline"></ul>
