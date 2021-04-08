@@ -103,7 +103,7 @@
                     </div>
                     <div class="col-12 clearfix p-1" onload="printBtn();">
                         <div class="float-left">
-                            <div class="border-top border-right border-left border-warning" style="margin-left: -1px;">
+                            <div class="border-top border-right border-left border-warning" style="margin-left: -1px; min-width: 894.46px">
                                 @yield('btn-menu-view', \View::make('radar.lbow.menu.main-menu'))
                             </div>
                             <div style="margin-top: -2px;">

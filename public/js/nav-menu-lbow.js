@@ -94,6 +94,8 @@ const listBtnLabPos = [
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '']
 ];
 
+var stateBtn = false;
+
 function printBtn() {
 	let html = '';
 
@@ -112,7 +114,7 @@ function printBtn() {
 			switch (idClicked) {
 				case 'btnLogon-0': {
 					$('#message-btn-out').empty();
-					window.location = '#main-menu&t=0.2s';
+					window.location = '#main-menu&t=0.1s';
 					callContent('main-menu');
 					$('#btnBottom-0, #btnBottom-2').off();
 					clearContent();
@@ -120,37 +122,36 @@ function printBtn() {
 				}
 				case 'btnLogon-1': {
 					$('#message-btn-out').empty();
-					window.location = '#setpwd-menu&t=0.2s';
+					window.location = '#setpwd-menu&t=0.1s';
 					callContent('setpwd');
 					printBtnTree(listBtnLogon[curNum]);
 					callAlphaVK();
-					addBack()
 					return;
 				}
 				case 'btnLogon-4': {
 					$('#message-btn-out').empty();
-					window.location = '#maps-menu&t=0.2s';
+					window.location = '#maps-menu&t=0.1s';
 					callContent('maps');
 					printBtnTree(listBtnLogon[curNum]);
 					return;
 				}
 				case 'btnLogon-12': {
 					$('#message-btn-out').empty();
-					window.location = '#ppibrt-menu&t=0.2s';
+					window.location = '#ppibrt-menu&t=0.1s';
 					callContent('ppibrt');
 					printBtnTree(listBtnLogon[curNum]);
 					return;
 				}
 				case 'btnLogon-13': {
 					$('#message-btn-out').empty();
-					window.location = '#commet-menu&t=0.2s';
+					window.location = '#commet-menu&t=0.1s';
 					callContent('commet');
 					printBtnTree(listBtnLogon[curNum]);
 					return;
 				}
 				case 'btnLogon-23': {
 					$('#message-btn-out').empty();
-					window.location = '#movbtm-menu&t=0.2s';
+					window.location = '#movbtm-menu&t=0.1s';
 					callContent('movbtm');
 					printBtnTree(listBtnLogon[curNum]);
 					callAlphaVK();
@@ -158,7 +159,7 @@ function printBtn() {
 				}
 				case 'btnLogon-24': {
 					$('#message-btn-out').empty();
-					window.location = '#labPos-menu&t=0.2s';
+					window.location = '#labPos-menu&t=0.1s';
 					callContent('labPos');
 					printBtnTree(listBtnLogon[curNum]);
 					document.getElementById('input-btn-out').innerHTML = listBtnLogon[curNum];
@@ -168,7 +169,7 @@ function printBtn() {
 		}
 	});
 
-	makeMenuBtm();
+	makeMenuBtm('btnBottom-');
 	makeMenuRight();
 
 	$('#btnBottom-4 span, #btnBottom-5 span').css("opacity", "0");
@@ -191,7 +192,7 @@ function callContent(idContent) {
 					switch (idClicked) {
 						case 'btnMain-0': {
 							clearContent();
-							window.location = '#logon-menu&t=0.2s';
+							window.location = '#logon-menu&t=0.1s';
 							return;
 						}
 					}
@@ -274,7 +275,7 @@ function callContent(idContent) {
 							printBtnLabel(listBtnSetpwd[count - 1][0]);
 							$('#btnSetpwd-' + count).removeClass('active');
 							attempt = 0;
-							forceBack('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.2s');
+							forceBack('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.1s');
 						}
 					}
 				} else if ((varA != '') && (varB === '')) {
@@ -289,14 +290,14 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK")
 						$('#btnSetpwd-' + count).removeClass('active');
-						forceBack('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.2s');
+						forceBack('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.1s');
 						count = 0;
 					}
 				}
 			}
 
 			$('#keyboard-enter').on('click', function () {
-				window.location = '#closed&t=0.2s';
+				window.location = '#closed&t=0.1s';
 				$('#btnBottom-5 span').fadeTo(100, 0);
 				showBtmNav();
 			});
@@ -304,7 +305,7 @@ function callContent(idContent) {
 			setBtnActive('#btnSetpwd-', listBtnSetpwd);
 			$('.cursor i').removeClass('d-none');
 			document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-			//backNav('#btnBottom-0, #btnBottom-2', '#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.2s');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.1s');
 			return;
 		}
 		case 'maps': {
@@ -320,19 +321,15 @@ function callContent(idContent) {
 				if ($(e.currentTarget).text() != '') {
 					switch (idClicked) {
 						case 'btnMaps-0': {
-							forceBack('#btnMaps-', listBtnMaps.length, '#maps-menu-btn', '#logon-menu&t=0.2s');
+							forceBack('#btnMaps-', listBtnMaps.length, '#maps-menu-btn', '#logon-menu&t=0.1s');
 							return;
 						}
 						case 'btnMaps-2': {
 							$('#message-btn-out').empty();
-							window.location = '#rrings-menu&t=0.2s';
+							window.location = '#rrings-menu&t=0.1s';
+
 							callContent('rrings');
 							printBtnTree(listBtnMaps[curNum]);
-
-							$('#btnBottom-0').on('click', function () {
-								forceBack1Step('#btnRrings-', listBtnRrings.length, '#rrings-menu-btn', '#maps-menu&t=0.2s');
-								showRightNav();
-							});
 							return;
 						}
 						case 'btnMaps-6': {
@@ -349,36 +346,23 @@ function callContent(idContent) {
 						}
 						case 'btnMaps-18': {
 							$('#message-btn-out').empty();
-							window.location = '#creftr-menu&t=0.2s';
+							window.location = '#creftr-menu&t=0.1s';
+
 							callContent('creftr');
 							printBtnTree(listBtnMaps[curNum]);
-
-							$('#btnBottom-0').on('click', function () {
-								forceBack1Step('#btnCreftr-', listBtnCreftr.length, '#creftr-menu-btn', '#maps-menu&t=0.2s');
-							});
 							return;
 						}
 						case 'btnMaps-28': {
 							$('#message-btn-out').empty();
-							window.location = '#crevec-menu&t=0.2s';
+							window.location = '#crevec-menu&t=0.1s';
+
 							callContent('crevec');
 							printBtnTree(listBtnMaps[curNum]);
-
-
-							$('#btnBottom-0').children().last().remove();
-							$('#btnBottom-0').addClass('toggle-btn').append('<a href="javascript:">' + 'abort' + '</a>');
-							togggleBtn('#btnBottom-', '0', 'abort', 'aborts');
-
-							$('#btnBottom-0').on('click', function () {
-								forceBack1Step('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#maps-menu&t=0.2s');
-							});/**/
 							return;
 						}
 					}
 				}
 			});
-
-			backNav('#btnBottom-2', '#btnMaps-', listBtnMaps.length, '#maps-menu-btn', '#logon-menu&t=0.2s');
 			return;
 		}
 		case 'rrings': {
@@ -431,11 +415,11 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK");
 						$('#btnRrings-' + count).removeClass('active');
-						forceBack('#btnRrings-', listBtnRrings.length, '#rrings-menu-btn', '#maps-menu&t=0.2s');
+						forceBack('#btnRrings-', listBtnRrings.length, '#rrings-menu-btn', '#maps-menu&t=0.1s');
 						count = 0;
 					}
 				}
-			});/**/
+			});
 
 			setBtnActive('#btnRrings-', listBtnRrings);
 			hideRightNav();
@@ -578,14 +562,14 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK");
 						$('#btnCreftr-' + count).removeClass('active');
-						forceBack1Step('#btnCreftr-', listBtnCreftr.length, '#creftr-menu-btn', '#maps-menu&t=0.2s');
+						forceBack1Step('#btnCreftr-', listBtnCreftr.length, '#creftr-menu-btn', '#maps-menu&t=0.1s');
 						count = 0;
 					}
 				}
 			});
 
 			$('#keyboard-enter').on('click', function () {
-				window.location = '#closed&t=0.2s';
+				window.location = '#closed&t=0.1s';
 				$('#btnBottom-5 span').fadeTo(100, 0);
 				showBtmNav();
 			});
@@ -593,10 +577,20 @@ function callContent(idContent) {
 			setBtnActive('#btnCreftr-', listBtnCreftr);
 			hideNumBtn('#btnCreftr-', 30, 40);
 			disableBtnNumber('#btnCreftr-');
+
+			$('#btnBottom-0').on('click', function () {
+				forceBack1Step('#btnCreftr-', listBtnCreftr.length, '#creftr-menu-btn', '#maps-menu&t=0.1s');
+
+				setTimeout(function () {
+					$('#btnBottom-0').on('click', function () {
+						forceBack('#btnMaps-', listBtnMaps.length, '#maps-menu-btn', '#logon-menu&t=0.1s');
+					});
+				}, 250);
+			});
 			return;
 		}
 		case 'crevec': {
-			let toggLabelA = listBtnCrevec[0][0];
+			let toggLabelA = listBtnCrevec[1][0];
 			let toggLabelB = 'bright';
 			let toggLabelC = listBtnCrevec[2][0];
 			let toggLabelD = 'flash';
@@ -629,19 +623,16 @@ function callContent(idContent) {
 					$(this).addClass('active');
 					$('#tree-' + curNum).show();
 					count = curNum;
-					console.log(count + curNum)
+					//console.log(count + curNum)
 
 					clearContent();
 					printBtnLabel(listBtnCrevec[curNum][0]);
 
 					switch (idClicked) {
 						case 'btnCrevec-0': {
-							window.location = '#line-menu&t=0.2s';
+							$('#btnBottom-0').off('click', crevecBack);
+							window.location = '#line-menu&t=0.1s';
 							callContent('line');
-
-							$('#btnBottom-0').on('click', function () {
-								forceBack1Step('#btnLine-', listBtnLine.length, '#line-menu-btn', '#crevec-menu&t=0.2s');
-							});
 							return;
 						}
 						case 'btnCrevec-1': {
@@ -679,13 +670,18 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK");
 						$('#btnCrevec-' + count).removeClass('active');
-						forceBack1Step('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#maps-menu&t=0.2s');
+						forceBack1Step('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#maps-menu&t=0.1s');
 						count = 0;
 					}
 				}
 			});
 
 			setBtnActive('#btnCrevec-', listBtnCrevec);
+			$('#btnBottom-0').on('click', crevecBack);
+
+			function crevecBack() {
+				forceBack1Step('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#maps-menu&t=0.1s');
+			}
 			return;
 		}
 		case 'line': {
@@ -695,16 +691,6 @@ function callContent(idContent) {
 				$('#line-menu-btn').append('<li ' + 'id="btnLine-' + varLine + '" class="btn btn-box text-none"><span>' +
 					listBtnLine[varLine][0] + '</span></li>');
 				$('#btnLine-' + varLine).siblings('.active').removeClass('active');
-
-				if ((varLine < 7)) {
-					document.getElementById('sub-tree').innerHTML +=
-						'<div id="tree-' + varLine + '" class="mr-3">' +
-						'<span>' + listBtnLine[varLine][0] + '</span>' +
-						'<span id="treeNum-' + varLine + '" class="ml-2">' + '</span>' +
-						'</div>';
-
-					$('#tree-' + varLine).hide();
-				}
 			}
 
 			$("#line-menu-btn li").on('click', function (e) {
@@ -752,7 +738,7 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK");
 						$('#btnLine-' + count).removeClass('active');
-						forceBack1Step('#btnLine-', listBtnLine.length, '#line-menu-btn', '#crevec-menu&t=0.2s');
+						forceBack1Step('#btnLine-', listBtnLine.length, '#line-menu-btn', '#crevec-menu&t=0.1s');
 						count = 0;
 					}
 				}
@@ -762,6 +748,25 @@ function callContent(idContent) {
 			$('#input-VK').val('SOLID');
 			$('.cursor i').removeClass('d-none');
 			delChar();
+
+			$('#btnBottom-0').on('click', function () {
+				forceBack1Step('#btnLine-', listBtnLine.length, '#line-menu-btn', '#crevec-menu&t=0.1s');
+
+				setTimeout(function () {
+					$('#btnBottom-0').on('click', function () {
+						forceBack1Step('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#maps-menu&t=0.1s');
+
+						setTimeout(function () {
+							$('#btnBottom-0').on('click', function () {
+								forceBack('#btnMaps-', listBtnMaps.length, '#maps-menu-btn', '#logon-menu&t=0.1s');
+							});
+						}, 225);
+					});
+
+					setBtnActive('#btnCrevec-', listBtnCrevec);
+					printBtnTree(listBtnMaps[28]);
+				}, 225);
+			});
 			return;
 		}
 		case 'ppibrt': {
@@ -839,7 +844,7 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK");
 						$('#btnPpibrt-' + count).removeClass('active');
-						forceBack('#btnPpibrt-', listBtnPpibrt.length, '#ppibrt-menu-btn', '#logon-menu&t=0.2s');
+						forceBack('#btnPpibrt-', listBtnPpibrt.length, '#ppibrt-menu-btn', '#logon-menu&t=0.1s');
 						count = 0;
 					}
 				}
@@ -847,7 +852,7 @@ function callContent(idContent) {
 
 			setBtnActive('#btnPpibrt-', listBtnPpibrt);
 			$('.cursor i').removeClass('d-none');
-			backNav('#btnBottom-0, #btnBottom-2', '#btnPpibrt-', listBtnPpibrt.length, '#ppibrt-menu-btn', '#logon-menu&t=0.2s');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnPpibrt-', listBtnPpibrt.length, '#ppibrt-menu-btn', '#logon-menu&t=0.1s');
 			return;
 		}
 		case 'commet': {
@@ -900,7 +905,7 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK");
 						$('#btnCommet-' + count).removeClass('active');
-						forceBack('#btnCommet-', listBtnCommet.length, '#commet-menu-btn', '#logon-menu&t=0.2s');
+						forceBack('#btnCommet-', listBtnCommet.length, '#commet-menu-btn', '#logon-menu&t=0.1s');
 						count = 0;
 					}
 				}
@@ -909,7 +914,7 @@ function callContent(idContent) {
 			setBtnActive('#btnCommet-', listBtnCommet);
 			hideRightNav();
 			$('.cursor i').removeClass('d-none');
-			backNav('#btnBottom-0, #btnBottom-2', '#btnCommet-', listBtnCommet.length, '#commet-menu-btn', '#logon-menu&t=0.2s');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnCommet-', listBtnCommet.length, '#commet-menu-btn', '#logon-menu&t=0.1s');
 			return;
 		}
 		case 'movbtm': {
@@ -1112,7 +1117,7 @@ function callContent(idContent) {
 			});
 
 			$('#keyboard-enter').on('click', function () {
-				window.location = '#closed&t=0.2s';
+				window.location = '#closed&t=0.1s';
 				$('#btnBottom-5 span').fadeTo(100, 0);
 				showBtmNav();
 			});
@@ -1121,7 +1126,7 @@ function callContent(idContent) {
 			hideRightNav();
 			$('.cursor i').removeClass('d-none');
 			document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-			backNav('#btnBottom-0, #btnBottom-2', '#btnMovbtm-', listBtnMovbtm.length, '#movbtm-menu-btn', '#logon-menu&t=0.2s');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnMovbtm-', listBtnMovbtm.length, '#movbtm-menu-btn', '#logon-menu&t=0.1s');
 			delChar();
 			return;
 		}
@@ -1195,7 +1200,7 @@ function callContent(idContent) {
 					} else {
 						printMessage("COMMAND OK");
 						$('#btnLabPos-' + count).removeClass('active');
-						forceBack('#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn', '#logon-menu&t=0.2s');
+						forceBack('#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn', '#logon-menu&t=0.1s');
 						count = 0;
 					}
 				}
@@ -1204,16 +1209,16 @@ function callContent(idContent) {
 			setBtnActive('#btnLabPos-', listBtnLabPos);
 			$('#input-VK').val('NW');
 			$('.cursor i').removeClass('d-none');
-			backNav('#btnBottom-0, #btnBottom-2', '#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn', '#logon-menu&t=0.2s');
+			backNav('#btnBottom-0, #btnBottom-2', '#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn', '#logon-menu&t=0.1s');
 			delChar();
 			return;
 		}
 	}
 }
 
-function makeMenuBtm() {
+function makeMenuBtm(menuName) {
 	for (let i = 0; i < listBtnBottom.length; i++) {
-		$('#bottom-menu-btn').append('<li ' + 'id="btnBottom-' + i + '" class="btn btn-box"><span>' +
+		$('#bottom-menu-btn').append('<li ' + 'id="' + menuName + i + '" class="btn btn-box" value="btn"><span>' +
 			listBtnBottom[i] + '</span></li>');
 	}
 }
@@ -1269,21 +1274,6 @@ function togggleBtn(btnName, num, toggLabelA, toggLabelB) {
 	});
 }
 
-function addBack() {
-	let urls = $(location).attr('href').toString();
-
-	$('#btnBottom-0').on('click', function () {
-		switch (urls) {
-			case 'http://localhost/ews2/public/lbow/second_screen#setpwd-menu&t=0.2s': {
-				alert('jancok');
-				return;
-			}
-		}
-	});
-	/*backNav('#btnBottom-0, #btnBottom-2', '#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.2s');
-	*/
-}
-
 function backNav(btnTarget, labelBtn, arrLen, menuName, url) {
 	$(btnTarget).on('click', function () {
 		forceBack(labelBtn, arrLen, menuName, url);
@@ -1312,8 +1302,8 @@ function forceBack(labelBtn, arrLen, menuName, url) {
 	//console.log('fullstep')
 	window.location = url;
 	$('#btnBottom-4 span').fadeTo(100, 0, function () {
-		$('#btnBottom-0, #btnBottom-2, #btnBottom-4, #btnBottom-5, #btnBottom-9').off();
 		clearContent();
+		$('#btnBottom-0, #btnBottom-2, #btnBottom-4, #btnBottom-5, #btnBottom-9').off();
 		$('#tree-btn-out, #sub-tree, #tree-val, #toggle-box-a, #toggle-box-b').empty();
 		$('#toggle-box-out').hide();
 		document.getElementById('input-VK').placeholder = '';
@@ -1337,7 +1327,7 @@ function forceBack1Step(labelBtn, arrLen, menuName, url) {
 		$('#sub-tree, #tree-val, #toggle-box-a, #toggle-box-b').empty();
 		$('#tree-btn-out').children().last().remove();
 		document.getElementById('input-VK').placeholder = '';
-		clearMenu(menuName);
+		//clearMenu(menuName);
 
 		for (let i = 0; i < arrLen; i++) {
 			$(labelBtn + i).removeClass('active');
@@ -1381,9 +1371,12 @@ function printBtnToggleLabel(btnId, btnName, labelBtn, labelBtnLeft, labelBtnRig
 	$('#toggle-box-out').show();
 	$(btnName).children('a').html(labelBtn);
 	document.getElementById('input-btn-out').innerHTML = '<span class="active">' + labelBtn + '</span>';
-	document.getElementById('tree-' + btnId).innerHTML = '<span>' + labelBtn + '</span>';
 	document.getElementById('toggle-box-a').innerHTML = labelBtnLeft;
 	document.getElementById('toggle-box-b').innerHTML = labelBtnRight;
+
+	if (btnId != null) {
+		document.getElementById('tree-' + btnId).innerHTML = '<span>' + labelBtn + '</span>';
+	}
 }
 
 function setBtnActive(labelBtn, arrName) {
@@ -1398,11 +1391,11 @@ function setBtnActive(labelBtn, arrName) {
 function callAlphaVK() {
 	$('#btnBottom-4 span').fadeTo(100, 1, function () {
 		$('#btnBottom-4').on('click', function () {
-			window.location = '#sidemenu&t=0.2s';
+			window.location = '#sidemenu&t=0.1s';
 			console.log('vk showed')
 			$('#btnBottom-5 span').fadeTo(100, 1, function () {
 				$('#btnBottom-5').on('click', function () {
-					window.location = '#closed&t=0.2s';
+					window.location = '#closed&t=0.1s';
 					$('#btnBottom-5 span').fadeTo(100, 0);
 					showBtmNav();
 				});
