@@ -39,7 +39,7 @@ const listBtnMaps = [
 	'', 'adtmap', 'sstnmap', 'ownmap', 'topog', '', 'updstn', '', 'creftr', 'crecir',
 	'', 'secbnd', 'mti', 'tis', 'burn', '', 'endupd', '', 'crevec', 'crearc',
 	'', 'nai', 'nac', 'cps', 'psa', '', '', '', '', '',
-	'abort', '.', 'home', '', 'alpha', 'close', '', 'bakspc', 'dltfld', 'enter',
+	'abort', '.', 'home', '', '', '', '', 'bakspc', 'dltfld', 'enter',
 ];
 
 const listBtnRrings = [
@@ -47,14 +47,15 @@ const listBtnRrings = [
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['close', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
 const listBtnCreftr = [
 	['dim', 'active'], ['size', ''], ['steady', ''], ['symbol', ''], ['text', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', '']
+	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
 const listBtnCrevec = [
@@ -171,6 +172,15 @@ function createButton(buttonName) {
 								printBtnTree(listBtnLogon[id]);
 								createButton('setpwd');
 								callAlphaVK('#btnSetpwd-');
+								break;
+							case 4:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#maps-menu&t=0.2s';
+								createButton('maps');
 								break;
 							case 12:
 								console.log(id + ' fnLogon called');
@@ -323,6 +333,283 @@ function createButton(buttonName) {
 				$('.cursor i').removeClass('d-none');
 				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 				delChar('#btnSetpwd-47, #btnSetpwd-48');
+				return;
+			}
+			case 'maps': {
+				for (let varMaps = 0; varMaps < listBtnMaps.length; varMaps++) {
+					generateButtonMenu('#maps-menu-btn', 'btnMaps-', varMaps, listBtnMaps[varMaps]);
+					$('#btnMaps-' + varMaps).on("click", { num: varMaps }, fnMaps);
+				}
+
+				function fnMaps(event) {
+					let id = event.data.num;
+
+					if (listBtnMaps[id][0] != '') {
+						switch (id) {
+							case 0:
+							case 40:
+							case 42:
+								console.log(id + ' fnMaps called');
+								event.stopImmediatePropagation();
+								backNav('#btnMaps-', listBtnMaps.length, '#maps-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 2:
+								console.log(id + ' fnMaps called');
+								event.stopImmediatePropagation();
+								clearMenu('#maps-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#rrings-menu&t=0.15s';
+								printBtnTree(listBtnMaps[id]);
+								createButton('rrings');
+								break;
+							case 6:
+								console.log(id + ' fnMaps called');
+								event.stopImmediatePropagation();
+								$('#message-btn-out').empty();
+								printMessage("OPERATORS MAP BEING AMENDED");
+								clearMessage('#btnMaps-0');
+								break;
+							case 16:
+								console.log(id + ' fnMaps called');
+								event.stopImmediatePropagation();
+								$('#message-btn-out').empty();
+								printMessage("OPERATORS MAP BEING AMENDED");
+								clearMessage('#btnMaps-0');
+								break;
+							case 18:
+								console.log(id + ' fnMaps called');
+								event.stopImmediatePropagation();
+								clearMenu('#maps-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#creftr-menu&t=0.15s';
+								printBtnTree(listBtnMaps[id]);
+								createButton('creftr');
+								break;
+							case 28:
+								break;
+						}
+					}
+				}
+				return;
+			}
+			case 'rrings': {
+				let count = 0;
+
+				for (let varRrings = 0; varRrings < listBtnRrings.length; varRrings++) {
+					generateButtonMenu('#rrings-menu-btn', 'btnRrings-', varRrings, listBtnRrings[varRrings][0]);
+					registToTree(varRrings, listBtnRrings[varRrings][0], 1);
+					$('#btnRrings-' + varRrings).on("click", { num: varRrings }, fnRrings);
+				}
+
+				function fnRrings(event) {
+					let id = event.data.num;
+
+					if (listBtnRrings[id][0] != '') {
+						if (id < 1) {
+							initiateLoadedMenu('#btnrings-', id, listBtnrings[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnRrings called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnRrings called');
+								event.stopImmediatePropagation();
+								backNav('#btnRrings-', listBtnRrings.length, '#rrings-menu-btn', '#maps-menu&t=0.15s', 'maps');
+								break;
+							case 49:
+								console.log(id + ' fnRrings called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnRrings-', listBtnRrings);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnRrings-' + count).removeClass('active');
+										forceBack('#btnRrings-', listBtnRrings.length, '#rrings-menu-btn', '#maps-menu&t=0.15s');
+										count = 0;
+										createButton('maps');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnRrings, id);
+				}
+				setBtnActive('#btnRrings-', listBtnRrings);
+				hideRightNav();
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnRrings-47, #btnRrings-48');
+				return;
+			}
+			case 'creftr': {
+				let count = 0;
+				let toggLabelA = listBtnCreftr[0][0];
+				let toggLabelB = 'bright';
+				let toggLabelC = listBtnCreftr[2][0];
+				let toggLabelD = 'flash';
+
+				$('#toggle-box-out').show();
+				$('#toggle-divider').show();
+				document.getElementById('toggle-box-a').innerHTML = toggLabelA;
+				document.getElementById('toggle-box-b').innerHTML = toggLabelB;
+				$('#toggle-box-a').addClass('active');
+
+				for (let varCreftr = 0; varCreftr < listBtnCreftr.length; varCreftr++) {
+					generateButtonMenu('#creftr-menu-btn', 'btnCreftr-', varCreftr, listBtnCreftr[varCreftr][0]);
+					registToTree(varCreftr, listBtnCreftr[varCreftr][0], 5);
+					$('#btnCreftr-' + varCreftr).on("click", { num: varCreftr }, fnCreftr);
+				}
+
+				$('#btnCreftr-44').children('span').hide();
+
+				function fnCreftr(event) {
+					let id = event.data.num;
+
+					if (listBtnCreftr[id][0] != '') {
+						if (id < 5) {
+							initiateLoadedMenu('#btnCreftr-', id, listBtnCreftr[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnCreftr called');
+								//event.stopImmediatePropagation()
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnCreftr-', 30, 40);
+
+								$('#creftr-menu-btn').children('#btnCreftr-' + id).empty();
+								$('#btnCreftr-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCreftr[id][0] + '</a>');
+								disableBtnNumber('#btnCreftr-');
+								break;
+							case 1:
+								console.log(id + ' fnCreftr called');
+								event.stopImmediatePropagation()
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnCreftr-', 30, 40);
+								enableBtnNumber('#creftr-menu-btn li', listBtnCreftr, 'btnCreftr-');
+								break;
+							case 2:
+								console.log(id + ' fnCreftr called');
+								//event.stopImmediatePropagation()
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnCreftr-', 30, 40);
+
+								$('#creftr-menu-btn').children('#btnCreftr-' + id).empty();
+								$('#btnCreftr-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCreftr[id][0] + '</a>');
+								disableBtnNumber('#btnCreftr-');
+								break;
+							case 3:
+								console.log(id + ' fnCreftr called');
+								event.stopImmediatePropagation()
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnCreftr-', 30, 40);
+								enableBtnNumber('#creftr-menu-btn li', listBtnCreftr, 'btnCreftr-');
+								break;
+							case 4:
+								console.log(id + ' fnCreftr called');
+								event.stopImmediatePropagation()
+								$('.cursor i').removeClass('d-none');
+								hideNumBtn('#btnCreftr-', 30, 40);
+								disableBtnNumber('#btnCreftr-');
+								callAlphaVK('#btnCreftr-');
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnCreftr called');
+								event.stopImmediatePropagation();
+								backNav('#btnCreftr-', listBtnCreftr.length, '#creftr-menu-btn', '#maps-menu&t=0.15s', 'maps');
+								break;
+							case 49:
+								console.log(id + ' fnCreftr called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 5) {
+										count++;
+										nextStep(count, '#btnCreftr-', listBtnCreftr);
+										$('#tree-' + (count - 1)).show();
+										$('#toggle-box-out').hide();
+
+										switch (count) {
+											case 0: {
+												event.stopImmediatePropagation()
+												$('.cursor i').addClass('d-none');
+												hideNumBtn('#btnCreftr-', 30, 40);
+												disableBtnNumber('#btnCreftr-');
+												return;
+											}
+											case 1: {
+												event.stopImmediatePropagation()
+												$('.cursor i').removeClass('d-none');
+												showNumBtn('#btnCreftr-', 30, 40);
+												enableBtnNumber('#creftr-menu-btn li', listBtnCreftr, 'btnCreftr-');
+												return;
+											}
+											case 2: {
+												event.stopImmediatePropagation()
+												$('.cursor i').addClass('d-none');
+												hideNumBtn('#btnCreftr-', 30, 40);
+												disableBtnNumber('#btnCreftr-');
+												return;
+											}
+											case 3: {
+												event.stopImmediatePropagation()
+												$('.cursor i').removeClass('d-none');
+												showNumBtn('#btnCreftr-', 30, 40);
+												enableBtnNumber('#creftr-menu-btn li', listBtnCreftr, 'btnCreftr-');
+												return;
+											}
+											case 4: {
+												event.stopImmediatePropagation()
+												$('.cursor i').removeClass('d-none');
+												hideNumBtn('#btnCreftr-', 30, 40);
+												disableBtnNumber('#btnCreftr-');
+												callAlphaVK('#btnCreftr-');
+												return;
+											}
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnCreftr-' + count).removeClass('active');
+										forceBack('#btnCreftr-', listBtnCreftr.length, '#creftr-menu-btn', '#maps-menu&t=0.15s');
+										count = 0;
+										createButton('maps');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnCreftr-');
+				});
+
+				togggleBtn(0, '#btnCreftr-0', toggLabelA, toggLabelB);
+				togggleBtn(2, '#btnCreftr-2', toggLabelC, toggLabelD);
+				setBtnActive('#btnCreftr-', listBtnCreftr);
+				hideNumBtn('#btnCreftr-', 30, 40);
+				disableBtnNumber('#btnCreftr-');
 				return;
 			}
 			case 'ppibrt': {
@@ -734,12 +1021,6 @@ function createButton(buttonName) {
 			case '': {
 				return;
 			}
-			case '': {
-				return;
-			}
-			case '': {
-				return;
-			}
 		}
 	}
 }
@@ -867,24 +1148,6 @@ function forceBack(labelBtn, arrLen, menuName, url) {
 	}, 100);
 }
 
-function forceBack1Step(labelBtn, arrLen, menuName, url) {
-	//console.log('1step')
-	window.location = url;
-	setTimeout(function () {
-		clearContent();
-		$('#btnBottom-0, #btnBottom-4, #btnBottom-5, #btnBottom-9').off();
-		$('#sub-tree, #tree-val, #toggle-box-a, #toggle-box-b').empty();
-		$('#tree-btn-out').children().last().remove();
-		document.getElementById('input-VK').placeholder = '';
-		clearMenu(menuName);
-
-		for (let i = 0; i < arrLen; i++) {
-			$(labelBtn + i).removeClass('active');
-			$(labelBtn + i).off();
-		}
-	}, 100);
-}
-
 function nextStep(counter, btnName, arrName) {
 	$(btnName + counter).siblings('.active').removeClass('active');
 	$(btnName + counter).addClass('active');
@@ -939,7 +1202,6 @@ function setBtnActive(labelBtn, arrName) {
 
 function callAlphaVK(btnName) {
 	let btnA = (btnName + 44);
-	//let btnB = (btnName + 45);
 
 	$(btnA).children('span').fadeTo(100, 1, function () {
 		$(btnA).on('click', function () {
@@ -961,7 +1223,7 @@ function showNumBtn(btnName, numStart, numEnd) {
 }
 
 function hideNumBtn(btnName, numStart, numEnd) {
-	for (let b = parseInt(numStart); b <= parseInt(numEnd); b++) {
+	for (let b = parseInt(numStart); b < parseInt(numEnd); b++) {
 		$(btnName + b).children('span').fadeTo(100, 0);
 	}
 }
