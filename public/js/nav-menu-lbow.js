@@ -31,7 +31,7 @@ const listBtnSetpwd = [
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['close', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
 const listBtnMaps = [
@@ -114,27 +114,25 @@ function createButton(buttonName) {
 		switch (buttonName) {
 			case 'main': {
 				for (let varMain = 0; varMain < listBtnMain.length; varMain++) {
-					$('#main-menu-btn').append('<li ' + 'id="btnMain-' + varMain + '" class="btn btn-box"><span>' +
-						listBtnMain[varMain][0] + '</span></li>');
+					generateButtonMenu('#main-menu-btn', 'btnMain-', varMain, listBtnMain[varMain][0]);
 					$('#btnMain-' + varMain).on("click", { num: varMain }, fnMain);
 				}
 
 				function fnMain(event) {
-					switch (event.data.num) {
-						case 0:
-							console.log(event.data.num + ' fnMain called');
-							//$(this).off("click", fnMain);
-							clearContent();
-							window.location = '#logon-menu&t=0.15s';
-							createButton('logon');
-							$('#right-menu-btn li').children('span').show();
-							break;
-						case 2:
-							console.log('asuuu');
-							break;
-						default:
-							console.log('default ' + event.data.num);
-							break
+					let id = event.data.num;
+
+					if (listBtnMain[id][0].toString() != '') {
+						switch (id) {
+							case 0:
+								console.log(id + ' fnMain called');
+								event.stopImmediatePropagation();
+								clearMenu('#main-menu-btn');
+								clearContent();
+								$('#right-menu-btn li').children('span').show();
+								window.location = '#logon-menu&t=0.15s';
+								createButton('logon');
+								break;
+						}
 					}
 				}
 
@@ -143,77 +141,147 @@ function createButton(buttonName) {
 			}
 			case 'logon': {
 				for (let varLogon = 0; varLogon < listBtnLogon.length; varLogon++) {
-					$('#logon-menu-btn').append('<li ' + 'id="btnLogon-' + varLogon + '" class="btn btn-box"><span>' +
-						listBtnLogon[varLogon] + '</span></li>');
+					generateButtonMenu('#logon-menu-btn', 'btnLogon-', varLogon, listBtnLogon[varLogon]);
 					$('#btnLogon-' + varLogon).on("click", { num: varLogon }, fnLogon);
 				}
 
 				function fnLogon(event) {
-					switch (event.data.num) {
-						case 0:
-							console.log(event.data.num + ' fnLogon called');
-							//$(this).off("click", fnLogon);
-							clearContent();
-							$('#message-btn-out').empty();
-							window.location = '#main-menu&t=0.15s';
-							$('#right-menu-btn li').children('span').hide();
-							event.stopImmediatePropagation()
-							break;
-						case 1:
-							console.log(event.data.num + ' fnLogon called');
-							$(this).off("click", fnLogon);
-							clearContent();
-							$('#message-btn-out').empty();
-							window.location = '#setpwd-menu&t=0.2s';
-							createButton('setpwd');
-							printBtnTree(listBtnLogon[event.data.num]);
-							event.stopImmediatePropagation()
-							//callAlphaVK();
-							break;
-						default:
-							console.log('default ' + event.data.num);
-							break
+					let id = event.data.num;
+
+					if (listBtnLogon[id][0].toString() != '') {
+						switch (id) {
+							case 0:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#right-menu-btn li').children('span').hide();
+								window.location = '#main-menu&t=0.15s';
+								createButton('main');
+								break;
+							case 1:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#setpwd-menu&t=0.15s';
+								createButton('setpwd');
+								printBtnTree(listBtnLogon[id]);
+								callAlphaVK('#btnSetpwd-');
+								break;
+						}
 					}
 				}
 				return;
 			}
 			case 'setpwd': {
+				let count = 0, attempt = 0, varA = '', varB = '';
+
 				for (let varSetpwd = 0; varSetpwd < listBtnSetpwd.length; varSetpwd++) {
-					$('#setpwd-menu-btn').append('<li ' + 'id="btnSetpwd-' + varSetpwd + '" class="btn btn-box"><span>' +
-						listBtnSetpwd[varSetpwd][0] + '</span></li>');
-					$('#btnSetpwd-' + varSetpwd).siblings('.active').removeClass('active');
-
-					/**/
-					if ((varSetpwd < 2)) {
-						document.getElementById('sub-tree').innerHTML +=
-							'<div id="tree-' + varSetpwd + '" class="mr-3">' +
-							'<span>' + listBtnSetpwd[varSetpwd][0] + '</span>' +
-							'<span id="treeNum-' + varSetpwd + '" class="ml-2">' + '</span>' +
-							'</div>';
-
-						$('#tree-' + varSetpwd).hide();
-					}
+					generateButtonMenu('#setpwd-menu-btn', 'btnSetpwd-', varSetpwd, listBtnSetpwd[varSetpwd][0]);
+					registToTree(varSetpwd, listBtnSetpwd[varSetpwd][0], 2);
 					$('#btnSetpwd-' + varSetpwd).on("click", { num: varSetpwd }, fnSetpwd);
 				}
 
+				$('#btnSetpwd-44, #btnSetpwd-45').children('span').hide();
+
 				function fnSetpwd(event) {
-					switch (event.data.num) {
-						case 40:
-							console.log(event.data.num + ' fnSetpwd called');
-							//$(this).off("click", fnSetpwd);
+					let id = event.data.num;
+
+					if (listBtnSetpwd[id][0].toString() != '') {
+						if (id < 2) {
+							$('#btnSetpwd-' + id).siblings('.active').removeClass('active');
+							$('#btnSetpwd-' + id).addClass('active');
+							$('#tree-' + id).show();
+							count = id;
+
 							clearContent();
-							window.location = '#logon-menu&t=0.15s';
-							event.stopImmediatePropagation()
-							break;
-						case 2:
-							console.log('asuuu');
-							break;
-						default:
-							console.log('default ' + event.data.num);
-							break
+							printBtnLabel(listBtnSetpwd[id][0]);
+							$('.cursor i').removeClass('d-none');
+
+							if ($('#btnSetpwd-1').hasClass('active')) {
+								$('#btnSetpwd-49').off();
+							} else {
+								$('#btnSetpwd-49').on('click', function () {
+									$.doClick();
+								});
+							}
+						}
+
+						switch (id) {
+							case 40:
+							case 42:
+								console.log(id + ' fnSetpwd called');
+								event.stopImmediatePropagation();
+								backNav('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnSetpwd called');
+								event.stopImmediatePropagation()
+								$.doClick();
+								break;
+						}
 					}
 				}
 
+				$.doClick = function () {
+					if (($('#input-VK').val() != '')) {
+						$('#tree-' + count).show();
+						document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+						clearVK();
+
+						count++;
+						nextStep(count, '#btnSetpwd-', listBtnSetpwd);
+						varA = $('#treeNum-' + 0).text();
+						varB = $('#treeNum-' + 1).text();
+
+						if (attempt === 0) {
+							attempt++;
+						} else {
+							if ((varA != varB)) {
+								printMessage("PASSWORD didn't match ..");
+								printBtnLabel(listBtnSetpwd[count - 1][0]);
+								$('#btnSetpwd-49').off();
+							}
+							else {
+								printMessage("COMMAND OK");
+								printBtnLabel(listBtnSetpwd[count - 1][0]);
+								$('#btnSetpwd-' + count).removeClass('active');
+								attempt = 0;
+								forceBack('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.15s');
+								createButton('logon');
+							}
+						}
+					} else if ((varA != '') && (varB === '')) {
+						printMessage("PASSWORD didn't match ..");
+						printBtnLabel(listBtnSetpwd[count][0]);
+						$('#btnSetpwd-49').off();
+					} else {
+						if (count < 1) {
+							count++;
+							nextStep(count, '#btnSetpwd-', listBtnSetpwd);
+							$('#tree-' + (count - 1)).show();
+						} else {
+							printMessage("COMMAND OK")
+							$('#btnSetpwd-' + count).removeClass('active');
+							forceBack('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.15s');
+							createButton('logon');
+							count = 0;
+						}
+					}
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					$('#btnSetpwd-45 span').fadeTo(100, 0);
+					showBtmNav('#btnSetpwd-');
+				});
+
+				setBtnActive('#btnSetpwd-', listBtnSetpwd);
+				$('.cursor i').removeClass('d-none');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				delChar('#btnSetpwd-47, #btnSetpwd-48');
 				return;
 			}
 			case 'ppibrt': {
@@ -305,54 +373,32 @@ function createButton(buttonName) {
 		}
 	}
 }
-/*
-function bindAction(fnName, e) {
-	if (fnName != '' || fnName != null) {
-		switch (fnName) {
-			case 'fnMain': {
-				$("#main-menu-btn li").on('click', function loadMain(e) {
-					let idClicked = e.currentTarget.id;
-					let curNum = idClicked.replace('btnMain-', '');
 
-					if (($(e.currentTarget).text() != '')) {
+function generateButtonMenu(menuUl, btnName, varLoop, arr) {
+	let btnId = ('#' + btnName + varLoop);
+	$(menuUl).append('<li ' + 'id="' + btnName + varLoop + '" class="btn btn-box"><span>' +
+		arr + '</span></li>');
+	$(btnId).siblings('.active').removeClass('active');
+}
 
-					}
-				});
-				return;
-			}
-			case 'fnLogon': {
-				$("#logon-menu-btn li").one('click', function (e) {
-					let idClicked = e.currentTarget.id;
-					let curNum = idClicked.replace('btnLogon-', '');
+function registToTree(varLoop, arr, limiter) {
+	if ((varLoop < limiter)) {
+		document.getElementById('sub-tree').innerHTML +=
+			'<div id="tree-' + varLoop + '" class="mr-3">' +
+			'<span>' + arr + '</span>' +
+			'<span id="treeNum-' + varLoop + '" class="ml-2">' + '</span>' +
+			'</div>';
 
-					if ($(e.currentTarget).text() != '') {
-						switch (idClicked) {
-							case 'btnLogon-0': {
-								return;
-							}
-							case 'btnLogon-1': {
-								console.log(idClicked + ' called');
-								return;
-							}
-						}
-					}
-				});
-				return;
-			}
-			case 'fnSetpwd': {
-				backNav('#btnSetpwd-40', '#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.15s');
-				return;
-			}
-		}
+		$('#tree-' + varLoop).hide();
 	}
 }
-*/
-function makeMenuBtm(menuName) {
+
+/*function makeMenuBtm(menuName) {
 	for (let i = 0; i < listBtnBottom.length; i++) {
 		$('#bottom-menu-btn').append('<li ' + 'id="' + menuName + i + '" class="btn btn-box" value="btn"><span>' +
 			listBtnBottom[i] + '</span></li>');
 	}
-}
+}*/
 
 function makeMenuRight() {
 	for (let j = 0; j < listBtnRight.length; j++) {
@@ -405,11 +451,10 @@ function togggleBtn(btnName, num, toggLabelA, toggLabelB) {
 	});
 }
 
-function backNav(btnTarget, labelBtn, arrLen, menuName, url) {
-	$(btnTarget).on('click', function () {
-		forceBack(labelBtn, arrLen, menuName, url);
-		showRightNav();
-	});
+function backNav(labelBtn, arrLen, menuName, url, btnToCreate) {
+	forceBack(labelBtn, arrLen, menuName, url);
+	showRightNav();
+	createButton(btnToCreate);
 }
 
 function clearContent() {
@@ -426,9 +471,7 @@ function clearContent() {
 }
 
 function clearMenu(menuName) {
-	if ($(menuName).children().length < 0) {
-		$(menuName).children().remove();
-	}
+	$(menuName).empty();
 }
 
 function forceBack(labelBtn, arrLen, menuName, url) {
@@ -521,19 +564,22 @@ function setBtnActive(labelBtn, arrName) {
 	}
 }
 
-function callAlphaVK() {
-	$('#btnBottom-4 span').fadeTo(100, 1, function () {
-		$('#btnBottom-4').on('click', function () {
+function callAlphaVK(btnName) {
+	let btnA = (btnName + 44);
+	//let btnB = (btnName + 45);
+
+	$(btnA).children('span').fadeTo(100, 1, function () {
+		$(btnA).on('click', function () {
 			window.location = '#sidemenu&t=0.15s';
 			console.log('vk showed')
-			$('#btnBottom-5 span').fadeTo(100, 1, function () {
-				$('#btnBottom-5').on('click', function () {
+			/*$(btnB).children('span').fadeTo(100, 1, function () {
+				$(btnB).on('click', function () {
 					window.location = '#closed&t=0.15s';
-					$('#btnBottom-5 span').fadeTo(100, 0);
-					showBtmNav();
+					$(btnB).children('span').fadeTo(100, 0);
+					showBtmNav(btnName);
 				});
-			});
-			hideBtmNav();
+			});*/
+			hideBtmNav(btnName);
 		});
 	});
 }
@@ -559,27 +605,27 @@ function clearVK() {
 	$('.cursor i').css('left', '0');
 }
 
-function delChar() {
-	$('#btnBottom-7, #btnBottom-8').on('click', function () {
+function delChar(btnName) {
+	$(btnName).on('click', function () {
 		clearVK();
 	});
 }
 
-function hideBtmNav() {
-	for (let i = 0; i < 5; i++) {
-		$('#btnBottom-' + i).children('span').fadeTo(100, 0);
+function hideBtmNav(btnName) {
+	for (let i = 40; i < 45; i++) {
+		$(btnName + i).children('span').fadeTo(100, 0);
 	}
-	for (let j = 6; j < 10; j++) {
-		$('#btnBottom-' + j).children('span').fadeTo(100, 0);
+	for (let j = 46; j < 50; j++) {
+		$(btnName + j).children('span').fadeTo(100, 0);
 	}
 }
 
-function showBtmNav() {
-	for (let i = 0; i < 5; i++) {
-		$('#btnBottom-' + i).children('span').fadeTo(100, 1);
+function showBtmNav(btnName) {
+	for (let i = 40; i < 45; i++) {
+		$(btnName + i).children('span').fadeTo(100, 1);
 	}
-	for (let j = 6; j < 10; j++) {
-		$('#btnBottom-' + j).children('span').fadeTo(100, 1);
+	for (let j = 46; j < 50; j++) {
+		$(btnName + j).children('span').fadeTo(100, 1);
 	}
 }
 
