@@ -25,7 +25,7 @@
             <ul id="line-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="ppibrt-menu" lj-transition="fade">
-            <ul id="ppibrt-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
+            <ul id="ppibrt-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="commet-menu" lj-transition="fade">
             <ul id="commet-menu-btn" class="m-0 p-0 form-inline"></ul>

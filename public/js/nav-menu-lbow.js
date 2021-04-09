@@ -75,14 +75,16 @@ const listBtnPpibrt = [
 	['bakgnd', 'active'], ['1stvid', ''], ['logvid', ''], ['rrings', ''], ['synth', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', '']
+	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
 const listBtnCommet = [
 	['', ''], ['zone', 'active'], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', '']
+	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
 const listBtnMovbtm = [
@@ -101,10 +103,8 @@ const listBtnLabPos = [
 
 function printBtn() {
 	createButton('main');
-	//makeMenuBtm('btnBottom-');
 	makeMenuRight();
 
-	//$('#btnBottom-4 span, #btnBottom-5 span').css("opacity", "0");
 	$('#toggle-box-out').hide();
 	$('#right-menu-btn li').children('span').hide();
 }
@@ -170,6 +170,26 @@ function createButton(buttonName) {
 								printBtnTree(listBtnLogon[id]);
 								callAlphaVK('#btnSetpwd-');
 								break;
+							case 12:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#ppibrt-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('ppibrt');
+								break;
+							case 13:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#commet-menu&t=0.2s'
+								printBtnTree(listBtnLogon[id]);
+								createButton('commet');
+								break;
 						}
 					}
 				}
@@ -191,14 +211,8 @@ function createButton(buttonName) {
 
 					if (listBtnSetpwd[id][0].toString() != '') {
 						if (id < 2) {
-							$('#btnSetpwd-' + id).siblings('.active').removeClass('active');
-							$('#btnSetpwd-' + id).addClass('active');
-							$('#tree-' + id).show();
+							initiateLoadedMenu('#btnSetpwd-', id, listBtnSetpwd[id][0]);
 							count = id;
-
-							clearContent();
-							printBtnLabel(listBtnSetpwd[id][0]);
-							$('.cursor i').removeClass('d-none');
 
 							if ($('#btnSetpwd-1').hasClass('active')) {
 								$('#btnSetpwd-49').off();
@@ -285,39 +299,138 @@ function createButton(buttonName) {
 				return;
 			}
 			case 'ppibrt': {
+				let count = 0;
+
 				for (let varPpibrt = 0; varPpibrt < listBtnPpibrt.length; varPpibrt++) {
-					$('#ppibrt-menu-btn').append('<li ' + 'id="btnPpibrt-' + varPpibrt + '" class="btn btn-box"><span>' +
-						listBtnPpibrt[varPpibrt][0] + '</span></li>');
-					$('#btnPpibrt-' + varPpibrt).siblings('.active').removeClass('active');
+					generateButtonMenu('#ppibrt-menu-btn', 'btnPpibrt-', varPpibrt, listBtnPpibrt[varPpibrt][0]);
+					registToTree(varPpibrt, listBtnPpibrt[varPpibrt][0], 5);
+					$('#btnPpibrt-' + varPpibrt).on("click", { num: varPpibrt }, fnPpibrt);
 
 					if ((varPpibrt < 5)) {
-						document.getElementById('sub-tree').innerHTML +=
-							'<div id="tree-' + varPpibrt + '" class="mr-3">' +
-							'<span>' + listBtnPpibrt[varPpibrt][0] + '</span>' +
-							'<span id="treeNum-' + varPpibrt + '" class="ml-2">' + '</span>' +
-							'</div>';
-
-						$('#tree-' + varPpibrt).hide();
+						$('#btnPpibrt-' + varPpibrt).addClass('text-none');
 					}
 				}
+
+				function fnPpibrt(event) {
+					let id = event.data.num;
+
+					if (listBtnPpibrt[id][0].toString() != '') {
+						if (id < 5) {
+							initiateLoadedMenu('#btnPpibrt-', id, listBtnPpibrt[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+							case 1:
+							case 2:
+							case 3:
+							case 4:
+								console.log(id + ' fnPpibrt called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnPpibrt called');
+								event.stopImmediatePropagation();
+								backNav('#btnPpibrt-', listBtnPpibrt.length, '#ppibrt-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnPpibrt called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 5) {
+										count++;
+										nextStep(count, '#btnPpibrt-', listBtnPpibrt);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnPpibrt-' + count).removeClass('active');
+										forceBack('#btnPpibrt-', listBtnPpibrt.length, '#ppibrt-menu-btn', '#logon-menu&t=0.15s');
+										count = 0;
+										createButton('logon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnPpibrt, id);
+				}
+
+				setBtnActive('#btnPpibrt-', listBtnPpibrt);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnPpibrt-47, #btnPpibrt-48');
 				return;
 			}
 			case 'commet': {
+				let count = 0;
+
 				for (let varCommet = 0; varCommet < listBtnCommet.length; varCommet++) {
-					$('#commet-menu-btn').append('<li ' + 'id="btnCommet-' + varCommet + '" class="btn btn-box"><span>' +
-						listBtnCommet[varCommet][0] + '</span></li>');
-					$('#btnCommet-' + varCommet).siblings('.active').removeClass('active');
-
-					if ((varCommet < 1)) {
-						document.getElementById('sub-tree').innerHTML +=
-							'<div id="tree-' + varCommet + '" class="mr-3">' +
-							'<span>' + listBtnCommet[varCommet][0] + '</span>' +
-							'<span id="treeNum-' + varCommet + '" class="ml-2">' + '</span>' +
-							'</div>';
-
-						$('#tree-' + varCommet).hide();
-					}
+					generateButtonMenu('#commet-menu-btn', 'btnCommet-', varCommet, listBtnCommet[varCommet][0]);
+					registToTree(varCommet, listBtnCommet[varCommet][0], 1);
+					$('#btnCommet-' + varCommet).on("click", { num: varCommet }, fnCommet);
 				}
+
+				function fnCommet(event) {
+					let id = event.data.num;
+
+					if (listBtnCommet[id][0].toString() != '') {
+						if (id < 1) {
+							initiateLoadedMenu('#btnCommet-', id, listBtnCommet[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+							case 1:
+							case 2:
+							case 3:
+							case 4:
+								console.log(id + ' fnCommet called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnCommet called');
+								event.stopImmediatePropagation();
+								backNav('#btnCommet-', listBtnCommet.length, '#commet-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnCommet called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnCommet-', listBtnCommet);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnCommet-' + count).removeClass('active');
+										forceBack('#btnCommet-', listBtnCommet.length, '#commet-menu-btn', '#logon-menu&t=0.15s');
+										count = 0;
+										createButton('logon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnCommet, id);
+				}
+
+				setBtnActive('#btnCommet-', listBtnCommet);
+				hideRightNav();
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnCommet-47, #btnCommet-48');
 				return;
 			}
 			case 'movbtm': {
@@ -393,12 +506,15 @@ function registToTree(varLoop, arr, limiter) {
 	}
 }
 
-/*function makeMenuBtm(menuName) {
-	for (let i = 0; i < listBtnBottom.length; i++) {
-		$('#bottom-menu-btn').append('<li ' + 'id="' + menuName + i + '" class="btn btn-box" value="btn"><span>' +
-			listBtnBottom[i] + '</span></li>');
-	}
-}*/
+function initiateLoadedMenu(btnName, num, arr) {
+	$(btnName + num).siblings('.active').removeClass('active');
+	$(btnName + num).addClass('active');
+	$('#tree-' + id).show();
+
+	clearContent();
+	printBtnLabel(arr);
+	$('.cursor i').removeClass('d-none');
+}
 
 function makeMenuRight() {
 	for (let j = 0; j < listBtnRight.length; j++) {
@@ -572,13 +688,6 @@ function callAlphaVK(btnName) {
 		$(btnA).on('click', function () {
 			window.location = '#sidemenu&t=0.15s';
 			console.log('vk showed')
-			/*$(btnB).children('span').fadeTo(100, 1, function () {
-				$(btnB).on('click', function () {
-					window.location = '#closed&t=0.15s';
-					$(btnB).children('span').fadeTo(100, 0);
-					showBtmNav(btnName);
-				});
-			});*/
 			hideBtmNav(btnName);
 		});
 	});
