@@ -23,7 +23,7 @@ const listBtnLogon = [
 	'', '', 'ppibrt', 'commet', 'dimsel', '', '', '', '', '',
 	'', '', '', 'movbtm', 'labpos', 'trklin', 'settrk', '', 'histry', '',
 	'', 'stbsel', '', '', 'trklab', 'trksel', 'trkldr', '', '', 'pltsel',
-	'abort', '.', 'home', '', 'alpha', 'close', '', 'bakspc', 'dltfld', 'enter'
+	'abort', '.', 'home', '', '', '', '', 'bakspc', 'dltfld', 'enter'
 ];
 
 const listBtnSetpwd = [
@@ -91,14 +91,16 @@ const listBtnMovbtm = [
 	['', ''], ['georef', 'active'], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '']
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
 const listBtnLabPos = [
 	['nw', 'active'], ['', ''], ['ne', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['auto', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['sw', ''], ['', ''], ['se', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '']
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
 function printBtn() {
@@ -121,7 +123,7 @@ function createButton(buttonName) {
 				function fnMain(event) {
 					let id = event.data.num;
 
-					if (listBtnMain[id][0].toString() != '') {
+					if (listBtnMain[id][0] != '') {
 						switch (id) {
 							case 0:
 								console.log(id + ' fnMain called');
@@ -148,7 +150,7 @@ function createButton(buttonName) {
 				function fnLogon(event) {
 					let id = event.data.num;
 
-					if (listBtnLogon[id][0].toString() != '') {
+					if (listBtnLogon[id][0] != '') {
 						switch (id) {
 							case 0:
 								console.log(id + ' fnLogon called');
@@ -166,8 +168,8 @@ function createButton(buttonName) {
 								clearContent();
 								$('#message-btn-out').empty();
 								window.location = '#setpwd-menu&t=0.15s';
-								createButton('setpwd');
 								printBtnTree(listBtnLogon[id]);
+								createButton('setpwd');
 								callAlphaVK('#btnSetpwd-');
 								break;
 							case 12:
@@ -186,9 +188,35 @@ function createButton(buttonName) {
 								clearMenu('#logon-menu-btn');
 								clearContent();
 								$('#message-btn-out').empty();
-								window.location = '#commet-menu&t=0.2s'
+								window.location = '#commet-menu&t=0.15s'
 								printBtnTree(listBtnLogon[id]);
 								createButton('commet');
+								break;
+							case 23:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#movbtm-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('movbtm');
+								callAlphaVK('#btnMovbtm-');
+								break;
+							case 24:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#labPos-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('labPos');
+								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];;
+								break;
+							case 40:
+							case 42:
+								$('#message-btn-out').empty();
 								break;
 						}
 					}
@@ -204,12 +232,12 @@ function createButton(buttonName) {
 					$('#btnSetpwd-' + varSetpwd).on("click", { num: varSetpwd }, fnSetpwd);
 				}
 
-				$('#btnSetpwd-44, #btnSetpwd-45').children('span').hide();
+				$('#btnSetpwd-44').children('span').hide();
 
 				function fnSetpwd(event) {
 					let id = event.data.num;
 
-					if (listBtnSetpwd[id][0].toString() != '') {
+					if (listBtnSetpwd[id][0] != '') {
 						if (id < 2) {
 							initiateLoadedMenu('#btnSetpwd-', id, listBtnSetpwd[id][0]);
 							count = id;
@@ -288,7 +316,6 @@ function createButton(buttonName) {
 
 				$('#keyboard-enter').on('click', function () {
 					window.location = '#closed&t=0.15s';
-					$('#btnSetpwd-45 span').fadeTo(100, 0);
 					showBtmNav('#btnSetpwd-');
 				});
 
@@ -314,7 +341,7 @@ function createButton(buttonName) {
 				function fnPpibrt(event) {
 					let id = event.data.num;
 
-					if (listBtnPpibrt[id][0].toString() != '') {
+					if (listBtnPpibrt[id][0] != '') {
 						if (id < 5) {
 							initiateLoadedMenu('#btnPpibrt-', id, listBtnPpibrt[id][0]);
 							count = id;
@@ -379,18 +406,14 @@ function createButton(buttonName) {
 				function fnCommet(event) {
 					let id = event.data.num;
 
-					if (listBtnCommet[id][0].toString() != '') {
+					if (listBtnCommet[id][0] != '') {
 						if (id < 1) {
 							initiateLoadedMenu('#btnCommet-', id, listBtnCommet[id][0]);
 							count = id;
 						}
 
 						switch (id) {
-							case 0:
 							case 1:
-							case 2:
-							case 3:
-							case 4:
 								console.log(id + ' fnCommet called');
 								event.stopImmediatePropagation()
 								break;
@@ -434,38 +457,272 @@ function createButton(buttonName) {
 				return;
 			}
 			case 'movbtm': {
+				let toggLabelA = listBtnMovbtm[1][0];
+				let toggLabelB = 'lating';
+				let getInput = '';
+				let char = /[A-Z]/g;
+				let num = /[0-9]/g;
+				let charLat = /N|S/g;
+				let charLong = /E|W/g;
+				let charCount = 0, numCount = 0;
+
+				$('#toggle-box-out').show();
+				$('#toggle-divider').show();
+				document.getElementById('toggle-box-a').innerHTML = toggLabelA;
+				document.getElementById('toggle-box-b').innerHTML = toggLabelB;
+				$('#toggle-box-a').addClass('active');
+
 				for (let varMovbtm = 0; varMovbtm < listBtnMovbtm.length; varMovbtm++) {
-					$('#movbtm-menu-btn').append('<li ' + 'id="btnMovbtm-' + varMovbtm + '" class="btn btn-box"><span>' +
-						listBtnMovbtm[varMovbtm][0] + '</span></li>');
-					$('#btnMovbtm-' + varMovbtm).siblings('.active').removeClass('active');
+					generateButtonMenu('#movbtm-menu-btn', 'btnMovbtm-', varMovbtm, listBtnMovbtm[varMovbtm][0]);
+					registToTree(varMovbtm, listBtnMovbtm[varMovbtm][0], 2);
+					$('#btnMovbtm-' + varMovbtm).on("click", { num: varMovbtm }, fnMovbtm);
+				}
 
-					if ((varMovbtm < 2)) {
-						document.getElementById('sub-tree').innerHTML +=
-							'<div id="tree-' + varMovbtm + '" class="mr-3">' +
-							'<span>' + listBtnMovbtm[varMovbtm][0] + '</span>' +
-							'<span id="treeNum-' + varMovbtm + '" class="ml-2">' + '</span>' +
-							'</div>';
+				$('#btnMovbtm-44').children('span').hide();
 
-						$('#tree-' + varMovbtm).hide();
+				function fnMovbtm(event) {
+					let id = event.data.num;
+
+					if (listBtnMovbtm[id][0] != '') {
+						if (id === 1) {
+							initiateLoadedMenu('#btnMovbtm-', id, listBtnMovbtm[id][0]);
+						}
+
+						switch (id) {
+							case 1:
+								$('#btnMovbtm-' + id).last().empty();
+								$('#btnMovbtm-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnMovbtm[id][0] + '</a>');
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnMovbtm called');
+								event.stopImmediatePropagation();
+								backNav('#btnMovbtm-', listBtnMovbtm.length, '#movbtm-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnMovbtm called');
+								event.stopImmediatePropagation()
+
+								getInput = $('#input-VK').val();
+								currBtn = $('#input-btn-out').text();
+
+								if (currBtn === toggLabelA) {
+									let cekCharFirst = getInput.substring(0, 4);
+									let cekNumLast = getInput.substring(4, 9);
+									const charArr = [], numArr = [];
+
+									for (let i = 0; i < 4; i++) {
+										let cekChar = (cekCharFirst.charAt(i)).match(char);
+										let cekNum = (cekNumLast.charAt(i)).match(num);
+										charArr.push(cekChar);
+										numArr.push(cekNum);
+									}
+
+									$.each(charArr, function (i, v) {
+										if (!(v == null)) {
+											charCount += 1;
+										}
+									})
+
+									$.each(numArr, function (i, v) {
+										if (!(v == null)) {
+											numCount += 1;
+										}
+									})
+
+									if ((charCount != 0 || numCount != 0)) {
+										if (getInput.length != 8) {
+											printMessage("INVALID " + toggLabelA);
+										} else {
+											if (charCount < 4 || numCount < 4) {
+												printMessage("INVALID " + toggLabelA);
+											} else {
+												printMessage("COMMAND OK");
+											}
+										}
+										console.log('>> ' + cekCharFirst + ' : ' + cekNumLast)
+										console.log(charArr + ' : ' + numArr)
+										console.log(charCount + ' : ' + numCount);
+									} else {
+										//printMessage("INVALID " + toggLabelA);
+										clearVK();
+										$('#message-btn-out').empty();
+									}
+								} else if (currBtn === toggLabelB) {
+									//format lat-long -> ddmmssa-dddmmssa
+									let latDD = getInput.substring(0, 2); //<=90
+									let latMM = getInput.substring(2, 4); //<=59
+									let latSS = getInput.substring(4, 6); //<=59
+									let latA = getInput.substring(6, 7); //N-S
+									let longDDD = getInput.substring(7, 10); //<=180
+									let longMM = getInput.substring(10, 12); //<=59
+									let longSS = getInput.substring(12, 14); //<=59
+									let longA = getInput.substring(14, 15); //E-W
+									const latDDArr = [], latMMArr = [], latSSArr = [], latAArr = [],
+										longDDDArr = [], longMMArr = [], longSSArr = [], longAArr = [];
+									let latACount = 0, longACount = 0;
+
+									for (let j = 0; j < 2; j++) {
+										let cekLatDD = (latDD.charAt(j)).match(num);
+										let cekLatMM = (latMM.charAt(j)).match(num);
+										let cekLatSS = (latSS.charAt(j)).match(num);
+										let cekLatA = (latA.charAt(j)).match(charLat);
+										let cekLongDDD = (longDDD.charAt(j)).match(num);
+										let cekLongMM = (longMM.charAt(j)).match(num);
+										let cekLongSS = (longSS.charAt(j)).match(num);
+										let cekLongA = (longA.charAt(j)).match(charLat);
+										latDDArr.push(cekLatDD);
+										latMMArr.push(cekLatMM);
+										latSSArr.push(cekLatSS);
+										latAArr.push(cekLatA);
+										latDDArr.push(cekLongDDD);
+										latMMArr.push(cekLongMM);
+										latSSArr.push(cekLongSS);
+										latAArr.push(cekLongA);
+									}
+
+									// var sums = 0;
+									// $.each(DD, function () { sums += parseFloat(this) || 0; });
+
+									if ((parseInt(latDDArr[0] + latDDArr[1])) <= 90) {
+										console.log('lat dd ok')
+									} else {
+										console.log('lat dd kelebihen')
+									}
+									if (parseInt(latMMArr[0] + latMMArr[1]) <= 59) {
+										console.log('lat MM ok')
+									} else {
+										console.log('lat mm kelebihen')
+									}
+									if (parseInt(latSSArr[0] + latSSArr[1]) <= 59) {
+										console.log('lat SS ok')
+									} else {
+										console.log('lat ss kelebihen')
+									}
+									if ((parseInt(longDDDArr[0] + longDDDArr[1] + longDDDArr[2])) <= 180) {
+										console.log('long ddd ok')
+									} else {
+										console.log('long ddd kelebihen')
+									}
+									if (parseInt(longMMArr[0] + longMMArr[1]) <= 59) {
+										console.log('long MM ok')
+									} else {
+										console.log('long mm kelebihen')
+									}
+									if (parseInt(longSSArr[0] + longSSArr[1]) <= 59) {
+										console.log('long SS ok')
+									} else {
+										console.log('long ss kelebihen')
+									}
+
+									$.each(latAArr, function (i, v) {
+										if (!(v == null)) {
+											latACount += 1;
+										}
+									})
+
+									$.each(longAArr, function (i, v) {
+										if (!(v == null)) {
+											longACount += 1;
+										}
+									})
+
+									/*
+									if ((latACount != 0) || (longACount != 0)) {
+										if (latAArr[0].toString() === 'N' || latAArr[0].toString() === 'S') {
+											console.log('lat A ok')
+										}
+										if (longAArr[0].toString() === 'E' || longAArr[0].toString() === 'W') {
+											console.log('long A ok')
+										}
+									} else {
+										console.log('A gak sesuai')
+									}*/
+
+									console.log((latDDArr[0] + latDDArr[1]) + ' : ' + (latMMArr[0] + latMMArr[1]) + ' : ' + (latSSArr[0] + latSSArr[1]) + ' : ' + latAArr[0])
+								}
+								break;
+						}
 					}
 				}
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnMovbtm-');
+				});
+
+				hideRightNav();
+				togggleBtn(1, '#btnMovbtm-1', toggLabelA, toggLabelB);
+				setBtnActive('#btnMovbtm-', listBtnMovbtm);
+				delChar('#btnMovbtm-47, #btnMovbtm-48');
+				$('.cursor i').removeClass('d-none');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 				return;
 			}
 			case 'labPos': {
+				let count = 0;
+
 				for (let varLabPos = 0; varLabPos < listBtnLabPos.length; varLabPos++) {
-					$('#labPos-menu-btn').append('<li ' + 'id="btnLabPos-' + varLabPos + '" class="btn btn-box"><span>' +
-						listBtnLabPos[varLabPos][0] + '</span></li>');
-					$('#btnLabPos-' + varLabPos).siblings('.active').removeClass('active');
+					generateButtonMenu('#labPos-menu-btn', 'btnLabPos-', varLabPos, listBtnLabPos[varLabPos][0]);
+					registToTree(varLabPos, listBtnLabPos[varLabPos][0], 30);
+					$('#btnLabPos-' + varLabPos).on("click", { num: varLabPos }, fnLabPos);
+				}
 
-					if ((varLabPos < 30)) {
-						document.getElementById('sub-tree').innerHTML +=
-							'<div id="tree-' + varLabPos + '" class="mr-3">' +
-							'<span>' + listBtnLabPos[varLabPos][0] + '</span>' +
-							'</div>';
+				function fnLabPos(event) {
+					let id = event.data.num;
 
-						$('#tree-' + varLabPos).hide();
+					if (listBtnLabPos[id][0] != '') {
+						if (id < 30) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnLabPos[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 0:
+							case 2:
+							case 11:
+							case 20:
+							case 22:
+								console.log(id + ' fnLabPos called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnLabPos called');
+								event.stopImmediatePropagation();
+								backNav('#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnLabPos called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnLabPos-', listBtnLabPos);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnLabPos-' + count).removeClass('active');
+										forceBack('#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn', '#logon-menu&t=0.15s');
+										count = 0;
+										createButton('logon');
+									}
+								}
+								break;
+						}
 					}
 				}
+
+				setBtnActive('#btnLabPos-', listBtnLabPos);
+				$('#input-VK').val('NW');
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnLabPos-47, #btnLabPos-48');
 				return;
 			}
 			case '': {
@@ -509,7 +766,7 @@ function registToTree(varLoop, arr, limiter) {
 function initiateLoadedMenu(btnName, num, arr) {
 	$(btnName + num).siblings('.active').removeClass('active');
 	$(btnName + num).addClass('active');
-	$('#tree-' + id).show();
+	$('#tree-' + num).show();
 
 	clearContent();
 	printBtnLabel(arr);
@@ -546,23 +803,23 @@ function enableBtnNumber(menuNameUl, arrName, btnName) {
 	});
 }
 
-function togggleBtn(btnName, num, toggLabelA, toggLabelB) {
-	let btn = btnName + num;
-
-	$(btn).toggleButton({
+function togggleBtn(num, btnName, toggLabelA, toggLabelB) {
+	$(btnName).toggleButton({
 		on: function () {
+			console.log('tugel on')
 			$('#toggle-box-b').addClass('active');
 			$('#toggle-box-b').siblings('.active').removeClass('active');
 			$('#toggle-divider').show();
 
-			printBtnToggleLabel(num, btn, toggLabelB, toggLabelA, toggLabelB);
+			printBtnToggleLabel(num, btnName, toggLabelB, toggLabelA, toggLabelB);
 		},
 		off: function () {
+			console.log('tugel off')
 			$('#toggle-box-a').addClass('active');
 			$('#toggle-box-a').siblings('.active').removeClass('active');
 			$('#toggle-divider').show();
 
-			printBtnToggleLabel(num, btn, toggLabelA, toggLabelA, toggLabelB);
+			printBtnToggleLabel(num, btnName, toggLabelA, toggLabelA, toggLabelB);
 		}
 	});
 }
