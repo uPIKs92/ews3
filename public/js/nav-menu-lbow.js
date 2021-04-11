@@ -62,14 +62,24 @@ const listBtnCrevec = [
 	['line', 'active'], ['dim', ''], ['steady', ''], ['BTM16', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '']
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
 const listBtnLine = [
 	['solid', ''], ['', ''], ['dotted', ''], ['', ''], ['chain', ''], ['', ''], ['dashed', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '']
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
+const listBtnCrecir = [
+	['RAD-KM', 'active'], ['line', ''], ['dim', ''], ['steady', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
 const listBtnPpibrt = [
@@ -103,6 +113,9 @@ const listBtnLabPos = [
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
+
+var stateForLineBtn = 0;
+var countForLineState = 0;
 
 function printBtn() {
 	createButton('main');
@@ -179,7 +192,7 @@ function createButton(buttonName) {
 								clearMenu('#logon-menu-btn');
 								clearContent();
 								$('#message-btn-out').empty();
-								window.location = '#maps-menu&t=0.2s';
+								window.location = '#maps-menu&t=0.15s';
 								createButton('maps');
 								break;
 							case 12:
@@ -368,14 +381,18 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								$('#message-btn-out').empty();
 								printMessage("OPERATORS MAP BEING AMENDED");
-								clearMessage('#btnMaps-0');
+								break;
+							case 9:
+								console.log(id + ' fnMaps called');
+								event.stopImmediatePropagation();
+								$('#message-btn-out').empty();
+								printMessage("NO MAP FEATURE AT BTM POSITION");
 								break;
 							case 16:
 								console.log(id + ' fnMaps called');
 								event.stopImmediatePropagation();
 								$('#message-btn-out').empty();
 								printMessage("OPERATORS MAP BEING AMENDED");
-								clearMessage('#btnMaps-0');
 								break;
 							case 18:
 								console.log(id + ' fnMaps called');
@@ -387,7 +404,27 @@ function createButton(buttonName) {
 								printBtnTree(listBtnMaps[id]);
 								createButton('creftr');
 								break;
+							case 19:
+								console.log(id + ' fnMaps called');
+								event.stopImmediatePropagation();
+								stateForLineBtn = id;
+								clearMenu('#maps-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#crecir-menu&t=0.15s';
+								printBtnTree(listBtnMaps[id]);
+								createButton('crecir');
+								break;
 							case 28:
+								console.log(id + ' fnMaps called');
+								event.stopImmediatePropagation();
+								stateForLineBtn = id;
+								clearMenu('#maps-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#crevec-menu&t=0.15s';
+								printBtnTree(listBtnMaps[id]);
+								createButton('crevec');
 								break;
 						}
 					}
@@ -418,10 +455,14 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation()
 								break;
 							case 40:
-							case 42:
 								console.log(id + ' fnRrings called');
 								event.stopImmediatePropagation();
 								backNav('#btnRrings-', listBtnRrings.length, '#rrings-menu-btn', '#maps-menu&t=0.15s', 'maps');
+								break;
+							case 42:
+								console.log(id + ' fnRrings called');
+								event.stopImmediatePropagation();
+								backNav('#btnRrings-', listBtnRrings.length, '#rrings-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 49:
 								console.log(id + ' fnRrings called');
@@ -492,8 +533,13 @@ function createButton(buttonName) {
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnCreftr-', 30, 40);
 
-								$('#creftr-menu-btn').children('#btnCreftr-' + id).empty();
+								$('#btnCreftr-' + id).children().hide();
 								$('#btnCreftr-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCreftr[id][0] + '</a>');
+
+								setTimeout(function () {
+									$('#btnCreftr-' + id).find(":hidden").remove();
+								}, 150);
+
 								disableBtnNumber('#btnCreftr-');
 								break;
 							case 1:
@@ -509,8 +555,13 @@ function createButton(buttonName) {
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnCreftr-', 30, 40);
 
-								$('#creftr-menu-btn').children('#btnCreftr-' + id).empty();
+								$('#btnCreftr-' + id).children().hide();
 								$('#btnCreftr-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCreftr[id][0] + '</a>');
+
+								setTimeout(function () {
+									$('#btnCreftr-' + id).find(":hidden").remove();
+								}, 150);
+
 								disableBtnNumber('#btnCreftr-');
 								break;
 							case 3:
@@ -529,10 +580,14 @@ function createButton(buttonName) {
 								callAlphaVK('#btnCreftr-');
 								break;
 							case 40:
-							case 42:
 								console.log(id + ' fnCreftr called');
 								event.stopImmediatePropagation();
 								backNav('#btnCreftr-', listBtnCreftr.length, '#creftr-menu-btn', '#maps-menu&t=0.15s', 'maps');
+								break;
+							case 42:
+								console.log(id + ' fnCreftr called');
+								event.stopImmediatePropagation();
+								backNav('#btnCreftr-', listBtnCreftr.length, '#creftr-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 49:
 								console.log(id + ' fnCreftr called');
@@ -610,6 +665,336 @@ function createButton(buttonName) {
 				setBtnActive('#btnCreftr-', listBtnCreftr);
 				hideNumBtn('#btnCreftr-', 30, 40);
 				disableBtnNumber('#btnCreftr-');
+				return;
+			}
+			case 'crevec': {
+				let count = 0;
+				let toggLabelA = listBtnCrevec[1][0];
+				let toggLabelB = 'bright';
+				let toggLabelC = listBtnCrevec[2][0];
+				let toggLabelD = 'flash';
+
+				for (let varCrevec = 0; varCrevec < listBtnCrevec.length; varCrevec++) {
+					generateButtonMenu('#crevec-menu-btn', 'btnCrevec-', varCrevec, listBtnCrevec[varCrevec][0]);
+					registToTree(varCrevec, listBtnCrevec[varCrevec][0], 4);
+					$('#btnCrevec-' + varCrevec).on("click", { num: varCrevec }, fnCrevec);
+				}
+
+				function fnCrevec(event) {
+					let id = event.data.num;
+
+					if (listBtnCrevec[id][0] != '') {
+						if (id < 4) {
+							initiateLoadedMenu('#btnCrevec-', id, listBtnCrevec[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnCrevec called');
+								event.stopImmediatePropagation();
+								clearMenu('#crevec-menu-btn');
+								//clearContent();
+								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
+								window.location = '#line-menu&t=0.15s';
+								createButton('line');
+								break;
+							case 1:
+								console.log(id + ' fnCrevec called');
+								//event.stopImmediatePropagation()
+
+								$('#btnCrevec-' + id).children().hide();
+								$('#btnCrevec-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrevec[id][0] + '</a>');
+
+								setTimeout(function () {
+									$('#btnCrevec-' + id).find(":hidden").remove();
+								}, 150);
+								break;
+							case 2:
+								console.log(id + ' fnCrevec called');
+								//event.stopImmediatePropagation()
+
+								$('#btnCrevec-' + id).children().hide();
+								$('#btnCrevec-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrevec[id][0] + '</a>');
+
+								setTimeout(function () {
+									$('#btnCrevec-' + id).find(":hidden").remove();
+								}, 150);
+								break;
+							case 3:
+								console.log(id + ' fnCrevec called');
+								event.stopImmediatePropagation();
+								break;
+							case 40:
+								console.log(id + ' fnCrevec called');
+								event.stopImmediatePropagation();
+								backNav('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#maps-menu&t=0.15s', 'maps');
+								break;
+							case 42:
+								console.log(id + ' fnCrevec called');
+								event.stopImmediatePropagation();
+								backNav('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnCrevec called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 4) {
+										count++;
+										nextStep(count, '#btnCrevec-', listBtnCrevec);
+										$('#tree-' + (count - 1)).show();
+										$('#toggle-box-out').hide();
+
+										if(count === 1){
+											alert('cok');
+											$('#input-VK').val(listBtnCrevec[countForLineState][0]);
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnCrevec-' + count).removeClass('active');
+										forceBack('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#maps-menu&t=0.15s');
+										count = 0;
+										createButton('maps');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				togggleBtn(1, '#btnCrevec-1', toggLabelA, toggLabelB);
+				togggleBtn(2, '#btnCrevec-2', toggLabelC, toggLabelD);
+				setBtnActive('#btnCrevec-', listBtnCrevec);
+				return;
+			}
+			case 'line': {
+				let count = 0;
+				let lastCount = 0;
+
+				for (let varLine = 0; varLine < listBtnLine.length; varLine++) {
+					generateButtonMenu('#line-menu-btn', 'btnLine-', varLine, listBtnLine[varLine][0]);
+					registToTree(varLine, listBtnLine[varLine][0], 7);
+					$('#btnLine-' + varLine).on("click", { num: varLine }, fnLine);
+				}
+
+				function fnLine(event) {
+					let id = event.data.num;
+
+					if (listBtnLine[id][0] != '') {
+						if (id < 7) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnLine[id][0];
+							$('.cursor i').removeClass('d-none');
+							//$('#tree-' + id).show();
+							count = id;
+							lastCount = count;
+							countForLineState = lastCount;
+						}
+
+						switch (id) {
+							case 0:
+							case 2:
+							case 11:
+							case 20:
+							case 22:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+
+								if (stateForLineBtn === 19) {
+									backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crecir-menu&t=0.15s', '#btnCrecirec-', listBtnCrecir, lastCount);
+									createButton('crecir');
+									console.log('line for crecir')
+								} else if (stateForLineBtn === 28) {
+									backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crevec-menu&t=0.15s', '#btnCrevec-', listBtnCrevec, lastCount);
+									createButton('crevec');
+									console.log('line for crevec')
+								}
+
+								setTimeout(function () {
+									$('#input-VK').val('');
+									lastCount = 0;
+								}, 150);
+								break;
+							case 42:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+								backNav('#btnLine-', listBtnLine.length, '#line-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 0) {
+										count++;
+										//nextStep(count, '#btnLine-', listBtnLine);
+										$('#tree-' + (count - 1)).show();
+										$('#input-VK').val(listBtnLine[count][0]);
+									} else {
+										//printMessage("COMMAND OK");
+										$('#btnLine-' + count).removeClass('active');
+										count = 0;
+
+										if (stateForLineBtn === 19) {
+											backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crecir-menu&t=0.15s', '#btnCrecirec-', listBtnCrecir, lastCount);
+											createButton('crecir');
+											console.log('line for crecir')
+										} else if (stateForLineBtn === 28) {
+											backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crevec-menu&t=0.15s', '#btnCrevec-', listBtnCrevec, lastCount);
+											createButton('crevec');
+											console.log('line for crevec')
+										}
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnLine-', listBtnLine);
+				$('#input-VK').val(listBtnLine[0][0]);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnLine-47, #btnLine-48');
+				return;
+			}
+			case 'crecir': {
+				let count = 0;
+				let toggLabelA = listBtnCrecir[0][0];
+				let toggLabelB = 'RAD-NM';
+				let toggLabelC = listBtnCrecir[2][0];
+				let toggLabelD = 'bright';
+				let toggLabelE = listBtnCrecir[3][0];
+				let toggLabelF = 'flash';
+
+				$('#toggle-box-out').show();
+				$('#toggle-divider').show();
+				document.getElementById('toggle-box-a').innerHTML = toggLabelA;
+				document.getElementById('toggle-box-b').innerHTML = toggLabelB;
+				$('#toggle-box-a').addClass('active');
+
+				for (let varCrecir = 0; varCrecir < listBtnCrecir.length; varCrecir++) {
+					generateButtonMenu('#crecir-menu-btn', 'btnCrecir-', varCrecir, listBtnCrecir[varCrecir][0]);
+					registToTree(varCrecir, listBtnCrecir[varCrecir][0], 4);
+					$('#btnCrecir-' + varCrecir).on("click", { num: varCrecir }, fnCrecir);
+
+					if (varCrecir === 0) {
+						$('#btnCrecir-' + varCrecir).children().addClass('borderBtm');
+					}
+				}
+
+				function fnCrecir(event) {
+					let id = event.data.num;
+
+					if (listBtnCrecir[id][0] != '') {
+						if (id < 4) {
+							initiateLoadedMenu('#btnCrecir-', id, listBtnCrecir[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnCrecir called');
+								//event.stopImmediatePropagation()
+
+								$('#btnCrecir-' + id).children().hide();
+								$('#btnCrecir-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrecir[id][0] + '</a>');
+
+								setTimeout(function () {
+									$('#btnCrecir-' + id).find(":hidden").remove();
+									$('#btnCrecir-' + id).children().addClass('borderBtm');
+								}, 150);
+								break;
+							case 1:
+								console.log(id + ' fnCrecir called');
+								event.stopImmediatePropagation();
+								clearMenu('#crecir-menu-btn');
+								//clearContent();
+								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
+								window.location = '#line-menu&t=0.15s';
+								createButton('line');
+								break;
+							case 2:
+								console.log(id + ' fnCrecir called');
+								//event.stopImmediatePropagation()
+
+								$('#btnCrecir-' + id).children().hide();
+								$('#btnCrecir-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrecir[id][0] + '</a>');
+
+								setTimeout(function () {
+									$('#btnCrecir-' + id).find(":hidden").remove();
+								}, 150);
+								break;
+							case 3:
+								console.log(id + ' fnCrecir called');
+								//event.stopImmediatePropagation()
+
+								$('#btnCrecir-' + id).children().hide();
+								$('#btnCrecir-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrecir[id][0] + '</a>');
+
+								setTimeout(function () {
+									$('#btnCrecir-' + id).find(":hidden").remove();
+								}, 150);
+								break;
+							case 40:
+								console.log(id + ' fnCrecir called');
+								event.stopImmediatePropagation();
+								backNav('#btnCrecir-', listBtnCrecir.length, '#crecir-menu-btn', '#maps-menu&t=0.15s', 'maps');
+								break;
+							case 42:
+								console.log(id + ' fnCrecir called');
+								event.stopImmediatePropagation();
+								backNav('#btnCrecir-', listBtnCrecir.length, '#crecir-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnCrecir called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 4) {
+										count++;
+										nextStep(count, '#btnCrecir-', listBtnCrecir);
+										$('#tree-' + (count - 1)).show();
+										$('#toggle-box-out').hide();
+
+										if(count === 1){
+											alert('cok');
+											$('#input-VK').val(listBtnCrecir[countForLineState][0]);
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnCrecir-' + count).removeClass('active');
+										forceBack('#btnCrecir-', listBtnCrecir.length, '#crecir-menu-btn', '#maps-menu&t=0.15s');
+										count = 0;
+										createButton('maps');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				togggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB);
+				togggleBtn(2, '#btnCrecir-2', toggLabelC, toggLabelD);
+				togggleBtn(3, '#btnCrecir-3', toggLabelE, toggLabelF);
+				setBtnActive('#btnCrecir-', listBtnCrecir);
 				return;
 			}
 			case 'ppibrt': {
@@ -777,8 +1162,12 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
-								$('#btnMovbtm-' + id).last().empty();
+								$('#btnMovbtm-' + id).children().hide();
 								$('#btnMovbtm-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnMovbtm[id][0] + '</a>');
+
+								setTimeout(function () {
+									$('#btnMovbtm-' + id).find(":hidden").remove();
+								}, 150);
 								break;
 							case 40:
 							case 42:
@@ -1063,7 +1452,7 @@ function makeMenuRight() {
 
 function bindBtnNumber(arrName, curNum) {
 	console.log('bind to: btn ' + curNum);
-	if ((curNum >= 30) && (curNum <= 40)) {
+	if ((curNum >= 30) && (curNum < 40)) {
 		$('#input-VK').val(arrName[curNum][0].toString());
 		$('.cursor i').css('left', '10.5px');
 
@@ -1072,7 +1461,7 @@ function bindBtnNumber(arrName, curNum) {
 }
 
 function disableBtnNumber(btnName) {
-	for (let c = 30; c <= 40; c++) {
+	for (let c = 30; c < 40; c++) {
 		$(btnName + c).off();
 	}
 	console.log('disabled')
@@ -1133,7 +1522,6 @@ function forceBack(labelBtn, arrLen, menuName, url) {
 	window.location = url;
 	setTimeout(function () {
 		clearContent();
-		$('#btnBottom-0, #btnBottom-2, #btnBottom-4, #btnBottom-5, #btnBottom-9').off();
 		$('#tree-btn-out, #sub-tree, #tree-val, #toggle-box-a, #toggle-box-b').empty();
 		$('#toggle-box-out').hide();
 		document.getElementById('input-VK').placeholder = '';
@@ -1146,6 +1534,25 @@ function forceBack(labelBtn, arrLen, menuName, url) {
 
 		$('#toggle-box-a, #toggle-box-b').siblings('.active').removeClass('active');
 	}, 100);
+}
+
+function backToPrevPage(labelBtn, arrName, menuName, url, labelParent, arrNameParent, lastCount) {
+	window.location = url;
+	$('#sub-tree, #tree-val').empty();
+
+	setTimeout(function () {
+		clearContent();
+		$('#toggle-box-out').hide();
+		clearMenu(menuName);
+
+		for (let i = 0; i < arrName.length; i++) {
+			$(labelBtn + i).removeClass('active');
+			$(labelBtn + i).off();
+		}
+
+		setBtnActive(labelParent, arrNameParent);
+		//$('#input-VK').val(arrName[lastCount][0]);
+	}, 100)
 }
 
 function nextStep(counter, btnName, arrName) {
@@ -1213,10 +1620,6 @@ function callAlphaVK(btnName) {
 }
 
 function showNumBtn(btnName, numStart, numEnd) {
-	$('#btnBottom-4 span').fadeTo(100, 0, function () {
-		$('#btnBottom-4').off();
-	});
-
 	for (let a = parseInt(numStart); a <= parseInt(numEnd); a++) {
 		$(btnName + a).children('span').fadeTo(100, 1);
 	}

@@ -73,7 +73,7 @@
                     </div>
                     <div class="col-12 p-0">
                         <div class="row no-gutters p-1 mt-2 mb-2">
-                            <div id="message-btn-out" class="col p-0 text-center" style="min-height: 21px;">
+                            <div id="message-btn-out" class="col p-0 text-center text-uppercase" style="min-height: 21px;">
                                 {{-- message text --}}
                             </div>
                         </div>

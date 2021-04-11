@@ -13,16 +13,19 @@
             <ul id="maps-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="rrings-menu" lj-transition="fade">
-            <ul id="rrings-menu-btn" class="m-0 p-0 form-inline"></ul>
+            <ul id="rrings-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
         </div>
         <div lj-type="frame" lj-name="creftr-menu" lj-transition="fade">
-            <ul id="creftr-menu-btn" class="m-0 p-0 form-inline"></ul>
+            <ul id="creftr-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
         </div>
         <div lj-type="frame" lj-name="crevec-menu" lj-transition="fade">
-            <ul id="crevec-menu-btn" class="m-0 p-0 form-inline"></ul>
+            <ul id="crevec-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
         </div>
         <div lj-type="frame" lj-name="line-menu" lj-transition="fade">
-            <ul id="line-menu-btn" class="m-0 p-0 form-inline"></ul>
+            <ul id="line-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
+        </div>
+        <div lj-type="frame" lj-name="crecir-menu" lj-transition="fade">
+            <ul id="crecir-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
         </div>
         <div lj-type="frame" lj-name="ppibrt-menu" lj-transition="fade">
             <ul id="ppibrt-menu-btn" class="m-0 p-0 form-inline"></ul>

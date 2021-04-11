@@ -1083,3 +1083,7 @@
     color: #000;
     background-color: #fd9727;
 }
+
+.borderBtm{
+    border-bottom: 2px solid #fd9727;
+}
