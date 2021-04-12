@@ -82,6 +82,14 @@ const listBtnCrecir = [
 	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
+const listBtnCrearc = [
+	['START', 'active'], ['MIDDLE', ''], ['END', ''], ['line', ''], ['dim', ''], ['steady', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
 const listBtnPpibrt = [
 	['bakgnd', 'active'], ['1stvid', ''], ['logvid', ''], ['rrings', ''], ['synth', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
@@ -426,6 +434,17 @@ function createButton(buttonName) {
 								printBtnTree(listBtnMaps[id]);
 								createButton('crevec');
 								break;
+							case 29:
+								console.log(id + ' fnMaps called');
+								event.stopImmediatePropagation();
+								stateForLineBtn = id;
+								clearMenu('#maps-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#crearc-menu&t=0.15s';
+								printBtnTree(listBtnMaps[id]);
+								createButton('crearc');
+								break;
 						}
 					}
 				}
@@ -620,7 +639,14 @@ function createButton(buttonName) {
 												return;
 											}
 											case 2: {
-												event.stopImmediatePropagation()
+												event.stopImmediatePropagation();
+
+												$('#toggle-box-out').show();
+												$('#toggle-divider').show();
+												document.getElementById('toggle-box-a').innerHTML = toggLabelC;
+												document.getElementById('toggle-box-b').innerHTML = toggLabelD;
+												$('#toggle-box-a').addClass('active');
+
 												$('.cursor i').addClass('d-none');
 												hideNumBtn('#btnCreftr-', 30, 40);
 												disableBtnNumber('#btnCreftr-');
@@ -665,6 +691,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnCreftr-', listBtnCreftr);
 				hideNumBtn('#btnCreftr-', 30, 40);
 				disableBtnNumber('#btnCreftr-');
+				delChar('#btnCreftr-47, #btnCreftr-48');
 				return;
 			}
 			case 'crevec': {
@@ -741,7 +768,7 @@ function createButton(buttonName) {
 
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
-									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
 									if (count < 4) {
@@ -750,8 +777,49 @@ function createButton(buttonName) {
 										$('#tree-' + (count - 1)).show();
 										$('#toggle-box-out').hide();
 
-										if (count === 1) {
-											$('#input-VK').val(listBtnCrevec[countForLineState][0]);
+										switch (count) {
+											case 0: {
+												event.stopImmediatePropagation()
+												$('.cursor i').addClass('d-none');
+												hideNumBtn('#btnCrevec-', 30, 40);
+												disableBtnNumber('#btnCrevec-');
+												return;
+											}
+											case 1: {
+												event.stopImmediatePropagation();
+											
+												$('#toggle-box-out').show();
+												$('#toggle-divider').show();
+												document.getElementById('toggle-box-a').innerHTML = toggLabelA;
+												document.getElementById('toggle-box-b').innerHTML = toggLabelB;
+												$('#toggle-box-a').addClass('active');
+											
+												$('.cursor i').addClass('d-none');
+												hideNumBtn('#btnCrevec-', 30, 40);
+												disableBtnNumber('#btnCrevec-');
+												return;
+											}
+											case 2: {
+												event.stopImmediatePropagation();
+											
+												$('#toggle-box-out').show();
+												$('#toggle-divider').show();
+												document.getElementById('toggle-box-a').innerHTML = toggLabelC;
+												document.getElementById('toggle-box-b').innerHTML = toggLabelD;
+												$('#toggle-box-a').addClass('active');
+											
+												$('.cursor i').removeClass('d-none');
+												showNumBtn('#btnCrevec-', 30, 40);
+												enableBtnNumber('#crevec-menu-btn li', listBtnCrevec, 'btnCrevec-');
+												return;
+											}
+											case 4: {
+												event.stopImmediatePropagation()
+												$('.cursor i').addClass('d-none');
+												hideNumBtn('#btnCrevec-', 30, 40);
+												disableBtnNumber('#btnCrevec-');
+												return;
+											}
 										}
 									} else {
 										printMessage("COMMAND OK");
@@ -769,6 +837,7 @@ function createButton(buttonName) {
 				togggleBtn(1, '#btnCrevec-1', toggLabelA, toggLabelB);
 				togggleBtn(2, '#btnCrevec-2', toggLabelC, toggLabelD);
 				setBtnActive('#btnCrevec-', listBtnCrevec);
+				delChar('#btnCrevec-47, #btnCrevec-48');
 				return;
 			}
 			case 'line': {
@@ -809,14 +878,22 @@ function createButton(buttonName) {
 								console.log(id + ' fnLine called');
 								event.stopImmediatePropagation();
 
-								if (stateForLineBtn === 19) {
-									backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crecir-menu&t=0.15s', '#btnCrecirec-', listBtnCrecir, lastCount);
-									createButton('crecir');
-									console.log('line for crecir')
-								} else if (stateForLineBtn === 28) {
-									backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crevec-menu&t=0.15s', '#btnCrevec-', listBtnCrevec, lastCount);
-									createButton('crevec');
-									console.log('line for crevec')
+								switch (stateForLineBtn) {
+									case 19:
+										backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crecir-menu&t=0.15s', '#btnCrecirec-', listBtnCrecir, lastCount);
+										createButton('crecir');
+										console.log('line for crecir')
+										break;
+									case 28:
+										backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crevec-menu&t=0.15s', '#btnCrevec-', listBtnCrevec, lastCount);
+										createButton('crevec');
+										console.log('line for crevec')
+										break;
+									case 29:
+										backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crearc-menu&t=0.15s', '#btnCrearc-', listBtnCrearc, lastCount);
+										createButton('crearc');
+										console.log('line for crearc')
+										break;
 								}
 
 								setTimeout(function () {
@@ -839,26 +916,39 @@ function createButton(buttonName) {
 									$('#btnLine-' + count).removeClass('active');
 									count = 0;
 
-									if (stateForLineBtn === 19) {
-										backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crecir-menu&t=0.15s', '#btnCrecirec-', listBtnCrecir, lastCount);
-										createButton('crecir');
-										console.log('line for crecir')
+									switch (stateForLineBtn) {
+										case 19:
+											backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crecir-menu&t=0.15s', '#btnCrecirec-', listBtnCrecir, lastCount);
+											createButton('crecir');
+											console.log('line for crecir')
 
-										setTimeout(function () {
-											$('#tree-' + 1).show();
-											$('#treeNum-' + 1).append('<span>' + listBtnLine[countForLineState][0] + '</span>');
-											$('.cursor i').removeClass('d-none');
-											enableBtnNumber('#crecir-menu-btn li', listBtnCrecir, 'btnCrecir-');
-										}, 150)
-									} else if (stateForLineBtn === 28) {
-										backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crevec-menu&t=0.15s', '#btnCrevec-', listBtnCrevec, lastCount);
-										createButton('crevec');
-										console.log('line for crevec')
+											setTimeout(function () {
+												$('#tree-' + 1).show();
+												$('#treeNum-' + 1).append('<span>' + listBtnLine[countForLineState][0] + '</span>');
+												$('.cursor i').removeClass('d-none');
+												enableBtnNumber('#crecir-menu-btn li', listBtnCrecir, 'btnCrecir-');
+											}, 150)
+											break;
+										case 28:
+											backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crevec-menu&t=0.15s', '#btnCrevec-', listBtnCrevec, lastCount);
+											createButton('crevec');
+											console.log('line for crevec')
 
-										setTimeout(function () {
-											$('#tree-' + 0).show();
-											$('#treeNum-' + 0).append('<span>' + listBtnLine[countForLineState][0] + '</span>');
-										}, 150)
+											setTimeout(function () {
+												$('#tree-' + 0).show();
+												$('#treeNum-' + 0).append('<span>' + listBtnLine[countForLineState][0] + '</span>');
+											}, 150)
+											break;
+										case 29:
+											backToPrevPage('#btnLine-', listBtnLine, '#line-menu-btn', '#crearc-menu&t=0.15s', '#btnCrearc-', listBtnCrearc, lastCount);
+											createButton('crearc');
+											console.log('line for crearc')
+
+											setTimeout(function () {
+												$('#tree-' + 3).show();
+												$('#treeNum-' + 3).append('<span>' + listBtnLine[countForLineState][0] + '</span>');
+											}, 150)
+											break;
 									}
 								}
 								break;
@@ -880,12 +970,6 @@ function createButton(buttonName) {
 				let toggLabelD = 'bright';
 				let toggLabelE = listBtnCrecir[3][0];
 				let toggLabelF = 'flash';
-
-				$('#toggle-box-out').show();
-				$('#toggle-divider').show();
-				document.getElementById('toggle-box-a').innerHTML = toggLabelA;
-				document.getElementById('toggle-box-b').innerHTML = toggLabelB;
-				$('#toggle-box-a').addClass('active');
 
 				for (let varCrecir = 0; varCrecir < listBtnCrecir.length; varCrecir++) {
 					generateButtonMenu('#crecir-menu-btn', 'btnCrecir-', varCrecir, listBtnCrecir[varCrecir][0]);
@@ -1017,8 +1101,8 @@ function createButton(buttonName) {
 											case 3: {
 												event.stopImmediatePropagation();
 												$('.cursor i').removeClass('d-none');
-												showNumBtn('#btnCreftr-', 30, 40);
-												enableBtnNumber('#creftr-menu-btn li', listBtnCreftr, 'btnCreftr-');
+												hideNumBtn('#btnCrecir-', 30, 40);
+												disableBtnNumber('#btnCrecir-');
 												return;
 											}
 										}
@@ -1039,8 +1123,152 @@ function createButton(buttonName) {
 				togggleBtn(2, '#btnCrecir-2', toggLabelC, toggLabelD);
 				togggleBtn(3, '#btnCrecir-3', toggLabelE, toggLabelF);
 				setBtnActive('#btnCrecir-', listBtnCrecir);
+				delChar('#btnCrecir-47, #btnCrecir-48');
+				return;
+			}
+			case 'crearc': {
+				let count = 0;
+				let toggLabelA = listBtnCrearc[4][0];
+				let toggLabelB = 'bright';
+				let toggLabelC = listBtnCrearc[5][0];
+				let toggLabelD = 'flash';
+
+				for (let varCrearc = 0; varCrearc < listBtnCrearc.length; varCrearc++) {
+					generateButtonMenu('#crearc-menu-btn', 'btnCrearc-', varCrearc, listBtnCrearc[varCrearc][0]);
+					registToTree(varCrearc, listBtnCrearc[varCrearc][0], 6);
+					$('#btnCrearc-' + varCrearc).on("click", { num: varCrearc }, fnCrearc);
+				}
+
+				function fnCrearc(event) {
+					let id = event.data.num;
+
+					if (listBtnCrearc[id][0] != '') {
+						if (id < 6) {
+							initiateLoadedMenu('#btnCrearc-', id, listBtnCrearc[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnCrearc called');
+								event.stopImmediatePropagation()
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnCrearc-', 30, 40);
+								enableBtnNumber('#crearc-menu-btn li', listBtnCrearc, 'btnCrearc-');
+								break;
+							case 1:
+								console.log(id + ' fnCrearc called');
+								event.stopImmediatePropagation();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnCrearc-', 30, 40);
+								enableBtnNumber('#crearc-menu-btn li', listBtnCrearc, 'btnCrearc-');
+								break;
+							case 2:
+								console.log(id + ' fnCrearc called');
+								event.stopImmediatePropagation();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnCrearc-', 30, 40);
+								enableBtnNumber('#crearc-menu-btn li', listBtnCrearc, 'btnCrearc-');
+								break;
+							case 3:
+								console.log(id + ' fnCrearc called');
+								event.stopImmediatePropagation();
+								clearMenu('#crearc-menu-btn');
+
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnCrearc-', 30, 40);
+								disableBtnNumber('#btnCrearc-');
+
+								//clearContent();
+								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
+								window.location = '#line-menu&t=0.15s';
+								createButton('line');
+								break;
+							case 4:
+								console.log(id + ' fnCrearc called');
+								//event.stopImmediatePropagation()
+
+								$('#btnCrearc-' + id).children().hide();
+								$('#btnCrearc-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrearc[id][0] + '</a>');
+
+								setTimeout(function () {
+									$('#btnCrearc-' + id).find(":hidden").remove();
+
+									$('.cursor i').addClass('d-none');
+									hideNumBtn('#btnCrearc-', 30, 40);
+									disableBtnNumber('#btnCrearc-');
+								}, 150);
+								break;
+							case 5:
+								console.log(id + ' fnCrearc called');
+								//event.stopImmediatePropagation()
+
+								$('#btnCrearc-' + id).children().hide();
+								$('#btnCrearc-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrearc[id][0] + '</a>');
+
+								setTimeout(function () {
+									$('#btnCrearc-' + id).find(":hidden").remove();
+
+									$('.cursor i').addClass('d-none');
+									hideNumBtn('#btnCrearc-', 30, 40);
+									disableBtnNumber('#btnCrearc-');
+								}, 150);
+								break;
+							case 40:
+								console.log(id + ' fnCrearc called');
+								event.stopImmediatePropagation();
+								backNav('#btnCrearc-', listBtnCrearc.length, '#crearc-menu-btn', '#maps-menu&t=0.15s', 'maps');
+								break;
+							case 42:
+								console.log(id + ' fnCrearc called');
+								event.stopImmediatePropagation();
+								backNav('#btnCrearc-', listBtnCrearc.length, '#crearc-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnCrearc called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 3) {
+										count++;
+										nextStep(count, '#btnCrearc-', listBtnCrearc);
+										$('#tree-' + (count - 1)).show();
+
+										if (count === 3) {
+											$('#btnCrearc-' + count).removeClass('active');
+											clearContent();
+
+											$('.cursor i').addClass('d-none');
+											hideNumBtn('#btnCrearc-', 30, 40);
+											disableBtnNumber('#btnCrearc-');
+										}
+									} else {
+										count = 0;
+										nextStep(count, '#btnCrearc-', listBtnCrearc);
+
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnCrearc-', 30, 40);
+										enableBtnNumber('#crearc-menu-btn li', listBtnCrearc, 'btnCrearc-');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				togggleBtn(4, '#btnCrearc-4', toggLabelA, toggLabelB);
+				togggleBtn(5, '#btnCrearc-5', toggLabelC, toggLabelD);
+				setBtnActive('#btnCrearc-', listBtnCrearc);
 				$('.cursor i').removeClass('d-none');
-				enableBtnNumber('#crecir-menu-btn li', listBtnCrecir, 'btnCrecir-');
+				enableBtnNumber('#crearc-menu-btn li', listBtnCrearc, 'btnCrearc-');
+				delChar('#btnCrearc-47, #btnCrearc-48');
 				return;
 			}
 			case 'ppibrt': {
@@ -1606,7 +1834,7 @@ function nextStep(counter, btnName, arrName) {
 	$(btnName + counter).addClass('active');
 	printBtnLabel(arrName[counter][0]);
 
-	if(arrName[counter][0] === ''){
+	if (arrName[counter][0] === '') {
 		clearContent();
 	}
 }
