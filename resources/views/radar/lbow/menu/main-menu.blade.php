@@ -48,6 +48,9 @@
         <div lj-type="frame" lj-name="trksel-menu" lj-transition="fade">
             <ul id="trksel-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="settrk-menu" lj-transition="fade">
+            <ul id="settrk-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
     </div>
     <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false">
         <!-- The layer for the menu on top of the main content -->
