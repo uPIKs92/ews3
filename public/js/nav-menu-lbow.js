@@ -115,8 +115,8 @@ const listBtnMovbtm = [
 ];
 
 const listBtnLabPos = [
-	['nw', 'active'], ['', ''], ['ne', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['auto', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['nw', ''], ['', ''], ['ne', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['auto', 'active'], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['sw', ''], ['', ''], ['se', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
@@ -1625,12 +1625,29 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 0:
+								console.log(id + ' fnLabPos called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
 							case 2:
+								console.log(id + ' fnLabPos called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
 							case 11:
+								console.log(id + ' fnLabPos called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
 							case 20:
+								console.log(id + ' fnLabPos called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
 							case 22:
 								console.log(id + ' fnLabPos called');
-								event.stopImmediatePropagation()
+								event.stopImmediatePropagation();
+								count = id;
 								break;
 							case 40:
 							case 42:
@@ -1644,7 +1661,7 @@ function createButton(buttonName) {
 
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
-									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
 									if (count === 1) {
@@ -1665,7 +1682,8 @@ function createButton(buttonName) {
 				}
 
 				setBtnActive('#btnLabPos-', listBtnLabPos);
-				$('#input-VK').val('NW');
+				$('#input-VK').val(listBtnLabPos[11][0]);
+				count = 11;
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnLabPos-47, #btnLabPos-48');
 				return;
