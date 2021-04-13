@@ -39,8 +39,14 @@
         <div lj-type="frame" lj-name="movbtm-menu" lj-transition="fade">
             <ul id="movbtm-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
-        <div lj-type="frame" lj-name="labPos-menu" lj-transition="fade">
-            <ul id="labPos-menu-btn" class="m-0 p-0 form-inline"></ul>
+        <div lj-type="frame" lj-name="labpos-menu" lj-transition="fade">
+            <ul id="labpos-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="trklin-menu" lj-transition="fade">
+            <ul id="trklin-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="trksel-menu" lj-transition="fade">
+            <ul id="trksel-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
     </div>
     <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false">

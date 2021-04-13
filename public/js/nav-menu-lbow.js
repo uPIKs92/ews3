@@ -114,10 +114,26 @@ const listBtnMovbtm = [
 	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
-const listBtnLabPos = [
+const listBtnLabpos = [
 	['nw', ''], ['', ''], ['ne', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['auto', 'active'], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['sw', ''], ['', ''], ['se', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
+const listBtnTrklin = [
+	['', ''], ['p-line', ''], ['', ''], ['u-line', ''], ['', ''], ['f-line', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['a-line', ''], ['', ''], ['n-line', ''], ['', ''], ['s-line', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['j-line', ''], ['', ''], ['k-line', ''], ['', ''], ['r-line', ''], ['', ''], ['z-line', ''], ['', ''], ['all', ''],
+	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
+const listBtnTrksel = [
+	['', ''], ['p-on', ''], ['', ''], ['u-on', ''], ['', ''], ['f-on', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['a-on', ''], ['', ''], ['n-on', ''], ['', ''], ['s-on', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['j-on', ''], ['', ''], ['k-on', ''], ['', ''], ['r-on', ''], ['', ''], ['z-on', ''], ['', ''], ['all-on', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
@@ -240,10 +256,32 @@ function createButton(buttonName) {
 								clearMenu('#logon-menu-btn');
 								clearContent();
 								$('#message-btn-out').empty();
-								window.location = '#labPos-menu&t=0.15s';
+								window.location = '#labpos-menu&t=0.15s';
 								printBtnTree(listBtnLogon[id]);
-								createButton('labPos');
-								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];;
+								createButton('labpos');
+								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
+								break;
+							case 25:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#trklin-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('trklin');
+								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
+								break;
+							case 35:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#trksel-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('trksel');
+								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
 								break;
 							case 40:
 							case 42:
@@ -543,17 +581,7 @@ function createButton(buttonName) {
 							case 0:
 								console.log(id + ' fnCreftr called');
 								//event.stopImmediatePropagation()
-								$('.cursor i').addClass('d-none');
-								hideNumBtn('#btnCreftr-', 30, 40);
-
-								$('#btnCreftr-' + id).children().hide();
-								$('#btnCreftr-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCreftr[id][0] + '</a>');
-
-								setTimeout(function () {
-									$('#btnCreftr-' + id).find(":hidden").remove();
-								}, 150);
-
-								disableBtnNumber('#btnCreftr-');
+								initiateToggleBtn('#btnCreftr-', id, listBtnCreftr[id][0]);
 								break;
 							case 1:
 								console.log(id + ' fnCreftr called');
@@ -565,17 +593,7 @@ function createButton(buttonName) {
 							case 2:
 								console.log(id + ' fnCreftr called');
 								//event.stopImmediatePropagation()
-								$('.cursor i').addClass('d-none');
-								hideNumBtn('#btnCreftr-', 30, 40);
-
-								$('#btnCreftr-' + id).children().hide();
-								$('#btnCreftr-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCreftr[id][0] + '</a>');
-
-								setTimeout(function () {
-									$('#btnCreftr-' + id).find(":hidden").remove();
-								}, 150);
-
-								disableBtnNumber('#btnCreftr-');
+								initiateToggleBtn('#btnCreftr-', id, listBtnCreftr[id][0]);
 								break;
 							case 3:
 								console.log(id + ' fnCreftr called');
@@ -719,24 +737,12 @@ function createButton(buttonName) {
 							case 1:
 								console.log(id + ' fnCrevec called');
 								//event.stopImmediatePropagation()
-
-								$('#btnCrevec-' + id).children().hide();
-								$('#btnCrevec-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrevec[id][0] + '</a>');
-
-								setTimeout(function () {
-									$('#btnCrevec-' + id).find(":hidden").remove();
-								}, 150);
+								initiateToggleBtn('#btnCrevec-', id, listBtnCrevec[id][0]);
 								break;
 							case 2:
 								console.log(id + ' fnCrevec called');
 								//event.stopImmediatePropagation()
-
-								$('#btnCrevec-' + id).children().hide();
-								$('#btnCrevec-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrevec[id][0] + '</a>');
-
-								setTimeout(function () {
-									$('#btnCrevec-' + id).find(":hidden").remove();
-								}, 150);
+								initiateToggleBtn('#btnCrevec-', id, listBtnCrevec[id][0]);
 								break;
 							case 3:
 								console.log(id + ' fnCrevec called');
@@ -974,6 +980,7 @@ function createButton(buttonName) {
 							case 0:
 								console.log(id + ' fnCrecir called');
 								//event.stopImmediatePropagation()
+								//initiateToggleBtn('#btnCrecir-', id, listBtnCrecir[id][0]);
 
 								$('#btnCrecir-' + id).children().hide();
 								$('#btnCrecir-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrecir[id][0] + '</a>');
@@ -985,8 +992,7 @@ function createButton(buttonName) {
 									$('.cursor i').removeClass('d-none');
 									showNumBtn('#btnCrecir-', 30, 40);
 									enableBtnNumber('#crecir-menu-btn li', listBtnCrecir, 'btnCrecir-');
-								}, 150);
-
+								}, 125);
 								break;
 							case 1:
 								console.log(id + ' fnCrecir called');
@@ -1005,32 +1011,12 @@ function createButton(buttonName) {
 							case 2:
 								console.log(id + ' fnCrecir called');
 								//event.stopImmediatePropagation()
-
-								$('#btnCrecir-' + id).children().hide();
-								$('#btnCrecir-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrecir[id][0] + '</a>');
-
-								setTimeout(function () {
-									$('#btnCrecir-' + id).find(":hidden").remove();
-
-									$('.cursor i').addClass('d-none');
-									hideNumBtn('#btnCrecir-', 30, 40);
-									disableBtnNumber('#btnCrecir-');
-								}, 150);
+								initiateToggleBtn('#btnCrecir-', id, listBtnCrecir[id][0]);
 								break;
 							case 3:
 								console.log(id + ' fnCrecir called');
 								//event.stopImmediatePropagation()
-
-								$('#btnCrecir-' + id).children().hide();
-								$('#btnCrecir-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrecir[id][0] + '</a>');
-
-								setTimeout(function () {
-									$('#btnCrecir-' + id).find(":hidden").remove();
-
-									$('.cursor i').addClass('d-none');
-									hideNumBtn('#btnCrecir-', 30, 40);
-									disableBtnNumber('#btnCrecir-');
-								}, 150);
+								initiateToggleBtn('#btnCrecir-', id, listBtnCrecir[id][0]);
 								break;
 							case 40:
 								console.log(id + ' fnCrecir called');
@@ -1105,6 +1091,8 @@ function createButton(buttonName) {
 				togggleBtn(2, '#btnCrecir-2', toggLabelC, toggLabelD);
 				togggleBtn(3, '#btnCrecir-3', toggLabelE, toggLabelF);
 				setBtnActive('#btnCrecir-', listBtnCrecir);
+				hideNumBtn('#btnCrecir-', 30, 40);
+				disableBtnNumber('#btnCrecir-');
 				delChar('#btnCrecir-47, #btnCrecir-48');
 				return;
 			}
@@ -1172,32 +1160,12 @@ function createButton(buttonName) {
 							case 4:
 								console.log(id + ' fnCrearc called');
 								//event.stopImmediatePropagation()
-
-								$('#btnCrearc-' + id).children().hide();
-								$('#btnCrearc-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrearc[id][0] + '</a>');
-
-								setTimeout(function () {
-									$('#btnCrearc-' + id).find(":hidden").remove();
-
-									$('.cursor i').addClass('d-none');
-									hideNumBtn('#btnCrearc-', 30, 40);
-									disableBtnNumber('#btnCrearc-');
-								}, 150);
+								initiateToggleBtn('#btnCrearc-', id, listBtnCrearc[id][0]);
 								break;
 							case 5:
 								console.log(id + ' fnCrearc called');
 								//event.stopImmediatePropagation()
-
-								$('#btnCrearc-' + id).children().hide();
-								$('#btnCrearc-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrearc[id][0] + '</a>');
-
-								setTimeout(function () {
-									$('#btnCrearc-' + id).find(":hidden").remove();
-
-									$('.cursor i').addClass('d-none');
-									hideNumBtn('#btnCrearc-', 30, 40);
-									disableBtnNumber('#btnCrearc-');
-								}, 150);
+								initiateToggleBtn('#btnCrearc-', id, listBtnCrearc[id][0]);
 								break;
 							case 40:
 								console.log(id + ' fnCrearc called');
@@ -1430,12 +1398,7 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
-								$('#btnMovbtm-' + id).children().hide();
-								$('#btnMovbtm-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnMovbtm[id][0] + '</a>');
-
-								setTimeout(function () {
-									$('#btnMovbtm-' + id).find(":hidden").remove();
-								}, 150);
+								initiateToggleBtn('#btnMovbtm-', id, listBtnMovbtm[id][0]);
 								break;
 							case 40:
 							case 42:
@@ -1603,60 +1566,65 @@ function createButton(buttonName) {
 				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 				return;
 			}
-			case 'labPos': {
+			case 'labpos': {
 				let count = 0;
 
-				for (let varLabPos = 0; varLabPos < listBtnLabPos.length; varLabPos++) {
-					generateButtonMenu('#labPos-menu-btn', 'btnLabPos-', varLabPos, listBtnLabPos[varLabPos][0]);
-					registToTree(varLabPos, listBtnLabPos[varLabPos][0], 30);
-					$('#btnLabPos-' + varLabPos).on("click", { num: varLabPos }, fnLabPos);
+				for (let varLabpos = 0; varLabpos < listBtnLabpos.length; varLabpos++) {
+					generateButtonMenu('#labpos-menu-btn', 'btnLabpos-', varLabpos, listBtnLabpos[varLabpos][0]);
+					registToTree(varLabpos, listBtnLabpos[varLabpos][0], 30);
+					$('#btnLabpos-' + varLabpos).on("click", { num: varLabpos }, fnLabpos);
 				}
 
-				function fnLabPos(event) {
+				function fnLabpos(event) {
 					let id = event.data.num;
 
-					if (listBtnLabPos[id][0] != '') {
+					if (listBtnLabpos[id][0] != '') {
 						if (id < 30) {
 							$(this).siblings('.active').removeClass('active');
 							$(this).addClass('active');
-							document.getElementById('input-VK').value = listBtnLabPos[id][0];
+							document.getElementById('input-VK').value = listBtnLabpos[id][0];
 							$('.cursor i').removeClass('d-none');
 						}
 
 						switch (id) {
 							case 0:
-								console.log(id + ' fnLabPos called');
-								event.stopImmediatePropagation();
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
 								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								break;
 							case 2:
-								console.log(id + ' fnLabPos called');
-								event.stopImmediatePropagation();
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
 								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								break;
 							case 11:
-								console.log(id + ' fnLabPos called');
-								event.stopImmediatePropagation();
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
 								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								break;
 							case 20:
-								console.log(id + ' fnLabPos called');
-								event.stopImmediatePropagation();
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
 								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								break;
 							case 22:
-								console.log(id + ' fnLabPos called');
-								event.stopImmediatePropagation();
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
 								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								break;
 							case 40:
 							case 42:
-								console.log(id + ' fnLabPos called');
+								console.log(id + ' fnLabpos called');
 								event.stopImmediatePropagation();
-								backNav('#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								backNav('#btnLabpos-', listBtnLabpos.length, '#labpos-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 49:
-								console.log(id + ' fnLabPos called');
+								console.log(id + ' fnLabpos called');
 								event.stopImmediatePropagation()
 
 								if ($('#input-VK').val() != '') {
@@ -1666,12 +1634,12 @@ function createButton(buttonName) {
 								} else {
 									if (count === 1) {
 										count++;
-										nextStep(count, '#btnLabPos-', listBtnLabPos);
+										nextStep(count, '#btnLabpos-', listBtnLabpos);
 										$('#tree-' + (count - 1)).show();
 									} else {
 										printMessage("COMMAND OK");
-										$('#btnLabPos-' + count).removeClass('active');
-										forceBack('#btnLabPos-', listBtnLabPos.length, '#labPos-menu-btn', '#logon-menu&t=0.15s');
+										$('#btnLabpos-' + count).removeClass('active');
+										forceBack('#btnLabpos-', listBtnLabpos.length, '#labpos-menu-btn', '#logon-menu&t=0.15s');
 										count = 0;
 										createButton('logon');
 									}
@@ -1681,14 +1649,298 @@ function createButton(buttonName) {
 					}
 				}
 
-				setBtnActive('#btnLabPos-', listBtnLabPos);
-				$('#input-VK').val(listBtnLabPos[11][0]);
+				setBtnActive('#btnLabpos-', listBtnLabpos);
+				$('#input-VK').val(listBtnLabpos[11][0]);
 				count = 11;
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnLabPos-47, #btnLabPos-48');
+				delChar('#btnLabpos-47, #btnLabpos-48');
 				return;
 			}
-			case '': {
+			case 'trklin': {
+				let count = 0;
+
+				for (let varTrklin = 0; varTrklin < listBtnTrklin.length; varTrklin++) {
+					generateButtonMenu('#trklin-menu-btn', 'btnTrklin-', varTrklin, listBtnTrklin[varTrklin][0]);
+					registToTree(varTrklin, listBtnTrklin[varTrklin][0], 30);
+					$('#btnTrklin-' + varTrklin).on("click", { num: varTrklin }, fnTrklin);
+				}
+
+				function fnTrklin(event) {
+					let id = event.data.num;
+
+					if (listBtnTrklin[id][0] != '') {
+						if (id < 30) {
+							initiateLoadedMenu('#btnTrklin-', id, listBtnTrklin[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + count).siblings().hide();
+								document.getElementById('treeNum-' + count).innerHTML = '';
+								break;
+							case 3:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + count).siblings().hide();
+								document.getElementById('treeNum-' + count).innerHTML = '';
+								break;
+							case 5:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + count).siblings().hide();
+								document.getElementById('treeNum-' + count).innerHTML = '';
+								break;
+							case 12:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + count).siblings().hide();
+								document.getElementById('treeNum-' + count).innerHTML = '';
+								break;
+							case 14:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + count).siblings().hide();
+								document.getElementById('treeNum-' + count).innerHTML = '';
+								break;
+							case 16:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + count).siblings().hide();
+								document.getElementById('treeNum-' + count).innerHTML = '';
+								break;
+							case 21:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + count).siblings().hide();
+								document.getElementById('treeNum-' + count).innerHTML = '';
+								break;
+							case 23:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + count).siblings().hide();
+								document.getElementById('treeNum-' + count).innerHTML = '';
+								break;
+							case 25:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + count).siblings().hide();
+								document.getElementById('treeNum-' + count).innerHTML = '';
+								break;
+							case 27:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + count).siblings().hide();
+								document.getElementById('treeNum-' + count).innerHTML = '';
+								break;
+							case 29:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + count).siblings().hide();
+								document.getElementById('treeNum-' + count).innerHTML = '';
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnTrklin called');
+								event.stopImmediatePropagation();
+								backNav('#btnTrklin-', listBtnTrklin.length, '#trklin-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnTrklin called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									if ($('#input-VK').val() > 0 && $('#input-VK').val() < 4) {
+										$('#message-btn-out').empty();
+										$('#tree-' + count).show();
+										console.log('jancok su : ' + count)
+										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+										clearVK();
+									} else {
+										printMessage("ERROR : Valid range is 1 - 3");
+									}
+								} else {
+									printMessage("COMMAND OK");
+									$('#btnTrklin-' + count).removeClass('active');
+									forceBack('#btnTrklin-', listBtnTrklin.length, '#trklin-menu-btn', '#logon-menu&t=0.15s');
+									createButton('logon');
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnTrklin, id);
+				}
+
+				setBtnActive('#btnTrklin-', listBtnTrklin);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnTrklin-47, #btnTrklin-48');
+				return;
+			}
+			case 'trksel': {
+				let count = 0;
+
+				for (let varTrksel = 0; varTrksel < listBtnTrksel.length; varTrksel++) {
+					generateButtonMenu('#trksel-menu-btn', 'btnTrksel-', varTrksel, listBtnTrksel[varTrksel][0]);
+					registToTree(varTrksel, listBtnTrksel[varTrksel][0], 30);
+					$('#btnTrksel-' + varTrksel).on("click", { num: varTrksel }, fnTrksel);
+
+					let toggLabel = (listBtnTrksel[varTrksel][0]).slice(0, -2);
+					if (listBtnTrksel[varTrksel][0] != '') {
+						togggleBtn(varTrksel, '#btnTrksel-' + varTrksel, listBtnTrksel[varTrksel][0], toggLabel + 'off');
+					}
+
+					if (varTrksel === 29) {
+						$('#btnTrksel-' + varTrksel).css('font-size', '14px');
+					}
+				}
+
+				function fnTrksel(event) {
+					let id = event.data.num;
+
+					if (listBtnTrksel[id][0] != '') {
+						if (id < 30) {
+							initiateLoadedMenu('#btnTrksel-', id, listBtnTrksel[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 3:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 5:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 12:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 14:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 16:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 21:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 23:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 25:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 27:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 29:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#input-btn-out').css('font-size', '13px');
+								$('#tree-' + id).siblings().hide();
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnTrksel called');
+								event.stopImmediatePropagation();
+								backNav('#btnTrksel-', listBtnTrksel.length, '#trksel-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnTrksel called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									if ($('#input-VK').val() > 0 && $('#input-VK').val() < 4) {
+										$('#message-btn-out').empty();
+										$('#tree-' + count).show();
+										console.log('jancok su : ' + count)
+										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+										clearVK();
+									} else {
+										printMessage("ERROR : Valid range is 1 - 3");
+									}
+								} else {
+									printMessage("COMMAND OK");
+									$('#btnTrksel-' + count).removeClass('active');
+									forceBack('#btnTrksel-', listBtnTrksel.length, '#trksel-menu-btn', '#logon-menu&t=0.15s');
+									createButton('logon');
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnTrksel, id);
+				}
+
+				setBtnActive('#btnTrksel-', listBtnTrksel);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnTrksel-47, #btnTrksel-48');
 				return;
 			}
 			case '': {
@@ -1779,6 +2031,19 @@ function togggleBtn(num, btnName, toggLabelA, toggLabelB) {
 			printBtnToggleLabel(num, btnName, toggLabelA, toggLabelA, toggLabelB);
 		}
 	});
+}
+
+function initiateToggleBtn(btnName, num, arrName) {
+	$(btnName + num).children().hide();
+	$(btnName + num).addClass('toggle-btn').append('<a href="javascript:">' + arrName + '</a>');
+
+	setTimeout(function () {
+		$(btnName + num).find(":hidden").remove();
+
+		$('.cursor i').addClass('d-none');
+		hideNumBtn(btnName, 30, 40);
+		disableBtnNumber(btnName);
+	}, 125);
 }
 
 function backNav(labelBtn, arrLen, menuName, url, btnToCreate) {
