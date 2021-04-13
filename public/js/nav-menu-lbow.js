@@ -522,12 +522,6 @@ function createButton(buttonName) {
 				let toggLabelC = listBtnCreftr[2][0];
 				let toggLabelD = 'flash';
 
-				$('#toggle-box-out').show();
-				$('#toggle-divider').show();
-				document.getElementById('toggle-box-a').innerHTML = toggLabelA;
-				document.getElementById('toggle-box-b').innerHTML = toggLabelB;
-				$('#toggle-box-a').addClass('active');
-
 				for (let varCreftr = 0; varCreftr < listBtnCreftr.length; varCreftr++) {
 					generateButtonMenu('#creftr-menu-btn', 'btnCreftr-', varCreftr, listBtnCreftr[varCreftr][0]);
 					registToTree(varCreftr, listBtnCreftr[varCreftr][0], 5);
@@ -640,12 +634,7 @@ function createButton(buttonName) {
 											}
 											case 2: {
 												event.stopImmediatePropagation();
-
-												$('#toggle-box-out').show();
-												$('#toggle-divider').show();
-												document.getElementById('toggle-box-a').innerHTML = toggLabelC;
-												document.getElementById('toggle-box-b').innerHTML = toggLabelD;
-												$('#toggle-box-a').addClass('active');
+												showToggle(toggLabelC, toggLabelD);
 
 												$('.cursor i').addClass('d-none');
 												hideNumBtn('#btnCreftr-', 30, 40);
@@ -688,6 +677,7 @@ function createButton(buttonName) {
 
 				togggleBtn(0, '#btnCreftr-0', toggLabelA, toggLabelB);
 				togggleBtn(2, '#btnCreftr-2', toggLabelC, toggLabelD);
+				showToggle(toggLabelA, toggLabelB);
 				setBtnActive('#btnCreftr-', listBtnCreftr);
 				hideNumBtn('#btnCreftr-', 30, 40);
 				disableBtnNumber('#btnCreftr-');
@@ -787,13 +777,8 @@ function createButton(buttonName) {
 											}
 											case 1: {
 												event.stopImmediatePropagation();
-											
-												$('#toggle-box-out').show();
-												$('#toggle-divider').show();
-												document.getElementById('toggle-box-a').innerHTML = toggLabelA;
-												document.getElementById('toggle-box-b').innerHTML = toggLabelB;
-												$('#toggle-box-a').addClass('active');
-											
+												showToggle(toggLabelA, toggLabelB);
+
 												$('.cursor i').addClass('d-none');
 												hideNumBtn('#btnCrevec-', 30, 40);
 												disableBtnNumber('#btnCrevec-');
@@ -801,13 +786,8 @@ function createButton(buttonName) {
 											}
 											case 2: {
 												event.stopImmediatePropagation();
-											
-												$('#toggle-box-out').show();
-												$('#toggle-divider').show();
-												document.getElementById('toggle-box-a').innerHTML = toggLabelC;
-												document.getElementById('toggle-box-b').innerHTML = toggLabelD;
-												$('#toggle-box-a').addClass('active');
-											
+												showToggle(toggLabelC, toggLabelD);
+
 												$('.cursor i').removeClass('d-none');
 												showNumBtn('#btnCrevec-', 30, 40);
 												enableBtnNumber('#crevec-menu-btn li', listBtnCrevec, 'btnCrevec-');
@@ -1093,6 +1073,7 @@ function createButton(buttonName) {
 											}
 											case 2: {
 												event.stopImmediatePropagation();
+												showToggle(toggLabelA, toggLabelB);
 												$('.cursor i').addClass('d-none');
 												hideNumBtn('#btnCrecir-', 30, 40);
 												disableBtnNumber('#btnCrecir-');
@@ -1100,6 +1081,7 @@ function createButton(buttonName) {
 											}
 											case 3: {
 												event.stopImmediatePropagation();
+												showToggle(toggLabelC, toggLabelD);
 												$('.cursor i').removeClass('d-none');
 												hideNumBtn('#btnCrecir-', 30, 40);
 												disableBtnNumber('#btnCrecir-');
@@ -1236,18 +1218,36 @@ function createButton(buttonName) {
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
-									if (count < 3) {
+									if (count < 6) {
 										count++;
 										nextStep(count, '#btnCrearc-', listBtnCrearc);
 										$('#tree-' + (count - 1)).show();
 
 										if (count === 3) {
-											$('#btnCrearc-' + count).removeClass('active');
-											clearContent();
+											if (($('#treeNum-' + 0).text() != '') && ($('#treeNum-' + 1).text() != '') && ($('#treeNum-' + 2).text() != '')) {
+												nextStep(count, '#btnCrearc-', listBtnCrearc);
+												$('#tree-' + (count - 1)).show();
 
-											$('.cursor i').addClass('d-none');
-											hideNumBtn('#btnCrearc-', 30, 40);
-											disableBtnNumber('#btnCrearc-');
+												$('.cursor i').addClass('d-none');
+												hideNumBtn('#btnCrearc-', 30, 40);
+												disableBtnNumber('#btnCrearc-');
+											} else {
+												$('#btnCrearc-' + count).removeClass('active');
+												clearContent();
+
+												$('.cursor i').removeClass('d-none');
+												showNumBtn('#btnCrearc-', 30, 40);
+												enableBtnNumber('#crearc-menu-btn li', listBtnCrearc, 'btnCrearc-');
+
+												count = -1;
+											}
+										} else if (count === 6) {
+											//console.log($('#sub-tree').text() )
+											printMessage("COMMAND OK");
+											$('#btnCrearc-' + count).removeClass('active');
+											forceBack('#btnCrearc-', listBtnCrearc.length, '#crearc-menu-btn', '#maps-menu&t=0.15s');
+											count = 0;
+											createButton('maps');
 										}
 									} else {
 										count = 0;
@@ -1411,12 +1411,6 @@ function createButton(buttonName) {
 				let charLat = /N|S/g;
 				let charLong = /E|W/g;
 				let charCount = 0, numCount = 0;
-
-				$('#toggle-box-out').show();
-				$('#toggle-divider').show();
-				document.getElementById('toggle-box-a').innerHTML = toggLabelA;
-				document.getElementById('toggle-box-b').innerHTML = toggLabelB;
-				$('#toggle-box-a').addClass('active');
 
 				for (let varMovbtm = 0; varMovbtm < listBtnMovbtm.length; varMovbtm++) {
 					generateButtonMenu('#movbtm-menu-btn', 'btnMovbtm-', varMovbtm, listBtnMovbtm[varMovbtm][0]);
@@ -1602,6 +1596,7 @@ function createButton(buttonName) {
 
 				hideRightNav();
 				togggleBtn(1, '#btnMovbtm-1', toggLabelA, toggLabelB);
+				showToggle(toggLabelA, toggLabelB);
 				setBtnActive('#btnMovbtm-', listBtnMovbtm);
 				delChar('#btnMovbtm-47, #btnMovbtm-48');
 				$('.cursor i').removeClass('d-none');
@@ -1876,6 +1871,14 @@ function printBtnToggleLabel(btnId, btnName, labelBtn, labelBtnLeft, labelBtnRig
 			'<span>' + labelBtn + '</span>' +
 			'<span id="treeNum-' + btnId + '" class="ml-2">' + '</span>';
 	}
+}
+
+function showToggle(toggleA, toggleB) {
+	$('#toggle-box-out').show();
+	$('#toggle-divider').show();
+	document.getElementById('toggle-box-a').innerHTML = toggleA;
+	document.getElementById('toggle-box-b').innerHTML = toggleB;
+	$('#toggle-box-a').addClass('active');
 }
 
 function setBtnActive(labelBtn, arrName) {
