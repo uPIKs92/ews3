@@ -146,6 +146,22 @@ const listBtnSettrk = [
 	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
+const listBtnWeapon = [
+	['return', ''], ['', ''], ['loose', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
+const listBtnLoose = [
+	['ftr', 'active'], ['kts', ''], ['TGT', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
 var stateForLineBtn = 0;
 var countForLineState = 0;
 
@@ -226,6 +242,15 @@ function createButton(buttonName) {
 								$('#message-btn-out').empty();
 								window.location = '#maps-menu&t=0.15s';
 								createButton('maps');
+								break;
+							case 7:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#weapon-menu&t=0.15s';
+								createButton('weapon');
 								break;
 							case 12:
 								console.log(id + ' fnLogon called');
@@ -583,6 +608,10 @@ function createButton(buttonName) {
 					generateButtonMenu('#creftr-menu-btn', 'btnCreftr-', varCreftr, listBtnCreftr[varCreftr][0]);
 					registToTree(varCreftr, listBtnCreftr[varCreftr][0], 5);
 					$('#btnCreftr-' + varCreftr).on("click", { num: varCreftr }, fnCreftr);
+
+					if ((varCreftr < 5)) {
+						$('#btnCreftr-' + varCreftr).addClass('text-none');
+					}
 				}
 
 				$('#btnCreftr-44').children('span').hide();
@@ -732,6 +761,10 @@ function createButton(buttonName) {
 					generateButtonMenu('#crevec-menu-btn', 'btnCrevec-', varCrevec, listBtnCrevec[varCrevec][0]);
 					registToTree(varCrevec, listBtnCrevec[varCrevec][0], 4);
 					$('#btnCrevec-' + varCrevec).on("click", { num: varCrevec }, fnCrevec);
+
+					if ((varCrevec < 3)) {
+						$('#btnCrevec-' + varCrevec).addClass('text-none');
+					}
 				}
 
 				function fnCrevec(event) {
@@ -853,6 +886,10 @@ function createButton(buttonName) {
 					generateButtonMenu('#line-menu-btn', 'btnLine-', varLine, listBtnLine[varLine][0]);
 					registToTree(varLine, listBtnLine[varLine][0], 7);
 					$('#btnLine-' + varLine).on("click", { num: varLine }, fnLine);
+
+					if ((varLine < 7)) {
+						$('#btnLine-' + varLine).addClass('text-none');
+					}
 				}
 
 				function fnLine(event) {
@@ -983,6 +1020,10 @@ function createButton(buttonName) {
 
 					if (varCrecir === 0) {
 						$('#btnCrecir-' + varCrecir).children().addClass('borderBtm');
+					}
+
+					if ((varCrecir < 4)) {
+						$('#btnCrecir-' + varCrecir).addClass('text-none');
 					}
 				}
 
@@ -1126,6 +1167,10 @@ function createButton(buttonName) {
 					generateButtonMenu('#crearc-menu-btn', 'btnCrearc-', varCrearc, listBtnCrearc[varCrearc][0]);
 					registToTree(varCrearc, listBtnCrearc[varCrearc][0], 6);
 					$('#btnCrearc-' + varCrearc).on("click", { num: varCrearc }, fnCrearc);
+
+					if ((varCrearc < 7)) {
+						$('#btnCrearc-' + varCrearc).addClass('text-none');
+					}
 				}
 
 				function fnCrearc(event) {
@@ -1682,6 +1727,10 @@ function createButton(buttonName) {
 					generateButtonMenu('#trklin-menu-btn', 'btnTrklin-', varTrklin, listBtnTrklin[varTrklin][0]);
 					registToTree(varTrklin, listBtnTrklin[varTrklin][0], 30);
 					$('#btnTrklin-' + varTrklin).on("click", { num: varTrklin }, fnTrklin);
+
+					if ((varTrklin < 30)) {
+						$('#btnTrklin-' + varTrklin).addClass('text-none');
+					}
 				}
 
 				function fnTrklin(event) {
@@ -1830,6 +1879,10 @@ function createButton(buttonName) {
 					let toggLabel = (listBtnTrksel[varTrksel][0]).slice(0, -2);
 					if (listBtnTrksel[varTrksel][0] != '') {
 						togggleBtn(varTrksel, '#btnTrksel-' + varTrksel, listBtnTrksel[varTrksel][0], toggLabel + 'off');
+					}
+
+					if ((varTrksel < 30)) {
+						$('#btnTrksel-' + varTrksel).addClass('text-none');
 					}
 
 					if (varTrksel === 29) {
@@ -2073,7 +2126,126 @@ function createButton(buttonName) {
 				delChar('#btnSettrk-47, #btnSettrk-48');
 				return;
 			}
-			case '': {
+			case 'weapon': {
+				for (let varWeapon = 0; varWeapon < listBtnWeapon.length; varWeapon++) {
+					generateButtonMenu('#weapon-menu-btn', 'btnWeapon-', varWeapon, listBtnWeapon[varWeapon][0]);
+					$('#btnWeapon-' + varWeapon).on("click", { num: varWeapon }, fnWeapon);
+				}
+
+				function fnWeapon(event) {
+					let id = event.data.num;
+
+					if (listBtnWeapon[id][0] != '') {
+						switch (id) {
+							case 0:
+							case 40:
+							case 42:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								backNav('#btnWeapon-', listBtnWeapon.length, '#weapon-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 2:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#loose-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id][0]);
+								createButton('loose');
+								break;
+						}
+					}
+				}
+				return;
+			}
+			case 'loose': {
+				let count = 0;
+				let toggLabelA = listBtnLoose[2][0];
+				let toggLabelB = 'lating';
+
+				for (let varLoose = 0; varLoose < listBtnLoose.length; varLoose++) {
+					generateButtonMenu('#loose-menu-btn', 'btnLoose-', varLoose, listBtnLoose[varLoose][0]);
+					registToTree(varLoose, listBtnLoose[varLoose][0], 3);
+					$('#btnLoose-' + varLoose).on("click", { num: varLoose }, fnLoose);
+
+					if ((varLoose < 2)) {
+						$('#btnLoose-' + varLoose).addClass('text-none');
+					}
+				}
+
+				function fnLoose(event) {
+					let id = event.data.num;
+
+					if (listBtnLoose[id][0] != '') {
+						if (id < 3) {
+							initiateLoadedMenu('#btnLoose-', id, listBtnLoose[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnLoose called');
+								event.stopImmediatePropagation();
+
+								hideNumBtn('#btnLoose-', 30, 40);
+								disableBtnNumber('#btnLoose-');
+								break;
+							case 1:
+								console.log(id + ' fnLoose called');
+								event.stopImmediatePropagation();
+
+								hideNumBtn('#btnLoose-', 30, 40);
+								disableBtnNumber('#btnLoose-');
+								break;
+							case 2:
+								console.log(id + ' fnLoose called');
+								event.stopImmediatePropagation();
+
+								initiateToggleBtn('#btnLoose-', id, listBtnLoose[id][0]);
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnLoose called');
+								event.stopImmediatePropagation();
+								backNav('#btnLoose-', listBtnLoose.length, '#loose-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnLoose called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 3) {
+										count++;
+										nextStep(count, '#btnLoose-', listBtnLoose);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnLoose-' + count).removeClass('active');
+										forceBack('#btnLoose-', listBtnLoose.length, '#loose-menu-btn', '#logon-menu&t=0.15s');
+										count = 0;
+										createButton('logon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnLoose, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnLoose-');
+				});
+
+				togggleBtn(2, '#btnWeapon-2', toggLabelA, toggLabelB);
+				setBtnActive('#btnLoose-', listBtnLoose);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnLoose-47, #btnLoose-48');
 				return;
 			}
 		}

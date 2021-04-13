@@ -13,22 +13,22 @@
             <ul id="maps-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="rrings-menu" lj-transition="fade">
-            <ul id="rrings-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
+            <ul id="rrings-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="creftr-menu" lj-transition="fade">
-            <ul id="creftr-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
+            <ul id="creftr-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="crevec-menu" lj-transition="fade">
-            <ul id="crevec-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
+            <ul id="crevec-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="line-menu" lj-transition="fade">
-            <ul id="line-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
+            <ul id="line-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="crecir-menu" lj-transition="fade">
-            <ul id="crecir-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
+            <ul id="crecir-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="crearc-menu" lj-transition="fade">
-            <ul id="crearc-menu-btn" class="m-0 p-0 form-inline text-none"></ul>
+            <ul id="crearc-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="ppibrt-menu" lj-transition="fade">
             <ul id="ppibrt-menu-btn" class="m-0 p-0 form-inline"></ul>
@@ -50,6 +50,12 @@
         </div>
         <div lj-type="frame" lj-name="settrk-menu" lj-transition="fade">
             <ul id="settrk-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="weapon-menu" lj-transition="fade">
+            <ul id="weapon-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="loose-menu" lj-transition="fade">
+            <ul id="loose-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
     </div>
     <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false">
