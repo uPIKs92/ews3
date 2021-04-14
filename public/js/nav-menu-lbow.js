@@ -162,6 +162,46 @@ const listBtnLoose = [
 	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
+const listBtnHistry = [
+	['plot', 'active'], ['track', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
+const listBtnRadplt = [
+	['return', ''], ['', ''], ['setcps', ''], ['setpsa', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
+const listBtnSetcps = [
+	['On', 'active'], ['BTM', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
+const listBtnSetpsa = [
+	['areano', ''], ['add', ''], ['BTM1', ''], ['min-km', ''], ['btm2', ''], ['max-km', ''], ['On', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
+const listBtnPltsel = [
+	['none', ''], ['', ''], ['pri', 'active'], ['', ''], ['sec', ''], ['', ''], ['all', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
 var stateForLineBtn = 0;
 var countForLineState = 0;
 
@@ -252,6 +292,15 @@ function createButton(buttonName) {
 								window.location = '#weapon-menu&t=0.15s';
 								createButton('weapon');
 								break;
+							case 9:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#radplt-menu&t=0.15s';
+								createButton('radplt');
+								break;
 							case 12:
 								console.log(id + ' fnLogon called');
 								event.stopImmediatePropagation()
@@ -316,6 +365,16 @@ function createButton(buttonName) {
 								createButton('settrk');
 								callAlphaVK('#btnSettrk-');
 								break;
+							case 28:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#histry-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('histry');
+								break;
 							case 35:
 								console.log(id + ' fnLogon called');
 								event.stopImmediatePropagation()
@@ -325,6 +384,17 @@ function createButton(buttonName) {
 								window.location = '#trksel-menu&t=0.15s';
 								printBtnTree(listBtnLogon[id]);
 								createButton('trksel');
+								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
+								break;
+							case 39:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#pltsel-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('pltsel');
 								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
 								break;
 							case 40:
@@ -1653,33 +1723,28 @@ function createButton(buttonName) {
 						switch (id) {
 							case 0:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								break;
 							case 2:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								break;
 							case 11:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								break;
 							case 20:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								break;
 							case 22:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								break;
 							case 40:
 							case 42:
@@ -1745,89 +1810,78 @@ function createButton(buttonName) {
 						switch (id) {
 							case 1:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + count).siblings().hide();
 								document.getElementById('treeNum-' + count).innerHTML = '';
 								break;
 							case 3:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + count).siblings().hide();
 								document.getElementById('treeNum-' + count).innerHTML = '';
 								break;
 							case 5:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + count).siblings().hide();
 								document.getElementById('treeNum-' + count).innerHTML = '';
 								break;
 							case 12:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + count).siblings().hide();
 								document.getElementById('treeNum-' + count).innerHTML = '';
 								break;
 							case 14:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + count).siblings().hide();
 								document.getElementById('treeNum-' + count).innerHTML = '';
 								break;
 							case 16:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + count).siblings().hide();
 								document.getElementById('treeNum-' + count).innerHTML = '';
 								break;
 							case 21:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + count).siblings().hide();
 								document.getElementById('treeNum-' + count).innerHTML = '';
 								break;
 							case 23:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + count).siblings().hide();
 								document.getElementById('treeNum-' + count).innerHTML = '';
 								break;
 							case 25:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + count).siblings().hide();
 								document.getElementById('treeNum-' + count).innerHTML = '';
 								break;
 							case 27:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + count).siblings().hide();
 								document.getElementById('treeNum-' + count).innerHTML = '';
 								break;
 							case 29:
 								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
+								event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + count).siblings().hide();
 								document.getElementById('treeNum-' + count).innerHTML = '';
 								break;
@@ -2212,13 +2266,13 @@ function createButton(buttonName) {
 									this.className = btn[($.inArray(this.className, btn) + 1) % btn.length];
 
 									switch ($(this).attr('class')) {
-										case 'TGT':
+										case btn[0].toString():
 											singleToggleBtn(2, this, btn[0], '#tg-0');
 											break;
-										case 'posn':
+										case btn[1].toString():
 											singleToggleBtn(2, this, btn[1], '#tg-1');
 											break;
-										case 'cancel':
+										case btn[2].toString():
 											singleToggleBtn(2, this, btn[2], '#tg-2');
 											break;
 									}
@@ -2289,6 +2343,353 @@ function createButton(buttonName) {
 				setBtnActive('#btnLoose-', listBtnLoose);
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnLoose-47, #btnLoose-48');
+				return;
+			}
+			case 'histry': {
+				let count = 0;
+
+				for (let varHistry = 0; varHistry < listBtnHistry.length; varHistry++) {
+					generateButtonMenu('#histry-menu-btn', 'btnHistry-', varHistry, listBtnHistry[varHistry][0]);
+					registToTree(varHistry, listBtnHistry[varHistry][0], 2);
+					$('#btnHistry-' + varHistry).on("click", { num: varHistry }, fnHistry);
+
+					if ((varHistry < 2)) {
+						$('#btnHistry-' + varHistry).addClass('text-none');
+					}
+				}
+
+				function fnHistry(event) {
+					let id = event.data.num;
+
+					if (listBtnHistry[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnHistry-', id, listBtnHistry[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+							case 1:
+								console.log(id + ' fnHistry called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnHistry called');
+								event.stopImmediatePropagation();
+								backNav('#btnHistry-', listBtnHistry.length, '#histry-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnHistry called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 2) {
+										count++;
+										nextStep(count, '#btnHistry-', listBtnHistry);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnHistry-' + count).removeClass('active');
+										forceBack('#btnHistry-', listBtnHistry.length, '#histry-menu-btn', '#logon-menu&t=0.15s');
+										count = 0;
+										createButton('logon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnHistry, id);
+				}
+
+				setBtnActive('#btnHistry-', listBtnHistry);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnHistry-47, #btnHistry-48');
+				return;
+			}
+			case 'radplt': {
+				for (let varRadplt = 0; varRadplt < listBtnRadplt.length; varRadplt++) {
+					generateButtonMenu('#radplt-menu-btn', 'btnRadplt-', varRadplt, listBtnRadplt[varRadplt][0]);
+					$('#btnRadplt-' + varRadplt).on("click", { num: varRadplt }, fnRadplt);
+				}
+
+				function fnRadplt(event) {
+					let id = event.data.num;
+
+					if (listBtnRadplt[id][0] != '') {
+						switch (id) {
+							case 0:
+							case 40:
+							case 42:
+								console.log(id + ' fnRadplt called');
+								event.stopImmediatePropagation();
+								backNav('#btnRadplt-', listBtnRadplt.length, '#radplt-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 2:
+								console.log(id + ' fnRadplt called');
+								event.stopImmediatePropagation();
+								clearMenu('#radplt-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#setcps-menu&t=0.15s';
+								printBtnTree(listBtnRadplt[id][0]);
+								createButton('setcps');
+								document.getElementById('input-btn-out').innerHTML = listBtnRadplt[id][0];
+								break;
+							case 3:
+								console.log(id + ' fnRadplt called');
+								event.stopImmediatePropagation();
+								clearMenu('#radplt-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#setpsa-menu&t=0.15s';
+								printBtnTree(listBtnRadplt[id][0]);
+								createButton('setpsa');
+								break;
+						}
+					}
+				}
+				return;
+			}
+			case 'setcps': {
+				let count = 0;
+				let toggLabelA = listBtnSetcps[0][0];
+				let toggLabelB = 'Off';
+				const btn = ['BTM', 'KM', 'NM'];
+
+				for (let varSetcps = 0; varSetcps < listBtnSetcps.length; varSetcps++) {
+					generateButtonMenu('#setcps-menu-btn', 'btnSetcps-', varSetcps, listBtnSetcps[varSetcps][0]);
+					registToTree(varSetcps, listBtnSetcps[varSetcps][0], 2);
+					$('#btnSetcps-' + varSetcps).on("click", { num: varSetcps }, fnSetcps);
+
+					if ((varSetcps < 2)) {
+						$('#btnSetcps-' + varSetcps).addClass('text-none');
+					}
+				}
+
+				function fnSetcps(event) {
+					let id = event.data.num;
+
+					if (listBtnSetcps[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnSetcps-', id, listBtnSetcps[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnSetcps called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								initiateToggleBtn('#btnSetcps-', id, listBtnSetcps[id][0]);
+
+								setTimeout(function () {
+									$('#input-btn-out').css('width', '12%');
+									$('#input-area').css('width', '59.5%');
+									$('#input-btn-out').prepend('<span class="mr-2">setcps</span>');
+								}, 125);
+
+								hideNumBtn('#btnSetcps-', 30, 40);
+								disableBtnNumber('#btnSetcps-');
+								break;
+							case 1:
+								console.log(id + ' fnSetcps called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+
+								for (let a = 0; a < btn.length; a++) {
+									$('#three-toggle').append(
+										'<span id="tg-' + a + '">' + btn[a].toString() + '</span>');
+
+									if (a != 2) {
+										$('#three-toggle').append(
+											'<span class="mr-1 ml-1">:</span>');
+									}
+								}
+
+								$('#btnSetcps-' + id).children('span').each(function () {
+									this.className = btn[($.inArray(this.className, btn) + 1) % btn.length];
+
+									switch ($(this).attr('class')) {
+										case btn[0].toString():
+											singleToggleBtn(1, this, btn[0], '#tg-0');
+											break;
+										case btn[1].toString():
+											singleToggleBtn(1, this, btn[1], '#tg-1');
+											break;
+										case btn[2].toString():
+											singleToggleBtn(1, this, btn[2], '#tg-2');
+											break;
+									}
+								});
+
+								showNumBtn('#btnSetcps-', 30, 40);
+								enableBtnNumber('#setcps-menu-btn li', listBtnSetcps, 'btnSetcps-');
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+								backNav('#btnSetcps-', listBtnSetcps.length, '#setcps-menu-btn', '#radplt-menu&t=0.15s', 'radplt');
+								$('#three-toggle').empty();
+								break;
+							case 42:
+								console.log(id + ' fnSetcps called');
+								event.stopImmediatePropagation();
+								backNav('#btnSetcps-', listBtnSetcps.length, '#setcps-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+								break;
+							case 49:
+								console.log(id + ' fnSetcps called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnSetcps-', listBtnSetcps);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+
+										switch (count) {
+											case 0:
+												showToggle(toggLabelA, toggLabelB);
+												hideNumBtn('#btnSetcps-', 30, 40);
+												disableBtnNumber('#btnSetcps-');
+												break;
+											case 1:
+												$('#three-toggle').empty();
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+
+												for (let a = 0; a < btn.length; a++) {
+													$('#three-toggle').append(
+														'<span id="tg-' + a + '">' + btn[a].toString() + '</span>');
+
+													if (a != 2) {
+														$('#three-toggle').append(
+															'<span class="mr-1 ml-1">:</span>');
+													}
+												}
+
+												$('#tg-0').addClass('active');
+												showNumBtn('#btnSetcps-', 30, 40);
+												enableBtnNumber('#setcps-menu-btn li', listBtnSetcps, 'btnSetcps-');
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSetcps-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnSetcps-', listBtnSetcps.length, '#setcps-menu-btn', '#radplt-menu&t=0.15s');
+										count = 0;
+										createButton('radplt');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSetcps, id);
+				}
+
+				hideNumBtn('#btnSetcps-', 30, 40);
+				disableBtnNumber('#btnSetcps-');
+				toggleBtn(0, '#btnSetcps-0', toggLabelA, toggLabelB);
+				setBtnActive('#btnSetcps-', listBtnSetcps);
+				delChar('#btnSetcps-47, #btnSetcps-48');
+				return;
+			}
+			case 'setpsa': {
+				return;
+			}
+			case 'pltsel': {
+				let count = 0;
+
+				for (let varPltsel = 0; varPltsel < listBtnPltsel.length; varPltsel++) {
+					generateButtonMenu('#pltsel-menu-btn', 'btnPltsel-', varPltsel, listBtnPltsel[varPltsel][0]);
+					registToTree(varPltsel, listBtnPltsel[varPltsel][0], 7);
+					$('#btnPltsel-' + varPltsel).on("click", { num: varPltsel }, fnPltsel);
+				}
+
+				function fnPltsel(event) {
+					let id = event.data.num;
+
+					if (listBtnPltsel[id][0] != '') {
+						if (id < 7) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnPltsel[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnPltsel called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 2:
+								console.log(id + ' fnPltsel called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 4:
+								console.log(id + ' fnPltsel called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 6:
+								console.log(id + ' fnPltsel called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnPltsel called');
+								event.stopImmediatePropagation();
+								backNav('#btnPltsel-', listBtnPltsel.length, '#pltsel-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 49:
+								console.log(id + ' fnPltsel called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnPltsel-', listBtnPltsel);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnPltsel-' + count).removeClass('active');
+										forceBack('#btnPltsel-', listBtnPltsel.length, '#pltsel-menu-btn', '#logon-menu&t=0.15s');
+										count = 0;
+										createButton('logon');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnPltsel-', listBtnPltsel);
+				$('#input-VK').val(listBtnPltsel[2][0]);
+				count = 2;
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnPltsel-47, #btnPltsel-48');
 				return;
 			}
 		}

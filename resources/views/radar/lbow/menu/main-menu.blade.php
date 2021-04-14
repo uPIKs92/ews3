@@ -9,6 +9,15 @@
         <div lj-type="frame" lj-name="setpwd-menu" lj-transition="fade">
             <ul id="setpwd-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="radplt-menu" lj-transition="fade">
+            <ul id="radplt-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="setcps-menu" lj-transition="fade">
+            <ul id="setcps-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="setpsa-menu" lj-transition="fade">
+            <ul id="setpsa-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="maps-menu" lj-transition="fade">
             <ul id="maps-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
@@ -56,6 +65,12 @@
         </div>
         <div lj-type="frame" lj-name="loose-menu" lj-transition="fade">
             <ul id="loose-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="histry-menu" lj-transition="fade">
+            <ul id="histry-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="pltsel-menu" lj-transition="fade">
+            <ul id="pltsel-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
     </div>
     <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false">

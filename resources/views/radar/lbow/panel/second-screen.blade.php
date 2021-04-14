@@ -84,7 +84,7 @@
                                 <div id="input-btn-out" class="float-left" style="width: 8%;">
                                     {{-- input text --}}
                                 </div>
-                                <div class="float-left" style="width: 63.5%;">
+                                <div id="input-area" class="float-left" style="width: 63.5%;">
                                     <div class="cursor">
                                         <i class="d-none" style="left: 0px;"></i>
                                         <input id="input-VK" class="text-uppercase bg-transparent border-0  w-100"
