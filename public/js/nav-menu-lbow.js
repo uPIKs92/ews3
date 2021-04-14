@@ -2161,8 +2161,7 @@ function createButton(buttonName) {
 			}
 			case 'loose': {
 				let count = 0;
-				let toggLabelA = listBtnLoose[2][0];
-				let toggLabelB = 'lating';
+				const btn = ['TGT', 'posn', 'cancel'];
 
 				for (let varLoose = 0; varLoose < listBtnLoose.length; varLoose++) {
 					generateButtonMenu('#loose-menu-btn', 'btnLoose-', varLoose, listBtnLoose[varLoose][0]);
@@ -2187,23 +2186,17 @@ function createButton(buttonName) {
 							case 0:
 								console.log(id + ' fnLoose called');
 								event.stopImmediatePropagation();
-
-								hideNumBtn('#btnLoose-', 30, 40);
-								disableBtnNumber('#btnLoose-');
+								$('#three-toggle').empty();
 								break;
 							case 1:
 								console.log(id + ' fnLoose called');
 								event.stopImmediatePropagation();
-
-								hideNumBtn('#btnLoose-', 30, 40);
-								disableBtnNumber('#btnLoose-');
+								$('#three-toggle').empty();
 								break;
 							case 2:
 								console.log(id + ' fnLoose called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
-
-								const btn = ['TGT', 'posn', 'cancel'];
 
 								for (let a = 0; a < btn.length; a++) {
 									$('#three-toggle').append(
@@ -2257,6 +2250,22 @@ function createButton(buttonName) {
 										nextStep(count, '#btnLoose-', listBtnLoose);
 										$('#tree-' + (count - 1)).show();
 										$('#three-toggle').empty();
+
+										if (count === 2) {
+											$('#three-toggle').empty();
+
+											for (let a = 0; a < btn.length; a++) {
+												$('#three-toggle').append(
+													'<span id="tg-' + a + '">' + btn[a].toString() + '</span>');
+
+												if (a != 2) {
+													$('#three-toggle').append(
+														'<span class="mr-1 ml-1">:</span>');
+												}
+											}
+
+											$('#tg-0').addClass('active');
+										}
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnLoose-' + count).removeClass('active');
@@ -2277,7 +2286,6 @@ function createButton(buttonName) {
 					showBtmNav('#btnLoose-');
 				});
 
-				//toggleBtn(2, '#btnLoose-2', toggLabelA, toggLabelB);
 				setBtnActive('#btnLoose-', listBtnLoose);
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnLoose-47, #btnLoose-48');
