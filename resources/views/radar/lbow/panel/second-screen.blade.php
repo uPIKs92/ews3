@@ -3,7 +3,7 @@
     {{-- extra script --}}
     <script src="{{ asset('plugin/layerjs/layerjs-0.6.2.min.js') }}"></script>
     <link href="{{ asset('plugin/layerjs/layerjs-0.6.2.css') }}" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="{{ asset('plugin/toggle-button/jquery.togglebutton.js') }}"></script>
+    <script src="{{ asset('plugin/toggle-button/jquery.togglebutton.js') }}"></script>
     <script src="{{ asset('js/nav-menu-lbow.js') }}"></script>
     {{-- end of --}}
 
@@ -87,15 +87,19 @@
                                 <div class="float-left" style="width: 63.5%;">
                                     <div class="cursor">
                                         <i class="d-none" style="left: 0px;"></i>
-                                        <input id="input-VK" class="text-uppercase bg-transparent border-0  w-100" type="text"
-                                            style="height: 21px; color:#e6812a; pointer-events: none;" readonly>
+                                        <input id="input-VK" class="text-uppercase bg-transparent border-0  w-100"
+                                            type="text" style="height: 21px; color:#e6812a; pointer-events: none;" readonly>
                                     </div>
                                 </div>
-                                <div class="float-left">
-                                    <div id="toggle-box-out" class="btn-box w-auto h-auto no-border" style="pointer-events: none;">
+                                <div id="toggle-label-area" class="float-left">
+                                    <div id="toggle-box-out" class="btn-box w-auto h-auto no-border"
+                                        style="pointer-events: none;">
                                         <span id="toggle-box-a" class="text-center" style="min-width: 83.16px;"></span>
                                         <span id="toggle-divider" class="ml-1 mr-1"> : </span>
                                         <span id="toggle-box-b" class="text-center" style="min-width: 83.16px;"></span>
+                                    </div>
+                                    <div id="three-toggle" class="btn-box w-auto h-auto no-border"
+                                        style="pointer-events: none;">
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +107,8 @@
                     </div>
                     <div class="col-12 clearfix p-1" onload="printBtn();">
                         <div class="float-left">
-                            <div class="border-top border-right border-left border-warning" style="margin-left: -1px; min-width: 894.46px">
+                            <div class="border-top border-right border-left border-warning"
+                                style="margin-left: -1px; min-width: 894.46px">
                                 @yield('btn-menu-view', \View::make('radar.lbow.menu.main-menu'))
                             </div>
                             <div style="margin-top: -2px;">

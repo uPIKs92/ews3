@@ -741,8 +741,8 @@ function createButton(buttonName) {
 					showBtmNav('#btnCreftr-');
 				});
 
-				togggleBtn(0, '#btnCreftr-0', toggLabelA, toggLabelB);
-				togggleBtn(2, '#btnCreftr-2', toggLabelC, toggLabelD);
+				toggleBtn(0, '#btnCreftr-0', toggLabelA, toggLabelB);
+				toggleBtn(2, '#btnCreftr-2', toggLabelC, toggLabelD);
 				showToggle(toggLabelA, toggLabelB);
 				setBtnActive('#btnCreftr-', listBtnCreftr);
 				hideNumBtn('#btnCreftr-', 30, 40);
@@ -872,8 +872,8 @@ function createButton(buttonName) {
 					}
 				}
 
-				togggleBtn(1, '#btnCrevec-1', toggLabelA, toggLabelB);
-				togggleBtn(2, '#btnCrevec-2', toggLabelC, toggLabelD);
+				toggleBtn(1, '#btnCrevec-1', toggLabelA, toggLabelB);
+				toggleBtn(2, '#btnCrevec-2', toggLabelC, toggLabelD);
 				setBtnActive('#btnCrevec-', listBtnCrevec);
 				delChar('#btnCrevec-47, #btnCrevec-48');
 				return;
@@ -1147,9 +1147,9 @@ function createButton(buttonName) {
 					}
 				}
 
-				togggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB);
-				togggleBtn(2, '#btnCrecir-2', toggLabelC, toggLabelD);
-				togggleBtn(3, '#btnCrecir-3', toggLabelE, toggLabelF);
+				toggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB);
+				toggleBtn(2, '#btnCrecir-2', toggLabelC, toggLabelD);
+				toggleBtn(3, '#btnCrecir-3', toggLabelE, toggLabelF);
 				setBtnActive('#btnCrecir-', listBtnCrecir);
 				hideNumBtn('#btnCrecir-', 30, 40);
 				disableBtnNumber('#btnCrecir-');
@@ -1295,8 +1295,8 @@ function createButton(buttonName) {
 					}
 				}
 
-				togggleBtn(4, '#btnCrearc-4', toggLabelA, toggLabelB);
-				togggleBtn(5, '#btnCrearc-5', toggLabelC, toggLabelD);
+				toggleBtn(4, '#btnCrearc-4', toggLabelA, toggLabelB);
+				toggleBtn(5, '#btnCrearc-5', toggLabelC, toggLabelD);
 				setBtnActive('#btnCrearc-', listBtnCrearc);
 				$('.cursor i').removeClass('d-none');
 				enableBtnNumber('#crearc-menu-btn li', listBtnCrearc, 'btnCrearc-');
@@ -1622,7 +1622,7 @@ function createButton(buttonName) {
 				});
 
 				hideRightNav();
-				togggleBtn(1, '#btnMovbtm-1', toggLabelA, toggLabelB);
+				toggleBtn(1, '#btnMovbtm-1', toggLabelA, toggLabelB);
 				showToggle(toggLabelA, toggLabelB);
 				setBtnActive('#btnMovbtm-', listBtnMovbtm);
 				delChar('#btnMovbtm-47, #btnMovbtm-48');
@@ -1878,7 +1878,7 @@ function createButton(buttonName) {
 
 					let toggLabel = (listBtnTrksel[varTrksel][0]).slice(0, -2);
 					if (listBtnTrksel[varTrksel][0] != '') {
-						togggleBtn(varTrksel, '#btnTrksel-' + varTrksel, listBtnTrksel[varTrksel][0], toggLabel + 'off');
+						toggleBtn(varTrksel, '#btnTrksel-' + varTrksel, listBtnTrksel[varTrksel][0], toggLabel + 'off');
 					}
 
 					if ((varTrksel < 30)) {
@@ -2201,14 +2201,47 @@ function createButton(buttonName) {
 							case 2:
 								console.log(id + ' fnLoose called');
 								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
 
-								initiateToggleBtn('#btnLoose-', id, listBtnLoose[id][0]);
+								const btn = ['TGT', 'posn', 'cancel'];
+
+								for (let a = 0; a < btn.length; a++) {
+									$('#three-toggle').append(
+										'<span id="tg-' + a + '">' + btn[a].toString() + '</span>');
+
+									if (a != 2) {
+										$('#three-toggle').append(
+											'<span class="mr-1 ml-1">:</span>');
+									}
+								}
+
+								$('#btnLoose-' + id).children('span').each(function () {
+									this.className = btn[($.inArray(this.className, btn) + 1) % btn.length];
+
+									switch ($(this).attr('class')) {
+										case 'TGT':
+											singleToggleBtn(2, this, btn[0], '#tg-0');
+											break;
+										case 'posn':
+											singleToggleBtn(2, this, btn[1], '#tg-1');
+											break;
+										case 'cancel':
+											singleToggleBtn(2, this, btn[2], '#tg-2');
+											break;
+									}
+								});
 								break;
 							case 40:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+								backNav('#btnLoose-', listBtnLoose.length, '#loose-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+								$('#three-toggle').empty();
+								break;
 							case 42:
 								console.log(id + ' fnLoose called');
 								event.stopImmediatePropagation();
 								backNav('#btnLoose-', listBtnLoose.length, '#loose-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
 								break;
 							case 49:
 								console.log(id + ' fnLoose called');
@@ -2219,16 +2252,18 @@ function createButton(buttonName) {
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
-									if (count < 3) {
+									if (count < 2) {
 										count++;
 										nextStep(count, '#btnLoose-', listBtnLoose);
 										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnLoose-' + count).removeClass('active');
-										forceBack('#btnLoose-', listBtnLoose.length, '#loose-menu-btn', '#logon-menu&t=0.15s');
+										$('#three-toggle').empty();
+										forceBack('#btnLoose-', listBtnLoose.length, '#loose-menu-btn', '#weapon-menu&t=0.15s');
 										count = 0;
-										createButton('logon');
+										createButton('weapon');
 									}
 								}
 								break;
@@ -2242,7 +2277,7 @@ function createButton(buttonName) {
 					showBtmNav('#btnLoose-');
 				});
 
-				togggleBtn(2, '#btnWeapon-2', toggLabelA, toggLabelB);
+				//toggleBtn(2, '#btnLoose-2', toggLabelA, toggLabelB);
 				setBtnActive('#btnLoose-', listBtnLoose);
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnLoose-47, #btnLoose-48');
@@ -2311,7 +2346,7 @@ function enableBtnNumber(menuNameUl, arrName, btnName) {
 	});
 }
 
-function togggleBtn(num, btnName, toggLabelA, toggLabelB) {
+function toggleBtn(num, btnName, toggLabelA, toggLabelB) {
 	$(btnName).toggleButton({
 		on: function () {
 			console.log('tugel on')
@@ -2343,6 +2378,20 @@ function initiateToggleBtn(btnName, num, arrName) {
 		hideNumBtn(btnName, 30, 40);
 		disableBtnNumber(btnName);
 	}, 125);
+}
+
+function singleToggleBtn(targetTreeNum, currTarget, btnArr, toggleId) {
+	let btn = btnArr.toString()
+
+	$(currTarget).html(btn);
+
+	document.getElementById('tree-' + targetTreeNum).innerHTML =
+		'<span>' + btn + '</span>' +
+		'<span id="treeNum-' + targetTreeNum + '" class="ml-2">' + '</span>';
+	document.getElementById('input-btn-out').innerHTML = '<span class="active">' + btn + '</span>';
+
+	$(toggleId).addClass('active');
+	$(toggleId).siblings('.active').removeClass('active');
 }
 
 function backNav(labelBtn, arrLen, menuName, url, btnToCreate) {

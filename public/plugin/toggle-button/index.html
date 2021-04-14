@@ -59,19 +59,24 @@ google_ad_height = 90;
 			data-off-icon="remove" data-off-color="danger" data-on-text="Include"> Option 1</label></li>
 		<li><label><input name="rg2_1" type="radio" value="0" checked> Two states</label></li>
 		<li><label><input name="rg2_1" type="radio" value="1"> Option 1</label></li>
-		<li><label><input name="rg2_2" type="radio" value="0" data-icon="none" checked> jancok</label></li>
-		<li><label><input name="rg2_2" type="radio" value="1" data-icon="none"> asu</label></li>
-		<li><label><input name="rg2_2" type="radio" value="2" data-icon="none"> kadal</label></li>
+		<li><label><input name="rg2_2" type="radio" value="0" checked> jancok</label></li>
+		<li><label><input name="rg2_2" type="radio" value="1" > asu</label></li>
+		<li><label><input name="rg2_2" type="radio" value="2" > kadal</label></li>
 		<li><label><input name="rg2_3" type="radio" value="0" checked> Four states</label></li>
 		<li><label><input name="rg2_3" type="radio" value="1"> Option 1</label></li>
 		<li><label><input name="rg2_3" type="radio" value="2"> Option 2</label></li>
 		<li><label><input name="rg2_3" type="radio" value="3"> Option 2</label></li>
 	</ul>
-
+	<button class="toggle">Toggle me</button>
 	<script>
 		$('#ex2').replaceCheckboxesWithButtons({
-			onicon: 'ok',
+			multi_icon: false,
 		});
+		$('button.toggle').makeToggleButton({
+    onicon: 'check', // bootstrap glyph names
+    oncolor: 'success', // bootstrap classes
+    officon: 'unchecked',
+  });
 	</script>
 	<br><br>
 
