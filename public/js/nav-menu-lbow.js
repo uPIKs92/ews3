@@ -187,10 +187,10 @@ const listBtnSetcps = [
 ];
 
 const listBtnSetpsa = [
-	['areano', ''], ['add', ''], ['BTM1', ''], ['min-km', ''], ['btm2', ''], ['max-km', ''], ['On', ''], ['', ''], ['', ''], ['', ''],
+	['areano', 'active'], ['add', ''], ['BTM1', ''], ['min-km', ''], ['btm2', ''], ['max-km', ''], ['On', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
+	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
 	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
@@ -441,6 +441,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnSetpwd-', listBtnSetpwd.length, '#setpwd-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnSetpwd called');
 								event.stopImmediatePropagation()
@@ -505,7 +508,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnSetpwd-', listBtnSetpwd);
 				$('.cursor i').removeClass('d-none');
 				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-				delChar('#btnSetpwd-47, #btnSetpwd-48');
+				delChar('#btnSetpwd-48, #keyboard-clear');
 				return;
 			}
 			case 'maps': {
@@ -635,6 +638,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnRrings-', listBtnRrings.length, '#rrings-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnRrings called');
 								event.stopImmediatePropagation()
@@ -664,7 +670,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnRrings-', listBtnRrings);
 				hideRightNav();
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnRrings-47, #btnRrings-48');
+				delChar('#btnRrings-48');
 				return;
 			}
 			case 'creftr': {
@@ -737,6 +743,9 @@ function createButton(buttonName) {
 								console.log(id + ' fnCreftr called');
 								event.stopImmediatePropagation();
 								backNav('#btnCreftr-', listBtnCreftr.length, '#creftr-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
 								break;
 							case 49:
 								console.log(id + ' fnCreftr called');
@@ -817,7 +826,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnCreftr-', listBtnCreftr);
 				hideNumBtn('#btnCreftr-', 30, 40);
 				disableBtnNumber('#btnCreftr-');
-				delChar('#btnCreftr-47, #btnCreftr-48');
+				delChar('#btnCreftr-48, #keyboard-clear');
 				return;
 			}
 			case 'crevec': {
@@ -879,6 +888,9 @@ function createButton(buttonName) {
 								console.log(id + ' fnCrevec called');
 								event.stopImmediatePropagation();
 								backNav('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
 								break;
 							case 49:
 								console.log(id + ' fnCrevec called');
@@ -945,7 +957,7 @@ function createButton(buttonName) {
 				toggleBtn(1, '#btnCrevec-1', toggLabelA, toggLabelB);
 				toggleBtn(2, '#btnCrevec-2', toggLabelC, toggLabelD);
 				setBtnActive('#btnCrevec-', listBtnCrevec);
-				delChar('#btnCrevec-47, #btnCrevec-48');
+				delChar('#btnCrevec-48');
 				return;
 			}
 			case 'line': {
@@ -1018,6 +1030,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnLine-', listBtnLine.length, '#line-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnLine called');
 								event.stopImmediatePropagation()
@@ -1071,7 +1086,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnLine-', listBtnLine);
 				$('#input-VK').val(listBtnLine[0][0]);
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnLine-47, #btnLine-48');
+				delChar('#btnLine-48');
 				return;
 			}
 			case 'crecir': {
@@ -1158,6 +1173,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnCrecir-', listBtnCrecir.length, '#crecir-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnCrecir called');
 								event.stopImmediatePropagation();
@@ -1223,7 +1241,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnCrecir-', listBtnCrecir);
 				hideNumBtn('#btnCrecir-', 30, 40);
 				disableBtnNumber('#btnCrecir-');
-				delChar('#btnCrecir-47, #btnCrecir-48');
+				delChar('#btnCrecir-48');
 				return;
 			}
 			case 'crearc': {
@@ -1311,6 +1329,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnCrearc-', listBtnCrearc.length, '#crearc-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnCrearc called');
 								event.stopImmediatePropagation();
@@ -1370,7 +1391,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnCrearc-', listBtnCrearc);
 				$('.cursor i').removeClass('d-none');
 				enableBtnNumber('#crearc-menu-btn li', listBtnCrearc, 'btnCrearc-');
-				delChar('#btnCrearc-47, #btnCrearc-48');
+				delChar('#btnCrearc-48');
 				return;
 			}
 			case 'ppibrt': {
@@ -1410,6 +1431,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnPpibrt-', listBtnPpibrt.length, '#ppibrt-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnPpibrt called');
 								event.stopImmediatePropagation()
@@ -1439,7 +1463,7 @@ function createButton(buttonName) {
 
 				setBtnActive('#btnPpibrt-', listBtnPpibrt);
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnPpibrt-47, #btnPpibrt-48');
+				delChar('#btnPpibrt-48');
 				return;
 			}
 			case 'commet': {
@@ -1471,6 +1495,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnCommet-', listBtnCommet.length, '#commet-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnCommet called');
 								event.stopImmediatePropagation()
@@ -1501,7 +1528,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnCommet-', listBtnCommet);
 				hideRightNav();
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnCommet-47, #btnCommet-48');
+				delChar('#btnCommet-48');
 				return;
 			}
 			case 'movbtm': {
@@ -1539,6 +1566,9 @@ function createButton(buttonName) {
 								console.log(id + ' fnMovbtm called');
 								event.stopImmediatePropagation();
 								backNav('#btnMovbtm-', listBtnMovbtm.length, '#movbtm-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
 								break;
 							case 49:
 								console.log(id + ' fnMovbtm called');
@@ -1695,7 +1725,7 @@ function createButton(buttonName) {
 				toggleBtn(1, '#btnMovbtm-1', toggLabelA, toggLabelB);
 				showToggle(toggLabelA, toggLabelB);
 				setBtnActive('#btnMovbtm-', listBtnMovbtm);
-				delChar('#btnMovbtm-47, #btnMovbtm-48');
+				delChar('#keyboard-clear, #btnMovbtm-48');
 				$('.cursor i').removeClass('d-none');
 				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 				return;
@@ -1752,6 +1782,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnLabpos-', listBtnLabpos.length, '#labpos-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnLabpos called');
 								event.stopImmediatePropagation()
@@ -1782,7 +1815,7 @@ function createButton(buttonName) {
 				$('#input-VK').val(listBtnLabpos[11][0]);
 				count = 11;
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnLabpos-47, #btnLabpos-48');
+				delChar('#btnLabpos-48');
 				return;
 			}
 			case 'trklin': {
@@ -1891,6 +1924,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnTrklin-', listBtnTrklin.length, '#trklin-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnTrklin called');
 								event.stopImmediatePropagation();
@@ -1919,7 +1955,7 @@ function createButton(buttonName) {
 
 				setBtnActive('#btnTrklin-', listBtnTrklin);
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnTrklin-47, #btnTrklin-48');
+				delChar('#btnTrklin-48');
 				return;
 			}
 			case 'trksel': {
@@ -2038,6 +2074,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnTrksel-', listBtnTrksel.length, '#trksel-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnTrksel called');
 								event.stopImmediatePropagation();
@@ -2066,7 +2105,7 @@ function createButton(buttonName) {
 
 				setBtnActive('#btnTrksel-', listBtnTrksel);
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnTrksel-47, #btnTrksel-48');
+				delChar('#btnTrksel-48');
 				return;
 			}
 			case 'settrk': {
@@ -2121,6 +2160,9 @@ function createButton(buttonName) {
 								console.log(id + ' fnSettrk called');
 								event.stopImmediatePropagation();
 								backNav('#btnSettrk-', listBtnSettrk.length, '#settrk-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
 								break;
 							case 49:
 								console.log(id + ' fnSettrk called');
@@ -2177,7 +2219,7 @@ function createButton(buttonName) {
 				disableBtnNumber('#btnSettrk-');
 				setBtnActive('#btnSettrk-', listBtnSettrk);
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnSettrk-47, #btnSettrk-48');
+				delChar('#keyboard-clear, #btnSettrk-48');
 				return;
 			}
 			case 'weapon': {
@@ -2290,6 +2332,9 @@ function createButton(buttonName) {
 								backNav('#btnLoose-', listBtnLoose.length, '#loose-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								$('#three-toggle').empty();
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnLoose called');
 								event.stopImmediatePropagation();
@@ -2342,7 +2387,7 @@ function createButton(buttonName) {
 
 				setBtnActive('#btnLoose-', listBtnLoose);
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnLoose-47, #btnLoose-48');
+				delChar('#keyboard-clear, #btnLoose-48');
 				return;
 			}
 			case 'histry': {
@@ -2379,6 +2424,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnHistry-', listBtnHistry.length, '#histry-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnHistry called');
 								event.stopImmediatePropagation()
@@ -2408,7 +2456,7 @@ function createButton(buttonName) {
 
 				setBtnActive('#btnHistry-', listBtnHistry);
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnHistry-47, #btnHistry-48');
+				delChar('#btnHistry-48');
 				return;
 			}
 			case 'radplt': {
@@ -2494,7 +2542,6 @@ function createButton(buttonName) {
 								}, 125);
 
 								hideNumBtn('#btnSetcps-', 30, 40);
-								disableBtnNumber('#btnSetcps-');
 								break;
 							case 1:
 								console.log(id + ' fnSetcps called');
@@ -2530,8 +2577,7 @@ function createButton(buttonName) {
 									}
 								});
 
-								showNumBtn('#btnSetcps-', 30, 40);
-								enableBtnNumber('#setcps-menu-btn li', listBtnSetcps, 'btnSetcps-');
+								showNumBtn('#btnSetcps-', 30, 40, listBtnSetcps);
 								break;
 							case 40:
 								console.log(id + ' fnLine called');
@@ -2544,6 +2590,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnSetcps-', listBtnSetcps.length, '#setcps-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								$('#three-toggle').empty();
+								break;
+							case 47:
+								delCharByOne();
 								break;
 							case 49:
 								console.log(id + ' fnSetcps called');
@@ -2564,7 +2613,6 @@ function createButton(buttonName) {
 											case 0:
 												showToggle(toggLabelA, toggLabelB);
 												hideNumBtn('#btnSetcps-', 30, 40);
-												disableBtnNumber('#btnSetcps-');
 												break;
 											case 1:
 												$('#three-toggle').empty();
@@ -2583,8 +2631,7 @@ function createButton(buttonName) {
 												}
 
 												$('#tg-0').addClass('active');
-												showNumBtn('#btnSetcps-', 30, 40);
-												enableBtnNumber('#setcps-menu-btn li', listBtnSetcps, 'btnSetcps-');
+												showNumBtn('#btnSetcps-', 30, 40, listBtnSetcps);
 												break;
 										}
 									} else {
@@ -2599,17 +2646,61 @@ function createButton(buttonName) {
 								break;
 						}
 					}
-					bindBtnNumber(listBtnSetcps, id);
+					bindBtnNumber(listBtnSetcps, id)
 				}
 
 				hideNumBtn('#btnSetcps-', 30, 40);
-				disableBtnNumber('#btnSetcps-');
 				toggleBtn(0, '#btnSetcps-0', toggLabelA, toggLabelB);
 				setBtnActive('#btnSetcps-', listBtnSetcps);
-				delChar('#btnSetcps-47, #btnSetcps-48');
+				delChar('#btnSetcps-48');
 				return;
 			}
 			case 'setpsa': {
+				for (let varSetpsa = 0; varSetpsa < listBtnSetpsa.length; varSetpsa++) {
+					generateButtonMenu('#setpsa-menu-btn', 'btnSetpsa-', varSetpsa, listBtnSetpsa[varSetpsa][0]);
+					registToTree(varSetpsa, listBtnSetpsa[varSetpsa][0], 7);
+					$('#btnSetpsa-' + varSetpsa).on("click", { num: varSetpsa }, fnSetpsa);
+				}
+
+				function fnSetpsa(event) {
+					let id = event.data.num;
+
+					if (listBtnSetpsa[id][0] != '') {
+						if (id < 7) {
+							initiateLoadedMenu('#btnSetpsa-', id, listBtnSetpsa[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								showNumBtn('#btnSetpsa-', 30, 40);
+								enableBtnNumber('#setpsa-menu-btn li', listBtnSetpsa, 'btnSetpsa-');
+								break;
+							case 1:
+								hideNumBtn('#btnSetpsa-', 30, 40);
+								disableBtnNumber('#btnSetpsa-');
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+								backNav('#btnSetpsa-', listBtnSetpsa.length, '#setpsa-menu-btn', '#radplt-menu&t=0.15s', 'radplt');
+								$('#three-toggle').empty();
+								break;
+							case 42:
+								console.log(id + ' fnSetpsa called');
+								event.stopImmediatePropagation();
+								backNav('#btnSetpsa-', listBtnSetpsa.length, '#setpsa-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+								break;
+							case 47:
+								delCharByOne();
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSetpsa, id);
+				}
+				setBtnActive('#btnSetpsa-', listBtnSetpsa);
+				delChar('#btnSetpsa-48');
 				return;
 			}
 			case 'pltsel': {
@@ -2659,6 +2750,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnPltsel-', listBtnPltsel.length, '#pltsel-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 47:
+								delCharByOne();
+								break;
 							case 49:
 								console.log(id + ' fnPltsel called');
 								event.stopImmediatePropagation()
@@ -2689,7 +2783,7 @@ function createButton(buttonName) {
 				$('#input-VK').val(listBtnPltsel[2][0]);
 				count = 2;
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnPltsel-47, #btnPltsel-48');
+				delChar('#btnPltsel-48');
 				return;
 			}
 		}
@@ -2730,29 +2824,6 @@ function makeMenuRight() {
 		$('#right-menu-btn').append('<li ' + 'id="btnRight-' + j + '" class="btn btn-box"><span>' +
 			listBtnRight[j] + '</span></li>');
 	}
-}
-
-function bindBtnNumber(arrName, curNum) {
-	console.log('bind to: btn ' + curNum);
-	if ((curNum >= 30) && (curNum < 40)) {
-		$('#input-VK').val(arrName[curNum][0].toString());
-		$('.cursor i').css('left', '10.5px');
-
-		delChar();
-	}
-}
-
-function disableBtnNumber(btnName) {
-	for (let c = 30; c < 40; c++) {
-		$(btnName + c).off();
-	}
-	console.log('disabled')
-}
-
-function enableBtnNumber(menuNameUl, arrName, btnName) {
-	$(menuNameUl).on('click', function (e) {
-		bindBtnNumber(arrName, (e.currentTarget.id).replace(btnName, ''));
-	});
 }
 
 function toggleBtn(num, btnName, toggLabelA, toggLabelB) {
@@ -2942,15 +3013,45 @@ function callAlphaVK(btnName) {
 	});
 }
 
-function showNumBtn(btnName, numStart, numEnd) {
+function showNumBtn(btnName, numStart, numEnd, arrName,) {
+	disableBtnNumber(btnName);
+
 	for (let a = parseInt(numStart); a <= parseInt(numEnd); a++) {
 		$(btnName + a).children('span').fadeTo(100, 1);
+		$(btnName + a).on("click", { num: a}, setFn);
+	}
+
+	function setFn(event){
+		let id = event.data.num;
+		event.stopImmediatePropagation();
+		bindBtnNumber(arrName, id);
 	}
 }
 
 function hideNumBtn(btnName, numStart, numEnd) {
 	for (let b = parseInt(numStart); b < parseInt(numEnd); b++) {
 		$(btnName + b).children('span').fadeTo(100, 0);
+	}
+
+	disableBtnNumber(btnName);
+}
+
+function disableBtnNumber(btnName) {
+	for (let c = 30; c < 40; c++) {
+		$(btnName + c).off();
+	}
+	console.log('disabled')
+}
+
+function bindBtnNumber(arrName, curNum) {
+	if ((curNum >= 30) && (curNum < 40)) {
+		$('#input-VK').val(function () {
+			return this.value + arrName[curNum][0].toString()
+		});
+
+		$('.cursor i').css('left', '+=10.5px');
+		delChar();/**/
+		console.log('bind to: btn ' + curNum);
 	}
 }
 
@@ -2963,6 +3064,22 @@ function delChar(btnName) {
 	$(btnName).on('click', function () {
 		clearVK();
 	});
+}
+
+function delCharByOne() {
+	let currentCaretField = $('#input-VK').val().length;
+	let str = $('#input-VK').val();
+	let char_pos = currentCaretField - 1;
+
+	if (currentCaretField > 0) {
+		part1 = str.substring(0, char_pos);
+		part2 = str.substring(char_pos + 1, str.length);
+		$('#input-VK').val(part1 + part2);
+		$('#input-VK').caret(currentCaretField - 1);
+		$('.cursor i').css('left', '-=10.5px');
+	} else {
+		$('.cursor i').css('left', '0');
+	}
 }
 
 function hideBtmNav(btnName) {

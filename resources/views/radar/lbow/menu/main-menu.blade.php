@@ -190,7 +190,7 @@
                                 bkspc
                             </button>
                         </li>
-                        <li class="btn btn-box-sm">dlfld</li>
+                        <li class="btn btn-box-sm" id="keyboard-clear">dlfld</li>
                         <li>
                             <button type="button" class="btn btn-box-sm vKeyboard-enter vKeyboard-double"
                                 id="keyboard-enter">
