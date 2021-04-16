@@ -2546,6 +2546,7 @@ function createButton(buttonName) {
 				return;
 			}
 			case 'setpsa': {
+				let count = 0;
 				const btn = ['ADD', 'AMEND', 'CANCEL'];
 				let toggLabelA1 = listBtnSetpsa[2][0];
 				let toggLabelA2 = 'stt-az';
@@ -2567,8 +2568,8 @@ function createButton(buttonName) {
 						$('#btnSetpsa-' + varSetpsa).addClass('text-none');
 					}
 
-					if (varSetpsa === 2) {
-						$('#btnSetpsa-' + varSetpsa).attr('value', 'tg-on');
+					if (varSetpsa === 2 || varSetpsa === 4) {
+						$('#btnSetpsa-' + varSetpsa).attr('value', 'tg-off');
 					}
 				}
 
@@ -2603,8 +2604,9 @@ function createButton(buttonName) {
 								$('#three-toggle').empty();
 
 								initiateToggleBtn('#btnSetpsa-', id, listBtnSetpsa[id][0]);
-								if ($('#btnSetpsa-' + id).attr('value') == 'tg-off') {
+								if ($('#btnSetpsa-' + id).attr('value') != 'tg-on') {
 									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
 										showNumBtn('#btnSetpsa-', 30, 40, listBtnSetpsa);
 									}, 125);
 								}
@@ -2616,6 +2618,7 @@ function createButton(buttonName) {
 
 								initiateToggleBtn('#btnSetpsa-', id, listBtnSetpsa[id][0]);
 								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
 									showNumBtn('#btnSetpsa-', 30, 40, listBtnSetpsa);
 								}, 125);
 								break;
@@ -2625,8 +2628,9 @@ function createButton(buttonName) {
 								$('#three-toggle').empty();
 
 								initiateToggleBtn('#btnSetpsa-', id, listBtnSetpsa[id][0]);
-								if ($('#btnSetpsa-' + id).hasClass('btn btn-box text-none active toggle-btn toggle_button__on')) {
+								if ($('#btnSetpsa-' + id).attr('value') != 'tg-on') {
 									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
 										showNumBtn('#btnSetpsa-', 30, 40, listBtnSetpsa);
 									}, 125);
 								}
@@ -2638,6 +2642,7 @@ function createButton(buttonName) {
 
 								initiateToggleBtn('#btnSetpsa-', id, listBtnSetpsa[id][0]);
 								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
 									showNumBtn('#btnSetpsa-', 30, 40, listBtnSetpsa);
 								}, 125);
 								break;
@@ -2667,6 +2672,61 @@ function createButton(buttonName) {
 								break;
 							case 47:
 								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSetpsa called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 7) {
+										count++;
+										nextStep(count, '#btnSetpsa-', listBtnSetpsa);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+
+										switch (count) {
+											case 1:
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+
+												initiateToggleThree(btn);
+												hideNumBtn('#btnSetpsa-', 30, 40);
+												break;
+											case 2:
+												showToggle(toggLabelA1, toggLabelA2);
+												hideNumBtn('#btnSetpsa-', 30, 40);
+												break;
+											case 3:
+												showToggle(toggLabelB1, toggLabelB2);
+												showNumBtn('#btnSetpsa-', 30, 40, listBtnSetpsa);
+												break;
+											case 4:
+												showToggle(toggLabelC1, toggLabelC2);
+												hideNumBtn('#btnSetpsa-', 30, 40);
+												break;
+											case 5:
+												showToggle(toggLabelD1, toggLabelD2);
+												showNumBtn('#btnSetpsa-', 30, 40, listBtnSetpsa);
+												break;
+											case 6:
+												showToggle(toggLabelE1, toggLabelE2);
+												hideNumBtn('#btnSetpsa-', 30, 40);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSetpsa-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnSetpsa-', listBtnSetpsa.length, '#setpsa-menu-btn', '#radplt-menu&t=0.15s');
+										count = 0;
+										createButton('radplt');
+									}
+								}
 								break;
 						}
 					}
