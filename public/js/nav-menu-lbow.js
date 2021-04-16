@@ -2164,6 +2164,16 @@ function createButton(buttonName) {
 								window.location = '#settis-menu&t=0.15s';
 								createButton('settis');
 								break;
+							case 4:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#setmti-menu&t=0.15s';
+								createButton('setmti');
+								break;
 							case 10:
 								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
@@ -2193,6 +2203,39 @@ function createButton(buttonName) {
 								$('#message-btn-out').empty();
 								window.location = '#setbrn-menu&t=0.15s';
 								createButton('setbrn');
+								break;
+							case 14:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#setjse-menu&t=0.15s';
+								createButton('setjse');
+								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
+								break;
+							case 18:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#antrot-menu&t=0.15s';
+								createButton('antrot');
+								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
+								break;
+							case 19:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#batovr-menu&t=0.15s';
+								createButton('batovr');
+								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
 								break;
 							case 20:
 								console.log(id + ' fnRadcon called');
@@ -2225,6 +2268,17 @@ function createButton(buttonName) {
 								createButton('stgjit');
 								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
 								break;
+							case 24:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation()
+								clearMenu('#Radcon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#prfd-menu&t=0.15s';
+								printBtnTree(listBtnRadcon[id]);
+								createButton('prfd');
+								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
+								break;
 							case 33:
 								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation()
@@ -2235,6 +2289,16 @@ function createButton(buttonName) {
 								printBtnTree(listBtnRadcon[id]);
 								createButton('frqmde');
 								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
+								break;
+							case 34:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation()
+								clearMenu('#Radcon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#divfrq-menu&t=0.15s';
+								printBtnTree(listBtnRadcon[id]);
+								createButton('divfrq');
 								break;
 						}
 					}
@@ -3044,6 +3108,469 @@ function createButton(buttonName) {
 				count = 0;
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnFrqmde-48');
+				return;
+			}
+			case 'setmti': {
+				let count = 0;
+				let toggLabelA = listBtnSetmti[0][0];
+				let toggLabelB = 'RN/CF';
+
+				for (let varSetmti = 0; varSetmti < listBtnSetmti.length; varSetmti++) {
+					generateButtonMenu('#setmti-menu-btn', 'btnSetmti-', varSetmti, listBtnSetmti[varSetmti][0]);
+					registToTree(varSetmti, listBtnSetmti[varSetmti][0], 38);
+					$('#btnSetmti-' + varSetmti).on("click", { num: varSetmti }, fnSetmti);
+
+					if ((varSetmti < 29)) {
+						$('#btnSetmti-' + varSetmti).addClass('text-none');
+					}
+
+					if ((varSetmti > 0 && varSetmti < 9) || (varSetmti > 10 && varSetmti < 19)) {
+						$('#tree-' + varSetmti).addClass('sect');
+					}/**/
+				}
+
+				function fnSetmti(event) {
+					let id = event.data.num;
+
+					if (listBtnSetmti[id][0] != '') {
+						if (id < 38) {
+							initiateLoadedMenu('#btnSetmti-', id, listBtnSetmti[id][0]);
+							count = id;
+						}
+
+						if ((id > 0 && id < 9) || (id > 10 && id < 19)) {
+							$('#tree-' + id).show();
+							$('#tree-' + id).siblings('.sect').hide();
+						}
+
+						switch (id) {
+							case 0:
+								initiateToggleBtn('#btnSetmti-', id, listBtnSetmti[id][0]);
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnSetmti-', 30, 40, listBtnSetmti);
+								}, 125);
+								break;
+							case 40:
+								console.log(id + ' fnSetmti called');
+								event.stopImmediatePropagation();
+								backNav('#btnSetmti-', listBtnSetmti.length, '#setmti-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnSetmti called');
+								event.stopImmediatePropagation();
+								backNav('#btnSetmti-', listBtnSetmti.length, '#setmti-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSetmti called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnSetmti-', listBtnSetmti);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSetmti-' + count).removeClass('active');
+										forceBack('#btnSetmti-', listBtnSetmti.length, '#setmti-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSetmti, id);
+				}
+				toggleBtn(0, '#btnSetmti-0', toggLabelA, toggLabelB);
+				showToggle(toggLabelA, toggLabelB);
+				setBtnActive('#btnSetmti-', listBtnSetmti);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnSetmti-48');
+				return;
+			}
+			case 'setjse': {
+				let count = 0;
+
+				for (let varSetjse = 0; varSetjse < listBtnSetjse.length; varSetjse++) {
+					generateButtonMenu('#setjse-menu-btn', 'btnSetjse-', varSetjse, listBtnSetjse[varSetjse][0]);
+					registToTree(varSetjse, listBtnSetjse[varSetjse][0], 3);
+					$('#btnSetjse-' + varSetjse).on("click", { num: varSetjse }, fnSetjse);
+				}
+
+				function fnSetjse(event) {
+					let id = event.data.num;
+
+					if (listBtnSetjse[id][0] != '') {
+						if (id < 3) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnSetjse[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnSetjse called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 2:
+								console.log(id + ' fnSetjse called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 40:
+								console.log(id + ' fnSetjse called');
+								event.stopImmediatePropagation();
+								backNav('#btnSetjse-', listBtnSetjse.length, '#setjse-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnSetjse called');
+								event.stopImmediatePropagation();
+								backNav('#btnSetjse-', listBtnSetjse.length, '#setjse-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSetjse called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnSetjse-', listBtnSetjse);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSetjse-' + count).removeClass('active');
+										forceBack('#btnSetjse-', listBtnSetjse.length, '#setjse-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnSetjse-', listBtnSetjse);
+				$('#input-VK').val(listBtnSetjse[0][0]);
+				count = 0;
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnSetjse-48');
+				return;
+			}
+			case 'prfd': {
+				let count = 0;
+
+				for (let varPrfd = 0; varPrfd < listBtnPrfd.length; varPrfd++) {
+					generateButtonMenu('#prfd-menu-btn', 'btnPrfd-', varPrfd, listBtnPrfd[varPrfd][0]);
+					registToTree(varPrfd, listBtnPrfd[varPrfd][0], 3);
+					$('#btnPrfd-' + varPrfd).on("click", { num: varPrfd }, fnPrfd);
+				}
+
+				function fnPrfd(event) {
+					let id = event.data.num;
+
+					if (listBtnPrfd[id][0] != '') {
+						if (id < 3) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnPrfd[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnPrfd called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 2:
+								console.log(id + ' fnPrfd called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 40:
+								console.log(id + ' fnPrfd called');
+								event.stopImmediatePropagation();
+								backNav('#btnPrfd-', listBtnPrfd.length, '#prfd-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnPrfd called');
+								event.stopImmediatePropagation();
+								backNav('#btnPrfd-', listBtnPrfd.length, '#prfd-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnPrfd called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnPrfd-', listBtnPrfd);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnPrfd-' + count).removeClass('active');
+										forceBack('#btnPrfd-', listBtnPrfd.length, '#prfd-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnPrfd-', listBtnPrfd);
+				$('#input-VK').val(listBtnPrfd[0][0]);
+				count = 0;
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnPrfd-48');
+				return;
+			}
+			case 'divfrq': {
+				let count = 0;
+
+				for (let varDivfrq = 0; varDivfrq < listBtnDivfrq.length; varDivfrq++) {
+					generateButtonMenu('#divfrq-menu-btn', 'btnDivfrq-', varDivfrq, listBtnDivfrq[varDivfrq][0]);
+					registToTree(varDivfrq, listBtnDivfrq[varDivfrq][0], 1);
+					$('#btnDivfrq-' + varDivfrq).on("click", { num: varDivfrq }, fnDivfrq);
+				}
+
+				function fnDivfrq(event) {
+					let id = event.data.num;
+
+					if (listBtnDivfrq[id][0] != '') {
+						if (id < 1) {
+							initiateLoadedMenu('#btnDivfrq-', id, listBtnDivfrq[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnDivfrq called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+								console.log(id + ' fnDivfrq called');
+								event.stopImmediatePropagation();
+								backNav('#btnDivfrq-', listBtnDivfrq.length, '#divfrq-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnDivfrq called');
+								event.stopImmediatePropagation();
+								backNav('#btnDivfrq-', listBtnDivfrq.length, '#divfrq-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnDivfrq called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 0) {
+										count++;
+										nextStep(count, '#btnDivfrq-', listBtnDivfrq);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnDivfrq-' + count).removeClass('active');
+										forceBack('#btnDivfrq-', listBtnDivfrq.length, '#divfrq-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnDivfrq, id);
+				}
+
+				setBtnActive('#btnDivfrq-', listBtnDivfrq);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnDivfrq-48');
+				return;
+			}
+			case 'antrot': {
+				let count = 0;
+
+				for (let varAntrot = 0; varAntrot < listBtnAntrot.length; varAntrot++) {
+					generateButtonMenu('#antrot-menu-btn', 'btnAntrot-', varAntrot, listBtnAntrot[varAntrot][0]);
+					registToTree(varAntrot, listBtnAntrot[varAntrot][0], 3);
+					$('#btnAntrot-' + varAntrot).on("click", { num: varAntrot }, fnAntrot);
+				}
+
+				function fnAntrot(event) {
+					let id = event.data.num;
+
+					if (listBtnAntrot[id][0] != '') {
+						if (id < 3) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnAntrot[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnAntrot called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 2:
+								console.log(id + ' fnAntrot called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 40:
+								console.log(id + ' fnAntrot called');
+								event.stopImmediatePropagation();
+								backNav('#btnAntrot-', listBtnAntrot.length, '#antrot-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnAntrot called');
+								event.stopImmediatePropagation();
+								backNav('#btnAntrot-', listBtnAntrot.length, '#antrot-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnAntrot called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnAntrot-', listBtnAntrot);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnAntrot-' + count).removeClass('active');
+										forceBack('#btnAntrot-', listBtnAntrot.length, '#antrot-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnAntrot-', listBtnAntrot);
+				$('#input-VK').val(listBtnAntrot[0][0]);
+				count = 0;
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnAntrot-48');
+				return;
+			}
+			case 'batovr': {
+				let count = 0;
+
+				for (let varBatovr = 0; varBatovr < listBtnBatovr.length; varBatovr++) {
+					generateButtonMenu('#batovr-menu-btn', 'btnBatovr-', varBatovr, listBtnBatovr[varBatovr][0]);
+					registToTree(varBatovr, listBtnBatovr[varBatovr][0], 3);
+					$('#btnBatovr-' + varBatovr).on("click", { num: varBatovr }, fnBatovr);
+				}
+
+				function fnBatovr(event) {
+					let id = event.data.num;
+
+					if (listBtnBatovr[id][0] != '') {
+						if (id < 3) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnBatovr[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnBatovr called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 2:
+								console.log(id + ' fnBatovr called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 40:
+								console.log(id + ' fnBatovr called');
+								event.stopImmediatePropagation();
+								backNav('#btnBatovr-', listBtnBatovr.length, '#batovr-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnBatovr called');
+								event.stopImmediatePropagation();
+								backNav('#btnBatovr-', listBtnBatovr.length, '#batovr-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnBatovr called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnBatovr-', listBtnBatovr);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnBatovr-' + count).removeClass('active');
+										forceBack('#btnBatovr-', listBtnBatovr.length, '#batovr-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnBatovr-', listBtnBatovr);
+				$('#input-VK').val(listBtnBatovr[0][0]);
+				count = 0;
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnBatovr-48');
 				return;
 			}
 			case 'histry': {
