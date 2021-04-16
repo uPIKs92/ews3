@@ -2,206 +2,6 @@ $(function () {
 	$('div[onload]').trigger('onload');
 });
 
-const listBtnRight = [
-	'settrk', 'labpos', 'trksel', 'dimsel', 'page'
-];
-
-const listBtnBottom = [
-	'abort', '.', 'home', '', 'alpha', 'close', '', 'bakspc', 'dltfld', 'enter'
-];
-
-const listBtnMain = [
-	['logon', ''], ['', ''], ['lbow', 'active'], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '']
-];
-
-const listBtnLogon = [
-	'logoff', 'setpwd', '', '', 'maps', 'totes', 'track', 'weapon', 'radcon', 'radplt',
-	'', '', 'ppibrt', 'commet', 'dimsel', '', '', '', '', '',
-	'', '', '', 'movbtm', 'labpos', 'trklin', 'settrk', '', 'histry', '',
-	'', 'stbsel', '', '', 'trklab', 'trksel', 'trkldr', '', '', 'pltsel',
-	'abort', '.', 'home', '', '', '', '', 'bakspc', 'dltfld', 'enter'
-];
-
-const listBtnSetpwd = [
-	['pswrd', 'active'], ['verify', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnMaps = [
-	'return', '', 'rrings', 'polar', 'georef', '', 'updown', ' ', ' ', 'delitm',
-	'', 'adtmap', 'sstnmap', 'ownmap', 'topog', '', 'updstn', '', 'creftr', 'crecir',
-	'', 'secbnd', 'mti', 'tis', 'burn', '', 'endupd', '', 'crevec', 'crearc',
-	'', 'nai', 'nac', 'cps', 'psa', '', '', '', '', '',
-	'abort', '.', 'home', '', '', '', '', 'bakspc', 'dltfld', 'enter',
-];
-
-const listBtnRrings = [
-	['', ''], ['rrings', 'active'], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnCreftr = [
-	['dim', 'active'], ['size', ''], ['steady', ''], ['symbol', ''], ['text', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnCrevec = [
-	['line', 'active'], ['dim', ''], ['steady', ''], ['BTM16', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnLine = [
-	['solid', ''], ['', ''], ['dotted', ''], ['', ''], ['chain', ''], ['', ''], ['dashed', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnCrecir = [
-	['RAD-KM', 'active'], ['line', ''], ['dim', ''], ['steady', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnCrearc = [
-	['START', 'active'], ['MIDDLE', ''], ['END', ''], ['line', ''], ['dim', ''], ['steady', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnPpibrt = [
-	['bakgnd', 'active'], ['1stvid', ''], ['logvid', ''], ['rrings', ''], ['synth', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnCommet = [
-	['', ''], ['zone', 'active'], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnMovbtm = [
-	['', ''], ['georef', 'active'], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnLabpos = [
-	['nw', ''], ['', ''], ['ne', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['auto', 'active'], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['sw', ''], ['', ''], ['se', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnTrklin = [
-	['', ''], ['p-line', ''], ['', ''], ['u-line', ''], ['', ''], ['f-line', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['a-line', ''], ['', ''], ['n-line', ''], ['', ''], ['s-line', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['j-line', ''], ['', ''], ['k-line', ''], ['', ''], ['r-line', ''], ['', ''], ['z-line', ''], ['', ''], ['all', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnTrksel = [
-	['', ''], ['p-on', ''], ['', ''], ['u-on', ''], ['', ''], ['f-on', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['a-on', ''], ['', ''], ['n-on', ''], ['', ''], ['s-on', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['j-on', ''], ['', ''], ['k-on', ''], ['', ''], ['r-on', ''], ['', ''], ['z-on', ''], ['', ''], ['all-on', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnSettrk = [
-	['trkref', 'active'], ['', ''], ['calsgn', ''], ['', ''], ['mode2', ''], ['', ''], ['mode3a', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnWeapon = [
-	['return', ''], ['', ''], ['loose', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnLoose = [
-	['ftr', 'active'], ['kts', ''], ['TGT', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['alpha', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnHistry = [
-	['plot', 'active'], ['track', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnRadplt = [
-	['return', ''], ['', ''], ['setcps', ''], ['setpsa', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnSetcps = [
-	['On', 'active'], ['BTM', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnSetpsa = [
-	['areano', 'active'], ['add', ''], ['BTM1', ''], ['MIN-KM', ''], ['BTM2', ''], ['MAX-KM', ''], ['On', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['0', ''], ['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', ''], ['6', ''], ['7', ''], ['8', ''], ['9', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
-const listBtnPltsel = [
-	['none', ''], ['', ''], ['pri', 'active'], ['', ''], ['sec', ''], ['', ''], ['all', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
-	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
-];
-
 var stateForLineBtn = 0;
 var countForLineState = 0;
 
@@ -291,6 +91,15 @@ function createButton(buttonName) {
 								$('#message-btn-out').empty();
 								window.location = '#weapon-menu&t=0.15s';
 								createButton('weapon');
+								break;
+							case 8:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#radcon-menu&t=0.15s';
+								createButton('radcon');
 								break;
 							case 9:
 								console.log(id + ' fnLogon called');
@@ -2317,6 +2126,926 @@ function createButton(buttonName) {
 				delChar('#keyboard-clear, #btnLoose-48');
 				return;
 			}
+			case 'radcon': {
+				for (let varRadcon = 0; varRadcon < listBtnRadcon.length; varRadcon++) {
+					generateButtonMenu('#radcon-menu-btn', 'btnRadcon-', varRadcon, listBtnRadcon[varRadcon]);
+					$('#btnRadcon-' + varRadcon).on("click", { num: varRadcon }, fnRadcon);
+				}
+
+				function fnRadcon(event) {
+					let id = event.data.num;
+
+					if (listBtnRadcon[id][0] != '') {
+						switch (id) {
+							case 0:
+							case 40:
+							case 42:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								backNav('#btnRadcon-', listBtnRadcon.length, '#radcon-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 1:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#gcthr-menu&t=0.15s';
+								createButton('gcthr');
+								break;
+							case 3:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#settis-menu&t=0.15s';
+								createButton('settis');
+								break;
+							case 10:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#nrdet-menu&t=0.15s';
+								createButton('nrdet');
+								break;
+							case 11:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#nrthr-menu&t=0.15s';
+								createButton('nrthr');
+								break;
+							case 13:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#setbrn-menu&t=0.15s';
+								createButton('setbrn');
+								break;
+							case 20:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#mtidet-menu&t=0.15s';
+								createButton('mtidet');
+								break;
+							case 21:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#mtithr-menu&t=0.15s';
+								createButton('mtithr');
+								break;
+							case 23:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation()
+								clearMenu('#Radcon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#stgjit-menu&t=0.15s';
+								printBtnTree(listBtnRadcon[id]);
+								createButton('stgjit');
+								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
+								break;
+							case 33:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation()
+								clearMenu('#Radcon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#frqmde-menu&t=0.15s';
+								printBtnTree(listBtnRadcon[id]);
+								createButton('frqmde');
+								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
+								break;
+						}
+					}
+				}
+				return;
+			}
+			case 'nrdet': {
+				let count = 0;
+
+				for (let varNrdet = 0; varNrdet < listBtnNrdet.length; varNrdet++) {
+					generateButtonMenu('#nrdet-menu-btn', 'btnNrdet-', varNrdet, listBtnNrdet[varNrdet][0]);
+					registToTree(varNrdet, listBtnNrdet[varNrdet][0], 3);
+					$('#btnNrdet-' + varNrdet).on("click", { num: varNrdet }, fnNrdet);
+				}
+
+				function fnNrdet(event) {
+					let id = event.data.num;
+
+					if (listBtnNrdet[id][0] != '') {
+						if (id < 3) {
+							initiateLoadedMenu('#btnNrdet-', id, listBtnNrdet[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+							case 2:
+								console.log(id + ' fnNrdet called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+								console.log(id + ' fnNrdet called');
+								event.stopImmediatePropagation();
+								backNav('#btnNrdet-', listBtnNrdet.length, '#nrdet-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnNrdet called');
+								event.stopImmediatePropagation();
+								backNav('#btnNrdet-', listBtnNrdet.length, '#nrdet-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnNrdet called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 3) {
+										count++;
+										nextStep(count, '#btnNrdet-', listBtnNrdet);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnNrdet-' + count).removeClass('active');
+										forceBack('#btnNrdet-', listBtnNrdet.length, '#nrdet-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnNrdet, id);
+				}
+
+				setBtnActive('#btnNrdet-', listBtnNrdet);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnNrdet-48');
+				return;
+			}
+			case 'mtidet': {
+				let count = 0;
+
+				for (let varMtidet = 0; varMtidet < listBtnMtidet.length; varMtidet++) {
+					generateButtonMenu('#mtidet-menu-btn', 'btnMtidet-', varMtidet, listBtnMtidet[varMtidet][0]);
+					registToTree(varMtidet, listBtnMtidet[varMtidet][0], 3);
+					$('#btnMtidet-' + varMtidet).on("click", { num: varMtidet }, fnMtidet);
+				}
+
+				function fnMtidet(event) {
+					let id = event.data.num;
+
+					if (listBtnMtidet[id][0] != '') {
+						if (id < 3) {
+							initiateLoadedMenu('#btnMtidet-', id, listBtnMtidet[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+							case 2:
+								console.log(id + ' fnMtidet called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+								console.log(id + ' fnMtidet called');
+								event.stopImmediatePropagation();
+								backNav('#btnMtidet-', listBtnMtidet.length, '#mtidet-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnMtidet called');
+								event.stopImmediatePropagation();
+								backNav('#btnMtidet-', listBtnMtidet.length, '#mtidet-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnMtidet called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 3) {
+										count++;
+										nextStep(count, '#btnMtidet-', listBtnMtidet);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnMtidet-' + count).removeClass('active');
+										forceBack('#btnMtidet-', listBtnMtidet.length, '#mtidet-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnMtidet, id);
+				}
+
+				setBtnActive('#btnMtidet-', listBtnMtidet);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnMtidet-48');
+				return;
+			}
+			case 'gcthr': {
+				let count = 0;
+
+				for (let varGcthr = 0; varGcthr < listBtnGcthr.length; varGcthr++) {
+					generateButtonMenu('#gcthr-menu-btn', 'btnGcthr-', varGcthr, listBtnGcthr[varGcthr][0]);
+					registToTree(varGcthr, listBtnGcthr[varGcthr][0], 1);
+					$('#btnGcthr-' + varGcthr).on("click", { num: varGcthr }, fnGcthr);
+				}
+
+				function fnGcthr(event) {
+					let id = event.data.num;
+
+					if (listBtnGcthr[id][0] != '') {
+						if (id < 1) {
+							initiateLoadedMenu('#btnGcthr-', id, listBtnGcthr[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnGcthr called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+								console.log(id + ' fnGcthr called');
+								event.stopImmediatePropagation();
+								backNav('#btnGcthr-', listBtnGcthr.length, '#gcthr-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnGcthr called');
+								event.stopImmediatePropagation();
+								backNav('#btnGcthr-', listBtnGcthr.length, '#gcthr-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnGcthr called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 0) {
+										count++;
+										nextStep(count, '#btnGcthr-', listBtnGcthr);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnGcthr-' + count).removeClass('active');
+										forceBack('#btnGcthr-', listBtnGcthr.length, '#gcthr-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnGcthr, id);
+				}
+
+				setBtnActive('#btnGcthr-', listBtnGcthr);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnGcthr-48');
+				return;
+			}
+			case 'nrthr': {
+				let count = 0;
+
+				for (let varNrthr = 0; varNrthr < listBtnNrthr.length; varNrthr++) {
+					generateButtonMenu('#nrthr-menu-btn', 'btnNrthr-', varNrthr, listBtnNrthr[varNrthr][0]);
+					registToTree(varNrthr, listBtnNrthr[varNrthr][0], 1);
+					$('#btnNrthr-' + varNrthr).on("click", { num: varNrthr }, fnNrthr);
+				}
+
+				function fnNrthr(event) {
+					let id = event.data.num;
+
+					if (listBtnNrthr[id][0] != '') {
+						if (id < 1) {
+							initiateLoadedMenu('#btnNrthr-', id, listBtnNrthr[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnNrthr called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+								console.log(id + ' fnNrthr called');
+								event.stopImmediatePropagation();
+								backNav('#btnNrthr-', listBtnNrthr.length, '#nrthr-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnNrthr called');
+								event.stopImmediatePropagation();
+								backNav('#btnNrthr-', listBtnNrthr.length, '#nrthr-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnNrthr called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 0) {
+										count++;
+										nextStep(count, '#btnNrthr-', listBtnNrthr);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnNrthr-' + count).removeClass('active');
+										forceBack('#btnNrthr-', listBtnNrthr.length, '#nrthr-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnNrthr, id);
+				}
+
+				setBtnActive('#btnNrthr-', listBtnNrthr);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnNrthr-48');
+				return;
+			}
+			case 'mtithr': {
+				let count = 0;
+
+				for (let varMtithr = 0; varMtithr < listBtnMtithr.length; varMtithr++) {
+					generateButtonMenu('#mtithr-menu-btn', 'btnMtithr-', varMtithr, listBtnMtithr[varMtithr][0]);
+					registToTree(varMtithr, listBtnMtithr[varMtithr][0], 1);
+					$('#btnMtithr-' + varMtithr).on("click", { num: varMtithr }, fnMtithr);
+				}
+
+				function fnMtithr(event) {
+					let id = event.data.num;
+
+					if (listBtnMtithr[id][0] != '') {
+						if (id < 1) {
+							initiateLoadedMenu('#btnMtithr-', id, listBtnMtithr[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnMtithr called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+								console.log(id + ' fnMtithr called');
+								event.stopImmediatePropagation();
+								backNav('#btnMtithr-', listBtnMtithr.length, '#mtithr-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnMtithr called');
+								event.stopImmediatePropagation();
+								backNav('#btnMtithr-', listBtnMtithr.length, '#mtithr-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnMtithr called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 0) {
+										count++;
+										nextStep(count, '#btnMtithr-', listBtnMtithr);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnMtithr-' + count).removeClass('active');
+										forceBack('#btnMtithr-', listBtnMtithr.length, '#mtithr-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnMtithr, id);
+				}
+
+				setBtnActive('#btnMtithr-', listBtnMtithr);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnMtithr-48');
+				return;
+			}
+			case 'settis': {
+				let count = 0;
+				let toggLabelA1 = listBtnSettis[1][0];
+				let toggLabelA2 = 'Off';
+				let toggLabelB1 = listBtnSettis[2][0];
+				let toggLabelB2 = 'stt-az';
+				let toggLabelC1 = listBtnSettis[3][0];
+				let toggLabelC2 = 'end-az';
+
+				for (let varSettis = 0; varSettis < listBtnSettis.length; varSettis++) {
+					generateButtonMenu('#settis-menu-btn', 'btnSettis-', varSettis, listBtnSettis[varSettis][0]);
+					registToTree(varSettis, listBtnSettis[varSettis][0], 4);
+					$('#btnSettis-' + varSettis).on("click", { num: varSettis }, fnSettis);
+
+					if ((varSettis > 0)) {
+						$('#btnSettis-' + varSettis).addClass('text-none');
+					}
+
+					if (varSettis === 2 || varSettis === 3) {
+						$('#btnSettis-' + varSettis).attr('value', 'tg-off');
+					}
+				}
+
+				function fnSettis(event) {
+					let id = event.data.num;
+
+					if (listBtnSettis[id][0] != '') {
+						if (id < 4) {
+							initiateLoadedMenu('#btnSettis-', id, listBtnSettis[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnSettis called');
+								event.stopImmediatePropagation()
+								showNumBtn('#btnSettis-', 30, 40, listBtnSettis);
+								break;
+							case 1:
+								console.log(id + ' fnSettis called');
+								//event.stopImmediatePropagation()
+								$('#three-toggle').empty();
+								initiateToggleBtn('#btnSettis-', id, listBtnSettis[id][0]);
+
+								setTimeout(function () {
+									$('#input-btn-out').css('width', '12%');
+									$('#input-area').css('width', '59.5%');
+									$('#input-btn-out').prepend('<span class="mr-2">settis</span>');
+								}, 125);
+
+								hideNumBtn('#btnSettis-', 30, 40);
+								break;
+							case 2:
+								console.log(id + ' fnSettis called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								initiateToggleBtn('#btnSettis-', id, listBtnSettis[id][0]);
+								if ($('#btnSettis-' + id).attr('value') != 'tg-on') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnSettis-', 30, 40, listBtnSettis);
+									}, 125);
+								}
+								break;
+							case 3:
+								console.log(id + ' fnSettis called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								initiateToggleBtn('#btnSettis-', id, listBtnSettis[id][0]);
+								if ($('#btnSettis-' + id).attr('value') != 'tg-on') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnSettis-', 30, 40, listBtnSettis);
+									}, 125);
+								}
+								break;
+							case 40:
+								console.log(id + ' fnSettis called');
+								event.stopImmediatePropagation();
+								backNav('#btnSettis-', listBtnSettis.length, '#settis-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnSettis called');
+								event.stopImmediatePropagation();
+								backNav('#btnSettis-', listBtnSettis.length, '#settis-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSettis called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 4) {
+										count++;
+										nextStep(count, '#btnSettis-', listBtnSettis);
+										$('#tree-' + (count - 1)).show();
+
+										switch (count) {
+											case 1:
+												showToggle(toggLabelA1, toggLabelA2);
+												hideNumBtn('#btnSettis-', 30, 40);
+												break;
+											case 2:
+												showToggle(toggLabelB1, toggLabelB2);
+												hideNumBtn('#btnSettis-', 30, 40);
+												break;
+											case 3:
+												showToggle(toggLabelC1, toggLabelC2);
+												hideNumBtn('#btnSettis-', 30, 40);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSettis-' + count).removeClass('active');
+										forceBack('#btnSettis-', listBtnSettis.length, '#settis-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSettis, id);
+				}
+
+				toggleBtn(1, '#btnSettis-1', toggLabelA1, toggLabelA2);
+				toggleBtn(2, '#btnSettis-2', toggLabelB1, toggLabelB2);
+				toggleBtn(3, '#btnSettis-3', toggLabelC1, toggLabelC2);
+				setBtnActive('#btnSettis-', listBtnSettis);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnSettis-48');
+				return;
+			}
+			case 'setbrn': {
+				let count = 0;
+				const btn1 = ['add', 'amend', 'cancel'];
+				const btn2 = ['lookbk', 'elevtn', 'combnd'];
+				let toggLabelA1 = listBtnSetbrn[3][0];
+				let toggLabelA2 = 'beam';
+				let toggLabelB1 = listBtnSetbrn[4][0];
+				let toggLabelB2 = 'azim';
+				let toggLabelC1 = listBtnSetbrn[5][0];
+				let toggLabelC2 = 'off';
+
+				for (let varSetbrn = 0; varSetbrn < listBtnSetbrn.length; varSetbrn++) {
+					generateButtonMenu('#setbrn-menu-btn', 'btnSetbrn-', varSetbrn, listBtnSetbrn[varSetbrn][0]);
+					registToTree(varSetbrn, listBtnSetbrn[varSetbrn][0], 6);
+					$('#btnSetbrn-' + varSetbrn).on("click", { num: varSetbrn }, fnSetbrn);
+
+
+					if (varSetbrn === 4) {
+						$('#btnSetbrn-' + varSetbrn).attr('value', 'tg-off');
+					}
+				}
+
+				function fnSetbrn(event) {
+					let id = event.data.num;
+
+					if (listBtnSetbrn[id][0] != '') {
+						if (id < 6) {
+							initiateLoadedMenu('#btnSetbrn-', id, listBtnSetbrn[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnSetbrn called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								showNumBtn('#btnSetbrn-', 30, 40, listBtnSetbrn);
+								break;
+							case 1:
+								console.log(id + ' fnSetbrn called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+
+								toggleThreeState(btn1, '#btnSetbrn-' + id, 1);
+								hideNumBtn('#btnSetbrn-', 30, 40);
+								break;
+							case 2:
+								console.log(id + ' fnSetbrn called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+
+								toggleThreeState(btn2, '#btnSetbrn-' + id, 2);
+								hideNumBtn('#btnSetbrn-', 30, 40);
+								break;
+							case 3:
+								console.log(id + ' fnSetbrn called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								initiateToggleBtn('#btnSetbrn-', id, listBtnSetbrn[id][0]);
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnSetbrn-', 30, 40, listBtnSetbrn);
+								}, 125);
+								break;
+							case 4:
+								console.log(id + ' fnSetbrn called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								initiateToggleBtn('#btnSetbrn-', id, listBtnSetbrn[id][0]);
+								if ($('#btnSetbrn-' + id).attr('value') != 'tg-on') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnSetbrn-', 30, 40, listBtnSetbrn);
+									}, 125);
+								}
+								break;
+							case 5:
+								console.log(id + ' fnSetbrn called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								initiateToggleBtn('#btnSetbrn-', id, listBtnSetbrn[id][0]);
+
+								setTimeout(function () {
+									$('#input-btn-out').css('width', '12%');
+									$('#input-area').css('width', '59.5%');
+									$('#input-btn-out').prepend('<span class="mr-2">setbrn</span>');
+								}, 125);
+
+								hideNumBtn('#btnSetbrn-', 30, 40);
+								break;
+							case 40:
+								console.log(id + ' fnSetbrn called');
+								event.stopImmediatePropagation();
+								backNav('#btnSetbrn-', listBtnSetbrn.length, '#setbrn-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnSetbrn called');
+								event.stopImmediatePropagation();
+								backNav('#btnSetbrn-', listBtnSetbrn.length, '#setbrn-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSetbrn called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 6) {
+										count++;
+										nextStep(count, '#btnSetbrn-', listBtnSetbrn);
+										$('#tree-' + (count - 1)).show();
+
+										switch (count) {
+											case 1:
+												initiateToggleThree(btn1);
+												hideNumBtn('#btnSetbrn-', 30, 40);
+												break;
+											case 2:
+												initiateToggleThree(btn2);
+												hideNumBtn('#btnSetbrn-', 30, 40);
+												break;
+											case 3:
+												$('#three-toggle').empty();
+												showToggle(toggLabelA1, toggLabelA2);
+												hideNumBtn('#btnSetbrn-', 30, 40);
+												break;
+											case 4:
+												showToggle(toggLabelB1, toggLabelB2);
+												hideNumBtn('#btnSetbrn-', 30, 40);
+												break;
+											case 5:
+												showToggle(toggLabelC1, toggLabelC2);
+												hideNumBtn('#btnSetbrn-', 30, 40);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSetbrn-' + count).removeClass('active');
+										forceBack('#btnSetbrn-', listBtnSetbrn.length, '#setbrn-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSetbrn, id);
+				}
+
+				toggleBtn(3, '#btnSetbrn-3', toggLabelA1, toggLabelA2);
+				toggleBtn(4, '#btnSetbrn-4', toggLabelB1, toggLabelB2);
+				toggleBtn(5, '#btnSetbrn-5', toggLabelC1, toggLabelC2);
+				setBtnActive('#btnSetbrn-', listBtnSetbrn);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnSetbrn-48');
+				return;
+			}
+			case 'stgjit': {
+				let count = 0;
+
+				for (let varStgjit = 0; varStgjit < listBtnStgjit.length; varStgjit++) {
+					generateButtonMenu('#stgjit-menu-btn', 'btnStgjit-', varStgjit, listBtnStgjit[varStgjit][0]);
+					registToTree(varStgjit, listBtnStgjit[varStgjit][0], 3);
+					$('#btnStgjit-' + varStgjit).on("click", { num: varStgjit }, fnStgjit);
+				}
+
+				function fnStgjit(event) {
+					let id = event.data.num;
+
+					if (listBtnStgjit[id][0] != '') {
+						if (id < 3) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnStgjit[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnStgjit called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 2:
+								console.log(id + ' fnStgjit called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 40:
+								console.log(id + ' fnStgjit called');
+								event.stopImmediatePropagation();
+								backNav('#btnStgjit-', listBtnStgjit.length, '#stgjit-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnStgjit called');
+								event.stopImmediatePropagation();
+								backNav('#btnStgjit-', listBtnStgjit.length, '#stgjit-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnStgjit called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnStgjit-', listBtnStgjit);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnStgjit-' + count).removeClass('active');
+										forceBack('#btnStgjit-', listBtnStgjit.length, '#stgjit-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnStgjit-', listBtnStgjit);
+				$('#input-VK').val(listBtnStgjit[0][0]);
+				count = 0;
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnStgjit-48');
+				return;
+			}
+			case 'frqmde': {
+				let count = 0;
+
+				for (let varFrqmde = 0; varFrqmde < listBtnFrqmde.length; varFrqmde++) {
+					generateButtonMenu('#frqmde-menu-btn', 'btnFrqmde-', varFrqmde, listBtnFrqmde[varFrqmde][0]);
+					registToTree(varFrqmde, listBtnFrqmde[varFrqmde][0], 3);
+					$('#btnFrqmde-' + varFrqmde).on("click", { num: varFrqmde }, fnFrqmde);
+				}
+
+				function fnFrqmde(event) {
+					let id = event.data.num;
+
+					if (listBtnFrqmde[id][0] != '') {
+						if (id < 3) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnFrqmde[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnFrqmde called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 2:
+								console.log(id + ' fnFrqmde called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 40:
+								console.log(id + ' fnFrqmde called');
+								event.stopImmediatePropagation();
+								backNav('#btnFrqmde-', listBtnFrqmde.length, '#frqmde-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								break;
+							case 42:
+								console.log(id + ' fnFrqmde called');
+								event.stopImmediatePropagation();
+								backNav('#btnFrqmde-', listBtnFrqmde.length, '#frqmde-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnFrqmde called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnFrqmde-', listBtnFrqmde);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnFrqmde-' + count).removeClass('active');
+										forceBack('#btnFrqmde-', listBtnFrqmde.length, '#frqmde-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnFrqmde-', listBtnFrqmde);
+				$('#input-VK').val(listBtnFrqmde[0][0]);
+				count = 0;
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnFrqmde-48');
+				return;
+			}
 			case 'histry': {
 				let count = 0;
 
@@ -3064,6 +3793,7 @@ function showToggle(toggleA, toggleB) {
 	$('#toggle-divider').show();
 	document.getElementById('toggle-box-a').innerHTML = toggleA;
 	document.getElementById('toggle-box-b').innerHTML = toggleB;
+	$('#toggle-box-a').siblings('.active').removeClass('active');
 	$('#toggle-box-a').addClass('active');
 }
 

@@ -4,6 +4,7 @@
     <script src="{{ asset('plugin/layerjs/layerjs-0.6.2.min.js') }}"></script>
     <link href="{{ asset('plugin/layerjs/layerjs-0.6.2.css') }}" type="text/css" rel="stylesheet" />
     <script src="{{ asset('plugin/toggle-button/jquery.togglebutton.js') }}"></script>
+    <script src="{{ asset('js/arrList-menu-lbow.js') }}"></script>
     <script src="{{ asset('js/nav-menu-lbow.js') }}"></script>
     {{-- end of --}}
 

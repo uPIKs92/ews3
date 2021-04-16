@@ -66,6 +66,60 @@
         <div lj-type="frame" lj-name="loose-menu" lj-transition="fade">
             <ul id="loose-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="radcon-menu" lj-transition="fade">
+            <ul id="radcon-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="nrdet-menu" lj-transition="fade">
+            <ul id="nrdet-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="mtidet-menu" lj-transition="fade">
+            <ul id="mtidet-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="gcthr-menu" lj-transition="fade">
+            <ul id="gcthr-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="nrthr-menu" lj-transition="fade">
+            <ul id="nrthr-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="mtithr-menu" lj-transition="fade">
+            <ul id="mtithr-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="settis-menu" lj-transition="fade">
+            <ul id="settis-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="setbrn-menu" lj-transition="fade">
+            <ul id="setbrn-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="stgjit-menu" lj-transition="fade">
+            <ul id="stgjit-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="frqmde-menu" lj-transition="fade">
+            <ul id="frqmde-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="setmti-menu" lj-transition="fade">
+            <ul id="setmti-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="setjse-menu" lj-transition="fade">
+            <ul id="setjse-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="prfd-menu" lj-transition="fade">
+            <ul id="prfd-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="divfrq-menu" lj-transition="fade">
+            <ul id="divfrq-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="txmode-menu" lj-transition="fade">
+            <ul id="txmode-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="etilt-menu" lj-transition="fade">
+            <ul id="etilt-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="antrot-menu" lj-transition="fade">
+            <ul id="antrot-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="batovr-menu" lj-transition="fade">
+            <ul id="batovr-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="histry-menu" lj-transition="fade">
             <ul id="histry-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
