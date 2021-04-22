@@ -82,6 +82,22 @@ const listBtnCrearc = [
 	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
 ];
 
+const listBtnTotes = [
+	'return', 'index', '', '', '', '', '', ' ', ' ', 'clear',
+	'metcur', 'metdef', '', '', '', '', '', '', 'updtot', 'amdtot',
+	'radcur', 'raddef', 'strobe', '', '', '', '', '', '', 'last',
+	'comdir', '', 'mantrk', 'trktel', '', '', '', '', '', 'page',
+	'abort', '.', 'home', '', '', '', '', 'bakspc', 'dltfld', 'enter',
+];
+
+const listBtnTrack = [
+	'return', '', 'a-init', '', '', 'merge', '', ' ', ' ', '',
+	'addtel', 'deltel', '', '', '', '', '', '', 'setnai', 'setnac',
+	'init', 'toldin', 'updtrk', 'updcde', 'id-trk', 'status', 'swap', '', 'cancel', '',
+	'', '', 'trkpos', '', '', '', '', '', '', '',
+	'abort', '.', 'home', '', '', '', '', 'bakspc', 'dltfld', 'enter',
+];
+
 const listBtnPpibrt = [
 	['bakgnd', 'active'], ['1stvid', ''], ['logvid', ''], ['rrings', ''], ['synth', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],

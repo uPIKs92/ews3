@@ -83,6 +83,24 @@ function createButton(buttonName) {
 								window.location = '#maps-menu&t=0.15s';
 								createButton('maps');
 								break;
+							case 5:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#totes-menu&t=0.15s';
+								createButton('totes');
+								break;
+							case 6:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#track-menu&t=0.15s';
+								createButton('track');
+								break;
 							case 7:
 								console.log(id + ' fnLogon called');
 								event.stopImmediatePropagation()
@@ -1174,6 +1192,60 @@ function createButton(buttonName) {
 				$('.cursor i').removeClass('d-none');
 				showNumBtn('#btnCrearc-', 30, 40, listBtnCrearc);
 				delChar('#btnCrearc-48');
+				return;
+			}
+			case 'totes': {
+				for (let varTotes = 0; varTotes < listBtnTotes.length; varTotes++) {
+					generateButtonMenu('#totes-menu-btn', 'btnTotes-', varTotes, listBtnTotes[varTotes]);
+					$('#btnTotes-' + varTotes).on("click", { num: varTotes }, fnTotes);
+				}
+
+				function fnTotes(event) {
+					let id = event.data.num;
+
+					if (listBtnTotes[id][0] != '') {
+						switch (id) {
+							case 0:
+							case 40:
+							case 42:
+								console.log(id + ' fnTotes called');
+								event.stopImmediatePropagation();
+								backNav('#btnTotes-', listBtnTotes.length, '#totes-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 2:
+								console.log(id + ' fnTotes called');
+								event.stopImmediatePropagation();
+								break;
+						}
+					}
+				}
+				return;
+			}
+			case 'track': {
+				for (let varTrack = 0; varTrack < listBtnTrack.length; varTrack++) {
+					generateButtonMenu('#track-menu-btn', 'btnTrack-', varTrack, listBtnTrack[varTrack]);
+					$('#btnTrack-' + varTrack).on("click", { num: varTrack }, fnTrack);
+				}
+			
+				function fnTrack(event) {
+					let id = event.data.num;
+			
+					if (listBtnTrack[id][0] != '') {
+						switch (id) {
+							case 0:
+							case 40:
+							case 42:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								backNav('#btnTrack-', listBtnTrack.length, '#track-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 2:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								break;
+						}
+					}
+				}
 				return;
 			}
 			case 'ppibrt': {
@@ -3404,34 +3476,34 @@ function createButton(buttonName) {
 			}
 			case 'etilt': {
 				let count = 0;
-			
+
 				for (let varEtilt = 0; varEtilt < listBtnEtilt.length; varEtilt++) {
 					generateButtonMenu('#etilt-menu-btn', 'btnEtilt-', varEtilt, listBtnEtilt[varEtilt][0]);
 					registToTree(varEtilt, listBtnEtilt[varEtilt][0], 29);
 					$('#btnEtilt-' + varEtilt).on("click", { num: varEtilt }, fnEtilt);
-			
+
 					if ((varEtilt < 29)) {
 						$('#btnEtilt-' + varEtilt).addClass('text-none');
 					}
-			
+
 					if ((varEtilt > 0 && varEtilt < 9) || (varEtilt > 10 && varEtilt < 19)) {
 						$('#tree-' + varEtilt).addClass('sect');
 					}
 				}
-			
+
 				function fnEtilt(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnEtilt[id][0] != '') {
 						if (id < 29) {
 							initiateLoadedMenu('#btnEtilt-', id, listBtnEtilt[id][0]);
 							count = id;
 						}
-			
+
 						if ((id > 0 && id < 9) || (id > 10 && id < 19)) {
 							$('#tree-' + id).show();
 							$('#tree-' + id).siblings('.sect').hide();
-			
+
 							setTimeout(function () {
 								changeVKWidth();
 								$('#input-btn-out').prepend('<span class="mr-2">sect</span>');
@@ -3439,7 +3511,7 @@ function createButton(buttonName) {
 								hideNumBtn('#btnEtilt-', 30, 40);
 							}, 125);
 						}
-			
+
 						switch (id) {
 							case 0:
 								console.log(id + ' fnEtilt called');
@@ -3474,10 +3546,10 @@ function createButton(buttonName) {
 								console.log(id + ' fnEtilt called');
 								event.stopImmediatePropagation()
 								let vkVal = parseInt($('#input-VK').val());
-			
+
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
-			
+
 									if ($('#btnEtilt-' + 9).attr('value') === 'tg-off') {
 										if ((vkVal < 25) || (vkVal > 470)) {
 											printMessage("KM value range 25 to 470 KM");
@@ -3515,7 +3587,7 @@ function createButton(buttonName) {
 					}
 					bindBtnNumber(listBtnEtilt, id);
 				}
-				
+
 				$('.cursor i').removeClass('d-none');
 				setBtnActive('#btnEtilt-', listBtnEtilt);
 				delChar('#btnEtilt-48');

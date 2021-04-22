@@ -39,6 +39,12 @@
         <div lj-type="frame" lj-name="crearc-menu" lj-transition="fade">
             <ul id="crearc-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="totes-menu" lj-transition="fade">
+            <ul id="totes-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="track-menu" lj-transition="fade">
+            <ul id="track-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="ppibrt-menu" lj-transition="fade">
             <ul id="ppibrt-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
