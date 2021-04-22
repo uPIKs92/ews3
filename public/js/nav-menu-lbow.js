@@ -2174,6 +2174,26 @@ function createButton(buttonName) {
 								window.location = '#setmti-menu&t=0.15s';
 								createButton('setmti');
 								break;
+							case 5:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#txmode-menu&t=0.15s';
+								createButton('txmode');
+								break;
+							case 6:
+								console.log(id + ' fnRadcon called');
+								event.stopImmediatePropagation();
+								clearMenu('#radcon-menu-btn');
+								clearContent();
+								printBtnTree(listBtnRadcon[id]);
+								$('#message-btn-out').empty();
+								window.location = '#etilt-menu&t=0.15s';
+								createButton('etilt');
+								break;
 							case 10:
 								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
@@ -2821,7 +2841,7 @@ function createButton(buttonName) {
 							count = id;
 						}
 
-						if(id != 5){
+						if (id != 5) {
 							resetVKWidth();
 						}
 
@@ -3156,6 +3176,7 @@ function createButton(buttonName) {
 								changeVKWidth();
 								$('#input-btn-out').prepend('<span class="mr-2">sect</span>');
 								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnSetmti-', 30, 40);
 							}, 125);
 						}
 
@@ -3247,6 +3268,257 @@ function createButton(buttonName) {
 				hideNumBtn('#btnSetmti-', 30, 40);
 				setBtnActive('#btnSetmti-', listBtnSetmti);
 				delChar('#btnSetmti-48');
+				return;
+			}
+			case 'txmode': {
+				let count = 0;
+				let toggLabelA = listBtnTxmode[0][0];
+				let toggLabelB = 'RN/CF';
+				let toggLabelC = listBtnTxmode[9][0];
+				let toggLabelD = 'NM';
+
+				for (let varTxmode = 0; varTxmode < listBtnTxmode.length; varTxmode++) {
+					generateButtonMenu('#txmode-menu-btn', 'btnTxmode-', varTxmode, listBtnTxmode[varTxmode][0]);
+					registToTree(varTxmode, listBtnTxmode[varTxmode][0], 29);
+					$('#btnTxmode-' + varTxmode).on("click", { num: varTxmode }, fnTxmode);
+
+					if ((varTxmode < 29)) {
+						$('#btnTxmode-' + varTxmode).addClass('text-none');
+					}
+
+					if ((varTxmode > 0 && varTxmode < 9) || (varTxmode > 10 && varTxmode < 19)) {
+						$('#tree-' + varTxmode).addClass('sect');
+					}
+				}
+
+				function fnTxmode(event) {
+					let id = event.data.num;
+
+					if (listBtnTxmode[id][0] != '') {
+						if (id < 29) {
+							initiateLoadedMenu('#btnTxmode-', id, listBtnTxmode[id][0]);
+							count = id;
+						}
+
+						if ((id > 0 && id < 9) || (id > 10 && id < 19)) {
+							$('#tree-' + id).show();
+							$('#tree-' + id).siblings('.sect').hide();
+
+							setTimeout(function () {
+								changeVKWidth();
+								$('#input-btn-out').prepend('<span class="mr-2">sect</span>');
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnTxmode-', 30, 40);
+							}, 125);
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnTxmode called');
+								initiateToggleBtn('#btnTxmode-', id, listBtnTxmode[id][0]);
+								resetVKWidth();
+								break;
+							case 9:
+								console.log(id + ' fnTxmode called');
+								initiateToggleBtn('#btnTxmode-', id, listBtnTxmode[id][0]);
+								resetVKWidth();
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnTxmode-', 30, 40, listBtnTxmode);
+								}, 125);/**/
+								break;
+							case 28:
+								console.log(id + ' fnTxmode called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnTxmode-', 30, 40, listBtnTxmode);
+								resetVKWidth();
+								break;
+							case 40:
+								console.log(id + ' fnTxmode called');
+								event.stopImmediatePropagation();
+								backNav('#btnTxmode-', listBtnTxmode.length, '#txmode-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								resetVKWidth();
+								break;
+							case 42:
+								console.log(id + ' fnTxmode called');
+								event.stopImmediatePropagation();
+								backNav('#btnTxmode-', listBtnTxmode.length, '#txmode-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								resetVKWidth();
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnTxmode called');
+								event.stopImmediatePropagation()
+								let vkVal = parseInt($('#input-VK').val());
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+
+									if ($('#btnTxmode-' + 9).attr('value') === 'tg-off') {
+										if ((vkVal < 25) || (vkVal > 470)) {
+											printMessage("KM value range 25 to 470 KM");
+										} else {
+											$('#message-btn-out').empty();
+											document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+										}
+									} else if ($('#btnTxmode-' + 9).attr('value') === 'tg-on') {
+										if ((vkVal < 25) || (vkVal > 300)) {
+											printMessage("NM value range 25 to 300 NM");
+										} else {
+											$('#message-btn-out').empty();
+											document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+										}
+									} else {
+										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									}
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnTxmode-', listBtnTxmode);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnTxmode-' + count).removeClass('active');
+										resetVKWidth();
+										forceBack('#btnTxmode-', listBtnTxmode.length, '#txmode-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnTxmode, id);
+				}
+				toggleBtn(0, '#btnTxmode-0', toggLabelA, toggLabelB);
+				toggleBtn(9, '#btnTxmode-9', toggLabelC, toggLabelD);
+				showToggle(toggLabelA, toggLabelB);
+				hideNumBtn('#btnTxmode-', 30, 40);
+				setBtnActive('#btnTxmode-', listBtnTxmode);
+				delChar('#btnTxmode-48');
+				return;
+			}
+			case 'etilt': {
+				let count = 0;
+			
+				for (let varEtilt = 0; varEtilt < listBtnEtilt.length; varEtilt++) {
+					generateButtonMenu('#etilt-menu-btn', 'btnEtilt-', varEtilt, listBtnEtilt[varEtilt][0]);
+					registToTree(varEtilt, listBtnEtilt[varEtilt][0], 29);
+					$('#btnEtilt-' + varEtilt).on("click", { num: varEtilt }, fnEtilt);
+			
+					if ((varEtilt < 29)) {
+						$('#btnEtilt-' + varEtilt).addClass('text-none');
+					}
+			
+					if ((varEtilt > 0 && varEtilt < 9) || (varEtilt > 10 && varEtilt < 19)) {
+						$('#tree-' + varEtilt).addClass('sect');
+					}
+				}
+			
+				function fnEtilt(event) {
+					let id = event.data.num;
+			
+					if (listBtnEtilt[id][0] != '') {
+						if (id < 29) {
+							initiateLoadedMenu('#btnEtilt-', id, listBtnEtilt[id][0]);
+							count = id;
+						}
+			
+						if ((id > 0 && id < 9) || (id > 10 && id < 19)) {
+							$('#tree-' + id).show();
+							$('#tree-' + id).siblings('.sect').hide();
+			
+							setTimeout(function () {
+								changeVKWidth();
+								$('#input-btn-out').prepend('<span class="mr-2">sect</span>');
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnEtilt-', 30, 40);
+							}, 125);
+						}
+			
+						switch (id) {
+							case 0:
+								console.log(id + ' fnEtilt called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnEtilt-', 30, 40, listBtnEtilt);
+								resetVKWidth();
+								break;
+							case 28:
+								console.log(id + ' fnEtilt called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnEtilt-', 30, 40, listBtnEtilt);
+								resetVKWidth();
+								break;
+							case 40:
+								console.log(id + ' fnEtilt called');
+								event.stopImmediatePropagation();
+								backNav('#btnEtilt-', listBtnEtilt.length, '#etilt-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
+								resetVKWidth();
+								break;
+							case 42:
+								console.log(id + ' fnEtilt called');
+								event.stopImmediatePropagation();
+								backNav('#btnEtilt-', listBtnEtilt.length, '#etilt-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								resetVKWidth();
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnEtilt called');
+								event.stopImmediatePropagation()
+								let vkVal = parseInt($('#input-VK').val());
+			
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+			
+									if ($('#btnEtilt-' + 9).attr('value') === 'tg-off') {
+										if ((vkVal < 25) || (vkVal > 470)) {
+											printMessage("KM value range 25 to 470 KM");
+										} else {
+											$('#message-btn-out').empty();
+											document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+										}
+									} else if ($('#btnEtilt-' + 9).attr('value') === 'tg-on') {
+										if ((vkVal < 25) || (vkVal > 300)) {
+											printMessage("NM value range 25 to 300 NM");
+										} else {
+											$('#message-btn-out').empty();
+											document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+										}
+									} else {
+										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									}
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnEtilt-', listBtnEtilt);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnEtilt-' + count).removeClass('active');
+										resetVKWidth();
+										forceBack('#btnEtilt-', listBtnEtilt.length, '#etilt-menu-btn', '#radcon-menu&t=0.15s');
+										count = 0;
+										createButton('radcon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnEtilt, id);
+				}
+				
+				$('.cursor i').removeClass('d-none');
+				setBtnActive('#btnEtilt-', listBtnEtilt);
+				delChar('#btnEtilt-48');
 				return;
 			}
 			case 'setjse': {
@@ -4469,12 +4741,12 @@ function delCharByOne() {
 	}
 }
 
-function changeVKWidth(){
+function changeVKWidth() {
 	$('#input-btn-out').css('width', '12%');
 	$('#input-area').css('width', '59.5%');
 }
 
-function resetVKWidth(){
+function resetVKWidth() {
 	$('#input-btn-out').css('width', '8%');
 	$('#input-area').css('width', '63.5%');
 }
