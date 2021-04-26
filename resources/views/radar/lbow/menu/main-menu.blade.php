@@ -45,6 +45,36 @@
         <div lj-type="frame" lj-name="track-menu" lj-transition="fade">
             <ul id="track-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="ainit-menu" lj-transition="fade">
+            <ul id="ainit-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="idtrk-menu" lj-transition="fade">
+            <ul id="idtrk-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="init-menu" lj-transition="fade">
+            <ul id="init-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="merge-menu" lj-transition="fade">
+            <ul id="merge-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="setnac-menu" lj-transition="fade">
+            <ul id="setnac-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="setnai-menu" lj-transition="fade">
+            <ul id="setnai-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="swap-menu" lj-transition="fade">
+            <ul id="swap-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="toldin-menu" lj-transition="fade">
+            <ul id="toldin-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="updcde-menu" lj-transition="fade">
+            <ul id="updcde-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="updtrk-menu" lj-transition="fade">
+            <ul id="updtrk-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="ppibrt-menu" lj-transition="fade">
             <ul id="ppibrt-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
