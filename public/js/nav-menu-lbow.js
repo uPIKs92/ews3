@@ -1358,6 +1358,17 @@ function createButton(buttonName) {
 								createButton('idtrk');
 								document.getElementById('input-btn-out').innerHTML = listBtnTrack[id];
 								break;
+							case 26:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#swap-menu&t=0.15s';
+								printBtnTree(listBtnTrack[id]);
+								createButton('swap');
+								callAlphaVK('#btnSwap-');
+								break;
 							case 28:
 								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
@@ -1430,7 +1441,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnAinit called');
 								event.stopImmediatePropagation();
 								backNav('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#track-menu&t=0.15s', 'track');
-
+								resetVKWidth();
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[6]);
 								}, 125);
@@ -1439,6 +1450,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnAinit called');
 								event.stopImmediatePropagation();
 								backNav('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								resetVKWidth();
 								break;
 							case 47:
 								delCharByOne();
@@ -1489,6 +1501,7 @@ function createButton(buttonName) {
 										forceBack('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#track-menu&t=0.15s');
 										count = 1;
 										createButton('track');
+										resetVKWidth();
 
 										setTimeout(function () {
 											printBtnTree(listBtnLogon[6]);
@@ -2095,6 +2108,7 @@ function createButton(buttonName) {
 								$('#three-toggle').empty();
 
 								backNav('#btnSetnai-', listBtnSetnai.length, '#setnai-menu-btn', '#track-menu&t=0.15s', 'track');
+								resetVKWidth();
 
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[6]);
@@ -2107,6 +2121,7 @@ function createButton(buttonName) {
 
 								backNav('#btnSetnai-', listBtnSetnai.length, '#setnai-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								$('#three-toggle').empty();
+								resetVKWidth();
 								break;
 							case 47:
 								delCharByOne();
@@ -2173,6 +2188,7 @@ function createButton(buttonName) {
 										forceBack('#btnSetnai-', listBtnSetnai.length, '#setnai-menu-btn', '#track-menu&t=0.15s');
 										count = 0;
 										createButton('track');
+										resetVKWidth();
 									}
 								}
 								break;
@@ -2186,6 +2202,114 @@ function createButton(buttonName) {
 				hideNumBtn('#btnSetnai-', 30, 40);
 				setBtnActive('#btnSetnai-', listBtnSetnai);
 				delChar('#btnSetnai-48');
+				return;
+			}
+			case 'swap': {
+				let count = 1;
+				let toggLabelB1 = listBtnSwap[1][0];
+				let toggLabelB2 = 'trkcs1';
+				let toggLabelC1 = listBtnSwap[2][0];
+				let toggLabelC2 = 'TRKCS2';
+
+				for (let varSwap = 0; varSwap < listBtnSwap.length; varSwap++) {
+					generateButtonMenu('#swap-menu-btn', 'btnSwap-', varSwap, listBtnSwap[varSwap][0]);
+					registToTree(varSwap, listBtnSwap[varSwap][0], 3);
+					$('#btnSwap-' + varSwap).on("click", { num: varSwap }, fnSwap);
+					$('#btnSwap-' + varSwap).addClass('text-none');
+				}
+
+				function fnSwap(event) {
+					let id = event.data.num;
+
+					if (listBtnSwap[id][0] != '') {
+						if (id < 3) {
+							initiateLoadedMenu('#btnSwap-', id, listBtnSwap[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnSwap called');
+								initiateToggleBtn('#btnSwap-', id, listBtnSwap[id][2]);
+								$('.cursor i').addClass('d-none');
+								break;
+							case 2:
+								console.log(id + ' fnSwap called');
+								initiateToggleBtn('#btnSwap-', id, listBtnSwap[id][3]);
+								$('.cursor i').addClass('d-none');
+								break;
+							case 40:
+								console.log(id + ' fnSwap called');
+								event.stopImmediatePropagation();
+								backNav('#btnSwap-', listBtnSwap.length, '#swap-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[6]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnSwap called');
+								event.stopImmediatePropagation();
+								backNav('#btnSwap-', listBtnSwap.length, '#swap-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSwap called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 3) {
+										count++;
+										nextStep(count, '#btnSwap-', listBtnSwap);
+										$('#tree-' + (count - 1)).show();
+										$('#toggle-box-out').hide();
+
+										switch (count) {
+											case 1: {
+												event.stopImmediatePropagation();
+												showToggle(toggLabelB1, toggLabelB2);
+												return;
+											}
+											case 2: {
+												event.stopImmediatePropagation();
+												showToggle(toggLabelC1, toggLabelC2);
+												return;
+											}
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSwap-' + count).removeClass('active');
+										forceBack('#btnSwap-', listBtnSwap.length, '#swap-menu-btn', '#track-menu&t=0.15s');
+										count = 1;
+										createButton('track');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[6]);
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSwap, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnSwap-');
+				});
+
+				toggleBtn(1, '#btnSwap-1', toggLabelB1, toggLabelB2);
+				toggleBtn(2, '#btnSwap-2', toggLabelC1, toggLabelC2);
+				showToggle(toggLabelB1, toggLabelB2);
+				setBtnActive('#btnSwap-', listBtnSwap);
+				delChar('#keyboard-clear, #btnSwap-48');
 				return;
 			}
 			case 'ppibrt': {
