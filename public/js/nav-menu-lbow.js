@@ -1305,6 +1305,28 @@ function createButton(buttonName) {
 								printBtnTree(listBtnTrack[id]);
 								createButton('merge');
 								break;
+							case 10:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								$('#message-btn-out').empty();
+								printMessage("NO REFFERENCE TRACK");
+								break;
+							case 11:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								$('#message-btn-out').empty();
+								printMessage("NO REFFERENCE TRACK");
+								break;
+							case 19:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#setnac-menu&t=0.15s';
+								printBtnTree(listBtnTrack[id]);
+								createButton('setnac');
+								break;
 							case 20:
 								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
@@ -1325,18 +1347,6 @@ function createButton(buttonName) {
 								printBtnTree(listBtnTrack[id]);
 								createButton('idtrk');
 								document.getElementById('input-btn-out').innerHTML = listBtnTrack[id];
-								break;
-							case 10:
-								console.log(id + ' fnTrack called');
-								event.stopImmediatePropagation();
-								$('#message-btn-out').empty();
-								printMessage("NO REFFERENCE TRACK");
-								break;
-							case 11:
-								console.log(id + ' fnTrack called');
-								event.stopImmediatePropagation();
-								$('#message-btn-out').empty();
-								printMessage("NO REFFERENCE TRACK");
 								break;
 							case 28:
 								console.log(id + ' fnTrack called');
@@ -1771,6 +1781,178 @@ function createButton(buttonName) {
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnMerge-', listBtnMerge);
 				delChar('#keyboard-clear, #btnMerge-48');
+				return;
+			}
+			case 'setnac': {
+				let count = 0;
+				const btn = ['ADD', 'AMEND', 'CANCEL'];
+				let toggLabelE1 = listBtnSetnac[7][0];
+				let toggLabelE2 = 'Off';
+
+				for (let varSetnac = 0; varSetnac < listBtnSetnac.length; varSetnac++) {
+					generateButtonMenu('#setnac-menu-btn', 'btnSetnac-', varSetnac, listBtnSetnac[varSetnac][0]);
+					registToTree(varSetnac, listBtnSetnac[varSetnac][0], 8);
+					$('#btnSetnac-' + varSetnac).on("click", { num: varSetnac }, fnSetnac);
+
+					if ((varSetnac > 4) && (varSetnac < 7)) {
+						$('#btnSetnac-' + varSetnac).addClass('text-none');
+					}
+				}
+
+				function fnSetnac(event) {
+					let id = event.data.num;
+
+					if (listBtnSetnac[id][0] != '') {
+						if (id < 8) {
+							initiateLoadedMenu('#btnSetnac-', id, listBtnSetnac[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnSetnac called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+
+								toggleThreeState(btn, '#btnSetnac-' + id, 1);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnSetnac-', 30, 40);
+								break;
+							case 2:
+								console.log(id + ' fnSetnac called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnSetnac-', 30, 40, listBtnSetnac);
+								break;
+							case 3:
+								console.log(id + ' fnSetnac called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnSetnac-', 30, 40);
+								break;
+							case 4:
+								console.log(id + ' fnSetnac called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnSetnac-', 30, 40);
+								break;
+							case 5:
+								console.log(id + ' fnSetnac called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnSetnac-', 30, 40, listBtnSetnac);
+								break;
+							case 6:
+								console.log(id + ' fnSetnac called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnSetnac-', 30, 40, listBtnSetnac);
+								break;
+							case 7:
+								console.log(id + ' fnSetnac called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								initiateToggleBtn('#btnSetnac-', id, listBtnSetnac[id][0]);
+								hideNumBtn('#btnSetnac-', 30, 40);
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								backNav('#btnSetnac-', listBtnSetnac.length, '#setnac-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[6]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnSetnac called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								backNav('#btnSetnac-', listBtnSetnac.length, '#setnac-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSetnac called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 8) {
+										count++;
+										nextStep(count, '#btnSetnac-', listBtnSetnac);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+
+										switch (count) {
+											case 0:
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+
+												initiateToggleThree(btn);
+												hideNumBtn('#btnSetnac-', 30, 40);
+												break;
+											case 2:
+												showNumBtn('#btnSetnac-', 30, 40, listBtnSetnac);
+												break;
+											case 3:
+												hideNumBtn('#btnSetnac-', 30, 40);
+												break;
+											case 4:
+												hideNumBtn('#btnSetnac-', 30, 40);
+												break;
+											case 5:
+												showNumBtn('#btnSetnac-', 30, 40, listBtnSetnac);
+												break;
+											case 6:
+												showNumBtn('#btnSetnac-', 30, 40, listBtnSetnac);
+												break;
+											case 7:
+												showToggle(toggLabelE1, toggLabelE2);
+												hideNumBtn('#btnSetnac-', 30, 40);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSetnac-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnSetnac-', listBtnSetnac.length, '#setnac-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSetnac, id);
+				}
+
+				toggleBtn(7, '#btnSetnac-7', toggLabelE1, toggLabelE2);
+				hideNumBtn('#btnSetnac-', 30, 40);
+				setBtnActive('#btnSetnac-', listBtnSetnac);
+				delChar('#btnSetnac-48');
 				return;
 			}
 			case 'ppibrt': {
@@ -3457,6 +3639,7 @@ function createButton(buttonName) {
 								$('#toggle-divider').hide();
 
 								toggleThreeState(btn1, '#btnSetbrn-' + id, 1);
+								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnSetbrn-', 30, 40);
 								break;
 							case 2:
@@ -3467,6 +3650,7 @@ function createButton(buttonName) {
 								$('#toggle-divider').hide();
 
 								toggleThreeState(btn2, '#btnSetbrn-' + id, 2);
+								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnSetbrn-', 30, 40);
 								break;
 							case 3:
@@ -4776,6 +4960,7 @@ function createButton(buttonName) {
 								$('#toggle-divider').hide();
 
 								toggleThreeState(btn, '#btnSetpsa-' + id, 1);
+								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnSetpsa-', 30, 40);
 								break;
 							case 2:
