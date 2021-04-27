@@ -1317,6 +1317,16 @@ function createButton(buttonName) {
 								$('#message-btn-out').empty();
 								printMessage("NO REFFERENCE TRACK");
 								break;
+							case 18:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#setnai-menu&t=0.15s';
+								printBtnTree(listBtnTrack[id]);
+								createButton('setnai');
+								break;
 							case 19:
 								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
@@ -1387,6 +1397,7 @@ function createButton(buttonName) {
 							case 1:
 								console.log(id + ' fnAinit called');
 								initiateToggleBtn('#btnAinit-', id, listBtnAinit[id][1]);
+								resetVKWidth();
 
 								setTimeout(function () {
 									$('.cursor i').removeClass('d-none');
@@ -1398,12 +1409,22 @@ function createButton(buttonName) {
 								initiateToggleBtn('#btnAinit-', id, listBtnAinit[id][2]);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnAinit-', 30, 40);
+
+								setTimeout(function () {
+									changeVKWidth('17%', '54.5%');
+									$('#input-btn-out').prepend('<span class="pr-2 mr-5">psr</span>');
+								}, 125);
 								break;
 							case 3:
 								console.log(id + ' fnAinit called');
 								initiateToggleBtn('#btnAinit-', id, listBtnAinit[id][3]);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnAinit-', 30, 40);
+
+								setTimeout(function () {
+									changeVKWidth('17%', '54.5%');
+									$('#input-btn-out').prepend('<span class="pr-2 mr-5">psr</span>');
+								}, 125);
 								break;
 							case 40:
 								console.log(id + ' fnAinit called');
@@ -1953,6 +1974,218 @@ function createButton(buttonName) {
 				hideNumBtn('#btnSetnac-', 30, 40);
 				setBtnActive('#btnSetnac-', listBtnSetnac);
 				delChar('#btnSetnac-48');
+				return;
+			}
+			case 'setnai': {
+				let count = 0;
+				const btn = ['ADD', 'AMEND', 'CANCEL'];
+				let toggLabelA1 = listBtnSetnai[11][0];
+				let toggLabelA2 = 'PSROFF';
+				let toggLabelB1 = listBtnSetnai[12][0];
+				let toggLabelB2 = 'SSROFF';
+
+				for (let varSetnai = 0; varSetnai < listBtnSetnai.length; varSetnai++) {
+					generateButtonMenu('#setnai-menu-btn', 'btnSetnai-', varSetnai, listBtnSetnai[varSetnai][0]);
+					registToTree(varSetnai, listBtnSetnai[varSetnai][0], 13);
+					$('#btnSetnai-' + varSetnai).on("click", { num: varSetnai }, fnSetnai);
+
+					if ((varSetnai > 4) && (varSetnai < 7)) {
+						$('#btnSetnai-' + varSetnai).addClass('text-none');
+					}
+				}
+
+				function fnSetnai(event) {
+					let id = event.data.num;
+
+					if (listBtnSetnai[id][0] != '') {
+						if (id < 13) {
+							initiateLoadedMenu('#btnSetnai-', id, listBtnSetnai[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnSetnai called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+
+								toggleThreeState(btn, '#btnSetnai-' + id, 1);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnSetnai-', 30, 40);
+								break;
+							case 1:
+								console.log(id + ' fnSetnai called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnSetnai-', 30, 40, listBtnSetnai);
+								break;
+							case 2:
+								console.log(id + ' fnSetnai called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnSetnai-', 30, 40, listBtnSetnai);
+								break;
+							case 3:
+								console.log(id + ' fnSetnai called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnSetnai-', 30, 40);
+								break;
+							case 4:
+								console.log(id + ' fnSetnai called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnSetnai-', 30, 40);
+								break;
+							case 5:
+								console.log(id + ' fnSetnai called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnSetnai-', 30, 40, listBtnSetnai);
+								break;
+							case 6:
+								console.log(id + ' fnSetnai called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnSetnai-', 30, 40, listBtnSetnai);
+								break;
+							case 11:
+								console.log(id + ' fnSetnai called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								initiateToggleBtn('#btnSetnai-', id, listBtnSetnai[id][0]);
+								hideNumBtn('#btnSetnai-', 30, 40);
+
+								setTimeout(function () {
+									changeVKWidth('17%', '54.5%');
+									$('#input-btn-out').prepend('<span class="pr-2 mr-5">psr</span>');
+								}, 125);
+								break;
+							case 12:
+								console.log(id + ' fnSetnai called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								initiateToggleBtn('#btnSetnai-', id, listBtnSetnai[id][0]);
+								hideNumBtn('#btnSetnai-', 30, 40);
+
+								setTimeout(function () {
+									changeVKWidth('17%', '54.5%');
+									$('#input-btn-out').prepend('<span class="pr-2 mr-5">psr</span>');
+								}, 125);
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								backNav('#btnSetnai-', listBtnSetnai.length, '#setnai-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[6]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnSetnai called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								backNav('#btnSetnai-', listBtnSetnai.length, '#setnai-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSetnai called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 13) {
+										count++;
+										nextStep(count, '#btnSetnai-', listBtnSetnai);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+
+										if (count === 7) {
+											count = 10;
+										}
+
+										switch (count) {
+											case 0:
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+
+												initiateToggleThree(btn);
+												hideNumBtn('#btnSetnai-', 30, 40);
+												break;
+											case 1:
+												showNumBtn('#btnSetnai-', 30, 40, listBtnSetnai);
+												break;
+											case 2:
+												showNumBtn('#btnSetnai-', 30, 40, listBtnSetnai);
+												break;
+											case 3:
+												hideNumBtn('#btnSetnai-', 30, 40);
+												break;
+											case 4:
+												hideNumBtn('#btnSetnai-', 30, 40);
+												break;
+											case 5:
+												showNumBtn('#btnSetnai-', 30, 40, listBtnSetnai);
+												break;
+											case 6:
+												showNumBtn('#btnSetnai-', 30, 40, listBtnSetnai);
+												break;
+											case 11:
+												showToggle(toggLabelA1, toggLabelA2);
+												hideNumBtn('#btnSetnai-', 30, 40);
+												break;
+											case 12:
+												showToggle(toggLabelB1, toggLabelB2);
+												hideNumBtn('#btnSetnai-', 30, 40);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSetnai-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnSetnai-', listBtnSetnai.length, '#setnai-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSetnai, id);
+				}
+
+				toggleBtn(11, '#btnSetnai-11', toggLabelA1, toggLabelA2);
+				toggleBtn(12, '#btnSetnai-12', toggLabelB1, toggLabelB2);
+				hideNumBtn('#btnSetnai-', 30, 40);
+				setBtnActive('#btnSetnai-', listBtnSetnai);
+				delChar('#btnSetnai-48');
 				return;
 			}
 			case 'ppibrt': {
@@ -3491,7 +3724,7 @@ function createButton(buttonName) {
 								initiateToggleBtn('#btnSettis-', id, listBtnSettis[id][0]);
 
 								setTimeout(function () {
-									changeVKWidth();
+									changeVKWidth('12%', '59.5%');
 									$('#input-btn-out').prepend('<span class="mr-2">settis</span>');
 								}, 125);
 
@@ -3684,7 +3917,7 @@ function createButton(buttonName) {
 								initiateToggleBtn('#btnSetbrn-', id, listBtnSetbrn[id][0]);
 
 								setTimeout(function () {
-									changeVKWidth();
+									changeVKWidth('12%', '59.5%');
 									$('#input-btn-out').prepend('<span class="mr-2">setbrn</span>');
 								}, 125);
 
@@ -3954,7 +4187,7 @@ function createButton(buttonName) {
 							$('#tree-' + id).siblings('.sect').hide();
 
 							setTimeout(function () {
-								changeVKWidth();
+								changeVKWidth('12%', '59.5%');
 								$('#input-btn-out').prepend('<span class="mr-2">sect</span>');
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnSetmti-', 30, 40);
@@ -4086,7 +4319,7 @@ function createButton(buttonName) {
 							$('#tree-' + id).siblings('.sect').hide();
 
 							setTimeout(function () {
-								changeVKWidth();
+								changeVKWidth('12%', '59.5%');
 								$('#input-btn-out').prepend('<span class="mr-2">sect</span>');
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnTxmode-', 30, 40);
@@ -4214,7 +4447,7 @@ function createButton(buttonName) {
 							$('#tree-' + id).siblings('.sect').hide();
 
 							setTimeout(function () {
-								changeVKWidth();
+								changeVKWidth('12%', '59.5%');
 								$('#input-btn-out').prepend('<span class="mr-2">sect</span>');
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnEtilt-', 30, 40);
@@ -4824,7 +5057,7 @@ function createButton(buttonName) {
 								initiateToggleBtn('#btnSetcps-', id, listBtnSetcps[id][0]);
 
 								setTimeout(function () {
-									changeVKWidth();
+									changeVKWidth('12%', '59.5%');
 									$('#input-btn-out').prepend('<span class="mr-2">setcps</span>');
 								}, 125);
 
@@ -5523,9 +5756,9 @@ function delCharByOne() {
 	}
 }
 
-function changeVKWidth() {
-	$('#input-btn-out').css('width', '12%');
-	$('#input-area').css('width', '59.5%');
+function changeVKWidth(valA, valB) {
+	$('#input-btn-out').css('width', valA);
+	$('#input-area').css('width', valB);
 }
 
 function resetVKWidth() {
