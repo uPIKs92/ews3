@@ -1295,6 +1295,16 @@ function createButton(buttonName) {
 								printBtnTree(listBtnTrack[id]);
 								createButton('ainit');
 								break;
+							case 5:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#merge-menu&t=0.15s';
+								printBtnTree(listBtnTrack[id]);
+								createButton('merge');
+								break;
 							case 20:
 								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
@@ -1544,6 +1554,14 @@ function createButton(buttonName) {
 								count = id;
 								break;
 							case 40:
+								console.log(id + ' fnAinit called');
+								event.stopImmediatePropagation();
+								backNav('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[6]);
+								}, 125);
+								break;
 							case 42:
 								console.log(id + ' fnIdtrk called');
 								event.stopImmediatePropagation();
@@ -1561,16 +1579,16 @@ function createButton(buttonName) {
 									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
-									if (count === 1) {
+									if (count < 1) {
 										count++;
 										nextStep(count, '#btnIdtrk-', listBtnIdtrk);
 										$('#tree-' + (count - 1)).show();
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnIdtrk-' + count).removeClass('active');
-										forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#logon-menu&t=0.15s');
+										forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#track-menu&t=0.15s');
 										count = 0;
-										createButton('logon');
+										createButton('track');
 									}
 								}
 								break;
@@ -1609,6 +1627,14 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation()
 								break;
 							case 40:
+								console.log(id + ' fnAinit called');
+								event.stopImmediatePropagation();
+								backNav('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[6]);
+								}, 125);
+								break;
 							case 42:
 								console.log(id + ' fnInit called');
 								event.stopImmediatePropagation();
@@ -1633,9 +1659,9 @@ function createButton(buttonName) {
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnInit-' + count).removeClass('active');
-										forceBack('#btnInit-', listBtnInit.length, '#init-menu-btn', '#logon-menu&t=0.15s');
+										forceBack('#btnInit-', listBtnInit.length, '#init-menu-btn', '#track-menu&t=0.15s');
 										count = 0;
-										createButton('logon');
+										createButton('track');
 									}
 								}
 								break;
@@ -1648,6 +1674,103 @@ function createButton(buttonName) {
 				hideRightNav();
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnInit-48');
+				return;
+			}
+			case 'merge': {
+				let count = 0;
+				let toggLabelA1 = listBtnMerge[0][0];
+				let toggLabelA2 = 'calsn1';
+				let toggLabelB1 = listBtnMerge[1][0];
+				let toggLabelB2 = 'calsn2';
+
+				for (let varMerge = 0; varMerge < listBtnMerge.length; varMerge++) {
+					generateButtonMenu('#merge-menu-btn', 'btnMerge-', varMerge, listBtnMerge[varMerge][0]);
+					registToTree(varMerge, listBtnMerge[varMerge][0], 2);
+					$('#btnMerge-' + varMerge).on("click", { num: varMerge }, fnMerge);
+					$('#btnMerge-' + varMerge).addClass('text-none');
+				}
+
+				function fnMerge(event) {
+					let id = event.data.num;
+
+					if (listBtnMerge[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnMerge-', id, listBtnMerge[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnMerge called');
+								initiateToggleBtn('#btnMerge-', id, listBtnMerge[id][1]);
+
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnMerge-', 30, 40, listBtnMerge);
+								}, 125);
+								break;
+							case 1:
+								console.log(id + ' fnMerge called');
+								initiateToggleBtn('#btnMerge-', id, listBtnMerge[id][1]);
+
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnMerge-', 30, 40, listBtnMerge);
+								}, 125);
+								break;
+							case 40:
+								console.log(id + ' fnMerge called');
+								event.stopImmediatePropagation();
+								backNav('#btnMerge-', listBtnMerge.length, '#merge-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[6]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnMerge called');
+								event.stopImmediatePropagation();
+								backNav('#btnMerge-', listBtnMerge.length, '#merge-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnMerge called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 2) {
+										count++;
+										nextStep(count, '#btnMerge-', listBtnMerge);
+										$('#tree-' + (count - 1)).show();
+										$('#toggle-box-out').hide();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnMerge-' + count).removeClass('active');
+										forceBack('#btnMerge-', listBtnMerge.length, '#merge-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[6]);
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnMerge, id);
+				}
+				toggleBtn(0, '#btnMerge-0', toggLabelA1, toggLabelA2);
+				toggleBtn(1, '#btnMerge-1', toggLabelB1, toggLabelB2);
+				showToggle(toggLabelA1, toggLabelA2);
+				setBtnActive('#btnMerge-', listBtnMerge);
+				delChar('#keyboard-clear, #btnMerge-48');
 				return;
 			}
 			case 'ppibrt': {
