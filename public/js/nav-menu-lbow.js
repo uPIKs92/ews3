@@ -1319,7 +1319,7 @@ function createButton(buttonName) {
 				return;
 			}
 			case 'ainit': {
-				let count = 0;
+				let count = 1;
 				let toggLabelA1 = listBtnAinit[1][0];
 				let toggLabelA2 = 'SOURCE';
 				let toggLabelB1 = listBtnAinit[2][0];
@@ -1346,19 +1346,28 @@ function createButton(buttonName) {
 							case 1:
 								console.log(id + ' fnAinit called');
 								initiateToggleBtn('#btnAinit-', id, listBtnAinit[id][1]);
+
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnAinit-', 30, 40, listBtnAinit);
+								}, 125);
 								break;
 							case 2:
 								console.log(id + ' fnAinit called');
 								initiateToggleBtn('#btnAinit-', id, listBtnAinit[id][2]);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnAinit-', 30, 40);
 								break;
 							case 3:
 								console.log(id + ' fnAinit called');
 								initiateToggleBtn('#btnAinit-', id, listBtnAinit[id][3]);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnAinit-', 30, 40);
 								break;
 							case 40:
 								console.log(id + ' fnAinit called');
 								event.stopImmediatePropagation();
-								backNav('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#tracks-menu&t=0.15s', 'tracks');
+								backNav('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#track-menu&t=0.15s', 'track');
 
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[6]);
@@ -1415,8 +1424,8 @@ function createButton(buttonName) {
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnAinit-' + count).removeClass('active');
-										forceBack('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#tracks-menu&t=0.15s');
-										count = 0;
+										forceBack('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#track-menu&t=0.15s');
+										count = 1;
 										createButton('track');
 
 										setTimeout(function () {
@@ -1427,14 +1436,14 @@ function createButton(buttonName) {
 								break;
 						}
 					}
-					toggleBtn(1, '#btnAinit-1', toggLabelA1, toggLabelA2);
-					toggleBtn(2, '#btnAinit-2', toggLabelB1, toggLabelB2);
-					toggleBtn(3, '#btnAinit-3', toggLabelC1, toggLabelC2);
-					showToggle(toggLabelA1, toggLabelA2);
-					setBtnActive('#btnAinit-', listBtnAinit);
-					delChar('#keyboard-clear, #btnAinit-48');
-					$('.cursor i').removeClass('d-none');
+					bindBtnNumber(listBtnAinit, id);
 				}
+				toggleBtn(1, '#btnAinit-1', toggLabelA1, toggLabelA2);
+				toggleBtn(2, '#btnAinit-2', toggLabelB1, toggLabelB2);
+				toggleBtn(3, '#btnAinit-3', toggLabelC1, toggLabelC2);
+				showToggle(toggLabelA1, toggLabelA2);
+				setBtnActive('#btnAinit-', listBtnAinit);
+				delChar('#keyboard-clear, #btnAinit-48');
 				return;
 			}
 			case 'ppibrt': {
