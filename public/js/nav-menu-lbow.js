@@ -1363,6 +1363,16 @@ function createButton(buttonName) {
 								printBtnTree(listBtnTrack[id]);
 								createButton('toldin');
 								break;
+							case 22:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#updtrk-menu&t=0.15s';
+								printBtnTree(listBtnTrack[id]);
+								createButton('updtrk');
+								break;
 							case 24:
 								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
@@ -2504,6 +2514,160 @@ function createButton(buttonName) {
 				hideNumBtn('#btnToldin-', 30, 40);
 				setBtnActive('#btnToldin-', listBtnToldin);
 				delChar('#btnToldin-48');
+				return;
+			}
+			case 'updtrk': {
+				let count = 0;
+				const btn = ['btm', 'latlng', 'georef'];
+
+				for (let varUpdtrk = 0; varUpdtrk < listBtnUpdtrk.length; varUpdtrk++) {
+					generateButtonMenu('#updtrk-menu-btn', 'btnUpdtrk-', varUpdtrk, listBtnUpdtrk[varUpdtrk][0]);
+					registToTree(varUpdtrk, listBtnUpdtrk[varUpdtrk][0], 4);
+					$('#btnUpdtrk-' + varUpdtrk).on("click", { num: varUpdtrk }, fnUpdtrk);
+
+					if ((varUpdtrk < 3)) {
+						$('#btnUpdtrk-' + varUpdtrk).addClass('text-none');
+					}
+				}
+
+				function fnUpdtrk(event) {
+					let id = event.data.num;
+
+					if (listBtnUpdtrk[id][0] != '') {
+						if (id < 4) {
+							initiateLoadedMenu('#btnUpdtrk-', id, listBtnUpdtrk[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnUpdtrk called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
+								$('#btnUpdtrk-' + 44).children('span').hide();
+								$('#btnUpdtrk-' + 44).off();
+								break;
+							case 1:
+								console.log(id + ' fnUpdtrk called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
+								$('#btnUpdtrk-' + 44).children('span').hide();
+								$('#btnUpdtrk-' + 44).off();
+								break;
+							case 2:
+								console.log(id + ' fnUpdtrk called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
+								$('#btnUpdtrk-' + 44).children('span').hide();
+								$('#btnUpdtrk-' + 44).off();
+								break;
+							case 3:
+								console.log(id + ' fnUpdtrk called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+
+								toggleThreeState(btn, '#btnUpdtrk-' + id, 1);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnUpdtrk-', 30, 40);
+
+								if ($('#btnUpdtrk-' + id).text() != 'btm') {
+									callAlphaVK('#btnUpdtrk-');
+								} else {
+									$('#btnUpdtrk-' + 44).children('span').hide();
+									$('#btnUpdtrk-' + 44).off();
+								}
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								backNav('#btnUpdtrk-', listBtnUpdtrk.length, '#updtrk-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[6]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnUpdtrk called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								backNav('#btnUpdtrk-', listBtnUpdtrk.length, '#updtrk-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnUpdtrk called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 4) {
+										count++;
+										nextStep(count, '#btnUpdtrk-', listBtnUpdtrk);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+
+										switch (count) {
+											case 0:
+												showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
+												break;
+											case 1:
+												showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
+												break;
+											case 2:
+												showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
+												break;
+											case 3:
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+
+												initiateToggleThree(btn);
+												hideNumBtn('#btnUpdtrk-', 30, 40);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnUpdtrk-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnUpdtrk-', listBtnUpdtrk.length, '#updtrk-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnUpdtrk, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnUpdtrk-');
+				});
+
+				$('#btnUpdtrk-' + 44).children('span').hide();
+				$('.cursor i').removeClass('d-none');
+				setBtnActive('#btnUpdtrk-', listBtnUpdtrk);
+				delChar('#btnUpdtrk-48');
 				return;
 			}
 			case 'ppibrt': {
