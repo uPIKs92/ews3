@@ -1373,6 +1373,16 @@ function createButton(buttonName) {
 								printBtnTree(listBtnTrack[id]);
 								createButton('updtrk');
 								break;
+							case 23:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#updcde-menu&t=0.15s';
+								printBtnTree(listBtnTrack[id]);
+								createButton('updcde');
+								break;
 							case 24:
 								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
@@ -2514,6 +2524,225 @@ function createButton(buttonName) {
 				hideNumBtn('#btnToldin-', 30, 40);
 				setBtnActive('#btnToldin-', listBtnToldin);
 				delChar('#btnToldin-48');
+				return;
+			}
+			case 'updcde': {
+				let count = 1;
+				let toggLabelA1 = listBtnUpdcde[1][0];
+				let toggLabelA2 = 'canm1';
+				let toggLabelB1 = listBtnUpdcde[2][0];
+				let toggLabelB2 = 'canm2';
+				let toggLabelC1 = listBtnUpdcde[3][0];
+				let toggLabelC2 = 'canm3';
+				let toggLabelD1 = listBtnUpdcde[4][0];
+				let toggLabelD2 = 'canmc';
+				let toggLabelE1 = listBtnUpdcde[5][0];
+				let toggLabelE2 = 'cansgn';
+				let toggLabelF1 = listBtnUpdcde[6][0];
+				let toggLabelF2 = 'emgoff';
+
+				for (let varUpdcde = 0; varUpdcde < listBtnUpdcde.length; varUpdcde++) {
+					generateButtonMenu('#updcde-menu-btn', 'btnUpdcde-', varUpdcde, listBtnUpdcde[varUpdcde][0]);
+					registToTree(varUpdcde, listBtnUpdcde[varUpdcde][0], 7);
+					$('#btnUpdcde-' + varUpdcde).on("click", { num: varUpdcde }, fnUpdcde);
+
+					if ((varUpdcde === 5)) {
+						$('#btnUpdcde-' + varUpdcde).addClass('text-none');
+					}
+
+					if (varUpdcde < 6) {
+						$('#btnUpdcde-' + varUpdcde).attr('value', 'tg-off');
+					}
+
+
+				}
+
+				function fnUpdcde(event) {
+					let id = event.data.num;
+
+					if (listBtnUpdcde[id][0] != '') {
+						if (id < 7) {
+							initiateLoadedMenu('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+
+								if ($('#btnUpdcde-' + id).attr('value') != 'tg-off') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+									}, 125);
+								}
+								break;
+							case 2:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+
+								if ($('#btnUpdcde-' + id).attr('value') != 'tg-off') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+									}, 125);
+								}
+								break;
+							case 3:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+
+								if ($('#btnUpdcde-' + id).attr('value') != 'tg-off') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+									}, 125);
+								}
+								break;
+							case 4:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+
+								if ($('#btnUpdcde-' + id).attr('value') != 'tg-off') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+									}, 125);
+								}
+								break;
+							case 5:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+
+								if ($('#btnUpdcde-' + id).attr('value') != 'tg-off') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+									}, 125);
+								}
+								break;
+							case 6:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnUpdcde-', 30, 40);
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+								backNav('#btnUpdcde-', listBtnUpdcde.length, '#updcde-menu-btn', '#track-menu&t=0.15s', 'track');
+								$('#three-toggle').empty();
+								resetVKWidth();
+								break;
+							case 42:
+								console.log(id + ' fnUpdcde called');
+								event.stopImmediatePropagation();
+								backNav('#btnUpdcde-', listBtnUpdcde.length, '#updcde-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+								resetVKWidth();
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnUpdcde called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 7) {
+										count++;
+										nextStep(count, '#btnUpdcde-', listBtnUpdcde);
+										$('#tree-' + (count - 1)).show();
+
+										switch (count) {
+											case 2:
+												showToggle(toggLabelB1, toggLabelB2);
+
+												if ($('#btnUpdcde-' + count).attr('value') === 'tg-off') {
+													$('.cursor i').removeClass('d-none');
+													showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+												}else{
+													$('.cursor i').addClass('d-none');
+													hideNumBtn('#btnUpdcde-', 30, 40);
+												}
+												break;
+											case 3:
+												showToggle(toggLabelC1, toggLabelC2);
+
+												if ($('#btnUpdcde-' + count).attr('value') === 'tg-off') {
+													$('.cursor i').removeClass('d-none');
+													showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+												}else{
+													$('.cursor i').addClass('d-none');
+													hideNumBtn('#btnUpdcde-', 30, 40);
+												}
+												break;
+											case 4:
+												showToggle(toggLabelD1, toggLabelD2);
+
+												if ($('#btnUpdcde-' + count).attr('value') === 'tg-off') {
+													$('.cursor i').removeClass('d-none');
+													showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+												}else{
+													$('.cursor i').addClass('d-none');
+													hideNumBtn('#btnUpdcde-', 30, 40);
+												}
+												break;
+											case 5:
+												showToggle(toggLabelE1, toggLabelE2);
+
+												if ($('#btnUpdcde-' + count).attr('value') === 'tg-off') {
+													$('.cursor i').removeClass('d-none');
+													showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+												}else{
+													$('.cursor i').addClass('d-none');
+													hideNumBtn('#btnUpdcde-', 30, 40);
+												}
+												break;
+											case 6:
+												showToggle(toggLabelF1, toggLabelF2);
+												$('.cursor i').addClass('d-none');
+												hideNumBtn('#btnUpdcde-', 30, 40);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnUpdcde-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										resetVKWidth();
+										forceBack('#btnUpdcde-', listBtnUpdcde.length, '#updcde-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnUpdcde, id)
+				}
+
+				toggleBtn(1, '#btnUpdcde-1', toggLabelA1, toggLabelA2);
+				toggleBtn(2, '#btnUpdcde-2', toggLabelB1, toggLabelB2);
+				toggleBtn(3, '#btnUpdcde-3', toggLabelC1, toggLabelC2);
+				toggleBtn(4, '#btnUpdcde-4', toggLabelD1, toggLabelD2);
+				toggleBtn(5, '#btnUpdcde-5', toggLabelE1, toggLabelE2);
+				toggleBtn(6, '#btnUpdcde-6', toggLabelF1, toggLabelF2);
+
+				$('.cursor i').removeClass('d-none');
+				showToggle(toggLabelA1, toggLabelA2);
+				setBtnActive('#btnUpdcde-', listBtnUpdcde);
+				delChar('#btnUpdcde-48');
 				return;
 			}
 			case 'updtrk': {
