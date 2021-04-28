@@ -196,7 +196,6 @@ function createButton(buttonName) {
 								window.location = '#settrk-menu&t=0.15s';
 								printBtnTree(listBtnLogon[id]);
 								createButton('settrk');
-								callAlphaVK('#btnSettrk-');
 								break;
 							case 28:
 								console.log(id + ' fnLogon called');
@@ -547,23 +546,31 @@ function createButton(buttonName) {
 								console.log(id + ' fnCreftr called');
 								//event.stopImmediatePropagation()
 								initiateToggleBtn('#btnCreftr-', id, listBtnCreftr[id][0]);
+								$('#btnCreftr-' + 44).children('span').hide();
+								$('#btnCreftr-' + 44).off();
 								break;
 							case 1:
 								console.log(id + ' fnCreftr called');
 								event.stopImmediatePropagation()
 								$('.cursor i').removeClass('d-none');
 								showNumBtn('#btnCreftr-', 30, 40, listBtnCreftr);
+								$('#btnCreftr-' + 44).children('span').hide();
+								$('#btnCreftr-' + 44).off();
 								break;
 							case 2:
 								console.log(id + ' fnCreftr called');
 								//event.stopImmediatePropagation()
 								initiateToggleBtn('#btnCreftr-', id, listBtnCreftr[id][0]);
+								$('#btnCreftr-' + 44).children('span').hide();
+								$('#btnCreftr-' + 44).off();
 								break;
 							case 3:
 								console.log(id + ' fnCreftr called');
 								event.stopImmediatePropagation()
 								$('.cursor i').removeClass('d-none');
 								showNumBtn('#btnCreftr-', 30, 40, listBtnCreftr);
+								$('#btnCreftr-' + 44).children('span').hide();
+								$('#btnCreftr-' + 44).off();
 								break;
 							case 4:
 								console.log(id + ' fnCreftr called');
@@ -1346,6 +1353,15 @@ function createButton(buttonName) {
 								window.location = '#init-menu&t=0.15s';
 								printBtnTree(listBtnTrack[id]);
 								createButton('init');
+							case 21:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#toldin-menu&t=0.15s';
+								printBtnTree(listBtnTrack[id]);
+								createButton('toldin');
 								break;
 							case 24:
 								console.log(id + ' fnTrack called');
@@ -1357,6 +1373,12 @@ function createButton(buttonName) {
 								printBtnTree(listBtnTrack[id]);
 								createButton('idtrk');
 								document.getElementById('input-btn-out').innerHTML = listBtnTrack[id];
+								break;
+							case 25:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								$('#message-btn-out').empty();
+								printMessage("TRACK NOT UNDER YOUR CONTROL");
 								break;
 							case 26:
 								console.log(id + ' fnTrack called');
@@ -2312,6 +2334,178 @@ function createButton(buttonName) {
 				delChar('#keyboard-clear, #btnSwap-48');
 				return;
 			}
+			case 'toldin': {
+				let count = 0;
+				const btn = ['btm', 'latlng', 'georef'];
+				let toggLabelA1 = listBtnToldin[0][0];
+				let toggLabelA2 = 'manual';
+
+				for (let varToldin = 0; varToldin < listBtnToldin.length; varToldin++) {
+					generateButtonMenu('#toldin-menu-btn', 'btnToldin-', varToldin, listBtnToldin[varToldin][0]);
+					registToTree(varToldin, listBtnToldin[varToldin][0], 5);
+					$('#btnToldin-' + varToldin).on("click", { num: varToldin }, fnToldin);
+
+					if ((varToldin < 4)) {
+						$('#btnToldin-' + varToldin).addClass('text-none');
+					}
+				}
+
+				function fnToldin(event) {
+					let id = event.data.num;
+
+					if (listBtnToldin[id][0] != '') {
+						if (id < 5) {
+							initiateLoadedMenu('#btnToldin-', id, listBtnToldin[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnToldin called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								initiateToggleBtn('#btnToldin-', id, listBtnToldin[id][0]);
+								hideNumBtn('#btnToldin-', 30, 40);
+								$('#btnToldin-' + 44).children('span').hide();
+								$('#btnToldin-' + 44).off();
+								break;
+							case 1:
+								console.log(id + ' fnToldin called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnToldin-', 30, 40, listBtnToldin);
+								$('#btnToldin-' + 44).children('span').hide();
+								$('#btnToldin-' + 44).off();
+								break;
+							case 2:
+								console.log(id + ' fnToldin called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnToldin-', 30, 40, listBtnToldin);
+								$('#btnToldin-' + 44).children('span').hide();
+								$('#btnToldin-' + 44).off();
+								break;
+							case 3:
+								console.log(id + ' fnToldin called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnToldin-', 30, 40, listBtnToldin);
+								$('#btnToldin-' + 44).children('span').hide();
+								$('#btnToldin-' + 44).off();
+								break;
+							case 4:
+								console.log(id + ' fnToldin called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+
+								toggleThreeState(btn, '#btnToldin-' + id, 1);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnToldin-', 30, 40);
+
+								if ($('#btnToldin-' + id).text() != 'btm') {
+									callAlphaVK('#btnToldin-');
+								} else {
+									$('#btnToldin-' + 44).children('span').hide();
+									$('#btnToldin-' + 44).off();
+								}
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								backNav('#btnToldin-', listBtnToldin.length, '#toldin-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[6]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnToldin called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								backNav('#btnToldin-', listBtnToldin.length, '#toldin-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnToldin called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 5) {
+										count++;
+										nextStep(count, '#btnToldin-', listBtnToldin);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+
+										switch (count) {
+											case 0:
+												showToggle(toggLabelA1, toggLabelA2);
+												hideNumBtn('#btnToldin-', 30, 40);
+												break;
+											case 1:
+												showNumBtn('#btnToldin-', 30, 40, listBtnToldin);
+												break;
+											case 2:
+												showNumBtn('#btnToldin-', 30, 40, listBtnToldin);
+												break;
+											case 3:
+												showNumBtn('#btnToldin-', 30, 40, listBtnToldin);
+												break;
+											case 4:
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+
+												initiateToggleThree(btn);
+												hideNumBtn('#btnToldin-', 30, 40);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnToldin-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnToldin-', listBtnToldin.length, '#toldin-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnToldin, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnToldin-');
+				});
+
+				$('#btnToldin-' + 44).children('span').hide();
+				toggleBtn(0, '#btnToldin-0', toggLabelA1, toggLabelA2);
+				showToggle(toggLabelA1, toggLabelA2);
+				hideNumBtn('#btnToldin-', 30, 40);
+				setBtnActive('#btnToldin-', listBtnToldin);
+				delChar('#btnToldin-48');
+				return;
+			}
 			case 'ppibrt': {
 				let count = 0;
 
@@ -3050,24 +3244,30 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 
 								hideNumBtn('#btnSettrk-', 30, 40);
+								callAlphaVK('#btnSettrk-');
 								break;
 							case 2:
 								console.log(id + ' fnSettrk called');
 								event.stopImmediatePropagation();
 
 								hideNumBtn('#btnSettrk-', 30, 40);
+								callAlphaVK('#btnSettrk-');
 								break;
 							case 4:
 								console.log(id + ' fnSettrk called');
 								event.stopImmediatePropagation();
 
 								showNumBtn('#btnSettrk-', 30, 40, listBtnSettrk);
+								$('#btnSettrk-' + 44).children('span').hide();
+								$('#btnSettrk-' + 44).off();
 								break;
 							case 6:
 								console.log(id + ' fnSettrk called');
 								event.stopImmediatePropagation();
 
 								showNumBtn('#btnSettrk-', 30, 40, listBtnSettrk);
+								$('#btnSettrk-' + 44).children('span').hide();
+								$('#btnSettrk-' + 44).off();
 								break;
 							case 40:
 							case 42:
@@ -3101,9 +3301,13 @@ function createButton(buttonName) {
 												break;
 											case 4:
 												showNumBtn('#btnSettrk-', 30, 40, listBtnSettrk);
+												$('#btnSettrk-' + 44).children('span').hide();
+												$('#btnSettrk-' + 44).off();
 												break;
 											case 6:
 												showNumBtn('#btnSettrk-', 30, 40, listBtnSettrk);
+												$('#btnSettrk-' + 44).children('span').hide();
+												$('#btnSettrk-' + 44).off();
 												break;
 										}
 									} else {
@@ -5285,7 +5489,7 @@ function createButton(buttonName) {
 					registToTree(varSetpsa, listBtnSetpsa[varSetpsa][0], 7);
 					$('#btnSetpsa-' + varSetpsa).on("click", { num: varSetpsa }, fnSetpsa);
 
-					if ((varSetpsa > 1)) {
+					if ((varSetpsa < 7)) {
 						$('#btnSetpsa-' + varSetpsa).addClass('text-none');
 					}
 
