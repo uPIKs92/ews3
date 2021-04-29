@@ -42,6 +42,9 @@
         <div lj-type="frame" lj-name="totes-menu" lj-transition="fade">
             <ul id="totes-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="updtot-menu" lj-transition="fade">
+            <ul id="updtot-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="track-menu" lj-transition="fade">
             <ul id="track-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>

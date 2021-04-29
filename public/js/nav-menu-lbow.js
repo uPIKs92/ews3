@@ -52,7 +52,7 @@ function createButton(buttonName) {
 				function fnLogon(event) {
 					let id = event.data.num;
 
-					if (listBtnLogon[id][0] != '') {
+					if (listBtnLogon[id] != '') {
 						switch (id) {
 							case 0:
 								console.log(id + ' fnLogon called');
@@ -353,7 +353,7 @@ function createButton(buttonName) {
 				function fnMaps(event) {
 					let id = event.data.num;
 
-					if (listBtnMaps[id][0] != '') {
+					if (listBtnMaps[id] != '') {
 						switch (id) {
 							case 0:
 							case 40:
@@ -1269,14 +1269,28 @@ function createButton(buttonName) {
 							$('#btnTotes-' + varTotes).attr('data-toggle', 'modal');
 							$('#btnTotes-' + varTotes).attr('data-target', '#metcur-modal');
 							break;
+						case 11:
+							$('#btnTotes-' + varTotes).attr('data-toggle', 'modal');
+							$('#btnTotes-' + varTotes).attr('data-target', '#metdef-modal');
+							break;
 					}
 				}
 
 				function fnTotes(event) {
 					let id = event.data.num;
 
-					if (listBtnTotes[id][0] != '') {
+					if (listBtnTotes[id] != '') {
 						switch (id) {
+							case 18:
+								console.log(id + ' fnUpdtot called');
+								event.stopImmediatePropagation();
+								clearMenu('#totes-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#updtot-menu&t=0.15s';
+								printBtnTree(listBtnTotes[id]);
+								createButton('updtot');
+								break;
 							case 0:
 							case 40:
 							case 42:
@@ -1293,6 +1307,59 @@ function createButton(buttonName) {
 				}
 				return;
 			}
+			case 'updtot': {
+				for (let varUpdtot = 0; varUpdtot < listBtnUpdtot.length; varUpdtot++) {
+					generateButtonMenu('#updtot-menu-btn', 'btnUpdtot-', varUpdtot, listBtnUpdtot[varUpdtot][0]);
+					registToTree(varUpdtot, listBtnUpdtot[varUpdtot][0], 24);
+					$('#btnUpdtot-' + varUpdtot).on("click", { num: varUpdtot }, fnUpdtot);
+
+					switch (varUpdtot) {
+						case 10:
+							$('#btnUpdtot-' + varUpdtot).attr('data-toggle', 'modal');
+							$('#btnUpdtot-' + varUpdtot).attr('data-target', '#metcur-modal');
+							break;
+						case 11:
+							$('#btnUpdtot-' + varUpdtot).attr('data-toggle', 'modal');
+							$('#btnUpdtot-' + varUpdtot).attr('data-target', '#metdef-modal');
+							break;
+					}
+				}
+
+				function fnUpdtot(event) {
+					let id = event.data.num;
+
+					if (listBtnUpdtot[id][0] != '') {
+						if (id < 24) {
+							initiateLoadedMenu('#btnUpdtot-', id, listBtnUpdtot[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 40:
+								console.log(id + ' fnUpdtot called');
+								event.stopImmediatePropagation();
+								backNav('#btnUpdtot-', listBtnUpdtot.length, '#updtot-menu-btn', '#totes-menu&t=0.15s', 'totes');
+							
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[5]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnUpdtot called');
+								event.stopImmediatePropagation();
+								backNav('#btnUpdtot-', listBtnUpdtot.length, '#updtot-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+						}
+					}
+					bindBtnNumber(listBtnUpdtot, id);
+				}
+				$('.cursor i').removeClass('d-none');
+				delChar('#keyboard-clear, #btnUpdtot-48');
+				return;
+			}
 			case 'track': {
 				for (let varTrack = 0; varTrack < listBtnTrack.length; varTrack++) {
 					generateButtonMenu('#track-menu-btn', 'btnTrack-', varTrack, listBtnTrack[varTrack]);
@@ -1302,7 +1369,7 @@ function createButton(buttonName) {
 				function fnTrack(event) {
 					let id = event.data.num;
 
-					if (listBtnTrack[id][0] != '') {
+					if (listBtnTrack[id] != '') {
 						switch (id) {
 							case 0:
 							case 40:
@@ -3935,7 +4002,7 @@ function createButton(buttonName) {
 				function fnRadcon(event) {
 					let id = event.data.num;
 
-					if (listBtnRadcon[id][0] != '') {
+					if (listBtnRadcon[id] != '') {
 						switch (id) {
 							case 0:
 							case 40:
