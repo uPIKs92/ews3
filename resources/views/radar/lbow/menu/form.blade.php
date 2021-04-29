@@ -1,4 +1,4 @@
-<!-- Modal -->
+<!--index Modal -->
 <div class="cusModal p-0">
     <div id="index-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
         <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
@@ -18,7 +18,7 @@
                             <div class="row p-2">
                                 <div class="col-12 border border-warning p-2 mt-1">
                                     <h6>general</h6>
-									<p class="underline border-warning mt-2"></p>
+                                    <p class="underline border-warning mt-2"></p>
                                     <table class="text-warning w-100 mt-2">
                                         <tr>
                                             <td class="w-20">index</td>
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="col-12 border border-warning p-2 mt-3">
                                     <h6>tracking</h6>
-									<p class="underline border-warning mt-2"></p>
+                                    <p class="underline border-warning mt-2"></p>
                                     <table class="text-warning w-100 mt-2">
                                         <tr>
                                             <td class="w-20">trksta</td>
@@ -83,9 +83,9 @@
                                         </tr>
                                     </table>
                                 </div>
-								<div class="col-12 border border-warning p-2 mt-3">
+                                <div class="col-12 border border-warning p-2 mt-3">
                                     <h6>tactical</h6>
-									<p class="underline border-warning mt-2"></p>
+                                    <p class="underline border-warning mt-2"></p>
                                     <table class="text-warning w-100 mt-2">
                                         <tr>
                                             <td class="w-20">pln-tm</td>
@@ -110,7 +110,7 @@
                             <div class="row p-2">
                                 <div class="col-12 border border-warning p-2 mt-1">
                                     <h6>weapons</h6>
-									<p class="underline border-warning mt-2"></p>
+                                    <p class="underline border-warning mt-2"></p>
                                     <table class="text-warning w-100 mt-2">
                                         <tr>
                                             <td class="w-20">hostrk</td>
@@ -164,9 +164,9 @@
                                         </tr>
                                     </table>
                                 </div>
-								<div class="col-12 border border-warning p-2 mt-3">
+                                <div class="col-12 border border-warning p-2 mt-3">
                                     <h6>air movements</h6>
-									<p class="underline border-warning mt-2"></p>
+                                    <p class="underline border-warning mt-2"></p>
                                     <table class="text-warning w-100 mt-2">
                                         <tr>
                                             <td class="w-20">std-fp</td>
@@ -194,6 +194,123 @@
                                             <td class="text-capitalize">turning points</td>
                                         </tr>
                                     </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- <div class="modal-footer"></div> --}}
+            </div>
+        </div>
+    </div>
+</div>
+<!--metcur Modal -->
+<div class="cusModal p-0">
+    <div id="metcur-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <h6>meteorogical data for zone n</h6>
+                    <div class="btnCustom" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="clearfix">
+                        <div class="float-left w-40">
+                            <div class="row p-0 pl-2 pr-2">
+                                <div class="col-sm-2 text-center">
+                                    <span>hgt hft</span>
+                                </div>
+                                <div class="col-sm-2 text-center">
+                                    <span>wnd from</span>
+                                </div>
+                                <div class="col-sm-2 text-center">
+                                    <span>spd</span>
+                                </div>
+                                <div class="col-sm-2 text-center">
+                                    <span>temp degc</span>
+                                </div>
+                                <div class="col-sm-2 text-center">
+                                    <span>pres mb</span>
+                                </div>
+                                <div class="col-sm-2 text-center">
+                                    <span>hum p/c</span>
+                                </div>
+                            </div>
+                            <table class="table table-sm text-warning border-warning text-center m-0 ml-2 mr-2"
+                                style="border-collapse: collapse;">
+                                <tbody>
+                                    <tr>
+                                        <td class="solid-bordered border-warning bg-transparent">nnn</td>
+                                        <td class="solid-bordered border-warning bg-transparent">nnn</td>
+                                        <td class="solid-bordered border-warning bg-transparent">nnn</td>
+                                        <td class="solid-bordered border-warning bg-transparent">nnn</td>
+                                        <td class="solid-bordered border-warning bg-transparent">nnn</td>
+                                        <td class="solid-bordered border-warning bg-transparent">nnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="float-right w-55">
+                            <h6 class="mt-3">zone forecast</h6>
+                            <div class="row p-2">
+                                <div class="col-12 border border-warning p-2 mt-1" style="height: 360px">
+                                </div>
+								<div class="col-12 p-0 mb-2 mt-2">
+                                    <ul class="text-center list-unstyled form-inline m-1">
+                                        <li class="w-20 pl-1 pr-1">
+											<span>locont</span>
+											<input type="text" class="form-out border-warning text-warning text-uppercase w-100"
+											value="xxxxxx" style="font-size: 12px;" readonly>
+										</li>
+                                        <li class="w-20 pl-1 pr-1">
+											<span>hicont</span>
+											<input type="text" class="form-out border-warning text-warning text-uppercase w-100"
+											value="xxxxxx" style="font-size: 12px;" readonly>
+										</li>
+                                        <li class="w-20 pl-1 pr-1">
+											<span>tropo</span>
+											<input type="text" class="form-out border-warning text-warning text-uppercase w-100"
+											value="xxxxxx" style="font-size: 12px;" readonly>
+										</li>
+                                        <li class="w-20 pl-1 pr-1">
+											<span>freeze</span>
+											<input type="text" class="form-out border-warning text-warning text-uppercase w-100"
+											value="xxxxxx" style="font-size: 12px;" readonly>
+										</li>
+                                        <li class="w-20 pl-1 pr-1">
+											<span>qnh</span>
+											<input type="text" class="form-out border-warning text-warning text-uppercase w-100"
+											value="xxxxxx" style="font-size: 12px;" readonly>
+										</li>
+                                        <li>
+                                            
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 p-0">
+                                    <ul class="list-unstyled form-inline m-1">
+                                        <li class="w-20">time of data</li>
+                                        <li class="mr-2 ml-2">:</li>
+                                        <li>
+                                            <input type="text" class="form-out border-warning text-warning text-uppercase w-100"
+                                                value="nn.nn" style="font-size: 12px;" readonly>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 p-0">
+                                    <ul class="list-unstyled form-inline m-1">
+                                        <li class="w-20">status of data</li>
+                                        <li class="mr-2 ml-2">:</li>
+                                        <li>
+                                            <input type="text" class="form-out border-warning text-warning text-uppercase w-100"
+                                                value="xxxxxxxxxxxxxxxxxxxx" style="font-size: 12px;" readonly>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

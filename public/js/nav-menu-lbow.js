@@ -1260,9 +1260,15 @@ function createButton(buttonName) {
 					generateButtonMenu('#totes-menu-btn', 'btnTotes-', varTotes, listBtnTotes[varTotes]);
 					$('#btnTotes-' + varTotes).on("click", { num: varTotes }, fnTotes);
 
-					if(varTotes === 1){
-						$('#btnTotes-' + varTotes).attr('data-toggle','modal');
-						$('#btnTotes-' + varTotes).attr('data-target','#index-modal');
+					switch (varTotes) {
+						case 1:
+							$('#btnTotes-' + varTotes).attr('data-toggle', 'modal');
+							$('#btnTotes-' + varTotes).attr('data-target', '#index-modal');
+							break;
+						case 10:
+							$('#btnTotes-' + varTotes).attr('data-toggle', 'modal');
+							$('#btnTotes-' + varTotes).attr('data-target', '#metcur-modal');
+							break;
 					}
 				}
 
