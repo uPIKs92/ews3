@@ -231,6 +231,7 @@ function createButton(buttonName) {
 								break;
 							case 40:
 							case 42:
+								clearMenu(menu);
 								$('#message-btn-out').empty();
 								break;
 						}
@@ -1258,6 +1259,11 @@ function createButton(buttonName) {
 				for (let varTotes = 0; varTotes < listBtnTotes.length; varTotes++) {
 					generateButtonMenu('#totes-menu-btn', 'btnTotes-', varTotes, listBtnTotes[varTotes]);
 					$('#btnTotes-' + varTotes).on("click", { num: varTotes }, fnTotes);
+
+					if(varTotes === 1){
+						$('#btnTotes-' + varTotes).attr('data-toggle','modal');
+						$('#btnTotes-' + varTotes).attr('data-target','#index-modal');
+					}
 				}
 
 				function fnTotes(event) {
@@ -4294,7 +4300,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnGcthr called');
 								event.stopImmediatePropagation();
 								backNav('#btnGcthr-', listBtnGcthr.length, '#gcthr-menu-btn', '#radcon-menu&t=0.15s', 'radcon');
-								
+
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[6]);
 								}, 125);
@@ -6394,13 +6400,17 @@ function makeMenuRight() {
 
 	function fnRight(event) {
 		let id = event.data.num;
+		let menu = ('#' + $('#tree-btn-out span:last-child').text() + '-menu-btn');
+		console.log(menu);
 
 		if (listBtnRight[id][0] != '') {
 			switch (id) {
 				case 0:
 					console.log(id + ' fnRight called');
-					event.stopImmediatePropagation()
-					//clearMenu('#right-menu-btn');
+					event.stopImmediatePropagation();
+					$('#tree-btn-out').empty();
+					$('#sub-tree').empty();
+					clearMenu(menu);
 					clearContent();
 					$('#message-btn-out').empty();
 					window.location = '#settrk-menu&t=0.15s';
@@ -6409,8 +6419,10 @@ function makeMenuRight() {
 					break;
 				case 1:
 					console.log(id + ' fnRight called');
-					event.stopImmediatePropagation()
-					//clearMenu('#right-menu-btn');
+					event.stopImmediatePropagation();
+					$('#tree-btn-out').empty();
+					$('#sub-tree').empty();
+					clearMenu(menu);
 					clearContent();
 					$('#message-btn-out').empty();
 					window.location = '#labpos-menu&t=0.15s';
@@ -6420,8 +6432,10 @@ function makeMenuRight() {
 					break;
 				case 2:
 					console.log(id + ' fnRight called');
-					event.stopImmediatePropagation()
-					//clearMenu('#right-menu-btn');
+					event.stopImmediatePropagation();
+					$('#tree-btn-out').empty();
+					$('#sub-tree').empty();
+					clearMenu(menu);
 					clearContent();
 					$('#message-btn-out').empty();
 					window.location = '#trksel-menu&t=0.15s';
