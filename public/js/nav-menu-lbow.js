@@ -1256,6 +1256,10 @@ function createButton(buttonName) {
 				return;
 			}
 			case 'totes': {
+				let numPage = 1;
+				let minPage = 1;
+				let maxPage = 2;
+
 				for (let varTotes = 0; varTotes < listBtnTotes.length; varTotes++) {
 					generateButtonMenu('#totes-menu-btn', 'btnTotes-', varTotes, listBtnTotes[varTotes]);
 					$('#btnTotes-' + varTotes).on("click", { num: varTotes }, fnTotes);
@@ -1266,12 +1270,71 @@ function createButton(buttonName) {
 							$('#btnTotes-' + varTotes).attr('data-target', '#index-modal');
 							break;
 						case 10:
+						case 11:
 							$('#btnTotes-' + varTotes).attr('data-toggle', 'modal');
 							$('#btnTotes-' + varTotes).attr('data-target', '#metcur-modal');
 							break;
-						case 11:
+						case 20:
+						case 21:
 							$('#btnTotes-' + varTotes).attr('data-toggle', 'modal');
-							$('#btnTotes-' + varTotes).attr('data-target', '#metdef-modal');
+							$('#btnTotes-' + varTotes).attr('data-target', '#radcur-modal');
+							$('#modal-subTitle').html('<span>(operational)</span>');
+
+							$('#car-right').on('click', function () {
+								if (numPage < maxPage && numPage != maxPage) {
+									numPage++;
+									window.location = '#sub_modal_' + numPage + '&t=0.15s';
+									$.setTitle();
+
+									if (numPage > maxPage) {
+										numPage = maxPage;
+
+										return numPage;
+									}
+								}
+							});
+
+							$('#car-left').on('click', function () {
+								if (numPage > minPage && numPage != minPage) {
+									numPage--;
+									window.location = '#sub_modal_' + numPage + '&t=0.15s';
+									$.setTitle();
+
+									if (numPage < minPage) {
+										numPage = minPage;
+
+										return numPage;
+									}
+								}
+							});
+
+							$.setTitle = function () {
+								switch (numPage) {
+									case 1:
+										$('#modal-subTitle').html('<span>(operational)</span>');
+										break;
+									case 2:
+										$('#modal-subTitle').html('<span>(functional)</span>');
+										break;
+								}
+							}
+
+							break;
+						case 22:
+							$('#btnTotes-' + varTotes).attr('data-toggle', 'modal');
+							$('#btnTotes-' + varTotes).attr('data-target', '#strobe-modal');
+							break;
+						case 30:
+							$('#btnTotes-' + varTotes).attr('data-toggle', 'modal');
+							$('#btnTotes-' + varTotes).attr('data-target', '#comdir-modal');
+							break;
+						case 32:
+							$('#btnTotes-' + varTotes).attr('data-toggle', 'modal');
+							$('#btnTotes-' + varTotes).attr('data-target', '#mantrk-modal');
+							break;
+						case 33:
+							$('#btnTotes-' + varTotes).attr('data-toggle', 'modal');
+							$('#btnTotes-' + varTotes).attr('data-target', '#trktel-modal');
 							break;
 					}
 				}
@@ -1308,6 +1371,10 @@ function createButton(buttonName) {
 				return;
 			}
 			case 'updtot': {
+				let numPage = 1;
+				let minPage = 1;
+				let maxPage = 2;
+				
 				for (let varUpdtot = 0; varUpdtot < listBtnUpdtot.length; varUpdtot++) {
 					generateButtonMenu('#updtot-menu-btn', 'btnUpdtot-', varUpdtot, listBtnUpdtot[varUpdtot][0]);
 					registToTree(varUpdtot, listBtnUpdtot[varUpdtot][0], 24);
@@ -1315,12 +1382,55 @@ function createButton(buttonName) {
 
 					switch (varUpdtot) {
 						case 10:
+						case 11:
 							$('#btnUpdtot-' + varUpdtot).attr('data-toggle', 'modal');
 							$('#btnUpdtot-' + varUpdtot).attr('data-target', '#metcur-modal');
 							break;
-						case 11:
+						case 22:
+						case 23:
 							$('#btnUpdtot-' + varUpdtot).attr('data-toggle', 'modal');
-							$('#btnUpdtot-' + varUpdtot).attr('data-target', '#metdef-modal');
+							$('#btnUpdtot-' + varUpdtot).attr('data-target', '#radcur-modal');
+							$('#modal-subTitle').html('<span>(operational)</span>');
+
+							$('#car-right').on('click', function () {
+								if (numPage < maxPage && numPage != maxPage) {
+									numPage++;
+									window.location = '#sub_modal_' + numPage + '&t=0.15s';
+									$.setTitle();
+
+									if (numPage > maxPage) {
+										numPage = maxPage;
+
+										return numPage;
+									}
+								}
+							});
+
+							$('#car-left').on('click', function () {
+								if (numPage > minPage && numPage != minPage) {
+									numPage--;
+									window.location = '#sub_modal_' + numPage + '&t=0.15s';
+									$.setTitle();
+
+									if (numPage < minPage) {
+										numPage = minPage;
+
+										return numPage;
+									}
+								}
+							});
+
+							$.setTitle = function () {
+								switch (numPage) {
+									case 1:
+										$('#modal-subTitle').html('<span>(operational)</span>');
+										break;
+									case 2:
+										$('#modal-subTitle').html('<span>(functional)</span>');
+										break;
+								}
+							}
+
 							break;
 					}
 				}
@@ -1339,7 +1449,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnUpdtot called');
 								event.stopImmediatePropagation();
 								backNav('#btnUpdtot-', listBtnUpdtot.length, '#updtot-menu-btn', '#totes-menu&t=0.15s', 'totes');
-							
+
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[5]);
 								}, 125);

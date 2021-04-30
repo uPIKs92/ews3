@@ -1,6 +1,5 @@
 @extends('template.master')
 @section('content')
-    @include('radar.lbow.menu.form')
     {{-- extra script --}}
     <script src="{{ asset('plugin/layerjs/layerjs-0.6.2.min.js') }}"></script>
     <link href="{{ asset('plugin/layerjs/layerjs-0.6.2.css') }}" type="text/css" rel="stylesheet" />
@@ -276,6 +275,8 @@
             </div>
         </div>
     </div>
+    
+    @include('radar.lbow.menu.form')
 
     <script src="{{ asset('plugin/azerty-vk/js/jquery.caret-1.5.2.js') }}"></script>
     <script src="{{ asset('plugin/azerty-vk/js/main.js') }}"></script>
