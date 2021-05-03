@@ -1,12 +1,12 @@
 <div class="container-fluid clearfix p-0">
-    <div class="float-left bg-black h-100" style="width: 1621px;">
+    <div class="float-left bg-black" style="width: 1604px; height: 1164px;">
         <ul class='custom-menu'>
             <li data-action="list-1">Background</li>
             <li data-action="list-2">Layer</li>
             <li data-action="list-3">Degree Maker</li>
         </ul>
     </div>
-    <div class="side-panel float-left bg- h-100" style="background-color: #d7d7d7;">
+    <div class="side-panel float-left" style="background-color: #d7d7d7;">
         {{-- <div class="panel-header">
             <div class="wrap">
             </div>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 p-0 border solid-bordered">
+                <div class="col-12 p-0 border solid-bordered border-bottom-0">
                     <div class="card-subtitle pt-2 pl-sm-2 pb-sm-1">
                         <Small class="d-inline">PPI Control</Small>
                     </div>
@@ -90,17 +90,17 @@
                                     <p class="underline p-0 m-0">Rng Bearing</p>
                                     <div class="m-1">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                            <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                                 Set</button>
-                                            <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                            <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                                 Ctrl</button>
-                                            <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                            <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                                 Clr</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-body" style="margin-top: 6px;">
-                                    <button type="button" class="btn btn-light m-0 p-1 w-100">
+                                    <button type="button" class="btn btn-light text-white m-0 p-1 w-100">
                                         Stand By
                                     </button>
                                 </div>
@@ -109,11 +109,11 @@
                                 <p class="underline p-0 m-0">LASA</p>
                                 <div class="m-1">
                                     <div class="btn-group btn-group-vertical">
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             Set</button>
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             UnSet</button>
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             Reset</button>
                                     </div>
                                 </div>
@@ -122,11 +122,11 @@
                                 <p class="underline p-0 m-0">T. Path</p>
                                 <div class="m-1">
                                     <div class="btn-group btn-group-vertical">
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             Set</button>
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             UnSet</button>
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             Reset</button>
                                     </div>
                                 </div>
@@ -136,51 +136,51 @@
                                 <div class="m-0">
                                     <ul class="mini-btn navbar-nav p-0 m-auto justify-content-center">
                                         <li class="page-item mr-1">
-                                            <a class="btn btn-light p-0" href="#">
+                                            <a class="btn btn-light text-white p-0" href="#">
                                                 OC
                                             </a>
                                         </li>
                                         <li class="page-item mr-1">
-                                            <a class="btn btn-light p-0" href="#">
+                                            <a class="btn btn-light text-white p-0" href="#">
                                                 <i class="fas fa-caret-up"></i>
                                             </a>
                                         </li>
                                         <li class="page-item">
-                                            <a class="btn btn-light p-0" href="#">
+                                            <a class="btn btn-light text-white p-0" href="#">
                                                 <i class="fal fa-bullseye"></i>
                                             </a>
                                         </li>
                                     </ul>
                                     <ul class="mini-btn navbar-nav p-0 m-auto justify-content-center">
                                         <li class="page-item mr-1 mt-1">
-                                            <a class="btn btn-light p-0" href="#">
+                                            <a class="btn btn-light text-white p-0" href="#">
                                                 <i class="fas fa-caret-left"></i>
                                             </a>
                                         </li>
                                         <li class="page-item mr-1 mt-1">
-                                            <a class="btn btn-light p-0" href="#">
+                                            <a class="btn btn-light text-white p-0" href="#">
                                                 <i class="far fa-scrubber"></i>
                                             </a>
                                         </li>
                                         <li class="page-item mt-1">
-                                            <a class="btn btn-light p-0" href="#">
+                                            <a class="btn btn-light text-white p-0" href="#">
                                                 <i class="fas fa-caret-right"></i>
                                             </a>
                                         </li>
                                     </ul>
                                     <ul class="mini-btn navbar-nav p-0 m-auto justify-content-center">
                                         <li class="page-item mr-1 mt-1">
-                                            <a class="btn btn-light p-0" href="#">
+                                            <a class="btn btn-light text-white p-0" href="#">
                                                 <i class="fas fa-search-minus"></i>
                                             </a>
                                         </li>
                                         <li class="page-item mr-1 mt-1">
-                                            <a class="btn btn-light p-0" href="#">
+                                            <a class="btn btn-light text-white p-0" href="#">
                                                 <i class="fas fa-caret-down"></i>
                                             </a>
                                         </li>
                                         <li class="page-item mt-1">
-                                            <a class="btn btn-light p-0" href="#">
+                                            <a class="btn btn-light text-white p-0" href="#">
                                                 <i class="fas fa-search-plus"></i>
                                             </a>
                                         </li>
@@ -191,9 +191,9 @@
                                 <p class="underline p-0 m-0">Print</p>
                                 <div class="m-1">
                                     <div class="btn-group btn-group-vertical">
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             LASA</button>
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             TSheet</button>
                                     </div>
                                 </div>
@@ -202,9 +202,9 @@
                                 <p class="underline p-0 m-0">AntiCo</p>
                                 <div class="m-1">
                                     <div class="btn-group btn-group-vertical">
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             Protect</button>
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             UnProt.</button>
                                     </div>
                                 </div>
@@ -216,15 +216,15 @@
                                 <div class="m-1">
                                     <input type="text" class="form-control w-100 mb-2" aria-label="hook input">
                                     <div class="btn-group btn-group-vertical text-center w-100">
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             Squawk</button>
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             Hook</button>
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             UnHook</button>
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             InterMark</button>
-                                        <button type="button" class="btn btn-light m-0 p-0 pl-1 pr-1">
+                                        <button type="button" class="btn btn-light text-white m-0 p-0 pl-1 pr-1">
                                             Off-Ctr</button>
                                     </div>
                                 </div>
@@ -272,6 +272,60 @@
                                 <span class="w-Custom2 text-center">:</span>
                                 <input type="text" class="form-control w-20" aria-label="ident input" readonly>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 p-0 border solid-bordered">
+                    <div class="card-subtitle pt-2 pl-sm-2 pb-sm-1">
+                        <Small class="d-inline">Secondary Monitor Control</Small>
+                    </div>
+                    <div class="card-body p-1">
+                        <p class="underline"></p>
+                        <div class="input-group ml-2 mb-2">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="window-radio-Options"
+                                    id="window-radio-1" value="option1" checked>
+                                <label class="form-check-label" for="window-radio-1">W1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="window-radio-Options"
+                                    id="window-radio-2" value="option2">
+                                <label class="form-check-label" for="window-radio-2">W2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="window-radio-Options"
+                                    id="window-radio-3" value="option3">
+                                <label class="form-check-label" for="window-radio-3">W3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="window-radio-Options"
+                                    id="window-radio-4" value="option4">
+                                <label class="form-check-label" for="window-radio-4">W4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="window-radio-Options"
+                                    id="window-radio-5" value="option5">
+                                <label class="form-check-label" for="window-radio-5">W5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="window-radio-Options"
+                                    id="window-radio-6" value="option6">
+                                <label class="form-check-label" for="window-radio-6">W6</label>
+                            </div>
+                        </div>
+                        <div class="btn-group w-100" role="group" aria-label="Basic example">
+                            <button type="button"
+                                class="btn btn-light text-white w-Custom10 p-0 pl-2 pr-2">Offset</button>
+                            <button type="button"
+                                class="btn btn-light text-white w-Custom10 p-0 pl-2 pr-2">Clear</button>
+                            <button type="button"
+                                class="btn btn-light text-white w-Custom10 p-0 pl-2 pr-2">Close</button>
+                            <button type="button" class="btn btn-light text-white w-Custom10 p-0 pl-2 pr-2">Ttl
+                                Color</button>
+                            <button type="button" class="btn btn-light text-white w-Custom10 p-0 pl-2 pr-2">Bg
+                                Color</button>
+                            <button type="button" class="btn btn-light text-white w-Custom10 p-0 pl-2 pr-2">Txt
+                                Color</button>
                         </div>
                     </div>
                 </div>
