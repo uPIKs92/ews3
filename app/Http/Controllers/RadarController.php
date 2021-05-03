@@ -106,4 +106,12 @@ class RadarController extends Controller
     {
         return view('radar.lbow.panel.second-screen');
     }
+    public function mroc()
+    {
+        return view('radar.mroc.index');
+    }
+    public function mroc_2nd_scr()
+    {
+        return view('radar.mroc.panel.second-screen');
+    }
 }

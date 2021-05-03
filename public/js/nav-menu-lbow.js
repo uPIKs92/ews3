@@ -851,9 +851,8 @@ function createButton(buttonName) {
 						switch (id) {
 							case 0:
 							case 2:
-							case 11:
-							case 20:
-							case 22:
+							case 4:
+							case 6:
 								console.log(id + ' fnLine called');
 								event.stopImmediatePropagation()
 								break;

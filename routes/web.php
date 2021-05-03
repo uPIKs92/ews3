@@ -87,3 +87,6 @@ Route::get('/thomson/debug','RadarController@debug')->name('debug-menu');
 
 Route::get('/lbow','RadarController@lbow')->name('lbow');
 Route::get('/lbow/second_screen','RadarController@lbow_2nd_scr')->name('lbow-2nd-scr');
+
+Route::get('/mroc','RadarController@mroc')->name('mroc');
+Route::get('/mroc/second_screen','RadarController@mroc_2nd_scr')->name('mroc-2nd-scr');

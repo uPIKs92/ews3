@@ -506,4 +506,33 @@ right: -10px;
         color: #eefd00;
     }
 
+ /* Custom Aircraft - Radar Thomson */
+ .leaflet-control a::after {
+        content: none;
+    }
+
+    .leaflet-control a:hover {
+        border-radius: 0px;
+    }
+
+    .aeroplane {
+        opacity: 0;
+    }
+
+    .aeroplane-visible {
+        background: #109856;
+        border: none;
+        opacity: 1.0;
+    }
+
+    .aeroplane-visible.end {
+        transition: opacity 5s ease-in-out;
+        opacity: 0.01;
+    }
+
+    .radar-hand {
+        filter: url(#blur);
+    }
+
+    /* END Custom Aircraft - Radar Thomson */
 </style>
