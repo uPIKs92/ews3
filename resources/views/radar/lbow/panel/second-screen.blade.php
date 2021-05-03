@@ -8,6 +8,7 @@
     <script src="{{ asset('js/nav-menu-lbow.js') }}"></script>
     {{-- end of --}}
 
+    <!-- panel screen -->
     <div class="plessey-frame container-fluid h-auto p-4">
         <div class="row h-auto">
             <div class="col-12 box-shadow inner-shadow bg-secondary rounded-lg mb-4" style="min-height: 224px;"></div>
