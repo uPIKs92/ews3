@@ -1546,8 +1546,8 @@ function createButton(buttonName) {
 								clearContent();
 								$('#message-btn-out').empty();
 								window.location = '#init-menu&t=0.15s';
-								printBtnTree(listBtnTrack[id]);
 								createButton('init');
+								break;
 							case 21:
 								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();

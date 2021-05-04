@@ -27,6 +27,30 @@
         <div lj-type="frame" lj-name="crearc-menu" lj-transition="fade">
             <ul id="crearc-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="histry-menu" lj-transition="fade">
+            <ul id="histry-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="trklin-menu" lj-transition="fade">
+            <ul id="trklin-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="selreg-menu" lj-transition="fade">
+            <ul id="selreg-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="stbsrc-menu" lj-transition="fade">
+            <ul id="stbsrc-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="amdreg-menu" lj-transition="fade">
+            <ul id="amdreg-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="commet-menu" lj-transition="fade">
+            <ul id="commet-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="pltsel-menu" lj-transition="fade">
+            <ul id="pltsel-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="pltsrc-menu" lj-transition="fade">
+            <ul id="pltsrc-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
     </div>
     <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false">
         <!-- The layer for the menu on top of the main content -->
