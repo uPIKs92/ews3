@@ -1373,7 +1373,7 @@ function createButton(buttonName) {
 				let numPage = 1;
 				let minPage = 1;
 				let maxPage = 2;
-				
+
 				for (let varUpdtot = 0; varUpdtot < listBtnUpdtot.length; varUpdtot++) {
 					generateButtonMenu('#updtot-menu-btn', 'btnUpdtot-', varUpdtot, listBtnUpdtot[varUpdtot][0]);
 					registToTree(varUpdtot, listBtnUpdtot[varUpdtot][0], 24);
@@ -6553,13 +6553,15 @@ function generateButtonMenu(menuUl, btnName, varLoop, arr) {
 
 function registToTree(varLoop, arr, limiter) {
 	if ((varLoop < limiter)) {
-		document.getElementById('sub-tree').innerHTML +=
-			'<div id="tree-' + varLoop + '" class="mr-3">' +
-			'<span>' + arr + '</span>' +
-			'<span id="treeNum-' + varLoop + '" class="ml-2">' + '</span>' +
-			'</div>';
+		if (arr != '') {
+			document.getElementById('sub-tree').innerHTML +=
+				'<div id="tree-' + varLoop + '" class="mr-3">' +
+				'<span>' + arr + '</span>' +
+				'<span id="treeNum-' + varLoop + '" class="ml-2">' + '</span>' +
+				'</div>';
 
-		$('#tree-' + varLoop).hide();
+			$('#tree-' + varLoop).hide();
+		}
 	}
 }
 
