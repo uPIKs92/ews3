@@ -53,6 +53,7 @@ function createButton(buttonName) {
 
 				function fnLogon(event) {
 					let id = event.data.num;
+					let menu = ('#' + $('#tree-btn-out span:last-child').text() + '-menu-btn');
 
 					if (listBtnLogon[id] != '') {
 						switch (id) {
@@ -553,12 +554,7 @@ function createButton(buttonName) {
 					$('#btnCrecir-' + varCrecir).on("click", { num: varCrecir }, fnCrecir);
 
 					if (varCrecir === 0) {
-						$('#btnCrecir-' + varCrecir).html(
-							"<div class='d-flex flex-column'>" +
-							"<a href='javascript:'>" + listBtnCrecir[varCrecir][0] + "</a>" +
-							"<div class='borderBtm mt-1'></div>" +
-							"</div>"
-						);
+						generatedUnderlinedButtonMenu('#btnCrecir-', varCrecir, listBtnCrecir[varCrecir][0]);
 					}
 				}
 
@@ -1370,6 +1366,10 @@ function createButton(buttonName) {
 					generateButtonMenu('#selreg-menu-btn', 'btnSelreg-', varSelreg, listBtnSelreg[varSelreg][0]);
 					registToTree(varSelreg, listBtnSelreg[varSelreg][0], 2);
 					$('#btnSelreg-' + varSelreg).on("click", { num: varSelreg }, fnSelreg);
+
+					if (varSelreg === 1) {
+						generatedUnderlinedButtonMenu('#btnSelreg-', varSelreg, listBtnSelreg[varSelreg][0]);
+					}
 				}
 
 				function fnSelreg(event) {
@@ -1385,7 +1385,7 @@ function createButton(buttonName) {
 							case 1:
 								console.log(id + ' fnSelreg called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnSelreg-', id, listBtnSelreg[id][0]);
+								initiateUnderlinedToggleBtn('#btnSelreg-', id, listBtnSelreg[id][0]);
 
 								setTimeout(function () {
 									changeVKWidth('12%', '59.5%');
@@ -1427,7 +1427,7 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnSelreg-1', toggLabelA1, toggLabelA2);
+				toggleBtn(1, '#btnSelreg-1', toggLabelA1, toggLabelA2, 'underlined');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnSelreg-', listBtnSelreg);
 				delChar('#btnSelreg-48');
@@ -1451,8 +1451,9 @@ function createButton(buttonName) {
 					registToTree(varStbsrc, listBtnStbsrc[varStbsrc][0], 7);
 					$('#btnStbsrc-' + varStbsrc).on("click", { num: varStbsrc }, fnStbsrc);
 
-					if ((varStbsrc < 7)) {
+					if ((varStbsrc < 7) && (listBtnStbsrc[varStbsrc][0] != '')) {
 						$('#btnStbsrc-' + varStbsrc).addClass('text-none');
+						generatedUnderlinedButtonMenu('#btnStbsrc-', varStbsrc, listBtnStbsrc[varStbsrc][0]);
 					}
 				}
 
@@ -1469,27 +1470,27 @@ function createButton(buttonName) {
 							case 1:
 								console.log(id + ' fnStbsrc called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
+								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
 								break;
 							case 2:
 								console.log(id + ' fnStbsrc called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
+								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
 								break;
 							case 3:
 								console.log(id + ' fnStbsrc called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
+								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
 								break;
 							case 4:
 								console.log(id + ' fnStbsrc called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
+								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
 								break;
 							case 5:
 								console.log(id + ' fnStbsrc called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
+								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
 								break;
 							case 40:
 							case 42:
@@ -1526,11 +1527,11 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnStbsrc-1', toggLabelA1, toggLabelA2);
-				toggleBtn(2, '#btnStbsrc-2', toggLabelB1, toggLabelB2);
-				toggleBtn(3, '#btnStbsrc-3', toggLabelC1, toggLabelC2);
-				toggleBtn(4, '#btnStbsrc-4', toggLabelD1, toggLabelD2);
-				toggleBtn(6, '#btnStbsrc-6', toggLabelE1, toggLabelE2);
+				toggleBtn(1, '#btnStbsrc-1', toggLabelA1, toggLabelA2, 'underlined');
+				toggleBtn(2, '#btnStbsrc-2', toggLabelB1, toggLabelB2, 'underlined');
+				toggleBtn(3, '#btnStbsrc-3', toggLabelC1, toggLabelC2, 'underlined');
+				toggleBtn(4, '#btnStbsrc-4', toggLabelD1, toggLabelD2, 'underlined');
+				toggleBtn(6, '#btnStbsrc-6', toggLabelE1, toggLabelE2, 'underlined');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnStbsrc-', listBtnStbsrc);
 				delChar('#btnStbsrc-48');
@@ -1691,8 +1692,9 @@ function createButton(buttonName) {
 					registToTree(varPltsel, listBtnPltsel[varPltsel][0], 7);
 					$('#btnPltsel-' + varPltsel).on("click", { num: varPltsel }, fnPltsel);
 
-					if ((varPltsel < 7)) {
+					if ((varPltsel < 7) && (listBtnPltsel[varPltsel][0] != '')) {
 						$('#btnPltsel-' + varPltsel).addClass('text-none');
+						generatedUnderlinedButtonMenu('#btnPltsel-', varPltsel, listBtnPltsel[varPltsel][0]);
 					}
 				}
 
@@ -1709,27 +1711,27 @@ function createButton(buttonName) {
 							case 1:
 								console.log(id + ' fnPltsel called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
+								initiateUnderlinedToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
 								break;
 							case 2:
 								console.log(id + ' fnPltsel called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
+								initiateUnderlinedToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
 								break;
 							case 3:
 								console.log(id + ' fnPltsel called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
+								initiateUnderlinedToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
 								break;
 							case 4:
 								console.log(id + ' fnPltsel called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
+								initiateUnderlinedToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
 								break;
 							case 5:
 								console.log(id + ' fnPltsel called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
+								initiateUnderlinedToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
 								break;
 							case 40:
 							case 42:
@@ -1766,11 +1768,11 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnPltsel-1', toggLabelA1, toggLabelA2);
-				toggleBtn(2, '#btnPltsel-2', toggLabelB1, toggLabelB2);
-				toggleBtn(3, '#btnPltsel-3', toggLabelC1, toggLabelC2);
-				toggleBtn(4, '#btnPltsel-4', toggLabelD1, toggLabelD2);
-				toggleBtn(6, '#btnPltsel-6', toggLabelE1, toggLabelE2);
+				toggleBtn(1, '#btnPltsel-1', toggLabelA1, toggLabelA2, 'underlined');
+				toggleBtn(2, '#btnPltsel-2', toggLabelB1, toggLabelB2, 'underlined');
+				toggleBtn(3, '#btnPltsel-3', toggLabelC1, toggLabelC2, 'underlined');
+				toggleBtn(4, '#btnPltsel-4', toggLabelD1, toggLabelD2, 'underlined');
+				toggleBtn(6, '#btnPltsel-6', toggLabelE1, toggLabelE2, 'underlined');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnPltsel-', listBtnPltsel);
 				delChar('#btnPltsel-48');
@@ -1794,8 +1796,9 @@ function createButton(buttonName) {
 					registToTree(varPltsrc, listBtnPltsrc[varPltsrc][0], 7);
 					$('#btnPltsrc-' + varPltsrc).on("click", { num: varPltsrc }, fnPltsrc);
 
-					if ((varPltsrc < 7)) {
+					if ((varPltsrc < 7) && (listBtnPltsrc[varPltsrc][0] != '')) {
 						$('#btnPltsrc-' + varPltsrc).addClass('text-none');
+						generatedUnderlinedButtonMenu('#btnPltsrc-', varPltsrc, listBtnPltsrc[varPltsrc][0]);
 					}
 				}
 
@@ -1812,27 +1815,27 @@ function createButton(buttonName) {
 							case 1:
 								console.log(id + ' fnPltsrc called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
+								initiateUnderlinedToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
 								break;
 							case 2:
 								console.log(id + ' fnPltsrc called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
+								initiateUnderlinedToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
 								break;
 							case 3:
 								console.log(id + ' fnPltsrc called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
+								initiateUnderlinedToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
 								break;
 							case 4:
 								console.log(id + ' fnPltsrc called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
+								initiateUnderlinedToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
 								break;
 							case 5:
 								console.log(id + ' fnPltsrc called');
 								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
+								initiateUnderlinedToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
 								break;
 							case 40:
 							case 42:
@@ -1869,11 +1872,11 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnPltsrc-1', toggLabelA1, toggLabelA2);
-				toggleBtn(2, '#btnPltsrc-2', toggLabelB1, toggLabelB2);
-				toggleBtn(3, '#btnPltsrc-3', toggLabelC1, toggLabelC2);
-				toggleBtn(4, '#btnPltsrc-4', toggLabelD1, toggLabelD2);
-				toggleBtn(6, '#btnPltsrc-6', toggLabelE1, toggLabelE2);
+				toggleBtn(1, '#btnPltsrc-1', toggLabelA1, toggLabelA2, 'underlined');
+				toggleBtn(2, '#btnPltsrc-2', toggLabelB1, toggLabelB2, 'underlined');
+				toggleBtn(3, '#btnPltsrc-3', toggLabelC1, toggLabelC2, 'underlined');
+				toggleBtn(4, '#btnPltsrc-4', toggLabelD1, toggLabelD2, 'underlined');
+				toggleBtn(6, '#btnPltsrc-6', toggLabelE1, toggLabelE2, 'underlined');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnPltsrc-', listBtnPltsrc);
 				delChar('#btnPltsrc-48');
@@ -1897,9 +1900,478 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnTacmis-', listBtnTacmis.length, '#tacmis-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 2:
+								console.log(id + ' fnTacmis called');
+								event.stopImmediatePropagation();
+								clearMenu('#maps-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#seltmp-menu&t=0.15s';
+								printBtnTree(listBtnMaps[id]);
+								createButton('seltmp');
+								break;
 						}
 					}
 				}
+				return;
+			}
+			case 'seltmp': {
+				let count = 1;
+				let toggLabelA1 = listBtnSeltmp[0][0];
+				let toggLabelA2 = 'act-tm';
+			
+				for (let varSeltmp = 0; varSeltmp < listBtnSeltmp.length; varSeltmp++) {
+					generateButtonMenu('#seltmp-menu-btn', 'btnSeltmp-', varSeltmp, listBtnSeltmp[varSeltmp][0]);
+					registToTree(varSeltmp, listBtnSeltmp[varSeltmp][0], 2);
+					$('#btnSeltmp-' + varSeltmp).on("click", { num: varSeltmp }, fnSeltmp);
+			
+					if ((varSeltmp < 1) && (listBtnSeltmp[varSeltmp][0] != '')) {
+						//$('#btnSeltmp-' + varSeltmp).addClass('text-none');
+						generatedUnderlinedButtonMenu('#btnSeltmp-', varSeltmp, listBtnSeltmp[varSeltmp][0]);
+					}
+				}
+
+				$('#btnSeltmp-44').children('span').hide();
+			
+				function fnSeltmp(event) {
+					let id = event.data.num;
+			
+					if (listBtnSeltmp[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnSeltmp-', id, listBtnSeltmp[id][0]);
+							count = id;
+						}
+			
+						switch (id) {
+							case 0:
+								console.log(id + ' fnSeltmp called');
+								//event.stopImmediatePropagation();
+								initiateUnderlinedToggleBtn('#btnSeltmp-', id, listBtnSeltmp[id][0]);
+								$('#btnSeltmp-' + 44).children('span').hide();
+								$('#btnSeltmp-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								break;
+							case 1:
+								console.log(id + ' fnSeltmp called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								callAlphaVK('#btnSeltmp-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnSeltmp called');
+								event.stopImmediatePropagation();
+								backNav('#btnSeltmp-', listBtnSeltmp.length, '#seltmp-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSeltmp called');
+								event.stopImmediatePropagation()
+			
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 2) {
+										count++;
+										nextStep(count, '#btnSeltmp-', listBtnSeltmp);
+										$('#tree-' + (count - 1)).show();
+										$('#toggle-box-out').hide();
+										document.getElementById('input-VK').placeholder = '';
+
+										switch (count) {
+											case 1: {
+												event.stopImmediatePropagation()
+												$('.cursor i').removeClass('d-none');
+												callAlphaVK('#btnSeltmp-');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												return;
+											}
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSeltmp-' + count).removeClass('active');
+										forceBack('#btnSeltmp-', listBtnSeltmp.length, '#seltmp-menu-btn', '#logon-menu&t=0.15s');
+										count = 0;
+										createButton('logon');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnSeltmp-');
+				});
+			
+				toggleBtn(0, '#btnSeltmp-0', toggLabelA1, toggLabelA2, 'underlined');
+				showToggle(toggLabelA1, toggLabelA2);
+				setBtnActive('#btnSeltmp-', listBtnSeltmp);
+				delChar('#btnSeltmp-48');
+				return;
+			}
+			case 'settrk': {
+				let count = 0;
+
+				for (let varSettrk = 0; varSettrk < listBtnSettrk.length; varSettrk++) {
+					generateButtonMenu('#settrk-menu-btn', 'btnSettrk-', varSettrk, listBtnSettrk[varSettrk][0]);
+					registToTree(varSettrk, listBtnSettrk[varSettrk][0], 7);
+					$('#btnSettrk-' + varSettrk).on("click", { num: varSettrk }, fnSettrk);
+				}
+
+				function fnSettrk(event) {
+					let id = event.data.num;
+
+					if (listBtnSettrk[id][0] != '') {
+						if (id < 7) {
+							initiateLoadedMenu('#btnSettrk-', id, listBtnSettrk[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnSettrk called');
+								event.stopImmediatePropagation();
+
+								hideNumBtn('#btnSettrk-', 30, 40);
+								callAlphaVK('#btnSettrk-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								break;
+							case 2:
+								console.log(id + ' fnSettrk called');
+								event.stopImmediatePropagation();
+
+								hideNumBtn('#btnSettrk-', 30, 40);
+								callAlphaVK('#btnSettrk-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								break;
+							case 4:
+								console.log(id + ' fnSettrk called');
+								event.stopImmediatePropagation();
+
+								showNumBtn('#btnSettrk-', 30, 40, listBtnSettrk);
+								$('#btnSettrk-' + 44).children('span').hide();
+								$('#btnSettrk-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								break;
+							case 6:
+								console.log(id + ' fnSettrk called');
+								event.stopImmediatePropagation();
+
+								showNumBtn('#btnSettrk-', 30, 40, listBtnSettrk);
+								$('#btnSettrk-' + 44).children('span').hide();
+								$('#btnSettrk-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnSettrk called');
+								event.stopImmediatePropagation();
+								backNav('#btnSettrk-', listBtnSettrk.length, '#settrk-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSettrk called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 7) {
+										count++;
+										nextStep(count, '#btnSettrk-', listBtnSettrk);
+										$('#tree-' + (count - 1)).show();
+										document.getElementById('input-VK').placeholder = '';
+
+										switch (count) {
+											case 2:
+												hideNumBtn('#btnSettrk-', 30, 40);
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+											case 4:
+												showNumBtn('#btnSettrk-', 30, 40, listBtnSettrk);
+												$('#btnSettrk-' + 44).children('span').hide();
+												$('#btnSettrk-' + 44).off();
+												break;
+											case 6:
+												showNumBtn('#btnSettrk-', 30, 40, listBtnSettrk);
+												$('#btnSettrk-' + 44).children('span').hide();
+												$('#btnSettrk-' + 44).off();
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSettrk-' + count).removeClass('active');
+										forceBack('#btnSettrk-', listBtnSettrk.length, '#settrk-menu-btn', '#logon-menu&t=0.15s');
+										count = 0;
+										createButton('logon');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSettrk, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnSettrk-');
+				});
+
+				hideNumBtn('#btnSettrk-', 30, 40);
+				setBtnActive('#btnSettrk-', listBtnSettrk);
+				$('.cursor i').removeClass('d-none');
+				delChar('#keyboard-clear, #btnSettrk-48');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				return;
+			}
+			case 'labpos': {
+				let count = 0;
+
+				for (let varLabpos = 0; varLabpos < listBtnLabpos.length; varLabpos++) {
+					generateButtonMenu('#labpos-menu-btn', 'btnLabpos-', varLabpos, listBtnLabpos[varLabpos][0]);
+					registToTree(varLabpos, listBtnLabpos[varLabpos][0], 30);
+					$('#btnLabpos-' + varLabpos).on("click", { num: varLabpos }, fnLabpos);
+				}
+
+				function fnLabpos(event) {
+					let id = event.data.num;
+
+					if (listBtnLabpos[id][0] != '') {
+						if (id < 30) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnLabpos[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnLabpos called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 2:
+								console.log(id + ' fnLabpos called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 11:
+								console.log(id + ' fnLabpos called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 20:
+								console.log(id + ' fnLabpos called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 22:
+								console.log(id + ' fnLabpos called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnLabpos called');
+								event.stopImmediatePropagation();
+								backNav('#btnLabpos-', listBtnLabpos.length, '#labpos-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnLabpos called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnLabpos-', listBtnLabpos);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnLabpos-' + count).removeClass('active');
+										forceBack('#btnLabpos-', listBtnLabpos.length, '#labpos-menu-btn', '#logon-menu&t=0.15s');
+										count = 0;
+										createButton('logon');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnLabpos-', listBtnLabpos);
+				$('#input-VK').val(listBtnLabpos[11][0]);
+				count = 11;
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnLabpos-48');
+				return;
+			}
+			case 'trksel': {
+				let count = 0;
+
+				for (let varTrksel = 0; varTrksel < listBtnTrksel.length; varTrksel++) {
+					generateButtonMenu('#trksel-menu-btn', 'btnTrksel-', varTrksel, listBtnTrksel[varTrksel][0]);
+					registToTree(varTrksel, listBtnTrksel[varTrksel][0], 30);
+					$('#btnTrksel-' + varTrksel).on("click", { num: varTrksel }, fnTrksel);
+
+					let toggLabel = (listBtnTrksel[varTrksel][0]).slice(0, -2);
+					if (listBtnTrksel[varTrksel][0] != '') {
+						toggleBtn(varTrksel, '#btnTrksel-' + varTrksel, listBtnTrksel[varTrksel][0], toggLabel + 'off');
+					}
+
+					if ((varTrksel < 30) && (listBtnTrksel[varTrksel][0] != '')) {
+						$('#btnTrksel-' + varTrksel).addClass('text-none');
+						generatedUnderlinedButtonMenu('#btnTrksel-', varTrksel, listBtnTrksel[varTrksel][0]);
+					}
+
+					if (varTrksel === 29) {
+						$('#btnTrksel-' + varTrksel).css('font-size', '14px');
+					}
+				}
+
+				function fnTrksel(event) {
+					let id = event.data.num;
+
+					if (listBtnTrksel[id][0] != '') {
+						if (id < 30) {
+							initiateLoadedMenu('#btnTrksel-', id, listBtnTrksel[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 3:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 5:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 12:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 14:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 16:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 21:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 23:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 25:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 27:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#tree-' + 29).hide();
+								break;
+							case 29:
+								console.log(id + ' fnLabpos called');
+								//event.stopImmediatePropagation();
+								count = id;
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								$('#input-btn-out').css('font-size', '13px');
+								$('#tree-' + id).siblings().hide();
+								break;
+							case 40:
+							case 42:
+								console.log(id + ' fnTrksel called');
+								event.stopImmediatePropagation();
+								backNav('#btnTrksel-', listBtnTrksel.length, '#trksel-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnTrksel called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									if ($('#input-VK').val() > 0 && $('#input-VK').val() < 4) {
+										$('#message-btn-out').empty();
+										$('#tree-' + count).show();
+										console.log('jancok su : ' + count)
+										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+										clearVK();
+									} else {
+										printMessage("ERROR : Valid range is 1 - 3");
+									}
+								} else {
+									printMessage("COMMAND OK");
+									$('#btnTrksel-' + count).removeClass('active');
+									forceBack('#btnTrksel-', listBtnTrksel.length, '#trksel-menu-btn', '#logon-menu&t=0.15s');
+									createButton('logon');
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnTrksel, id);
+				}
+
+				setBtnActive('#btnTrksel-', listBtnTrksel);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnTrksel-48');
 				return;
 			}
 		}
@@ -1937,6 +2409,15 @@ function initiateLoadedMenu(btnName, num, arr) {
 	$('.cursor i').removeClass('d-none');
 }
 
+function generatedUnderlinedButtonMenu(btnName, num, arrName) {
+	$(btnName + num).addClass('toggle-btn').html(
+		"<div class='d-flex flex-column'>" +
+		"<a href='javascript:'>" + arrName + "</a>" +
+		"<div class='borderBtm mt-1'></div>" +
+		"</div>"
+	);
+}
+
 function makeMenuRight() {
 	for (let j = 0; j < listBtnRight.length; j++) {
 		$('#right-menu-btn').append('<li ' + 'id="btnRight-' + j + '" class="btn btn-box"><span>' +
@@ -1947,7 +2428,7 @@ function makeMenuRight() {
 	function fnRight(event) {
 		let id = event.data.num;
 		let menu = ('#' + $('#tree-btn-out span:last-child').text() + '-menu-btn');
-		console.log(menu);
+		//console.log(menu);
 
 		if (listBtnRight[id][0] != '') {
 			switch (id) {
@@ -1990,6 +2471,9 @@ function makeMenuRight() {
 					document.getElementById('input-btn-out').innerHTML = listBtnRight[id];
 					break;
 				case 3:
+				case 4:
+					console.log(id + ' fnRight called');
+					event.stopImmediatePropagation();
 					break;
 			}
 		}

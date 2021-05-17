@@ -962,12 +962,7 @@ function createButton(buttonName) {
 					$('#btnCrecir-' + varCrecir).on("click", { num: varCrecir }, fnCrecir);
 
 					if (varCrecir === 0) {
-						$('#btnCrecir-' + varCrecir).html(
-							"<div class='d-flex flex-column'>" +
-							"<a href='javascript:'>" + listBtnCrecir[varCrecir][0] + "</a>" +
-							"<div class='borderBtm mt-1'></div>" +
-							"</div>"
-						);
+						generatedUnderlinedButtonMenu('#btnCrecir-', varCrecir, listBtnCrecir[varCrecir][0]);
 					}
 
 					if ((varCrecir < 4)) {
@@ -3700,8 +3695,9 @@ function createButton(buttonName) {
 						toggleBtn(varTrksel, '#btnTrksel-' + varTrksel, listBtnTrksel[varTrksel][0], toggLabel + 'off');
 					}
 
-					if ((varTrksel < 30)) {
+					if ((varTrksel < 30) && (listBtnTrksel[varTrksel][0] != '')) {
 						$('#btnTrksel-' + varTrksel).addClass('text-none');
+						generatedUnderlinedButtonMenu('#btnTrksel-', varTrksel, listBtnTrksel[varTrksel][0]);
 					}
 
 					if (varTrksel === 29) {
@@ -3723,77 +3719,77 @@ function createButton(buttonName) {
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + 29).hide();
 								break;
 							case 3:
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + 29).hide();
 								break;
 							case 5:
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + 29).hide();
 								break;
 							case 12:
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + 29).hide();
 								break;
 							case 14:
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + 29).hide();
 								break;
 							case 16:
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + 29).hide();
 								break;
 							case 21:
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + 29).hide();
 								break;
 							case 23:
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + 29).hide();
 								break;
 							case 25:
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + 29).hide();
 								break;
 							case 27:
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#tree-' + 29).hide();
 								break;
 							case 29:
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
 								count = id;
-								initiateToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
+								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
 								$('#input-btn-out').css('font-size', '13px');
 								$('#tree-' + id).siblings().hide();
 								break;
@@ -6569,6 +6565,15 @@ function initiateLoadedMenu(btnName, num, arr) {
 	$('.cursor i').removeClass('d-none');
 }
 
+function generatedUnderlinedButtonMenu(btnName, num, arrName) {
+	$(btnName + num).addClass('toggle-btn').html(
+		"<div class='d-flex flex-column'>" +
+		"<a href='javascript:'>" + arrName + "</a>" +
+		"<div class='borderBtm mt-1'></div>" +
+		"</div>"
+	);
+}
+
 function makeMenuRight() {
 	for (let j = 0; j < listBtnRight.length; j++) {
 		$('#right-menu-btn').append('<li ' + 'id="btnRight-' + j + '" class="btn btn-box"><span>' +
@@ -6579,7 +6584,7 @@ function makeMenuRight() {
 	function fnRight(event) {
 		let id = event.data.num;
 		let menu = ('#' + $('#tree-btn-out span:last-child').text() + '-menu-btn');
-		console.log(menu);
+		//console.log(menu);
 
 		if (listBtnRight[id][0] != '') {
 			switch (id) {
@@ -6622,6 +6627,9 @@ function makeMenuRight() {
 					document.getElementById('input-btn-out').innerHTML = listBtnRight[id];
 					break;
 				case 3:
+				case 4:
+					console.log(id + ' fnRight called');
+					event.stopImmediatePropagation();
 					break;
 			}
 		}
