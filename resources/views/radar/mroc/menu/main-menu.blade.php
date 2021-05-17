@@ -6,6 +6,9 @@
         <div lj-type="frame" lj-name="logon-menu" lj-transition="fade">
             <ul id="logon-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="totes-menu" lj-transition="fade">
+            <ul id="totes-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="maps-menu" lj-transition="fade">
             <ul id="maps-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
@@ -50,6 +53,9 @@
         </div>
         <div lj-type="frame" lj-name="pltsrc-menu" lj-transition="fade">
             <ul id="pltsrc-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="tacmis-menu" lj-transition="fade">
+            <ul id="tacmis-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
     </div>
     <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false">

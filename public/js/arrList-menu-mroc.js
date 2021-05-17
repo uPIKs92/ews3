@@ -18,6 +18,14 @@ const listBtnLogon = [
 	'abort', '.', 'home', '', '', '', '', 'bakspc', 'dltfld', 'enter'
 ];
 
+const listBtnTotes = [
+	'return', 'index', 'radcur', 'missum', '', '', 'stdfp', 'plntm', 'print', 'clear',
+	'met', 'radio', 'cnflct', 'intrec', 'cap', '', 'actfp', 'acttm', 'tidtst', 'amdtot',
+	'', 'comdir', 'trksta', 'hostrk', '', 'refmis', 'reffp', 'reftm', 'tottst', 'last',
+	'assign', 'links', 'guide', 'airfld', 'fightr', 'turnpt', 'curfp', 'seqlst', 'trktel', 'sam',
+	'abort', '.', 'home', '', '', '', '', 'bakspc', 'dltfld', 'enter'
+];
+
 const listBtnMaps = [
 	'return', '', 'georef', 'adtmap', 'ownmap', '', 'updown', '', '', 'delitm',
 	'cover', 'polar', 'topog', 'stnmap', '', 'updstn', '', 'creftr', 'crecir', '',
@@ -136,4 +144,12 @@ const listBtnPltsrc = [
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''],
 	['abort', ''], ['.', ''], ['home', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['bakspc', ''], ['dltfld', ''], ['enter', '']
+];
+
+const listBtnTacmis = [
+	'return', 'seqact', 'sel-tm', '', 'cr-ptm', '', 'scrmbl', 'pln-tm', 'tm-pos', 'del-tm',
+	'totes', 'id-trk', 'trktm', '', 'am-tm', '', '', 'act-tm', '', '',
+	'maps', 'trktyp', '', 'hostrk', '', 'tmtxt', '', 'ref-tm', 'link', 'brk-tm',
+	'', '', 'disptm', 'airfld', 'fightr', 'recalc', '', '', '', 'sam',
+	'abort', '.', 'home', '', '', '', '', 'bakspc', 'dltfld', 'enter'
 ];

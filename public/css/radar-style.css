@@ -967,12 +967,20 @@
     transition: 0.4s;
 }
 
-.btn-box.active > span {
+.btn-box.active > span,
+.btn-box.active > div > a,
+.btn-box.active.toggle-btn > div > a {
     display: inline-block;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     color: #000;
     background-color: #fd9727;
+}
+
+.btn-box > div > a{
+    color: #fd9727;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
 
 .btn-box-sm {

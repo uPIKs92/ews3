@@ -106,6 +106,16 @@ function createButton(buttonName) {
 								printBtnTree(listBtnLogon[id]);
 								createButton('commet');
 								break;
+							case 10:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#totes-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('totes');
+								break;
 							case 14:
 								console.log(id + ' fnLogon called');
 								event.stopImmediatePropagation()
@@ -157,10 +167,43 @@ function createButton(buttonName) {
 								printBtnTree(listBtnLogon[id]);
 								createButton('pltsrc');
 								break;
+							case 34:
+								console.log(id + ' fnLogon called');
+								event.stopImmediatePropagation()
+								clearMenu('#logon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#tacmis-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('tacmis');
+								break;
 							case 40:
 							case 42:
 								clearMenu(menu);
 								$('#message-btn-out').empty();
+								break;
+						}
+					}
+				}
+				return;
+			}
+			case 'totes': {
+				for (let varTotes = 0; varTotes < listBtnTotes.length; varTotes++) {
+					generateButtonMenu('#totes-menu-btn', 'btnTotes-', varTotes, listBtnTotes[varTotes]);
+					$('#btnTotes-' + varTotes).on("click", { num: varTotes }, fnTotes);
+				}
+
+				function fnTotes(event) {
+					let id = event.data.num;
+
+					if (listBtnTotes[id] != '') {
+						switch (id) {
+							case 0:
+							case 40:
+							case 42:
+								console.log(id + ' fnTotes called');
+								event.stopImmediatePropagation();
+								backNav('#btnTotes-', listBtnTotes.length, '#totes-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 						}
 					}
@@ -510,7 +553,12 @@ function createButton(buttonName) {
 					$('#btnCrecir-' + varCrecir).on("click", { num: varCrecir }, fnCrecir);
 
 					if (varCrecir === 0) {
-						$('#btnCrecir-' + varCrecir).children().addClass('borderBtm');
+						$('#btnCrecir-' + varCrecir).html(
+							"<div class='d-flex flex-column'>" +
+							"<a href='javascript:'>" + listBtnCrecir[varCrecir][0] + "</a>" +
+							"<div class='borderBtm mt-1'></div>" +
+							"</div>"
+						);
 					}
 				}
 
@@ -527,18 +575,7 @@ function createButton(buttonName) {
 							case 0:
 								console.log(id + ' fnCrecir called');
 								//event.stopImmediatePropagation()
-								//initiateToggleBtn('#btnCrecir-', id, listBtnCrecir[id][0]);
-
-								$('#btnCrecir-' + id).children().hide();
-								$('#btnCrecir-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrecir[id][0] + '</a>');
-
-								setTimeout(function () {
-									$('#btnCrecir-' + id).find(":hidden").remove();
-									$('#btnCrecir-' + id).children().addClass('borderBtm pb-2');
-
-									$('.cursor i').removeClass('d-none');
-									showNumBtn('#btnCrecir-', 30, 40, listBtnCrecir);;
-								}, 125);
+								initiateUnderlinedToggleBtn('#btnCrecir-', id, listBtnCrecir[id][0]);
 								break;
 							case 1:
 								console.log(id + ' fnCrecir called');
@@ -636,7 +673,7 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB);
+				toggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB, 'underlined');
 				setBtnActive('#btnCrecir-', listBtnCrecir);
 				hideNumBtn('#btnCrecir-', 30, 40);
 				delChar('#btnCrecir-48');
@@ -1648,7 +1685,7 @@ function createButton(buttonName) {
 				let toggLabelD2 = 'sa-off';
 				let toggLabelE1 = listBtnPltsel[6][0];
 				let toggLabelE2 = 'alloff';
-			
+
 				for (let varPltsel = 0; varPltsel < listBtnPltsel.length; varPltsel++) {
 					generateButtonMenu('#pltsel-menu-btn', 'btnPltsel-', varPltsel, listBtnPltsel[varPltsel][0]);
 					registToTree(varPltsel, listBtnPltsel[varPltsel][0], 7);
@@ -1658,16 +1695,16 @@ function createButton(buttonName) {
 						$('#btnPltsel-' + varPltsel).addClass('text-none');
 					}
 				}
-			
+
 				function fnPltsel(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnPltsel[id][0] != '') {
 						if (id < 7) {
 							initiateLoadedMenu('#btnPltsel-', id, listBtnPltsel[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 1:
 								console.log(id + ' fnPltsel called');
@@ -1706,7 +1743,7 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnPltsel called');
 								event.stopImmediatePropagation()
-			
+
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
@@ -1728,7 +1765,7 @@ function createButton(buttonName) {
 						}
 					}
 				}
-			
+
 				toggleBtn(1, '#btnPltsel-1', toggLabelA1, toggLabelA2);
 				toggleBtn(2, '#btnPltsel-2', toggLabelB1, toggLabelB2);
 				toggleBtn(3, '#btnPltsel-3', toggLabelC1, toggLabelC2);
@@ -1751,7 +1788,7 @@ function createButton(buttonName) {
 				let toggLabelD2 = 'ew4off';
 				let toggLabelE1 = listBtnPltsrc[6][0];
 				let toggLabelE2 = 'alloff';
-			
+
 				for (let varPltsrc = 0; varPltsrc < listBtnPltsrc.length; varPltsrc++) {
 					generateButtonMenu('#pltsrc-menu-btn', 'btnPltsrc-', varPltsrc, listBtnPltsrc[varPltsrc][0]);
 					registToTree(varPltsrc, listBtnPltsrc[varPltsrc][0], 7);
@@ -1761,16 +1798,16 @@ function createButton(buttonName) {
 						$('#btnPltsrc-' + varPltsrc).addClass('text-none');
 					}
 				}
-			
+
 				function fnPltsrc(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnPltsrc[id][0] != '') {
 						if (id < 7) {
 							initiateLoadedMenu('#btnPltsrc-', id, listBtnPltsrc[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 1:
 								console.log(id + ' fnPltsrc called');
@@ -1809,7 +1846,7 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnPltsrc called');
 								event.stopImmediatePropagation()
-			
+
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
@@ -1831,7 +1868,7 @@ function createButton(buttonName) {
 						}
 					}
 				}
-			
+
 				toggleBtn(1, '#btnPltsrc-1', toggLabelA1, toggLabelA2);
 				toggleBtn(2, '#btnPltsrc-2', toggLabelB1, toggLabelB2);
 				toggleBtn(3, '#btnPltsrc-3', toggLabelC1, toggLabelC2);
@@ -1840,6 +1877,29 @@ function createButton(buttonName) {
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnPltsrc-', listBtnPltsrc);
 				delChar('#btnPltsrc-48');
+				return;
+			}
+			case 'tacmis': {
+				for (let varTacmis = 0; varTacmis < listBtnTacmis.length; varTacmis++) {
+					generateButtonMenu('#tacmis-menu-btn', 'btnTacmis-', varTacmis, listBtnTacmis[varTacmis]);
+					$('#btnTacmis-' + varTacmis).on("click", { num: varTacmis }, fnTacmis);
+				}
+
+				function fnTacmis(event) {
+					let id = event.data.num;
+
+					if (listBtnTacmis[id] != '') {
+						switch (id) {
+							case 0:
+							case 40:
+							case 42:
+								console.log(id + ' fnTacmis called');
+								event.stopImmediatePropagation();
+								backNav('#btnTacmis-', listBtnTacmis.length, '#tacmis-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+						}
+					}
+				}
 				return;
 			}
 		}
@@ -1936,7 +1996,7 @@ function makeMenuRight() {
 	}
 }
 
-function toggleBtn(num, btnName, toggLabelA, toggLabelB) {
+function toggleBtn(num, btnName, toggLabelA, toggLabelB, btnType) {
 	$(btnName).toggleButton({
 		on: function () {
 			console.log('tugel on')
@@ -1944,7 +2004,7 @@ function toggleBtn(num, btnName, toggLabelA, toggLabelB) {
 			$('#toggle-box-b').siblings('.active').removeClass('active');
 			$('#toggle-divider').show();
 
-			printBtnToggleLabel(num, btnName, toggLabelB, toggLabelA, toggLabelB);
+			printBtnToggleLabel(num, btnName, toggLabelB, toggLabelA, toggLabelB, btnType);
 			$(btnName).attr('value', 'tg-on');
 		},
 		off: function () {
@@ -1953,7 +2013,7 @@ function toggleBtn(num, btnName, toggLabelA, toggLabelB) {
 			$('#toggle-box-a').siblings('.active').removeClass('active');
 			$('#toggle-divider').show();
 
-			printBtnToggleLabel(num, btnName, toggLabelA, toggLabelA, toggLabelB);
+			printBtnToggleLabel(num, btnName, toggLabelA, toggLabelA, toggLabelB, btnType);
 			$(btnName).attr('value', 'tg-off');
 		}
 	});
@@ -1965,6 +2025,26 @@ function initiateToggleBtn(btnName, num, arrName) {
 
 	setTimeout(function () {
 		$(btnName + num).find(":hidden").remove();
+
+		$('.cursor i').addClass('d-none');
+		hideNumBtn(btnName, 30, 40);
+		disableBtnNumber(btnName);
+	}, 125);
+}
+
+function initiateUnderlinedToggleBtn(btnName, num, arrName) {
+	$(btnName + num).children().hide();
+	$(btnName + num).children('div').children('a').hide();
+	$(btnName + num).addClass('toggle-btn').append(
+		"<div class='d-flex flex-column'>" +
+		"<a href='javascript:'>" + arrName + "</a>" +
+		"<div class='borderBtm mt-1'></div>" +
+		"</div>"
+	);
+
+	setTimeout(function () {
+		$(btnName + num).find(":hidden").remove();
+		$(btnName + num).find('div:first').remove();
 
 		$('.cursor i').addClass('d-none');
 		hideNumBtn(btnName, 30, 40);
@@ -2116,12 +2196,19 @@ function printBtnLabel(labelArr) {
 	document.getElementById('input-btn-out').innerHTML = html;
 }
 
-function printBtnToggleLabel(btnId, btnName, labelBtn, labelBtnLeft, labelBtnRight) {
+function printBtnToggleLabel(btnId, btnName, labelBtn, labelBtnLeft, labelBtnRight, btnType) {
 	$('#toggle-box-out').show();
-	$(btnName).children('a').html(labelBtn);
 	document.getElementById('input-btn-out').innerHTML = '<span class="active">' + labelBtn + '</span>';
 	document.getElementById('toggle-box-a').innerHTML = labelBtnLeft;
 	document.getElementById('toggle-box-b').innerHTML = labelBtnRight;
+
+	if (btnType === "underlined") {
+		$(btnName).children('div').children('a').html(labelBtn);
+		console.log('underlined')
+	} else {
+		$(btnName).children('a').html(labelBtn);
+		console.log('normal')
+	}
 
 	if (btnId != null) {
 		document.getElementById('tree-' + btnId).innerHTML =

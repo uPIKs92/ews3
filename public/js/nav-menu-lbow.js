@@ -962,7 +962,12 @@ function createButton(buttonName) {
 					$('#btnCrecir-' + varCrecir).on("click", { num: varCrecir }, fnCrecir);
 
 					if (varCrecir === 0) {
-						$('#btnCrecir-' + varCrecir).children().addClass('borderBtm');
+						$('#btnCrecir-' + varCrecir).html(
+							"<div class='d-flex flex-column'>" +
+							"<a href='javascript:'>" + listBtnCrecir[varCrecir][0] + "</a>" +
+							"<div class='borderBtm mt-1'></div>" +
+							"</div>"
+						);
 					}
 
 					if ((varCrecir < 4)) {
@@ -983,18 +988,7 @@ function createButton(buttonName) {
 							case 0:
 								console.log(id + ' fnCrecir called');
 								//event.stopImmediatePropagation()
-								//initiateToggleBtn('#btnCrecir-', id, listBtnCrecir[id][0]);
-
-								$('#btnCrecir-' + id).children().hide();
-								$('#btnCrecir-' + id).addClass('toggle-btn').append('<a href="javascript:">' + listBtnCrecir[id][0] + '</a>');
-
-								setTimeout(function () {
-									$('#btnCrecir-' + id).find(":hidden").remove();
-									$('#btnCrecir-' + id).children().addClass('borderBtm pb-2');
-
-									$('.cursor i').removeClass('d-none');
-									showNumBtn('#btnCrecir-', 30, 40, listBtnCrecir);;
-								}, 125);
+								initiateUnderlinedToggleBtn('#btnCrecir-', id, listBtnCrecir[id][0]);
 								break;
 							case 1:
 								console.log(id + ' fnCrecir called');
@@ -1095,7 +1089,7 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB);
+				toggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB, 'underlined');
 				toggleBtn(2, '#btnCrecir-2', toggLabelC, toggLabelD);
 				toggleBtn(3, '#btnCrecir-3', toggLabelE, toggLabelF);
 				setBtnActive('#btnCrecir-', listBtnCrecir);
@@ -6634,7 +6628,7 @@ function makeMenuRight() {
 	}
 }
 
-function toggleBtn(num, btnName, toggLabelA, toggLabelB) {
+function toggleBtn(num, btnName, toggLabelA, toggLabelB, btnType) {
 	$(btnName).toggleButton({
 		on: function () {
 			console.log('tugel on')
@@ -6642,7 +6636,7 @@ function toggleBtn(num, btnName, toggLabelA, toggLabelB) {
 			$('#toggle-box-b').siblings('.active').removeClass('active');
 			$('#toggle-divider').show();
 
-			printBtnToggleLabel(num, btnName, toggLabelB, toggLabelA, toggLabelB);
+			printBtnToggleLabel(num, btnName, toggLabelB, toggLabelA, toggLabelB, btnType);
 			$(btnName).attr('value', 'tg-on');
 		},
 		off: function () {
@@ -6651,7 +6645,7 @@ function toggleBtn(num, btnName, toggLabelA, toggLabelB) {
 			$('#toggle-box-a').siblings('.active').removeClass('active');
 			$('#toggle-divider').show();
 
-			printBtnToggleLabel(num, btnName, toggLabelA, toggLabelA, toggLabelB);
+			printBtnToggleLabel(num, btnName, toggLabelA, toggLabelA, toggLabelB, btnType);
 			$(btnName).attr('value', 'tg-off');
 		}
 	});
@@ -6663,6 +6657,26 @@ function initiateToggleBtn(btnName, num, arrName) {
 
 	setTimeout(function () {
 		$(btnName + num).find(":hidden").remove();
+
+		$('.cursor i').addClass('d-none');
+		hideNumBtn(btnName, 30, 40);
+		disableBtnNumber(btnName);
+	}, 125);
+}
+
+function initiateUnderlinedToggleBtn(btnName, num, arrName) {
+	$(btnName + num).children().hide();
+	$(btnName + num).children('div').children('a').hide();
+	$(btnName + num).addClass('toggle-btn').append(
+		"<div class='d-flex flex-column'>" +
+		"<a href='javascript:'>" + arrName + "</a>" +
+		"<div class='borderBtm mt-1'></div>" +
+		"</div>"
+	);
+
+	setTimeout(function () {
+		$(btnName + num).find(":hidden").remove();
+		$(btnName + num).find('div:first').remove();
 
 		$('.cursor i').addClass('d-none');
 		hideNumBtn(btnName, 30, 40);
@@ -6814,12 +6828,20 @@ function printBtnLabel(labelArr) {
 	document.getElementById('input-btn-out').innerHTML = html;
 }
 
-function printBtnToggleLabel(btnId, btnName, labelBtn, labelBtnLeft, labelBtnRight) {
+function printBtnToggleLabel(btnId, btnName, labelBtn, labelBtnLeft, labelBtnRight, btnType) {
 	$('#toggle-box-out').show();
-	$(btnName).children('a').html(labelBtn);
 	document.getElementById('input-btn-out').innerHTML = '<span class="active">' + labelBtn + '</span>';
 	document.getElementById('toggle-box-a').innerHTML = labelBtnLeft;
 	document.getElementById('toggle-box-b').innerHTML = labelBtnRight;
+
+	if (btnType === "underlined") {
+		$(btnName).children('div').children('a').html(labelBtn);
+		console.log('underlined')
+	} else {
+		$(btnName).children('a').html(labelBtn);
+		console.log('normal')
+	}
+
 
 	if (btnId != null) {
 		document.getElementById('tree-' + btnId).innerHTML =
