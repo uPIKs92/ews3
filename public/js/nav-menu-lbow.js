@@ -1824,9 +1824,9 @@ function createButton(buttonName) {
 								count = id;
 								break;
 							case 40:
-								console.log(id + ' fnAinit called');
+								console.log(id + ' fnIdtrk called');
 								event.stopImmediatePropagation();
-								backNav('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#track-menu&t=0.15s', 'track');
+								backNav('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#track-menu&t=0.15s', 'track');
 
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[6]);
@@ -1897,9 +1897,9 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation()
 								break;
 							case 40:
-								console.log(id + ' fnAinit called');
+								console.log(id + ' fnInit called');
 								event.stopImmediatePropagation();
-								backNav('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#track-menu&t=0.15s', 'track');
+								backNav('#btnInit-', listBtnInit.length, '#init-menu-btn', '#track-menu&t=0.15s', 'track');
 
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[6]);

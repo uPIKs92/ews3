@@ -66,6 +66,54 @@
         <div lj-type="frame" lj-name="scrmbl-menu" lj-transition="fade">
             <ul id="scrmbl-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="idtrk-menu" lj-transition="fade">
+            <ul id="idtrk-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="trktyp-menu" lj-transition="fade">
+            <ul id="trktyp-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="tmtxt-menu" lj-transition="fade">
+            <ul id="tmtxt-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="trkblk-menu" lj-transition="fade">
+            <ul id="trkblk-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="weapon-menu" lj-transition="fade">
+            <ul id="weapon-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="movbtm-menu" lj-transition="fade">
+            <ul id="movbtm-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="track-menu" lj-transition="fade">
+            <ul id="track-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="airmov-menu" lj-transition="fade">
+            <ul id="airmov-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="sndicm-menu" lj-transition="fade">
+            <ul id="sndicm-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="sndism-menu" lj-transition="fade">
+            <ul id="sndism-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="ewon-menu" lj-transition="fade">
+            <ul id="ewon-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="ewoff-menu" lj-transition="fade">
+            <ul id="ewoff-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="ew1-menu" lj-transition="fade">
+            <ul id="ew1-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="ew2-menu" lj-transition="fade">
+            <ul id="ew2-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="ew3-menu" lj-transition="fade">
+            <ul id="ew3-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="ew4-menu" lj-transition="fade">
+            <ul id="ew4-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="settrk-menu" lj-transition="fade">
             <ul id="settrk-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
