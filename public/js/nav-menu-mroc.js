@@ -1928,6 +1928,16 @@ function createButton(buttonName) {
 								printBtnTree(listBtnTacmis[id]);
 								createButton('crptm');
 								break;
+							case 6:
+								console.log(id + ' fnTacmis called');
+								event.stopImmediatePropagation();
+								clearMenu('#tacmis-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#scrmbl-menu&t=0.15s';
+								printBtnTree(listBtnTacmis[id]);
+								createButton('scrmbl');
+								break;
 						}
 					}
 				}
@@ -2369,6 +2379,99 @@ function createButton(buttonName) {
 				callAlphaVK('#btnCrptm-');
 				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 				delChar('#btnCrptm-48');
+				return;
+			}
+			case 'scrmbl': {
+				let count = 1;
+
+				for (let varScrmbl = 0; varScrmbl < listBtnScrmbl.length; varScrmbl++) {
+					generateButtonMenu('#scrmbl-menu-btn', 'btnScrmbl-', varScrmbl, listBtnScrmbl[varScrmbl][0]);
+					registToTree(varScrmbl, listBtnScrmbl[varScrmbl][0], 2);
+					$('#btnScrmbl-' + varScrmbl).on("click", { num: varScrmbl }, fnScrmbl);
+				}
+
+				function fnScrmbl(event) {
+					let id = event.data.num;
+
+					if (listBtnScrmbl[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnScrmbl-', id, listBtnScrmbl[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnScrmbl called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								callAlphaVK('#btnScrmbl-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+								backNav('#btnCrptm-', listBtnCrptm.length, '#crptm-menu-btn', '#tacmis-menu&t=0.15s', 'tacmis');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[9]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnScrmbl called');
+								event.stopImmediatePropagation();
+								backNav('#btnScrmbl-', listBtnScrmbl.length, '#scrmbl-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnScrmbl called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnScrmbl-', listBtnScrmbl);
+										$('#tree-' + (count - 1)).show();
+										$('#toggle-box-out').hide();
+										document.getElementById('input-VK').placeholder = '';
+
+										switch (count) {
+											case 1: {
+												event.stopImmediatePropagation()
+												$('.cursor i').removeClass('d-none');
+												callAlphaVK('#btnScrmbl-');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												return;
+											}
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnScrmbl-' + count).removeClass('active');
+										forceBack('#btnScrmbl-', listBtnScrmbl.length, '#scrmbl-menu-btn', '#logon-menu&t=0.15s');
+										count = 0;
+										createButton('logon');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnScrmbl-');
+				});
+
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnScrmbl-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				setBtnActive('#btnScrmbl-', listBtnScrmbl);
+				delChar('#btnScrmbl-48');
 				return;
 			}
 			case 'settrk': {

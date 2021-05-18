@@ -63,6 +63,9 @@
         <div lj-type="frame" lj-name="crptm-menu" lj-transition="fade">
             <ul id="crptm-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="scrmbl-menu" lj-transition="fade">
+            <ul id="scrmbl-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="settrk-menu" lj-transition="fade">
             <ul id="settrk-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
