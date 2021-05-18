@@ -2076,7 +2076,7 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 
-								toggleThreeState(btn, '#btnSetnac-' + id, 1);
+								toggleThreeState(btn, '#btnSetnac-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnSetnac-', 30, 40);
 								break;
@@ -2250,7 +2250,7 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 
-								toggleThreeState(btn, '#btnSetnai-' + id, 1);
+								toggleThreeState(btn, '#btnSetnai-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnSetnai-', 30, 40);
 								break;
@@ -2621,7 +2621,7 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 
-								toggleThreeState(btn, '#btnToldin-' + id, 1);
+								toggleThreeState(btn, '#btnToldin-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnToldin-', 30, 40);
 
@@ -3018,7 +3018,7 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 
-								toggleThreeState(btn, '#btnUpdtrk-' + id, 1);
+								toggleThreeState(btn, '#btnUpdtrk-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnUpdtrk-', 30, 40);
 
@@ -4022,7 +4022,7 @@ function createButton(buttonName) {
 							case 2:
 								console.log(id + ' fnLoose called');
 								event.stopImmediatePropagation();
-								toggleThreeState(btn, '#btnLoose-' + id, 2);
+								toggleThreeState(btn, '#btnLoose-' + id, id);
 								break;
 							case 40:
 								console.log(id + ' fnLine called');
@@ -4873,7 +4873,7 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 
-								toggleThreeState(btn1, '#btnSetbrn-' + id, 1);
+								toggleThreeState(btn1, '#btnSetbrn-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnSetbrn-', 30, 40);
 								break;
@@ -4884,7 +4884,7 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 
-								toggleThreeState(btn2, '#btnSetbrn-' + id, 2);
+								toggleThreeState(btn2, '#btnSetbrn-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnSetbrn-', 30, 40);
 								break;
@@ -6161,7 +6161,7 @@ function createButton(buttonName) {
 								$('#toggle-divider').hide();
 								resetVKWidth();
 
-								toggleThreeState(btn, '#btnSetcps-' + id, 1);
+								toggleThreeState(btn, '#btnSetcps-' + id, id);
 								showNumBtn('#btnSetcps-', 30, 40, listBtnSetcps);
 								break;
 							case 40:
@@ -6290,7 +6290,7 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 
-								toggleThreeState(btn, '#btnSetpsa-' + id, 1);
+								toggleThreeState(btn, '#btnSetpsa-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnSetpsa-', 30, 40);
 								break;

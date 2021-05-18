@@ -1,4 +1,4 @@
-<div id="stage" lj-type="stage" style="max-width: 911.57px; height:446.78px;">
+<div id="stage" lj-type="stage" style="max-width: 911.57px; height:447.78px;">
     <div lj-type="layer" lj-default-frame="main-menu" style="overflow: hidden;">
         <div lj-type="frame" lj-name="main-menu" lj-transition="fade">
             <ul id="main-menu-btn" class="m-0 p-0 form-inline"></ul>
@@ -59,6 +59,9 @@
         </div>
         <div lj-type="frame" lj-name="seltmp-menu" lj-transition="fade">
             <ul id="seltmp-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="crptm-menu" lj-transition="fade">
+            <ul id="crptm-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="settrk-menu" lj-transition="fade">
             <ul id="settrk-menu-btn" class="m-0 p-0 form-inline"></ul>

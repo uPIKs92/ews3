@@ -1388,7 +1388,6 @@ function createButton(buttonName) {
 								initiateUnderlinedToggleBtn('#btnSelreg-', id, listBtnSelreg[id][0]);
 
 								setTimeout(function () {
-									changeVKWidth('12%', '59.5%');
 									$('#input-btn-out').prepend('<span class="mr-2">selreg</span>');
 								}, 125);
 								break;
@@ -1397,6 +1396,10 @@ function createButton(buttonName) {
 								console.log(id + ' fnSelreg called');
 								event.stopImmediatePropagation();
 								backNav('#btnSelreg-', listBtnSelreg.length, '#selreg-menu-btn', '#logon-menu&t=0.15s', 'logon');
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
 								break;
 							case 47:
 								delCharByOne();
@@ -1410,7 +1413,7 @@ function createButton(buttonName) {
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
-									if (count < 2) {
+									if (count < 1) {
 										count++;
 										nextStep(count, '#btnSelreg-', listBtnSelreg);
 										$('#tree-' + (count - 1)).show();
@@ -1420,6 +1423,10 @@ function createButton(buttonName) {
 										forceBack('#btnSelreg-', listBtnSelreg.length, '#selreg-menu-btn', '#logon-menu&t=0.15s');
 										count = 0;
 										createButton('logon');
+
+										setTimeout(function () {
+											resetVKWidth();
+										}, 125);
 									}
 								}
 								break;
@@ -1429,6 +1436,7 @@ function createButton(buttonName) {
 
 				toggleBtn(1, '#btnSelreg-1', toggLabelA1, toggLabelA2, 'underlined');
 				showToggle(toggLabelA1, toggLabelA2);
+				changeVKWidth('12%', '59%');
 				setBtnActive('#btnSelreg-', listBtnSelreg);
 				delChar('#btnSelreg-48');
 				return;
@@ -1903,12 +1911,22 @@ function createButton(buttonName) {
 							case 2:
 								console.log(id + ' fnTacmis called');
 								event.stopImmediatePropagation();
-								clearMenu('#maps-menu-btn');
+								clearMenu('#tacmis-menu-btn');
 								clearContent();
 								$('#message-btn-out').empty();
 								window.location = '#seltmp-menu&t=0.15s';
-								printBtnTree(listBtnMaps[id]);
+								printBtnTree(listBtnTacmis[id]);
 								createButton('seltmp');
+								break;
+							case 4:
+								console.log(id + ' fnTacmis called');
+								event.stopImmediatePropagation();
+								clearMenu('#tacmis-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#crptm-menu&t=0.15s';
+								printBtnTree(listBtnTacmis[id]);
+								createButton('crptm');
 								break;
 						}
 					}
@@ -1919,12 +1937,12 @@ function createButton(buttonName) {
 				let count = 1;
 				let toggLabelA1 = listBtnSeltmp[0][0];
 				let toggLabelA2 = 'act-tm';
-			
+
 				for (let varSeltmp = 0; varSeltmp < listBtnSeltmp.length; varSeltmp++) {
 					generateButtonMenu('#seltmp-menu-btn', 'btnSeltmp-', varSeltmp, listBtnSeltmp[varSeltmp][0]);
 					registToTree(varSeltmp, listBtnSeltmp[varSeltmp][0], 2);
 					$('#btnSeltmp-' + varSeltmp).on("click", { num: varSeltmp }, fnSeltmp);
-			
+
 					if ((varSeltmp < 1) && (listBtnSeltmp[varSeltmp][0] != '')) {
 						//$('#btnSeltmp-' + varSeltmp).addClass('text-none');
 						generatedUnderlinedButtonMenu('#btnSeltmp-', varSeltmp, listBtnSeltmp[varSeltmp][0]);
@@ -1932,16 +1950,16 @@ function createButton(buttonName) {
 				}
 
 				$('#btnSeltmp-44').children('span').hide();
-			
+
 				function fnSeltmp(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnSeltmp[id][0] != '') {
 						if (id < 2) {
 							initiateLoadedMenu('#btnSeltmp-', id, listBtnSeltmp[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 0:
 								console.log(id + ' fnSeltmp called');
@@ -1959,6 +1977,14 @@ function createButton(buttonName) {
 								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								break;
 							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+								backNav('#btnCrptm-', listBtnCrptm.length, '#crptm-menu-btn', '#tacmis-menu&t=0.15s', 'tacmis');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[9]);
+								}, 125);
+								break;
 							case 42:
 								console.log(id + ' fnSeltmp called');
 								event.stopImmediatePropagation();
@@ -1970,7 +1996,7 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnSeltmp called');
 								event.stopImmediatePropagation()
-			
+
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
@@ -2009,11 +2035,340 @@ function createButton(buttonName) {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnSeltmp-');
 				});
-			
+
 				toggleBtn(0, '#btnSeltmp-0', toggLabelA1, toggLabelA2, 'underlined');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnSeltmp-', listBtnSeltmp);
 				delChar('#btnSeltmp-48');
+				return;
+			}
+			case 'crptm': {
+				let count = 1;
+				let b1 = listBtnCrptm[5][0];
+				let b2 = listBtnCrptm[6][0];
+				const btn1 = [b1, 'georef', 'lating'];
+				const btn2 = [b2, 'georef', 'lating'];
+				let toggLabelA1 = listBtnCrptm[8][0];
+				let toggLabelA2 = 'mach';
+				let toggLabelB1 = listBtnCrptm[9][0];
+				let toggLabelB2 = 'hard';
+
+				for (let varCrptm = 0; varCrptm < listBtnCrptm.length; varCrptm++) {
+					generateButtonMenu('#crptm-menu-btn', 'btnCrptm-', varCrptm, listBtnCrptm[varCrptm][0]);
+					registToTree(varCrptm, listBtnCrptm[varCrptm][0], 17);
+					$('#btnCrptm-' + varCrptm).on("click", { num: varCrptm }, fnCrptm);
+
+					if ((varCrptm > 8) && (varCrptm < 19)) {
+						$('#btnCrptm-' + varCrptm).addClass('text-none');
+					}
+				}
+
+				function fnCrptm(event) {
+					let id = event.data.num;
+
+					if (listBtnCrptm[id][0] != '') {
+						if (id < 17) {
+							initiateLoadedMenu('#btnCrptm-', id, listBtnCrptm[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnCrptm called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								resetVKWidth();
+
+								hideNumBtn('#btnCrptm-', 30, 40);
+								$('.cursor i').removeClass('d-none');
+								callAlphaVK('#btnCrptm-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								break;
+							case 3:
+								console.log(id + ' fnCrptm called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								resetVKWidth();
+
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+								$('#btnCrptm-' + 44).children('span').hide();
+								$('#btnCrptm-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								break;
+							case 4:
+								console.log(id + ' fnCrptm called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								resetVKWidth();
+
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+								$('#btnCrptm-' + 44).children('span').hide();
+								$('#btnCrptm-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								break;
+							case 5:
+								console.log(id + ' fnCrptm called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+
+								toggleThreeState(btn1, '#btnCrptm-' + id, id);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnCrptm-', 30, 40);
+								changeVKWidth('8%', '61.5%');
+
+								if ($('#btnCrptm-' + id).text() != b1) {
+									$('.cursor i').removeClass('d-none');
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									callAlphaVK('#btnCrptm-');
+								} else {
+									$('#btnCrptm-' + 44).children('span').hide();
+									$('#btnCrptm-' + 44).off();
+									document.getElementById('input-VK').placeholder = '';
+								}
+								break;
+							case 6:
+								console.log(id + ' fnCrptm called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+
+								toggleThreeState(btn2, '#btnCrptm-' + id, id);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnCrptm-', 30, 40);
+								changeVKWidth('8%', '61.5%');
+
+								if ($('#btnCrptm-' + id).text() != b2) {
+									$('.cursor i').removeClass('d-none');
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									callAlphaVK('#btnCrptm-');
+								} else {
+									$('#btnCrptm-' + 44).children('span').hide();
+									$('#btnCrptm-' + 44).off();
+									document.getElementById('input-VK').placeholder = '';
+								}
+								break;
+							case 7:
+								console.log(id + ' fnCrptm called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								resetVKWidth();
+
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+								$('#btnCrptm-' + 44).children('span').hide();
+								$('#btnCrptm-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								break;
+							case 8:
+								console.log(id + ' fnCrptm called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								changeVKWidth('8%', '63%');
+
+								initiateToggleBtn('#btnCrptm-', id, listBtnCrptm[id][0]);
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									callAlphaVK('#btnCrptm-');
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								}, 125);
+								break;
+							case 9:
+								console.log(id + ' fnCrptm called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								changeVKWidth('8%', '63%');
+
+								initiateToggleBtn('#btnCrptm-', id, listBtnCrptm[id][0]);
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									callAlphaVK('#btnCrptm-');
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								}, 125);
+								break;
+							case 13:
+								console.log(id + ' fnCrptm called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								resetVKWidth();
+
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+								$('#btnCrptm-' + 44).children('span').hide();
+								$('#btnCrptm-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								break;
+							case 14:
+								console.log(id + ' fnCrptm called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								resetVKWidth();
+
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+								$('#btnCrptm-' + 44).children('span').hide();
+								$('#btnCrptm-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								break;
+							case 15:
+								console.log(id + ' fnCrptm called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								resetVKWidth();
+
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+								$('#btnCrptm-' + 44).children('span').hide();
+								$('#btnCrptm-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								break;
+							case 16:
+								console.log(id + ' fnCrptm called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								resetVKWidth();
+
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+								$('#btnCrptm-' + 44).children('span').hide();
+								$('#btnCrptm-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnCrptm-', listBtnCrptm.length, '#crptm-menu-btn', '#tacmis-menu&t=0.15s', 'tacmis');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[34]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnCrptm called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnCrptm-', listBtnCrptm.length, '#crptm-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnCrptm called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 17) {
+										count++;
+										nextStep(count, '#btnCrptm-', listBtnCrptm);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+										document.getElementById('input-VK').placeholder = '';
+
+										switch (count) {
+											case 3:
+												showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+												$('#btnCrptm-' + 44).children('span').hide();
+												$('#btnCrptm-' + 44).off();
+												document.getElementById('input-VK').placeholder = '';
+												break;
+											case 4:
+												showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+												break;
+											case 5:
+												changeVKWidth('8%', '61.5%');
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+
+												initiateToggleThree(btn1);
+												hideNumBtn('#btnCrptm-', 30, 40);
+												break;
+											case 6:
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+
+												initiateToggleThree(btn2);
+												hideNumBtn('#btnCrptm-', 30, 40);
+												break;
+											case 7:
+												resetVKWidth();
+												showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+												break;
+											case 8:
+												changeVKWidth('8%', '63%');
+												hideNumBtn('#btnCrptm-', 30, 40);
+												showToggle(toggLabelA1, toggLabelA2);
+												$('.cursor i').removeClass('d-none');
+												callAlphaVK('#btnCrptm-');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+											case 9:
+												count = 12
+												showToggle(toggLabelB1, toggLabelB2);
+												break;
+											case 13:
+												resetVKWidth();
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+
+												showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+												$('#btnCrptm-' + 44).children('span').hide();
+												$('#btnCrptm-' + 44).off();
+												document.getElementById('input-VK').placeholder = '';
+												break;
+											case 14:
+												showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+												break;
+											case 15:
+												showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+												break;
+											case 16:
+												showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnCrptm-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnCrptm-', listBtnCrptm.length, '#crptm-menu-btn', '#tacmis-menu&t=0.15s');
+										count = 0;
+										createButton('tacmis');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[34]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnCrptm, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnCrptm-');
+				});
+
+				toggleBtn(8, '#btnCrptm-8', toggLabelA1, toggLabelA2);
+				toggleBtn(9, '#btnCrptm-9', toggLabelB1, toggLabelB2);
+				setBtnActive('#btnCrptm-', listBtnCrptm);
+				hideNumBtn('#btnCrptm-', 30, 40);
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnCrptm-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				delChar('#btnCrptm-48');
 				return;
 			}
 			case 'settrk': {
