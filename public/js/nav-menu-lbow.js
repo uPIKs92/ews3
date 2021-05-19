@@ -840,7 +840,7 @@ function createButton(buttonName) {
 						if (id < 7) {
 							$(this).siblings('.active').removeClass('active');
 							$(this).addClass('active');
-							document.getElementById('input-VK').value = listBtnLine[id][0];
+							//document.getElementById('input-VK').value = listBtnLine[id][0];
 							$('.cursor i').removeClass('d-none');
 							//$('#tree-' + id).show();
 							count = id;

@@ -102,17 +102,8 @@
         <div lj-type="frame" lj-name="ewoff-menu" lj-transition="fade">
             <ul id="ewoff-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
-        <div lj-type="frame" lj-name="ew1-menu" lj-transition="fade">
-            <ul id="ew1-menu-btn" class="m-0 p-0 form-inline"></ul>
-        </div>
-        <div lj-type="frame" lj-name="ew2-menu" lj-transition="fade">
-            <ul id="ew2-menu-btn" class="m-0 p-0 form-inline"></ul>
-        </div>
-        <div lj-type="frame" lj-name="ew3-menu" lj-transition="fade">
-            <ul id="ew3-menu-btn" class="m-0 p-0 form-inline"></ul>
-        </div>
-        <div lj-type="frame" lj-name="ew4-menu" lj-transition="fade">
-            <ul id="ew4-menu-btn" class="m-0 p-0 form-inline"></ul>
+        <div lj-type="frame" lj-name="ew-menu" lj-transition="fade">
+            <ul id="ew-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="settrk-menu" lj-transition="fade">
             <ul id="settrk-menu-btn" class="m-0 p-0 form-inline"></ul>

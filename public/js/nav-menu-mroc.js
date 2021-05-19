@@ -1,11 +1,20 @@
-$(function () {
-	$('div[onload]').trigger('onload');
-});
-
 var stateForLineBtn = 0;
 var countForLineState = 0;
 var stateForColorBtn = 0;
 var countForColorState = 0;
+var stateForEwBtn = 0;
+var stateForEwTreeBtn = 0;
+var countForEwState = 0;
+var countForEw1State = 0;
+var countForEw2State = 0;
+var countForEw3State = 0;
+var countForEw4State = 0;
+var stateForIdtrkBtn = 0;
+var stateForTrktypBtn = 0;
+
+$(function () {
+	$('div[onload]').trigger('onload');
+});
 
 function printBtn() {
 	createButton('main');
@@ -219,6 +228,7 @@ function createButton(buttonName) {
 								window.location = '#ewon-menu&t=0.15s'
 								printBtnTree(listBtnLogon[id]);
 								createButton('ewon');
+								stateForEwBtn = id;
 								break;
 							case 29:
 								console.log(id + ' fnLogon called');
@@ -229,6 +239,7 @@ function createButton(buttonName) {
 								window.location = '#ewoff-menu&t=0.15s'
 								printBtnTree(listBtnLogon[id]);
 								createButton('ewoff');
+								stateForEwBtn = id;
 								break;
 							case 34:
 								console.log(id + ' fnLogon called');
@@ -239,6 +250,8 @@ function createButton(buttonName) {
 								window.location = '#tacmis-menu&t=0.15s';
 								printBtnTree(listBtnLogon[id]);
 								createButton('tacmis');
+								stateForIdtrkBtn = id;
+								stateForTrktypBtn = id;
 								break;
 							case 35:
 								console.log(id + ' fnLogon called');
@@ -249,6 +262,8 @@ function createButton(buttonName) {
 								window.location = '#weapon-menu&t=0.15s';
 								printBtnTree(listBtnLogon[id]);
 								createButton('weapon');
+								stateForIdtrkBtn = id;
+								stateForTrktypBtn = id;
 								break;
 							case 36:
 								console.log(id + ' fnLogon called');
@@ -259,6 +274,8 @@ function createButton(buttonName) {
 								window.location = '#track-menu&t=0.15s';
 								printBtnTree(listBtnLogon[id]);
 								createButton('track');
+								stateForIdtrkBtn = id;
+								stateForTrktypBtn = id;
 								break;
 							case 37:
 								console.log(id + ' fnLogon called');
@@ -269,6 +286,8 @@ function createButton(buttonName) {
 								window.location = '#airmov-menu&t=0.15s';
 								printBtnTree(listBtnLogon[id]);
 								createButton('airmov');
+								stateForIdtrkBtn = id;
+								stateForTrktypBtn = id;
 								break;
 							case 40:
 							case 42:
@@ -1067,7 +1086,7 @@ function createButton(buttonName) {
 				}
 
 				setBtnActive('#btnLine-', listBtnLine);
-				$('#input-VK').val(listBtnLine[0][0]);
+				//$('#input-VK').val(listBtnLine[0][0]);
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnLine-48');
 				return;
@@ -1167,7 +1186,7 @@ function createButton(buttonName) {
 
 									switch (stateForColorBtn) {
 										case 17:
-											document.getElementById('input-VK').placeholder = '';
+											//document.getElementById('input-VK').placeholder = '';
 											backToPrevPage('#btnColor-', listBtnColor, '#color-menu-btn', '#creftr-menu&t=0.15s', '#btnCreftr-', listBtnCreftr, lastCount);
 											createButton('creftr');
 											console.log('Color for creftr')
@@ -1235,7 +1254,7 @@ function createButton(buttonName) {
 				}
 
 				setBtnActive('#btnColor-', listBtnColor);
-				$('#input-VK').val(listBtnColor[1][0]);
+				//$('#input-VK').val(listBtnColor[1][0]);
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnColor-48');
 				return;
@@ -1536,7 +1555,7 @@ function createButton(buttonName) {
 			case 'stbsrc': {
 				let count = 1;
 				let toggLabelA1 = listBtnStbsrc[1][0];
-				let toggLabelA2 = 'ew1off';
+				let toggLabelA2 = 'ewoff';
 				let toggLabelB1 = listBtnStbsrc[2][0];
 				let toggLabelB2 = 'ew2off';
 				let toggLabelC1 = listBtnStbsrc[3][0];
@@ -1881,7 +1900,7 @@ function createButton(buttonName) {
 			case 'pltsrc': {
 				let count = 1;
 				let toggLabelA1 = listBtnPltsrc[1][0];
-				let toggLabelA2 = 'ew1off';
+				let toggLabelA2 = 'ewoff';
 				let toggLabelB1 = listBtnPltsrc[2][0];
 				let toggLabelB2 = 'ew2off';
 				let toggLabelC1 = listBtnPltsrc[3][0];
@@ -2040,6 +2059,16 @@ function createButton(buttonName) {
 								printBtnTree(listBtnTacmis[id]);
 								createButton('scrmbl');
 								break;
+							case 10:
+								console.log(id + ' fnTacmis called');
+								event.stopImmediatePropagation();
+								clearMenu('#tacmis-menu-btn');
+								clearContent();
+								$('#message-btn-out, #tree-btn-out').empty();
+								window.location = '#totes-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('totes');
+								break;
 							case 11:
 								console.log(id + ' fnTacmis called');
 								event.stopImmediatePropagation();
@@ -2050,6 +2079,16 @@ function createButton(buttonName) {
 								printBtnTree(listBtnTacmis[id]);
 								createButton('idtrk');
 								document.getElementById('input-btn-out').innerHTML = listBtnTacmis[id];
+								break;
+							case 20:
+								console.log(id + ' fnTacmis called');
+								event.stopImmediatePropagation();
+								clearMenu('#tacmis-menu-btn');
+								clearContent();
+								$('#message-btn-out, #tree-btn-out').empty();
+								window.location = '#maps-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('maps');
 								break;
 							case 21:
 								console.log(id + ' fnTacmis called');
@@ -2687,11 +2726,33 @@ function createButton(buttonName) {
 							case 40:
 								console.log(id + ' fnIdtrk called');
 								event.stopImmediatePropagation();
-								backNav('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#tacmis-menu&t=0.15s', 'tacmis');
 
-								setTimeout(function () {
-									printBtnTree(listBtnLogon[34]);
-								}, 125);
+								switch (stateForIdtrkBtn) {
+									case 34:
+										$('#tree-btn-out span:last-child').remove();
+										backToPrevPage('#btnIdtrk-', listBtnIdtrk, '#idtrk-menu-btn', '#tacmis-menu&t=0.15s', '#btnTacmis-', listBtnTacmis, 0);
+										createButton('tacmis');
+										console.log('idtrk for tacmis');
+										break;
+									case 35:
+										$('#tree-btn-out span:last-child').remove();
+										backToPrevPage('#btnIdtrk-', listBtnIdtrk, '#idtrk-menu-btn', '#weapon-menu&t=0.15s', '#btnWeapon-', listBtnWeapon, 0);
+										createButton('weapon');
+										console.log('idtrk for weapon');
+										break;
+									case 36:
+										$('#tree-btn-out span:last-child').remove();
+										backToPrevPage('#btnIdtrk-', listBtnIdtrk, '#idtrk-menu-btn', '#track-menu&t=0.15s', '#btnTrack-', listBtnTrack, 0);
+										createButton('track');
+										console.log('idtrk for track');
+										break;
+									case 37:
+										$('#tree-btn-out span:last-child').remove();
+										backToPrevPage('#btnIdtrk-', listBtnIdtrk, '#idtrk-menu-btn', '#airmov-menu&t=0.15s', '#btnAirmov-', listBtnAirmov, 0);
+										createButton('airmov');
+										console.log('idtrk for airmov');
+										break;
+								}
 								break;
 							case 42:
 								console.log(id + ' fnIdtrk called');
@@ -2838,11 +2899,27 @@ function createButton(buttonName) {
 							case 40:
 								console.log(id + ' fnTrktyp called');
 								event.stopImmediatePropagation();
-								backNav('#btnTrktyp-', listBtnTrktyp.length, '#trktyp-menu-btn', '#tacmis-menu&t=0.15s', 'tacmis');
 
-								setTimeout(function () {
-									printBtnTree(listBtnLogon[34]);
-								}, 125);
+								switch (stateForTrktypBtn) {
+									case 34:
+										$('#tree-btn-out span:last-child').remove();
+										backToPrevPage('#btnTrktyp-', listBtnTrktyp, '#trktyp-menu-btn', '#tacmis-menu&t=0.15s', '#btnTacmis-', listBtnTacmis, 0);
+										createButton('tacmis');
+										console.log('trktyp for tacmis');
+										break;
+									case 35:
+										$('#tree-btn-out span:last-child').remove();
+										backToPrevPage('#btnTrktyp-', listBtnTrktyp, '#trktyp-menu-btn', '#weapon-menu&t=0.15s', '#btnWeapon-', listBtnWeapon, 0);
+										createButton('weapon');
+										console.log('trktyp for weapon');
+										break;
+									case 36:
+										$('#tree-btn-out span:last-child').remove();
+										backToPrevPage('#btnTrktyp-', listBtnTrktyp, '#trktyp-menu-btn', '#track-menu&t=0.15s', '#btnTrack-', listBtnTrack, 0);
+										createButton('track');
+										console.log('trktyp for track');
+										break;
+								}
 								break;
 							case 42:
 								console.log(id + ' fnTrktyp called');
@@ -3072,6 +3149,48 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnWeapon-', listBtnWeapon.length, '#weapon-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 10:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out, #tree-btn-out').empty();
+								window.location = '#totes-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('totes');
+								break;
+							case 11:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#idtrk-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id]);
+								createButton('idtrk');
+								document.getElementById('input-btn-out').innerHTML = listBtnWeapon[id];
+								break;
+							case 20:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out, #tree-btn-out').empty();
+								window.location = '#maps-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('maps');
+								break;
+							case 21:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#trktyp-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id]);
+								createButton('trktyp');
+								document.getElementById('input-btn-out').innerHTML = listBtnWeapon[id];
+								break;
 						}
 					}
 				}
@@ -3293,6 +3412,48 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnTrack-', listBtnTrack.length, '#track-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 10:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out, #tree-btn-out').empty();
+								window.location = '#totes-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('totes');
+								break;
+							case 11:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#idtrk-menu&t=0.15s';
+								printBtnTree(listBtnTrack[id]);
+								createButton('idtrk');
+								document.getElementById('input-btn-out').innerHTML = listBtnTrack[id];
+								break;
+							case 20:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out, #tree-btn-out').empty();
+								window.location = '#maps-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('maps');
+								break;
+							case 21:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#trktyp-menu&t=0.15s';
+								printBtnTree(listBtnTrack[id]);
+								createButton('trktyp');
+								document.getElementById('input-btn-out').innerHTML = listBtnTrack[id];
+								break;
 						}
 					}
 				}
@@ -3315,6 +3476,37 @@ function createButton(buttonName) {
 								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
 								backNav('#btnAirmov-', listBtnAirmov.length, '#airmov-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 10:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out, #tree-btn-out').empty();
+								window.location = '#totes-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('totes');
+								break;
+							case 11:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#idtrk-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('idtrk');
+								document.getElementById('input-btn-out').innerHTML = listBtnAirmov[id];
+								break;
+							case 20:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out, #tree-btn-out').empty();
+								window.location = '#maps-menu&t=0.15s';
+								printBtnTree(listBtnLogon[id]);
+								createButton('maps');
 								break;
 						}
 					}
@@ -3582,39 +3774,82 @@ function createButton(buttonName) {
 			}
 			case 'ewon': {
 				let count = 2;
-			
+
 				for (let varEwon = 0; varEwon < listBtnEwon.length; varEwon++) {
 					generateButtonMenu('#ewon-menu-btn', 'btnEwon-', varEwon, listBtnEwon[varEwon][0]);
 					registToTree(varEwon, listBtnEwon[varEwon][0], 6);
 					$('#btnEwon-' + varEwon).on("click", { num: varEwon }, fnEwon);
 				}
-			
+
 				function fnEwon(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnEwon[id][0] != '') {
 						if (id < 6) {
 							initiateLoadedMenu('#btnEwon-', id, listBtnEwon[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 2:
 								console.log(id + ' fnEwon called');
 								event.stopImmediatePropagation();
-								
+
 								clearMenu('#ewon-menu-btn');
 								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#ew1-menu&t=0.15s';
-								createButton('ew1');
+								$('#message-btn-out, #sub-tree').empty();
+								window.location = '#ew-menu&t=0.15s';
+								createButton('ew');
 								document.getElementById('input-btn-out').innerHTML = listBtnEwon[id][0];
+								stateForEwTreeBtn = id;
+								break;
+							case 3:
+								console.log(id + ' fnEwon called');
+								event.stopImmediatePropagation();
+
+								clearMenu('#ewon-menu-btn');
+								clearContent();
+								$('#message-btn-out, #sub-tree').empty();
+								window.location = '#ew-menu&t=0.15s';
+								createButton('ew');
+								document.getElementById('input-btn-out').innerHTML = listBtnEwon[id][0];
+								stateForEwTreeBtn = id;
+								break;
+							case 4:
+								console.log(id + ' fnEwon called');
+								event.stopImmediatePropagation();
+
+								clearMenu('#ewon-menu-btn');
+								clearContent();
+								$('#message-btn-out, #sub-tree').empty();
+								window.location = '#ew-menu&t=0.15s';
+								createButton('ew');
+								document.getElementById('input-btn-out').innerHTML = listBtnEwon[id][0];
+								stateForEwTreeBtn = id;
+								break;
+							case 5:
+								console.log(id + ' fnEwon called');
+								event.stopImmediatePropagation();
+
+								clearMenu('#ewon-menu-btn');
+								clearContent();
+								$('#message-btn-out, #sub-tree').empty();
+								window.location = '#ew-menu&t=0.15s';
+								createButton('ew');
+								document.getElementById('input-btn-out').innerHTML = listBtnEwon[id][0];
+								stateForEwTreeBtn = id;
 								break;
 							case 40:
 							case 42:
 								console.log(id + ' fnEwon called');
 								event.stopImmediatePropagation();
 								backNav('#btnEwon-', listBtnEwon.length, '#ewon-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								stateForEwTreeBtn = 0;
+								countForEwState = 0;
+								countForEw1State = 0;
+								countForEw2State = 0;
+								countForEw3State = 0;
+								countForEw4State = 0;
 								break;
 							case 47:
 								delCharByOne();
@@ -3622,7 +3857,7 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnEwon called');
 								event.stopImmediatePropagation()
-			
+
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
@@ -3637,6 +3872,12 @@ function createButton(buttonName) {
 										$('#btnEwon-' + count).removeClass('active');
 										forceBack('#btnEwon-', listBtnEwon.length, '#ewon-menu-btn', '#logon-menu&t=0.15s');
 										count = 0;
+										stateForEwTreeBtn = 0;
+										countForEwState = 0;
+										countForEw1State = 0;
+										countForEw2State = 0;
+										countForEw3State = 0;
+										countForEw4State = 0;
 										createButton('logon');
 									}
 								}
@@ -3644,56 +3885,95 @@ function createButton(buttonName) {
 						}
 					}
 				}
-			
+
 				setBtnActive('#btnEwon-', listBtnEwon);
 				delChar('#btnEwon-48');
 				return;
 			}
-			case 'ew1': {
-				let count = 6;
-				let toggLabelA1 = listBtnEw[6][0];
-				let toggLabelA2 = 'plot';
+			case 'ewoff': {
+				let count = 2;
 
-				for (let varEw1 = 0; varEw1 < listBtnEw.length; varEw1++) {
-					generateButtonMenu('#ew1-menu-btn', 'btnEw1-', varEw1, listBtnEw[varEw1][0]);
-					registToTree(varEw1, listBtnEw[varEw1][0], 7);
-					$('#btnEw1-' + varEw1).on("click", { num: varEw1 }, fnEw1);
+				for (let varEwoff = 0; varEwoff < listBtnEwoff.length; varEwoff++) {
+					generateButtonMenu('#ewoff-menu-btn', 'btnEwoff-', varEwoff, listBtnEwoff[varEwoff][0]);
+					registToTree(varEwoff, listBtnEwoff[varEwoff][0], 6);
+					$('#btnEwoff-' + varEwoff).on("click", { num: varEwoff }, fnEwoff);
 				}
 
-				function fnEw1(event) {
+				function fnEwoff(event) {
 					let id = event.data.num;
 
-					if (listBtnEw[id][0] != '') {
-						if (id < 7) {
-							initiateLoadedMenu('#btnEw1-', id, listBtnEw[id][0]);
+					if (listBtnEwoff[id][0] != '') {
+						if (id < 6) {
+							initiateLoadedMenu('#btnEwoff-', id, listBtnEwoff[id][0]);
 							count = id;
 						}
 
 						switch (id) {
-							case 6:
-								console.log(id + ' fnEw1 called');
-								//event.stopImmediatePropagation();
-								initiateToggleBtn('#btnEw1-', id, listBtnEw[id][0]);
+							case 2:
+								console.log(id + ' fnEwoff called');
+								event.stopImmediatePropagation();
 
-								setTimeout(function () {
-									$('#input-btn-out').prepend('<span class="mr-2">ew1</span>');
-								}, 125);
+								clearMenu('#ewoff-menu-btn');
+								clearContent();
+								$('#message-btn-out, #sub-tree').empty();
+								window.location = '#ew-menu&t=0.15s';
+								createButton('ew');
+								document.getElementById('input-btn-out').innerHTML = listBtnEwoff[id][0];
+								stateForEwTreeBtn = id;
+								break;
+							case 3:
+								console.log(id + ' fnEwoff called');
+								event.stopImmediatePropagation();
+
+								clearMenu('#ewoff-menu-btn');
+								clearContent();
+								$('#message-btn-out, #sub-tree').empty();
+								window.location = '#ew-menu&t=0.15s';
+								createButton('ew');
+								document.getElementById('input-btn-out').innerHTML = listBtnEwoff[id][0];
+								stateForEwTreeBtn = id;
+								break;
+							case 4:
+								console.log(id + ' fnEwoff called');
+								event.stopImmediatePropagation();
+
+								clearMenu('#ewoff-menu-btn');
+								clearContent();
+								$('#message-btn-out, #sub-tree').empty();
+								window.location = '#ew-menu&t=0.15s';
+								createButton('ew');
+								document.getElementById('input-btn-out').innerHTML = listBtnEwoff[id][0];
+								stateForEwTreeBtn = id;
+								break;
+							case 5:
+								console.log(id + ' fnEwoff called');
+								event.stopImmediatePropagation();
+
+								clearMenu('#ewoff-menu-btn');
+								clearContent();
+								$('#message-btn-out, #sub-tree').empty();
+								window.location = '#ew-menu&t=0.15s';
+								createButton('ew');
+								document.getElementById('input-btn-out').innerHTML = listBtnEwoff[id][0];
+								stateForEwTreeBtn = id;
 								break;
 							case 40:
 							case 42:
-								console.log(id + ' fnEw1 called');
+								console.log(id + ' fnEwoff called');
 								event.stopImmediatePropagation();
-								backNav('#btnEw1-', listBtnEw.length, '#ew1-menu-btn', '#logon-menu&t=0.15s', 'logon');
-
-								setTimeout(function () {
-									resetVKWidth();
-								}, 125);
+								backNav('#btnEwoff-', listBtnEwoff.length, '#ewoff-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								stateForEwTreeBtn = 0;
+								countForEwState = 0;
+								countForEw1State = 0;
+								countForEw2State = 0;
+								countForEw3State = 0;
+								countForEw4State = 0;
 								break;
 							case 47:
 								delCharByOne();
 								break;
 							case 49:
-								console.log(id + ' fnEw1 called');
+								console.log(id + ' fnEwoff called');
 								event.stopImmediatePropagation()
 
 								if ($('#input-VK').val() != '') {
@@ -3703,18 +3983,20 @@ function createButton(buttonName) {
 								} else {
 									if (count < 6) {
 										count++;
-										nextStep(count, '#btnEw1-', listBtnEw);
+										nextStep(count, '#btnEwoff-', listBtnEwoff);
 										$('#tree-' + (count - 1)).show();
 									} else {
 										printMessage("COMMAND OK");
-										$('#btnEw1-' + count).removeClass('active');
-										forceBack('#btnEw1-', listBtnEw.length, '#ew1-menu-btn', '#logon-menu&t=0.15s');
+										$('#btnEwoff-' + count).removeClass('active');
+										forceBack('#btnEwoff-', listBtnEwoff.length, '#ewoff-menu-btn', '#logon-menu&t=0.15s');
 										count = 0;
+										stateForEwTreeBtn = 0;
+										countForEwState = 0;
+										countForEw1State = 0;
+										countForEw2State = 0;
+										countForEw3State = 0;
+										countForEw4State = 0;
 										createButton('logon');
-
-										setTimeout(function () {
-											resetVKWidth();
-										}, 125);
 									}
 								}
 								break;
@@ -3722,11 +4004,222 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(6, '#btnEw1-6', toggLabelA1, toggLabelA2);
+				setBtnActive('#btnEwoff-', listBtnEwoff);
+				delChar('#btnEwoff-48');
+				return;
+			}
+			case 'ew': {
+				let label = '';
+				let count = 6;
+				let toggLabelA1 = listBtnEw[6][0];
+				let toggLabelA2 = listBtnEw[7][0];
+				let lastCount = 0;
+				countForEwState = 0;
+
+				for (let varEw = 0; varEw < listBtnEw.length; varEw++) {
+					generateButtonMenu('#ew-menu-btn', 'btnEw-', varEw, listBtnEw[varEw][0]);
+					registToTree(varEw, listBtnEw[varEw][0], 7);
+					$('#btnEw-' + varEw).on("click", { num: varEw }, fnEw);
+
+					if (varEw === 7) {
+						$('#btnEw-' + varEw).children('span').hide();
+					}
+				}
+
+				function fnEw(event) {
+					let id = event.data.num;
+
+					if (listBtnEw[id][0] != '') {
+						if (id < 7) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							//$('#tree-' + id).show();
+							count = id;
+							lastCount = count;
+						}
+
+						switch (id) {
+							case 6:
+								console.log(id + ' fnEw called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnEw-', id, listBtnEw[id][0]);
+
+								setTimeout(function () {
+									$('#input-btn-out').prepend('<span class="mr-2">ew</span>');
+									label = $('#btnEw-' + id).text();
+
+									switch (label) {
+										case 'track':
+											countForEwState = 6;
+											break;
+										case 'plot':
+											countForEwState = 7;
+											break;
+									}
+
+									console.log('label: ' + label + ' | ' + countForEwState);
+								}, 125);
+								break;
+							case 40:
+								console.log(id + ' fnEw called');
+								event.stopImmediatePropagation();
+
+								switch (stateForEwBtn) {
+									case 28:
+										backToPrevPage('#btnEw-', listBtnEw, '#ew-menu-btn', '#ewon-menu&t=0.15s', '#btnEwon-', listBtnEwon, lastCount);
+										createButton('ewon');
+										console.log('ew for ewon');
+										countForEwState = 0;
+										break;
+									case 29:
+										backToPrevPage('#btnEw-', listBtnEw, '#ew-menu-btn', '#ewoff-menu&t=0.15s', '#btnEwoff-', listBtnEwoff, lastCount);
+										createButton('ewoff');
+										console.log('ew for ewoff');
+										countForEwState = 0;
+										break;
+								}
+
+								setTimeout(function () {
+									$('#input-VK').val('');
+									lastCount = 0;
+									resetVKWidth();
+								}, 150);
+								break;
+							case 42:
+								console.log(id + ' fnEw called');
+								event.stopImmediatePropagation();
+								backNav('#btnEw-', listBtnEw.length, '#ew-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								countForEwState = 0;
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnEw called');
+								event.stopImmediatePropagation()
+
+								if (label != '') {
+									$('#tree-' + count).append('<span class="mr-2">EW1</span>');
+									$('#tree-' + count).show();
+									$('#btnEw-' + count).removeClass('active');
+									count = 0;
+
+									switch (stateForEwBtn) {
+										case 28:
+											backToPrevPage('#btnEw-', listBtnEw, '#ew-menu-btn', '#ewon-menu&t=0.15s', '#btnEwon-', listBtnEwon, lastCount);
+											createButton('ewon');
+											console.log('ew for ewon')
+
+											setTimeout(function () {
+												resetVKWidth();
+
+												switch (stateForEwTreeBtn) {
+													case 2:
+														countForEw1State = countForEwState;
+														break;
+													case 3:
+														countForEw2State = countForEwState;
+														break;
+													case 4:
+														countForEw3State = countForEwState;
+														break;
+													case 5:
+														countForEw4State = countForEwState;
+														break;
+												}
+
+												if (countForEw1State != 0) {
+													$('#tree-' + 2).show();
+													$('#treeNum-' + 2).append('<span>' + listBtnEw[countForEw1State][0] + '</span>');
+												}
+												if (countForEw2State != 0) {
+													$('#tree-' + 3).show();
+													$('#treeNum-' + 3).append('<span>' + listBtnEw[countForEw2State][0] + '</span>');
+												}
+												if (countForEw3State != 0) {
+													$('#tree-' + 4).show();
+													$('#treeNum-' + 4).append('<span>' + listBtnEw[countForEw3State][0] + '</span>');
+												}
+												if (countForEw4State != 0) {
+													$('#tree-' + 5).show();
+													$('#treeNum-' + 5).append('<span>' + listBtnEw[countForEw4State][0] + '</span>');
+												}
+
+												console.log(
+													'label ew: '
+													+ countForEw1State + ' | '
+													+ countForEw2State + ' | '
+													+ countForEw3State + ' | '
+													+ countForEw4State
+												);
+											}, 150)
+											break;
+										case 29:
+											backToPrevPage('#btnEw-', listBtnEw, '#ew-menu-btn', '#ewoff-menu&t=0.15s', '#btnEwon-', listBtnEwon, lastCount);
+											createButton('ewoff');
+											console.log('ew for ewoff')
+											console.log('ew: ' + countForEwState)
+
+											setTimeout(function () {
+												resetVKWidth();
+
+												switch (stateForEwTreeBtn) {
+													case 2:
+														countForEw1State = countForEwState;
+														break;
+													case 3:
+														countForEw2State = countForEwState;
+														break;
+													case 4:
+														countForEw3State = countForEwState;
+														break;
+													case 5:
+														countForEw4State = countForEwState;
+														break;
+												}
+
+												if (countForEw1State != 0) {
+													$('#tree-' + 2).show();
+													$('#treeNum-' + 2).append('<span>' + listBtnEw[countForEw1State][0] + '</span>');
+												}
+												if (countForEw2State != 0) {
+													$('#tree-' + 3).show();
+													$('#treeNum-' + 3).append('<span>' + listBtnEw[countForEw2State][0] + '</span>');
+												}
+												if (countForEw3State != 0) {
+													$('#tree-' + 4).show();
+													$('#treeNum-' + 4).append('<span>' + listBtnEw[countForEw3State][0] + '</span>');
+												}
+												if (countForEw4State != 0) {
+													$('#tree-' + 5).show();
+													$('#treeNum-' + 5).append('<span>' + listBtnEw[countForEw4State][0] + '</span>');
+												}
+
+												console.log(
+													'label ew: '
+													+ countForEw1State + ' | '
+													+ countForEw2State + ' | '
+													+ countForEw3State + ' | '
+													+ countForEw4State
+												);
+											}, 150)
+											break;
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				toggleBtn(6, '#btnEw-6', toggLabelA1, toggLabelA2);
 				showToggle(toggLabelA1, toggLabelA2);
 				changeVKWidth('12%', '59%');
-				setBtnActive('#btnEw1-', listBtnEw);
-				delChar('#btnEw1-48');
+				setBtnActive('#btnEw-', listBtnEw);
+				delChar('#btnEw-48');
 				return;
 			}
 			case 'settrk': {
