@@ -87,8 +87,8 @@
         <div lj-type="frame" lj-name="colour-menu" lj-transition="fade">
             <ul id="colour-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
-        <div lj-type="frame" lj-name="state-menu" lj-transition="fade">
-            <ul id="state-menu-btn" class="m-0 p-0 form-inline"></ul>
+        <div lj-type="frame" lj-name="states-menu" lj-transition="fade">
+            <ul id="states-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="defftr-menu" lj-transition="fade">
             <ul id="defftr-menu-btn" class="m-0 p-0 form-inline"></ul>
