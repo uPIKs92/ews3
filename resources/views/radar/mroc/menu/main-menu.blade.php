@@ -81,6 +81,9 @@
         <div lj-type="frame" lj-name="weapon-menu" lj-transition="fade">
             <ul id="weapon-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="trial-menu" lj-transition="fade">
+            <ul id="trial-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="runway-menu" lj-transition="fade">
             <ul id="runway-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>

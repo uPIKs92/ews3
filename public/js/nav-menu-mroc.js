@@ -783,7 +783,7 @@ function createButton(buttonName) {
 						}
 					}
 				}
-
+				showToggle(toggLabelA, toggLabelB);
 				toggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB, 'underlined');
 				setBtnActive('#btnCrecir-', listBtnCrecir);
 				hideNumBtn('#btnCrecir-', 30, 40);
@@ -3135,6 +3135,16 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnWeapon-', listBtnWeapon.length, '#weapon-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 5:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#trial-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id]);
+								createButton('trial');
+								break;
 							case 10:
 								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
@@ -3232,6 +3242,196 @@ function createButton(buttonName) {
 						}
 					}
 				}
+				return;
+			}
+			case 'trial': {
+				let count = 0;
+				let toggLabelA1 = listBtnTrial[0][0];
+				let toggLabelA2 = 'base';
+				let toggLabelB1 = listBtnTrial[4][0];
+				let toggLabelB2 = 'CAPPOS';
+
+				for (let varTrial = 0; varTrial < listBtnTrial.length; varTrial++) {
+					generateButtonMenu('#trial-menu-btn', 'btnTrial-', varTrial, listBtnTrial[varTrial][0]);
+					registToTree(varTrial, listBtnTrial[varTrial][0], 9);
+					$('#btnTrial-' + varTrial).on("click", { num: varTrial }, fnTrial);
+
+					if ((varTrial < 9)) {
+						$('#btnTrial-' + varTrial).addClass('text-none');
+					}
+				}
+
+				function fnTrial(event) {
+					let id = event.data.num;
+
+					if (listBtnTrial[id][0] != '') {
+						if (id < 9) {
+							initiateLoadedMenu('#btnTrial-', id, listBtnTrial[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+							case 2:
+								console.log(id + ' fnTrial called');
+								event.stopImmediatePropagation();
+
+								$('.cursor i').removeClass('d-none');
+								callAlphaVK('#btnTrial-');
+								showNumBtn('#btnTrial-', 30, 40, listBtnTrial);
+								count = id;
+								break;
+							case 6:
+							case 8:
+								console.log(id + ' fnTrial called');
+								event.stopImmediatePropagation();
+
+								$('.cursor i').removeClass('d-none');
+								callAlphaVK('#btnTrial-');
+								showNumBtn('#btnTrial-', 30, 40, listBtnTrial);
+								count = id + 1;
+								break;
+							case 0:
+								console.log(id + ' fnTrial called');
+								//event.stopImmediatePropagation();
+
+								changeVKWidth('8%', '63%');
+								initiateToggleBtn('#btnTrial-', id, listBtnTrial[id][0]);
+								$('#btnTrial-' + 44).children('span').hide();
+								$('#btnTrial-' + 44).off();
+
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnTrial-', 30, 40, listBtnTrial);
+									callAlphaVK('#btnTrial-');
+								}, 125);
+
+								count = id;
+								break;
+							case 4:
+								console.log(id + ' fnTrial called');
+								//event.stopImmediatePropagation();
+
+								changeVKWidth('8%', '63%');
+								initiateToggleBtn('#btnTrial-', id, listBtnTrial[id][0]);
+								$('#btnTrial-' + 44).children('span').hide();
+								$('#btnTrial-' + 44).off();
+
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnTrial-', 30, 40, listBtnTrial);
+									callAlphaVK('#btnTrial-');
+								}, 125);
+
+								count = id + 1;
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnTrial-', listBtnTrial.length, '#trial-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[35]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnTrial called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnTrial-', listBtnTrial.length, '#trial-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnTrial called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/*
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									*/
+
+									if (count > 2) {
+										$('#tree-' + (count - 1)).show();
+										document.getElementById('treeNum-' + (count - 1)).innerHTML = $('#input-VK').val();
+									} else {
+										$('#tree-' + count).show();
+										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									}
+
+									clearVK();
+								} else {
+									if (count < 9) {
+										count++;
+										nextStep(count, '#btnTrial-', listBtnTrial);
+
+										if (count < 3) {
+											$('#tree-' + (count - 1)).show();
+										} else {
+											$('#tree-' + (count - 2)).show();
+										}
+
+										switch (count) {
+											case 1:
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+												break;
+											case 2:
+												count = 3;
+												break;
+											case 4:
+												count = 5;
+												showToggle(toggLabelB1, toggLabelB2);
+												break;
+											case 6:
+												count = 7;
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+												break;
+											case 8:
+												count = 9;
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnTrial-' + count).removeClass('active');
+										forceBack('#btnTrial-', listBtnTrial.length, '#trial-menu-btn', '#weapon-menu&t=0.15s');
+										count = 0;
+										createButton('weapon');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[35]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnTrial, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnTrial-');
+				});
+
+				showToggle(toggLabelA1, toggLabelA2);
+				toggleBtn(0, '#btnTrial-0', toggLabelA1, toggLabelA2);
+				toggleBtn(4, '#btnTrial-4', toggLabelB1, toggLabelB2);
+				setBtnActive('#btnTrial-', listBtnTrial);
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnTrial-');
+				delChar('#btnTrial-48');
 				return;
 			}
 			case 'runway': {
