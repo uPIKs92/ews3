@@ -81,11 +81,23 @@
         <div lj-type="frame" lj-name="weapon-menu" lj-transition="fade">
             <ul id="weapon-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="runway-menu" lj-transition="fade">
+            <ul id="runway-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="colour-menu" lj-transition="fade">
+            <ul id="colour-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="state-menu" lj-transition="fade">
+            <ul id="state-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="defftr-menu" lj-transition="fade">
             <ul id="defftr-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="clrass-menu" lj-transition="fade">
             <ul id="clrass-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="amdftr-menu" lj-transition="fade">
+            <ul id="amdftr-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="movbtm-menu" lj-transition="fade">
             <ul id="movbtm-menu-btn" class="m-0 p-0 form-inline"></ul>
