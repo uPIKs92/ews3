@@ -99,6 +99,9 @@
         <div lj-type="frame" lj-name="amdftr-menu" lj-transition="fade">
             <ul id="amdftr-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="ftrres-menu" lj-transition="fade">
+            <ul id="ftrres-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="movbtm-menu" lj-transition="fade">
             <ul id="movbtm-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
