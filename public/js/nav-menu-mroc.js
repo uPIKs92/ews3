@@ -3145,6 +3145,36 @@ function createButton(buttonName) {
 								printBtnTree(listBtnWeapon[id]);
 								createButton('trial');
 								break;
+							case 6:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#delay-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id]);
+								createButton('delay');
+								break;
+							case 8:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#recovr-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id]);
+								createButton('recovr');
+								break;
+							case 9:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#canmis-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id]);
+								createButton('canmis');
+								break;
 							case 10:
 								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
@@ -3188,6 +3218,37 @@ function createButton(buttonName) {
 								printBtnTree(listBtnWeapon[id]);
 								createButton('defftr');
 								break;
+							case 16:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#tactic-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id]);
+								createButton('tactic');
+								break;
+							case 18:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#hndovr-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id]);
+								createButton('hndovr');
+								document.getElementById('input-btn-out').innerHTML = listBtnWeapon[id];
+								break;
+							case 19:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#tkover-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id]);
+								createButton('tkover');
+								break;
 							case 20:
 								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
@@ -3228,6 +3289,26 @@ function createButton(buttonName) {
 								window.location = '#amdftr-menu&t=0.15s';
 								printBtnTree(listBtnWeapon[id]);
 								createButton('amdftr');
+								break;
+							case 28:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#oncap-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id]);
+								createButton('oncap');
+								break;
+							case 29:
+								console.log(id + ' fnWeapon called');
+								event.stopImmediatePropagation();
+								clearMenu('#weapon-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#samtrk-menu&t=0.15s';
+								printBtnTree(listBtnWeapon[id]);
+								createButton('samtrk');
 								break;
 							case 34:
 								console.log(id + ' fnWeapon called');
@@ -3432,6 +3513,305 @@ function createButton(buttonName) {
 				$('.cursor i').removeClass('d-none');
 				callAlphaVK('#btnTrial-');
 				delChar('#btnTrial-48');
+				return;
+			}
+			case 'delay': {
+				//scrmbl
+				let count = 0;
+
+				for (let varDelay = 0; varDelay < listBtnDelay.length; varDelay++) {
+					generateButtonMenu('#delay-menu-btn', 'btnDelay-', varDelay, listBtnDelay[varDelay][0]);
+					registToTree(varDelay, listBtnDelay[varDelay][0], 1);
+					$('#btnDelay-' + varDelay).on("click", { num: varDelay }, fnDelay);
+
+					if ((varDelay < 1)) {
+						$('#btnDelay-' + varDelay).addClass('text-none');
+					}
+				}
+
+				function fnDelay(event) {
+					let id = event.data.num;
+
+					if (listBtnDelay[id][0] != '') {
+						if (id < 1) {
+							initiateLoadedMenu('#btnDelay-', id, listBtnDelay[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnDelay called');
+								event.stopImmediatePropagation();
+								break;
+							case 40:
+								console.log(id + ' fnDelay called');
+								//event.stopImmediatePropagation();
+								backNav('#btnDelay-', listBtnDelay.length, '#delay-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[35]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnDelay called');
+								event.stopImmediatePropagation();
+								backNav('#btnDelay-', listBtnDelay.length, '#delay-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnDelay called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 0) {
+										count++;
+										nextStep(count, '#btnDelay-', listBtnDelay);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnDelay-' + count).removeClass('active');
+										forceBack('#btnDelay-', listBtnDelay.length, '#delay-menu-btn', '#weapon-menu&t=0.15s');
+										count = 0;
+										createButton('weapon');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[35]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnDelay, id);
+				}
+
+				$('.cursor i').removeClass('d-none');
+				setBtnActive('#btnDelay-', listBtnDelay);
+				delChar('#btnDelay-48');
+				return;
+			}
+			case 'recovr': {
+				let count = 0;
+				let toggLabelA1 = listBtnRecovr[2][0];
+				let toggLabelA2 = 'base';
+
+				for (let varRecovr = 0; varRecovr < listBtnRecovr.length; varRecovr++) {
+					generateButtonMenu('#recovr-menu-btn', 'btnRecovr-', varRecovr, listBtnRecovr[varRecovr][0]);
+					registToTree(varRecovr, listBtnRecovr[varRecovr][0], 3);
+					$('#btnRecovr-' + varRecovr).on("click", { num: varRecovr }, fnRecovr);
+
+					if ((varRecovr < 3)) {
+						$('#btnRecovr-' + varRecovr).addClass('text-none');
+					}
+				}
+
+				function fnRecovr(event) {
+					let id = event.data.num;
+
+					if (listBtnRecovr[id][0] != '') {
+						if (id < 3) {
+							initiateLoadedMenu('#btnRecovr-', id, listBtnRecovr[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnRecovr called');
+								event.stopImmediatePropagation();
+								break;
+							case 2:
+								console.log(id + ' fnRecovr called');
+								//event.stopImmediatePropagation();
+
+								changeVKWidth('8%', '63%');
+								initiateToggleBtn('#btnRecovr-', id, listBtnRecovr[id][0]);
+
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnRecovr-', 30, 40, listBtnRecovr);
+									callAlphaVK('#btnRecovr-');
+								}, 125);
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnRecovr-', listBtnRecovr.length, '#recovr-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[35]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnRecovr called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnRecovr-', listBtnRecovr.length, '#recovr-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnRecovr called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									clearVK();
+								} else {
+									if (count < 2) {
+										count++;
+										nextStep(count, '#btnRecovr-', listBtnRecovr);
+										$('#tree-' + (count - 1)).show();
+
+										switch (count) {
+											case 2:
+												showToggle(toggLabelA1, toggLabelA2);
+												$('.cursor i').removeClass('d-none');
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnRecovr-' + count).removeClass('active');
+										forceBack('#btnRecovr-', listBtnRecovr.length, '#recovr-menu-btn', '#weapon-menu&t=0.15s');
+										count = 0;
+										createButton('weapon');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[35]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnRecovr, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnRecovr-');
+				});
+
+				toggleBtn(2, '#btnRecovr-2', toggLabelA1, toggLabelA2);
+				setBtnActive('#btnRecovr-', listBtnRecovr);
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnRecovr-');
+				delChar('#btnRecovr-48');
+				return;
+			}
+			case 'canmis': {
+				let count = 0;
+
+				for (let varCanmis = 0; varCanmis < listBtnCanmis.length; varCanmis++) {
+					generateButtonMenu('#canmis-menu-btn', 'btnCanmis-', varCanmis, listBtnCanmis[varCanmis][0]);
+					registToTree(varCanmis, listBtnCanmis[varCanmis][0], 1);
+					$('#btnCanmis-' + varCanmis).on("click", { num: varCanmis }, fnCanmis);
+
+					if ((varCanmis < 3)) {
+						$('#btnCanmis-' + varCanmis).addClass('text-none');
+					}
+				}
+
+				function fnCanmis(event) {
+					let id = event.data.num;
+
+					if (listBtnCanmis[id][0] != '') {
+						if (id < 1) {
+							initiateLoadedMenu('#btnCanmis-', id, listBtnCanmis[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnCanmis called');
+								event.stopImmediatePropagation();
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnCanmis-', listBtnCanmis.length, '#canmis-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[35]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnCanmis called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnCanmis-', listBtnCanmis.length, '#canmis-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnCanmis called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									clearVK();
+								} else {
+									if (count < 0) {
+										count++;
+										nextStep(count, '#btnCanmis-', listBtnCanmis);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnCanmis-' + count).removeClass('active');
+										forceBack('#btnCanmis-', listBtnCanmis.length, '#canmis-menu-btn', '#weapon-menu&t=0.15s');
+										count = 0;
+										createButton('weapon');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[35]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnCanmis, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnCanmis-');
+				});
+
+				setBtnActive('#btnCanmis-', listBtnCanmis);
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnCanmis-');
+				delChar('#btnCanmis-48');
 				return;
 			}
 			case 'runway': {
@@ -3981,6 +4361,522 @@ function createButton(buttonName) {
 				delChar('#btnDefftr-48');
 				return;
 			}
+			case 'tactic': {
+				let count = 0;
+				let toggLabelA1 = listBtnTactic[6][0];
+				let toggLabelA2 = 'crsmch';
+				let toggLabelB1 = listBtnTactic[8][0];
+				let toggLabelB2 = 'atkmch';
+				let toggLabelC1 = listBtnTactic[10][0];
+				let toggLabelC2 = 'ftlc';
+				let toggLabelD1 = listBtnTactic[28][0];
+				let toggLabelD2 = 'stnoff';
+				const btn1 = [listBtnTactic[0][0], 'TACTNO', 'OVRRDE'];
+				const btn2 = [listBtnTactic[18][0], 'bank45', 'bank60'];
+
+				for (let varTactic = 0; varTactic < listBtnTactic.length; varTactic++) {
+					generateButtonMenu('#tactic-menu-btn', 'btnTactic-', varTactic, listBtnTactic[varTactic][0]);
+					registToTree(varTactic, listBtnTactic[varTactic][0], 29);
+
+					if ((varTactic < 29)) {
+						$('#btnTactic-' + varTactic).addClass('text-none');
+					}
+				}
+
+				$('#btnTactic-' + 0).on("click", { num: 0 }, fnTacticInit);
+				//$('#btnTactic-' + 40).on("click", { num: 40 }, fnTactic);
+				//$('#btnTactic-' + 42).on("click", { num: 42 }, fnTactic);
+				init();
+
+				$.doClick = function () {
+					for (let varTactic = 1; varTactic < listBtnTactic.length; varTactic++) {
+						$('#btnTactic-' + varTactic).on("click", { num: varTactic }, fnTactic);
+					}
+
+					toggleBtn(6, '#btnTactic-6', toggLabelA1, toggLabelA2);
+					toggleBtn(8, '#btnTactic-8', toggLabelB1, toggLabelB2);
+					toggleBtn(10, '#btnTactic-10', toggLabelC1, toggLabelC2);
+					toggleBtn(28, '#btnTactic-28', toggLabelD1, toggLabelD2);
+				}
+
+				function fnTacticInit(event) {
+					let id = event.data.num;
+
+					if (listBtnTactic[id][0] != '') {
+						if (id < 29) {
+							initiateLoadedMenu('#btnTactic-', id, listBtnTactic[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnTactic called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+								changeVKWidth('8%', '59%');
+
+								toggleThreeState(btn1, '#btnTactic-' + id, id);
+								//$('#tree-' + id).hide();
+
+								if ($('#btnTactic-' + id).text() === 'DEFALT') {
+									for (let i = 1; i < 29; i++) {
+										$('#btnTactic-' + i).off();
+										console.log('died')
+									}/**/
+									hideNumBtn('#btnTactic-', 30, 40);
+								} else if ($('#btnTactic-' + id).text() === 'TACTNO') {
+									showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+								} else {
+									/*
+									$('#sub-tree').empty();
+									$.doClick();
+									showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+									document.getElementById('tree-' + id).innerHTML =
+										'<span>' + $('#btnTactic-' + id).text() + '</span>';
+									$('#tree-' + id).show();
+									*/
+									$.doClick();
+								}
+								break;
+						}
+					}
+				}
+
+				function fnTactic(event) {
+					let id = event.data.num;
+
+					if (listBtnTactic[id][0] != '') {
+						if (id < 29) {
+							initiateLoadedMenu('#btnTactic-', id, listBtnTactic[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 2:
+								console.log(id + ' fnTactic called');
+								event.stopImmediatePropagation();
+
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+								showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+								count = id;
+								break;
+							case 4:
+								console.log(id + ' fnTactic called');
+								event.stopImmediatePropagation();
+
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+								showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+								count = id;
+								break;
+							case 6:
+								console.log(id + ' fnTactic called');
+								//event.stopImmediatePropagation();
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+
+								changeVKWidth('8%', '63%');
+								initiateToggleBtn('#btnTactic-', id, listBtnTactic[id][0]);
+
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+								}, 125);
+								break;
+							case 8:
+								console.log(id + ' fnTactic called');
+								//event.stopImmediatePropagation();
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+
+								changeVKWidth('8%', '63%');
+								initiateToggleBtn('#btnTactic-', id, listBtnTactic[id][0]);
+								break;
+							case 10:
+								console.log(id + ' fnTactic called');
+								//event.stopImmediatePropagation();
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+
+								changeVKWidth('8%', '63%');
+								initiateToggleBtn('#btnTactic-', id, listBtnTactic[id][0]);
+								break;
+							case 12:
+								console.log(id + ' fnTactic called');
+								event.stopImmediatePropagation();
+
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+								showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+								count = id;
+								break;
+							case 14:
+								console.log(id + ' fnTactic called');
+								event.stopImmediatePropagation();
+
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+								showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+								count = id + 1;
+								break;
+							case 16:
+								console.log(id + ' fnTactic called');
+								event.stopImmediatePropagation();
+
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+								showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+								count = id + 1;
+								break;
+							case 18:
+								console.log(id + ' fnTactic called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+								changeVKWidth('8%', '59%');
+
+								toggleThreeState(btn2, '#btnTactic-' + id, id);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnTactic-', 30, 40);
+								$('#tree-' + id).hide();
+								break;
+							case 20:
+								console.log(id + ' fnTactic called');
+								event.stopImmediatePropagation();
+
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+								showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+								count = id + 1;
+								break;
+							case 28:
+								console.log(id + ' fnTactic called');
+								//event.stopImmediatePropagation();
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								$('#three-toggle').empty();
+
+								changeVKWidth('8%', '63%');
+								initiateToggleBtn('#btnTactic-', id, listBtnTactic[id][0]);
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[35]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnTactic called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnTactic called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									if (count > 2) {
+										$('#tree-' + (count - 1)).show();
+										document.getElementById('treeNum-' + (count - 1)).innerHTML = $('#input-VK').val();
+									} else {
+										$('#tree-' + count).show();
+										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									}
+
+									clearVK();
+								} else {
+									if (count < 29) {
+										count++;
+										nextStep(count, '#btnTactic-', listBtnTactic);
+										$('#three-toggle').empty();
+
+										if (count < 3) {
+											$('#tree-' + (count - 1)).show();
+										} else {
+											$('#tree-' + (count - 2)).show();
+										}
+
+										switch (count) {
+											case 2:
+												count = 3;
+												break;
+											case 4:
+												count = 5;
+												break;
+											case 6:
+												count = 7;
+												break;
+											case 8:
+												count = 9;
+												break;
+											case 10:
+												count = 11;
+												break;
+											case 12:
+												count = 13;
+												break;
+											case 14:
+												count = 15;
+												break;
+											case 16:
+												count = 17;
+												break;
+											case 18:
+												count = 19;
+												break;
+											case 19:
+												count = 20;
+												break;
+											case 20:
+												count = 27;
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnTactic-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#weapon-menu&t=0.15s');
+										count = 0;
+										createButton('weapon');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[35]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnTactic, id);
+				}
+
+				function init() {
+					hideNumBtn('#btnTactic-', 30, 40);
+					changeVKWidth('8%', '59%');
+					initiateToggleThree(btn1);
+					setBtnActive('#btnTactic-', listBtnTactic);
+					delChar('#btnTactic-48');
+				}/**/
+
+				return;
+			}
+			case 'hndovr': {
+				let count = 0;
+
+				for (let varHndovr = 0; varHndovr < listBtnHndovr.length; varHndovr++) {
+					generateButtonMenu('#hndovr-menu-btn', 'btnHndovr-', varHndovr, listBtnHndovr[varHndovr][0]);
+					registToTree(varHndovr, listBtnHndovr[varHndovr][0], 28);
+					$('#btnHndovr-' + varHndovr).on("click", { num: varHndovr }, fnHndovr);
+				}
+
+				function fnHndovr(event) {
+					let id = event.data.num;
+
+					if (listBtnHndovr[id][0] != '') {
+						if (id < 28) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnHndovr[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnHndovr called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 2:
+								console.log(id + ' fnHndovr called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 4:
+								console.log(id + ' fnHndovr called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 6:
+								console.log(id + ' fnHndovr called');
+								event.stopImmediatePropagation();
+								count = id;
+								break;
+							case 40:
+								console.log(id + ' fnDelay called');
+								//event.stopImmediatePropagation();
+								backNav('#btnDelay-', listBtnDelay.length, '#delay-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[35]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnHndovr called');
+								event.stopImmediatePropagation();
+								backNav('#btnHndovr-', listBtnHndovr.length, '#hndovr-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnHndovr called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnHndovr-', listBtnHndovr);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnHndovr-' + count).removeClass('active');
+										forceBack('#btnHndovr-', listBtnHndovr.length, '#hndovr-menu-btn', '#weapon-menu&t=0.15s');
+										count = 0;
+										createButton('weapon');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[35]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnHndovr-', listBtnHndovr);
+				$('#input-VK').val(listBtnHndovr[0][0]);
+				count = 1;
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnHndovr-48');
+				return;
+			}
+			case 'tkover': {
+				//scrmbl
+				let count = 1;
+
+				for (let varTkover = 0; varTkover < listBtnTkover.length; varTkover++) {
+					generateButtonMenu('#tkover-menu-btn', 'btnTkover-', varTkover, listBtnTkover[varTkover][0]);
+					registToTree(varTkover, listBtnTkover[varTkover][0], 2);
+					$('#btnTkover-' + varTkover).on("click", { num: varTkover }, fnTkover);
+
+					if ((varTkover < 1)) {
+						$('#btnTkover-' + varTkover).addClass('text-none');
+					}
+				}
+
+				function fnTkover(event) {
+					let id = event.data.num;
+
+					if (listBtnTkover[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnTkover-', id, listBtnTkover[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnTkover called');
+								event.stopImmediatePropagation();
+								break;
+							case 40:
+								console.log(id + ' fnTkover called');
+								//event.stopImmediatePropagation();
+								backNav('#btnTkover-', listBtnTkover.length, '#tkover-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[35]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnTkover called');
+								event.stopImmediatePropagation();
+								backNav('#btnTkover-', listBtnTkover.length, '#tkover-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnTkover called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnTkover-', listBtnTkover);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnTkover-' + count).removeClass('active');
+										forceBack('#btnTkover-', listBtnTkover.length, '#tkover-menu-btn', '#weapon-menu&t=0.15s');
+										count = 0;
+										createButton('weapon');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[35]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnTkover, id);
+				}
+
+				$('.cursor i').removeClass('d-none');
+				setBtnActive('#btnTkover-', listBtnTkover);
+				delChar('#btnTkover-48');
+				return;
+			}
 			case 'clrass': {
 				let count = 0;
 
@@ -4061,7 +4957,7 @@ function createButton(buttonName) {
 			case 'amdftr': {
 				let count = 0;
 				let toggLabelA1 = listBtnAmdftr[4][0];
-				let toggLabelA2 = 'calsgn';
+				let toggLabelA2 = 'cansgn';
 
 				for (let varAmdftr = 0; varAmdftr < listBtnAmdftr.length; varAmdftr++) {
 					generateButtonMenu('#amdftr-menu-btn', 'btnAmdftr-', varAmdftr, listBtnAmdftr[varAmdftr][0]);
@@ -4073,7 +4969,7 @@ function createButton(buttonName) {
 					}
 
 					if (varAmdftr === 4) {
-						$('#btnAmdftr-' + varAmdftr).attr('value', 'tg-off');
+						$('#btnAmdftr-' + varAmdftr).attr('value', 'tg-on');
 					}
 				}
 
@@ -4235,6 +5131,216 @@ function createButton(buttonName) {
 				delChar('#btnAmdftr-48');
 				return;
 			}
+			case 'oncap': {
+				let count = 0;
+
+				for (let varOncap = 0; varOncap < listBtnOncap.length; varOncap++) {
+					generateButtonMenu('#oncap-menu-btn', 'btnOncap-', varOncap, listBtnOncap[varOncap][0]);
+					registToTree(varOncap, listBtnOncap[varOncap][0], 3);
+					$('#btnOncap-' + varOncap).on("click", { num: varOncap }, fnOncap);
+
+					if ((varOncap < 3)) {
+						$('#btnOncap-' + varOncap).addClass('text-none');
+					}
+				}
+
+				function fnOncap(event) {
+					let id = event.data.num;
+
+					if (listBtnOncap[id][0] != '') {
+						if (id < 3) {
+							initiateLoadedMenu('#btnOncap-', id, listBtnOncap[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+							case 2:
+								console.log(id + ' fnOncap called');
+								event.stopImmediatePropagation();
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnOncap-', listBtnOncap.length, '#oncap-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[35]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnOncap called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnOncap-', listBtnOncap.length, '#oncap-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnOncap called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									clearVK();
+								} else {
+									if (count < 2) {
+										count++;
+										nextStep(count, '#btnOncap-', listBtnOncap);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnOncap-' + count).removeClass('active');
+										forceBack('#btnOncap-', listBtnOncap.length, '#oncap-menu-btn', '#weapon-menu&t=0.15s');
+										count = 0;
+										createButton('weapon');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[35]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnOncap, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnOncap-');
+				});
+
+				setBtnActive('#btnOncap-', listBtnOncap);
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnOncap-');
+				delChar('#btnOncap-48');
+				return;
+			}
+			case 'samtrk': {
+				let count = 1;
+				let toggLabelA1 = listBtnSamtrk[1][0];
+				let toggLabelA2 = 'cancel';
+
+				for (let varSamtrk = 0; varSamtrk < listBtnSamtrk.length; varSamtrk++) {
+					generateButtonMenu('#samtrk-menu-btn', 'btnSamtrk-', varSamtrk, listBtnSamtrk[varSamtrk][0]);
+					registToTree(varSamtrk, listBtnSamtrk[varSamtrk][0], 2);
+					$('#btnSamtrk-' + varSamtrk).on("click", { num: varSamtrk }, fnSamtrk);
+
+					if (varSamtrk === 1) {
+						$('#btnSamtrk-' + varSamtrk).attr('value', 'tg-on');
+					}
+				}
+
+				function fnSamtrk(event) {
+					let id = event.data.num;
+
+					if (listBtnSamtrk[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnSamtrk-', id, listBtnSamtrk[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnSamtrk called');
+								//event.stopImmediatePropagation();
+
+								changeVKWidth('8%', '63%');
+								initiateToggleBtn('#btnSamtrk-', id, listBtnSamtrk[id][0]);
+
+								/**/
+								if ($('#btnSamtrk-' + id).attr('value') != 'tg-on') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnSamtrk-', 30, 40, listBtnSamtrk);
+										callAlphaVK('#btnSamtrk-');
+									}, 125);
+								}
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnSamtrk-', listBtnSamtrk.length, '#samtrk-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[35]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnSamtrk called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnSamtrk-', listBtnSamtrk.length, '#samtrk-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSamtrk called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnSamtrk-', listBtnSamtrk);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSamtrk-' + count).removeClass('active');
+										forceBack('#btnSamtrk-', listBtnSamtrk.length, '#samtrk-menu-btn', '#weapon-menu&t=0.15s');
+										count = 0;
+										createButton('weapon');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[35]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSamtrk, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnSamtrk-');
+				});
+
+				showToggle(toggLabelA1, toggLabelA2);
+				toggleBtn(1, '#btnSamtrk-1', toggLabelA1, toggLabelA2);
+				setBtnActive('#btnSamtrk-', listBtnSamtrk);
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnSamtrk-');
+				delChar('#btnSamtrk-48');
+				return;
+			}
 			case 'ftrres': {
 				let count = 0;
 				const btn = [listBtnFtrres[4][0], 'STAT5', 'STAT15'];
@@ -4261,6 +5367,7 @@ function createButton(buttonName) {
 							case 6:
 								console.log(id + ' fnFtrres called');
 								event.stopImmediatePropagation();
+								resetVKWidth();
 
 								$('.cursor i').removeClass('d-none');
 								$('#toggle-box-a, #toggle-box-b').empty();
@@ -4276,6 +5383,7 @@ function createButton(buttonName) {
 							case 2:
 								console.log(id + ' fnFtrres called');
 								event.stopImmediatePropagation();
+								resetVKWidth();
 
 								$('.cursor i').removeClass('d-none');
 								$('#toggle-box-a, #toggle-box-b').empty();
@@ -4291,6 +5399,7 @@ function createButton(buttonName) {
 								$('.cursor i').removeClass('d-none');
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
+								changeVKWidth('8%', '59%');
 
 								toggleThreeState(btn, '#btnFtrres-' + id, id);
 								$('.cursor i').addClass('d-none');
@@ -4368,6 +5477,7 @@ function createButton(buttonName) {
 												document.getElementById('input-VK').placeholder = '';
 												hideNumBtn('#btnFtrres-', 30, 40);
 												initiateToggleThree(btn);
+												changeVKWidth('8%', '61.5%');
 												break;
 											case 6:
 												count = 7;
@@ -4375,6 +5485,7 @@ function createButton(buttonName) {
 												$('#toggle-divider').hide();
 												$('#three-toggle').empty();
 												showNumBtn('#btnFtrres-', 30, 40, listBtnFtrres);
+												resetVKWidth();
 												break;
 										}
 									} else {
@@ -5906,7 +7017,12 @@ function toggleBtn(num, btnName, toggLabelA, toggLabelB, btnType) {
 			$('#toggle-divider').show();
 
 			printBtnToggleLabel(num, btnName, toggLabelB, toggLabelA, toggLabelB, btnType);
-			$(btnName).attr('value', 'tg-on');
+
+			if ($(btnName).attr('value') === 'tg-on') {
+				$(btnName).attr('value', 'tg-off');
+			} else {
+				$(btnName).attr('value', 'tg-on');
+			}
 		},
 		off: function () {
 			console.log('tugel off')
@@ -5915,7 +7031,12 @@ function toggleBtn(num, btnName, toggLabelA, toggLabelB, btnType) {
 			$('#toggle-divider').show();
 
 			printBtnToggleLabel(num, btnName, toggLabelA, toggLabelA, toggLabelB, btnType);
-			$(btnName).attr('value', 'tg-off');
+
+			if ($(btnName).attr('value') === 'tg-off') {
+				$(btnName).attr('value', 'tg-on');
+			} else {
+				$(btnName).attr('value', 'tg-off');
+			}
 		}
 	});
 }

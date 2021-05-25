@@ -84,6 +84,15 @@
         <div lj-type="frame" lj-name="trial-menu" lj-transition="fade">
             <ul id="trial-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="delay-menu" lj-transition="fade">
+            <ul id="delay-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="recovr-menu" lj-transition="fade">
+            <ul id="recovr-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="canmis-menu" lj-transition="fade">
+            <ul id="canmis-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="runway-menu" lj-transition="fade">
             <ul id="runway-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
@@ -96,11 +105,26 @@
         <div lj-type="frame" lj-name="defftr-menu" lj-transition="fade">
             <ul id="defftr-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="tactic-menu" lj-transition="fade">
+            <ul id="tactic-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="hndovr-menu" lj-transition="fade">
+            <ul id="hndovr-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="tkover-menu" lj-transition="fade">
+            <ul id="tkover-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="clrass-menu" lj-transition="fade">
             <ul id="clrass-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="amdftr-menu" lj-transition="fade">
             <ul id="amdftr-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="oncap-menu" lj-transition="fade">
+            <ul id="oncap-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="samtrk-menu" lj-transition="fade">
+            <ul id="samtrk-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="ftrres-menu" lj-transition="fade">
             <ul id="ftrres-menu-btn" class="m-0 p-0 form-inline"></ul>
