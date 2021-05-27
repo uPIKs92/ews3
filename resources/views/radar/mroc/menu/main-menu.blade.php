@@ -138,6 +138,48 @@
         <div lj-type="frame" lj-name="airmov-menu" lj-transition="fade">
             <ul id="airmov-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="selfp-menu" lj-transition="fade">
+            <ul id="selfp-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="adtpt-menu" lj-transition="fade">
+            <ul id="adtpt-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="amtpt-menu" lj-transition="fade">
+            <ul id="amtpt-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="stdfp-menu" lj-transition="fade">
+            <ul id="stdfp-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="deltp-menu" lj-transition="fade">
+            <ul id="deltp-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="adsfp-menu" lj-transition="fade">
+            <ul id="adsfp-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="amfp-menu" lj-transition="fade">
+            <ul id="amfp-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="leg-menu" lj-transition="fade">
+            <ul id="leg-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="schdle-menu" lj-transition="fade">
+            <ul id="schdle-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="days-menu" lj-transition="fade">
+            <ul id="days-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="adcfp-menu" lj-transition="fade">
+            <ul id="adcfp-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="fptxt-menu" lj-transition="fade">
+            <ul id="fptxt-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="sfpcur-menu" lj-transition="fade">
+            <ul id="sfpcur-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="cfpact-menu" lj-transition="fade">
+            <ul id="cfpact-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="sndicm-menu" lj-transition="fade">
             <ul id="sndicm-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>

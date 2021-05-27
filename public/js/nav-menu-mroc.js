@@ -3366,6 +3366,7 @@ function createButton(buttonName) {
 
 								$('.cursor i').removeClass('d-none');
 								callAlphaVK('#btnTrial-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								showNumBtn('#btnTrial-', 30, 40, listBtnTrial);
 								count = id;
 								break;
@@ -3376,6 +3377,7 @@ function createButton(buttonName) {
 
 								$('.cursor i').removeClass('d-none');
 								callAlphaVK('#btnTrial-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								showNumBtn('#btnTrial-', 30, 40, listBtnTrial);
 								count = id + 1;
 								break;
@@ -3392,6 +3394,7 @@ function createButton(buttonName) {
 									$('.cursor i').removeClass('d-none');
 									showNumBtn('#btnTrial-', 30, 40, listBtnTrial);
 									callAlphaVK('#btnTrial-');
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								}, 125);
 
 								count = id;
@@ -3409,6 +3412,7 @@ function createButton(buttonName) {
 									$('.cursor i').removeClass('d-none');
 									showNumBtn('#btnTrial-', 30, 40, listBtnTrial);
 									callAlphaVK('#btnTrial-');
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								}, 125);
 
 								count = id + 1;
@@ -3644,6 +3648,7 @@ function createButton(buttonName) {
 									$('.cursor i').removeClass('d-none');
 									showNumBtn('#btnRecovr-', 30, 40, listBtnRecovr);
 									callAlphaVK('#btnRecovr-');
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								}, 125);
 								break;
 							case 40:
@@ -3818,6 +3823,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnCanmis-', listBtnCanmis);
 				$('.cursor i').removeClass('d-none');
 				callAlphaVK('#btnCanmis-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 				delChar('#btnCanmis-48');
 				return;
 			}
@@ -4231,6 +4237,7 @@ function createButton(buttonName) {
 
 								$('.cursor i').removeClass('d-none');
 								callAlphaVK('#btnDefftr-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr);
 								count = id;
 								break;
@@ -4244,6 +4251,7 @@ function createButton(buttonName) {
 
 								$('.cursor i').removeClass('d-none');
 								callAlphaVK('#btnDefftr-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr);
 								count = id + 1;
 								break;
@@ -4255,12 +4263,14 @@ function createButton(buttonName) {
 								initiateToggleBtn('#btnDefftr-', id, listBtnDefftr[id][0]);
 								$('#btnDefftr-' + 44).children('span').hide();
 								$('#btnDefftr-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
 
 								if ($('#btnDefftr-' + id).attr('value') != 'tg-on') {
 									setTimeout(function () {
 										$('.cursor i').removeClass('d-none');
 										showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr);
 										callAlphaVK('#btnDefftr-');
+										document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 									}, 125);
 								}
 								count = id + 1;
@@ -4334,9 +4344,20 @@ function createButton(buttonName) {
 											case 12:
 												count = 13;
 												showToggle(toggLabelA1, toggLabelA2);
+												$('.cursor i').addClass('d-none');
+												document.getElementById('input-VK').placeholder = '';
+												$('#btnDefftr-' + 44).children('span').hide();
+												$('#btnDefftr-' + 44).off();
+												hideNumBtn('#btnDefftr-', 30, 40, listBtnDefftr);
 												break;
 											case 14:
 												count = 15;
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+												$('.cursor i').removeClass('d-none');
+												showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr);
+												callAlphaVK('#btnDefftr-');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 												break;
 										}
 									} else {
@@ -4367,6 +4388,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnDefftr-', listBtnDefftr);
 				$('.cursor i').removeClass('d-none');
 				callAlphaVK('#btnDefftr-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 				delChar('#btnDefftr-48');
 				return;
 			}
@@ -4777,7 +4799,8 @@ function createButton(buttonName) {
 													$('#toggle-box-a, #toggle-box-b').empty();
 													$('#toggle-divider').hide();
 													initiateToggleThree(btn2);
-													
+
+													$('.cursor i').addClass('d-none');
 													setTimeout(function () {
 														changeVKWidth('12.5%', '54.5%');
 														$('#input-btn-out').prepend('<span class="mr-2">base</span>');
@@ -5122,6 +5145,7 @@ function createButton(buttonName) {
 
 								$('.cursor i').removeClass('d-none');
 								callAlphaVK('#btnAmdftr-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								showNumBtn('#btnAmdftr-', 30, 40, listBtnAmdftr);
 								count = id;
 								break;
@@ -5134,6 +5158,7 @@ function createButton(buttonName) {
 
 								$('.cursor i').removeClass('d-none');
 								callAlphaVK('#btnAmdftr-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								showNumBtn('#btnAmdftr-', 30, 40, listBtnAmdftr);
 								count = id + 1;
 								break;
@@ -5145,12 +5170,14 @@ function createButton(buttonName) {
 								initiateToggleBtn('#btnAmdftr-', id, listBtnAmdftr[id][0]);
 								$('#btnAmdftr-' + 44).children('span').hide();
 								$('#btnAmdftr-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
 
 								if ($('#btnAmdftr-' + id).attr('value') != 'tg-on') {
 									setTimeout(function () {
 										$('.cursor i').removeClass('d-none');
 										showNumBtn('#btnAmdftr-', 30, 40, listBtnAmdftr);
 										callAlphaVK('#btnAmdftr-');
+										document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 									}, 125);
 								}
 
@@ -5218,9 +5245,13 @@ function createButton(buttonName) {
 											case 4:
 												count = 5;
 												showToggle(toggLabelA1, toggLabelA2);
+												document.getElementById('input-VK').placeholder = '';
 												break;
 											case 6:
 												count = 7;
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 												break;
 											case 8:
 												count = 9;
@@ -5260,6 +5291,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnAmdftr-', listBtnAmdftr);
 				$('.cursor i').removeClass('d-none');
 				callAlphaVK('#btnAmdftr-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 				delChar('#btnAmdftr-48');
 				return;
 			}
@@ -5331,6 +5363,13 @@ function createButton(buttonName) {
 										count++;
 										nextStep(count, '#btnOncap-', listBtnOncap);
 										$('#tree-' + (count - 1)).show();
+										document.getElementById('input-VK').placeholder = '';
+
+										switch (count) {
+											case 2:
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+										}
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnOncap-' + count).removeClass('active');
@@ -5358,6 +5397,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnOncap-', listBtnOncap);
 				$('.cursor i').removeClass('d-none');
 				callAlphaVK('#btnOncap-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 				delChar('#btnOncap-48');
 				return;
 			}
@@ -5398,7 +5438,6 @@ function createButton(buttonName) {
 									setTimeout(function () {
 										$('.cursor i').removeClass('d-none');
 										showNumBtn('#btnSamtrk-', 30, 40, listBtnSamtrk);
-										callAlphaVK('#btnSamtrk-');
 									}, 125);
 								}
 								break;
@@ -5460,16 +5499,10 @@ function createButton(buttonName) {
 					bindBtnNumber(listBtnSamtrk, id);
 				}
 
-				$('#keyboard-enter').on('click', function () {
-					window.location = '#closed&t=0.15s';
-					showBtmNav('#btnSamtrk-');
-				});
-
 				showToggle(toggLabelA1, toggLabelA2);
 				toggleBtn(1, '#btnSamtrk-1', toggLabelA1, toggLabelA2);
 				setBtnActive('#btnSamtrk-', listBtnSamtrk);
 				$('.cursor i').removeClass('d-none');
-				callAlphaVK('#btnSamtrk-');
 				delChar('#btnSamtrk-48');
 				return;
 			}
@@ -5522,6 +5555,7 @@ function createButton(buttonName) {
 								$('#toggle-divider').hide();
 								$('#three-toggle').empty();
 								callAlphaVK('#btnFtrres-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								showNumBtn('#btnFtrres-', 30, 40, listBtnFtrres);
 								count = id;
 								break;
@@ -5532,11 +5566,16 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 								changeVKWidth('8%', '59%');
+								document.getElementById('input-VK').placeholder = '';
 
 								toggleThreeState(btn, '#btnFtrres-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnFtrres-', 30, 40);
 
+								setTimeout(function () {
+									changeVKWidth('12.5%', '54.5%');
+									$('#input-btn-out').prepend('<span class="mr-2">stat</span>');
+								}, 125)
 								count = id + 1;
 								break;
 							case 40:
@@ -5588,6 +5627,7 @@ function createButton(buttonName) {
 									if (count < 7) {
 										count++;
 										nextStep(count, '#btnFtrres-', listBtnFtrres);
+										document.getElementById('input-VK').placeholder = '';
 
 										if (count < 3) {
 											$('#tree-' + (count - 1)).show();
@@ -5598,9 +5638,11 @@ function createButton(buttonName) {
 										switch (count) {
 											case 1:
 												callAlphaVK('#btnFtrres-');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 												break;
 											case 2:
 												count = 3;
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 												break;
 											case 4:
 												count = 5;
@@ -5610,6 +5652,12 @@ function createButton(buttonName) {
 												hideNumBtn('#btnFtrres-', 30, 40);
 												initiateToggleThree(btn);
 												changeVKWidth('8%', '61.5%');
+
+												$('.cursor i').addClass('d-none');
+												setTimeout(function () {
+													changeVKWidth('12.5%', '54.5%');
+													$('#input-btn-out').prepend('<span class="mr-2">stat</span>');
+												}, 125)
 												break;
 											case 6:
 												count = 7;
@@ -5931,6 +5979,56 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								backNav('#btnAirmov-', listBtnAirmov.length, '#airmov-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
+							case 2:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#selfp-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('selfp');
+								break;
+							case 4:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#adtpt-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('adtpt');
+								break;
+							case 5:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#amtpt-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('amtpt');
+								break;
+							case 6:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#stdfp-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('stdfp');
+								break;
+							case 9:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#deltp-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('deltp');
+								break;
 							case 10:
 								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
@@ -5952,6 +6050,36 @@ function createButton(buttonName) {
 								createButton('idtrk');
 								document.getElementById('input-btn-out').innerHTML = listBtnAirmov[id];
 								break;
+							case 14:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#adsfp-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('adsfp');
+								break;
+							case 15:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#amfp-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('amfp');
+								break;
+							case 18:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#schdle-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('schdle');
+								break;
 							case 20:
 								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
@@ -5962,9 +6090,175 @@ function createButton(buttonName) {
 								printBtnTree(listBtnLogon[id]);
 								createButton('maps');
 								break;
+							case 24:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#adcfp-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('adcfp');
+								break;
+							case 25:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#fptxt-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('fptxt');
+								break;
+							case 33:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#sfpcur-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('sfpcur');
+								break;
+							case 34:
+								console.log(id + ' fnAirmov called');
+								event.stopImmediatePropagation();
+								clearMenu('#airmov-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#cfpact-menu&t=0.15s';
+								printBtnTree(listBtnAirmov[id]);
+								createButton('cfpact');
+								break;
 						}
 					}
 				}
+				return;
+			}
+			case 'selfp': {
+				let count = 0;
+				const btn = [listBtnSelfp[0][0], 'CUR-FP', 'ACT-FP'];
+
+				for (let varSelfp = 0; varSelfp < listBtnSelfp.length; varSelfp++) {
+					generateButtonMenu('#selfp-menu-btn', 'btnSelfp-', varSelfp, listBtnSelfp[varSelfp][0]);
+					registToTree(varSelfp, listBtnSelfp[varSelfp][0], 3);
+					$('#btnSelfp-' + varSelfp).on("click", { num: varSelfp }, fnSelfp);
+				}
+
+				$('#btnSelfp-44').children('span').hide();
+
+				function fnSelfp(event) {
+					let id = event.data.num;
+
+					if (listBtnSelfp[id][0] != '') {
+						if (id < 3) {
+							initiateLoadedMenu('#btnSelfp-', id, listBtnSelfp[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnSelfp called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								changeVKWidth('8%', '59%');
+
+								toggleThreeState(btn, '#btnSelfp-' + id, id);
+								$('.cursor i').addClass('d-none');
+								break;
+							case 2:
+								console.log(id + ' fnSelfp called');
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('.cursor i').removeClass('d-none');
+								$('#three-toggle').empty();
+								callAlphaVK('#btnSelfp-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnSelfp-', listBtnSelfp.length, '#selfp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[35]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnSelfp called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnSelfp-', listBtnSelfp.length, '#selfp-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSelfp called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									clearVK();
+								} else {
+									if (count < 2) {
+										count++;
+										nextStep(count, '#btnSelfp-', listBtnSelfp);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+
+										switch (count) {
+											case 2:
+												resetVKWidth();
+
+												$('.cursor i').removeClass('d-none');
+												$('#three-toggle').empty();
+												callAlphaVK('#btnSelfp-');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSelfp-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnSelfp-', listBtnSelfp.length, '#selfp-menu-btn', '#airmov-menu&t=0.15s');
+										count = 0;
+										createButton('airmov');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[37]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnSelfp-');
+				});
+
+				changeVKWidth('8%', '59%');
+				initiateToggleThree(btn);
+				setBtnActive('#btnSelfp-', listBtnSelfp);
+				delChar('#btnSelfp-48');
 				return;
 			}
 			case 'sndicm': {
@@ -7251,6 +7545,9 @@ function initiateToggleThree(btnArr) {
 			$('#three-toggle').append(
 				'<span class="mr-1 ml-1">:</span>');
 		}
+
+		//$('#tg-' + a).siblings('.active').removeClass('active');
+		//$('#three-toggle span:first-child').addClass('active');
 	}
 }
 
