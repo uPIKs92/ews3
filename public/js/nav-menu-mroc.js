@@ -6261,6 +6261,153 @@ function createButton(buttonName) {
 				delChar('#btnSelfp-48');
 				return;
 			}
+			case 'adtpt': {
+				let count = 0;
+				const btn = [listBtnAdtpt[12][0], 'latlng', 'georef'];
+			
+				for (let varAdtpt = 0; varAdtpt < listBtnAdtpt.length; varAdtpt++) {
+					generateButtonMenu('#adtpt-menu-btn', 'btnAdtpt-', varAdtpt, listBtnAdtpt[varAdtpt][0]);
+					registToTree(varAdtpt, listBtnAdtpt[varAdtpt][0], 13);
+					$('#btnAdtpt-' + varAdtpt).on("click", { num: varAdtpt }, fnAdtpt);
+				}
+			
+				$('#btnAdtpt-44').children('span').hide();
+			
+				function fnAdtpt(event) {
+					let id = event.data.num;
+			
+					if (listBtnAdtpt[id][0] != '') {
+						if (id < 13) {
+							initiateLoadedMenu('#btnAdtpt-', id, listBtnAdtpt[id][0]);
+							count = id;
+						}
+			
+						switch (id) {
+							case 0:
+								console.log(id + ' fnAdtpt called');
+								event.stopImmediatePropagation();
+								resetVKWidth();
+			
+								$('.cursor i').removeClass('d-none');
+								$('#three-toggle').empty();
+								callAlphaVK('#btnAdtpt-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								break;
+							case 12:
+								console.log(id + ' fnAdtpt called');
+								event.stopImmediatePropagation();
+								changeVKWidth('8%', '59%');
+			
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+			
+								toggleThreeState(btn, '#btnAdtpt-' + id, id);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnAdtpt-', 30, 40);
+			
+								if ($('#btnAdtpt-' + id).text() != 'btm') {
+									$('.cursor i').removeClass('d-none');
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									callAlphaVK('#btnAdtpt-');
+								} else {
+									$('#btnAdtpt-' + 44).children('span').hide();
+									$('#btnAdtpt-' + 44).off();
+									document.getElementById('input-VK').placeholder = '';
+								}
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+			
+								backNav('#btnAdtpt-', listBtnAdtpt.length, '#adtpt-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
+								$('#three-toggle').empty();
+			
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[37]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnAdtpt called');
+								//event.stopImmediatePropagation();
+			
+								backNav('#btnAdtpt-', listBtnAdtpt.length, '#adtpt-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+			
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnAdtpt called');
+								event.stopImmediatePropagation();
+			
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+			
+									clearVK();
+								} else {
+									if (count < 12) {
+										count++;
+										nextStep(count, '#btnAdtpt-', listBtnAdtpt);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+										document.getElementById('input-VK').placeholder = '';
+			
+										switch (count) {
+											case 1:
+												count = 11;
+												break;
+											case 12:
+												changeVKWidth('8%', '59%');
+			
+												$('.cursor i').addClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+			
+												initiateToggleThree(btn);
+												$('#btnAdtpt-' + 44).children('span').hide();
+												$('#btnAdtpt-' + 44).off();
+												document.getElementById('input-VK').placeholder = '';
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnAdtpt-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnAdtpt-', listBtnAdtpt.length, '#adtpt-menu-btn', '#airmov-menu&t=0.15s');
+										count = 0;
+										createButton('airmov');
+			
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[37]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+				}
+			
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnAdtpt-');
+				});
+			
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnAdtpt-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				setBtnActive('#btnAdtpt-', listBtnAdtpt);
+				delChar('#btnAdtpt-48');
+				return;
+			}
 			case 'sndicm': {
 				let count = 0;
 
