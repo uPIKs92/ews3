@@ -66,15 +66,17 @@
                     </div>
                     <div class="col-12 p-0">
                         <div class="row no-gutters p-1">
-                            <div class="col-12 p-0 ml-2 mr-2 form-inline" style="min-height: 42px;">
-                                <div id="tree-btn-out"></div>
-                                <div id="sub-tree" class="form-inline"></div>
+                            <div class="col-auto p-0 ml-2" style="min-height: 42px;">
+                                <div id="tree-btn-out" class="mt-3"></div>
+                            </div>
+                            <div class="col-9 p-0 ml-2 mr-2 form-inline" style="min-height: 42px;">
+                                <div id="sub-tree" class="form-inline mt-3"></div>
                                 <div id="tree-val"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 p-0">
-                        <div class="row no-gutters p-1 mt-2 mb-2">
+                        <div class="row no-gutters p-0 mt-1 mb-1">
                             <div id="message-btn-out" class="col p-0 text-center text-uppercase" style="min-height: 21px;">
                                 {{-- message text --}}
                             </div>
