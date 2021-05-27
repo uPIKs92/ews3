@@ -70,7 +70,7 @@
                                 <div id="tree-btn-out" class="mt-3"></div>
                             </div>
                             <div class="col-9 p-0 ml-2 mr-2 form-inline" style="min-height: 42px;">
-                                <div id="sub-tree" class="form-inline mt-3"></div>
+                                <div id="sub-tree" class="form-inline mt-2 pt-1"></div>
                                 <div id="tree-val"></div>
                             </div>
                         </div>
