@@ -6827,6 +6827,250 @@ function createButton(buttonName) {
 				delChar('#btnDeltp-48');
 				return;
 			}
+			case 'adsfp': {
+				let count = 0;
+				const btn = [listBtnAdsfp[14][0], 'ras12', 'mach12'];
+
+				for (let varAdsfp = 0; varAdsfp < listBtnAdsfp.length; varAdsfp++) {
+					generateButtonMenu('#adsfp-menu-btn', 'btnAdsfp-', varAdsfp, listBtnAdsfp[varAdsfp][0]);
+					registToTree(varAdsfp, listBtnAdsfp[varAdsfp][0], 23);
+					$('#btnAdsfp-' + varAdsfp).on("click", { num: varAdsfp }, fnAdsfp);
+				}
+
+				//$('#btnAdsfp-44').children('span').hide();
+
+				function fnAdsfp(event) {
+					let id = event.data.num;
+
+					if (listBtnAdsfp[id][0] != '') {
+						if (id < 23) {
+							initiateLoadedMenu('#btnAdsfp-', id, listBtnAdsfp[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnAdsfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('.cursor i').removeClass('d-none');
+								$('#three-toggle').empty();
+								hideNumBtn('#btnAdsfp-', 30, 40);
+								callAlphaVK('#btnAdsfp-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								count = id;
+								break;
+							case 3:
+								console.log(id + ' fnAdsfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('.cursor i').removeClass('d-none');
+								$('#three-toggle').empty();
+								hideNumBtn('#btnAdsfp-', 30, 40);
+								callAlphaVK('#btnAdsfp-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								count = id + 2;
+								break;
+							case 6:
+								console.log(id + ' fnAdsfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('.cursor i').removeClass('d-none');
+								$('#three-toggle').empty();
+								hideNumBtn('#btnAdsfp-', 30, 40);
+								callAlphaVK('#btnAdsfp-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								count = id + 8;
+								break;
+							case 14:
+								console.log(id + ' fnAdsfp called | ' + count);
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								changeVKWidth('8%', '59%');
+
+								toggleThreeState(btn, '#btnAdsfp-' + id, id);
+								hideNumBtn('#btnAdsfp-', 30, 40);
+								callAlphaVK('#btnAdsfp-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								count = id;
+								break;
+							case 15:
+								console.log(id + ' fnAdsfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('#three-toggle').empty();
+								$('.cursor i').removeClass('d-none');
+								$('#btnAdsfp-' + 44).children('span').hide();
+								$('#btnAdsfp-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								showNumBtn('#btnAdsfp-', 30, 40, listBtnAdsfp);
+								count = id + 2;
+								break;
+							case 21:
+								console.log(id + ' fnAdsfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('#three-toggle').empty();
+								$('.cursor i').removeClass('d-none');
+								$('#btnAdsfp-' + 44).children('span').hide();
+								$('#btnAdsfp-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								showNumBtn('#btnAdsfp-', 30, 40, listBtnAdsfp);
+								count = id;
+								break;
+							case 22:
+								console.log(id + ' fnAdsfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('#three-toggle').empty();
+								$('.cursor i').removeClass('d-none');
+								$('#btnAdsfp-' + 44).children('span').hide();
+								$('#btnAdsfp-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								showNumBtn('#btnAdsfp-', 30, 40, listBtnAdsfp);
+								count = id + 2;
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnAdsfp-', listBtnAdsfp.length, '#adsfp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[35]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnAdsfp called | ' + count);
+								//event.stopImmediatePropagation();
+
+								backNav('#btnAdsfp-', listBtnAdsfp.length, '#adsfp-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnAdsfp called | ' + count);
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									if ((count > 1) && (count != 14) && (count != 21)) {
+										console.log((count - 2) + ' tree')
+										$('#tree-' + (count - 2)).show();
+										document.getElementById('treeNum-' + (count - 2)).innerHTML = $('#input-VK').val();
+									} else {
+										$('#tree-' + count).show();
+										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									}
+
+									clearVK();
+								} else {
+									if (count < 24) {
+										count++;
+										nextStep(count, '#btnAdsfp-', listBtnAdsfp);
+										document.getElementById('input-VK').placeholder = '';
+										console.log(count + ' false')
+
+										if (count < 1) {
+											$('#tree-' + (count - 1)).show();
+										} else {
+											$('#tree-' + (count - 2)).show();
+										}
+
+										switch (count) {
+											case 1:
+												count = 2;
+												break;
+											case 3:
+												count = 5;
+												$('.cursor i').removeClass('d-none');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+											case 6:
+												count = 8;
+												$('.cursor i').removeClass('d-none');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+											case 9:
+												count = 13;
+												break;
+											case 14:
+												count = 14;
+												changeVKWidth('8%', '59%');
+												initiateToggleThree(btn);
+												$('.cursor i').removeClass('d-none');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+											case 15:
+												count = 17;
+												$('#three-toggle').empty();
+												$('.cursor i').removeClass('d-none');
+												$('#btnAdsfp-' + 44).children('span').hide();
+												$('#btnAdsfp-' + 44).off();
+												document.getElementById('input-VK').placeholder = '';
+												showNumBtn('#btnAdsfp-', 30, 40, listBtnAdsfp);
+												break;
+											case 18:
+												count = 20;
+												hideNumBtn('#btnAdsfp-', 30, 40);
+												break;
+											case 21:
+												count = 21;
+												showNumBtn('#btnAdsfp-', 30, 40, listBtnAdsfp);
+												break;
+											case 22:
+												count = 24;
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnAdsfp-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										count = 0;
+										forceBack('#btnAdsfp-', listBtnAdsfp.length, '#adsfp-menu-btn', '#airmov-menu&t=0.15s');
+										createButton('airmov');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[37]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnAdsfp, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnAdsfp-');
+				});
+
+				hideNumBtn('#btnAdsfp-', 30, 40);
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnAdsfp-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				setBtnActive('#btnAdsfp-', listBtnAdsfp);
+				delChar('#btnAdsfp-48');
+				return;
+			}
 			case 'sndicm': {
 				let count = 0;
 
