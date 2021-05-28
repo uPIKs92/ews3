@@ -2779,9 +2779,47 @@ function createButton(buttonName) {
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnIdtrk-' + count).removeClass('active');
-										forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#tacmis-menu&t=0.15s');
 										count = 0;
-										createButton('tacmis');
+										console.log('fak :' + stateForIdtrkBtn)
+
+										switch (stateForIdtrkBtn) {
+											case 34:
+												forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#tacmis-menu&t=0.15s');
+												createButton('tacmis');
+
+												setTimeout(function () {
+													printBtnTree(listBtnLogon[34]);
+													resetVKWidth();
+												}, 125);
+												break;
+											case 35:
+												forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#weapon-menu&t=0.15s');
+												createButton('weapon');
+
+												setTimeout(function () {
+													printBtnTree(listBtnLogon[35]);
+													resetVKWidth();
+												}, 125);
+												break;
+											case 36:
+												forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#track-menu&t=0.15s');
+												createButton('track');
+
+												setTimeout(function () {
+													printBtnTree(listBtnLogon[36]);
+													resetVKWidth();
+												}, 125);
+												break;
+											case 37:
+												forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#airmov-menu&t=0.15s');
+												createButton('airmov');
+
+												setTimeout(function () {
+													printBtnTree(listBtnLogon[37]);
+													resetVKWidth();
+												}, 125);
+												break;
+										}
 									}
 								}
 								break;
@@ -2946,9 +2984,46 @@ function createButton(buttonName) {
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnTrktyp-' + count).removeClass('active');
-										forceBack('#btnTrktyp-', listBtnTrktyp.length, '#trktyp-menu-btn', '#tacmis-menu&t=0.15s');
 										count = 0;
-										createButton('tacmis');
+
+										switch (stateForTrktypBtn) {
+											case 34:
+												forceBack('#btnTrktyp-', listBtnTrktyp.length, '#idtrk-menu-btn', '#tacmis-menu&t=0.15s');
+												createButton('tacmis');
+
+												setTimeout(function () {
+													printBtnTree(listBtnLogon[34]);
+													resetVKWidth();
+												}, 125);
+												break;
+											case 35:
+												forceBack('#btnTrktyp-', listBtnTrktyp.length, '#idtrk-menu-btn', '#weapon-menu&t=0.15s');
+												createButton('weapon');
+
+												setTimeout(function () {
+													printBtnTree(listBtnLogon[35]);
+													resetVKWidth();
+												}, 125);
+												break;
+											case 36:
+												forceBack('#btnTrktyp-', listBtnTrktyp.length, '#idtrk-menu-btn', '#track-menu&t=0.15s');
+												createButton('track');
+
+												setTimeout(function () {
+													printBtnTree(listBtnLogon[36]);
+													resetVKWidth();
+												}, 125);
+												break;
+											case 37:
+												forceBack('#btnTrktyp-', listBtnTrktyp.length, '#idtrk-menu-btn', '#airmov-menu&t=0.15s');
+												createButton('airmov');
+
+												setTimeout(function () {
+													printBtnTree(listBtnLogon[37]);
+													resetVKWidth();
+												}, 125);
+												break;
+										}
 									}
 								}
 								break;
@@ -6264,30 +6339,30 @@ function createButton(buttonName) {
 			case 'adtpt': {
 				let count = 0;
 				const btn = [listBtnAdtpt[12][0], 'latlng', 'georef'];
-			
+
 				for (let varAdtpt = 0; varAdtpt < listBtnAdtpt.length; varAdtpt++) {
 					generateButtonMenu('#adtpt-menu-btn', 'btnAdtpt-', varAdtpt, listBtnAdtpt[varAdtpt][0]);
 					registToTree(varAdtpt, listBtnAdtpt[varAdtpt][0], 13);
 					$('#btnAdtpt-' + varAdtpt).on("click", { num: varAdtpt }, fnAdtpt);
 				}
-			
+
 				$('#btnAdtpt-44').children('span').hide();
-			
+
 				function fnAdtpt(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnAdtpt[id][0] != '') {
 						if (id < 13) {
 							initiateLoadedMenu('#btnAdtpt-', id, listBtnAdtpt[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 0:
 								console.log(id + ' fnAdtpt called');
 								event.stopImmediatePropagation();
 								resetVKWidth();
-			
+
 								$('.cursor i').removeClass('d-none');
 								$('#three-toggle').empty();
 								callAlphaVK('#btnAdtpt-');
@@ -6297,15 +6372,15 @@ function createButton(buttonName) {
 								console.log(id + ' fnAdtpt called');
 								event.stopImmediatePropagation();
 								changeVKWidth('8%', '59%');
-			
+
 								$('.cursor i').removeClass('d-none');
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
-			
+
 								toggleThreeState(btn, '#btnAdtpt-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnAdtpt-', 30, 40);
-			
+
 								if ($('#btnAdtpt-' + id).text() != 'btm') {
 									$('.cursor i').removeClass('d-none');
 									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
@@ -6319,10 +6394,10 @@ function createButton(buttonName) {
 							case 40:
 								console.log(id + ' fnLine called');
 								//event.stopImmediatePropagation();
-			
+
 								backNav('#btnAdtpt-', listBtnAdtpt.length, '#adtpt-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
 								$('#three-toggle').empty();
-			
+
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
@@ -6331,10 +6406,10 @@ function createButton(buttonName) {
 							case 42:
 								console.log(id + ' fnAdtpt called');
 								//event.stopImmediatePropagation();
-			
+
 								backNav('#btnAdtpt-', listBtnAdtpt.length, '#adtpt-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								$('#three-toggle').empty();
-			
+
 								setTimeout(function () {
 									resetVKWidth();
 								}, 125);
@@ -6345,12 +6420,12 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnAdtpt called');
 								event.stopImmediatePropagation();
-			
+
 								if ($('#input-VK').val() != '') {
 									/**/
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-			
+
 									clearVK();
 								} else {
 									if (count < 12) {
@@ -6359,18 +6434,18 @@ function createButton(buttonName) {
 										$('#tree-' + (count - 1)).show();
 										$('#three-toggle').empty();
 										document.getElementById('input-VK').placeholder = '';
-			
+
 										switch (count) {
 											case 1:
 												count = 11;
 												break;
 											case 12:
 												changeVKWidth('8%', '59%');
-			
+
 												$('.cursor i').addClass('d-none');
 												$('#toggle-box-a, #toggle-box-b').empty();
 												$('#toggle-divider').hide();
-			
+
 												initiateToggleThree(btn);
 												$('#btnAdtpt-' + 44).children('span').hide();
 												$('#btnAdtpt-' + 44).off();
@@ -6384,7 +6459,7 @@ function createButton(buttonName) {
 										forceBack('#btnAdtpt-', listBtnAdtpt.length, '#adtpt-menu-btn', '#airmov-menu&t=0.15s');
 										count = 0;
 										createButton('airmov');
-			
+
 										setTimeout(function () {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
@@ -6395,12 +6470,12 @@ function createButton(buttonName) {
 						}
 					}
 				}
-			
+
 				$('#keyboard-enter').on('click', function () {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnAdtpt-');
 				});
-			
+
 				$('.cursor i').removeClass('d-none');
 				callAlphaVK('#btnAdtpt-');
 				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
@@ -6411,30 +6486,30 @@ function createButton(buttonName) {
 			case 'amtpt': {
 				let count = 0;
 				const btn = [listBtnAmtpt[12][0], 'latlng', 'georef'];
-			
+
 				for (let varAmtpt = 0; varAmtpt < listBtnAmtpt.length; varAmtpt++) {
 					generateButtonMenu('#amtpt-menu-btn', 'btnAmtpt-', varAmtpt, listBtnAmtpt[varAmtpt][0]);
 					registToTree(varAmtpt, listBtnAmtpt[varAmtpt][0], 13);
 					$('#btnAmtpt-' + varAmtpt).on("click", { num: varAmtpt }, fnAmtpt);
 				}
-			
+
 				$('#btnAmtpt-44').children('span').hide();
-			
+
 				function fnAmtpt(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnAmtpt[id][0] != '') {
 						if (id < 13) {
 							initiateLoadedMenu('#btnAmtpt-', id, listBtnAmtpt[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 0:
 								console.log(id + ' fnAmtpt called');
 								event.stopImmediatePropagation();
 								resetVKWidth();
-			
+
 								$('.cursor i').removeClass('d-none');
 								$('#three-toggle').empty();
 								callAlphaVK('#btnAmtpt-');
@@ -6444,15 +6519,15 @@ function createButton(buttonName) {
 								console.log(id + ' fnAmtpt called');
 								event.stopImmediatePropagation();
 								changeVKWidth('8%', '59%');
-			
+
 								$('.cursor i').removeClass('d-none');
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
-			
+
 								toggleThreeState(btn, '#btnAmtpt-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnAmtpt-', 30, 40);
-			
+
 								if ($('#btnAmtpt-' + id).text() != 'btm') {
 									$('.cursor i').removeClass('d-none');
 									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
@@ -6466,10 +6541,10 @@ function createButton(buttonName) {
 							case 40:
 								console.log(id + ' fnLine called');
 								//event.stopImmediatePropagation();
-			
+
 								backNav('#btnAmtpt-', listBtnAmtpt.length, '#amtpt-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
 								$('#three-toggle').empty();
-			
+
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
@@ -6478,10 +6553,10 @@ function createButton(buttonName) {
 							case 42:
 								console.log(id + ' fnAmtpt called');
 								//event.stopImmediatePropagation();
-			
+
 								backNav('#btnAmtpt-', listBtnAmtpt.length, '#amtpt-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								$('#three-toggle').empty();
-			
+
 								setTimeout(function () {
 									resetVKWidth();
 								}, 125);
@@ -6492,12 +6567,12 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnAmtpt called');
 								event.stopImmediatePropagation();
-			
+
 								if ($('#input-VK').val() != '') {
 									/**/
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-			
+
 									clearVK();
 								} else {
 									if (count < 12) {
@@ -6506,18 +6581,18 @@ function createButton(buttonName) {
 										$('#tree-' + (count - 1)).show();
 										$('#three-toggle').empty();
 										document.getElementById('input-VK').placeholder = '';
-			
+
 										switch (count) {
 											case 1:
 												count = 11;
 												break;
 											case 12:
 												changeVKWidth('8%', '59%');
-			
+
 												$('.cursor i').addClass('d-none');
 												$('#toggle-box-a, #toggle-box-b').empty();
 												$('#toggle-divider').hide();
-			
+
 												initiateToggleThree(btn);
 												$('#btnAmtpt-' + 44).children('span').hide();
 												$('#btnAmtpt-' + 44).off();
@@ -6531,7 +6606,7 @@ function createButton(buttonName) {
 										forceBack('#btnAmtpt-', listBtnAmtpt.length, '#amtpt-menu-btn', '#airmov-menu&t=0.15s');
 										count = 0;
 										createButton('airmov');
-			
+
 										setTimeout(function () {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
@@ -6542,12 +6617,12 @@ function createButton(buttonName) {
 						}
 					}
 				}
-			
+
 				$('#keyboard-enter').on('click', function () {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnAmtpt-');
 				});
-			
+
 				$('.cursor i').removeClass('d-none');
 				callAlphaVK('#btnAmtpt-');
 				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
@@ -6558,24 +6633,24 @@ function createButton(buttonName) {
 			case 'stdfp': {
 				let count = 0;
 				const btn = [listBtnStdfp[0][0], 'CUR-FP', 'ACT-FP'];
-			
+
 				for (let varStdfp = 0; varStdfp < listBtnStdfp.length; varStdfp++) {
 					generateButtonMenu('#stdfp-menu-btn', 'btnStdfp-', varStdfp, listBtnStdfp[varStdfp][0]);
 					registToTree(varStdfp, listBtnStdfp[varStdfp][0], 1);
 					$('#btnStdfp-' + varStdfp).on("click", { num: varStdfp }, fnStdfp);
 				}
-			
+
 				$('#btnStdfp-44').children('span').hide();
-			
+
 				function fnStdfp(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnStdfp[id][0] != '') {
 						if (id < 1) {
 							initiateLoadedMenu('#btnStdfp-', id, listBtnStdfp[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 0:
 								console.log(id + ' fnStdfp called');
@@ -6584,17 +6659,17 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 								changeVKWidth('8%', '59%');
-			
+
 								toggleThreeState(btn, '#btnStdfp-' + id, id);
 								$('.cursor i').addClass('d-none');
 								break;
 							case 40:
 								console.log(id + ' fnLine called');
 								//event.stopImmediatePropagation();
-			
+
 								backNav('#btnStdfp-', listBtnStdfp.length, '#stdfp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
 								$('#three-toggle').empty();
-			
+
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[35]);
 									resetVKWidth();
@@ -6603,10 +6678,10 @@ function createButton(buttonName) {
 							case 42:
 								console.log(id + ' fnStdfp called');
 								//event.stopImmediatePropagation();
-			
+
 								backNav('#btnStdfp-', listBtnStdfp.length, '#stdfp-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								$('#three-toggle').empty();
-			
+
 								setTimeout(function () {
 									resetVKWidth();
 								}, 125);
@@ -6617,12 +6692,12 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnStdfp called');
 								event.stopImmediatePropagation();
-			
+
 								if ($('#input-VK').val() != '') {
 									/**/
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-			
+
 									clearVK();
 								} else {
 									if (count < 0) {
@@ -6637,7 +6712,7 @@ function createButton(buttonName) {
 										forceBack('#btnStdfp-', listBtnStdfp.length, '#stdfp-menu-btn', '#airmov-menu&t=0.15s');
 										count = 0;
 										createButton('airmov');
-			
+
 										setTimeout(function () {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
@@ -6648,7 +6723,7 @@ function createButton(buttonName) {
 						}
 					}
 				}
-			
+
 				changeVKWidth('8%', '59%');
 				initiateToggleThree(btn);
 				setBtnActive('#btnStdfp-', listBtnStdfp);
@@ -6657,22 +6732,22 @@ function createButton(buttonName) {
 			}
 			case 'deltp': {
 				let count = 0;
-			
+
 				for (let varDeltp = 0; varDeltp < listBtnDeltp.length; varDeltp++) {
 					generateButtonMenu('#deltp-menu-btn', 'btnDeltp-', varDeltp, listBtnDeltp[varDeltp][0]);
 					registToTree(varDeltp, listBtnDeltp[varDeltp][0], 1);
 					$('#btnDeltp-' + varDeltp).on("click", { num: varDeltp }, fnDeltp);
 				}
-			
+
 				function fnDeltp(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnDeltp[id][0] != '') {
 						if (id < 1) {
 							initiateLoadedMenu('#btnDeltp-', id, listBtnDeltp[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 0:
 								console.log(id + ' fnDeltp called');
@@ -6681,10 +6756,10 @@ function createButton(buttonName) {
 							case 40:
 								console.log(id + ' fnLine called');
 								//event.stopImmediatePropagation();
-			
+
 								backNav('#btnDeltp-', listBtnDeltp.length, '#deltp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
 								$('#three-toggle').empty();
-			
+
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
@@ -6693,10 +6768,10 @@ function createButton(buttonName) {
 							case 42:
 								console.log(id + ' fnDeltp called');
 								//event.stopImmediatePropagation();
-			
+
 								backNav('#btnDeltp-', listBtnDeltp.length, '#deltp-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								$('#three-toggle').empty();
-			
+
 								setTimeout(function () {
 									resetVKWidth();
 								}, 125);
@@ -6707,12 +6782,12 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnDeltp called');
 								event.stopImmediatePropagation();
-			
+
 								if ($('#input-VK').val() != '') {
 									/**/
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-			
+
 									clearVK();
 								} else {
 									if (count < 0) {
@@ -6728,7 +6803,7 @@ function createButton(buttonName) {
 										forceBack('#btnDeltp-', listBtnDeltp.length, '#deltp-menu-btn', '#airmov-menu&t=0.15s');
 										count = 0;
 										createButton('airmov');
-			
+
 										setTimeout(function () {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
@@ -6739,12 +6814,12 @@ function createButton(buttonName) {
 						}
 					}
 				}
-			
+
 				$('#keyboard-enter').on('click', function () {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnDeltp-');
 				});
-			
+
 				$('.cursor i').removeClass('d-none');
 				callAlphaVK('#btnDeltp-');
 				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
