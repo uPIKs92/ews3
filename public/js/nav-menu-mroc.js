@@ -4785,20 +4785,8 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 0:
-								console.log(id + ' fnHndovr called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 2:
-								console.log(id + ' fnHndovr called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 4:
-								console.log(id + ' fnHndovr called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 6:
 								console.log(id + ' fnHndovr called');
 								event.stopImmediatePropagation();
@@ -7564,6 +7552,326 @@ function createButton(buttonName) {
 				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 				setBtnActive('#btnAdcfp-', listBtnAdcfp);
 				delChar('#btnAdcfp-48');
+				return;
+			}
+			case 'fptxt': {
+				let count = 0;
+
+				for (let varFptxt = 0; varFptxt < listBtnFptxt.length; varFptxt++) {
+					generateButtonMenu('#fptxt-menu-btn', 'btnFptxt-', varFptxt, listBtnFptxt[varFptxt][0]);
+					registToTree(varFptxt, listBtnFptxt[varFptxt][0], 16);
+					$('#btnFptxt-' + varFptxt).on("click", { num: varFptxt }, fnFptxt);
+				}
+
+				function fnFptxt(event) {
+					let id = event.data.num;
+
+					if (listBtnFptxt[id][0] != '') {
+						if (id < 16) {
+							initiateLoadedMenu('#btnFptxt-', id, listBtnFptxt[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+							case 1:
+							case 2:
+							case 13:
+							case 14:
+							case 15:
+								console.log(id + ' fnFptxt called');
+								event.stopImmediatePropagation();
+								break;
+							case 40:
+								console.log(id + ' fnFptxt called');
+								//event.stopImmediatePropagation();
+								backNav('#btnFptxt-', listBtnFptxt.length, '#fptxt-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[34]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnFptxt called');
+								event.stopImmediatePropagation();
+								backNav('#btnFptxt-', listBtnFptxt.length, '#fptxt-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnFptxt called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnFptxt-', listBtnFptxt);
+										$('#tree-' + (count - 1)).show();
+										$('#toggle-box-out').hide();
+										document.getElementById('input-VK').placeholder = '';
+
+										switch (count) {
+											case 1: {
+												event.stopImmediatePropagation()
+												$('.cursor i').removeClass('d-none');
+												callAlphaVK('#btnFptxt-');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												return;
+											}
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnFptxt-' + count).removeClass('active');
+										forceBack('#btnFptxt-', listBtnFptxt.length, '#fptxt-menu-btn', '#logon-menu&t=0.15s');
+										count = 0;
+										createButton('logon');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnFptxt-');
+				});
+
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnFptxt-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				setBtnActive('#btnFptxt-', listBtnFptxt);
+				delChar('#btnFptxt-48');
+				return;
+			}
+			case 'sfpcur': {
+				let count = 0;
+				let toggLabelA1 = listBtnSfpcur[1][0];
+				let toggLabelA2 = 'cansgn';
+
+				for (let varSfpcur = 0; varSfpcur < listBtnSfpcur.length; varSfpcur++) {
+					generateButtonMenu('#sfpcur-menu-btn', 'btnSfpcur-', varSfpcur, listBtnSfpcur[varSfpcur][0]);
+					registToTree(varSfpcur, listBtnSfpcur[varSfpcur][0], 2);
+					$('#btnSfpcur-' + varSfpcur).on("click", { num: varSfpcur }, fnSfpcur);
+
+					if (varSfpcur === 1) {
+						$('#btnSfpcur-' + varSfpcur).attr('value', 'tg-on');
+						$('#btnSfpcur-' + varSfpcur).addClass('text-none');
+					}
+				}
+
+				function fnSfpcur(event) {
+					let id = event.data.num;
+
+					if (listBtnSfpcur[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnSfpcur-', id, listBtnSfpcur[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnSfpcur called');
+								event.stopImmediatePropagation();
+								break;
+							case 1:
+								console.log(id + ' fnSfpcur called');
+								//event.stopImmediatePropagation();
+
+								changeVKWidth('8%', '63%');
+								initiateToggleBtn('#btnSfpcur-', id, listBtnSfpcur[id][0]);
+								$('#btnSfpcur-' + 44).children('span').hide();
+								$('#btnSfpcur-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+
+								if ($('#btnSfpcur-' + id).attr('value') != 'tg-on') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnSfpcur-', 30, 40, listBtnSfpcur);
+										callAlphaVK('#btnSfpcur-');
+										document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									}, 125);
+								}
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnSfpcur-', listBtnSfpcur.length, '#sfpcur-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[37]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnSfpcur called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnSfpcur-', listBtnSfpcur.length, '#sfpcur-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSfpcur called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnSfpcur-', listBtnSfpcur);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+										document.getElementById('input-VK').placeholder = '';
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSfpcur-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnSfpcur-', listBtnSfpcur.length, '#sfpcur-menu-btn', '#airmov-menu&t=0.15s');
+										count = 0;
+										createButton('airmov');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[37]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSfpcur, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnSfpcur-');
+				});
+
+				toggleBtn(1, '#btnSfpcur-1', toggLabelA1, toggLabelA2);
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnSfpcur-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				setBtnActive('#btnSfpcur-', listBtnSfpcur);
+				delChar('#btnSfpcur-48');
+				return;
+			}
+			case 'cfpact': {
+				let count = 0;
+
+				for (let varCfpact = 0; varCfpact < listBtnCfpact.length; varCfpact++) {
+					generateButtonMenu('#cfpact-menu-btn', 'btnCfpact-', varCfpact, listBtnCfpact[varCfpact][0]);
+					registToTree(varCfpact, listBtnCfpact[varCfpact][0], 1);
+					$('#btnCfpact-' + varCfpact).on("click", { num: varCfpact }, fnCfpact);
+				}
+
+				function fnCfpact(event) {
+					let id = event.data.num;
+
+					if (listBtnCfpact[id][0] != '') {
+						if (id < 1) {
+							initiateLoadedMenu('#btnCfpact-', id, listBtnCfpact[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnCfpact called');
+								event.stopImmediatePropagation();
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnCfpact-', listBtnCfpact.length, '#cfpact-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[37]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnCfpact called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnCfpact-', listBtnCfpact.length, '#cfpact-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnCfpact called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									clearVK();
+								} else {
+									if (count < 0) {
+										count++;
+										nextStep(count, '#btnCfpact-', listBtnCfpact);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+										document.getElementById('input-VK').placeholder = '';
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnCfpact-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnCfpact-', listBtnCfpact.length, '#cfpact-menu-btn', '#airmov-menu&t=0.15s');
+										count = 0;
+										createButton('airmov');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[37]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnCfpact-');
+				});
+
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnCfpact-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				setBtnActive('#btnCfpact-', listBtnCfpact);
+				delChar('#btnCfpact-48');
 				return;
 			}
 			case 'sndicm': {
