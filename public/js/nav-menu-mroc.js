@@ -15,6 +15,9 @@ var stateForColourBtn = 0;
 var countForColourState = 0;
 var stateForStatesBtn = 0;
 var countForStatesState = 0;
+const amfpArr = [[], [], [], [], [], [], [], [], []];
+var stateForLegBtn = 0;
+var countForLegState = 0;
 
 $(function () {
 	$('div[onload]').trigger('onload');
@@ -487,6 +490,7 @@ function createButton(buttonName) {
 								backNav('#btnCreftr-', listBtnCreftr.length, '#creftr-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -621,6 +625,7 @@ function createButton(buttonName) {
 								countForColorState = 0;
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -736,6 +741,7 @@ function createButton(buttonName) {
 								countForColorState = 0;
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -888,6 +894,7 @@ function createButton(buttonName) {
 								countForColorState = 0;
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -1028,6 +1035,7 @@ function createButton(buttonName) {
 								countForLineState = 0;
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -1183,6 +1191,7 @@ function createButton(buttonName) {
 								countForColorState = 0;
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -1305,6 +1314,7 @@ function createButton(buttonName) {
 								backNav('#btnHistry-', listBtnHistry.length, '#histry-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -1363,75 +1373,15 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								$('#tree-' + count).siblings().hide();
-								document.getElementById('treeNum-' + count).innerHTML = '';
-								break;
 							case 3:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								$('#tree-' + count).siblings().hide();
-								document.getElementById('treeNum-' + count).innerHTML = '';
-								break;
 							case 5:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								$('#tree-' + count).siblings().hide();
-								document.getElementById('treeNum-' + count).innerHTML = '';
-								break;
 							case 12:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								$('#tree-' + count).siblings().hide();
-								document.getElementById('treeNum-' + count).innerHTML = '';
-								break;
 							case 14:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								$('#tree-' + count).siblings().hide();
-								document.getElementById('treeNum-' + count).innerHTML = '';
-								break;
 							case 16:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								$('#tree-' + count).siblings().hide();
-								document.getElementById('treeNum-' + count).innerHTML = '';
-								break;
 							case 21:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								$('#tree-' + count).siblings().hide();
-								document.getElementById('treeNum-' + count).innerHTML = '';
-								break;
 							case 23:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								$('#tree-' + count).siblings().hide();
-								document.getElementById('treeNum-' + count).innerHTML = '';
-								break;
 							case 25:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								$('#tree-' + count).siblings().hide();
-								document.getElementById('treeNum-' + count).innerHTML = '';
-								break;
 							case 27:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								$('#tree-' + count).siblings().hide();
-								document.getElementById('treeNum-' + count).innerHTML = '';
-								break;
 							case 29:
 								console.log(id + ' fnLabpos called');
 								event.stopImmediatePropagation();
@@ -1446,6 +1396,7 @@ function createButton(buttonName) {
 								backNav('#btnTrklin-', listBtnTrklin.length, '#trklin-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -1524,6 +1475,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -1598,25 +1550,9 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
-								console.log(id + ' fnStbsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
-								break;
 							case 2:
-								console.log(id + ' fnStbsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
-								break;
 							case 3:
-								console.log(id + ' fnStbsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
-								break;
 							case 4:
-								console.log(id + ' fnStbsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
-								break;
 							case 5:
 								console.log(id + ' fnStbsrc called');
 								//event.stopImmediatePropagation();
@@ -1629,6 +1565,7 @@ function createButton(buttonName) {
 								backNav('#btnStbsrc-', listBtnStbsrc.length, '#stbsrc-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -1705,6 +1642,7 @@ function createButton(buttonName) {
 								backNav('#btnAmdreg-', listBtnAmdreg.length, '#amdreg-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -1769,6 +1707,7 @@ function createButton(buttonName) {
 								backNav('#btnCommet-', listBtnCommet.length, '#commet-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -1839,25 +1778,9 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
-								console.log(id + ' fnPltsel called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
-								break;
 							case 2:
-								console.log(id + ' fnPltsel called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
-								break;
 							case 3:
-								console.log(id + ' fnPltsel called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
-								break;
 							case 4:
-								console.log(id + ' fnPltsel called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
-								break;
 							case 5:
 								console.log(id + ' fnPltsel called');
 								//event.stopImmediatePropagation();
@@ -1870,6 +1793,7 @@ function createButton(buttonName) {
 								backNav('#btnPltsel-', listBtnPltsel.length, '#pltsel-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -1943,25 +1867,9 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
-								console.log(id + ' fnPltsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
-								break;
 							case 2:
-								console.log(id + ' fnPltsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
-								break;
 							case 3:
-								console.log(id + ' fnPltsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
-								break;
 							case 4:
-								console.log(id + ' fnPltsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
-								break;
 							case 5:
 								console.log(id + ' fnPltsrc called');
 								//event.stopImmediatePropagation();
@@ -1974,6 +1882,7 @@ function createButton(buttonName) {
 								backNav('#btnPltsrc-', listBtnPltsrc.length, '#pltsrc-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -2175,6 +2084,7 @@ function createButton(buttonName) {
 								backNav('#btnSeltmp-', listBtnSeltmp.length, '#seltmp-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -2439,6 +2349,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -2596,6 +2507,7 @@ function createButton(buttonName) {
 								backNav('#btnScrmbl-', listBtnScrmbl.length, '#scrmbl-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -2670,55 +2582,15 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
-								console.log(id + ' fnIdtrk called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 3:
-								console.log(id + ' fnIdtrk called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 5:
-								console.log(id + ' fnIdtrk called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 7:
-								console.log(id + ' fnIdtrk called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 12:
-								console.log(id + ' fnIdtrk called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 14:
-								console.log(id + ' fnIdtrk called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 15:
-								console.log(id + ' fnIdtrk called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 21:
-								console.log(id + ' fnIdtrk called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 23:
-								console.log(id + ' fnIdtrk called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 25:
-								console.log(id + ' fnIdtrk called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 27:
 								console.log(id + ' fnIdtrk called');
 								event.stopImmediatePropagation();
@@ -2761,6 +2633,7 @@ function createButton(buttonName) {
 								backNav('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -2856,80 +2729,20 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 2:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 3:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 4:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 5:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 9:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 11:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 12:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 13:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 14:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 15:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 21:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 22:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 23:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 24:
-								console.log(id + ' fnTrktyp called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 25:
 								console.log(id + ' fnTrktyp called');
 								event.stopImmediatePropagation();
@@ -2966,6 +2779,7 @@ function createButton(buttonName) {
 								backNav('#btnTrktyp-', listBtnTrktyp.length, '#trktyp-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -3057,6 +2871,15 @@ function createButton(buttonName) {
 						}
 
 						switch (id) {
+							case 0:
+							case 1:
+							case 2:
+							case 13:
+							case 14:
+							case 15:
+								console.log(id + ' fnTmtxt called');
+								event.stopImmediatePropagation();
+								break;
 							case 40:
 								console.log(id + ' fnTmtxt called');
 								//event.stopImmediatePropagation();
@@ -3072,6 +2895,7 @@ function createButton(buttonName) {
 								backNav('#btnTmtxt-', listBtnTmtxt.length, '#tmtxt-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -3150,6 +2974,7 @@ function createButton(buttonName) {
 								backNav('#btnTrkblk-', listBtnTrkblk.length, '#trkblk-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -3515,6 +3340,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -3644,6 +3470,7 @@ function createButton(buttonName) {
 								backNav('#btnDelay-', listBtnDelay.length, '#delay-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -3749,6 +3576,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -3854,6 +3682,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -3996,6 +3825,7 @@ function createButton(buttonName) {
 								countForColourState = 0;
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -4128,6 +3958,7 @@ function createButton(buttonName) {
 								countForColourState = 0;
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -4234,6 +4065,7 @@ function createButton(buttonName) {
 								countForStatesState = 0;
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -4373,6 +4205,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -4590,6 +4423,7 @@ function createButton(buttonName) {
 									}, 125);
 									break;
 								case 47:
+									event.stopImmediatePropagation();
 									event.stopImmediatePropagation();
 									delCharByOne();
 									break;
@@ -4810,6 +4644,7 @@ function createButton(buttonName) {
 									break;
 								case 47:
 									event.stopImmediatePropagation();
+									event.stopImmediatePropagation();
 									delCharByOne();
 									break;
 								case 49:
@@ -4984,6 +4819,7 @@ function createButton(buttonName) {
 								backNav('#btnHndovr-', listBtnHndovr.length, '#hndovr-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -5067,6 +4903,7 @@ function createButton(buttonName) {
 								backNav('#btnTkover-', listBtnTkover.length, '#tkover-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -5144,6 +4981,7 @@ function createButton(buttonName) {
 								backNav('#btnClrass-', listBtnClrass.length, '#clrass-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -5281,6 +5119,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -5421,6 +5260,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -5539,6 +5379,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -5677,6 +5518,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -5808,6 +5650,7 @@ function createButton(buttonName) {
 								backNav('#btnMovbtm-', listBtnMovbtm.length, '#movbtm-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -6261,7 +6104,7 @@ function createButton(buttonName) {
 								$('#three-toggle').empty();
 
 								setTimeout(function () {
-									printBtnTree(listBtnLogon[35]);
+									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
 								break;
@@ -6277,6 +6120,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -6415,6 +6259,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -6562,6 +6407,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -6671,7 +6517,7 @@ function createButton(buttonName) {
 								$('#three-toggle').empty();
 
 								setTimeout(function () {
-									printBtnTree(listBtnLogon[35]);
+									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
 								break;
@@ -6687,6 +6533,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -6777,6 +6624,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -6946,7 +6794,7 @@ function createButton(buttonName) {
 								$('#three-toggle').empty();
 
 								setTimeout(function () {
-									printBtnTree(listBtnLogon[35]);
+									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
 								break;
@@ -6962,6 +6810,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -7071,6 +6920,652 @@ function createButton(buttonName) {
 				delChar('#btnAdsfp-48');
 				return;
 			}
+			case 'amfp': {
+				let count = 0;
+
+				for (let varAmfp = 0; varAmfp < listBtnAmfp.length; varAmfp++) {
+					generateButtonMenu('#amfp-menu-btn', 'btnAmfp-', varAmfp, listBtnAmfp[varAmfp][0]);
+					registToTree(varAmfp, listBtnAmfp[varAmfp][0], 10);
+					$('#btnAmfp-' + varAmfp).on("click", { num: varAmfp }, fnAmfp);
+				}
+
+				function fnAmfp(event) {
+					let id = event.data.num;
+
+					if (listBtnAmfp[id][0] != '') {
+						if (id < 10) {
+							initiateLoadedMenu('#btnAmfp-', id, listBtnAmfp[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnAmfp called');
+								event.stopImmediatePropagation();
+
+								clearMenu('#amfp-menu-btn');
+								//clearContent();
+								$('#message-btn-out, #sub-tree').empty();
+								printBtnTree(listBtnAmfp[id][0]);
+								window.location = '#start-menu&t=0.15s';
+								createButton('start');
+								document.getElementById('input-btn-out').innerHTML = listBtnAmfp[id][0];
+								break;
+							case 1:
+							case 2:
+							case 3:
+							case 4:
+							case 5:
+							case 6:
+							case 7:
+							case 8:
+								console.log(id + ' fnAmfp called');
+								event.stopImmediatePropagation();
+
+								clearMenu('#amfp-menu-btn');
+								clearContent();
+								$('#message-btn-out, #sub-tree').empty();
+								printBtnTree(listBtnAmfp[id][0]);
+								window.location = '#leg-menu&t=0.15s';
+								createButton('leg');
+								stateForLegBtn = id;
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnAmfp-', listBtnAmfp.length, '#amfp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[37]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnAmfp called | ' + count);
+								//event.stopImmediatePropagation();
+
+								backNav('#btnAmfp-', listBtnAmfp.length, '#amfp-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnAmfp called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 9) {
+										count++;
+										nextStep(count, '#btnAmfp-', listBtnAmfp);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnAmfp-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										count = 0;
+										forceBack('#btnAmfp-', listBtnAmfp.length, '#amfp-menu-btn', '#airmov-menu&t=0.15s');
+										createButton('airmov');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[37]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnAmfp-', listBtnAmfp);
+				delChar('#btnAmfp-48');
+				return;
+			}
+			case 'start': {
+				let count = 0;
+				let treeVal1 = '';
+				let treeVal2 = '';
+
+				for (let varStart = 0; varStart < listBtnStart.length; varStart++) {
+					generateButtonMenu('#start-menu-btn', 'btnStart-', varStart, listBtnStart[varStart][0]);
+					registToTree(varStart, listBtnStart[varStart][0], 5);
+					$('#btnStart-' + varStart).on("click", { num: varStart }, fnStart);
+				}
+
+				function fnStart(event) {
+					let id = event.data.num;
+
+					if (listBtnStart[id][0] != '') {
+						if (id < 5) {
+							initiateLoadedMenu('#btnStart-', id, listBtnStart[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+							case 4:
+								console.log(id + ' fnStart called');
+								event.stopImmediatePropagation();
+								break;
+							case 40:
+								console.log(id + ' fnStart called');
+								//event.stopImmediatePropagation();
+
+								backToPrevPage('#btnStart-', listBtnStart, '#start-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, 15);
+								createButton('amfp');
+								console.log('Start for amfp');
+
+								setTimeout(function () {
+									$('#input-VK').val('');
+									document.getElementById('input-VK').placeholder = '';
+									$('#tree-btn-out span:last-child').remove();
+								}, 150);
+								break;
+							case 42:
+								console.log(id + ' fnStart called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnStart-', listBtnStart.length, '#start-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnStart called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									clearVK();
+								} else {
+									if (count < 4) {
+										count++;
+										nextStep(count, '#btnStart-', listBtnStart);
+										$('#tree-' + (count - 1)).show();
+										document.getElementById('input-VK').placeholder = '';
+
+										switch (count) {
+											case 1:
+												count = 3;
+												break;
+										}
+									} else {
+										$.pushValue();
+										printMessage("COMMAND OK");
+										$('#btnStart-' + count).removeClass('active');
+										count = 0;
+										backToPrevPage('#btnStart-', listBtnStart, '#start-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, 15);
+										createButton('amfp');
+
+										setTimeout(function () {
+											//$('#tree-' + 0).show();
+											//$('#treeNum-' + 0).append('<span>' + 'dummy' + '</span>');
+											document.getElementById('input-VK').placeholder = '';
+											$('#tree-btn-out span:last-child').remove();
+											console.log(amfpArr);
+										}, 150)
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnStart-');
+				});
+
+				$.pushValue = function () {
+					treeVal1 = $('#treeNum-' + 0).text();
+					treeVal2 = $('#treeNum-' + 4).text();
+					amfpArr[0].push([treeVal1, treeVal2, 'null']);
+				}
+
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnStart-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				setBtnActive('#btnStart-', listBtnStart);
+				delChar('#btnStart-48');
+				return;
+			}
+			case 'leg': {
+				let count = 0;
+				const btn = [listBtnLeg[4][0], 'ras12', 'mach12'];
+				let treeVal1 = '';
+				let treeVal2 = '';
+				let treeVal3 = '';
+				countForLegState = 0;
+
+				for (let varLeg = 0; varLeg < listBtnLeg.length; varLeg++) {
+					generateButtonMenu('#leg-menu-btn', 'btnLeg-', varLeg, listBtnLeg[varLeg][0]);
+					registToTree(varLeg, listBtnLeg[varLeg][0], 6);
+					$('#btnLeg-' + varLeg).on("click", { num: varLeg }, fnLeg);
+				}
+
+				function fnLeg(event) {
+					let id = event.data.num;
+
+					if (listBtnLeg[id][0] != '') {
+						if (id < 6) {
+							initiateLoadedMenu('#btnLeg-', id, listBtnLeg[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnLeg called');
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('.cursor i').removeClass('d-none');
+								$('#three-toggle').empty();
+								hideNumBtn('#btnLeg-', 30, 40);
+								callAlphaVK('#btnLeg-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								break;
+							case 4:
+								console.log(id + ' fnLeg called | ' + count);
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								changeVKWidth('8%', '59%');
+
+								toggleThreeState(btn, '#btnLeg-' + id, id);
+								hideNumBtn('#btnLeg-', 30, 40);
+								callAlphaVK('#btnLeg-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								count = id;
+								break;
+							case 5:
+								console.log(id + ' fnLeg called');
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('#three-toggle').empty();
+								$('.cursor i').removeClass('d-none');
+								$('#btnLeg-' + 44).children('span').hide();
+								$('#btnLeg-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								showNumBtn('#btnLeg-', 30, 40, listBtnLeg);
+								break;
+							case 40:
+								console.log(id + ' fnLeg called');
+								//event.stopImmediatePropagation();
+
+								backToPrevPage('#btnLeg-', listBtnLeg, '#leg-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, 15);
+								createButton('amfp');
+								console.log('Leg for amfp');
+
+								setTimeout(function () {
+									$('#input-VK').val('');
+									document.getElementById('input-VK').placeholder = '';
+									$('#tree-btn-out span:last-child').remove();
+								}, 150);
+								break;
+							case 42:
+								console.log(id + ' fnLeg called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnLeg-', listBtnLeg.length, '#leg-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnLeg called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									clearVK();
+								} else {
+									if (count < 5) {
+										count++;
+										nextStep(count, '#btnLeg-', listBtnLeg);
+										$('#tree-' + (count - 1)).show();
+										document.getElementById('input-VK').placeholder = '';
+
+										switch (count) {
+											case 1:
+												count = 3;
+												break;
+											case 4:
+												changeVKWidth('8%', '59%');
+												initiateToggleThree(btn);
+												$('.cursor i').removeClass('d-none');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+											case 5:
+												resetVKWidth();
+												$('#three-toggle').empty();
+												$('.cursor i').removeClass('d-none');
+												$('#btnLeg-' + 44).children('span').hide();
+												$('#btnLeg-' + 44).off();
+												document.getElementById('input-VK').placeholder = '';
+												showNumBtn('#btnLeg-', 30, 40, listBtnLeg);
+												break;
+										}
+									} else {
+										$.pushValue();
+
+										printMessage("COMMAND OK");
+										$('#btnLeg-' + count).removeClass('active');
+										count = 0;
+										backToPrevPage('#btnLeg-', listBtnLeg, '#leg-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, 15);
+										createButton('amfp');
+
+										setTimeout(function () {
+											//$('#tree-' + 0).show();
+											//$('#treeNum-' + 0).append('<span>' + 'dummy' + '</span>');
+											document.getElementById('input-VK').placeholder = '';
+											$('#tree-btn-out span:last-child').remove();
+											console.log(amfpArr);
+										}, 150)
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnLeg-');
+				});
+
+				$.pushValue = function () {
+					switch (stateForLegBtn) {
+						case 1:
+						case 2:
+						case 3:
+						case 4:
+						case 5:
+						case 6:
+						case 7:
+						case 8:
+							treeVal1 = $('#treeNum-' + 0).text();
+							treeVal2 = ($('#tree-4 span:first-child').text().toUpperCase()) + '-' + ($('#treeNum-' + 4).text());
+							treeVal3 = $('#treeNum-' + 5).text();
+							amfpArr[stateForLegBtn].push([treeVal1, treeVal2, treeVal3]);
+							break;
+					}
+				}
+
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnLeg-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to leg typing..';
+				hideNumBtn('#btnLeg-', 30, 40);
+				setBtnActive('#btnLeg-', listBtnLeg);
+				delChar('#btnLeg-48');
+				return;
+			}
+			case 'adcfp': {
+				let count = 0;
+				const btn = [listBtnAdcfp[14][0], 'ras12', 'mach12'];
+
+				for (let varAdcfp = 0; varAdcfp < listBtnAdcfp.length; varAdcfp++) {
+					generateButtonMenu('#adcfp-menu-btn', 'btnAdcfp-', varAdcfp, listBtnAdcfp[varAdcfp][0]);
+					registToTree(varAdcfp, listBtnAdcfp[varAdcfp][0], 23);
+					$('#btnAdcfp-' + varAdcfp).on("click", { num: varAdcfp }, fnAdcfp);
+				}
+
+				//$('#btnAdcfp-44').children('span').hide();
+
+				function fnAdcfp(event) {
+					let id = event.data.num;
+
+					if (listBtnAdcfp[id][0] != '') {
+						if (id < 23) {
+							initiateLoadedMenu('#btnAdcfp-', id, listBtnAdcfp[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnAdcfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('.cursor i').removeClass('d-none');
+								$('#three-toggle').empty();
+								hideNumBtn('#btnAdcfp-', 30, 40);
+								callAlphaVK('#btnAdcfp-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								count = id;
+								break;
+							case 3:
+								console.log(id + ' fnAdcfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('.cursor i').removeClass('d-none');
+								$('#three-toggle').empty();
+								hideNumBtn('#btnAdcfp-', 30, 40);
+								callAlphaVK('#btnAdcfp-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								count = id + 2;
+								break;
+							case 6:
+								console.log(id + ' fnAdcfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('.cursor i').removeClass('d-none');
+								$('#three-toggle').empty();
+								hideNumBtn('#btnAdcfp-', 30, 40);
+								callAlphaVK('#btnAdcfp-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								count = id + 8;
+								break;
+							case 14:
+								console.log(id + ' fnAdcfp called | ' + count);
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								changeVKWidth('8%', '59%');
+
+								toggleThreeState(btn, '#btnAdcfp-' + id, id);
+								hideNumBtn('#btnAdcfp-', 30, 40);
+								callAlphaVK('#btnAdcfp-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								count = id;
+								break;
+							case 15:
+								console.log(id + ' fnAdcfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('#three-toggle').empty();
+								$('.cursor i').removeClass('d-none');
+								$('#btnAdcfp-' + 44).children('span').hide();
+								$('#btnAdcfp-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								showNumBtn('#btnAdcfp-', 30, 40, listBtnAdcfp);
+								count = id + 2;
+								break;
+							case 21:
+								console.log(id + ' fnAdcfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('#three-toggle').empty();
+								$('.cursor i').removeClass('d-none');
+								$('#btnAdcfp-' + 44).children('span').hide();
+								$('#btnAdcfp-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								showNumBtn('#btnAdcfp-', 30, 40, listBtnAdcfp);
+								count = id;
+								break;
+							case 22:
+								console.log(id + ' fnAdcfp called | ' + count);
+								event.stopImmediatePropagation();
+								resetVKWidth();
+
+								$('#three-toggle').empty();
+								$('.cursor i').removeClass('d-none');
+								$('#btnAdcfp-' + 44).children('span').hide();
+								$('#btnAdcfp-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								showNumBtn('#btnAdcfp-', 30, 40, listBtnAdcfp);
+								count = id + 2;
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnAdcfp-', listBtnAdcfp.length, '#adcfp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[37]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnAdcfp called | ' + count);
+								//event.stopImmediatePropagation();
+
+								backNav('#btnAdcfp-', listBtnAdcfp.length, '#adcfp-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnAdcfp called | ' + count);
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									if ((count > 1) && (count != 14) && (count != 21)) {
+										console.log((count - 2) + ' tree')
+										$('#tree-' + (count - 2)).show();
+										document.getElementById('treeNum-' + (count - 2)).innerHTML = $('#input-VK').val();
+									} else {
+										$('#tree-' + count).show();
+										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									}
+
+									clearVK();
+								} else {
+									if (count < 24) {
+										count++;
+										nextStep(count, '#btnAdcfp-', listBtnAdcfp);
+										document.getElementById('input-VK').placeholder = '';
+										console.log(count + ' false')
+
+										if (count < 1) {
+											$('#tree-' + (count - 1)).show();
+										} else {
+											$('#tree-' + (count - 2)).show();
+										}
+
+										switch (count) {
+											case 1:
+												count = 2;
+												break;
+											case 3:
+												count = 5;
+												$('.cursor i').removeClass('d-none');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+											case 6:
+												count = 8;
+												$('.cursor i').removeClass('d-none');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+											case 9:
+												count = 13;
+												break;
+											case 14:
+												count = 14;
+												changeVKWidth('8%', '59%');
+												initiateToggleThree(btn);
+												$('.cursor i').removeClass('d-none');
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+											case 15:
+												count = 17;
+												$('#three-toggle').empty();
+												$('.cursor i').removeClass('d-none');
+												$('#btnAdcfp-' + 44).children('span').hide();
+												$('#btnAdcfp-' + 44).off();
+												document.getElementById('input-VK').placeholder = '';
+												showNumBtn('#btnAdcfp-', 30, 40, listBtnAdcfp);
+												break;
+											case 18:
+												count = 20;
+												hideNumBtn('#btnAdcfp-', 30, 40);
+												break;
+											case 21:
+												count = 21;
+												showNumBtn('#btnAdcfp-', 30, 40, listBtnAdcfp);
+												break;
+											case 22:
+												count = 24;
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnAdcfp-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										count = 0;
+										forceBack('#btnAdcfp-', listBtnAdcfp.length, '#adcfp-menu-btn', '#airmov-menu&t=0.15s');
+										createButton('airmov');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[37]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnAdcfp, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnAdcfp-');
+				});
+
+				hideNumBtn('#btnAdcfp-', 30, 40);
+				$('.cursor i').removeClass('d-none');
+				callAlphaVK('#btnAdcfp-');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				setBtnActive('#btnAdcfp-', listBtnAdcfp);
+				delChar('#btnAdcfp-48');
+				return;
+			}
 			case 'sndicm': {
 				let count = 0;
 
@@ -7097,65 +7592,17 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 0:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 1:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 2:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 3:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 4:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 6:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 7:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 8:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 9:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 10:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 11:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 12:
-								console.log(id + ' fnSndicm called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 13:
 								console.log(id + ' fnSndicm called');
 								event.stopImmediatePropagation();
@@ -7168,6 +7615,7 @@ function createButton(buttonName) {
 								backNav('#btnSndicm-', listBtnSndicm.length, '#sndicm-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -7229,60 +7677,16 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 0:
-								console.log(id + ' fnSndism called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 1:
-								console.log(id + ' fnSndism called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 2:
-								console.log(id + ' fnSndism called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 3:
-								console.log(id + ' fnSndism called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 4:
-								console.log(id + ' fnSndism called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 6:
-								console.log(id + ' fnSndism called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 11:
-								console.log(id + ' fnSndism called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 12:
-								console.log(id + ' fnSndism called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 13:
-								console.log(id + ' fnSndism called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 14:
-								console.log(id + ' fnSndism called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 15:
-								console.log(id + ' fnSndism called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 16:
 								console.log(id + ' fnSndism called');
 								event.stopImmediatePropagation();
@@ -7295,6 +7699,7 @@ function createButton(buttonName) {
 								backNav('#btnSndism-', listBtnSndism.length, '#sndism-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -7410,6 +7815,7 @@ function createButton(buttonName) {
 								countForEw4State = 0;
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -7528,6 +7934,7 @@ function createButton(buttonName) {
 								countForEw4State = 0;
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -7654,6 +8061,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -7840,6 +8248,7 @@ function createButton(buttonName) {
 								backNav('#btnSettrk-', listBtnSettrk.length, '#settrk-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -7921,25 +8330,9 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 0:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 2:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 11:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 20:
-								console.log(id + ' fnLabpos called');
-								event.stopImmediatePropagation();
-								count = id;
-								break;
 							case 22:
 								console.log(id + ' fnLabpos called');
 								event.stopImmediatePropagation();
@@ -7952,6 +8345,7 @@ function createButton(buttonName) {
 								backNav('#btnLabpos-', listBtnLabpos.length, '#labpos-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -8021,68 +8415,14 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
-								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
-								count = id;
-								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
-								$('#tree-' + 29).hide();
-								break;
 							case 3:
-								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
-								count = id;
-								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
-								$('#tree-' + 29).hide();
-								break;
 							case 5:
-								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
-								count = id;
-								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
-								$('#tree-' + 29).hide();
-								break;
 							case 12:
-								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
-								count = id;
-								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
-								$('#tree-' + 29).hide();
-								break;
 							case 14:
-								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
-								count = id;
-								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
-								$('#tree-' + 29).hide();
-								break;
 							case 16:
-								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
-								count = id;
-								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
-								$('#tree-' + 29).hide();
-								break;
 							case 21:
-								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
-								count = id;
-								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
-								$('#tree-' + 29).hide();
-								break;
 							case 23:
-								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
-								count = id;
-								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
-								$('#tree-' + 29).hide();
-								break;
 							case 25:
-								console.log(id + ' fnLabpos called');
-								//event.stopImmediatePropagation();
-								count = id;
-								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
-								$('#tree-' + 29).hide();
-								break;
 							case 27:
 								console.log(id + ' fnLabpos called');
 								//event.stopImmediatePropagation();
@@ -8105,6 +8445,7 @@ function createButton(buttonName) {
 								backNav('#btnTrksel-', listBtnTrksel.length, '#trksel-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:

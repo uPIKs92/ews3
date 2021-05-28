@@ -159,6 +159,9 @@
         <div lj-type="frame" lj-name="amfp-menu" lj-transition="fade">
             <ul id="amfp-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="start-menu" lj-transition="fade">
+            <ul id="start-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="leg-menu" lj-transition="fade">
             <ul id="leg-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
