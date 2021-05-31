@@ -18,6 +18,8 @@ var countForStatesState = 0;
 const amfpArr = [[], [], [], [], [], [], [], [], []];
 var stateForLegBtn = 0;
 var countForLegState = 0;
+var stateForDaysBtn = 0;
+var countForDaysState = 0;
 
 $(function () {
 	$('div[onload]').trigger('onload');
@@ -5985,6 +5987,7 @@ function createButton(buttonName) {
 								window.location = '#schdle-menu&t=0.15s';
 								printBtnTree(listBtnAirmov[id]);
 								createButton('schdle');
+								document.getElementById('input-btn-out').innerHTML = listBtnAirmov[id];
 								break;
 							case 20:
 								console.log(id + ' fnAirmov called');
@@ -7051,7 +7054,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnStart called');
 								//event.stopImmediatePropagation();
 
-								backToPrevPage('#btnStart-', listBtnStart, '#start-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, 15);
+								backToPrevPage('#btnStart-', listBtnStart, '#start-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, lastCount);
 								createButton('amfp');
 								console.log('Start for amfp');
 
@@ -7098,7 +7101,7 @@ function createButton(buttonName) {
 										printMessage("COMMAND OK");
 										$('#btnStart-' + count).removeClass('active');
 										count = 0;
-										backToPrevPage('#btnStart-', listBtnStart, '#start-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, 15);
+										backToPrevPage('#btnStart-', listBtnStart, '#start-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, lastCount);
 										createButton('amfp');
 
 										setTimeout(function () {
@@ -7198,7 +7201,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnLeg called');
 								//event.stopImmediatePropagation();
 
-								backToPrevPage('#btnLeg-', listBtnLeg, '#leg-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, 15);
+								backToPrevPage('#btnLeg-', listBtnLeg, '#leg-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, lastCount);
 								createButton('amfp');
 								console.log('Leg for amfp');
 
@@ -7261,7 +7264,7 @@ function createButton(buttonName) {
 										printMessage("COMMAND OK");
 										$('#btnLeg-' + count).removeClass('active');
 										count = 0;
-										backToPrevPage('#btnLeg-', listBtnLeg, '#leg-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, 15);
+										backToPrevPage('#btnLeg-', listBtnLeg, '#leg-menu-btn', '#amfp-menu&t=0.15s', '#btnAmfp-', listBtnAmfp, lastCount);
 										createButton('amfp');
 
 										setTimeout(function () {
@@ -7307,6 +7310,214 @@ function createButton(buttonName) {
 				hideNumBtn('#btnLeg-', 30, 40);
 				setBtnActive('#btnLeg-', listBtnLeg);
 				delChar('#btnLeg-48');
+				return;
+			}
+			case 'schdle': {
+				let count = 0;
+
+				for (let varSchdle = 0; varSchdle < listBtnSchdle.length; varSchdle++) {
+					generateButtonMenu('#schdle-menu-btn', 'btnSchdle-', varSchdle, listBtnSchdle[varSchdle][0]);
+					registToTree(varSchdle, listBtnSchdle[varSchdle][0], 3);
+					$('#btnSchdle-' + varSchdle).on("click", { num: varSchdle }, fnSchdle);
+				}
+
+				function fnSchdle(event) {
+					let id = event.data.num;
+
+					if (listBtnSchdle[id][0] != '') {
+						if (id < 3) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnSchdle[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 0:
+							case 2:
+								console.log(id + ' fnSchdle called');
+								event.stopImmediatePropagation();
+								lastCount = id;
+								break;
+							case 1:
+								console.log(id + ' fnSchdle called');
+								event.stopImmediatePropagation();
+								lastCount = id;
+
+								clearMenu('#schdle-menu-btn');
+								clearContent();
+								$('#message-btn-out, #sub-tree').empty();
+								printBtnTree(listBtnSchdle[id][0]);
+								window.location = '#days-menu&t=0.15s';
+								createButton('days');
+								document.getElementById('input-btn-out').innerHTML = listBtnSchdle[id][0];
+								stateForDaysBtn = id;
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnSchdle-', listBtnSchdle.length, '#schdle-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[37]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnSchdle called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnSchdle-', listBtnSchdle.length, '#schdle-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSchdle called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + lastCount).show();
+									$('#tree-' + lastCount).siblings().hide();
+									document.getElementById('treeNum-' + lastCount).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 0) {
+										count++;
+										nextStep(count, '#btnSchdle-', listBtnSchdle);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+										document.getElementById('input-VK').placeholder = '';
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSchdle-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnSchdle-', listBtnSchdle.length, '#schdle-menu-btn', '#airmov-menu&t=0.15s');
+										count = 0;
+										createButton('airmov');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[37]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnSchdle-', listBtnSchdle);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnSchdle-48');
+				return;
+			}
+			case 'days': {
+				let count = 0;
+
+				for (let varDays = 0; varDays < listBtnDays.length; varDays++) {
+					generateButtonMenu('#days-menu-btn', 'btnDays-', varDays, listBtnDays[varDays][0]);
+					registToTree(varDays, listBtnDays[varDays][0], 8);
+					$('#btnDays-' + varDays).on("click", { num: varDays }, fnDays);
+				}
+
+				function fnDays(event) {
+					let id = event.data.num;
+
+					if (listBtnDays[id][0] != '') {
+						if (id < 8) {
+							$(this).siblings('.active').removeClass('active');
+							$(this).addClass('active');
+							document.getElementById('input-VK').value = listBtnDays[id][0];
+							$('.cursor i').removeClass('d-none');
+						}
+
+						switch (id) {
+							case 1:
+							case 2:
+							case 3:
+							case 4:
+							case 5:
+							case 6:
+							case 7:
+								console.log(id + ' fnDays called');
+								event.stopImmediatePropagation();
+								countForDaysState = id;
+								//count = id;
+								break;
+							case 40:
+								console.log(id + ' fnDays called');
+								//event.stopImmediatePropagation();
+								console.log('Days for schdle');
+
+								switch (stateForDaysBtn) {
+									case 1:
+										backToPrevPage('#btnDays-', listBtnDays, '#days-menu-btn', '#schdle-menu&t=0.15s', '#btnSchdle-', listBtnSchdle, 0);
+										createButton('schdle');
+										countForDaysState = 0;
+										break;
+								}
+
+								setTimeout(function () {
+									//$('#input-VK').val('');
+									$('#tree-btn-out span:last-child').remove();
+									document.getElementById('input-btn-out').innerHTML = listBtnAirmov[18];
+									$('.cursor i').removeClass('d-none');
+									lastCount = 0;
+								}, 150);
+								break;
+							case 42:
+								console.log(id + ' fnDays called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnDays-', listBtnDays.length, '#days-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnDays called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#btnDays-' + count).removeClass('active');
+									count = 0;
+									backToPrevPage('#btnDays-', listBtnDays, '#days-menu-btn', '#schdle-menu&t=0.15s', '#btnSchdle-', listBtnSchdle, 0);
+									createButton('schdle');
+
+									setTimeout(function () {
+										//$('#tree-' + 0).show();
+										//$('#treeNum-' + 0).append('<span>' + 'dummy' + '</span>');
+										//document.getElementById('input-VK').placeholder = '';
+
+										$('#tree-btn-out span:last-child').remove();
+										//$('#tree-' + 1).show();
+										//$('#treeNum-' + 1).append('<span>' + listBtnDays[countForDaysState][0] + '</span>');
+										document.getElementById('input-btn-out').innerHTML = listBtnAirmov[18];
+										$('#input-VK').val(listBtnDays[countForDaysState][0]);
+										$('.cursor i').removeClass('d-none');
+										console.log(schdleArr);
+									}, 150)
+								}
+								break;
+						}
+					}
+				}
+
+				//setBtnActive('#btnDays-', listBtnDays);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnDays-48');
 				return;
 			}
 			case 'adcfp': {
@@ -7679,6 +7890,11 @@ function createButton(buttonName) {
 							case 0:
 								console.log(id + ' fnSfpcur called');
 								event.stopImmediatePropagation();
+
+								$('.cursor i').removeClass('d-none');
+								showNumBtn('#btnSfpcur-', 30, 40, listBtnSfpcur);
+								callAlphaVK('#btnSfpcur-');
+								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								break;
 							case 1:
 								console.log(id + ' fnSfpcur called');
@@ -7743,6 +7959,12 @@ function createButton(buttonName) {
 										$('#tree-' + (count - 1)).show();
 										$('#three-toggle').empty();
 										document.getElementById('input-VK').placeholder = '';
+
+										switch (count) {
+											case 1:
+												showToggle(toggLabelA1, toggLabelA2);
+												break;
+										}
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnSfpcur-' + count).removeClass('active');
@@ -9067,7 +9289,7 @@ function backToPrevPage(labelBtn, arrName, menuName, url, labelParent, arrNamePa
 		}
 
 		setBtnActive(labelParent, arrNameParent);
-		//$('#input-VK').val(arrName[lastCount][0]);
+		$('#input-VK').val(arrName[lastCount][0]);
 	}, 100)
 }
 
