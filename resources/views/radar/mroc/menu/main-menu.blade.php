@@ -138,6 +138,9 @@
         <div lj-type="frame" lj-name="ainit-menu" lj-transition="fade">
             <ul id="ainit-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="refsrc-menu" lj-transition="fade">
+            <ul id="refsrc-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="init-menu" lj-transition="fade">
             <ul id="init-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>

@@ -2328,7 +2328,7 @@ function createButton(buttonName) {
 								document.getElementById('input-VK').placeholder = '';
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnCrptm called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnCrptm-', listBtnCrptm.length, '#crptm-menu-btn', '#tacmis-menu&t=0.15s', 'tacmis');
@@ -2527,16 +2527,6 @@ function createButton(buttonName) {
 										$('#tree-' + (count - 1)).show();
 										$('#toggle-box-out').hide();
 										document.getElementById('input-VK').placeholder = '';
-
-										switch (count) {
-											case 1: {
-												event.stopImmediatePropagation()
-												$('.cursor i').removeClass('d-none');
-												callAlphaVK('#btnScrmbl-');
-												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-												return;
-											}
-										}
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnScrmbl-' + count).removeClass('active');
@@ -3320,7 +3310,7 @@ function createButton(buttonName) {
 								count = id + 1;
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnTrial called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnTrial-', listBtnTrial.length, '#trial-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
@@ -3556,7 +3546,7 @@ function createButton(buttonName) {
 								}, 125);
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnRecovr called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnRecovr-', listBtnRecovr.length, '#recovr-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
@@ -3662,7 +3652,7 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnCanmis called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnCanmis-', listBtnCanmis.length, '#canmis-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
@@ -3858,11 +3848,13 @@ function createButton(buttonName) {
 										switch (count) {
 											case 2:
 												count = 3;
+												showToggle(toggLabelA1, toggLabelA2);
 												hideNumBtn('#btnRunway-', 30, 40);
 												break;
 											case 4:
 												count = 5;
-												showToggle(toggLabelA1, toggLabelA2);
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
 												hideNumBtn('#btnRunway-', 30, 40);
 												break;
 											case 6:
@@ -4185,7 +4177,7 @@ function createButton(buttonName) {
 								count = id + 1;
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnDefftr called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnDefftr-', listBtnDefftr.length, '#defftr-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
@@ -4402,7 +4394,7 @@ function createButton(buttonName) {
 
 							switch (id) {
 								case 40:
-									console.log(id + ' fnLine called');
+									console.log(id + ' fnTactic called');
 									//event.stopImmediatePropagation();
 
 									backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
@@ -4622,7 +4614,7 @@ function createButton(buttonName) {
 									count = id + 1;
 									break;
 								case 40:
-									console.log(id + ' fnLine called');
+									console.log(id + ' fnTactic called');
 									//event.stopImmediatePropagation();
 
 									backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
@@ -5087,7 +5079,7 @@ function createButton(buttonName) {
 								count = id + 1;
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnAmdftr called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnAmdftr-', listBtnAmdftr.length, '#amdftr-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
@@ -5228,7 +5220,7 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnOncap called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnOncap-', listBtnOncap.length, '#oncap-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
@@ -5347,7 +5339,7 @@ function createButton(buttonName) {
 								}
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnSamtrk called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnSamtrk-', listBtnSamtrk.length, '#samtrk-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
@@ -5485,7 +5477,7 @@ function createButton(buttonName) {
 								count = id + 1;
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnFtrres called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnFtrres-', listBtnFtrres.length, '#ftrres-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
@@ -5832,6 +5824,16 @@ function createButton(buttonName) {
 								printBtnTree(listBtnTrack[id]);
 								createButton('ainit');
 								break;
+							case 3:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								clearMenu('#track-menu-btn');
+								clearContent();
+								$('#message-btn-out').empty();
+								window.location = '#refsrc-menu&t=0.15s';
+								printBtnTree(listBtnTrack[id]);
+								createButton('refsrc');
+								break;
 							case 4:
 								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
@@ -5850,6 +5852,12 @@ function createButton(buttonName) {
 								window.location = '#updcde-menu&t=0.15s';
 								printBtnTree(listBtnTrack[id]);
 								createButton('updcde');
+								break;
+							case 7:
+								console.log(id + ' fnTrack called');
+								event.stopImmediatePropagation();
+								$('#message-btn-out').empty();
+								printMessage("TRACK NOT UNDER YOUR CONTROL");
 								break;
 							case 8:
 								console.log(id + ' fnTrack called');
@@ -6105,7 +6113,7 @@ function createButton(buttonName) {
 								backNav('#btnAinit-', listBtnAinit.length, '#ainit-menu-btn', '#track-menu&t=0.15s', 'track');
 								resetVKWidth();
 								setTimeout(function () {
-									printBtnTree(listBtnLogon[6]);
+									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
 							case 42:
@@ -6115,6 +6123,7 @@ function createButton(buttonName) {
 								resetVKWidth();
 								break;
 							case 47:
+								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -6166,7 +6175,7 @@ function createButton(buttonName) {
 										resetVKWidth();
 
 										setTimeout(function () {
-											printBtnTree(listBtnLogon[6]);
+											printBtnTree(listBtnLogon[36]);
 										}, 125);
 									}
 								}
@@ -6181,6 +6190,1289 @@ function createButton(buttonName) {
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnAinit-', listBtnAinit);
 				delChar('#keyboard-clear, #btnAinit-48');
+				return;
+			}
+			case 'refsrc': {
+				let count = 1;
+
+				for (let varRefsrc = 0; varRefsrc < listBtnRefsrc.length; varRefsrc++) {
+					generateButtonMenu('#refsrc-menu-btn', 'btnRefsrc-', varRefsrc, listBtnRefsrc[varRefsrc][0]);
+					registToTree(varRefsrc, listBtnRefsrc[varRefsrc][0], 2);
+					$('#btnRefsrc-' + varRefsrc).on("click", { num: varRefsrc }, fnRefsrc);
+				}
+
+				function fnRefsrc(event) {
+					let id = event.data.num;
+
+					if (listBtnRefsrc[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnRefsrc-', id, listBtnRefsrc[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnRefsrc called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+								console.log(id + ' fnRefsrc called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnRefsrc-', listBtnRefsrc.length, '#refsrc-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[36]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnRefsrc called');
+								//event.stopImmediatePropagation();
+
+								backNav('#btnRefsrc-', listBtnRefsrc.length, '#refsrc-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnRefsrc called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnRefsrc-', listBtnRefsrc);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnRefsrc-' + count).removeClass('active');
+										forceBack('#btnRefsrc-', listBtnRefsrc.length, '#refsrc-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[36]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnRefsrc, id);
+				}
+
+				setBtnActive('#btnRefsrc-', listBtnRefsrc);
+				hideRightNav();
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnRefsrc-48');
+				return;
+			}
+			case 'init': {
+				let count = 0;
+
+				for (let varInit = 0; varInit < listBtnInit.length; varInit++) {
+					generateButtonMenu('#init-menu-btn', 'btnInit-', varInit, listBtnInit[varInit][0]);
+					registToTree(varInit, listBtnInit[varInit][0], 1);
+					$('#btnInit-' + varInit).on("click", { num: varInit }, fnInit);
+				}
+
+				function fnInit(event) {
+					let id = event.data.num;
+
+					if (listBtnInit[id][0] != '') {
+						if (id < 1) {
+							initiateLoadedMenu('#btnInit-', id, listBtnInit[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnInit called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+								console.log(id + ' fnInit called');
+								event.stopImmediatePropagation();
+								backNav('#btnInit-', listBtnInit.length, '#init-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[36]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnInit called');
+								event.stopImmediatePropagation();
+								backNav('#btnInit-', listBtnInit.length, '#init-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnInit called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count === 1) {
+										count++;
+										nextStep(count, '#btnInit-', listBtnInit);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnInit-' + count).removeClass('active');
+										forceBack('#btnInit-', listBtnInit.length, '#init-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnInit, id);
+				}
+
+				setBtnActive('#btnInit-', listBtnInit);
+				hideRightNav();
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnInit-48');
+				return;
+			}
+			case 'updcde': {
+				let count = 1;
+				let toggLabelA1 = listBtnUpdcde[1][0];
+				let toggLabelA2 = 'canm1';
+				let toggLabelB1 = listBtnUpdcde[2][0];
+				let toggLabelB2 = 'canm2';
+				let toggLabelC1 = listBtnUpdcde[3][0];
+				let toggLabelC2 = 'canm3';
+				let toggLabelD1 = listBtnUpdcde[4][0];
+				let toggLabelD2 = 'canmc';
+				let toggLabelE1 = listBtnUpdcde[5][0];
+				let toggLabelE2 = 'cansgn';
+				let toggLabelF1 = listBtnUpdcde[6][0];
+				let toggLabelF2 = 'emgoff';
+
+				for (let varUpdcde = 0; varUpdcde < listBtnUpdcde.length; varUpdcde++) {
+					generateButtonMenu('#updcde-menu-btn', 'btnUpdcde-', varUpdcde, listBtnUpdcde[varUpdcde][0]);
+					registToTree(varUpdcde, listBtnUpdcde[varUpdcde][0], 7);
+					$('#btnUpdcde-' + varUpdcde).on("click", { num: varUpdcde }, fnUpdcde);
+
+					if ((varUpdcde === 5)) {
+						$('#btnUpdcde-' + varUpdcde).addClass('text-none');
+					}
+
+					if (varUpdcde < 6) {
+						$('#btnUpdcde-' + varUpdcde).attr('value', 'tg-off');
+					}
+
+
+				}
+
+				function fnUpdcde(event) {
+					let id = event.data.num;
+
+					if (listBtnUpdcde[id][0] != '') {
+						if (id < 7) {
+							initiateLoadedMenu('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+
+								if ($('#btnUpdcde-' + id).attr('value') != 'tg-off') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+									}, 125);
+								}
+								break;
+							case 2:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+
+								if ($('#btnUpdcde-' + id).attr('value') != 'tg-off') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+									}, 125);
+								}
+								break;
+							case 3:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+
+								if ($('#btnUpdcde-' + id).attr('value') != 'tg-off') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+									}, 125);
+								}
+								break;
+							case 4:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+
+								if ($('#btnUpdcde-' + id).attr('value') != 'tg-off') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+									}, 125);
+								}
+								break;
+							case 5:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+
+								if ($('#btnUpdcde-' + id).attr('value') != 'tg-off') {
+									setTimeout(function () {
+										$('.cursor i').removeClass('d-none');
+										showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+									}, 125);
+								}
+								break;
+							case 6:
+								console.log(id + ' fnUpdcde called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnUpdcde-', 30, 40);
+								break;
+							case 40:
+								console.log(id + ' fnUpdcde called');
+								event.stopImmediatePropagation();
+								backNav('#btnUpdcde-', listBtnUpdcde.length, '#updcde-menu-btn', '#track-menu&t=0.15s', 'track');
+								$('#three-toggle').empty();
+								resetVKWidth();
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[36]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnUpdcde called');
+								event.stopImmediatePropagation();
+								backNav('#btnUpdcde-', listBtnUpdcde.length, '#updcde-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+								resetVKWidth();
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnUpdcde called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 7) {
+										count++;
+										nextStep(count, '#btnUpdcde-', listBtnUpdcde);
+										$('#tree-' + (count - 1)).show();
+
+										switch (count) {
+											case 2:
+												showToggle(toggLabelB1, toggLabelB2);
+
+												if ($('#btnUpdcde-' + count).attr('value') === 'tg-off') {
+													$('.cursor i').removeClass('d-none');
+													showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+												} else {
+													$('.cursor i').addClass('d-none');
+													hideNumBtn('#btnUpdcde-', 30, 40);
+												}
+												break;
+											case 3:
+												showToggle(toggLabelC1, toggLabelC2);
+
+												if ($('#btnUpdcde-' + count).attr('value') === 'tg-off') {
+													$('.cursor i').removeClass('d-none');
+													showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+												} else {
+													$('.cursor i').addClass('d-none');
+													hideNumBtn('#btnUpdcde-', 30, 40);
+												}
+												break;
+											case 4:
+												showToggle(toggLabelD1, toggLabelD2);
+
+												if ($('#btnUpdcde-' + count).attr('value') === 'tg-off') {
+													$('.cursor i').removeClass('d-none');
+													showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+												} else {
+													$('.cursor i').addClass('d-none');
+													hideNumBtn('#btnUpdcde-', 30, 40);
+												}
+												break;
+											case 5:
+												showToggle(toggLabelE1, toggLabelE2);
+
+												if ($('#btnUpdcde-' + count).attr('value') === 'tg-off') {
+													$('.cursor i').removeClass('d-none');
+													showNumBtn('#btnUpdcde-', 30, 40, listBtnUpdcde);
+												} else {
+													$('.cursor i').addClass('d-none');
+													hideNumBtn('#btnUpdcde-', 30, 40);
+												}
+												break;
+											case 6:
+												showToggle(toggLabelF1, toggLabelF2);
+												$('.cursor i').addClass('d-none');
+												hideNumBtn('#btnUpdcde-', 30, 40);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnUpdcde-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										resetVKWidth();
+										forceBack('#btnUpdcde-', listBtnUpdcde.length, '#updcde-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[36]);
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnUpdcde, id)
+				}
+
+				toggleBtn(1, '#btnUpdcde-1', toggLabelA1, toggLabelA2);
+				toggleBtn(2, '#btnUpdcde-2', toggLabelB1, toggLabelB2);
+				toggleBtn(3, '#btnUpdcde-3', toggLabelC1, toggLabelC2);
+				toggleBtn(4, '#btnUpdcde-4', toggLabelD1, toggLabelD2);
+				toggleBtn(5, '#btnUpdcde-5', toggLabelE1, toggLabelE2);
+				toggleBtn(6, '#btnUpdcde-6', toggLabelF1, toggLabelF2);
+
+				$('.cursor i').removeClass('d-none');
+				showToggle(toggLabelA1, toggLabelA2);
+				setBtnActive('#btnUpdcde-', listBtnUpdcde);
+				delChar('#btnUpdcde-48');
+				return;
+			}
+			case 'autocr': {
+				let count = 1;
+				let toggLabelA1 = listBtnAutocr[1][0];
+				let toggLabelA2 = 'off';
+
+				for (let varAutocr = 0; varAutocr < listBtnAutocr.length; varAutocr++) {
+					generateButtonMenu('#autocr-menu-btn', 'btnAutocr-', varAutocr, listBtnAutocr[varAutocr][0]);
+					registToTree(varAutocr, listBtnAutocr[varAutocr][0], 2);
+					$('#btnAutocr-' + varAutocr).on("click", { num: varAutocr }, fnAutocr);
+				}
+
+				function fnAutocr(event) {
+					let id = event.data.num;
+
+					if (listBtnAutocr[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnAutocr-', id, listBtnAutocr[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+								console.log(id + ' fnAutocr called');
+								//event.stopImmediatePropagation();
+								initiateToggleBtn('#btnAutocr-', id, listBtnAutocr[id][0]);
+
+								setTimeout(function () {
+									$('#input-btn-out').prepend('<span class="mr-2">autocr</span>');
+								}, 125);
+								break;
+							case 40:
+								console.log(id + ' fnAutocr called');
+								event.stopImmediatePropagation();
+								backNav('#btnAutocr-', listBtnAutocr.length, '#autocr-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[36]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnAutocr called');
+								event.stopImmediatePropagation();
+								backNav('#btnAutocr-', listBtnAutocr.length, '#autocr-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnAutocr called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnAutocr-', listBtnAutocr);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnAutocr-' + count).removeClass('active');
+										forceBack('#btnAutocr-', listBtnAutocr.length, '#autocr-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				toggleBtn(1, '#btnAutocr-1', toggLabelA1, toggLabelA2);
+				showToggle(toggLabelA1, toggLabelA2);
+				changeVKWidth('12%', '59%');
+				setBtnActive('#btnAutocr-', listBtnAutocr);
+				$('#input-btn-out').prepend('<span class="mr-2">autocr</span>');
+				delChar('#btnAutocr-48');
+				return;
+			}
+			case 'toldin': {
+				let count = 0;
+				const btn1 = [listBtnToldin[3][0], 'ras', 'mach'];
+				const btn2 = [listBtnToldin[4][0], 'latlng', 'georef'];
+				let toggLabelA1 = listBtnToldin[0][0];
+				let toggLabelA2 = 'manual';
+				let toggLabelB1 = listBtnToldin[1][0];
+				let toggLabelB2 = 'ahdg';
+				let toggLabelC1 = listBtnToldin[2][0];
+				let toggLabelC2 = 'fl';
+
+				for (let varToldin = 0; varToldin < listBtnToldin.length; varToldin++) {
+					generateButtonMenu('#toldin-menu-btn', 'btnToldin-', varToldin, listBtnToldin[varToldin][0]);
+					registToTree(varToldin, listBtnToldin[varToldin][0], 5);
+					$('#btnToldin-' + varToldin).on("click", { num: varToldin }, fnToldin);
+				}
+
+				function fnToldin(event) {
+					let id = event.data.num;
+
+					if (listBtnToldin[id][0] != '') {
+						if (id < 5) {
+							initiateLoadedMenu('#btnToldin-', id, listBtnToldin[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 0:
+								console.log(id + ' fnToldin called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								initiateToggleBtn('#btnToldin-', id, listBtnToldin[id][0]);
+								hideNumBtn('#btnToldin-', 30, 40);
+								$('#btnToldin-' + 44).children('span').hide();
+								$('#btnToldin-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
+								break;
+							case 1:
+								console.log(id + ' fnToldin called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								initiateToggleBtn('#btnToldin-', id, listBtnToldin[id][0]);
+
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnToldin-', 30, 40, listBtnToldin);
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									callAlphaVK('#btnToldin-');
+								}, 125);
+								break;
+							case 2:
+								console.log(id + ' fnToldin called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								initiateToggleBtn('#btnToldin-', id, listBtnToldin[id][0]);
+
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnToldin-', 30, 40, listBtnToldin);
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									callAlphaVK('#btnToldin-');
+								}, 125);
+								break;
+							case 3:
+								console.log(id + ' fnToldin called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								toggleThreeState(btn1, '#btnToldin-' + id, id);
+
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnToldin-', 30, 40, listBtnToldin);
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									callAlphaVK('#btnToldin-');
+								}, 125);
+								break;
+							case 4:
+								console.log(id + ' fnToldin called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+
+								toggleThreeState(btn2, '#btnToldin-' + id, id);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnToldin-', 30, 40);
+
+								if ($('#btnToldin-' + id).text() != 'btm') {
+									$('.cursor i').removeClass('d-none');
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									callAlphaVK('#btnToldin-');
+								} else {
+									$('#btnToldin-' + 44).children('span').hide();
+									$('#btnToldin-' + 44).off();
+									document.getElementById('input-VK').placeholder = '';
+								}
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								backNav('#btnToldin-', listBtnToldin.length, '#toldin-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[36]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnToldin called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+
+								backNav('#btnToldin-', listBtnToldin.length, '#toldin-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnToldin called');
+								event.stopImmediatePropagation();
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 5) {
+										count++;
+										nextStep(count, '#btnToldin-', listBtnToldin);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+										document.getElementById('input-VK').placeholder = '';
+
+										switch (count) {
+											case 1:
+												showToggle(toggLabelB1, toggLabelB2);
+												$('.cursor i').removeClass('d-none');
+												showNumBtn('#btnToldin-', 30, 40, listBtnToldin);
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												callAlphaVK('#btnToldin-');
+												break;
+											case 2:
+												showToggle(toggLabelC1, toggLabelC2);
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+											case 3:
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+
+												initiateToggleThree(btn1);
+												break;
+											case 4:
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+
+												initiateToggleThree(btn2);
+												hideNumBtn('#btnToldin-', 30, 40);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnToldin-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnToldin-', listBtnToldin.length, '#toldin-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[36]);
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnToldin, id);
+				}
+
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnToldin-');
+				});
+
+				$('#btnToldin-' + 44).children('span').hide();
+				toggleBtn(0, '#btnToldin-0', toggLabelA1, toggLabelA2);
+				toggleBtn(1, '#btnToldin-1', toggLabelB1, toggLabelB2);
+				toggleBtn(2, '#btnToldin-2', toggLabelC1, toggLabelC2);
+				showToggle(toggLabelA1, toggLabelA2);
+				hideNumBtn('#btnToldin-', 30, 40);
+				setBtnActive('#btnToldin-', listBtnToldin);
+				delChar('#btnToldin-48');
+				return;
+			}
+			case 'updtrk': {
+				let count = 1;
+				const btn1 = [listBtnUpdtrk[3][0], 'ras', 'mach'];
+				const btn2 = [listBtnUpdtrk[4][0], 'latlng', 'georef'];
+				let toggLabelB1 = listBtnUpdtrk[1][0];
+				let toggLabelB2 = 'ahdg';
+				let toggLabelC1 = listBtnUpdtrk[2][0];
+				let toggLabelC2 = 'fl';
+			
+				for (let varUpdtrk = 0; varUpdtrk < listBtnUpdtrk.length; varUpdtrk++) {
+					generateButtonMenu('#updtrk-menu-btn', 'btnUpdtrk-', varUpdtrk, listBtnUpdtrk[varUpdtrk][0]);
+					registToTree(varUpdtrk, listBtnUpdtrk[varUpdtrk][0], 5);
+					$('#btnUpdtrk-' + varUpdtrk).on("click", { num: varUpdtrk }, fnUpdtrk);
+				}
+			
+				function fnUpdtrk(event) {
+					let id = event.data.num;
+			
+					if (listBtnUpdtrk[id][0] != '') {
+						if (id < 5) {
+							initiateLoadedMenu('#btnUpdtrk-', id, listBtnUpdtrk[id][0]);
+							count = id;
+						}
+			
+						switch (id) {
+							case 1:
+								console.log(id + ' fnUpdtrk called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								initiateToggleBtn('#btnUpdtrk-', id, listBtnUpdtrk[id][0]);
+			
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									callAlphaVK('#btnUpdtrk-');
+								}, 125);
+								break;
+							case 2:
+								console.log(id + ' fnUpdtrk called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+								initiateToggleBtn('#btnUpdtrk-', id, listBtnUpdtrk[id][0]);
+			
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									callAlphaVK('#btnUpdtrk-');
+								}, 125);
+								break;
+							case 3:
+								console.log(id + ' fnUpdtrk called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+								toggleThreeState(btn1, '#btnUpdtrk-' + id, id);
+			
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									callAlphaVK('#btnUpdtrk-');
+								}, 125);
+								break;
+							case 4:
+								console.log(id + ' fnUpdtrk called');
+								event.stopImmediatePropagation();
+								$('.cursor i').removeClass('d-none');
+								$('#toggle-box-a, #toggle-box-b').empty();
+								$('#toggle-divider').hide();
+			
+								toggleThreeState(btn2, '#btnUpdtrk-' + id, id);
+								$('.cursor i').addClass('d-none');
+								hideNumBtn('#btnUpdtrk-', 30, 40);
+			
+								if ($('#btnUpdtrk-' + id).text() != 'btm') {
+									$('.cursor i').removeClass('d-none');
+									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+									callAlphaVK('#btnUpdtrk-');
+								} else {
+									$('#btnUpdtrk-' + 44).children('span').hide();
+									$('#btnUpdtrk-' + 44).off();
+									document.getElementById('input-VK').placeholder = '';
+								}
+								break;
+							case 40:
+								console.log(id + ' fnLine called');
+								event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+			
+								backNav('#btnUpdtrk-', listBtnUpdtrk.length, '#updtrk-menu-btn', '#track-menu&t=0.15s', 'track');
+			
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[36]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnUpdtrk called');
+								//event.stopImmediatePropagation();
+								$('#three-toggle').empty();
+			
+								backNav('#btnUpdtrk-', listBtnUpdtrk.length, '#updtrk-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnUpdtrk called');
+								event.stopImmediatePropagation();
+			
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 5) {
+										count++;
+										nextStep(count, '#btnUpdtrk-', listBtnUpdtrk);
+										$('#tree-' + (count - 1)).show();
+										$('#three-toggle').empty();
+										document.getElementById('input-VK').placeholder = '';
+			
+										switch (count) {
+											case 2:
+												showToggle(toggLabelC1, toggLabelC2);
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												break;
+											case 3:
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+			
+												initiateToggleThree(btn1);
+												break;
+											case 4:
+												$('.cursor i').removeClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
+			
+												initiateToggleThree(btn2);
+												hideNumBtn('#btnUpdtrk-', 30, 40);
+												break;
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnUpdtrk-' + count).removeClass('active');
+										$('#three-toggle').empty();
+										forceBack('#btnUpdtrk-', listBtnUpdtrk.length, '#updtrk-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+			
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[36]);
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnUpdtrk, id);
+				}
+			
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnUpdtrk-');
+				});
+			
+				$('#btnUpdtrk-' + 44).children('span').hide();
+				toggleBtn(1, '#btnUpdtrk-1', toggLabelB1, toggLabelB2);
+				toggleBtn(2, '#btnUpdtrk-2', toggLabelC1, toggLabelC2);
+				showToggle(toggLabelB1, toggLabelB2);
+				$('.cursor i').removeClass('d-none');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				callAlphaVK('#btnUpdtrk-');
+				setBtnActive('#btnUpdtrk-', listBtnUpdtrk);
+				delChar('#btnUpdtrk-48');
+				return;
+			}
+			case 'swap': {
+				let count = 1;
+				let toggLabelB1 = listBtnSwap[1][0];
+				let toggLabelB2 = 'trkcs1';
+				let toggLabelC1 = listBtnSwap[2][0];
+				let toggLabelC2 = 'TRKCS2';
+			
+				for (let varSwap = 0; varSwap < listBtnSwap.length; varSwap++) {
+					generateButtonMenu('#swap-menu-btn', 'btnSwap-', varSwap, listBtnSwap[varSwap][0]);
+					registToTree(varSwap, listBtnSwap[varSwap][0], 3);
+					$('#btnSwap-' + varSwap).on("click", { num: varSwap }, fnSwap);
+			
+					if (varSwap < 2) {
+						$('#btnSwap-' + varSwap).addClass('text-none');
+					}
+				}
+			
+				function fnSwap(event) {
+					let id = event.data.num;
+			
+					if (listBtnSwap[id][0] != '') {
+						if (id < 3) {
+							initiateLoadedMenu('#btnSwap-', id, listBtnSwap[id][0]);
+							count = id;
+						}
+			
+						switch (id) {
+							case 1:
+								console.log(id + ' fnSwap called');
+								initiateToggleBtn('#btnSwap-', id, listBtnSwap[id][2]);
+								$('.cursor i').addClass('d-none');
+								break;
+							case 2:
+								console.log(id + ' fnSwap called');
+								initiateToggleBtn('#btnSwap-', id, listBtnSwap[id][3]);
+								$('.cursor i').addClass('d-none');
+								break;
+							case 40:
+								console.log(id + ' fnSwap called');
+								event.stopImmediatePropagation();
+								backNav('#btnSwap-', listBtnSwap.length, '#swap-menu-btn', '#track-menu&t=0.15s', 'track');
+			
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[36]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnSwap called');
+								event.stopImmediatePropagation();
+								backNav('#btnSwap-', listBtnSwap.length, '#swap-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnSwap called');
+								event.stopImmediatePropagation()
+			
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 3) {
+										count++;
+										nextStep(count, '#btnSwap-', listBtnSwap);
+										$('#tree-' + (count - 1)).show();
+										$('#toggle-box-out').hide();
+										document.getElementById('input-VK').placeholder = '';
+			
+										switch (count) {
+											case 1: {
+												event.stopImmediatePropagation();
+												showToggle(toggLabelB1, toggLabelB2);
+												return;
+											}
+											case 2: {
+												event.stopImmediatePropagation();
+												showToggle(toggLabelC1, toggLabelC2);
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												return;
+											}
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnSwap-' + count).removeClass('active');
+										forceBack('#btnSwap-', listBtnSwap.length, '#swap-menu-btn', '#track-menu&t=0.15s');
+										count = 1;
+										createButton('track');
+			
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[36]);
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnSwap, id);
+				}
+			
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnSwap-');
+				});
+			
+				toggleBtn(1, '#btnSwap-1', toggLabelB1, toggLabelB2);
+				toggleBtn(2, '#btnSwap-2', toggLabelC1, toggLabelC2);
+				showToggle(toggLabelB1, toggLabelB2);
+				setBtnActive('#btnSwap-', listBtnSwap);
+				delChar('#keyboard-clear, #btnSwap-48');
+				$('.cursor i').removeClass('d-none');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				callAlphaVK('#btnSwap-');
+				return;
+			}
+			case 'radstr': {
+				let count = 1;
+			
+				for (let varRadstr = 0; varRadstr < listBtnRadstr.length; varRadstr++) {
+					generateButtonMenu('#radstr-menu-btn', 'btnRadstr-', varRadstr, listBtnRadstr[varRadstr][0]);
+					registToTree(varRadstr, listBtnRadstr[varRadstr][0], 2);
+					$('#btnRadstr-' + varRadstr).on("click", { num: varRadstr }, fnRadstr);
+				}
+			
+				function fnRadstr(event) {
+					let id = event.data.num;
+			
+					if (listBtnRadstr[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnRadstr-', id, listBtnRadstr[id][0]);
+							count = id;
+						}
+			
+						switch (id) {
+							case 1:
+								console.log(id + ' fnRadstr called');
+								event.stopImmediatePropagation()
+								break;
+							case 40:
+								console.log(id + ' fnRadstr called');
+								//event.stopImmediatePropagation();
+			
+								backNav('#btnRadstr-', listBtnRadstr.length, '#radstr-menu-btn', '#track-menu&t=0.15s', 'track');
+			
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[36]);
+									resetVKWidth();
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnRadstr called');
+								//event.stopImmediatePropagation();
+			
+								backNav('#btnRadstr-', listBtnRadstr.length, '#radstr-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								$('#three-toggle').empty();
+			
+								setTimeout(function () {
+									resetVKWidth();
+								}, 125);
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnRadstr called');
+								event.stopImmediatePropagation();
+			
+								if ($('#input-VK').val() != '') {
+									/**/
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+			
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnRadstr-', listBtnRadstr);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnRadstr-' + count).removeClass('active');
+										forceBack('#btnRadstr-', listBtnRadstr.length, '#radstr-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+			
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[36]);
+											resetVKWidth();
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnRadstr, id);
+				}
+			
+				setBtnActive('#btnRadstr-', listBtnRadstr);
+				hideRightNav();
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnRadstr-48');
+				return;
+			}
+			case 'trkref': {
+				let count = 1;
+				let toggLabelB1 = listBtnTrkref[1][0];
+				let toggLabelB2 = 'next';
+			
+				for (let varTrkref = 0; varTrkref < listBtnTrkref.length; varTrkref++) {
+					generateButtonMenu('#trkref-menu-btn', 'btnTrkref-', varTrkref, listBtnTrkref[varTrkref][0]);
+					registToTree(varTrkref, listBtnTrkref[varTrkref][0], 2);
+					$('#btnTrkref-' + varTrkref).on("click", { num: varTrkref }, fnTrkref);
+			
+					if (varTrkref < 6) {
+						$('#btnTrkref-' + varTrkref).attr('value', 'tg-off');
+					}
+				}
+			
+				function fnTrkref(event) {
+					let id = event.data.num;
+			
+					if (listBtnTrkref[id][0] != '') {
+						if (id < 2) {
+							initiateLoadedMenu('#btnTrkref-', id, listBtnTrkref[id][0]);
+							count = id;
+						}
+			
+						switch (id) {
+							case 1:
+								console.log(id + ' fnTrkref called');
+								initiateToggleBtn('#btnTrkref-', id, listBtnTrkref[id][2]);
+
+								$('#input-btn-out').prepend('<span class="mr-2">Trkref</span>');
+								$('#btnTrkref-' + 44).children('span').hide();
+								document.getElementById('input-VK').placeholder = '';
+			
+								if ($('#btnTrkref-' + id).attr('value') != 'tg-off') {
+									setTimeout(function () {
+										document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+										$('#input-VK').val('');
+										$('.cursor i').removeClass('d-none');
+										$('#btnTrkref-' + 44).children('span').show();
+									}, 125);
+								}
+								break;
+							case 40:
+								console.log(id + ' fnTrkref called');
+								event.stopImmediatePropagation();
+								backNav('#btnTrkref-', listBtnTrkref.length, '#trkref-menu-btn', '#track-menu&t=0.15s', 'track');
+			
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[36]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnTrkref called');
+								event.stopImmediatePropagation();
+								backNav('#btnTrkref-', listBtnTrkref.length, '#trkref-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnTrkref called');
+								event.stopImmediatePropagation()
+			
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnTrkref-', listBtnTrkref);
+										$('#tree-' + (count - 1)).show();
+										$('#toggle-box-out').hide();
+										document.getElementById('input-VK').placeholder = '';
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnTrkref-' + count).removeClass('active');
+										forceBack('#btnTrkref-', listBtnTrkref.length, '#trkref-menu-btn', '#track-menu&t=0.15s');
+										count = 1;
+										createButton('track');
+			
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[36]);
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnTrkref, id);
+				}
+			
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnTrkref-');
+				});
+			
+				toggleBtn(1, '#btnTrkref-1', toggLabelB1, toggLabelB2);
+				showToggle(toggLabelB1, toggLabelB2);
+				setBtnActive('#btnTrkref-', listBtnTrkref);
+				delChar('#keyboard-clear, #btnTrkref-48');
+				$('.cursor i').removeClass('d-none');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				callAlphaVK('#btnTrkref-');
+				return;
+			}
+			case 'merge': {
+				let count = 1;
+				let toggLabelB1 = listBtnMerge[1][0];
+				let toggLabelB2 = 'trkcs1';
+				let toggLabelC1 = listBtnMerge[2][0];
+				let toggLabelC2 = 'TRKCS2';
+			
+				for (let varMerge = 0; varMerge < listBtnMerge.length; varMerge++) {
+					generateButtonMenu('#merge-menu-btn', 'btnMerge-', varMerge, listBtnMerge[varMerge][0]);
+					registToTree(varMerge, listBtnMerge[varMerge][0], 3);
+					$('#btnMerge-' + varMerge).on("click", { num: varMerge }, fnMerge);
+			
+					if (varMerge < 2) {
+						$('#btnMerge-' + varMerge).addClass('text-none');
+					}
+				}
+			
+				function fnMerge(event) {
+					let id = event.data.num;
+			
+					if (listBtnMerge[id][0] != '') {
+						if (id < 3) {
+							initiateLoadedMenu('#btnMerge-', id, listBtnMerge[id][0]);
+							count = id;
+						}
+			
+						switch (id) {
+							case 1:
+								console.log(id + ' fnMerge called');
+								initiateToggleBtn('#btnMerge-', id, listBtnMerge[id][2]);
+								$('.cursor i').addClass('d-none');
+								break;
+							case 2:
+								console.log(id + ' fnMerge called');
+								initiateToggleBtn('#btnMerge-', id, listBtnMerge[id][3]);
+								$('.cursor i').addClass('d-none');
+								break;
+							case 40:
+								console.log(id + ' fnMerge called');
+								event.stopImmediatePropagation();
+								backNav('#btnMerge-', listBtnMerge.length, '#merge-menu-btn', '#track-menu&t=0.15s', 'track');
+			
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[36]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnMerge called');
+								event.stopImmediatePropagation();
+								backNav('#btnMerge-', listBtnMerge.length, '#merge-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnMerge called');
+								event.stopImmediatePropagation()
+			
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 3) {
+										count++;
+										nextStep(count, '#btnMerge-', listBtnMerge);
+										$('#tree-' + (count - 1)).show();
+										$('#toggle-box-out').hide();
+										document.getElementById('input-VK').placeholder = '';
+			
+										switch (count) {
+											case 1: {
+												event.stopImmediatePropagation();
+												showToggle(toggLabelB1, toggLabelB2);
+												return;
+											}
+											case 2: {
+												event.stopImmediatePropagation();
+												showToggle(toggLabelC1, toggLabelC2);
+												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												return;
+											}
+										}
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnMerge-' + count).removeClass('active');
+										forceBack('#btnMerge-', listBtnMerge.length, '#merge-menu-btn', '#track-menu&t=0.15s');
+										count = 1;
+										createButton('track');
+			
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[36]);
+										}, 125);
+									}
+								}
+								break;
+						}
+					}
+					bindBtnNumber(listBtnMerge, id);
+				}
+			
+				$('#keyboard-enter').on('click', function () {
+					window.location = '#closed&t=0.15s';
+					showBtmNav('#btnMerge-');
+				});
+			
+				toggleBtn(1, '#btnMerge-1', toggLabelB1, toggLabelB2);
+				toggleBtn(2, '#btnMerge-2', toggLabelC1, toggLabelC2);
+				showToggle(toggLabelB1, toggLabelB2);
+				setBtnActive('#btnMerge-', listBtnMerge);
+				delChar('#keyboard-clear, #btnMerge-48');
+				$('.cursor i').removeClass('d-none');
+				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+				callAlphaVK('#btnSwap-');
 				return;
 			}
 			case 'airmov': {
@@ -6402,7 +7694,7 @@ function createButton(buttonName) {
 								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnSelfp called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnSelfp-', listBtnSelfp.length, '#selfp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
@@ -6541,7 +7833,7 @@ function createButton(buttonName) {
 								}
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnAdtpt called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnAdtpt-', listBtnAdtpt.length, '#adtpt-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
@@ -6689,7 +7981,7 @@ function createButton(buttonName) {
 								}
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnAmtpt called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnAmtpt-', listBtnAmtpt.length, '#amtpt-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
@@ -6815,7 +8107,7 @@ function createButton(buttonName) {
 								$('.cursor i').addClass('d-none');
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnStdfp called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnStdfp-', listBtnStdfp.length, '#stdfp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
@@ -6906,7 +8198,7 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnDeltpcalled');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnDeltp-', listBtnDeltp.length, '#deltp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
@@ -7092,7 +8384,7 @@ function createButton(buttonName) {
 								count = id + 2;
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnAdsfp called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnAdsfp-', listBtnAdsfp.length, '#adsfp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
@@ -7276,7 +8568,7 @@ function createButton(buttonName) {
 								stateForLegBtn = id;
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnAmfp called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnAmfp-', listBtnAmfp.length, '#amfp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
@@ -7668,7 +8960,7 @@ function createButton(buttonName) {
 								stateForDaysBtn = id;
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnSchdle called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnSchdle-', listBtnSchdle.length, '#schdle-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
@@ -7946,7 +9238,7 @@ function createButton(buttonName) {
 								count = id + 2;
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnAdcfp called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnAdcfp-', listBtnAdcfp.length, '#adcfp-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
@@ -8230,7 +9522,7 @@ function createButton(buttonName) {
 								}
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnSfpcur called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnSfpcur-', listBtnSfpcur.length, '#sfpcur-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
@@ -8336,7 +9628,7 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								break;
 							case 40:
-								console.log(id + ' fnLine called');
+								console.log(id + ' fnCfpact called');
 								//event.stopImmediatePropagation();
 
 								backNav('#btnCfpact-', listBtnCfpact.length, '#cfpact-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
