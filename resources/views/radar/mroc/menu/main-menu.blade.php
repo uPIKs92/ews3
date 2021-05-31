@@ -135,6 +135,51 @@
         <div lj-type="frame" lj-name="track-menu" lj-transition="fade">
             <ul id="track-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
+        <div lj-type="frame" lj-name="ainit-menu" lj-transition="fade">
+            <ul id="ainit-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="init-menu" lj-transition="fade">
+            <ul id="init-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="updcde-menu" lj-transition="fade">
+            <ul id="updcde-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="remupd-menu" lj-transition="fade">
+            <ul id="remupd-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="autocr-menu" lj-transition="fade">
+            <ul id="autocr-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="toldin-menu" lj-transition="fade">
+            <ul id="toldin-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="updtrk-menu" lj-transition="fade">
+            <ul id="updtrk-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="swap-menu" lj-transition="fade">
+            <ul id="swap-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="trksrc-menu" lj-transition="fade">
+            <ul id="trksrc-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="radstr-menu" lj-transition="fade">
+            <ul id="radstr-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="trkref-menu" lj-transition="fade">
+            <ul id="trkref-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="merge-menu" lj-transition="fade">
+            <ul id="merge-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="setnai-menu" lj-transition="fade">
+            <ul id="setnai-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="setnac-menu" lj-transition="fade">
+            <ul id="setnac-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
+        <div lj-type="frame" lj-name="corr-menu" lj-transition="fade">
+            <ul id="corr-menu-btn" class="m-0 p-0 form-inline"></ul>
+        </div>
         <div lj-type="frame" lj-name="airmov-menu" lj-transition="fade">
             <ul id="airmov-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
