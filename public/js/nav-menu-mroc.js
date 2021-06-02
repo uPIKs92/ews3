@@ -2859,189 +2859,81 @@ function createButton(buttonName) {
 								backNav('#btnWeapon-', listBtnWeapon.length, '#weapon-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 5:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#trial-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('trial');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 6:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#delay-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('delay');
+								callBtnMenu(id, listBtnLogon[35][0], 'delay');
 								break;
 							case 8:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#recovr-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('recovr');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 9:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#canmis-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('canmis');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 10:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out, #tree-btn-out').empty();
-								window.location = '#totes-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('totes');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 11:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#idtrk-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('idtrk');
+								callBtnMenu(id, listBtnLogon[35][0], 'idtrk');
 								document.getElementById('input-btn-out').innerHTML = listBtnWeapon[id];
 								break;
 							case 12:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#runway-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('runway');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								stateForColourBtn = id;
 								stateForStatesBtn = id;
 								break;
 							case 14:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#defftr-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('defftr');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 16:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#tactic-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('tactic');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 18:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#hndovr-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('hndovr');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnWeapon[id];
 								break;
 							case 19:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#tkover-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('tkover');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 20:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out, #tree-btn-out').empty();
-								window.location = '#maps-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('maps');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 21:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#trktyp-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('trktyp');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnWeapon[id];
 								break;
 							case 22:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#clrass-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('clrass');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 24:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#amdftr-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('amdftr');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 28:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#oncap-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('oncap');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 29:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#samtrk-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('samtrk');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 							case 34:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#ftrres-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id]);
-								createButton('ftrres');
+								callBtnMenu(id, listBtnLogon[35][0], listBtnWeapon[id]);
 								break;
 						}
 					}
@@ -4613,7 +4505,7 @@ function createButton(buttonName) {
 							case 40:
 								console.log(id + ' fnDelay called');
 								//event.stopImmediatePropagation();
-								backNav('#btnDelay-', listBtnDelay.length, '#delay-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+								backNav('#btnHndovr-', listBtnHndovr.length, '#hndovr-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
 
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[35]);
