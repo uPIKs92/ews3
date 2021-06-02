@@ -6276,7 +6276,6 @@ function createButton(buttonName) {
 				}
 
 				setBtnActive('#btnRefsrc-', listBtnRefsrc);
-				hideRightNav();
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnRefsrc-48');
 				return;
@@ -6350,7 +6349,6 @@ function createButton(buttonName) {
 				}
 
 				setBtnActive('#btnInit-', listBtnInit);
-				hideRightNav();
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnInit-48');
 				return;
@@ -6874,29 +6872,29 @@ function createButton(buttonName) {
 				let toggLabelB2 = 'ahdg';
 				let toggLabelC1 = listBtnUpdtrk[2][0];
 				let toggLabelC2 = 'fl';
-			
+
 				for (let varUpdtrk = 0; varUpdtrk < listBtnUpdtrk.length; varUpdtrk++) {
 					generateButtonMenu('#updtrk-menu-btn', 'btnUpdtrk-', varUpdtrk, listBtnUpdtrk[varUpdtrk][0]);
 					registToTree(varUpdtrk, listBtnUpdtrk[varUpdtrk][0], 5);
 					$('#btnUpdtrk-' + varUpdtrk).on("click", { num: varUpdtrk }, fnUpdtrk);
 				}
-			
+
 				function fnUpdtrk(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnUpdtrk[id][0] != '') {
 						if (id < 5) {
 							initiateLoadedMenu('#btnUpdtrk-', id, listBtnUpdtrk[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 1:
 								console.log(id + ' fnUpdtrk called');
 								//event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								initiateToggleBtn('#btnUpdtrk-', id, listBtnUpdtrk[id][0]);
-			
+
 								setTimeout(function () {
 									$('.cursor i').removeClass('d-none');
 									showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
@@ -6909,7 +6907,7 @@ function createButton(buttonName) {
 								//event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								initiateToggleBtn('#btnUpdtrk-', id, listBtnUpdtrk[id][0]);
-			
+
 								setTimeout(function () {
 									$('.cursor i').removeClass('d-none');
 									showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
@@ -6924,7 +6922,7 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 								toggleThreeState(btn1, '#btnUpdtrk-' + id, id);
-			
+
 								setTimeout(function () {
 									$('.cursor i').removeClass('d-none');
 									showNumBtn('#btnUpdtrk-', 30, 40, listBtnUpdtrk);
@@ -6938,11 +6936,11 @@ function createButton(buttonName) {
 								$('.cursor i').removeClass('d-none');
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
-			
+
 								toggleThreeState(btn2, '#btnUpdtrk-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnUpdtrk-', 30, 40);
-			
+
 								if ($('#btnUpdtrk-' + id).text() != 'btm') {
 									$('.cursor i').removeClass('d-none');
 									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
@@ -6957,9 +6955,9 @@ function createButton(buttonName) {
 								console.log(id + ' fnLine called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
-			
+
 								backNav('#btnUpdtrk-', listBtnUpdtrk.length, '#updtrk-menu-btn', '#track-menu&t=0.15s', 'track');
-			
+
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
@@ -6968,7 +6966,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnUpdtrk called');
 								//event.stopImmediatePropagation();
 								$('#three-toggle').empty();
-			
+
 								backNav('#btnUpdtrk-', listBtnUpdtrk.length, '#updtrk-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								$('#three-toggle').empty();
 								break;
@@ -6978,7 +6976,7 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnUpdtrk called');
 								event.stopImmediatePropagation();
-			
+
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
@@ -6990,7 +6988,7 @@ function createButton(buttonName) {
 										$('#tree-' + (count - 1)).show();
 										$('#three-toggle').empty();
 										document.getElementById('input-VK').placeholder = '';
-			
+
 										switch (count) {
 											case 2:
 												showToggle(toggLabelC1, toggLabelC2);
@@ -7001,14 +6999,14 @@ function createButton(buttonName) {
 												$('#toggle-box-a, #toggle-box-b').empty();
 												$('#toggle-divider').hide();
 												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-			
+
 												initiateToggleThree(btn1);
 												break;
 											case 4:
 												$('.cursor i').removeClass('d-none');
 												$('#toggle-box-a, #toggle-box-b').empty();
 												$('#toggle-divider').hide();
-			
+
 												initiateToggleThree(btn2);
 												hideNumBtn('#btnUpdtrk-', 30, 40);
 												break;
@@ -7020,7 +7018,7 @@ function createButton(buttonName) {
 										forceBack('#btnUpdtrk-', listBtnUpdtrk.length, '#updtrk-menu-btn', '#track-menu&t=0.15s');
 										count = 0;
 										createButton('track');
-			
+
 										setTimeout(function () {
 											printBtnTree(listBtnLogon[36]);
 										}, 125);
@@ -7031,12 +7029,12 @@ function createButton(buttonName) {
 					}
 					bindBtnNumber(listBtnUpdtrk, id);
 				}
-			
+
 				$('#keyboard-enter').on('click', function () {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnUpdtrk-');
 				});
-			
+
 				$('#btnUpdtrk-' + 44).children('span').hide();
 				toggleBtn(1, '#btnUpdtrk-1', toggLabelB1, toggLabelB2);
 				toggleBtn(2, '#btnUpdtrk-2', toggLabelC1, toggLabelC2);
@@ -7054,26 +7052,26 @@ function createButton(buttonName) {
 				let toggLabelB2 = 'trkcs1';
 				let toggLabelC1 = listBtnSwap[2][0];
 				let toggLabelC2 = 'TRKCS2';
-			
+
 				for (let varSwap = 0; varSwap < listBtnSwap.length; varSwap++) {
 					generateButtonMenu('#swap-menu-btn', 'btnSwap-', varSwap, listBtnSwap[varSwap][0]);
 					registToTree(varSwap, listBtnSwap[varSwap][0], 3);
 					$('#btnSwap-' + varSwap).on("click", { num: varSwap }, fnSwap);
-			
+
 					if (varSwap < 2) {
 						$('#btnSwap-' + varSwap).addClass('text-none');
 					}
 				}
-			
+
 				function fnSwap(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnSwap[id][0] != '') {
 						if (id < 3) {
 							initiateLoadedMenu('#btnSwap-', id, listBtnSwap[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 1:
 								console.log(id + ' fnSwap called');
@@ -7089,7 +7087,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnSwap called');
 								event.stopImmediatePropagation();
 								backNav('#btnSwap-', listBtnSwap.length, '#swap-menu-btn', '#track-menu&t=0.15s', 'track');
-			
+
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
@@ -7105,7 +7103,7 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnSwap called');
 								event.stopImmediatePropagation()
-			
+
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
@@ -7117,7 +7115,7 @@ function createButton(buttonName) {
 										$('#tree-' + (count - 1)).show();
 										$('#toggle-box-out').hide();
 										document.getElementById('input-VK').placeholder = '';
-			
+
 										switch (count) {
 											case 1: {
 												event.stopImmediatePropagation();
@@ -7137,7 +7135,7 @@ function createButton(buttonName) {
 										forceBack('#btnSwap-', listBtnSwap.length, '#swap-menu-btn', '#track-menu&t=0.15s');
 										count = 1;
 										createButton('track');
-			
+
 										setTimeout(function () {
 											printBtnTree(listBtnLogon[36]);
 										}, 125);
@@ -7148,12 +7146,12 @@ function createButton(buttonName) {
 					}
 					bindBtnNumber(listBtnSwap, id);
 				}
-			
+
 				$('#keyboard-enter').on('click', function () {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnSwap-');
 				});
-			
+
 				toggleBtn(1, '#btnSwap-1', toggLabelB1, toggLabelB2);
 				toggleBtn(2, '#btnSwap-2', toggLabelC1, toggLabelC2);
 				showToggle(toggLabelB1, toggLabelB2);
@@ -7164,24 +7162,106 @@ function createButton(buttonName) {
 				callAlphaVK('#btnSwap-');
 				return;
 			}
+			case 'trksrc': {
+				let count = 0;
+
+				for (let varTrksrc = 0; varTrksrc < listBtnTrksrc.length; varTrksrc++) {
+					generateButtonMenu('#trksrc-menu-btn', 'btnTrksrc-', varTrksrc, listBtnTrksrc[varTrksrc][0]);
+					registToTree(varTrksrc, listBtnTrksrc[varTrksrc][0], 10);
+					$('#btnTrksrc-' + varTrksrc).on("click", { num: varTrksrc }, fnTrksrc);
+				}
+
+				function fnTrksrc(event) {
+					let id = event.data.num;
+
+					if (listBtnTrksrc[id][0] != '') {
+						if (id < 5) {
+							initiateLoadedMenu('#btnTrksrc-', id, listBtnTrksrc[id][0]);
+							count = id;
+						}
+
+						switch (id) {
+							case 1:
+							case 2:
+							case 3:
+							case 4:
+								console.log(id + ' fnTrksrc called');
+								event.stopImmediatePropagation();
+								$('#tree-' + id).siblings().hide();
+								break;
+							case 5:
+							case 9:
+								console.log(id + ' fnTrksrc called');
+								event.stopImmediatePropagation();
+								$('#input-VK').val(listBtnTrksrc[id][0].toString());
+								break;
+							case 40:
+								console.log(id + ' fnTrksrc called');
+								event.stopImmediatePropagation();
+								backNav('#btnTrksrc-', listBtnTrksrc.length, '#trksrc-menu-btn', '#track-menu&t=0.15s', 'track');
+
+								setTimeout(function () {
+									printBtnTree(listBtnLogon[36]);
+								}, 125);
+								break;
+							case 42:
+								console.log(id + ' fnTrksrc called');
+								event.stopImmediatePropagation();
+								backNav('#btnTrksrc-', listBtnTrksrc.length, '#trksrc-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 47:
+								event.stopImmediatePropagation();
+								delCharByOne();
+								break;
+							case 49:
+								console.log(id + ' fnTrksrc called');
+								event.stopImmediatePropagation()
+
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).show();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									clearVK();
+								} else {
+									if (count < 1) {
+										count++;
+										nextStep(count, '#btnTrksrc-', listBtnTrksrc);
+										$('#tree-' + (count - 1)).show();
+									} else {
+										printMessage("COMMAND OK");
+										$('#btnTrksrc-' + count).removeClass('active');
+										forceBack('#btnTrksrc-', listBtnTrksrc.length, '#trksrc-menu-btn', '#track-menu&t=0.15s');
+										count = 0;
+										createButton('track');
+									}
+								}
+								break;
+						}
+					}
+				}
+
+				setBtnActive('#btnTrksrc-', listBtnTrksrc);
+				$('.cursor i').removeClass('d-none');
+				delChar('#btnTrksrc-48');
+				return;
+			}
 			case 'radstr': {
 				let count = 1;
-			
+
 				for (let varRadstr = 0; varRadstr < listBtnRadstr.length; varRadstr++) {
 					generateButtonMenu('#radstr-menu-btn', 'btnRadstr-', varRadstr, listBtnRadstr[varRadstr][0]);
 					registToTree(varRadstr, listBtnRadstr[varRadstr][0], 2);
 					$('#btnRadstr-' + varRadstr).on("click", { num: varRadstr }, fnRadstr);
 				}
-			
+
 				function fnRadstr(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnRadstr[id][0] != '') {
 						if (id < 2) {
 							initiateLoadedMenu('#btnRadstr-', id, listBtnRadstr[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 1:
 								console.log(id + ' fnRadstr called');
@@ -7190,9 +7270,9 @@ function createButton(buttonName) {
 							case 40:
 								console.log(id + ' fnRadstr called');
 								//event.stopImmediatePropagation();
-			
+
 								backNav('#btnRadstr-', listBtnRadstr.length, '#radstr-menu-btn', '#track-menu&t=0.15s', 'track');
-			
+
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[36]);
 									resetVKWidth();
@@ -7201,10 +7281,10 @@ function createButton(buttonName) {
 							case 42:
 								console.log(id + ' fnRadstr called');
 								//event.stopImmediatePropagation();
-			
+
 								backNav('#btnRadstr-', listBtnRadstr.length, '#radstr-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								$('#three-toggle').empty();
-			
+
 								setTimeout(function () {
 									resetVKWidth();
 								}, 125);
@@ -7216,12 +7296,12 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnRadstr called');
 								event.stopImmediatePropagation();
-			
+
 								if ($('#input-VK').val() != '') {
 									/**/
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-			
+
 									clearVK();
 								} else {
 									if (count < 1) {
@@ -7234,7 +7314,7 @@ function createButton(buttonName) {
 										forceBack('#btnRadstr-', listBtnRadstr.length, '#radstr-menu-btn', '#track-menu&t=0.15s');
 										count = 0;
 										createButton('track');
-			
+
 										setTimeout(function () {
 											printBtnTree(listBtnLogon[36]);
 											resetVKWidth();
@@ -7246,7 +7326,7 @@ function createButton(buttonName) {
 					}
 					bindBtnNumber(listBtnRadstr, id);
 				}
-			
+
 				setBtnActive('#btnRadstr-', listBtnRadstr);
 				hideRightNav();
 				$('.cursor i').removeClass('d-none');
@@ -7257,35 +7337,32 @@ function createButton(buttonName) {
 				let count = 1;
 				let toggLabelB1 = listBtnTrkref[1][0];
 				let toggLabelB2 = 'next';
-			
+
 				for (let varTrkref = 0; varTrkref < listBtnTrkref.length; varTrkref++) {
 					generateButtonMenu('#trkref-menu-btn', 'btnTrkref-', varTrkref, listBtnTrkref[varTrkref][0]);
 					registToTree(varTrkref, listBtnTrkref[varTrkref][0], 2);
 					$('#btnTrkref-' + varTrkref).on("click", { num: varTrkref }, fnTrkref);
-			
+
 					if (varTrkref < 6) {
 						$('#btnTrkref-' + varTrkref).attr('value', 'tg-off');
 					}
 				}
-			
+
 				function fnTrkref(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnTrkref[id][0] != '') {
 						if (id < 2) {
 							initiateLoadedMenu('#btnTrkref-', id, listBtnTrkref[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 1:
 								console.log(id + ' fnTrkref called');
 								initiateToggleBtn('#btnTrkref-', id, listBtnTrkref[id][2]);
+								resetVKWidth();
 
-								$('#input-btn-out').prepend('<span class="mr-2">Trkref</span>');
-								$('#btnTrkref-' + 44).children('span').hide();
-								document.getElementById('input-VK').placeholder = '';
-			
 								if ($('#btnTrkref-' + id).attr('value') != 'tg-off') {
 									setTimeout(function () {
 										document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
@@ -7293,21 +7370,31 @@ function createButton(buttonName) {
 										$('.cursor i').removeClass('d-none');
 										$('#btnTrkref-' + 44).children('span').show();
 									}, 125);
+								} else {
+									$('#btnTrkref-' + 44).children('span').hide();
+									document.getElementById('input-VK').placeholder = '';
+									changeVKWidth('12.5%', '59%');
+
+									setTimeout(function () {
+										$('#input-btn-out').prepend('<span class="mr-2">Trkref</span>');
+									}, 125);
 								}
 								break;
 							case 40:
 								console.log(id + ' fnTrkref called');
 								event.stopImmediatePropagation();
 								backNav('#btnTrkref-', listBtnTrkref.length, '#trkref-menu-btn', '#track-menu&t=0.15s', 'track');
-			
+
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[36]);
+									resetVKWidth();
 								}, 125);
 								break;
 							case 42:
 								console.log(id + ' fnTrkref called');
 								event.stopImmediatePropagation();
 								backNav('#btnTrkref-', listBtnTrkref.length, '#trkref-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								resetVKWidth();
 								break;
 							case 47:
 								delCharByOne();
@@ -7315,7 +7402,7 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnTrkref called');
 								event.stopImmediatePropagation()
-			
+
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
@@ -7333,9 +7420,10 @@ function createButton(buttonName) {
 										forceBack('#btnTrkref-', listBtnTrkref.length, '#trkref-menu-btn', '#track-menu&t=0.15s');
 										count = 1;
 										createButton('track');
-			
+
 										setTimeout(function () {
 											printBtnTree(listBtnLogon[36]);
+											resetVKWidth();
 										}, 125);
 									}
 								}
@@ -7344,12 +7432,12 @@ function createButton(buttonName) {
 					}
 					bindBtnNumber(listBtnTrkref, id);
 				}
-			
+
 				$('#keyboard-enter').on('click', function () {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnTrkref-');
 				});
-			
+
 				toggleBtn(1, '#btnTrkref-1', toggLabelB1, toggLabelB2);
 				showToggle(toggLabelB1, toggLabelB2);
 				setBtnActive('#btnTrkref-', listBtnTrkref);
@@ -7365,26 +7453,26 @@ function createButton(buttonName) {
 				let toggLabelB2 = 'trkcs1';
 				let toggLabelC1 = listBtnMerge[2][0];
 				let toggLabelC2 = 'TRKCS2';
-			
+
 				for (let varMerge = 0; varMerge < listBtnMerge.length; varMerge++) {
 					generateButtonMenu('#merge-menu-btn', 'btnMerge-', varMerge, listBtnMerge[varMerge][0]);
 					registToTree(varMerge, listBtnMerge[varMerge][0], 3);
 					$('#btnMerge-' + varMerge).on("click", { num: varMerge }, fnMerge);
-			
+
 					if (varMerge < 2) {
 						$('#btnMerge-' + varMerge).addClass('text-none');
 					}
 				}
-			
+
 				function fnMerge(event) {
 					let id = event.data.num;
-			
+
 					if (listBtnMerge[id][0] != '') {
 						if (id < 3) {
 							initiateLoadedMenu('#btnMerge-', id, listBtnMerge[id][0]);
 							count = id;
 						}
-			
+
 						switch (id) {
 							case 1:
 								console.log(id + ' fnMerge called');
@@ -7400,7 +7488,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnMerge called');
 								event.stopImmediatePropagation();
 								backNav('#btnMerge-', listBtnMerge.length, '#merge-menu-btn', '#track-menu&t=0.15s', 'track');
-			
+
 								setTimeout(function () {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
@@ -7416,7 +7504,7 @@ function createButton(buttonName) {
 							case 49:
 								console.log(id + ' fnMerge called');
 								event.stopImmediatePropagation()
-			
+
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
@@ -7428,7 +7516,7 @@ function createButton(buttonName) {
 										$('#tree-' + (count - 1)).show();
 										$('#toggle-box-out').hide();
 										document.getElementById('input-VK').placeholder = '';
-			
+
 										switch (count) {
 											case 1: {
 												event.stopImmediatePropagation();
@@ -7448,7 +7536,7 @@ function createButton(buttonName) {
 										forceBack('#btnMerge-', listBtnMerge.length, '#merge-menu-btn', '#track-menu&t=0.15s');
 										count = 1;
 										createButton('track');
-			
+
 										setTimeout(function () {
 											printBtnTree(listBtnLogon[36]);
 										}, 125);
@@ -7459,12 +7547,12 @@ function createButton(buttonName) {
 					}
 					bindBtnNumber(listBtnMerge, id);
 				}
-			
+
 				$('#keyboard-enter').on('click', function () {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnMerge-');
 				});
-			
+
 				toggleBtn(1, '#btnMerge-1', toggLabelB1, toggLabelB2);
 				toggleBtn(2, '#btnMerge-2', toggLabelC1, toggLabelC2);
 				showToggle(toggLabelB1, toggLabelB2);
