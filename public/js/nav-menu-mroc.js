@@ -7298,156 +7298,66 @@ function createButton(buttonName) {
 								backNav('#btnAirmov-', listBtnAirmov.length, '#airmov-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 2:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#selfp-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('selfp');
+								callBtnMenu(id, listBtnLogon[37][0], 'selfp');
 								break;
 							case 4:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#adtpt-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('adtpt');
+								callBtnMenu(id, listBtnLogon[37][0], 'adtpt');
 								break;
 							case 5:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#amtpt-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('amtpt');
+								callBtnMenu(id, listBtnLogon[37][0], 'amtpt');
 								break;
 							case 6:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#stdfp-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('stdfp');
+								callBtnMenu(id, listBtnLogon[37][0], 'stdfp');
 								break;
 							case 9:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#deltp-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('deltp');
+								callBtnMenu(id, listBtnLogon[37][0], 'deltp');
 								break;
 							case 10:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out, #tree-btn-out').empty();
-								window.location = '#totes-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('totes');
+								callBtnMenu(id, listBtnLogon[37][0], listBtnAirmov[id]);
 								break;
 							case 11:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#idtrk-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('idtrk');
+								callBtnMenu(id, listBtnLogon[37][0], 'idtrk');
 								document.getElementById('input-btn-out').innerHTML = listBtnAirmov[id];
 								break;
 							case 14:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#adsfp-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('adsfp');
+								callBtnMenu(id, listBtnLogon[37][0], 'adsfp');
 								break;
 							case 15:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#amfp-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('amfp');
+								callBtnMenu(id, listBtnLogon[37][0], 'amfp');
 								break;
 							case 18:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#schdle-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('schdle');
+								callBtnMenu(id, listBtnLogon[37][0], listBtnAirmov[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnAirmov[id];
 								break;
 							case 20:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out, #tree-btn-out').empty();
-								window.location = '#maps-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('maps');
+								callBtnMenu(id, listBtnLogon[37][0], listBtnAirmov[id]);
 								break;
 							case 24:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#adcfp-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('adcfp');
+								callBtnMenu(id, listBtnLogon[37][0], 'adcfp');
 								break;
 							case 25:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#fptxt-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('fptxt');
+								callBtnMenu(id, listBtnLogon[37][0], 'fptxt');
 								break;
 							case 33:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#sfpcur-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('sfpcur');
+								callBtnMenu(id, listBtnLogon[37][0], listBtnAirmov[id]);
 								break;
 							case 34:
-								console.log(id + ' fnAirmov called');
 								event.stopImmediatePropagation();
-								clearMenu('#airmov-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#cfpact-menu&t=0.15s';
-								printBtnTree(listBtnAirmov[id]);
-								createButton('cfpact');
+								callBtnMenu(id, listBtnLogon[37][0], listBtnAirmov[id]);
 								break;
 						}
 					}
@@ -8438,6 +8348,7 @@ function createButton(buttonName) {
 				let count = 0;
 				let treeVal1 = '';
 				let treeVal2 = '';
+				lastCount = 0;
 
 				for (let varStart = 0; varStart < listBtnStart.length; varStart++) {
 					generateButtonMenu('#start-menu-btn', 'btnStart-', varStart, listBtnStart[varStart][0]);
@@ -8452,6 +8363,7 @@ function createButton(buttonName) {
 						if (id < 5) {
 							initiateLoadedMenu('#btnStart-', id, listBtnStart[id][0]);
 							count = id;
+							//lastCount = count;
 						}
 
 						switch (id) {
@@ -8517,6 +8429,7 @@ function createButton(buttonName) {
 										setTimeout(function () {
 											//$('#tree-' + 0).show();
 											//$('#treeNum-' + 0).append('<span>' + 'dummy' + '</span>');
+											$('#input-VK').val('');
 											document.getElementById('input-VK').placeholder = '';
 											$('#tree-btn-out span:last-child').remove();
 											console.log(amfpArr);
@@ -8680,6 +8593,7 @@ function createButton(buttonName) {
 										setTimeout(function () {
 											//$('#tree-' + 0).show();
 											//$('#treeNum-' + 0).append('<span>' + 'dummy' + '</span>');
+											$('#input-VK').val('');
 											document.getElementById('input-VK').placeholder = '';
 											$('#tree-btn-out span:last-child').remove();
 											console.log(amfpArr);
@@ -9209,7 +9123,7 @@ function createButton(buttonName) {
 								backNav('#btnFptxt-', listBtnFptxt.length, '#fptxt-menu-btn', '#airmov-menu&t=0.15s', 'airmov');
 
 								setTimeout(function () {
-									printBtnTree(listBtnLogon[34]);
+									printBtnTree(listBtnLogon[37]);
 								}, 125);
 								break;
 							case 42:
@@ -9230,28 +9144,36 @@ function createButton(buttonName) {
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
-									if (count < 1) {
+									if (count < 16) {
 										count++;
 										nextStep(count, '#btnFptxt-', listBtnFptxt);
 										$('#tree-' + (count - 1)).show();
 										$('#toggle-box-out').hide();
-										document.getElementById('input-VK').placeholder = '';
 
 										switch (count) {
-											case 1: {
+											case 1:
 												event.stopImmediatePropagation()
 												$('.cursor i').removeClass('d-none');
 												callAlphaVK('#btnFptxt-');
 												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-												return;
-											}
+												break;
+											case 2:
+												count = 12;
+												break;
+											case 16:
+												document.getElementById('input-VK').placeholder = '';
+												break;
 										}
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnFptxt-' + count).removeClass('active');
-										forceBack('#btnFptxt-', listBtnFptxt.length, '#fptxt-menu-btn', '#logon-menu&t=0.15s');
+										forceBack('#btnFptxt-', listBtnFptxt.length, '#fptxt-menu-btn', '#airmov-menu&t=0.15s');
 										count = 0;
-										createButton('logon');
+										createButton('airmov');
+
+										setTimeout(function () {
+											printBtnTree(listBtnLogon[37]);
+										}, 125);
 									}
 								}
 								break;
