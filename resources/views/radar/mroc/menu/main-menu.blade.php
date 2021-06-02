@@ -57,8 +57,8 @@
         <div lj-type="frame" lj-name="tacmis-menu" lj-transition="fade">
             <ul id="tacmis-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
-        <div lj-type="frame" lj-name="seltmp-menu" lj-transition="fade">
-            <ul id="seltmp-menu-btn" class="m-0 p-0 form-inline"></ul>
+        <div lj-type="frame" lj-name="seltm-menu" lj-transition="fade">
+            <ul id="seltm-menu-btn" class="m-0 p-0 form-inline"></ul>
         </div>
         <div lj-type="frame" lj-name="crptm-menu" lj-transition="fade">
             <ul id="crptm-menu-btn" class="m-0 p-0 form-inline"></ul>
