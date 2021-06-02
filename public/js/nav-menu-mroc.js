@@ -248,51 +248,27 @@ function createButton(buttonName) {
 								printMessage("STATION MAP BEING AMENDED");
 								break;
 							case 17:
-								console.log(id + ' fnMaps called');
 								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnLogon[20][0], listBtnMaps[id]);
 								stateForColorBtn = id;
-								clearMenu('#maps-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#creftr-menu&t=0.15s';
-								printBtnTree(listBtnMaps[id]);
-								createButton('creftr');
 								break;
 							case 18:
-								console.log(id + ' fnMaps called');
 								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnLogon[20][0], listBtnMaps[id]);
 								stateForLineBtn = id;
 								stateForColorBtn = id;
-								clearMenu('#maps-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#crecir-menu&t=0.15s';
-								printBtnTree(listBtnMaps[id]);
-								createButton('crecir');
 								break;
 							case 26:
-								console.log(id + ' fnMaps called');
 								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnLogon[20][0], listBtnMaps[id]);
 								stateForLineBtn = id;
 								stateForColorBtn = id;
-								clearMenu('#maps-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#crevec-menu&t=0.15s';
-								printBtnTree(listBtnMaps[id]);
-								createButton('crevec');
 								break;
 							case 27:
-								console.log(id + ' fnMaps called');
 								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnLogon[20][0], listBtnMaps[id]);
 								stateForLineBtn = id;
 								stateForColorBtn = id;
-								clearMenu('#maps-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#crearc-menu&t=0.15s';
-								printBtnTree(listBtnMaps[id]);
-								createButton('crearc');
 								break;
 						}
 					}
