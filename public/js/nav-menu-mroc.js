@@ -22,6 +22,7 @@ var countForLegState = 0;
 var stateForDaysBtn = 0;
 var countForDaysState = 0;
 const amfpArr = [[], [], [], [], [], [], [], [], []];
+var currModalPage = 1;
 
 $(function () {
 	$('div[onload]').trigger('onload');
@@ -191,6 +192,7 @@ function createButton(buttonName) {
 				return;
 			}
 			case 'totes': {
+
 				for (let varTotes = 0; varTotes < listBtnTotes.length; varTotes++) {
 					generateButtonMenu('#totes-menu-btn', 'btnTotes-', varTotes, listBtnTotes[varTotes]);
 					$('#btnTotes-' + varTotes).on("click", { num: varTotes }, fnTotes);
@@ -207,6 +209,168 @@ function createButton(buttonName) {
 								console.log(id + ' fnTotes called');
 								event.stopImmediatePropagation();
 								backNav('#btnTotes-', listBtnTotes.length, '#totes-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								break;
+							case 1:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#index-modal');
+								break;
+							case 2:
+								window.location = '#radcur_modal_' + 1 + '&t=0.15s';
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#radcur-modal');
+								$('#radcur-subTitle').html('<span>(operational)</span>');
+								$('#radcur-page-num span:last-child').html('<span>' + 1 + '</span>');
+
+								navModal(1, 1, 2, 1, 'radcur', 'totes');
+
+								$.setTitle = function () {
+									switch (currModalPage) {
+										case 1:
+											$('#radcur-subTitle').html('<span>(operational)</span>');
+											break;
+										case 2:
+											$('#radcur-subTitle').html('<span>(functional)</span>');
+											break;
+									}
+								}
+
+								break;
+							case 6:
+								window.location = '#stdfp_modal_' + 1 + '&t=0.15s';
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#stdfp-modal');
+								$('#stdfp-page-num span:last-child').html('<span>' + 1 + '</span>');
+								$('#stdfp-row-1, #stdfp-row-2, #stdfp-row-3, #stdfp-row-4, #stdfp-row-5').empty();
+
+								navModal(1, 1, 2, 1, 'stdfp', 'totes');
+								$.setTitle = function () { };
+
+								setTimeout(function () {
+									for (let i = 1; i <= 100; i++) {
+										if (i <= 20) {
+											$('#stdfp-row-1').append(
+												'<tr class="border-bottom border-warning">' +
+												'<td class="no-border bg-transparent">' + i + '</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'</tr>');
+										} else if (i <= 40) {
+											$('#stdfp-row-2').append(
+												'<tr class="border-bottom border-warning">' +
+												'<td class="no-border bg-transparent">' + i + '</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'</tr>');
+										} else if (i <= 60) {
+											$('#stdfp-row-3').append(
+												'<tr class="border-bottom border-warning">' +
+												'<td class="no-border bg-transparent">' + i + '</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'</tr>');
+										} else if (i <= 80) {
+											$('#stdfp-row-4').append(
+												'<tr class="border-bottom border-warning">' +
+												'<td class="no-border bg-transparent">' + i + '</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'</tr>');
+										} else {
+											$('#stdfp-row-5').append(
+												'<tr class="border-bottom border-warning">' +
+												'<td class="no-border bg-transparent">' + i + '</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'</tr>');
+										}
+									}
+								}, 125);
+								break;
+							case 7:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#plntm-modal');
+								$('#plntm-row-1, #plntm-row-2').empty();
+
+								setTimeout(function () {
+									for (let i = 1; i <= 40; i++) {
+										if (i <= 20) {
+											$('#plntm-row-1').append(
+												'<tr class="border-bottom border-warning">' +
+												'<td class="no-border bg-transparent">' + i + '</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'</tr>');
+										} else {
+											$('#plntm-row-2').append(
+												'<tr class="border-bottom border-warning">' +
+												'<td class="no-border bg-transparent">' + i + '</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'</tr>');
+										}
+									}
+								}, 125);
+								break;
+							case 10:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#met-modal');
+								break;
+							case 11:
+								window.location = '#radio_modal_' + 1 + '&t=0.15s';
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#radio-modal');
+								$('#radio-page-num span:last-child').html('<span>' + 1 + '</span>');
+								$('#radio-row-1, #radio-row-2').empty();
+
+								navModal(1, 1, 2, 1, 'radio', 'totes');
+								$.setTitle = function () { };
+
+								setTimeout(function () {
+									for (let i = 1; i <= 20; i++) {
+										$('#radio-row-1').append(
+											'<tr class="border-bottom border-warning">' +
+											'<td class="no-border bg-transparent">' + i + '</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'</tr>');
+									}
+
+									for (let j = 1; j <= 20; j++) {
+										$('#radio-row-2').append(
+											'<tr class="border-bottom border-warning">' +
+											'<td class="no-border bg-transparent">' + j + '</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent">nnn</td>' +
+											'<td class="no-border bg-transparent"></td>' +
+											'<td class="no-border bg-transparent"></td>' +
+											'<td class="no-border bg-transparent"></td>' +
+											'</tr>');
+									}
+								}, 125);
+								break;
+							case 21:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#comdir-modal');
+								break;
+							case 37:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#seqlst-modal');
+								break;
+							case 38:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#trktel-modal');
 								break;
 						}
 					}
@@ -11400,4 +11564,58 @@ function showRightNav() {
 	for (let k = 0; k < 3; k++) {
 		$('#btnRight-' + k).children('span').fadeTo(100, 1);
 	}
+}
+
+function navModal(currNum, min, max, counts, targetMenu, parentMenu) {
+	let numPage = currNum;
+	let minPage = min;
+	let maxPage = max;
+	let count = counts;
+	let carR = ('#' + targetMenu + '-car-right').toString();
+	let carL = ('#' + targetMenu + '-car-left').toString();
+	let close = ('#' + targetMenu + '-close').toString();
+
+	console.log(carR)
+
+	$(carR).on('click', function () {
+		if (numPage < maxPage && numPage != maxPage) {
+			numPage++;
+			count++;
+			currModalPage++;
+			$.setTitle();
+
+			window.location = '#' + targetMenu + '_modal_' + numPage + '&t=0.15s';
+
+			if (numPage > maxPage) {
+				numPage = maxPage;
+				return numPage;
+			}
+
+			$('#' + targetMenu + '-page-num span:last-child').html('<span>' + count + '</span>');
+		}/**/
+	});
+
+	$(carL).on('click', function () {
+		if (numPage > minPage && numPage != minPage) {
+			numPage--;
+			count--;
+			currModalPage--;
+			$.setTitle();
+
+			window.location = '#' + targetMenu + '_modal_' + numPage + '&t=0.15s';
+
+			if (numPage < minPage) {
+				numPage = minPage;
+				return numPage;
+			}
+
+			$('#' + targetMenu + '-page-num span:last-child').html('<span>' + count + '</span>');
+		}/**/
+	});
+
+	$(close).on('click', function () {
+		window.location = '#' + parentMenu + '-menu&t=0.15s';
+		numPage = 1;
+		count = 1;
+	});
 }
