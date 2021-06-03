@@ -1,9 +1,9 @@
+var stateForLineBtn = 0;
+var countForLineState = 0;
+
 $(function () {
 	$('div[onload]').trigger('onload');
 });
-
-var stateForLineBtn = 0;
-var countForLineState = 0;
 
 function printBtn() {
 	createButton('main');
@@ -28,13 +28,10 @@ function createButton(buttonName) {
 					if (listBtnMain[id][0] != '') {
 						switch (id) {
 							case 0:
-								console.log(id + ' fnMain called');
 								event.stopImmediatePropagation();
-								clearMenu('#main-menu-btn');
-								clearContent();
+								callBtnMenu(id, listBtnMain[0][0], listBtnMain[id][0],);
 								$('#right-menu-btn li').children('span').show();
-								window.location = '#logon-menu&t=0.15s';
-								createButton('logon');
+								$('#tree-btn-out').empty();
 								break;
 						}
 					}
@@ -55,178 +52,80 @@ function createButton(buttonName) {
 					if (listBtnLogon[id] != '') {
 						switch (id) {
 							case 0:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
+								event.stopImmediatePropagation();
 								clearMenu('#logon-menu-btn');
 								clearContent();
-								$('#right-menu-btn li').children('span').hide();
 								window.location = '#main-menu&t=0.15s';
 								createButton('main');
+								$('#right-menu-btn li').children('span').hide();
 								break;
 							case 1:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#setpwd-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('setpwd');
-								callAlphaVK('#btnSetpwd-');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								break;
 							case 4:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#maps-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('maps');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								break;
 							case 5:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#totes-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('totes');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								break;
 							case 6:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#track-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('track');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								break;
 							case 7:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#weapon-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('weapon');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								break;
 							case 8:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#radcon-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('radcon');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								break;
 							case 9:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#radplt-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('radplt');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								break;
 							case 12:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#ppibrt-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('ppibrt');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								break;
 							case 13:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#commet-menu&t=0.15s'
-								printBtnTree(listBtnLogon[id]);
-								createButton('commet');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								break;
 							case 23:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#movbtm-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('movbtm');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								callAlphaVK('#btnMovbtm-');
 								break;
 							case 24:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#labpos-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('labpos');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
 								break;
 							case 25:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#trklin-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('trklin');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
 								break;
 							case 26:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#settrk-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('settrk');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								break;
 							case 28:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#histry-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('histry');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								break;
 							case 35:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#trksel-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('trksel');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
 								break;
 							case 39:
-								console.log(id + ' fnLogon called');
-								event.stopImmediatePropagation()
-								clearMenu('#logon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#pltsel-menu&t=0.15s';
-								printBtnTree(listBtnLogon[id]);
-								createButton('pltsel');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
 								break;
 							case 40:
@@ -363,14 +262,8 @@ function createButton(buttonName) {
 								backNav('#btnMaps-', listBtnMaps.length, '#maps-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 2:
-								console.log(id + ' fnMaps called');
 								event.stopImmediatePropagation();
-								clearMenu('#maps-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#rrings-menu&t=0.15s';
-								printBtnTree(listBtnMaps[id]);
-								createButton('rrings');
+								callBtnMenu(id, listBtnLogon[4], listBtnMaps[id]);
 								break;
 							case 6:
 								console.log(id + ' fnMaps called');
@@ -391,47 +284,23 @@ function createButton(buttonName) {
 								printMessage("OPERATORS MAP BEING AMENDED");
 								break;
 							case 18:
-								console.log(id + ' fnMaps called');
 								event.stopImmediatePropagation();
-								clearMenu('#maps-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#creftr-menu&t=0.15s';
-								printBtnTree(listBtnMaps[id]);
-								createButton('creftr');
+								callBtnMenu(id, listBtnLogon[4], listBtnMaps[id]);
 								break;
 							case 19:
-								console.log(id + ' fnMaps called');
 								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnLogon[4], listBtnMaps[id]);
 								stateForLineBtn = id;
-								clearMenu('#maps-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#crecir-menu&t=0.15s';
-								printBtnTree(listBtnMaps[id]);
-								createButton('crecir');
 								break;
 							case 28:
-								console.log(id + ' fnMaps called');
 								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnLogon[4], listBtnMaps[id]);
 								stateForLineBtn = id;
-								clearMenu('#maps-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#crevec-menu&t=0.15s';
-								printBtnTree(listBtnMaps[id]);
-								createButton('crevec');
 								break;
 							case 29:
-								console.log(id + ' fnMaps called');
 								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnLogon[4], listBtnMaps[id]);
 								stateForLineBtn = id;
-								clearMenu('#maps-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#crearc-menu&t=0.15s';
-								printBtnTree(listBtnMaps[id]);
-								createButton('crearc');
 								break;
 						}
 					}
@@ -984,6 +853,11 @@ function createButton(buttonName) {
 								console.log(id + ' fnCrecir called');
 								//event.stopImmediatePropagation()
 								initiateUnderlinedToggleBtn('#btnCrecir-', id, listBtnCrecir[id][0]);
+
+								setTimeout(function () {
+									$('.cursor i').removeClass('d-none');
+									showNumBtn('#btnCrecir-', 30, 40, listBtnCrecir);
+								}, 125);
 								break;
 							case 1:
 								console.log(id + ' fnCrecir called');
@@ -1040,29 +914,25 @@ function createButton(buttonName) {
 										$('#tree-' + (count - 1)).show();
 
 										switch (count) {
-											case 0: {
-												//event.stopImmediatePropagation()
-												$('.cursor i').removeClass('d-none');
-												showNumBtn('#btnCrecir-', 30, 40, listBtnCrecir);
-												return;
-											}
 											case 1: {
 												event.stopImmediatePropagation();
 												$('.cursor i').addClass('d-none');
+												$('#toggle-box-a, #toggle-box-b').empty();
+												$('#toggle-divider').hide();
 												hideNumBtn('#btnCrecir-', 30, 40);
 												return;
 											}
 											case 2: {
 												event.stopImmediatePropagation();
-												showToggle(toggLabelA, toggLabelB);
+												showToggle(toggLabelC, toggLabelD);
 												$('.cursor i').addClass('d-none');
 												hideNumBtn('#btnCrecir-', 30, 40);
 												return;
 											}
 											case 3: {
 												event.stopImmediatePropagation();
-												showToggle(toggLabelC, toggLabelD);
-												$('.cursor i').removeClass('d-none');
+												showToggle(toggLabelE, toggLabelF);
+												$('.cursor i').addClass('d-none');
 												hideNumBtn('#btnCrecir-', 30, 40);
 												return;
 											}
@@ -1084,11 +954,13 @@ function createButton(buttonName) {
 					}
 				}
 
+				$('.cursor i').removeClass('d-none');
+				showNumBtn('#btnCrecir-', 30, 40, listBtnCrecir);
+				showToggle(toggLabelA, toggLabelB);
 				toggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB, 'underlined');
 				toggleBtn(2, '#btnCrecir-2', toggLabelC, toggLabelD);
 				toggleBtn(3, '#btnCrecir-3', toggLabelE, toggLabelF);
 				setBtnActive('#btnCrecir-', listBtnCrecir);
-				hideNumBtn('#btnCrecir-', 30, 40);
 				delChar('#btnCrecir-48');
 				return;
 			}
@@ -1477,24 +1349,12 @@ function createButton(buttonName) {
 								backNav('#btnTrack-', listBtnTrack.length, '#track-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 2:
-								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
-								clearMenu('#track-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#ainit-menu&t=0.15s';
-								printBtnTree(listBtnTrack[id]);
-								createButton('ainit');
+								callBtnMenu(id, listBtnLogon[6], listBtnTrack[id]);
 								break;
 							case 5:
-								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
-								clearMenu('#track-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#merge-menu&t=0.15s';
-								printBtnTree(listBtnTrack[id]);
-								createButton('merge');
+								callBtnMenu(id, listBtnLogon[6], listBtnTrack[id]);
 								break;
 							case 10:
 								console.log(id + ' fnTrack called');
@@ -1509,73 +1369,32 @@ function createButton(buttonName) {
 								printMessage("NO REFFERENCE TRACK");
 								break;
 							case 18:
-								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
-								clearMenu('#track-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#setnai-menu&t=0.15s';
-								printBtnTree(listBtnTrack[id]);
-								createButton('setnai');
+								callBtnMenu(id, listBtnLogon[6], listBtnTrack[id]);
 								break;
 							case 19:
-								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
-								clearMenu('#track-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#setnac-menu&t=0.15s';
-								printBtnTree(listBtnTrack[id]);
-								createButton('setnac');
+								callBtnMenu(id, listBtnLogon[6], listBtnTrack[id]);
 								break;
 							case 20:
-								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
-								clearMenu('#track-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#init-menu&t=0.15s';
-								createButton('init');
+								callBtnMenu(id, listBtnLogon[6], listBtnTrack[id]);
 								break;
 							case 21:
-								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
-								clearMenu('#track-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#toldin-menu&t=0.15s';
-								printBtnTree(listBtnTrack[id]);
-								createButton('toldin');
+								callBtnMenu(id, listBtnLogon[6], listBtnTrack[id]);
 								break;
 							case 22:
-								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
-								clearMenu('#track-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#updtrk-menu&t=0.15s';
-								printBtnTree(listBtnTrack[id]);
-								createButton('updtrk');
+								callBtnMenu(id, listBtnLogon[6], listBtnTrack[id]);
 								break;
 							case 23:
-								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
-								clearMenu('#track-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#updcde-menu&t=0.15s';
-								printBtnTree(listBtnTrack[id]);
-								createButton('updcde');
+								callBtnMenu(id, listBtnLogon[6], listBtnTrack[id]);
 								break;
 							case 24:
-								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
-								clearMenu('#track-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#idtrk-menu&t=0.15s';
-								printBtnTree(listBtnTrack[id]);
-								createButton('idtrk');
+								callBtnMenu(id, listBtnLogon[6], listBtnTrack[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnTrack[id];
 								break;
 							case 25:
@@ -1585,14 +1404,8 @@ function createButton(buttonName) {
 								printMessage("TRACK NOT UNDER YOUR CONTROL");
 								break;
 							case 26:
-								console.log(id + ' fnTrack called');
 								event.stopImmediatePropagation();
-								clearMenu('#track-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#swap-menu&t=0.15s';
-								printBtnTree(listBtnTrack[id]);
-								createButton('swap');
+								callBtnMenu(id, listBtnLogon[6], listBtnTrack[id]);
 								callAlphaVK('#btnSwap-');
 								break;
 							case 28:
@@ -2209,6 +2022,7 @@ function createButton(buttonName) {
 					bindBtnNumber(listBtnSetnac, id);
 				}
 
+				initiateToggleThree(btn);
 				toggleBtn(7, '#btnSetnac-7', toggLabelE1, toggLabelE2);
 				hideNumBtn('#btnSetnac-', 30, 40);
 				setBtnActive('#btnSetnac-', listBtnSetnac);
@@ -2423,6 +2237,7 @@ function createButton(buttonName) {
 					bindBtnNumber(listBtnSetnai, id);
 				}
 
+				initiateToggleThree(btn);
 				toggleBtn(11, '#btnSetnai-11', toggLabelA1, toggLabelA2);
 				toggleBtn(12, '#btnSetnai-12', toggLabelB1, toggLabelB2);
 				hideNumBtn('#btnSetnai-', 30, 40);
@@ -3971,14 +3786,8 @@ function createButton(buttonName) {
 								backNav('#btnWeapon-', listBtnWeapon.length, '#weapon-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 2:
-								console.log(id + ' fnWeapon called');
 								event.stopImmediatePropagation();
-								clearMenu('#weapon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#loose-menu&t=0.15s';
-								printBtnTree(listBtnWeapon[id][0]);
-								createButton('loose');
+								callBtnMenu(id, listBtnLogon[7], listBtnWeapon[id]);
 								break;
 						}
 					}
@@ -4111,180 +3920,78 @@ function createButton(buttonName) {
 								backNav('#btnRadcon-', listBtnRadcon.length, '#radcon-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 1:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#gcthr-menu&t=0.15s';
-								createButton('gcthr');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								break;
 							case 3:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#settis-menu&t=0.15s';
-								createButton('settis');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								break;
 							case 4:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#setmti-menu&t=0.15s';
-								createButton('setmti');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								break;
 							case 5:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#txmode-menu&t=0.15s';
-								createButton('txmode');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								break;
 							case 6:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#etilt-menu&t=0.15s';
-								createButton('etilt');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								break;
 							case 10:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#nrdet-menu&t=0.15s';
-								createButton('nrdet');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								break;
 							case 11:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#nrthr-menu&t=0.15s';
-								createButton('nrthr');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								break;
 							case 13:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#setbrn-menu&t=0.15s';
-								createButton('setbrn');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								break;
 							case 14:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#setjse-menu&t=0.15s';
-								createButton('setjse');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
 								break;
 							case 18:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#antrot-menu&t=0.15s';
-								createButton('antrot');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
 								break;
 							case 19:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#batovr-menu&t=0.15s';
-								createButton('batovr');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
 								break;
 							case 20:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#mtidet-menu&t=0.15s';
-								createButton('mtidet');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								break;
 							case 21:
-								console.log(id + ' fnRadcon called');
 								event.stopImmediatePropagation();
-								clearMenu('#radcon-menu-btn');
-								clearContent();
-								printBtnTree(listBtnRadcon[id]);
-								$('#message-btn-out').empty();
-								window.location = '#mtithr-menu&t=0.15s';
-								createButton('mtithr');
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								break;
 							case 23:
-								console.log(id + ' fnRadcon called');
-								event.stopImmediatePropagation()
-								clearMenu('#Radcon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#stgjit-menu&t=0.15s';
-								printBtnTree(listBtnRadcon[id]);
-								createButton('stgjit');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
 								break;
 							case 24:
-								console.log(id + ' fnRadcon called');
-								event.stopImmediatePropagation()
-								clearMenu('#Radcon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#prfd-menu&t=0.15s';
-								printBtnTree(listBtnRadcon[id]);
-								createButton('prfd');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
 								break;
 							case 33:
-								console.log(id + ' fnRadcon called');
-								event.stopImmediatePropagation()
-								clearMenu('#Radcon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#frqmde-menu&t=0.15s';
-								printBtnTree(listBtnRadcon[id]);
-								createButton('frqmde');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								document.getElementById('input-btn-out').innerHTML = listBtnRadcon[id];
 								break;
 							case 34:
-								console.log(id + ' fnRadcon called');
-								event.stopImmediatePropagation()
-								clearMenu('#Radcon-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#divfrq-menu&t=0.15s';
-								printBtnTree(listBtnRadcon[id]);
-								createButton('divfrq');
+								event.stopImmediatePropagation();
+								callBtnMenu(id, listBtnLogon[8], listBtnRadcon[id]);
 								break;
 						}
 					}
@@ -6089,25 +5796,13 @@ function createButton(buttonName) {
 								backNav('#btnRadplt-', listBtnRadplt.length, '#radplt-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								break;
 							case 2:
-								console.log(id + ' fnRadplt called');
 								event.stopImmediatePropagation();
-								clearMenu('#radplt-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#setcps-menu&t=0.15s';
-								printBtnTree(listBtnRadplt[id][0]);
-								createButton('setcps');
+								callBtnMenu(id, listBtnLogon[9], listBtnRadplt[id][0]);
 								document.getElementById('input-btn-out').innerHTML = listBtnRadplt[id][0];
 								break;
 							case 3:
-								console.log(id + ' fnRadplt called');
 								event.stopImmediatePropagation();
-								clearMenu('#radplt-menu-btn');
-								clearContent();
-								$('#message-btn-out').empty();
-								window.location = '#setpsa-menu&t=0.15s';
-								printBtnTree(listBtnRadplt[id][0]);
-								createButton('setpsa');
+								callBtnMenu(id, listBtnLogon[9], listBtnRadplt[id][0]);
 								break;
 						}
 					}
@@ -6234,6 +5929,7 @@ function createButton(buttonName) {
 					bindBtnNumber(listBtnSetcps, id)
 				}
 
+				showToggle(toggLabelA, toggLabelB);
 				hideNumBtn('#btnSetcps-', 30, 40);
 				toggleBtn(0, '#btnSetcps-0', toggLabelA, toggLabelB);
 				setBtnActive('#btnSetcps-', listBtnSetcps);
@@ -6534,6 +6230,64 @@ function createButton(buttonName) {
 	}
 }
 
+function makeMenuRight() {
+	for (let j = 0; j < listBtnRight.length; j++) {
+		$('#right-menu-btn').append('<li ' + 'id="btnRight-' + j + '" class="btn btn-box"><span>' +
+			listBtnRight[j] + '</span></li>');
+		$('#btnRight-' + j).on("click", { num: j }, fnRight);
+	}
+
+	function fnRight(event) {
+		let id = event.data.num;
+		let menu = $('#tree-btn-out span:last-child').text();
+		//console.log(menu);
+
+		if (listBtnRight[id][0] != '') {
+			switch (id) {
+				case 0:
+					event.stopImmediatePropagation();
+					$('#tree-btn-out').empty();
+					callBtnMenu(id, menu, listBtnRight[id]);
+					break;
+				case 1:
+					event.stopImmediatePropagation();
+					$('#tree-btn-out').empty();
+					callBtnMenu(id, menu, listBtnRight[id]);
+					document.getElementById('input-btn-out').innerHTML = listBtnRight[id];
+					break;
+				case 2:
+					event.stopImmediatePropagation();
+					$('#tree-btn-out').empty();
+					callBtnMenu(id, menu, listBtnRight[id]);
+					document.getElementById('input-btn-out').innerHTML = listBtnRight[id];
+					break;
+				case 3:
+				case 4:
+					console.log(id + ' fnRight called');
+					event.stopImmediatePropagation();
+					break;
+			}
+		}
+	}
+}
+
+function callBtnMenu(id, arrMenuToClear, arrMenuDest) {
+	let btnList = (arrMenuToClear).toLowerCase();
+	let menuList = (arrMenuDest).toLowerCase();
+	let menuName = ('#' + btnList + '-menu-btn');
+	let menuUrl = ('#' + menuList + '-menu&t=0.15s');
+
+	console.log(id + ' | fn-' + btnList + ' called');
+	clearMenu(menuName);
+	clearContent();
+	$('#message-btn-out, #sub-tree, #tree-val').empty();
+	window.location = menuUrl;
+	printBtnTree(arrMenuDest);
+	createButton(menuList);
+
+	console.log(arrMenuToClear + ' | ' + arrMenuDest);
+}
+
 function generateButtonMenu(menuUl, btnName, varLoop, arr) {
 	let btnId = ('#' + btnName + varLoop);
 	$(menuUl).append('<li ' + 'id="' + btnName + varLoop + '" class="btn btn-box"><span>' +
@@ -6572,68 +6326,6 @@ function generatedUnderlinedButtonMenu(btnName, num, arrName) {
 		"<div class='borderBtm mt-1'></div>" +
 		"</div>"
 	);
-}
-
-function makeMenuRight() {
-	for (let j = 0; j < listBtnRight.length; j++) {
-		$('#right-menu-btn').append('<li ' + 'id="btnRight-' + j + '" class="btn btn-box"><span>' +
-			listBtnRight[j] + '</span></li>');
-		$('#btnRight-' + j).on("click", { num: j }, fnRight);
-	}
-
-	function fnRight(event) {
-		let id = event.data.num;
-		let menu = ('#' + $('#tree-btn-out span:last-child').text() + '-menu-btn');
-		//console.log(menu);
-
-		if (listBtnRight[id][0] != '') {
-			switch (id) {
-				case 0:
-					console.log(id + ' fnRight called');
-					event.stopImmediatePropagation();
-					$('#tree-btn-out').empty();
-					$('#sub-tree').empty();
-					clearMenu(menu);
-					clearContent();
-					$('#message-btn-out').empty();
-					window.location = '#settrk-menu&t=0.15s';
-					printBtnTree(listBtnRight[id]);
-					createButton('settrk');
-					break;
-				case 1:
-					console.log(id + ' fnRight called');
-					event.stopImmediatePropagation();
-					$('#tree-btn-out').empty();
-					$('#sub-tree').empty();
-					clearMenu(menu);
-					clearContent();
-					$('#message-btn-out').empty();
-					window.location = '#labpos-menu&t=0.15s';
-					printBtnTree(listBtnRight[id]);
-					createButton('labpos');
-					document.getElementById('input-btn-out').innerHTML = listBtnRight[id];
-					break;
-				case 2:
-					console.log(id + ' fnRight called');
-					event.stopImmediatePropagation();
-					$('#tree-btn-out').empty();
-					$('#sub-tree').empty();
-					clearMenu(menu);
-					clearContent();
-					$('#message-btn-out').empty();
-					window.location = '#trksel-menu&t=0.15s';
-					printBtnTree(listBtnRight[id]);
-					createButton('trksel');
-					document.getElementById('input-btn-out').innerHTML = listBtnRight[id];
-					break;
-				case 3:
-				case 4:
-					console.log(id + ' fnRight called');
-					event.stopImmediatePropagation();
-					break;
-			}
-		}
-	}
 }
 
 function toggleBtn(num, btnName, toggLabelA, toggLabelB, btnType) {
