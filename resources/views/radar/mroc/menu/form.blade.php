@@ -808,12 +808,15 @@
                                         style="border-collapse: collapse;">
                                         <thead>
                                             <tr class="bg-warning text-dark">
-                                                <th>no</th>
+                                                <th style="width: 7%;">no</th>
                                                 <th>callsign</th>
                                             </tr>
                                         </thead>
                                         <tbody id="stdfp-row-1">
-                                            {{-- content row --}}
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -823,12 +826,15 @@
                                         style="border-collapse: collapse;">
                                         <thead>
                                             <tr class="bg-warning text-dark">
-                                                <th>no</th>
+                                                <th style="width: 7%;">no</th>
                                                 <th>callsign</th>
                                             </tr>
                                         </thead>
                                         <tbody id="stdfp-row-2">
-                                            {{-- content row --}}
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -838,12 +844,15 @@
                                         style="border-collapse: collapse;">
                                         <thead>
                                             <tr class="bg-warning text-dark">
-                                                <th>no</th>
+                                                <th style="width: 7%;">no</th>
                                                 <th>callsign</th>
                                             </tr>
                                         </thead>
                                         <tbody id="stdfp-row-3">
-                                            {{-- content row --}}
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -853,12 +862,15 @@
                                         style="border-collapse: collapse;">
                                         <thead>
                                             <tr class="bg-warning text-dark">
-                                                <th>no</th>
+                                                <th style="width: 7%;">no</th>
                                                 <th>callsign</th>
                                             </tr>
                                         </thead>
                                         <tbody id="stdfp-row-4">
-                                            {{-- content row --}}
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -872,12 +884,15 @@
                                         style="border-collapse: collapse;">
                                         <thead>
                                             <tr class="bg-warning text-dark">
-                                                <th>no</th>
+                                                <th style="width: 7%;">no</th>
                                                 <th>callsign</th>
                                             </tr>
                                         </thead>
                                         <tbody id="stdfp-row-5">
-                                            {{-- content row --}}
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -894,60 +909,69 @@
 </div>
 <!--plntm Modal -->
 <div class="cusModal p-0" style="font-family: 'pixelmix';">
-	<div id="plntm-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
-		<div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
-			<div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
-				style="width: 1054px; height: 778px;">
-				<div class="modal-header solid-bordered border-warning">
-					<h6>planned tactical mission</h6>
-					<div id="plntm-close" class="btnCustom align-self-center" style="right: 0;"
-						data-dismiss="modal">
-						<div class="btn-flat border-warning text-warning" style="width: 26px;">
-							C
-                            </div>
-					</div>
-				</div>
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-md-6">
-							<table
-								class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
-								style="border-collapse: collapse;">
-								<thead>
-									<tr class="bg-warning text-dark">
-										<th>no</th>
-										<th>callsign</th>
-										<th>time</th>
-										<th>wp</th>
-									</tr>
-								</thead>
-								<tbody id="plntm-row-1">
-									{{-- content row --}}
-                                    </tbody>
-							</table>
-						</div>
-						<div class="col-md-6">
-							<table
-								class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
-								style="border-collapse: collapse;">
-								<thead>
-									<tr class="bg-warning text-dark">
-										<th>no</th>
-										<th>callsign</th>
-										<th>time</th>
-										<th>wp</th>
-									</tr>
-								</thead>
-								<tbody id="plntm-row-2">
-									{{-- content row --}}
-                                    </tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div id="plntm-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <h6>planned tactical mission</h6>
+                    <div id="plntm-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th style="width: 7%;">no</th>
+                                        <th>callsign</th>
+                                        <th>time</th>
+                                        <th>wp</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="plntm-row-1">
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 7%;">n</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th style="width: 7%;">no</th>
+                                        <th>callsign</th>
+                                        <th>time</th>
+                                        <th>wp</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="plntm-row-2">
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 7%;">n</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!--met Modal -->
 <div class="cusModal p-0" style="font-family: 'pixelmix';">
@@ -1183,90 +1207,210 @@
 </div>
 <!--radio Modal -->
 <div class="cusModal p-0" style="font-family: 'pixelmix';">
-	<div id="radio-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
-		<div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
-			<div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
-				style="width: 1054px; height: 778px;">
-				<div class="modal-header solid-bordered border-warning">
-					<h6>radio allocation</h6>
-					<div id="radio-page-num" class="w-Custom6 align-self-center text-center" style="right: 0;">
-						<span>page</span>
-						<span>n</span>
-					</div>
-					<div id="radio-car-left" class="btnCustom align-self-center" style="right: 0;">
-						<div class="btn-flat border-warning text-warning mr-1" style="width: 26px;">
-							<i class="fas fa-caret-left"></i>
-						</div>
-					</div>
-					<div id="radio-car-right" class="btnCustom align-self-center" style="right: 0;">
-						<div class="btn-flat border-warning text-warning ml-0" style="width: 26px;">
-							<i class="fas fa-caret-right"></i>
-						</div>
-					</div>
-					<div id="radio-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
-						<div class="btn-flat border-warning text-warning" style="width: 26px;">
-							C
+    <div id="radio-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <h6>radio allocation</h6>
+                    <div id="radio-page-num" class="w-Custom6 align-self-center text-center" style="right: 0;">
+                        <span>page</span>
+                        <span>n</span>
+                    </div>
+                    <div id="radio-car-left" class="btnCustom align-self-center" style="right: 0;">
+                        <div class="btn-flat border-warning text-warning mr-1" style="width: 26px;">
+                            <i class="fas fa-caret-left"></i>
                         </div>
-					</div>
-				</div>
-				<div class="modal-body" lj-type="stage">
-					<div lj-type="layer" id="radio-layer" lj-fit-to="responsive-width"
-						data-lj-default-frame="radio_modal_1" class="overflow-hidden">
-						<div lj-type="frame" lj-name="radio_modal_1" lj-transition="fade">
-							<table
-								class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
-								style="border-collapse: collapse;">
-								<thead>
-									<tr class="bg-warning text-dark">
-										<th>ch</th>
-										<th>site</th>
-										<th>radio</th>
-										<th>mhz</th>
-										<th>mc</th>
-										<th>ic1</th>
-										<th>ic2</th>
-										<th>ic3</th>
-										<th>it1</th>
-										<th>it2</th>
-										<th>it3</th>
-										<th>it4</th>
-									</tr>
-								</thead>
-								<tbody id="radio-row-1">
-									{{-- content row --}}
-                                        </tbody>
-							</table>
-						</div>
-						<div lj-type="frame" lj-name="radio_modal_2" lj-transition="fade">
-							<table
-								class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
-								style="border-collapse: collapse;">
-								<thead>
-									<tr class="bg-warning text-dark">
-										<th>ch</th>
-										<th>site</th>
-										<th>radio</th>
-										<th>mhz</th>
-										<th>mc</th>
-										<th>ps1</th>
-										<th>ps2</th>
-										<th>ps3</th>
-										<th>p4</th>
-										<th></th>
-										<th></th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody id="radio-row-2">
-									{{-- content row --}}
-                                        </tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    </div>
+                    <div id="radio-car-right" class="btnCustom align-self-center" style="right: 0;">
+                        <div class="btn-flat border-warning text-warning ml-0" style="width: 26px;">
+                            <i class="fas fa-caret-right"></i>
+                        </div>
+                    </div>
+                    <div id="radio-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body" lj-type="stage">
+                    <div lj-type="layer" id="radio-layer" lj-fit-to="responsive-width"
+                        data-lj-default-frame="radio_modal_1" class="overflow-hidden">
+                        <div lj-type="frame" lj-name="radio_modal_1" lj-transition="fade">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th style="width: 7%;">ch</th>
+                                        <th style="width: 15%;">site</th>
+                                        <th style="width: 12%;">radio</th>
+                                        <th style="width: 10%;">mhz</th>
+                                        <th style="width: 7%;">mc</th>
+                                        <th style="width: 7%;">ic1</th>
+                                        <th style="width: 7%;">ic2</th>
+                                        <th style="width: 7%;">ic3</th>
+                                        <th style="width: 7%;">it1</th>
+                                        <th style="width: 7%;">it2</th>
+                                        <th style="width: 7%;">it3</th>
+                                        <th style="width: 7%;">it4</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="radio-row-1">
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 7%;">n</td>
+                                        <td class="no-border bg-transparent" style="width: 15%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 12%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div lj-type="frame" lj-name="radio_modal_2" lj-transition="fade">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th style="width: 7%;">ch</th>
+                                        <th style="width: 15%;">site</th>
+                                        <th style="width: 12%;">radio</th>
+                                        <th style="width: 10%;">mhz</th>
+                                        <th style="width: 7%;">mc</th>
+                                        <th style="width: 7%;">ps1</th>
+                                        <th style="width: 7%;">ps2</th>
+                                        <th style="width: 7%;">ps3</th>
+                                        <th style="width: 7%;">p4</th>
+                                        <th style="width: 7%;"></th>
+                                        <th style="width: 7%;"></th>
+                                        <th style="width: 7%;"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="radio-row-2">
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 7%;">n</td>
+                                        <td class="no-border bg-transparent" style="width: 15%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 12%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;">nn</td>
+                                        <td class="no-border bg-transparent" style="width: 7%;"></td>
+                                        <td class="no-border bg-transparent" style="width: 7%;"></td>
+                                        <td class="no-border bg-transparent" style="width: 7%;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- cnflct Modal --}}
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+    <div id="cnflct-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <h6>track conflicts</h6>
+                    <div id="cnflct-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th style="width: 10%;">ref</th>
+                                        <th>callsign</th>
+                                        <th style="width: 5%;">r</th>
+                                        <th style="width: 10%;">type</th>
+                                        <th style="width: 10%;">site</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cnflct-row-1">
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnnnn</td>
+                                        <td class="no-border bg-transparent">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">n</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th style="width: 10%;">ref</th>
+                                        <th>callsign</th>
+                                        <th style="width: 5%;">r</th>
+                                        <th style="width: 10%;">type</th>
+                                        <th style="width: 10%;">site</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cnflct-row-2">
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnnnn</td>
+                                        <td class="no-border bg-transparent">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">n</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th style="width: 10%;">ref</th>
+                                        <th>callsign</th>
+                                        <th style="width: 5%;">r</th>
+                                        <th style="width: 10%;">type</th>
+                                        <th style="width: 10%;">site</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cnflct-row-3">
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnnnn</td>
+                                        <td class="no-border bg-transparent">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">n</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!--comdir Modal -->
 <div class="cusModal p-0" style="font-family: 'pixelmix';">

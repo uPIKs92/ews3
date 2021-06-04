@@ -240,12 +240,12 @@ function createButton(buttonName) {
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#stdfp-modal');
 								$('#stdfp-page-num span:last-child').html('<span>' + 1 + '</span>');
-								$('#stdfp-row-1, #stdfp-row-2, #stdfp-row-3, #stdfp-row-4, #stdfp-row-5').empty();
+								//$('#stdfp-row-1, #stdfp-row-2, #stdfp-row-3, #stdfp-row-4, #stdfp-row-5').empty();
 
 								navModal(1, 1, 2, 1, 'stdfp', 'totes');
 								$.setTitle = function () { };
 
-								setTimeout(function () {
+								/*setTimeout(function () {
 									for (let i = 1; i <= 100; i++) {
 										if (i <= 20) {
 											$('#stdfp-row-1').append(
@@ -253,40 +253,16 @@ function createButton(buttonName) {
 												'<td class="no-border bg-transparent">' + i + '</td>' +
 												'<td class="no-border bg-transparent">nnn</td>' +
 												'</tr>');
-										} else if (i <= 40) {
-											$('#stdfp-row-2').append(
-												'<tr class="border-bottom border-warning">' +
-												'<td class="no-border bg-transparent">' + i + '</td>' +
-												'<td class="no-border bg-transparent">nnn</td>' +
-												'</tr>');
-										} else if (i <= 60) {
-											$('#stdfp-row-3').append(
-												'<tr class="border-bottom border-warning">' +
-												'<td class="no-border bg-transparent">' + i + '</td>' +
-												'<td class="no-border bg-transparent">nnn</td>' +
-												'</tr>');
-										} else if (i <= 80) {
-											$('#stdfp-row-4').append(
-												'<tr class="border-bottom border-warning">' +
-												'<td class="no-border bg-transparent">' + i + '</td>' +
-												'<td class="no-border bg-transparent">nnn</td>' +
-												'</tr>');
-										} else {
-											$('#stdfp-row-5').append(
-												'<tr class="border-bottom border-warning">' +
-												'<td class="no-border bg-transparent">' + i + '</td>' +
-												'<td class="no-border bg-transparent">nnn</td>' +
-												'</tr>');
 										}
 									}
-								}, 125);
+								}, 125);*/
 								break;
 							case 7:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#plntm-modal');
-								$('#plntm-row-1, #plntm-row-2').empty();
+								//$('#plntm-row-1, #plntm-row-2').empty();
 
-								setTimeout(function () {
+								/*setTimeout(function () {
 									for (let i = 1; i <= 40; i++) {
 										if (i <= 20) {
 											$('#plntm-row-1').append(
@@ -296,17 +272,9 @@ function createButton(buttonName) {
 												'<td class="no-border bg-transparent">nnn</td>' +
 												'<td class="no-border bg-transparent">nnn</td>' +
 												'</tr>');
-										} else {
-											$('#plntm-row-2').append(
-												'<tr class="border-bottom border-warning">' +
-												'<td class="no-border bg-transparent">' + i + '</td>' +
-												'<td class="no-border bg-transparent">nnn</td>' +
-												'<td class="no-border bg-transparent">nnn</td>' +
-												'<td class="no-border bg-transparent">nnn</td>' +
-												'</tr>');
 										}
 									}
-								}, 125);
+								}, 125);*/
 								break;
 							case 10:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
@@ -317,48 +285,33 @@ function createButton(buttonName) {
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#radio-modal');
 								$('#radio-page-num span:last-child').html('<span>' + 1 + '</span>');
-								$('#radio-row-1, #radio-row-2').empty();
+								//$('#radio-row-1, #radio-row-2').empty();
 
 								navModal(1, 1, 2, 1, 'radio', 'totes');
 								$.setTitle = function () { };
 
-								setTimeout(function () {
+								/*setTimeout(function () {
 									for (let i = 1; i <= 20; i++) {
 										$('#radio-row-1').append(
 											'<tr class="border-bottom border-warning">' +
-											'<td class="no-border bg-transparent">' + i + '</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
+										'<td class="no-border bg-transparent" style="width: 7%;">'+i+'</td>'+
+										'<td class="no-border bg-transparent" style="width: 15%;">nnn</td>'+
+										'<td class="no-border bg-transparent" style="width: 12%;">nnn</td>'+
+										'<td class="no-border bg-transparent" style="width: 10%;">nnn</td>'+
+									   '<td class="no-border bg-transparent" style="width: 7%;">nn</td>'+
+										'<td class="no-border bg-transparent" style="width: 7%;">nn</td>'+
+										'<td class="no-border bg-transparent" style="width: 7%;">nn</td>'+
+										'<td class="no-border bg-transparent" style="width: 7%;">nn</td>'+
+										'<td class="no-border bg-transparent" style="width: 7%;">nn</td>'+
+										'<td class="no-border bg-transparent" style="width: 7%;">nn</td>'+
+										'<td class="no-border bg-transparent" style="width: 7%;">nn</td>'+
+										'<td class="no-border bg-transparent" style="width: 7%;">nn</td>' +
 											'</tr>');
-									}
-
-									for (let j = 1; j <= 20; j++) {
-										$('#radio-row-2').append(
-											'<tr class="border-bottom border-warning">' +
-											'<td class="no-border bg-transparent">' + j + '</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent">nnn</td>' +
-											'<td class="no-border bg-transparent"></td>' +
-											'<td class="no-border bg-transparent"></td>' +
-											'<td class="no-border bg-transparent"></td>' +
-											'</tr>');
-									}
-								}, 125);
+									}*/
+								break;
+							case 12:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#cnflct-modal');
 								break;
 							case 21:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
