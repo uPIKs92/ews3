@@ -192,6 +192,7 @@ function createButton(buttonName) {
 				return;
 			}
 			case 'totes': {
+				let lastNum = 0;
 
 				for (let varTotes = 0; varTotes < listBtnTotes.length; varTotes++) {
 					generateButtonMenu('#totes-menu-btn', 'btnTotes-', varTotes, listBtnTotes[varTotes]);
@@ -213,6 +214,7 @@ function createButton(buttonName) {
 							case 1:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#index-modal');
+								lastNum = id;
 								break;
 							case 2:
 								window.location = '#radcur_modal_' + 1 + '&t=0.15s';
@@ -234,6 +236,7 @@ function createButton(buttonName) {
 									}
 								}
 
+								lastNum = id;
 								break;
 							case 6:
 								window.location = '#stdfp_modal_' + 1 + '&t=0.15s';
@@ -256,6 +259,8 @@ function createButton(buttonName) {
 										}
 									}
 								}, 125);*/
+
+								lastNum = id;
 								break;
 							case 7:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
@@ -275,10 +280,13 @@ function createButton(buttonName) {
 										}
 									}
 								}, 125);*/
+
+								lastNum = id;
 								break;
 							case 10:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#met-modal');
+								lastNum = id;
 								break;
 							case 11:
 								window.location = '#radio_modal_' + 1 + '&t=0.15s';
@@ -307,11 +315,15 @@ function createButton(buttonName) {
 										'<td class="no-border bg-transparent" style="width: 7%;">nn</td>'+
 										'<td class="no-border bg-transparent" style="width: 7%;">nn</td>' +
 											'</tr>');
-									}*/
+									}
+								}, 125)*/
+
+								lastNum = id;
 								break;
 							case 12:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#cnflct-modal');
+								lastNum = id;
 								break;
 							case 16:
 								window.location = '#actfp_modal_' + 1 + '&t=0.15s';
@@ -334,6 +346,8 @@ function createButton(buttonName) {
 										}
 									}
 								}, 125);*/
+
+								lastNum = id;
 								break;
 							case 17:
 								window.location = '#acttm_modal_' + 1 + '&t=0.15s';
@@ -372,38 +386,51 @@ function createButton(buttonName) {
 										}
 									}
 								}, 125);*/
+
+								lastNum = id;
 								break;
 							case 21:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#comdir-modal');
+								lastNum = id;
 								break;
 							case 22:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#trksta-modal');
+								lastNum = id;
 								break;
 							case 23:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#hostrk-modal');
+								lastNum = id;
 								break;
 							case 25:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#refmis-modal');
+								lastNum = id;
 								break;
 							case 26:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#reffp-modal');
+								lastNum = id;
 								break;
 							case 27:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#reftm-modal');
+								lastNum = id;
+								break;							
+							case 29:
+								console.log(lastNum);
 								break;
-							case 31:
+								case 31:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#links-modal');
+								lastNum = id;
 								break;
 							case 32:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#guide-modal');
+								lastNum = id;
 								break;
 							case 35:
 								window.location = '#turnpt_modal_' + 1 + '&t=0.15s';
@@ -414,6 +441,8 @@ function createButton(buttonName) {
 
 								navModal(1, 1, 3, 1, 'turnpt', 'totes');
 								$.setTitle = function () { };
+
+								lastNum = id;
 								break;
 							case 36:
 								window.location = '#curfp_modal_' + 1 + '&t=0.15s';
@@ -436,14 +465,18 @@ function createButton(buttonName) {
 										}
 									}
 								}, 125);*/
+
+								lastNum = id;
 								break;
 							case 37:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#seqlst-modal');
+								lastNum = id;
 								break;
 							case 38:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#trktel-modal');
+								lastNum = id;
 								break;
 						}
 					}
