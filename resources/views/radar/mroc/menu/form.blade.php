@@ -210,7 +210,7 @@
         <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
             <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
                 style="width: 1054px; height: 778px;">
-                <div class="modal-header solid-bordered border-warning">
+                <div class="modal-header solid-bordered border-warning" style="padding-left: 190px;">
                     <div class="row w-100">
                         <div class="col-12 p-0 mt-2">
                             <h6>ew1 current radar status</h6>
@@ -775,7 +775,7 @@
         <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
             <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
                 style="width: 1054px; height: 778px;">
-                <div class="modal-header solid-bordered border-warning">
+                <div class="modal-header solid-bordered border-warning" style="padding-left: 190px;">
                     <h6>standard flight plans</h6>
                     <div id="stdfp-page-num" class="w-Custom6 align-self-center text-center" style="right: 0;">
                         <span>page</span>
@@ -1211,7 +1211,7 @@
         <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
             <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
                 style="width: 1054px; height: 778px;">
-                <div class="modal-header solid-bordered border-warning">
+                <div class="modal-header solid-bordered border-warning" style="padding-left: 190px;">
                     <h6>radio allocation</h6>
                     <div id="radio-page-num" class="w-Custom6 align-self-center text-center" style="right: 0;">
                         <span>page</span>
@@ -1411,6 +1411,298 @@
             </div>
         </div>
     </div>
+</div>
+{{-- actfp Modal --}}
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+    <div id="actfp-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning" style="padding-left: 190px;">
+                    <h6>active flight plans</h6>
+                    <div id="actfp-page-num" class="w-Custom6 align-self-center text-center" style="right: 0;">
+                        <span>page</span>
+                        <span>n</span>
+                    </div>
+                    <div id="actfp-car-left" class="btnCustom align-self-center" style="right: 0;">
+                        <div class="btn-flat border-warning text-warning mr-1" style="width: 26px;">
+                            <i class="fas fa-caret-left"></i>
+                        </div>
+                    </div>
+                    <div id="actfp-car-right" class="btnCustom align-self-center" style="right: 0;">
+                        <div class="btn-flat border-warning text-warning ml-0" style="width: 26px;">
+                            <i class="fas fa-caret-right"></i>
+                        </div>
+                    </div>
+                    <div id="actfp-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body" lj-type="stage">
+                    <div lj-type="layer" id="actfp-layer" lj-fit-to="responsive-width"
+                        data-lj-default-frame="actfp_modal_1" class="overflow-hidden">
+                        <div lj-type="frame" lj-name="actfp_modal_1" lj-transition="fade">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>endtime</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="actfp-row-1">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-3">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>endtime</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="actfp-row-2">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-3">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>endtime</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="actfp-row-3">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-3">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>endtime</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="actfp-row-4">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div lj-type="frame" lj-name="actfp_modal_2" lj-transition="fade">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>endtime</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="actfp-row-5">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- acttm Modal --}}
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+	<div id="acttm-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+		<div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+			<div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+				style="width: 1054px; height: 778px;">
+				<div class="modal-header solid-bordered border-warning">
+					<div id="acttm-page-ttl" class="w-Custom6 align-self-center text-center" style="left: 0; margin-right: 100px;">
+						<span>nnnn</span>
+					</div>
+					<h6>active tactical mission</h6>
+					<div id="acttm-page-num" class="w-Custom6 align-self-center text-center" style="right: 0;">
+						<span>page</span>
+						<span>n</span>
+					</div>
+					<div id="acttm-car-left" class="btnCustom align-self-center" style="right: 0;">
+						<div class="btn-flat border-warning text-warning mr-1" style="width: 26px;">
+							<i class="fas fa-caret-left"></i>
+						</div>
+					</div>
+					<div id="acttm-car-right" class="btnCustom align-self-center" style="right: 0;">
+						<div class="btn-flat border-warning text-warning ml-0" style="width: 26px;">
+							<i class="fas fa-caret-right"></i>
+						</div>
+					</div>
+					<div id="acttm-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+						<div class="btn-flat border-warning text-warning" style="width: 26px;">
+							C
+                        </div>
+					</div>
+				</div>
+				<div class="modal-body" lj-type="stage">
+					<div lj-type="layer" id="acttm-layer" lj-fit-to="responsive-width"
+						data-lj-default-frame="acttm_modal_1" class="overflow-hidden">
+						<div lj-type="frame" lj-name="acttm_modal_1" lj-transition="fade">
+							<div class="row">
+								<div class="col-md-6 m-auto">
+									<table
+										class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+										style="border-collapse: collapse;">
+										<thead>
+											<tr class="bg-warning text-dark">
+												<th style="width: 7%;">no</th>
+												<th>callsign</th>
+												<th>time</th>
+												<th style="width: 7%;">wp</th>
+											</tr>
+										</thead>
+										<tbody id="acttm-row-1">
+											<tr class="border-bottom border-warning">
+												<td class="no-border bg-transparent" style="width: 7%;">nnn</td>
+												<td class="no-border bg-transparent">nnn</td>
+												<td class="no-border bg-transparent">nnn</td>
+												<td class="no-border bg-transparent" style="width: 7%;">n</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div lj-type="frame" lj-name="acttm_modal_2" lj-transition="fade">
+							<div class="row">
+								<div class="col-md-6 m-auto">
+									<table
+										class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+										style="border-collapse: collapse;">
+										<thead>
+											<tr class="bg-warning text-dark">
+												<th style="width: 7%;">no</th>
+												<th>callsign</th>
+												<th>time</th>
+												<th style="width: 7%;">wp</th>
+											</tr>
+										</thead>
+										<tbody id="acttm-row-2">
+											<tr class="border-bottom border-warning">
+												<td class="no-border bg-transparent" style="width: 7%;">nnn</td>
+												<td class="no-border bg-transparent">nnn</td>
+												<td class="no-border bg-transparent">nnn</td>
+												<td class="no-border bg-transparent" style="width: 7%;">n</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div lj-type="frame" lj-name="acttm_modal_3" lj-transition="fade">
+							<div class="row">
+								<div class="col-md-6 m-auto">
+									<table
+										class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+										style="border-collapse: collapse;">
+										<thead>
+											<tr class="bg-warning text-dark">
+												<th style="width: 7%;">no</th>
+												<th>callsign</th>
+												<th>time</th>
+												<th style="width: 7%;">wp</th>
+											</tr>
+										</thead>
+										<tbody id="acttm-row-3">
+											<tr class="border-bottom border-warning">
+												<td class="no-border bg-transparent" style="width: 7%;">nnn</td>
+												<td class="no-border bg-transparent">nnn</td>
+												<td class="no-border bg-transparent">nnn</td>
+												<td class="no-border bg-transparent" style="width: 7%;">n</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div lj-type="frame" lj-name="acttm_modal_4" lj-transition="fade">
+							<div class="row">
+								<div class="col-md-6 m-auto">
+									<table
+										class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+										style="border-collapse: collapse;">
+										<thead>
+											<tr class="bg-warning text-dark">
+												<th style="width: 7%;">no</th>
+												<th>callsign</th>
+												<th>time</th>
+												<th style="width: 7%;">wp</th>
+											</tr>
+										</thead>
+										<tbody id="acttm-row-4">
+											<tr class="border-bottom border-warning">
+												<td class="no-border bg-transparent" style="width: 7%;">nnn</td>
+												<td class="no-border bg-transparent">nnn</td>
+												<td class="no-border bg-transparent">nnn</td>
+												<td class="no-border bg-transparent" style="width: 7%;">n</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <!--comdir Modal -->
 <div class="cusModal p-0" style="font-family: 'pixelmix';">

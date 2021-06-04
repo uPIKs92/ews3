@@ -313,6 +313,66 @@ function createButton(buttonName) {
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#cnflct-modal');
 								break;
+							case 16:
+								window.location = '#actfp_modal_' + 1 + '&t=0.15s';
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#actfp-modal');
+								$('#actfp-page-num span:last-child').html('<span>' + 1 + '</span>');
+								//$('#actfp-row-1, #actfp-row-2, #actfp-row-3, #actfp-row-4, #actfp-row-5').empty();
+
+								navModal(1, 1, 2, 1, 'actfp', 'totes');
+								$.setTitle = function () { };
+
+								/*setTimeout(function () {
+									for (let i = 1; i <= 100; i++) {
+										if (i <= 20) {
+											$('#actfp-row-1').append(
+												'<tr class="border-bottom border-warning">' +
+												'<td class="no-border bg-transparent">' + i + '</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'</tr>');
+										}
+									}
+								}, 125);*/
+								break;
+							case 17:
+								window.location = '#acttm_modal_' + 1 + '&t=0.15s';
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#acttm-modal');
+								$('#acttm-page-num span:last-child').html('<span>' + 1 + '</span>');
+								$('#acttm-page-ttl').html('<span>soc</span>');
+								//$('#acttm-row-1, #acttm-row-2, #acttm-row-3, #acttm-row-4, #acttm-row-5').empty();
+
+								navModal(1, 1, 4, 1, 'acttm', 'totes');
+								$.setTitle = function () {
+									switch (currModalPage) {
+										case 1:
+											$('#acttm-page-ttl').html('<span>soc</span>');
+											break;
+										case 2:
+											$('#acttm-page-ttl').html('<span>crc1</span>');
+											break;
+										case 3:
+											$('#acttm-page-ttl').html('<span>crc2</span>');
+											break;
+										case 4:
+											$('#acttm-page-ttl').html('<span>crc3</span>');
+											break;
+									}
+								};
+
+								/*setTimeout(function () {
+									for (let i = 1; i <= 100; i++) {
+										if (i <= 20) {
+											$('#acttm-row-1').append(
+												'<tr class="border-bottom border-warning">' +
+												'<td class="no-border bg-transparent">' + i + '</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'</tr>');
+										}
+									}
+								}, 125);*/
+								break;
 							case 21:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#comdir-modal');
