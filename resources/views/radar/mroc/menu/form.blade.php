@@ -574,71 +574,71 @@
                         </div>
                         <div lj-type="frame" lj-name="radcur_modal_2" lj-transition="fade">
                             <div class="row p-4">
-                                <div class="col-md-4 p-0 border border-warning">
+                                <div class="col-md-4 border border-warning">
                                     <div class="row">
-                                        <div class="col-md-12 p-0 p-0">
+                                        <div class="col-md-12 p-0">
                                             <div class="float-left">battle override</div>
                                             <div class="float-right">off</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0 mt-3">
+                                        <div class="col-md-12 p-0 mt-3">
                                             <div class="float-left">along trailer tilt</div>
                                             <div class="float-right">.00</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0">
+                                        <div class="col-md-12 p-0">
                                             <div class="float-left">across trailer tilt</div>
                                             <div class="float-right">.00</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0 mb-3">
+                                        <div class="col-md-12 p-0 mb-3">
                                             <div class="float-left">radar arp offset</div>
                                             <div class="float-right"></div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0 mt-3">
+                                        <div class="col-md-12 p-0 mt-3">
                                             <div class="float-left">nr detn criteria</div>
                                             <div class="float-right">001</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0 mb-3">
+                                        <div class="col-md-12 p-0 mb-3">
                                             <div class="float-left">mti detn criteria</div>
                                             <div class="float-right">002</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0 mt-3">
+                                        <div class="col-md-12 p-0 mt-3">
                                             <div class="float-left">nr 1st treshold</div>
                                             <div class="float-right">2</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0">
+                                        <div class="col-md-12 p-0">
                                             <div class="float-left">mti 1st treshold</div>
                                             <div class="float-right">4</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0">
+                                        <div class="col-md-12 p-0">
                                             <div class="float-left">gc 1st treshold</div>
                                             <div class="float-right">4</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 p-0 border border-warning text-center">
+                                <div class="col-md-4 border border-warning text-center">
                                     <span>pulse characteristics</span>
                                     <p class="underline border-warning mt-2"></p>
                                     <div class="row">
-                                        <div class="col-md-12 p-0 p-0">
+                                        <div class="col-md-12 p-0">
                                             <div class="float-left">stagger / jitter</div>
                                             <div class="float-right">off</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0">
+                                        <div class="col-md-12 p-0">
                                             <div class="float-left">prf discrimination</div>
                                             <div class="float-right">off</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0 mt-3">
+                                        <div class="col-md-12 p-0 mt-3">
                                             <div class="float-left">frequency mode</div>
                                             <div class="float-right">diverse</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0">
+                                        <div class="col-md-12 p-0">
                                             <div class="float-left">diverse freq ff</div>
                                             <div class="float-right">25</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0">
+                                        <div class="col-md-12 p-0">
                                             <div class="float-left">diverse freq fs</div>
                                             <div class="float-right">25</div>
                                         </div>
-                                        <div class="col-md-12 p-0 p-0 mt-3">
+                                        <div class="col-md-12 p-0 mt-3">
                                             <table
                                                 class="tiny-2 table table-bordered text-warning border-warning text-center m-0"
                                                 style="border-collapse: collapse;">
@@ -695,7 +695,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 p-0 border border-warning text-center">
+                                <div class="col-md-4 border border-warning text-center">
                                     <span>lwrhgt</span>
                                     <p class="underline border-warning mt-2"></p>
                                     <table
@@ -1817,6 +1817,101 @@
         </div>
     </div>
 </div>
+<!--trksta Modal -->
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+    <div id="trksta-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <h6>tracking status</h6>
+                    <div id="trksta-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 p-0">
+                            <div class="border border-warning p-2 ml-2 mr-2 mt-3">
+                                <table
+                                    class="tiny-2 table table-sm table-bordered text-warning border-warning text-left m-2"
+                                    style="border-collapse: collapse;">
+                                    <tbody>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 40%;">track reference
+                                                number allocation block</td>
+                                            <td class="no-border bg-transparent" style="width: 3%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 26%;">-</td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">to</td>
+                                            <td class="no-border bg-transparent" style="width: 26%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 40%;">registration status
+                                            </td>
+                                            <td class="no-border bg-transparent" style="width: 3%;">:</td>
+                                            <td colspan="3" class="no-border bg-transparent" style="width: 57%;">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12 p-0 mt-3">
+                            <div class="border border-warning p-2 ml-2 mr-2">
+                                <h6>radar registration errors</h6>
+                                <p class="underline border-warning mt-2 mb-2"></p>
+                                <table
+                                    class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                    style="border-collapse: collapse;">
+                                    <thead>
+                                        <tr class="bg-warning text-dark">
+                                            <th>radar</th>
+                                            <th>range</th>
+                                            <th>azimuth</th>
+                                            <th>x-posn</th>
+                                            <th>y-posn</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-bottom border-warning">
+                                            <td class="no-border bg-transparent">1</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                        </tr>
+                                        <tr class="border-bottom border-warning">
+                                            <td class="no-border bg-transparent">2</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                        </tr>
+                                        <tr class="border-bottom border-warning">
+                                            <td class="no-border bg-transparent">3</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                        </tr>
+                                        <tr class="border-bottom border-warning">
+                                            <td class="no-border bg-transparent">4</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                            <td class="no-border bg-transparent">nnn</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--hostrk Modal -->
 <div class="cusModal p-0" style="font-family: 'pixelmix';">
     <div id="hostrk-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
@@ -1899,6 +1994,1108 @@
         </div>
     </div>
 </div>
+<!--refmis Modal -->
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+    <div id="refmis-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <h6>reference loose control mission</h6>
+                    <div id="refmis-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 p-0">
+                            <div class="border border-warning p-2 ml-2 mr-2 mt-3">
+                                <div class="row text-center">
+                                    <div class="col-md-3 p-0">
+                                        <span>controlling operator</span>
+                                        <span>000</span>
+                                    </div>
+                                    <div class="col-md-3 p-0">
+                                        <span>callsign</span>
+                                        <span>ccccccc</span>
+                                    </div>
+                                    <div class="col-md-3 p-0">
+                                        <span>type</span>
+                                        <span>mmmmmm</span>
+                                    </div>
+                                    <div class="col-md-3 p-0">
+                                        <span>reference</span>
+                                        <span>nn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 p-0">
+                            <div class="row">
+                                <div class="col-md-3 p-0">
+                                    <div class="border border-warning p-2 ml-2 mr-2 mt-3">
+                                        <div class="row">
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    fffff
+                                                </div>
+                                                <div class="float-right">
+                                                    ffffffff
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    delay
+                                                </div>
+                                                <div class="float-right">
+                                                    mm.ss
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    georeff
+                                                </div>
+                                                <div class="float-right">
+                                                    aaaannnn
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    lat
+                                                </div>
+                                                <div class="float-right">
+                                                    dd.mm.ssa
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0 mb-3">
+                                                <div class="float-left">
+                                                    long
+                                                </div>
+                                                <div class="float-right">
+                                                    ddd.mm.ssb
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    gtrk
+                                                </div>
+                                                <div class="float-right">
+                                                    tttdt
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    ghgt
+                                                </div>
+                                                <div class="float-right">
+                                                    shhhhu
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0 mb-3">
+                                                <div class="float-left">
+                                                    gspd
+                                                </div>
+                                                <div class="float-right">
+                                                    (ssss) ssss
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    ahdg
+                                                </div>
+                                                <div class="float-right">
+                                                    hhhdt
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    fl
+                                                </div>
+                                                <div class="float-right">
+                                                    shhhhu
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    aspd
+                                                </div>
+                                                <div class="float-right">
+                                                    (aaaa) aaaa
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 p-0">
+                                    <div class="border border-warning p-2 ml-2 mr-2 mt-3">
+                                        <div class="row">
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    fffff
+                                                </div>
+                                                <div class="float-right">
+                                                    ffffffff
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    delay
+                                                </div>
+                                                <div class="float-right">
+                                                    mm.ss
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    georeff
+                                                </div>
+                                                <div class="float-right">
+                                                    aaaannnn
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    lat
+                                                </div>
+                                                <div class="float-right">
+                                                    dd.mm.ssa
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0 mb-3">
+                                                <div class="float-left">
+                                                    long
+                                                </div>
+                                                <div class="float-right">
+                                                    ddd.mm.ssb
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    gtrk
+                                                </div>
+                                                <div class="float-right">
+                                                    tttdt
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    ghgt
+                                                </div>
+                                                <div class="float-right">
+                                                    shhhhu
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0 mb-3">
+                                                <div class="float-left">
+                                                    gspd
+                                                </div>
+                                                <div class="float-right">
+                                                    (ssss) ssss
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    ahdg
+                                                </div>
+                                                <div class="float-right">
+                                                    hhhdt
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    fl
+                                                </div>
+                                                <div class="float-right">
+                                                    shhhhu
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    aspd
+                                                </div>
+                                                <div class="float-right">
+                                                    (aaaa) aaaa
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 p-0">
+                                    <div class="border border-warning p-2 ml-2 mr-2 mt-3">
+                                        <div class="row">
+                                            <div class="col-md-12 clearfix p-0">
+                                                <span>a.i. information</span>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    gdist
+                                                </div>
+                                                <div class="float-right">
+                                                    dddd
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0 mb-3">
+                                                <div class="float-left">
+                                                    elev
+                                                </div>
+                                                <div class="float-right">
+                                                    s ee
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    bearing
+                                                </div>
+                                                <div class="float-right">
+                                                    bbb
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0 mb-3">
+                                                <div class="float-left">
+                                                    ghgt offset
+                                                </div>
+                                                <div class="float-right">
+                                                    shhh
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    angle off
+                                                </div>
+                                                <div class="float-right">
+                                                    aaaa
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    fl offset
+                                                </div>
+                                                <div class="float-right">
+                                                    sfff
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 p-0">
+                                    <div class="border border-warning p-2 ml-2 mr-2 mt-3">
+                                        <div class="row">
+                                            <div class="col-md-12 clearfix p-0">
+                                                <span>attack details</span>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    off range
+                                                </div>
+                                                <div class="float-right">
+                                                    rr
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0 mb-3">
+                                                <div class="float-left">
+                                                    off angle
+                                                </div>
+                                                <div class="float-right">
+                                                    aaa
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    atk time
+                                                </div>
+                                                <div class="float-right">
+                                                    mm.ss
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    atk tangle
+                                                </div>
+                                                <div class="float-right">
+                                                    ttt
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    atk ghgt
+                                                </div>
+                                                <div class="float-right">
+                                                    shhh
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0 mb-3">
+                                                <div class="float-left">
+                                                    atk gspd
+                                                </div>
+                                                <div class="float-right">
+                                                    ssss
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    atk fl
+                                                </div>
+                                                <div class="float-right">
+                                                    sfff
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    atk aspd
+                                                </div>
+                                                <div class="float-right">
+                                                    aaaa
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 p-0">
+                            <div class="row">
+                                <div class="col-md-3 p-0">
+                                    <div class="border border-warning p-2 ml-2 mr-2 mt-3">
+                                        <div class="row">
+                                            <div class="col-md-12 clearfix p-0">
+                                                <span>leg 1 (curr aspd)</span>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    gtrk
+                                                </div>
+                                                <div class="float-right">
+                                                    tttf
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    ahdg
+                                                </div>
+                                                <div class="float-right">
+                                                    hhhd
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    time
+                                                </div>
+                                                <div class="float-right">
+                                                    hh.mm.ss
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    gdist
+                                                </div>
+                                                <div class="float-right">
+                                                    dddd
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 p-0">
+                                    <div class="border border-warning p-2 ml-2 mr-2 mt-3">
+                                        <div class="row">
+                                            <div class="col-md-12 clearfix p-0">
+                                                <span>leg 2 (curr aspd)</span>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    gtrk
+                                                </div>
+                                                <div class="float-right">
+                                                    tttf
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    ahdg
+                                                </div>
+                                                <div class="float-right">
+                                                    hhhd
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    time
+                                                </div>
+                                                <div class="float-right">
+                                                    hh.mm.ss
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    gdist
+                                                </div>
+                                                <div class="float-right">
+                                                    dddd
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 p-0">
+                                    <div class="border border-warning p-2 ml-2 mr-2 mt-3">
+                                        <div class="row">
+                                            <div class="col-md-12 clearfix p-0">
+                                                <span>leg 1 (ovrd aspd)</span>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    gtrk
+                                                </div>
+                                                <div class="float-right">
+                                                    tttf
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    ahdg
+                                                </div>
+                                                <div class="float-right">
+                                                    hhhd
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    time
+                                                </div>
+                                                <div class="float-right">
+                                                    hh.mm.ss
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    gdist
+                                                </div>
+                                                <div class="float-right">
+                                                    dddd
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 p-0">
+                                    <div class="border border-warning p-2 ml-2 mr-2 mt-3">
+                                        <div class="row">
+                                            <div class="col-md-12 clearfix p-0">
+                                                <span>leg 2 (ovrd aspd)</span>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    gtrk
+                                                </div>
+                                                <div class="float-right">
+                                                    tttf
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    ahdg
+                                                </div>
+                                                <div class="float-right">
+                                                    hhhd
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    time
+                                                </div>
+                                                <div class="float-right">
+                                                    hh.mm.ss
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                <div class="float-left">
+                                                    gdist
+                                                </div>
+                                                <div class="float-right">
+                                                    dddd
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix p-0">
+                                                &ensp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--reffp Modal -->
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+    <div id="reffp-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <h6>reference flight plan</h6>
+                    <div id="reffp-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 p-0">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th colspan="3" class="pt-3 pb-3">flight plan data</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">fp type</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td colspan="3" class="no-border bg-transparent" style="height: 21px;"></td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">callsign</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nnnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td colspan="3" class="no-border bg-transparent" style="height: 21px;"></td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">m2 code</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">m3 code</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td colspan="3" class="no-border bg-transparent" style="height: 21px;"></td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">status</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">track</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4 p-0">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th colspan="3" class="border-bottom border-black pt-1">turning point data</th>
+                                    </tr>
+                                    <tr class="bg-warning text-dark">
+                                        <th class="pb-2">name</th>
+                                        <th class="pb-2">position</th>
+                                        <th class="pb-2">time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4 p-0">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th colspan="3" class="border-bottom border-black pt-1">leg speed</th>
+                                    </tr>
+                                    <tr class="bg-warning text-dark">
+                                        <th class="pb-2">gspd</th>
+                                        <th class="pb-2">fl</th>
+                                        <th class="pb-2">aspd</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="border border-warning ml-2 mr-2">
+                        <div class="row">
+                            <div class="col-md-12 p-0">
+                                <table
+                                    class="tiny-2 table table-sm table-bordered text-warning border-warning text-left m-2"
+                                    style="border-collapse: collapse;">
+                                    <tbody>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">departure airfield
+                                            </td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">arrival airfield
+                                            </td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">aircraft type</td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">ancillary</td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">radio telephone
+                                            </td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">additional</td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-12 p-0">
+                                <table
+                                    class="tiny-2 table table-sm table-bordered text-warning border-warning text-left m-2"
+                                    style="border-collapse: collapse;">
+                                    <tbody>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">scheduled days</td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--reftm Modal -->
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+    <div id="reftm-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <h6>reference tactical mission</h6>
+                    <div id="reftm-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 p-0">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th colspan="3" class="pt-3 pb-3">flight plan data</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">fp type</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td colspan="3" class="no-border bg-transparent" style="height: 21px;"></td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">callsign</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nnnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td colspan="3" class="no-border bg-transparent" style="height: 21px;"></td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">m2 code</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">m3 code</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td colspan="3" class="no-border bg-transparent" style="height: 21px;"></td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">status</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 35%;">track</td>
+                                        <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                        <td class="no-border bg-transparent" style="width: 60%;">nnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4 p-0">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th colspan="3" class="border-bottom border-black pt-1">turning point data</th>
+                                    </tr>
+                                    <tr class="bg-warning text-dark">
+                                        <th class="pb-2">name</th>
+                                        <th class="pb-2">position</th>
+                                        <th class="pb-2">time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 50%;">nnnnnn</td>
+                                        <td class="no-border bg-transparent" style="width: 25%;">nnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4 p-0">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th colspan="3" class="border-bottom border-black pt-1">leg speed</th>
+                                    </tr>
+                                    <tr class="bg-warning text-dark">
+                                        <th class="pb-2">gspd</th>
+                                        <th class="pb-2">fl</th>
+                                        <th class="pb-2">aspd</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                        <td class="no-border bg-transparent">nnn</td>
+                                        <td class="no-border bg-transparent">nnnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="border border-warning ml-2 mr-2">
+                        <div class="row">
+                            <div class="col-md-12 p-0">
+                                <table
+                                    class="tiny-2 table table-sm table-bordered text-warning border-warning text-left m-2"
+                                    style="border-collapse: collapse;">
+                                    <tbody>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">current fuel</td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">remain fuel</td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">type/fit</td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-12 p-0">
+                                <table
+                                    class="tiny-2 table table-sm table-bordered text-warning border-warning text-left m-2 mt-3"
+                                    style="border-collapse: collapse;">
+                                    <tbody>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">departure airfield
+                                            </td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">arrival airfield
+                                            </td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">aircraft type</td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">ancillary</td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">radio telephone
+                                            </td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                        <tr class="no-border">
+                                            <td class="no-border bg-transparent" style="width: 20%;">additional</td>
+                                            <td class="no-border bg-transparent" style="width: 5%;">:</td>
+                                            <td class="no-border bg-transparent" style="width: 70%;">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--links Modal -->
 <div class="cusModal p-0" style="font-family: 'pixelmix';">
     <div id="links-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
@@ -1932,7 +3129,8 @@
                                 <td class="no-border bg-transparent" style="width: 10%">yyyn</td>
                                 <td class="no-border bg-transparent" style="width: 15%">iiiiiiii iiiiiiii</td>
                                 <td class="no-border bg-transparent" style="width: 15%">ssssssss</td>
-                                <td class="no-border bg-transparent" style="width: 20%">dd.mm.ssq dd.mm.ssq dd.mm.ssq dd.mm.ssq</td>
+                                <td class="no-border bg-transparent" style="width: 20%">dd.mm.ssq dd.mm.ssq dd.mm.ssq
+                                    dd.mm.ssq</td>
                                 <td class="no-border bg-transparent" style="width: 10%">tt.tt</td>
                                 <td class="no-border bg-transparent" style="width: 15%">xxxxxxx bite rrrrrrr emcon</td>
                                 <td class="no-border bg-transparent" style="width: 15%">overloaded overloaded</td>

@@ -377,9 +377,25 @@ function createButton(buttonName) {
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#comdir-modal');
 								break;
+							case 22:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#trksta-modal');
+								break;
 							case 23:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#hostrk-modal');
+								break;
+							case 25:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#refmis-modal');
+								break;
+							case 26:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#reffp-modal');
+								break;
+							case 27:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#reftm-modal');
 								break;
 							case 31:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
