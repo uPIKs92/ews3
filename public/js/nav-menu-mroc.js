@@ -377,6 +377,50 @@ function createButton(buttonName) {
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#comdir-modal');
 								break;
+							case 23:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#hostrk-modal');
+								break;
+							case 31:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#links-modal');
+								break;
+							case 32:
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#guide-modal');
+								break;
+							case 35:
+								window.location = '#turnpt_modal_' + 1 + '&t=0.15s';
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#turnpt-modal');
+								$('#turnpt-page-num span:last-child').html('<span>' + 1 + '</span>');
+								//$('#turnpt-row-1, #turnpt-row-2, #turnpt-row-3, #turnpt-row-4, #turnpt-row-5').empty();
+
+								navModal(1, 1, 3, 1, 'turnpt', 'totes');
+								$.setTitle = function () { };
+								break;
+							case 36:
+								window.location = '#curfp_modal_' + 1 + '&t=0.15s';
+								$('#btnTotes-' + id).attr('data-toggle', 'modal');
+								$('#btnTotes-' + id).attr('data-target', '#curfp-modal');
+								$('#curfp-page-num span:last-child').html('<span>' + 1 + '</span>');
+								//$('#curfp-row-1, #curfp-row-2, #curfp-row-3, #curfp-row-4, #curfp-row-5').empty();
+
+								navModal(1, 1, 2, 1, 'curfp', 'totes');
+								$.setTitle = function () { };
+
+								/*setTimeout(function () {
+									for (let i = 1; i <= 100; i++) {
+										if (i <= 20) {
+											$('#curfp-row-1').append(
+												'<tr class="border-bottom border-warning">' +
+												'<td class="no-border bg-transparent">' + i + '</td>' +
+												'<td class="no-border bg-transparent">nnn</td>' +
+												'</tr>');
+										}
+									}
+								}, 125);*/
+								break;
 							case 37:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#seqlst-modal');

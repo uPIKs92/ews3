@@ -548,7 +548,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12 m-0 p-0">
+                                <div class="col-md-12 p-0 m-0 p-0">
                                     <div class="row form-inline border border-warning justify-content-center">
                                         <div class="col-auto pl-1 pr-2">bite</div>
                                         <div class="col-auto pr-2">status</div>
@@ -574,71 +574,71 @@
                         </div>
                         <div lj-type="frame" lj-name="radcur_modal_2" lj-transition="fade">
                             <div class="row p-4">
-                                <div class="col-md-4 border border-warning">
+                                <div class="col-md-4 p-0 border border-warning">
                                     <div class="row">
-                                        <div class="col-md-12 p-0">
+                                        <div class="col-md-12 p-0 p-0">
                                             <div class="float-left">battle override</div>
                                             <div class="float-right">off</div>
                                         </div>
-                                        <div class="col-md-12 p-0 mt-3">
+                                        <div class="col-md-12 p-0 p-0 mt-3">
                                             <div class="float-left">along trailer tilt</div>
                                             <div class="float-right">.00</div>
                                         </div>
-                                        <div class="col-md-12 p-0">
+                                        <div class="col-md-12 p-0 p-0">
                                             <div class="float-left">across trailer tilt</div>
                                             <div class="float-right">.00</div>
                                         </div>
-                                        <div class="col-md-12 p-0 mb-3">
+                                        <div class="col-md-12 p-0 p-0 mb-3">
                                             <div class="float-left">radar arp offset</div>
                                             <div class="float-right"></div>
                                         </div>
-                                        <div class="col-md-12 p-0 mt-3">
+                                        <div class="col-md-12 p-0 p-0 mt-3">
                                             <div class="float-left">nr detn criteria</div>
                                             <div class="float-right">001</div>
                                         </div>
-                                        <div class="col-md-12 p-0 mb-3">
+                                        <div class="col-md-12 p-0 p-0 mb-3">
                                             <div class="float-left">mti detn criteria</div>
                                             <div class="float-right">002</div>
                                         </div>
-                                        <div class="col-md-12 p-0 mt-3">
+                                        <div class="col-md-12 p-0 p-0 mt-3">
                                             <div class="float-left">nr 1st treshold</div>
                                             <div class="float-right">2</div>
                                         </div>
-                                        <div class="col-md-12 p-0">
+                                        <div class="col-md-12 p-0 p-0">
                                             <div class="float-left">mti 1st treshold</div>
                                             <div class="float-right">4</div>
                                         </div>
-                                        <div class="col-md-12 p-0">
+                                        <div class="col-md-12 p-0 p-0">
                                             <div class="float-left">gc 1st treshold</div>
                                             <div class="float-right">4</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 border border-warning text-center">
+                                <div class="col-md-4 p-0 border border-warning text-center">
                                     <span>pulse characteristics</span>
                                     <p class="underline border-warning mt-2"></p>
                                     <div class="row">
-                                        <div class="col-md-12 p-0">
+                                        <div class="col-md-12 p-0 p-0">
                                             <div class="float-left">stagger / jitter</div>
                                             <div class="float-right">off</div>
                                         </div>
-                                        <div class="col-md-12 p-0">
+                                        <div class="col-md-12 p-0 p-0">
                                             <div class="float-left">prf discrimination</div>
                                             <div class="float-right">off</div>
                                         </div>
-                                        <div class="col-md-12 p-0 mt-3">
+                                        <div class="col-md-12 p-0 p-0 mt-3">
                                             <div class="float-left">frequency mode</div>
                                             <div class="float-right">diverse</div>
                                         </div>
-                                        <div class="col-md-12 p-0">
+                                        <div class="col-md-12 p-0 p-0">
                                             <div class="float-left">diverse freq ff</div>
                                             <div class="float-right">25</div>
                                         </div>
-                                        <div class="col-md-12 p-0">
+                                        <div class="col-md-12 p-0 p-0">
                                             <div class="float-left">diverse freq fs</div>
                                             <div class="float-right">25</div>
                                         </div>
-                                        <div class="col-md-12 p-0 mt-3">
+                                        <div class="col-md-12 p-0 p-0 mt-3">
                                             <table
                                                 class="tiny-2 table table-bordered text-warning border-warning text-center m-0"
                                                 style="border-collapse: collapse;">
@@ -695,7 +695,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 border border-warning text-center">
+                                <div class="col-md-4 p-0 border border-warning text-center">
                                     <span>lwrhgt</span>
                                     <p class="underline border-warning mt-2"></p>
                                     <table
@@ -802,7 +802,7 @@
                         data-lj-default-frame="stdfp_modal_1" class="overflow-hidden">
                         <div lj-type="frame" lj-name="stdfp_modal_1" lj-transition="fade">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-3 p-0">
                                     <table
                                         class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                         style="border-collapse: collapse;">
@@ -820,7 +820,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 p-0">
                                     <table
                                         class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                         style="border-collapse: collapse;">
@@ -838,7 +838,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 p-0">
                                     <table
                                         class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                         style="border-collapse: collapse;">
@@ -856,7 +856,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 p-0">
                                     <table
                                         class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                         style="border-collapse: collapse;">
@@ -878,7 +878,7 @@
                         </div>
                         <div lj-type="frame" lj-name="stdfp_modal_2" lj-transition="fade">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-3 p-0">
                                     <table
                                         class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                         style="border-collapse: collapse;">
@@ -896,9 +896,9 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-3"></div>
-                                <div class="col-md-3"></div>
-                                <div class="col-md-3"></div>
+                                <div class="col-md-3 p-0"></div>
+                                <div class="col-md-3 p-0"></div>
+                                <div class="col-md-3 p-0"></div>
                             </div>
                         </div>
                     </div>
@@ -923,7 +923,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 p-0">
                             <table
                                 class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                 style="border-collapse: collapse;">
@@ -945,7 +945,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 p-0">
                             <table
                                 class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                 style="border-collapse: collapse;">
@@ -1318,7 +1318,7 @@
         </div>
     </div>
 </div>
-{{-- cnflct Modal --}}
+<!--cnflct Modal -->
 <div class="cusModal p-0" style="font-family: 'pixelmix';">
     <div id="cnflct-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
         <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
@@ -1334,7 +1334,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4 p-0">
                             <table
                                 class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                 style="border-collapse: collapse;">
@@ -1358,7 +1358,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 p-0">
                             <table
                                 class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                 style="border-collapse: collapse;">
@@ -1382,7 +1382,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 p-0">
                             <table
                                 class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                 style="border-collapse: collapse;">
@@ -1412,7 +1412,7 @@
         </div>
     </div>
 </div>
-{{-- actfp Modal --}}
+<!--actfp Modal -->
 <div class="cusModal p-0" style="font-family: 'pixelmix';">
     <div id="actfp-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
         <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
@@ -1445,7 +1445,7 @@
                         data-lj-default-frame="actfp_modal_1" class="overflow-hidden">
                         <div lj-type="frame" lj-name="actfp_modal_1" lj-transition="fade">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-3 p-0">
                                     <table
                                         class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                         style="border-collapse: collapse;">
@@ -1465,7 +1465,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 p-0">
                                     <table
                                         class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                         style="border-collapse: collapse;">
@@ -1485,7 +1485,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 p-0">
                                     <table
                                         class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                         style="border-collapse: collapse;">
@@ -1505,7 +1505,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 p-0">
                                     <table
                                         class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                         style="border-collapse: collapse;">
@@ -1529,7 +1529,7 @@
                         </div>
                         <div lj-type="frame" lj-name="actfp_modal_2" lj-transition="fade">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-3 p-0">
                                     <table
                                         class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                         style="border-collapse: collapse;">
@@ -1549,9 +1549,9 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-3"></div>
-                                <div class="col-md-3"></div>
-                                <div class="col-md-3"></div>
+                                <div class="col-md-3 p-0"></div>
+                                <div class="col-md-3 p-0"></div>
+                                <div class="col-md-3 p-0"></div>
                             </div>
                         </div>
                     </div>
@@ -1560,149 +1560,150 @@
         </div>
     </div>
 </div>
-{{-- acttm Modal --}}
+<!--acttm Modal -->
 <div class="cusModal p-0" style="font-family: 'pixelmix';">
-	<div id="acttm-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
-		<div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
-			<div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
-				style="width: 1054px; height: 778px;">
-				<div class="modal-header solid-bordered border-warning">
-					<div id="acttm-page-ttl" class="w-Custom6 align-self-center text-center" style="left: 0; margin-right: 100px;">
-						<span>nnnn</span>
-					</div>
-					<h6>active tactical mission</h6>
-					<div id="acttm-page-num" class="w-Custom6 align-self-center text-center" style="right: 0;">
-						<span>page</span>
-						<span>n</span>
-					</div>
-					<div id="acttm-car-left" class="btnCustom align-self-center" style="right: 0;">
-						<div class="btn-flat border-warning text-warning mr-1" style="width: 26px;">
-							<i class="fas fa-caret-left"></i>
-						</div>
-					</div>
-					<div id="acttm-car-right" class="btnCustom align-self-center" style="right: 0;">
-						<div class="btn-flat border-warning text-warning ml-0" style="width: 26px;">
-							<i class="fas fa-caret-right"></i>
-						</div>
-					</div>
-					<div id="acttm-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
-						<div class="btn-flat border-warning text-warning" style="width: 26px;">
-							C
+    <div id="acttm-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <div id="acttm-page-ttl" class="w-Custom6 align-self-center text-center"
+                        style="left: 0; margin-right: 100px;">
+                        <span>nnnn</span>
+                    </div>
+                    <h6>active tactical mission</h6>
+                    <div id="acttm-page-num" class="w-Custom6 align-self-center text-center" style="right: 0;">
+                        <span>page</span>
+                        <span>n</span>
+                    </div>
+                    <div id="acttm-car-left" class="btnCustom align-self-center" style="right: 0;">
+                        <div class="btn-flat border-warning text-warning mr-1" style="width: 26px;">
+                            <i class="fas fa-caret-left"></i>
                         </div>
-					</div>
-				</div>
-				<div class="modal-body" lj-type="stage">
-					<div lj-type="layer" id="acttm-layer" lj-fit-to="responsive-width"
-						data-lj-default-frame="acttm_modal_1" class="overflow-hidden">
-						<div lj-type="frame" lj-name="acttm_modal_1" lj-transition="fade">
-							<div class="row">
-								<div class="col-md-6 m-auto">
-									<table
-										class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
-										style="border-collapse: collapse;">
-										<thead>
-											<tr class="bg-warning text-dark">
-												<th style="width: 7%;">no</th>
-												<th>callsign</th>
-												<th>time</th>
-												<th style="width: 7%;">wp</th>
-											</tr>
-										</thead>
-										<tbody id="acttm-row-1">
-											<tr class="border-bottom border-warning">
-												<td class="no-border bg-transparent" style="width: 7%;">nnn</td>
-												<td class="no-border bg-transparent">nnn</td>
-												<td class="no-border bg-transparent">nnn</td>
-												<td class="no-border bg-transparent" style="width: 7%;">n</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div lj-type="frame" lj-name="acttm_modal_2" lj-transition="fade">
-							<div class="row">
-								<div class="col-md-6 m-auto">
-									<table
-										class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
-										style="border-collapse: collapse;">
-										<thead>
-											<tr class="bg-warning text-dark">
-												<th style="width: 7%;">no</th>
-												<th>callsign</th>
-												<th>time</th>
-												<th style="width: 7%;">wp</th>
-											</tr>
-										</thead>
-										<tbody id="acttm-row-2">
-											<tr class="border-bottom border-warning">
-												<td class="no-border bg-transparent" style="width: 7%;">nnn</td>
-												<td class="no-border bg-transparent">nnn</td>
-												<td class="no-border bg-transparent">nnn</td>
-												<td class="no-border bg-transparent" style="width: 7%;">n</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div lj-type="frame" lj-name="acttm_modal_3" lj-transition="fade">
-							<div class="row">
-								<div class="col-md-6 m-auto">
-									<table
-										class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
-										style="border-collapse: collapse;">
-										<thead>
-											<tr class="bg-warning text-dark">
-												<th style="width: 7%;">no</th>
-												<th>callsign</th>
-												<th>time</th>
-												<th style="width: 7%;">wp</th>
-											</tr>
-										</thead>
-										<tbody id="acttm-row-3">
-											<tr class="border-bottom border-warning">
-												<td class="no-border bg-transparent" style="width: 7%;">nnn</td>
-												<td class="no-border bg-transparent">nnn</td>
-												<td class="no-border bg-transparent">nnn</td>
-												<td class="no-border bg-transparent" style="width: 7%;">n</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div lj-type="frame" lj-name="acttm_modal_4" lj-transition="fade">
-							<div class="row">
-								<div class="col-md-6 m-auto">
-									<table
-										class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
-										style="border-collapse: collapse;">
-										<thead>
-											<tr class="bg-warning text-dark">
-												<th style="width: 7%;">no</th>
-												<th>callsign</th>
-												<th>time</th>
-												<th style="width: 7%;">wp</th>
-											</tr>
-										</thead>
-										<tbody id="acttm-row-4">
-											<tr class="border-bottom border-warning">
-												<td class="no-border bg-transparent" style="width: 7%;">nnn</td>
-												<td class="no-border bg-transparent">nnn</td>
-												<td class="no-border bg-transparent">nnn</td>
-												<td class="no-border bg-transparent" style="width: 7%;">n</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    </div>
+                    <div id="acttm-car-right" class="btnCustom align-self-center" style="right: 0;">
+                        <div class="btn-flat border-warning text-warning ml-0" style="width: 26px;">
+                            <i class="fas fa-caret-right"></i>
+                        </div>
+                    </div>
+                    <div id="acttm-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body" lj-type="stage">
+                    <div lj-type="layer" id="acttm-layer" lj-fit-to="responsive-width"
+                        data-lj-default-frame="acttm_modal_1" class="overflow-hidden">
+                        <div lj-type="frame" lj-name="acttm_modal_1" lj-transition="fade">
+                            <div class="row">
+                                <div class="col-md-6 p-0 m-auto">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>time</th>
+                                                <th style="width: 7%;">wp</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="acttm-row-1">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent" style="width: 7%;">n</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div lj-type="frame" lj-name="acttm_modal_2" lj-transition="fade">
+                            <div class="row">
+                                <div class="col-md-6 p-0 m-auto">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>time</th>
+                                                <th style="width: 7%;">wp</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="acttm-row-2">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent" style="width: 7%;">n</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div lj-type="frame" lj-name="acttm_modal_3" lj-transition="fade">
+                            <div class="row">
+                                <div class="col-md-6 p-0 m-auto">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>time</th>
+                                                <th style="width: 7%;">wp</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="acttm-row-3">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent" style="width: 7%;">n</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div lj-type="frame" lj-name="acttm_modal_4" lj-transition="fade">
+                            <div class="row">
+                                <div class="col-md-6 p-0 m-auto">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>time</th>
+                                                <th style="width: 7%;">wp</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="acttm-row-4">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent" style="width: 7%;">n</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!--comdir Modal -->
 <div class="cusModal p-0" style="font-family: 'pixelmix';">
@@ -1720,7 +1721,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 p-0">
                             <table
                                 class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                 style="border-collapse: collapse;">
@@ -1760,7 +1761,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 p-0">
                             <table
                                 class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
                                 style="border-collapse: collapse;">
@@ -1800,7 +1801,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 p-0">
                             <div class="border border-warning p-2 ml-2 mr-2">
                                 <h6>additional numbers</h6>
                                 <p class="underline border-warning mt-2 mb-2"></p>
@@ -1808,6 +1809,463 @@
                                     <textarea class="form-out border-warning text-warning w-100 h-Custom-sm-1"
                                         aria-label="With textarea" style="font-size: 16px;"></textarea>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--hostrk Modal -->
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+    <div id="hostrk-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <h6>hostile tracks</h6>
+                    <div id="hostrk-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 p-0">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th style="width: 10%;">ref</th>
+                                        <th style="width: 10%;">ahdg</th>
+                                        <th style="width: 10%;">fl</th>
+                                        <th style="width: 10%;">aspd</th>
+                                        <th style="width: 10%;">str</th>
+                                        <th style="width: 10%;">typ</th>
+                                        <th style="width: 10%;">loc</th>
+                                        <th style="width: 10%;">rem</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="hostrk-row-1">
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6 p-0">
+                            <table
+                                class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr class="bg-warning text-dark">
+                                        <th style="width: 10%;">ref</th>
+                                        <th style="width: 10%;">ahdg</th>
+                                        <th style="width: 10%;">fl</th>
+                                        <th style="width: 10%;">aspd</th>
+                                        <th style="width: 10%;">str</th>
+                                        <th style="width: 10%;">typ</th>
+                                        <th style="width: 10%;">loc</th>
+                                        <th style="width: 10%;">rem</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="hostrk-row-2">
+                                    <tr class="border-bottom border-warning">
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                        <td class="no-border bg-transparent" style="width: 10%;">nnn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--links Modal -->
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+    <div id="links-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <h6 class="text-none">LINK STATUS IIIn</h6>
+                    <div class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <table class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                        style="border-collapse: collapse;">
+                        <thead>
+                            <tr class="bg-warning text-dark">
+                                <th style="width: 10%">site</th>
+                                <th style="width: 15%">links</th>
+                                <th style="width: 15%">status</th>
+                                <th style="width: 20%">position</th>
+                                <th style="width: 10%">time</th>
+                                <th style="width: 15%">radar</th>
+                                <th style="width: 15%">remote site</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-bottom border-warning">
+                                <td class="no-border bg-transparent" style="width: 10%">yyyn</td>
+                                <td class="no-border bg-transparent" style="width: 15%">iiiiiiii iiiiiiii</td>
+                                <td class="no-border bg-transparent" style="width: 15%">ssssssss</td>
+                                <td class="no-border bg-transparent" style="width: 20%">dd.mm.ssq dd.mm.ssq dd.mm.ssq dd.mm.ssq</td>
+                                <td class="no-border bg-transparent" style="width: 10%">tt.tt</td>
+                                <td class="no-border bg-transparent" style="width: 15%">xxxxxxx bite rrrrrrr emcon</td>
+                                <td class="no-border bg-transparent" style="width: 15%">overloaded overloaded</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--guide Modal -->
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+    <div id="guide-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning">
+                    <h6>common guidance</h6>
+                    <div class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <table class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                        style="border-collapse: collapse;">
+                        <thead>
+                            <tr class="bg-warning text-dark">
+                                <th style="width: 7%;">no</th>
+                                <th class="w-Custom9">tactic</th>
+                                <th class="w-Custom11">bank angle</th>
+                                <th class="w-Custom9">armt dist</th>
+                                <th class="w-Custom11">attack time</th>
+                                <th class="w-Custom9">crossing angle</th>
+                                <th class="w-Custom11">cruise speed</th>
+                                <th class="w-Custom9">attack speed</th>
+                                <th class="w-Custom11">stern tun</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-bottom border-warning">
+                                <td class="no-border bg-transparent" style="width: 7%;">n</td>
+                                <td class="no-border bg-transparent w-Custom9">nnnnnnn</td>
+                                <td class="no-border bg-transparent w-Custom11">nn</td>
+                                <td class="no-border bg-transparent w-Custom9">nn</td>
+                                <td class="no-border bg-transparent w-Custom11">nnn</td>
+                                <td class="no-border bg-transparent w-Custom9">nnn</td>
+                                <td class="no-border bg-transparent w-Custom11">nnnn</td>
+                                <td class="no-border bg-transparent w-Custom9">nnnn</td>
+                                <td class="no-border bg-transparent w-Custom11">nnn</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--turnpt Modal -->
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+    <div id="turnpt-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning" style="padding-left: 190px;">
+                    <h6>turning points</h6>
+                    <div id="turnpt-page-num" class="w-Custom6 align-self-center text-center" style="right: 0;">
+                        <span>page</span>
+                        <span>n</span>
+                    </div>
+                    <div id="turnpt-car-left" class="btnCustom align-self-center" style="right: 0;">
+                        <div class="btn-flat border-warning text-warning mr-1" style="width: 26px;">
+                            <i class="fas fa-caret-left"></i>
+                        </div>
+                    </div>
+                    <div id="turnpt-car-right" class="btnCustom align-self-center" style="right: 0;">
+                        <div class="btn-flat border-warning text-warning ml-0" style="width: 26px;">
+                            <i class="fas fa-caret-right"></i>
+                        </div>
+                    </div>
+                    <div id="turnpt-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body" lj-type="stage">
+                    <div lj-type="layer" id="turnpt-layer" lj-fit-to="responsive-width"
+                        data-lj-default-frame="turnpt_modal_1" class="overflow-hidden">
+                        <div lj-type="frame" lj-name="turnpt_modal_1" lj-transition="fade">
+                            <div class="row justify-content-center">
+                                <div class="col-md-2 p-0">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">name</th>
+                                                <th>position</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="turnpt-row-1">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-2 p-0">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">name</th>
+                                                <th>position</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="turnpt-row-2">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-2 p-0">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">name</th>
+                                                <th>position</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="turnpt-row-3">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-2 p-0">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">name</th>
+                                                <th>position</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="turnpt-row-4">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-2 p-0">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">name</th>
+                                                <th>position</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="turnpt-row-5">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--curfp Modal -->
+<div class="cusModal p-0" style="font-family: 'pixelmix';">
+    <div id="curfp-modal" class="modal fade p-0" data-backdrop="false" style="left: 27px; top: 124px;">
+        <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl" role="document">
+            <div class="modal-content m-auto bg-black solid-bordered border-warning text-warning"
+                style="width: 1054px; height: 778px;">
+                <div class="modal-header solid-bordered border-warning" style="padding-left: 190px;">
+                    <h6>current flight plans</h6>
+                    <div id="curfp-page-num" class="w-Custom6 align-self-center text-center" style="right: 0;">
+                        <span>page</span>
+                        <span>n</span>
+                    </div>
+                    <div id="curfp-car-left" class="btnCustom align-self-center" style="right: 0;">
+                        <div class="btn-flat border-warning text-warning mr-1" style="width: 26px;">
+                            <i class="fas fa-caret-left"></i>
+                        </div>
+                    </div>
+                    <div id="curfp-car-right" class="btnCustom align-self-center" style="right: 0;">
+                        <div class="btn-flat border-warning text-warning ml-0" style="width: 26px;">
+                            <i class="fas fa-caret-right"></i>
+                        </div>
+                    </div>
+                    <div id="curfp-close" class="btnCustom align-self-center" style="right: 0;" data-dismiss="modal">
+                        <div class="btn-flat border-warning text-warning" style="width: 26px;">
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body" lj-type="stage">
+                    <div lj-type="layer" id="curfp-layer" lj-fit-to="responsive-width"
+                        data-lj-default-frame="curfp_modal_1" class="overflow-hidden">
+                        <div lj-type="frame" lj-name="curfp_modal_1" lj-transition="fade">
+                            <div class="row">
+                                <div class="col-md-3 p-0">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>b1time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="curfp-row-1">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-3 p-0">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>b1time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="curfp-row-2">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-3 p-0">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>b1time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="curfp-row-3">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-3 p-0">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>b1time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="curfp-row-4">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div lj-type="frame" lj-name="curfp_modal_2" lj-transition="fade">
+                            <div class="row">
+                                <div class="col-md-3 p-0">
+                                    <table
+                                        class="tiny-2 table table-sm table-bordered text-warning border-warning text-center m-2 mt-3"
+                                        style="border-collapse: collapse;">
+                                        <thead>
+                                            <tr class="bg-warning text-dark">
+                                                <th style="width: 7%;">no</th>
+                                                <th>callsign</th>
+                                                <th>b1time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="curfp-row-5">
+                                            <tr class="border-bottom border-warning">
+                                                <td class="no-border bg-transparent" style="width: 7%;">N</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                                <td class="no-border bg-transparent">nnn</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-3 p-0"></div>
+                                <div class="col-md-3 p-0"></div>
+                                <div class="col-md-3 p-0"></div>
                             </div>
                         </div>
                     </div>
