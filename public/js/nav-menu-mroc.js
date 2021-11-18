@@ -23,6 +23,7 @@ var stateForDaysBtn = 0;
 var countForDaysState = 0;
 const amfpArr = [[], [], [], [], [], [], [], [], []];
 var currModalPage = 1;
+const tempValue = [];
 
 $(function () {
 	$('div[onload]').trigger('onload');
@@ -90,7 +91,8 @@ function createButton(buttonName) {
 							case 2:
 								event.stopImmediatePropagation();
 								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
-								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
+								document.getElementById('input-btn-out').innerHTML = '<span class="active">' + listBtnLogon[id] + '</span>';
+								$('#input-VK').val('ON');
 								break;
 							case 3:
 								event.stopImmediatePropagation();
@@ -111,7 +113,7 @@ function createButton(buttonName) {
 							case 8:
 								event.stopImmediatePropagation();
 								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
-								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
+								document.getElementById('input-btn-out').innerHTML = '<span class="active">' + listBtnLogon[id] + '</span>';
 								break;
 							case 10:
 								event.stopImmediatePropagation();
@@ -124,7 +126,7 @@ function createButton(buttonName) {
 							case 18:
 								event.stopImmediatePropagation();
 								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
-								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
+								document.getElementById('input-btn-out').innerHTML = '<span class="active">' + listBtnLogon[id] + '</span>';
 								break;
 							case 20:
 								event.stopImmediatePropagation();
@@ -133,11 +135,13 @@ function createButton(buttonName) {
 							case 21:
 								event.stopImmediatePropagation();
 								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
-								document.getElementById('input-btn-out').innerHTML = listBtnLogon[id];
+								document.getElementById('input-btn-out').innerHTML = '<span class="active">' + listBtnLogon[id] + '</span>';
 								break;
 							case 22:
 								event.stopImmediatePropagation();
 								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
+								document.getElementById('input-btn-out').innerHTML = '<span class="active">' + 'ew1-' + '</span>';
+								$('#input-VK').val('ON');
 								break;
 							case 24:
 								event.stopImmediatePropagation();
@@ -418,11 +422,11 @@ function createButton(buttonName) {
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#reftm-modal');
 								lastNum = id;
-								break;							
+								break;
 							case 29:
 								console.log(lastNum);
 								break;
-								case 31:
+							case 31:
 								$('#btnTotes-' + id).attr('data-toggle', 'modal');
 								$('#btnTotes-' + id).attr('data-target', '#links-modal');
 								lastNum = id;
@@ -554,9 +558,15 @@ function createButton(buttonName) {
 					generateButtonMenu('#creftr-menu-btn', 'btnCreftr-', varCreftr, listBtnCreftr[varCreftr][0]);
 					registToTree(varCreftr, listBtnCreftr[varCreftr][0], 5);
 					$('#btnCreftr-' + varCreftr).on("click", { num: varCreftr }, fnCreftr);
+
+					if ((varCreftr < 5)) {
+						$('#btnCreftr-' + varCreftr).addClass('text-none');
+					}
 				}
 
 				$('#btnCreftr-44').children('span').hide();
+
+				saveTemp("loadValue");
 
 				function fnCreftr(event) {
 					let id = event.data.num;
@@ -572,7 +582,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnCreftr called');
 								event.stopImmediatePropagation()
 								$('.cursor i').removeClass('d-none');
-								showNumBtn('#btnCreftr-', 30, 40, listBtnCreftr);
+								showNumBtn('#btnCreftr-', 30, 40, listBtnCreftr, 2);
 								$('#btnCreftr-' + 44).children('span').hide();
 								$('#btnCreftr-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
@@ -580,6 +590,9 @@ function createButton(buttonName) {
 							case 2:
 								console.log(id + ' fnCreftr called');
 								event.stopImmediatePropagation();
+
+								saveTemp("saveValue", 5);
+
 								clearMenu('#creftr-menu-btn');
 								hideNumBtn('#btnCreftr-', 30, 40);
 								$('.cursor i').addClass('d-none');
@@ -592,7 +605,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnCreftr called');
 								event.stopImmediatePropagation()
 								$('.cursor i').removeClass('d-none');
-								showNumBtn('#btnCreftr-', 30, 40, listBtnCreftr);
+								showNumBtn('#btnCreftr-', 30, 40, listBtnCreftr, 4);
 								$('#btnCreftr-' + 44).children('span').hide();
 								$('#btnCreftr-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
@@ -602,7 +615,7 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation()
 								$('.cursor i').removeClass('d-none');
 								hideNumBtn('#btnCreftr-', 30, 40);
-								callAlphaVK('#btnCreftr-');
+								callAlphaVK('#btnCreftr-', 16);
 								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								break;
 							case 40:
@@ -682,14 +695,9 @@ function createButton(buttonName) {
 								break;
 						}
 					}
-					bindBtnNumber(listBtnCreftr, id);
 				}
 
-				$('#keyboard-enter').on('click', function () {
-					window.location = '#closed&t=0.15s';
-					showBtmNav('#btnCreftr-');
-				});
-
+				showNumBtn('#btnCreftr-', 30, 40, listBtnCreftr, 2);
 				setBtnActive('#btnCreftr-', listBtnCreftr);
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnCreftr-48, #keyboard-clear');
@@ -777,6 +785,8 @@ function createButton(buttonName) {
 										$('#btnCrevec-' + count).removeClass('active');
 										forceBack('#btnCrevec-', listBtnCrevec.length, '#crevec-menu-btn', '#maps-menu&t=0.15s');
 										count = 0;
+										countForLineState = 0;
+										countForColorState = 0;
 										createButton('maps');
 
 										setTimeout(function () {
@@ -808,6 +818,8 @@ function createButton(buttonName) {
 					}
 				}
 
+				saveTemp("loadValue");
+
 				function fnCrecir(event) {
 					let id = event.data.num;
 
@@ -825,7 +837,7 @@ function createButton(buttonName) {
 
 								setTimeout(function () {
 									$('.cursor i').removeClass('d-none');
-									showNumBtn('#btnCrecir-', 30, 40, listBtnCrecir);
+									showNumBtn('#btnCrecir-', 30, 40, listBtnCrecir, 4);
 								}, 125);
 								break;
 							case 1:
@@ -835,6 +847,7 @@ function createButton(buttonName) {
 
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnCrecir-', 30, 40);
+								saveTemp("saveValue", 1);
 
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
@@ -845,8 +858,11 @@ function createButton(buttonName) {
 								console.log(id + ' fnCrecir called');
 								event.stopImmediatePropagation();
 								clearMenu('#crecir-menu-btn');
+
 								hideNumBtn('#btnCrecir-', 30, 40);
 								$('.cursor i').addClass('d-none');
+								saveTemp("saveValue", 1);
+
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
 								window.location = '#color-menu&t=0.15s';
@@ -913,6 +929,8 @@ function createButton(buttonName) {
 										$('#btnCrecir-' + count).removeClass('active');
 										forceBack('#btnCrecir-', listBtnCrecir.length, '#crecir-menu-btn', '#maps-menu&t=0.15s');
 										count = 0;
+										countForLineState = 0;
+										countForColorState = 0;
 										createButton('maps');
 
 										setTimeout(function () {
@@ -923,8 +941,10 @@ function createButton(buttonName) {
 								break;
 						}
 					}
-					bindBtnNumber(listBtnCrecir, id);
+					//bindBtnNumber(listBtnCrecir, id);
 				}
+
+				showNumBtn('#btnCrecir-', 30, 40, listBtnCrecir, 4);
 				showToggle(toggLabelA, toggLabelB);
 				toggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB, 'underlined');
 				setBtnActive('#btnCrecir-', listBtnCrecir);
@@ -963,31 +983,22 @@ function createButton(buttonName) {
 							case 0:
 								console.log(id + ' fnCrearc called');
 								event.stopImmediatePropagation()
-
-								$('.cursor i').removeClass('d-none');
-								showNumBtn('#btnCrearc-', 30, 40, listBtnCrearc);
+								$('.cursor i').addClass('d-none');
 								break;
 							case 1:
 								console.log(id + ' fnCrearc called');
 								event.stopImmediatePropagation();
-
-								$('.cursor i').removeClass('d-none');
-								showNumBtn('#btnCrearc-', 30, 40, listBtnCrearc);
+								$('.cursor i').addClass('d-none');
 								break;
 							case 2:
 								console.log(id + ' fnCrearc called');
 								event.stopImmediatePropagation();
-
-								$('.cursor i').removeClass('d-none');
-								showNumBtn('#btnCrearc-', 30, 40, listBtnCrearc);
+								$('.cursor i').addClass('d-none');
 								break;
 							case 3:
 								console.log(id + ' fnCrearc called');
 								event.stopImmediatePropagation();
 								clearMenu('#crearc-menu-btn');
-
-								$('.cursor i').addClass('d-none');
-								hideNumBtn('#btnCrearc-', 30, 40);
 
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
@@ -998,8 +1009,6 @@ function createButton(buttonName) {
 								console.log(id + ' fnCrearc called');
 								event.stopImmediatePropagation();
 								clearMenu('#crearc-menu-btn');
-								hideNumBtn('#btnCrearc-', 30, 40);
-								$('.cursor i').addClass('d-none');
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
 								window.location = '#color-menu&t=0.15s';
@@ -1041,6 +1050,7 @@ function createButton(buttonName) {
 										nextStep(count, '#btnCrearc-', listBtnCrearc);
 										$('#tree-' + (count - 1)).show();
 
+										/*
 										if (count === 3) {
 											if (($('#treeNum-' + 0).text() != '') && ($('#treeNum-' + 1).text() != '') && ($('#treeNum-' + 2).text() != '')) {
 												nextStep(count, '#btnCrearc-', listBtnCrearc);
@@ -1057,12 +1067,16 @@ function createButton(buttonName) {
 
 												count = -1;
 											}
-										} else if (count === 5) {
+											
+										} else*/
+										if (count === 5) {
 											//console.log($('#sub-tree').text() )
 											printMessage("COMMAND OK");
 											$('#btnCrearc-' + count).removeClass('active');
 											forceBack('#btnCrearc-', listBtnCrearc.length, '#crearc-menu-btn', '#maps-menu&t=0.15s');
 											count = 0;
+											countForLineState = 0;
+											countForColorState = 0;
 											createButton('maps');
 
 											setTimeout(function () {
@@ -1077,6 +1091,7 @@ function createButton(buttonName) {
 										showNumBtn('#btnCrearc-', 30, 40, listBtnCrearc);
 									}
 								}
+
 								break;
 						}
 					}
@@ -1085,8 +1100,8 @@ function createButton(buttonName) {
 				toggleBtn(4, '#btnCrearc-4', toggLabelA, toggLabelB);
 				toggleBtn(5, '#btnCrearc-5', toggLabelC, toggLabelD);
 				setBtnActive('#btnCrearc-', listBtnCrearc);
-				$('.cursor i').removeClass('d-none');
-				showNumBtn('#btnCrearc-', 30, 40, listBtnCrearc);
+				$('.cursor i').addClass('d-none');
+				hideNumBtn('#btnCrearc-', 30, 40);
 				delChar('#btnCrearc-48');
 				return;
 			}
@@ -1155,6 +1170,7 @@ function createButton(buttonName) {
 
 								setTimeout(function () {
 									$('#input-VK').val('');
+									$('.cursor i').removeClass('d-none');
 									lastCount = 0;
 								}, 150);
 								break;
@@ -1193,6 +1209,8 @@ function createButton(buttonName) {
 													$('#tree-' + 2).show();
 													$('#treeNum-' + 2).append('<span>' + listBtnColor[countForColorState][0] + '</span>');
 												}
+
+												$('.cursor i').removeClass('d-none');
 											}, 150)
 											break;
 										case 26:
@@ -1209,6 +1227,8 @@ function createButton(buttonName) {
 													$('#tree-' + 2).show();
 													$('#treeNum-' + 2).append('<span>' + listBtnColor[countForColorState][0] + '</span>');
 												}
+
+												$('.cursor i').removeClass('d-none');
 											}, 150)
 											break;
 										case 27:
@@ -1225,6 +1245,8 @@ function createButton(buttonName) {
 													$('#tree-' + 4).show();
 													$('#treeNum-' + 4).append('<span>' + listBtnColor[countForColorState][0] + '</span>');
 												}
+
+												$('.cursor i').removeClass('d-none');
 											}, 150)
 											break;
 									}
@@ -1311,6 +1333,7 @@ function createButton(buttonName) {
 
 								setTimeout(function () {
 									$('#input-VK').val('');
+									$('.cursor i').removeClass('d-none');
 									lastCount = 0;
 								}, 150);
 								break;
@@ -1339,12 +1362,14 @@ function createButton(buttonName) {
 											//document.getElementById('input-VK').placeholder = '';
 											backToPrevPage('#btnColor-', listBtnColor, '#color-menu-btn', '#creftr-menu&t=0.15s', '#btnCreftr-', listBtnCreftr, lastCount);
 											createButton('creftr');
+											$('#treeNum-' + 2).text('');
 											console.log('Color for creftr')
 
 											setTimeout(function () {
 												$('#tree-' + 2).show();
 												$('#treeNum-' + 2).append('<span>' + listBtnColor[countForColorState][0] + '</span>');
 												$('.cursor i').removeClass('d-none');
+												document.getElementById('input-VK').placeholder = '';
 												showNumBtn('#btnCreftr-', 30, 40, listBtnCreftr);
 											}, 150)
 											break;
@@ -1362,6 +1387,8 @@ function createButton(buttonName) {
 													$('#tree-' + 1).show();
 													$('#treeNum-' + 1).append('<span>' + listBtnLine[countForLineState][0] + '</span>');
 												}
+
+												$('.cursor i').removeClass('d-none');
 											}, 150)
 											break;
 										case 26:
@@ -1378,6 +1405,8 @@ function createButton(buttonName) {
 													$('#tree-' + 0).show();
 													$('#treeNum-' + 0).append('<span>' + listBtnLine[countForLineState][0] + '</span>');
 												}
+
+												$('.cursor i').removeClass('d-none');
 											}, 150)
 											break;
 										case 27:
@@ -1394,6 +1423,8 @@ function createButton(buttonName) {
 													$('#tree-' + 3).show();
 													$('#treeNum-' + 3).append('<span>' + listBtnLine[countForLineState][0] + '</span>');
 												}
+
+												$('.cursor i').removeClass('d-none');
 											}, 150)
 											break;
 									}
@@ -1477,6 +1508,7 @@ function createButton(buttonName) {
 				setBtnActive('#btnHistry-', listBtnHistry);
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnHistry-48');
+				limitInputChar('#btnHistry-', 2);
 				return;
 			}
 			case 'trklin': {
@@ -1537,8 +1569,13 @@ function createButton(buttonName) {
 									if ($('#input-VK').val() > 0 && $('#input-VK').val() < 4) {
 										$('#message-btn-out').empty();
 										$('#tree-' + count).show();
-										console.log('jancok su : ' + count)
-										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+										if (count != 0) {
+											document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+										} else {
+											printMessage("Invalid selected menu.");
+										}
+
 										clearVK();
 									} else {
 										printMessage("ERROR : Valid range is 1 - 3");
@@ -1558,12 +1595,14 @@ function createButton(buttonName) {
 				setBtnActive('#btnTrklin-', listBtnTrklin);
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnTrklin-48');
+				limitInputChar('#btnTrklin-', 2);
 				return;
 			}
 			case 'selreg': {
 				let count = 1;
 				let toggLabelA1 = listBtnSelreg[1][0];
 				let toggLabelA2 = 'off';
+				let swap = true;
 
 				for (let varSelreg = 0; varSelreg < listBtnSelreg.length; varSelreg++) {
 					generateButtonMenu('#selreg-menu-btn', 'btnSelreg-', varSelreg, listBtnSelreg[varSelreg][0]);
@@ -1572,6 +1611,7 @@ function createButton(buttonName) {
 
 					if (varSelreg === 1) {
 						generatedUnderlinedButtonMenu('#btnSelreg-', varSelreg, listBtnSelreg[varSelreg][0]);
+						//$('#btnSelreg-' + varSelreg).addClass('text-none');
 					}
 				}
 
@@ -1590,9 +1630,8 @@ function createButton(buttonName) {
 								//event.stopImmediatePropagation();
 								initiateUnderlinedToggleBtn('#btnSelreg-', id, listBtnSelreg[id][0]);
 
-								setTimeout(function () {
-									$('#input-btn-out').prepend('<span class="mr-2">selreg</span>');
-								}, 125);
+								swap = !swap;
+								addCustomToggleInput(swap, 'toggle');
 								break;
 							case 40:
 							case 42:
@@ -1614,7 +1653,7 @@ function createButton(buttonName) {
 
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
-									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
 									if (count < 1) {
@@ -1638,9 +1677,9 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnSelreg-1', toggLabelA1, toggLabelA2, 'underlined');
+				toggleBtn(1, '#btnSelreg-1', toggLabelA1, toggLabelA2, 'underlined', 'off', 'selreg');
 				showToggle(toggLabelA1, toggLabelA2);
-				changeVKWidth('12%', '59%');
+				//changeVKWidth('12%', '59%');
 				setBtnActive('#btnSelreg-', listBtnSelreg);
 				delChar('#btnSelreg-48');
 				return;
@@ -1648,7 +1687,7 @@ function createButton(buttonName) {
 			case 'stbsrc': {
 				let count = 1;
 				let toggLabelA1 = listBtnStbsrc[1][0];
-				let toggLabelA2 = 'ewoff';
+				let toggLabelA2 = 'ew1off';
 				let toggLabelB1 = listBtnStbsrc[2][0];
 				let toggLabelB2 = 'ew2off';
 				let toggLabelC1 = listBtnStbsrc[3][0];
@@ -1657,6 +1696,7 @@ function createButton(buttonName) {
 				let toggLabelD2 = 'ew4off';
 				let toggLabelE1 = listBtnStbsrc[6][0];
 				let toggLabelE2 = 'alloff';
+				let swap1 = true, swap2 = true, swap3 = true, swap4 = true, swap6 = true;
 
 				for (let varStbsrc = 0; varStbsrc < listBtnStbsrc.length; varStbsrc++) {
 					generateButtonMenu('#stbsrc-menu-btn', 'btnStbsrc-', varStbsrc, listBtnStbsrc[varStbsrc][0]);
@@ -1680,19 +1720,52 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
-							case 2:
-							case 3:
-							case 4:
-							case 5:
 								console.log(id + ' fnStbsrc called');
 								//event.stopImmediatePropagation();
 								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
+
+								swap1 = !swap1;
+								addCustomToggleInput(swap1, 'toggle');
+								break;
+							case 2:
+								console.log(id + ' fnStbsrc called');
+								//event.stopImmediatePropagation();
+								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
+
+								swap2 = !swap2;
+								addCustomToggleInput(swap2, 'toggle');
+								break;
+							case 3:
+								console.log(id + ' fnStbsrc called');
+								//event.stopImmediatePropagation();
+								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
+
+								swap3 = !swap3;
+								addCustomToggleInput(swap3, 'toggle');
+								break;
+							case 4:
+								console.log(id + ' fnStbsrc called');
+								//event.stopImmediatePropagation();
+								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
+
+								swap4 = !swap4;
+								addCustomToggleInput(swap4, 'toggle');
+								break;
+							case 6:
+								console.log(id + ' fnStbsrc called');
+								//event.stopImmediatePropagation();
+								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
+								$('#tree-' + id).siblings().hide();
+
+								swap6 = !swap6;
+								addCustomToggleInput(swap6, 'toggle');
 								break;
 							case 40:
 							case 42:
 								console.log(id + ' fnStbsrc called');
 								event.stopImmediatePropagation();
 								backNav('#btnStbsrc-', listBtnStbsrc.length, '#stbsrc-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								resetVKWidth();
 								break;
 							case 47:
 								event.stopImmediatePropagation();
@@ -1704,19 +1777,39 @@ function createButton(buttonName) {
 
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
-									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
 									if (count < 7) {
 										count++;
 										nextStep(count, '#btnStbsrc-', listBtnStbsrc);
 										$('#tree-' + (count - 1)).show();
+
+										let btn = $('#btnStbsrc-' + count).text();
+										let btnName = btn.slice(btn.length - 3);
+										//console.log(btn + ' | ' + btnName)
+
+										if (count < 5) {
+											document.getElementById('input-btn-out').innerHTML = '<span class="active">' + 'ew' + count + '-' + '</span>';
+										} else if (count == 6) {
+											document.getElementById('input-btn-out').innerHTML = '<span class="active">' + 'all-' + '</span>';
+										}
+
+										if (btnName == '-on' && btn != '') {
+											$('#input-VK').val('ON');
+										} else if (btnName == 'off' && btn != '') {
+											$('#input-VK').val('OFF');
+										} else {
+											$('#input-VK').val('');
+										}
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnStbsrc-' + count).removeClass('active');
 										forceBack('#btnStbsrc-', listBtnStbsrc.length, '#stbsrc-menu-btn', '#logon-menu&t=0.15s');
+										resetVKWidth();
 										count = 0;
 										createButton('logon');
+
 									}
 								}
 								break;
@@ -1724,14 +1817,15 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnStbsrc-1', toggLabelA1, toggLabelA2, 'underlined');
-				toggleBtn(2, '#btnStbsrc-2', toggLabelB1, toggLabelB2, 'underlined');
-				toggleBtn(3, '#btnStbsrc-3', toggLabelC1, toggLabelC2, 'underlined');
-				toggleBtn(4, '#btnStbsrc-4', toggLabelD1, toggLabelD2, 'underlined');
-				toggleBtn(6, '#btnStbsrc-6', toggLabelE1, toggLabelE2, 'underlined');
+				toggleBtn(1, '#btnStbsrc-1', toggLabelA1, toggLabelA2, 'underlined', 'off', 'ew1-');
+				toggleBtn(2, '#btnStbsrc-2', toggLabelB1, toggLabelB2, 'underlined', 'off', 'ew2-');
+				toggleBtn(3, '#btnStbsrc-3', toggLabelC1, toggLabelC2, 'underlined', 'off', 'ew3-');
+				toggleBtn(4, '#btnStbsrc-4', toggLabelD1, toggLabelD2, 'underlined', 'off', 'ew4-');
+				toggleBtn(6, '#btnStbsrc-6', toggLabelE1, toggLabelE2, 'underlined', 'off', 'all-');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnStbsrc-', listBtnStbsrc);
 				delChar('#btnStbsrc-48');
+				changeVKWidth('5.5%', '67%');
 				return;
 			}
 			case 'amdreg': {
@@ -1758,12 +1852,24 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
+								console.log(id + ' fnAmdreg called');
+								event.stopImmediatePropagation();
+								showNumBtn('#btnAmdreg-', 30, 40, listBtnAmdreg, 2);
+								count = id;
+								break;
 							case 2:
 							case 3:
+								console.log(id + ' fnAmdreg called');
+								event.stopImmediatePropagation();
+								showNumBtn('#btnAmdreg-', 30, 40, listBtnAmdreg, 4);
+								count = id;
+								break;
 							case 4:
 							case 5:
 								console.log(id + ' fnAmdreg called');
-								event.stopImmediatePropagation()
+								event.stopImmediatePropagation();
+								showNumBtn('#btnAmdreg-', 30, 40, listBtnAmdreg, 5);
+								count = id;
 								break;
 							case 40:
 							case 42:
@@ -1782,12 +1888,67 @@ function createButton(buttonName) {
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									switch (count) {
+										case 1:
+											if (($('#input-VK').val() < 1) || ($('#input-VK').val() > 4)) {
+												printMessage("Out of Radar Source");
+												$('#treeNum-' + count).html("");
+											} else {
+												count++;
+												nextStep(count, '#btnAmdreg-', listBtnAmdreg);
+												$('#message-btn-out').empty();
+											}
+											break;
+										case 2:
+											if (($('#input-VK').val() <= -800) || ($('#input-VK').val() >= 800)) {
+												printMessage("Out of Range");
+												$('#treeNum-' + count).html("");
+											} else {
+												count++;
+												nextStep(count, '#btnAmdreg-', listBtnAmdreg);
+												$('#message-btn-out').empty();
+											}
+											break;
+										case 3:
+											if (($('#input-VK').val() <= -10) || ($('#input-VK').val() >= 10)) {
+												printMessage("Out of Angle");
+												$('#treeNum-' + count).html("");
+											} else {
+												count++;
+												nextStep(count, '#btnAmdreg-', listBtnAmdreg);
+												$('#message-btn-out').empty();
+											}
+											break;
+										case 4:
+										case 5:
+											if (($('#input-VK').val() <= -9999) || ($('#input-VK').val() >= 9999)) {
+												printMessage("Out of Position");
+												$('#treeNum-' + count).html("");
+											} else {
+												count++;
+												nextStep(count, '#btnAmdreg-', listBtnAmdreg);
+												$('#message-btn-out').empty();
+											}
+											break;
+									}
+
 									clearVK();
 								} else {
-									if (count < 5) {
-										count++;
-										nextStep(count, '#btnAmdreg-', listBtnAmdreg);
-										$('#tree-' + (count - 1)).show();
+									if (count < 6) {
+										if (count == 1) {
+											if ($('#input-VK').val() == '') {
+												$('#input-VK').val('1');
+											}
+										} else if (count < 6) {
+											if ($('#input-VK').val() == '') {
+												$('#input-VK').val('0');
+											}
+										} else {
+											count++;
+											nextStep(count, '#btnAmdreg-', listBtnAmdreg);
+											$('#tree-' + (count - 1)).show();
+										}
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnAmdreg-' + count).removeClass('active');
@@ -1799,12 +1960,13 @@ function createButton(buttonName) {
 								break;
 						}
 					}
-					bindBtnNumber(listBtnAmdreg, id);
+					//bindBtnNumber(listBtnAmdreg, id);
 				}
 
 				setBtnActive('#btnAmdreg-', listBtnAmdreg);
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnAmdreg-48');
+				showNumBtn('#btnAmdreg-', 30, 40, listBtnAmdreg, 2);
 				return;
 			}
 			case 'commet': {
@@ -11297,37 +11459,45 @@ function generatedUnderlinedButtonMenu(btnName, num, arrName) {
 	);
 }
 
-function toggleBtn(num, btnName, toggLabelA, toggLabelB, btnType) {
+function toggleBtn(num, btnName, toggLabelA, toggLabelB, btnType, state, customLabel) {
+
 	$(btnName).toggleButton({
 		on: function () {
-			console.log('tugel on')
+			console.log('toggle on');
 			$('#toggle-box-b').addClass('active');
 			$('#toggle-box-b').siblings('.active').removeClass('active');
 			$('#toggle-divider').show();
 
-			printBtnToggleLabel(num, btnName, toggLabelB, toggLabelA, toggLabelB, btnType);
-
-			if ($(btnName).attr('value') === 'tg-on') {
-				$(btnName).attr('value', 'tg-off');
-			} else {
-				$(btnName).attr('value', 'tg-on');
-			}
+			printBtnToggleLabel(num, btnName, toggLabelB, toggLabelA, toggLabelB, btnType, state, customLabel);
+			$(btnName).attr('value', 'tg-on');
 		},
 		off: function () {
-			console.log('tugel off')
+			console.log('toggle off');
 			$('#toggle-box-a').addClass('active');
 			$('#toggle-box-a').siblings('.active').removeClass('active');
 			$('#toggle-divider').show();
 
-			printBtnToggleLabel(num, btnName, toggLabelA, toggLabelA, toggLabelB, btnType);
-
-			if ($(btnName).attr('value') === 'tg-off') {
-				$(btnName).attr('value', 'tg-on');
-			} else {
-				$(btnName).attr('value', 'tg-off');
-			}
+			printBtnToggleLabel(num, btnName, toggLabelA, toggLabelA, toggLabelB, btnType, state, customLabel);
+			$(btnName).attr('value', 'tg-off');
 		}
 	});
+}
+
+function resetToggleBtn(id, resetText, currBtn) {
+	//console.log(txtArr.toString() + " | " + btnArr.toString())
+	let lastBtnTxt = "", lastBtnName = "", lastTreeNum = "";
+
+	txtArr.push(resetText);
+	btnArr.push(currBtn);
+	treeArr.push(id);
+	lastBtnTxt = txtArr[txtArr.length - 2];
+	lastBtnName = btnArr[btnArr.length - 2];
+	lastTreeNum = treeArr[treeArr.length - 2]
+
+	$(lastBtnName).attr('value', 'tg-off');
+	$(currBtn).siblings().removeClass('toggle_button__on');
+	$(lastBtnName).html('<a href="javascript:">' + lastBtnTxt + '</a>');
+	$("#tree-" + lastTreeNum).children('span:first').text(lastBtnTxt);
 }
 
 function initiateToggleBtn(btnName, num, arrName) {
@@ -11397,7 +11567,7 @@ function toggleThreeState(btnArr, btnName, targetTreeNum) {
 	});
 }
 
-function initiateToggleThree(btnArr) {
+function initiateToggleThree(btnArr, idx) {
 	$('#three-toggle').empty();
 
 	for (let a = 0; a < btnArr.length; a++) {
@@ -11408,9 +11578,74 @@ function initiateToggleThree(btnArr) {
 			$('#three-toggle').append(
 				'<span class="mr-1 ml-1">:</span>');
 		}
+	}
 
-		//$('#tg-' + a).siblings('.active').removeClass('active');
-		//$('#three-toggle span:first-child').addClass('active');
+	$('#tg-' + idx).siblings('.active').removeClass('active');
+	$('#tg-' + idx).addClass('active');
+}
+
+function printBtnToggleLabel(btnId, btnName, labelBtn, labelBtnLeft, labelBtnRight, btnType, state, customLabel) {
+
+	if (state == 'off') {
+		$('#toggle-box-out').show();
+		document.getElementById('toggle-box-a').innerHTML = labelBtnLeft;
+		document.getElementById('toggle-box-b').innerHTML = labelBtnRight;
+		document.getElementById('input-btn-out').innerHTML = '<span class="active">' + customLabel + '</span>';
+		printActive();
+	} else if (state == 'on') {
+		$('#toggle-box-out').show();
+		document.getElementById('toggle-box-a').innerHTML = labelBtnLeft;
+		document.getElementById('toggle-box-b').innerHTML = labelBtnRight;
+		document.getElementById('input-btn-out').innerHTML = '<span class="active">' + labelBtn + '</span>';
+		printActive();
+	}
+
+	function printActive() {
+		if (btnType === "underlined") {
+			$(btnName).children('div').children('a').html(labelBtn);
+			console.log('-underlined txt-')
+		} else {
+			$(btnName).children('a').html(labelBtn);
+			console.log('-normal txt-')
+		}
+
+		if (btnId != null) {
+			document.getElementById('tree-' + btnId).innerHTML =
+				'<span>' + labelBtn + '</span>' +
+				'<span id="treeNum-' + btnId + '" class="ml-2">' + '</span>';
+		}
+	}
+	/*
+	*/
+}
+
+function showToggle(toggleA, toggleB) {
+	$('#toggle-box-out').show();
+	$('#toggle-divider').show();
+	document.getElementById('toggle-box-a').innerHTML = toggleA;
+	document.getElementById('toggle-box-b').innerHTML = toggleB;
+	$('#toggle-box-a').siblings('.active').removeClass('active');
+	$('#toggle-box-a').addClass('active');
+}
+
+function addCustomToggleInput(swap, mode, stateA, stateB) {
+
+	if (mode == 'custom') {
+		if (swap) {
+			$('#input-VK').val(stateA);
+			swap = false;
+		} else {
+			$('#input-VK').val(stateB);
+			swap = true;
+		}
+	} else if (mode == 'toggle') {
+		if (swap) {
+			$('#input-VK').val('ON');
+			swap = false;
+		} else {
+			$('#input-VK').val('OFF');
+			swap = true;
+		}
 	}
 }
 
@@ -11485,6 +11720,41 @@ function nextStep(counter, btnName, arrName) {
 	}
 }
 
+function saveTemp(cmd, menuCount) {
+	switch (cmd) {
+		case "loadValue":
+			if (tempValue.length != 0) {
+
+				for (let i = 0; i < tempValue.length; i++) {
+					$('#treeNum-' + i).text(tempValue[i].toString());
+
+					if ($('#treeNum-' + i).text() != 'null') {
+						$('#tree-' + i).show();
+					} else {
+						$('#tree-' + i).hide();
+					}
+					/**/
+				}
+
+				console.log(">> temp: " + tempValue.toString());
+				tempValue.length = 0;
+			} else {
+				console.log("-temp was empty-")
+			}
+			break;
+		case "saveValue":
+			for (let a = 0; a < menuCount; a++) {
+				if ($('#treeNum-' + a).text() != '') {
+					tempValue.push($('#treeNum-' + a).text())
+					console.log("-save value to temp-")
+				} else {
+					tempValue.push("null");
+				}
+			}
+			break;
+	}
+}
+
 function printMessage(msgVal) {
 	document.getElementById('message-btn-out').innerHTML = "<span>" + msgVal + "</span>";
 	clearVK();
@@ -11512,36 +11782,6 @@ function printBtnLabel(labelArr) {
 	document.getElementById('input-btn-out').innerHTML = html;
 }
 
-function printBtnToggleLabel(btnId, btnName, labelBtn, labelBtnLeft, labelBtnRight, btnType) {
-	$('#toggle-box-out').show();
-	document.getElementById('input-btn-out').innerHTML = '<span class="active">' + labelBtn + '</span>';
-	document.getElementById('toggle-box-a').innerHTML = labelBtnLeft;
-	document.getElementById('toggle-box-b').innerHTML = labelBtnRight;
-
-	if (btnType === "underlined") {
-		$(btnName).children('div').children('a').html(labelBtn);
-		console.log('underlined')
-	} else {
-		$(btnName).children('a').html(labelBtn);
-		console.log('normal')
-	}
-
-	if (btnId != null) {
-		document.getElementById('tree-' + btnId).innerHTML =
-			'<span>' + labelBtn + '</span>' +
-			'<span id="treeNum-' + btnId + '" class="ml-2">' + '</span>';
-	}
-}
-
-function showToggle(toggleA, toggleB) {
-	$('#toggle-box-out').show();
-	$('#toggle-divider').show();
-	document.getElementById('toggle-box-a').innerHTML = toggleA;
-	document.getElementById('toggle-box-b').innerHTML = toggleB;
-	$('#toggle-box-a').siblings('.active').removeClass('active');
-	$('#toggle-box-a').addClass('active');
-}
-
 function setBtnActive(labelBtn, arrName) {
 	for (let i = 0; i < arrName.length; i++) {
 		if (arrName[i][1] === 'active') {
@@ -11551,19 +11791,69 @@ function setBtnActive(labelBtn, arrName) {
 	}
 }
 
-function callAlphaVK(btnName) {
-	let btnA = (btnName + 44);
+function callAlphaVK(btnName, charLimit) {
+	$('.vKeyboard-letter, .vKeyboard-number').off();
+
+	let btnA = (btnName + 44), btnB = (btnName + 47), btnC = (btnName + 48);
+	let limitVK = 0;
 
 	$(btnA).children('span').fadeTo(100, 1, function () {
-		$(btnA).on('click', function () {
-			window.location = '#sidemenu&t=0.15s';
-			console.log('vk showed')
-			hideBtmNav(btnName);
+		$(btnA).on('click', function (event) {
+			$.showVK(event);
 		});
+	});
+
+	$.showVK = function (event) {
+		event.stopImmediatePropagation();
+		window.location = '#sidemenu&t=0.15s';
+		hideBtmNav(btnName);
+		console.log('vk showed');
+	}
+
+	$.enableVK = function (event) {
+		event.preventDefault();
+		event.stopImmediatePropagation();
+		onVirtualKeyboardPress(event);
+		$(`#${currentInputField}`).focus();
+	};
+
+	$.recallVK = function () {
+		setTimeout(() => {
+			$(btnA).on('click', function (event) {
+				$.showVK(event);
+			});
+		}, 100);
+	}
+
+	$('#keyboard-enter, #keyboard-abort').on('click', function () {
+		window.location = '#closed&t=0.15s';
+		showBtmNav(btnName);
+		$(btnA).off();
+		limitVK = 0;
+
+		$.recallVK();
+	});
+
+	$('.vKeyboard-letter, .vKeyboard-number').on('click', function (event) {
+		console.log('> ' + limitVK + ' of ' + charLimit);
+		limitVK++;
+
+		$.enableVK(event);
+
+		if (limitVK >= charLimit) {
+			window.location = '#closed&t=0.15s';
+			showBtmNav(btnName);
+			$(btnA).off();
+			limitVK = 0;
+
+			console.log('> reset : ' + limitVK);
+			$.recallVK();
+		}
+
 	});
 }
 
-function showNumBtn(btnName, numStart, numEnd, arrName,) {
+function showNumBtn(btnName, numStart, numEnd, arrName, max) {
 	disableBtnNumber(btnName);
 
 	for (let a = parseInt(numStart); a <= parseInt(numEnd); a++) {
@@ -11574,7 +11864,7 @@ function showNumBtn(btnName, numStart, numEnd, arrName,) {
 	function setFn(event) {
 		let id = event.data.num;
 		event.stopImmediatePropagation();
-		bindBtnNumber(arrName, id);
+		bindBtnNumber(arrName, id, max);
 	}
 }
 
@@ -11593,7 +11883,9 @@ function disableBtnNumber(btnName) {
 	console.log('disabled')
 }
 
-function bindBtnNumber(arrName, curNum) {
+function bindBtnNumber(arrName, curNum, maxChar) {
+	let cursor = parseInt(maxChar - 1) * 10.5;
+
 	if ((curNum >= 30) && (curNum < 40)) {
 		$('#input-VK').val(function () {
 			return this.value + arrName[curNum][0].toString()
@@ -11602,6 +11894,26 @@ function bindBtnNumber(arrName, curNum) {
 		$('.cursor i').css('left', '+=10.5px');
 		delChar();/**/
 		console.log('bind to: btn ' + curNum);
+	}
+
+	if (curNum == 41) {
+		$('#input-VK').val(function () {
+			return this.value + arrName[curNum][0].toString()
+		});
+
+		$('.cursor i').css('left', '+=6.5px');
+		delChar();
+	}
+
+	if ($('#input-VK').val().length >= maxChar) {
+		let vk = $('#input-VK').val();
+		let vkNew = vk.slice(0, -1);
+
+		setTimeout(function () {
+			$('#input-VK').val(vkNew);
+			$('.cursor i').css('left', cursor.toString());
+			console.log('max: ' + maxChar)
+		}, 75);
 	}
 }
 
@@ -11629,6 +11941,41 @@ function delCharByOne() {
 		$('.cursor i').css('left', '-=10.5px');
 	} else {
 		$('.cursor i').css('left', '0');
+	}
+}
+
+function addZero(num, size) {
+	var s = num + "";
+	while (s.length < size) s = "0" + s;
+	return s;
+}
+
+function baseFn(btnName) {
+	$(btnName + 44).children('span').hide();
+	$(btnName + 44).off();
+	document.getElementById('input-VK').placeholder = '';
+	$('#message-btn-out').empty();
+}
+
+function limitInputChar(btnName, maxChar) {
+	let cursor = parseInt(maxChar - 1) * 10.5;
+	let max = 0;
+	//console.log('> ' + max);
+	max = maxChar;
+	//console.log('>> ' + max);
+
+	for (let i = 30; i < 40; i++) {
+		$(btnName + i).on('click', function () {
+			if ($('#input-VK').val().length >= max) {
+				let vk = $('#input-VK').val();
+				let vkNew = vk.slice(0, -1);
+
+				setTimeout(function () {
+					$('#input-VK').val(vkNew);
+					$('.cursor i').css('left', cursor.toString());
+				}, 75);
+			}
+		});
 	}
 }
 
@@ -11669,6 +12016,333 @@ function hideRightNav() {
 function showRightNav() {
 	for (let k = 0; k < 3; k++) {
 		$('#btnRight-' + k).children('span').fadeTo(100, 1);
+	}
+}
+
+function isGeoLat(label, toggLabelA, toggLabelB, inputVal) {
+	let char = /[A-Z]/g;
+	let num = /[0-9]/g;
+	let charLat = /N|S/g;
+	let charLong = /E|W/g;
+	let getInput = '';
+	let charCount = 0, numCount = 0, latCount = 0, longCount = 0;
+
+	if (inputVal != '' || inputVal != undefined) {
+		switch (label) {
+			case 'georef':
+				//format georef -> abcdnnmm | abcd:alphabet - nn//mm:numeric <= 59
+				console.log('>> cek georef')
+				getInput = inputVal;
+
+				let cekCharFirst = getInput.substring(0, 4);
+				let cekNumLast = getInput.substring(4, 8);
+				const charArr = [], numArr = [];
+				let charLength = 4;
+				charCount = 0;
+				numCount = 0;
+
+				for (let i = 0; i < 4; i++) {
+					let cekChar = (cekCharFirst.charAt(i)).match(char);
+					let cekNum = (cekNumLast.charAt(i)).match(num);
+
+					charArr.push(cekChar);
+					numArr.push(cekNum);
+
+					if (charArr[i] == undefined) {
+						charLength--;
+						charArr.splice(i, 1);
+					}
+				}
+
+				$.each(charArr, function (i, v) {
+					if (!(v == null)) {
+						charCount += 1;
+					}
+				})
+
+				$.each(numArr, function (i, v) {
+					if (!(v == null)) {
+						numCount += 1;
+					}
+				})
+
+				if ((charCount != 0 || numCount != 0)) {
+					if (getInput.length != 8) {
+						printMessage("INVALID " + toggLabelA);
+					} else {
+						if (charCount != 4 || numCount != 4) {
+							printMessage("INVALID " + toggLabelA);
+						} else {
+							if ((parseInt(numArr[0] + numArr[1]) <= 59) && (parseInt(numArr[2] + numArr[3]) <= 59)) {
+								printMessage("COMMAND OK");
+							} else {
+								printMessage("INVALID " + toggLabelA);
+							}
+						}
+					}
+					console.log('>> ' + ((charLength == 4)) + ' : ' + (parseInt(numArr[0] + numArr[1]) <= 59) + '-' + (parseInt(numArr[2] + numArr[3]) <= 59));
+					console.log(charCount + ' : ' + numCount);
+					console.log('>> ' + cekCharFirst + ' : ' + cekNumLast);
+					console.log('>> ' + charArr + ' : ' + numArr)
+				} else {
+					//printMessage("INVALID " + toggLabelA);
+					//clearVK();
+					//$('#message-btn-out').empty();
+				}
+				break;
+			case 'lating':
+				//format lat-long -> ddmmssa-dddmmssa
+				console.log('>> cek lat-long')
+				getInput = inputVal;
+
+				let latDD = getInput.substring(0, 2); //<=90
+				let latMM = getInput.substring(2, 4); //<=59
+				let latSS = getInput.substring(4, 6); //<=59
+				let latA = getInput.substring(6, 7); //N-S
+				let longDDDs = getInput.substring(7, 8); //<=1
+				let longDDDm = getInput.substring(7, 9); //<=99
+				let longDDDf = getInput.substring(7, 10); //<=180
+				let longMMs = getInput.substring(8, 10); //<=59
+				let longMMm = getInput.substring(9, 11); //<=59
+				let longMMf = getInput.substring(10, 12); //<=59
+				let longSSs = getInput.substring(10, 12); //<=59
+				let longSSm = getInput.substring(11, 13); //<=59
+				let longSSf = getInput.substring(12, 14); //<=59
+				let longAs = getInput.substring(12, 13); //E-W
+				let longAm = getInput.substring(13, 14); //E-W
+				let longAf = getInput.substring(14, 15); //E-W
+				let cekLat = getInput.substring(0, 7);
+				let cekLong = getInput.substring(7, 15);
+				const latDDArr = [], latMMArr = [], latSSArr = [], latAArr = [],
+					longDDDArr = [], longMMArr = [], longSSArr = [], longAArr = [],
+					latArr = [], longArr = [];
+
+				let longDDDLength = 3, latALength = 2, longALength = 2;
+				latCount = 0;
+				longCount = 0;
+
+				for (let j = 0; j < 2; j++) {
+					//lat
+					let cekLatDD = (latDD.charAt(j)).match(num);
+					let cekLatMM = (latMM.charAt(j)).match(num);
+					let cekLatSS = (latSS.charAt(j)).match(num);
+					let cekLatA = (latA.charAt(j)).match(charLat);
+
+					latDDArr.push(cekLatDD);
+					latMMArr.push(cekLatMM);
+					latSSArr.push(cekLatSS);
+					latAArr.push(cekLatA);/**/
+
+					if (latDDArr[j] == undefined) {
+						latDDArr[j] = 'null';
+					}
+
+					if (latMMArr[j] == undefined) {
+						latMMArr[j] = 'null';
+					}
+
+					if (latSSArr[j] == undefined) {
+						latSSArr[j] = 'null';
+					}
+
+					if (latAArr[j] == undefined) {
+						latALength--;
+						latAArr[j] = 'null';
+					}
+
+					//long
+					let cekLongMM = '', cekLongSS = '', cekLongA = '';
+
+					switch (cekLong.length) {
+						case 6:
+							cekLongMM = (longMMs.charAt(j)).match(num);
+							cekLongSS = (longSSs.charAt(j)).match(num);
+							cekLongA = (longAs.charAt(j)).match(charLong);
+
+							longMMArr.push(cekLongMM);
+							longSSArr.push(cekLongSS);
+							longAArr.push(cekLongA);/**/
+
+							if (longAArr[j] == undefined) {
+								longALength--;
+								longAArr[j] = 'null';
+							}
+							break;
+						case 7:
+							cekLongMM = (longMMm.charAt(j)).match(num);
+							cekLongSS = (longSSm.charAt(j)).match(num);
+							cekLongA = (longAm.charAt(j)).match(charLong);
+
+							longMMArr.push(cekLongMM);
+							longSSArr.push(cekLongSS);
+							longAArr.push(cekLongA);/**/
+
+							if (longAArr[j] == undefined) {
+								longALength--;
+								longAArr[j] = 'null';
+							}
+							break;
+						case 8:
+							cekLongMM = (longMMf.charAt(j)).match(num);
+							cekLongSS = (longSSf.charAt(j)).match(num);
+							cekLongA = (longAf.charAt(j)).match(charLong);
+
+							longMMArr.push(cekLongMM);
+							longSSArr.push(cekLongSS);
+							longAArr.push(cekLongA);/**/
+
+							if (longAArr[j] == undefined) {
+								longALength--;
+								longAArr[j] = 'null';
+							}
+							break;
+					}
+				}
+
+				for (let k = 0; k < 3; k++) {
+					let cekLongDDD = '';
+					let resDDDs = addZero(longDDDs, 3);
+					let resDDDm = addZero(longDDDm, 3);
+					let resDDDf = addZero(longDDDf, 3);
+
+					switch (cekLong.length) {
+						case 6:
+							cekLongDDD = (resDDDs.charAt(k)).match(num);
+							longDDDArr.push(cekLongDDD);
+
+							if (longDDDArr[k] == 0) {
+								longDDDLength--;
+							}
+
+							if (longDDDArr[k] == undefined) {
+								longDDDArr.splice(k, 1);
+							}
+							break;
+						case 7:
+							cekLongDDD = (resDDDm.charAt(k)).match(num);
+							longDDDArr.push(cekLongDDD);
+
+							if (longDDDArr[k] == 0) {
+								longDDDLength--;
+							}
+
+							if (longDDDArr[k] == undefined) {
+								longDDDArr.splice(k, 1);
+							}
+							break;
+						case 8:
+							cekLongDDD = (resDDDf.charAt(k)).match(num);
+							longDDDArr.push(cekLongDDD);
+
+							if (longDDDArr[k] == 0) {
+								longDDDLength--;
+							}
+
+							if (longDDDArr[k] == undefined) {
+								longDDDArr.splice(k, 1);
+							}
+							break;
+					}
+				}
+
+				latArr.push(latDDArr, latMMArr, latSSArr, latAArr[0]);
+				longArr.push(longDDDArr, longMMArr, longSSArr, longAArr[0]);
+
+				let latLength = (latDDArr.length + latMMArr.length + latSSArr.length) + latALength;
+				let longLength = longDDDLength + (longMMArr.length + longSSArr.length) + longALength;
+				latCount = latLength;
+				longCount = longLength;
+
+				if ((latCount != 0) || (longCount != 0)) {
+					if (getInput.length < 12) {
+						printMessage("INVALID " + toggLabelB);
+					} else {
+						if (latCount != 7) {
+							printMessage("INVALID LAT");
+						}
+						if (longCount < 6) {
+							printMessage("INVALID LONG");
+						}/**/
+
+						if (((parseInt(latDDArr[0] + latDDArr[1])) <= 90) && (parseInt(latMMArr[0] + latMMArr[1]) <= 59) && (parseInt(latSSArr[0] + latSSArr[1]) <= 59) && (latAArr != null)) {
+							printMessage("COMMAND OK");
+						} else {
+							printMessage("INVALID LAT");
+						}
+
+						if (((parseInt(longDDDArr[0] + longDDDArr[1] + longDDDArr[2])) <= 180) && (parseInt(longMMArr[0] + longMMArr[1]) <= 59) && (parseInt(longSSArr[0] + longSSArr[1]) <= 59) && (longAArr != null)) {
+							printMessage("COMMAND OK");
+						} else {
+							printMessage("INVALID LONG");
+						}
+
+						console.log('>> lat: ' + (parseInt(latDDArr[0] + latDDArr[1]) <= 90) + ':' + (parseInt(latMMArr[0] + latMMArr[1]) <= 59) + ':' + (parseInt(latSSArr[0] + latSSArr[1]) <= 59) + ':' + (latAArr != null));
+						console.log('>> long: ' + ((parseInt(longDDDArr[0] + longDDDArr[1] + longDDDArr[2])) <= 180) + ':' + (parseInt(longMMArr[0] + longMMArr[1]) <= 59) + ':' + (parseInt(longSSArr[0] + longSSArr[1]) <= 59) + ':' + (longAArr != null));
+
+						console.log(latLength + ' : ' + longLength);
+						console.log('>> ' + cekLat + ' : ' + cekLong);
+						console.log('>> lat= ' + latArr + ' || ' + 'long= ' + longArr);
+					}
+				} else {
+					//clearVK();
+				}
+				break;
+		}
+	} else {
+		console.log('invalid input');
+	}
+}
+
+function isOctal(charMax, inputVal, btnName) {
+	let oct = /[0-7]/g;
+	const octArr = [];
+	let octLength = 0;
+	let getInput = '', cekOctIpt = '';
+
+	if (inputVal != '' || inputVal != undefined) {
+		//input bilangan angka 0-7
+		console.log('>> cek octal')
+		octLength = charMax;
+		getInput = inputVal;
+		cekOctIpt = getInput.substring(0, charMax);
+
+		for (let i = 0; i < charMax; i++) {
+			let cekOct = (cekOctIpt.charAt(i)).match(oct);
+
+			octArr.push(cekOct);
+
+			if (octArr[i] == undefined) {
+				octArr[i] = 'null';
+			}
+		}
+
+		setTimeout(() => {
+			let newArray = octArr.filter(function (v) { return v !== 'null' });
+			console.log('> ' + newArray + ' | ' + newArray.length + '-' + octLength);
+
+			if (newArray.length != octLength) {
+				printMessage('INVALID ' + btnName + ' VALUE');
+				console.log('> Invalid ' + btnName);
+			} else {
+				printMessage('COMMAND OK');
+				console.log('> Valid ' + btnName);
+
+				setTimeout(() => {
+					$('#message-btn-out').empty();
+				}, 500);
+			}
+		}, 125);
+	}
+	console.log(inputVal + ' -> ' + octArr)
+}
+
+function tipGeoLat() {
+	if ($('#input-btn-out').text() == 'georef') {
+		document.getElementById('input-VK').placeholder = 'format georef -> abcdnnmm';
+		$('.cursor i').removeClass('d-none');
+	} else {
+		document.getElementById('input-VK').placeholder = 'format lat-long -> ddmmssadddmmssa';
+		$('.cursor i').removeClass('d-none');
 	}
 }
 

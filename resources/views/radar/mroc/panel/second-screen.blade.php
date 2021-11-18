@@ -14,8 +14,7 @@
             <div class="col-12 box-shadow inner-shadow bg-secondary rounded-lg mb-4" style="min-height: 224px;"></div>
             <div class="col box-shadow inner-shadow bg-black rounded-lg d-flex align-items-center mr-3"
                 style="min-height: 784px;">
-                <div class="row no-gutters text-uppercase"
-                    style="font-family: 'pixelmix'; font-size: 14px; color: #fd9727;">
+                <div class="row no-gutters text-uppercase" style="font-family: 'pixelmix'; font-size: 14px; color: #fd9727;">
                     <div class="col-12 p-0 pb-3">
                         <div class="row no-gutters border-bottom border-warning pb-1">
                             <div class="col-3 p-0">op live</div>
@@ -66,11 +65,9 @@
                     </div>
                     <div class="col-12 p-0">
                         <div class="row no-gutters p-1">
-                            <div class="col-auto p-0 ml-2" style="min-height: 42px;">
-                                <div id="tree-btn-out" class="mt-3"></div>
-                            </div>
-                            <div class="col-9 p-0 ml-2 mr-2 form-inline" style="min-height: 42px;">
-                                <div id="sub-tree" class="form-inline mt-2 pt-1"></div>
+                            <div class="col p-0 ml-2 mr-2 form-inline" style="min-height: 21px;">
+                                <div id="tree-btn-out"></div>
+                                <div id="sub-tree" class="form-inline"></div>
                                 <div id="tree-val"></div>
                             </div>
                         </div>
@@ -278,7 +275,7 @@
             </div>
         </div>
     </div>
-    
+
     @include('radar.mroc.menu.form')
 
     <script src="{{ asset('plugin/azerty-vk/js/jquery.caret-1.5.2.js') }}"></script>
@@ -323,6 +320,5 @@
             displayTime();
             setInterval(displayTime, 1000);
         });
-
     </script>
 @endsection
