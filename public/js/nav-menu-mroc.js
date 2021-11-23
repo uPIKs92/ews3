@@ -2488,6 +2488,8 @@ function createButton(buttonName) {
 								$('.cursor i').removeClass('d-none');
 								callAlphaVK('#btnCrptm-', 7);
 								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+								resetToggleBtn(id, listBtnCrptm[id][0]);
+								resetThreeState();
 								break;
 							case 3:
 								console.log(id + ' fnCrptm called');
@@ -2501,7 +2503,8 @@ function createButton(buttonName) {
 								//$('#btnCrptm-' + 44).children('span').hide();
 								//$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
-
+								resetToggleBtn(id, listBtnCrptm[id][0]);
+								resetThreeState();
 								break;
 							case 4:
 								console.log(id + ' fnCrptm called');
@@ -2515,7 +2518,8 @@ function createButton(buttonName) {
 								//$('#btnCrptm-' + 44).children('span').hide();
 								//$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
-
+								resetToggleBtn(id, listBtnCrptm[id][0]);
+								resetThreeState();
 								break;
 							case 5:
 								console.log(id + ' fnCrptm called');
@@ -2524,6 +2528,8 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 								count = id;
+								resetToggleBtn(id, listBtnCrptm[id][0]);
+								$('#btnCrptm-' + 6).html('<span class="' + b2 + '">' + b2 + '</span>');
 
 								toggleThreeState(btn1, '#btnCrptm-' + id, id);
 								$('.cursor i').addClass('d-none');
@@ -2555,6 +2561,8 @@ function createButton(buttonName) {
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 								count = id;
+								resetToggleBtn(id, listBtnCrptm[id][0]);
+								$('#btnCrptm-' + 5).html('<span class="' + b1 + '">' + b1 + '</span>');
 
 								toggleThreeState(btn2, '#btnCrptm-' + id, id);
 								$('.cursor i').addClass('d-none');
@@ -2590,7 +2598,8 @@ function createButton(buttonName) {
 								$('#btnCrptm-' + 44).children('span').hide();
 								$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
-
+								resetToggleBtn(id, listBtnCrptm[id][0]);
+								resetThreeState();
 								break;
 							case 8:
 								console.log(id + ' fnCrptm called');
@@ -2601,7 +2610,8 @@ function createButton(buttonName) {
 								initiateToggleBtn('#btnCrptm-', id, listBtnCrptm[id][0]);
 								count = id;
 								toggleCount = 0;
-								//resetToggleBtn(id, tgBtn[0], '#btnCrptm-' + id);
+								resetToggleBtn(id, tgBtn[0], '#btnCrptm-' + id);
+								resetThreeState();
 
 								setTimeout(function () {
 									$('.cursor i').removeClass('d-none');
@@ -2621,7 +2631,8 @@ function createButton(buttonName) {
 								initiateToggleBtn('#btnCrptm-', id, listBtnCrptm[id][0]);
 								count = id;
 								toggleCount = 0;
-								//resetToggleBtn(id, tgBtn[1], '#btnCrptm-' + id);
+								resetToggleBtn(id, tgBtn[1], '#btnCrptm-' + id);
+								resetThreeState();
 								break;
 							case 13:
 								console.log(id + ' fnCrptm called');
@@ -2635,7 +2646,8 @@ function createButton(buttonName) {
 								//$('#btnCrptm-' + 44).children('span').hide();
 								//$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
-
+								resetToggleBtn(id, listBtnCrptm[id][0]);
+								resetThreeState();
 								break;
 							case 14:
 								console.log(id + ' fnCrptm called');
@@ -2649,7 +2661,8 @@ function createButton(buttonName) {
 								//$('#btnCrptm-' + 44).children('span').hide();
 								//$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
-
+								resetToggleBtn(id, listBtnCrptm[id][0]);
+								resetThreeState();
 								break;
 							case 15:
 								console.log(id + ' fnCrptm called');
@@ -2662,7 +2675,8 @@ function createButton(buttonName) {
 								$('#btnCrptm-' + 44).children('span').hide();
 								$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
-
+								resetToggleBtn(id, listBtnCrptm[id][0]);
+								resetThreeState();
 								break;
 							case 16:
 								console.log(id + ' fnCrptm called');
@@ -2675,7 +2689,8 @@ function createButton(buttonName) {
 								$('#btnCrptm-' + 44).children('span').hide();
 								$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
-
+								resetToggleBtn(id, listBtnCrptm[id][0]);
+								resetThreeState();
 								break;
 							case 40:
 								console.log(id + ' fnCrptm called');
@@ -2832,6 +2847,11 @@ function createButton(buttonName) {
 					}
 				}
 
+				function resetThreeState(){
+					$('#btnCrptm-' + 5).html('<span class="' + b1 + '">' + b1 + '</span>');
+					$('#btnCrptm-' + 6).html('<span class="' + b2 + '">' + b2 + '</span>');
+				}
+
 				toggleBtn(8, '#btnCrptm-8', toggLabelA1, toggLabelA2, '', 'on');
 				toggleBtn(9, '#btnCrptm-9', toggLabelB1, toggLabelB2, '', 'on');
 				setBtnActive('#btnCrptm-', listBtnCrptm);
@@ -2865,7 +2885,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnScrmbl called');
 								event.stopImmediatePropagation();
 								$('.cursor i').removeClass('d-none');
-								callAlphaVK('#btnScrmbl-');
+								callAlphaVK('#btnScrmbl-', 7);
 								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								break;
 							case 40:
@@ -11611,7 +11631,7 @@ function toggleBtn(num, btnName, toggLabelA, toggLabelB, btnType, state, customL
 	});
 }
 
-function resetToggleBtn(id, resetText, currBtn, state) {
+function resetToggleBtn(id, resetText, currBtn) {
 	//console.log(txtArr.toString() + " | " + btnArr.toString())
 	let lastBtnTxt = "", lastBtnName = "", lastTreeNum = "";
 
@@ -11622,13 +11642,12 @@ function resetToggleBtn(id, resetText, currBtn, state) {
 	lastBtnName = btnArr[btnArr.length - 2];
 	lastTreeNum = treeArr[treeArr.length - 2]
 
+	$(lastBtnName).attr('value', 'tg-off');
+	$(currBtn).siblings().removeClass('toggle_button__on');
+	$("#tree-" + lastTreeNum).children('span:first').text(lastBtnTxt);
+
 	if (currBtn != '') {
-		$(lastBtnName).attr('value', 'tg-off');
-		$(currBtn).siblings().removeClass('toggle_button__on');
 		$(lastBtnName).html('<a href="javascript:">' + lastBtnTxt + '</a>');
-		$("#tree-" + lastTreeNum).children('span:first').text(lastBtnTxt);
-	} else {
-		//restore tree
 	}
 }
 
