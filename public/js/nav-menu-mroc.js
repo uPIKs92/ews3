@@ -24,6 +24,8 @@ var countForDaysState = 0;
 const amfpArr = [[], [], [], [], [], [], [], [], []];
 var currModalPage = 1;
 const tempValue = [];
+var limitVK = 0;
+const txtArr = [], btnArr = [], treeArr = [];
 
 $(function () {
 	$('div[onload]').trigger('onload');
@@ -122,6 +124,8 @@ function createButton(buttonName) {
 							case 14:
 								event.stopImmediatePropagation();
 								callBtnMenu(id, listBtnMain[0][0], listBtnLogon[id]);
+								document.getElementById('input-btn-out').innerHTML = '<span class="active">' + 'pu-' + '</span>';
+								$('#input-VK').val('ON');
 								break;
 							case 18:
 								event.stopImmediatePropagation();
@@ -1602,7 +1606,7 @@ function createButton(buttonName) {
 				let count = 1;
 				let toggLabelA1 = listBtnSelreg[1][0];
 				let toggLabelA2 = 'off';
-				let swap = true;
+				const swapSelreg = [true];
 
 				for (let varSelreg = 0; varSelreg < listBtnSelreg.length; varSelreg++) {
 					generateButtonMenu('#selreg-menu-btn', 'btnSelreg-', varSelreg, listBtnSelreg[varSelreg][0]);
@@ -1630,8 +1634,8 @@ function createButton(buttonName) {
 								//event.stopImmediatePropagation();
 								initiateUnderlinedToggleBtn('#btnSelreg-', id, listBtnSelreg[id][0]);
 
-								swap = !swap;
-								addCustomToggleInput(swap, 'toggle');
+								swapSelreg[count - 1] = !swapSelreg[count - 1];
+								addCustomToggleInput(swapSelreg[count - 1], 'toggle')
 								break;
 							case 40:
 							case 42:
@@ -1696,7 +1700,7 @@ function createButton(buttonName) {
 				let toggLabelD2 = 'ew4off';
 				let toggLabelE1 = listBtnStbsrc[6][0];
 				let toggLabelE2 = 'alloff';
-				let swap1 = true, swap2 = true, swap3 = true, swap4 = true, swap6 = true;
+				const swapStbsrc = [true, true, true, true, true];
 
 				for (let varStbsrc = 0; varStbsrc < listBtnStbsrc.length; varStbsrc++) {
 					generateButtonMenu('#stbsrc-menu-btn', 'btnStbsrc-', varStbsrc, listBtnStbsrc[varStbsrc][0]);
@@ -1720,45 +1724,22 @@ function createButton(buttonName) {
 
 						switch (id) {
 							case 1:
-								console.log(id + ' fnStbsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
-
-								swap1 = !swap1;
-								addCustomToggleInput(swap1, 'toggle');
-								break;
 							case 2:
-								console.log(id + ' fnStbsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
-
-								swap2 = !swap2;
-								addCustomToggleInput(swap2, 'toggle');
-								break;
 							case 3:
-								console.log(id + ' fnStbsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
-
-								swap3 = !swap3;
-								addCustomToggleInput(swap3, 'toggle');
-								break;
 							case 4:
-								console.log(id + ' fnStbsrc called');
-								//event.stopImmediatePropagation();
-								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
-
-								swap4 = !swap4;
-								addCustomToggleInput(swap4, 'toggle');
-								break;
 							case 6:
 								console.log(id + ' fnStbsrc called');
 								//event.stopImmediatePropagation();
 								initiateUnderlinedToggleBtn('#btnStbsrc-', id, listBtnStbsrc[id][0]);
-								$('#tree-' + id).siblings().hide();
 
-								swap6 = !swap6;
-								addCustomToggleInput(swap6, 'toggle');
+								swapStbsrc[count - 1] = !swapStbsrc[count - 1];
+								addCustomToggleInput(swapStbsrc[count - 1], 'toggle')
+
+								if (id == 6) {
+									$('#tree-' + id).siblings().hide();
+								} else {
+									$('#tree-' + 6).hide();
+								}
 								break;
 							case 40:
 							case 42:
@@ -1970,16 +1951,17 @@ function createButton(buttonName) {
 				return;
 			}
 			case 'commet': {
-				let count = 0;
+				let count = 0, maxChar = 2;
 
 				for (let varCommet = 0; varCommet < listBtnCommet.length; varCommet++) {
 					generateButtonMenu('#commet-menu-btn', 'btnCommet-', varCommet, listBtnCommet[varCommet][0]);
-					registToTree(varCommet, listBtnCommet[varCommet][0], 1);
+					registToTree(varCommet, listBtnCommet[varCommet][0], 2);
 					$('#btnCommet-' + varCommet).on("click", { num: varCommet }, fnCommet);
 				}
 
 				function fnCommet(event) {
 					let id = event.data.num;
+					count = 1;
 
 					if (listBtnCommet[id][0] != '') {
 						if (id < 1) {
@@ -2009,18 +1991,23 @@ function createButton(buttonName) {
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-									clearVK();
-								} else {
-									if (count === 1) {
-										count++;
-										nextStep(count, '#btnCommet-', listBtnCommet);
-										$('#tree-' + (count - 1)).show();
+
+									if ($('#input-VK').val() < 1 || $('#input-VK').val() > 9) {
+										printMessage('Out of Zone range');
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnCommet-' + count).removeClass('active');
-										forceBack('#btnCommet-', listBtnCommet.length, '#commet-menu-btn', '#logon-menu&t=0.15s');
+										forceBack('#btnCommet-', listBtnCommet.length, '#Commet-menu-btn', '#logon-menu&t=0.15s');
 										count = 0;
 										createButton('logon');
+									}
+
+									clearVK();
+								} else {
+									if (count == 1) {
+										if ($('#input-VK').val() == '') {
+											$('#input-VK').val('1')
+										}
 									}
 								}
 								break;
@@ -2033,6 +2020,7 @@ function createButton(buttonName) {
 				hideRightNav();
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnCommet-48');
+				limitInputChar('#btnCommet-', maxChar);
 				return;
 			}
 			case 'pltsel': {
@@ -2047,6 +2035,7 @@ function createButton(buttonName) {
 				let toggLabelD2 = 'sa-off';
 				let toggLabelE1 = listBtnPltsel[6][0];
 				let toggLabelE2 = 'alloff';
+				const swapPltsel = [true, true, true, true, true];
 
 				for (let varPltsel = 0; varPltsel < listBtnPltsel.length; varPltsel++) {
 					generateButtonMenu('#pltsel-menu-btn', 'btnPltsel-', varPltsel, listBtnPltsel[varPltsel][0]);
@@ -2073,16 +2062,27 @@ function createButton(buttonName) {
 							case 2:
 							case 3:
 							case 4:
-							case 5:
+							case 6:
 								console.log(id + ' fnPltsel called');
 								//event.stopImmediatePropagation();
+								changeVKWidth('5.5%', '67%');
 								initiateUnderlinedToggleBtn('#btnPltsel-', id, listBtnPltsel[id][0]);
+
+								swapPltsel[count - 1] = !swapPltsel[count - 1];
+								addCustomToggleInput(swapPltsel[count - 1], 'toggle')
+
+								if (id == 6) {
+									$('#tree-' + id).siblings().hide();
+								} else {
+									$('#tree-' + 6).hide();
+								}
 								break;
 							case 40:
 							case 42:
 								console.log(id + ' fnPltsel called');
 								event.stopImmediatePropagation();
 								backNav('#btnPltsel-', listBtnPltsel.length, '#pltsel-menu-btn', '#logon-menu&t=0.15s', 'logon');
+								resetVKWidth();
 								break;
 							case 47:
 								event.stopImmediatePropagation();
@@ -2094,17 +2094,46 @@ function createButton(buttonName) {
 
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
-									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
 									if (count < 7) {
 										count++;
 										nextStep(count, '#btnPltsel-', listBtnPltsel);
 										$('#tree-' + (count - 1)).show();
+
+										let btn = $('#btnPltsel-' + count).text();
+										let btnName = btn.slice(btn.length - 3);
+										//console.log(btn + ' | ' + btnName)
+
+										switch (count) {
+											case 2:
+												document.getElementById('input-btn-out').innerHTML = '<span class="active">' + 'su-' + '</span>';
+												break;
+											case 3:
+												document.getElementById('input-btn-out').innerHTML = '<span class="active">' + 'pa-' + '</span>';
+												break;
+											case 4:
+												document.getElementById('input-btn-out').innerHTML = '<span class="active">' + 'sa-' + '</span>';
+												break;
+											case 6:
+												changeVKWidth('5.5%', '67%');
+												document.getElementById('input-btn-out').innerHTML = '<span class="active">' + 'all-' + '</span>';
+												break;
+										}
+
+										if (btnName == '-on' && btn != '') {
+											$('#input-VK').val('ON');
+										} else if (btnName == 'off' && btn != '') {
+											$('#input-VK').val('OFF');
+										} else {
+											$('#input-VK').val('');
+										}
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnPltsel-' + count).removeClass('active');
 										forceBack('#btnPltsel-', listBtnPltsel.length, '#pltsel-menu-btn', '#logon-menu&t=0.15s');
+										resetVKWidth();
 										count = 0;
 										createButton('logon');
 									}
@@ -2114,14 +2143,15 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnPltsel-1', toggLabelA1, toggLabelA2, 'underlined');
-				toggleBtn(2, '#btnPltsel-2', toggLabelB1, toggLabelB2, 'underlined');
-				toggleBtn(3, '#btnPltsel-3', toggLabelC1, toggLabelC2, 'underlined');
-				toggleBtn(4, '#btnPltsel-4', toggLabelD1, toggLabelD2, 'underlined');
-				toggleBtn(6, '#btnPltsel-6', toggLabelE1, toggLabelE2, 'underlined');
+				toggleBtn(1, '#btnPltsel-1', toggLabelA1, toggLabelA2, 'underlined', 'off', 'pu-');
+				toggleBtn(2, '#btnPltsel-2', toggLabelB1, toggLabelB2, 'underlined', 'off', 'su-');
+				toggleBtn(3, '#btnPltsel-3', toggLabelC1, toggLabelC2, 'underlined', 'off', 'pa-');
+				toggleBtn(4, '#btnPltsel-4', toggLabelD1, toggLabelD2, 'underlined', 'off', 'sa-');
+				toggleBtn(6, '#btnPltsel-6', toggLabelE1, toggLabelE2, 'underlined', 'off', 'all-');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnPltsel-', listBtnPltsel);
 				delChar('#btnPltsel-48');
+				changeVKWidth('4.5%', '68%');
 				return;
 			}
 			case 'pltsrc': {
@@ -2136,6 +2166,7 @@ function createButton(buttonName) {
 				let toggLabelD2 = 'ew4off';
 				let toggLabelE1 = listBtnPltsrc[6][0];
 				let toggLabelE2 = 'alloff';
+				const swapPltsrc = [true, true, true, true, true];
 
 				for (let varPltsrc = 0; varPltsrc < listBtnPltsrc.length; varPltsrc++) {
 					generateButtonMenu('#pltsrc-menu-btn', 'btnPltsrc-', varPltsrc, listBtnPltsrc[varPltsrc][0]);
@@ -2162,10 +2193,19 @@ function createButton(buttonName) {
 							case 2:
 							case 3:
 							case 4:
-							case 5:
-								console.log(id + ' fnPltsrc called');
+							case 6:
+								console.log(id + ' fnPltsrc called ' + swapPltsrc[count - 1]);
 								//event.stopImmediatePropagation();
 								initiateUnderlinedToggleBtn('#btnPltsrc-', id, listBtnPltsrc[id][0]);
+
+								swapPltsrc[count - 1] = !swapPltsrc[count - 1];
+								addCustomToggleInput(swapPltsrc[count - 1], 'toggle')
+
+								if (id == 6) {
+									$('#tree-' + id).siblings().hide();
+								} else {
+									$('#tree-' + 6).hide();
+								}
 								break;
 							case 40:
 							case 42:
@@ -2183,13 +2223,31 @@ function createButton(buttonName) {
 
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
-									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
 									if (count < 7) {
 										count++;
 										nextStep(count, '#btnPltsrc-', listBtnPltsrc);
 										$('#tree-' + (count - 1)).show();
+
+										let btn = $('#btnPltsrc-' + count).text();
+										let btnName = btn.slice(btn.length - 3);
+										//console.log(btn + ' | ' + btnName)
+
+										if (count < 5) {
+											document.getElementById('input-btn-out').innerHTML = '<span class="active">' + 'ew' + count + '-' + '</span>';
+										} else if (count == 6) {
+											document.getElementById('input-btn-out').innerHTML = '<span class="active">' + 'all-' + '</span>';
+										}
+
+										if (btnName == '-on' && btn != '') {
+											$('#input-VK').val('ON');
+										} else if (btnName == 'off' && btn != '') {
+											$('#input-VK').val('OFF');
+										} else {
+											$('#input-VK').val('');
+										}
 									} else {
 										printMessage("COMMAND OK");
 										$('#btnPltsrc-' + count).removeClass('active');
@@ -2203,11 +2261,11 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnPltsrc-1', toggLabelA1, toggLabelA2, 'underlined');
-				toggleBtn(2, '#btnPltsrc-2', toggLabelB1, toggLabelB2, 'underlined');
-				toggleBtn(3, '#btnPltsrc-3', toggLabelC1, toggLabelC2, 'underlined');
-				toggleBtn(4, '#btnPltsrc-4', toggLabelD1, toggLabelD2, 'underlined');
-				toggleBtn(6, '#btnPltsrc-6', toggLabelE1, toggLabelE2, 'underlined');
+				toggleBtn(1, '#btnPltsrc-1', toggLabelA1, toggLabelA2, 'underlined', 'off', 'ew1-');
+				toggleBtn(2, '#btnPltsrc-2', toggLabelB1, toggLabelB2, 'underlined', 'off', 'ew2-');
+				toggleBtn(3, '#btnPltsrc-3', toggLabelC1, toggLabelC2, 'underlined', 'off', 'ew3-');
+				toggleBtn(4, '#btnPltsrc-4', toggLabelD1, toggLabelD2, 'underlined', 'off', 'ew4-');
+				toggleBtn(6, '#btnPltsrc-6', toggLabelE1, toggLabelE2, 'underlined', 'off', 'all-');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnPltsrc-', listBtnPltsrc);
 				delChar('#btnPltsrc-48');
@@ -2310,7 +2368,7 @@ function createButton(buttonName) {
 								console.log(id + ' fnSeltm called');
 								event.stopImmediatePropagation();
 								$('.cursor i').removeClass('d-none');
-								callAlphaVK('#btnSeltm-');
+								callAlphaVK('#btnSeltm-', 7);
 								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								break;
 							case 40:
@@ -2340,7 +2398,7 @@ function createButton(buttonName) {
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
-									if (count < 2) {
+									if (count < 1) {
 										count++;
 										nextStep(count, '#btnSeltm-', listBtnSeltm);
 										$('#tree-' + (count - 1)).show();
@@ -2378,14 +2436,14 @@ function createButton(buttonName) {
 					showBtmNav('#btnSeltm-');
 				});
 
-				toggleBtn(0, '#btnSeltm-0', toggLabelA1, toggLabelA2, 'underlined');
+				toggleBtn(0, '#btnSeltm-0', toggLabelA1, toggLabelA2, 'underlined', 'on');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnSeltm-', listBtnSeltm);
-				delChar('#btnSeltm-48');
+				delChar('#btnSeltm-48, #keyboard-clear');
 				return;
 			}
 			case 'crptm': {
-				let count = 1;
+				let count = 1, toggleCount1 = 0, toggleCount2 = 0;
 				let b1 = listBtnCrptm[5][0];
 				let b2 = listBtnCrptm[6][0];
 				const btn1 = [b1, 'georef', 'lating'];
@@ -2394,6 +2452,10 @@ function createButton(buttonName) {
 				let toggLabelA2 = 'mach';
 				let toggLabelB1 = listBtnCrptm[9][0];
 				let toggLabelB2 = 'hard';
+				const tgBtn = [toggLabelA1, toggLabelB1];
+				let currBtn = '';
+				let maxCharGeo = 8;
+				let maxCharLat = 15;
 
 				for (let varCrptm = 0; varCrptm < listBtnCrptm.length; varCrptm++) {
 					generateButtonMenu('#crptm-menu-btn', 'btnCrptm-', varCrptm, listBtnCrptm[varCrptm][0]);
@@ -2420,10 +2482,11 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								count = id;
 
 								hideNumBtn('#btnCrptm-', 30, 40);
 								$('.cursor i').removeClass('d-none');
-								callAlphaVK('#btnCrptm-');
+								callAlphaVK('#btnCrptm-', 7);
 								document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								break;
 							case 3:
@@ -2431,22 +2494,28 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								count = id;
 
-								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
-								$('#btnCrptm-' + 44).children('span').hide();
-								$('#btnCrptm-' + 44).off();
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm, 2);
+								callAlphaVK('#btnCrptm-', 1);
+								//$('#btnCrptm-' + 44).children('span').hide();
+								//$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
+
 								break;
 							case 4:
 								console.log(id + ' fnCrptm called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								count = id;
 
-								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
-								$('#btnCrptm-' + 44).children('span').hide();
-								$('#btnCrptm-' + 44).off();
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm, 2);
+								callAlphaVK('#btnCrptm-', 1);
+								//$('#btnCrptm-' + 44).children('span').hide();
+								//$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
+
 								break;
 							case 5:
 								console.log(id + ' fnCrptm called');
@@ -2454,20 +2523,29 @@ function createButton(buttonName) {
 								$('.cursor i').removeClass('d-none');
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
+								count = id;
 
 								toggleThreeState(btn1, '#btnCrptm-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnCrptm-', 30, 40);
 								changeVKWidth('8%', '61.5%');
 
-								if ($('#btnCrptm-' + id).text() != b1) {
+								currBtn = $('#input-btn-out').text();
+								setVK(currBtn);
+
+								if ($('#btnCrptm-' + id).text() == btn1[1].toString()) {
 									$('.cursor i').removeClass('d-none');
-									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-									callAlphaVK('#btnCrptm-');
+									tipGeoLat();
+									toggleCount1 = 1;
+								} else if ($('#btnCrptm-' + id).text() == btn1[2].toString()) {
+									$('.cursor i').removeClass('d-none');
+									tipGeoLat();
+									toggleCount1 = 2;
 								} else {
 									$('#btnCrptm-' + 44).children('span').hide();
 									$('#btnCrptm-' + 44).off();
 									document.getElementById('input-VK').placeholder = '';
+									toggleCount1 = 0;
 								}
 								break;
 							case 6:
@@ -2476,20 +2554,29 @@ function createButton(buttonName) {
 								$('.cursor i').removeClass('d-none');
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
+								count = id;
 
 								toggleThreeState(btn2, '#btnCrptm-' + id, id);
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnCrptm-', 30, 40);
 								changeVKWidth('8%', '61.5%');
 
-								if ($('#btnCrptm-' + id).text() != b2) {
+								currBtn = $('#input-btn-out').text();
+								setVK(currBtn);
+
+								if ($('#btnCrptm-' + id).text() == btn2[1].toString()) {
 									$('.cursor i').removeClass('d-none');
-									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-									callAlphaVK('#btnCrptm-');
+									tipGeoLat();
+									toggleCount2 = 1;
+								} else if ($('#btnCrptm-' + id).text() == btn2[2].toString()) {
+									$('.cursor i').removeClass('d-none');
+									tipGeoLat();
+									toggleCount2 = 2;
 								} else {
 									$('#btnCrptm-' + 44).children('span').hide();
 									$('#btnCrptm-' + 44).off();
 									document.getElementById('input-VK').placeholder = '';
+									toggleCount2 = 0;
 								}
 								break;
 							case 7:
@@ -2497,11 +2584,13 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								count = id;
 
-								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm, 4);
 								$('#btnCrptm-' + 44).children('span').hide();
 								$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
+
 								break;
 							case 8:
 								console.log(id + ' fnCrptm called');
@@ -2510,68 +2599,83 @@ function createButton(buttonName) {
 								changeVKWidth('8%', '63%');
 
 								initiateToggleBtn('#btnCrptm-', id, listBtnCrptm[id][0]);
+								count = id;
+								toggleCount = 0;
+								//resetToggleBtn(id, tgBtn[0], '#btnCrptm-' + id);
+
 								setTimeout(function () {
 									$('.cursor i').removeClass('d-none');
-									callAlphaVK('#btnCrptm-');
+									callAlphaVK('#btnCrptm-', 4);
 									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 								}, 125);
 								break;
 							case 9:
-								console.log(id + ' fnCrptm called');
+								console.log(id + ' fnCrptm called | ' + count);
 								//event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								changeVKWidth('8%', '63%');
+								$('#btnCrptm-' + 44).children('span').hide();
+								$('#btnCrptm-' + 44).off();
+								document.getElementById('input-VK').placeholder = '';
 
 								initiateToggleBtn('#btnCrptm-', id, listBtnCrptm[id][0]);
-								setTimeout(function () {
-									$('.cursor i').removeClass('d-none');
-									callAlphaVK('#btnCrptm-');
-									document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-								}, 125);
+								count = id;
+								toggleCount = 0;
+								//resetToggleBtn(id, tgBtn[1], '#btnCrptm-' + id);
 								break;
 							case 13:
 								console.log(id + ' fnCrptm called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								count = id;
 
-								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
-								$('#btnCrptm-' + 44).children('span').hide();
-								$('#btnCrptm-' + 44).off();
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm, 5);
+								callAlphaVK('#btnCrptm-', 4);
+								//$('#btnCrptm-' + 44).children('span').hide();
+								//$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
+
 								break;
 							case 14:
 								console.log(id + ' fnCrptm called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								count = id;
 
-								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
-								$('#btnCrptm-' + 44).children('span').hide();
-								$('#btnCrptm-' + 44).off();
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm, 5);
+								callAlphaVK('#btnCrptm-', 4);
+								//$('#btnCrptm-' + 44).children('span').hide();
+								//$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
+
 								break;
 							case 15:
 								console.log(id + ' fnCrptm called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								count = id;
 
-								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm, 6);
 								$('#btnCrptm-' + 44).children('span').hide();
 								$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
+
 								break;
 							case 16:
 								console.log(id + ' fnCrptm called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								count = id;
 
-								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+								showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm, 6);
 								$('#btnCrptm-' + 44).children('span').hide();
 								$('#btnCrptm-' + 44).off();
 								document.getElementById('input-VK').placeholder = '';
+
 								break;
 							case 40:
 								console.log(id + ' fnCrptm called');
@@ -2601,7 +2705,7 @@ function createButton(buttonName) {
 								delCharByOne();
 								break;
 							case 49:
-								console.log(id + ' fnCrptm called');
+								console.log(id + ' fnCrptm called | ' + count);
 								event.stopImmediatePropagation();
 
 								if ($('#input-VK').val() != '') {
@@ -2617,6 +2721,10 @@ function createButton(buttonName) {
 										document.getElementById('input-VK').placeholder = '';
 
 										switch (count) {
+											case 0:
+											case 1:
+												count = 2;
+												break;
 											case 3:
 												showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
 												$('#btnCrptm-' + 44).children('span').hide();
@@ -2654,14 +2762,21 @@ function createButton(buttonName) {
 												$('.cursor i').removeClass('d-none');
 												callAlphaVK('#btnCrptm-');
 												document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
+												console.log('fak ' + count)
 												break;
 											case 9:
-												count = 12
+												console.log('fak ' + count)
 												showToggle(toggLabelB1, toggLabelB2);
+												count = 12
+												break;
+											case 10:
+												$('#toggle-box-a, #toggle-box-b').empty();
+												count = 12
+												console.log('fak ' + count)
 												break;
 											case 13:
-												resetVKWidth();
 												$('#toggle-box-a, #toggle-box-b').empty();
+												resetVKWidth();
 												$('#toggle-divider').hide();
 
 												showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
@@ -2677,6 +2792,9 @@ function createButton(buttonName) {
 												break;
 											case 16:
 												showNumBtn('#btnCrptm-', 30, 40, listBtnCrptm);
+												break;
+											case 17:
+												hideNumBtn('#btnCrptm-', 30, 40);
 												break;
 										}
 									} else {
@@ -2704,14 +2822,24 @@ function createButton(buttonName) {
 					showBtmNav('#btnCrptm-');
 				});
 
-				toggleBtn(8, '#btnCrptm-8', toggLabelA1, toggLabelA2);
-				toggleBtn(9, '#btnCrptm-9', toggLabelB1, toggLabelB2);
+				function setVK(inputId) {
+					console.log('> ' + inputId)
+
+					if (inputId === 'georef') {
+						callAlphaVK('#btnCrptm-', maxCharGeo);
+					} else if (inputId === 'latlng') {
+						callAlphaVK('#btnCrptm-', maxCharLat);
+					}
+				}
+
+				toggleBtn(8, '#btnCrptm-8', toggLabelA1, toggLabelA2, '', 'on');
+				toggleBtn(9, '#btnCrptm-9', toggLabelB1, toggLabelB2, '', 'on');
 				setBtnActive('#btnCrptm-', listBtnCrptm);
 				hideNumBtn('#btnCrptm-', 30, 40);
 				$('.cursor i').removeClass('d-none');
-				callAlphaVK('#btnCrptm-');
+				callAlphaVK('#btnCrptm-', 7);
 				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
-				delChar('#btnCrptm-48');
+				delChar('#btnCrptm-48, #keyboard-clear');
 				return;
 			}
 			case 'scrmbl': {
@@ -11483,7 +11611,7 @@ function toggleBtn(num, btnName, toggLabelA, toggLabelB, btnType, state, customL
 	});
 }
 
-function resetToggleBtn(id, resetText, currBtn) {
+function resetToggleBtn(id, resetText, currBtn, state) {
 	//console.log(txtArr.toString() + " | " + btnArr.toString())
 	let lastBtnTxt = "", lastBtnName = "", lastTreeNum = "";
 
@@ -11494,10 +11622,14 @@ function resetToggleBtn(id, resetText, currBtn) {
 	lastBtnName = btnArr[btnArr.length - 2];
 	lastTreeNum = treeArr[treeArr.length - 2]
 
-	$(lastBtnName).attr('value', 'tg-off');
-	$(currBtn).siblings().removeClass('toggle_button__on');
-	$(lastBtnName).html('<a href="javascript:">' + lastBtnTxt + '</a>');
-	$("#tree-" + lastTreeNum).children('span:first').text(lastBtnTxt);
+	if (currBtn != '') {
+		$(lastBtnName).attr('value', 'tg-off');
+		$(currBtn).siblings().removeClass('toggle_button__on');
+		$(lastBtnName).html('<a href="javascript:">' + lastBtnTxt + '</a>');
+		$("#tree-" + lastTreeNum).children('span:first').text(lastBtnTxt);
+	} else {
+		//restore tree
+	}
 }
 
 function initiateToggleBtn(btnName, num, arrName) {
@@ -11795,7 +11927,6 @@ function callAlphaVK(btnName, charLimit) {
 	$('.vKeyboard-letter, .vKeyboard-number').off();
 
 	let btnA = (btnName + 44), btnB = (btnName + 47), btnC = (btnName + 48);
-	let limitVK = 0;
 
 	$(btnA).children('span').fadeTo(100, 1, function () {
 		$(btnA).on('click', function (event) {
@@ -11807,6 +11938,8 @@ function callAlphaVK(btnName, charLimit) {
 		event.stopImmediatePropagation();
 		window.location = '#sidemenu&t=0.15s';
 		hideBtmNav(btnName);
+		$('#input-VK').val('');
+		$('.cursor i').css('left', '0');
 		console.log('vk showed');
 	}
 
@@ -11835,7 +11968,7 @@ function callAlphaVK(btnName, charLimit) {
 	});
 
 	$('.vKeyboard-letter, .vKeyboard-number').on('click', function (event) {
-		console.log('> ' + limitVK + ' of ' + charLimit);
+		console.log('> ' + (limitVK + 1) + ' of ' + charLimit);
 		limitVK++;
 
 		$.enableVK(event);
@@ -11917,14 +12050,19 @@ function bindBtnNumber(arrName, curNum, maxChar) {
 	}
 }
 
-function clearVK() {
+function clearVK(btnName) {
 	document.getElementById('input-VK').value = '';
 	$('.cursor i').css('left', '0');
+
+	if (btnName == 'keyboard-clear') {
+		limitVK = 0;
+		console.log('> clear : ' + limitVK);
+	}
 }
 
 function delChar(btnName) {
 	$(btnName).on('click', function () {
-		clearVK();
+		clearVK(this.id);
 	});
 }
 
@@ -12017,6 +12155,11 @@ function showRightNav() {
 	for (let k = 0; k < 3; k++) {
 		$('#btnRight-' + k).children('span').fadeTo(100, 1);
 	}
+}
+
+function higlightBtnBox(btnName) {
+	$(btnName).css("background-color", "#fd9727");
+	$(btnName).siblings().css("background-color", "");
 }
 
 function isGeoLat(label, toggLabelA, toggLabelB, inputVal) {

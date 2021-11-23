@@ -106,6 +106,7 @@ function onVirtualKeyboardPress(event) {
     $(`#${currentInputField}`).val(part1 + part2);
     $(`#${currentInputField}`).caret(currentCaretField - 1);
     $('.cursor i').css('left', '-=10.5px');
+    limitVK--;
   } else if(event.target.id === "keyboard-return" && currentCaretField === 0) {
     $('.cursor i').css('left', '0');
   }

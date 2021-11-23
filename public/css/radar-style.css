@@ -1016,8 +1016,9 @@
     list-style: none;
 }
 
-.btn-box:hover {
-    color: #000;
+.btn-box:hover,
+.btn-box:hover > div > a {
+    color: #000 !important;
     background-color: #fd9727;
     transition: 0.4s;
 }

@@ -357,7 +357,7 @@
                             </button>
                         </li>
                         <li class="btn-box-sm-half"></li>
-                        <li class="btn btn-box-sm">abort</li>
+                        <li class="btn btn-box-sm" id="keyboard-abort">abort</li>
                         <li class="btn btn-box-sm"></li>
                         <li class="btn btn-box-sm">nxfld</li>
                         <li>
