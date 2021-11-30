@@ -937,7 +937,7 @@ function createButton(buttonName) {
 				}
 
 				showToggle(toggLabelA, toggLabelB);
-				toggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB, 'underlined');
+				toggleBtn(0, '#btnCrecir-0', toggLabelA, toggLabelB, 'underlined', 'default');
 				setBtnActive('#btnCrecir-', listBtnCrecir);
 				$('.cursor i').removeClass('d-none');
 				showNumBtn('#btnCrecir-', 30, 40, listBtnCrecir, 3);
@@ -1066,8 +1066,6 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(4, '#btnCrearc-4', toggLabelA, toggLabelB);
-				toggleBtn(5, '#btnCrearc-5', toggLabelC, toggLabelD);
 				setBtnActive('#btnCrearc-', listBtnCrearc);
 				$('.cursor i').addClass('d-none');
 				hideNumBtn('#btnCrearc-', 30, 40);
@@ -1667,7 +1665,7 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnSelreg-1', toggLabelA1, toggLabelA2, 'underlined', 'off', 'selreg');
+				toggleBtn(1, '#btnSelreg-1', toggLabelA1, toggLabelA2, 'underlined', 'custom', 'selreg');
 				showToggle(toggLabelA1, toggLabelA2);
 				//changeVKWidth('12%', '59%');
 				setBtnActive('#btnSelreg-', listBtnSelreg);
@@ -1784,11 +1782,11 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnStbsrc-1', toggLabelA1, toggLabelA2, 'underlined', 'off', 'ew1-');
-				toggleBtn(2, '#btnStbsrc-2', toggLabelB1, toggLabelB2, 'underlined', 'off', 'ew2-');
-				toggleBtn(3, '#btnStbsrc-3', toggLabelC1, toggLabelC2, 'underlined', 'off', 'ew3-');
-				toggleBtn(4, '#btnStbsrc-4', toggLabelD1, toggLabelD2, 'underlined', 'off', 'ew4-');
-				toggleBtn(6, '#btnStbsrc-6', toggLabelE1, toggLabelE2, 'underlined', 'off', 'all-');
+				toggleBtn(1, '#btnStbsrc-1', toggLabelA1, toggLabelA2, 'underlined', 'custom', 'ew1-');
+				toggleBtn(2, '#btnStbsrc-2', toggLabelB1, toggLabelB2, 'underlined', 'custom', 'ew2-');
+				toggleBtn(3, '#btnStbsrc-3', toggLabelC1, toggLabelC2, 'underlined', 'custom', 'ew3-');
+				toggleBtn(4, '#btnStbsrc-4', toggLabelD1, toggLabelD2, 'underlined', 'custom', 'ew4-');
+				toggleBtn(6, '#btnStbsrc-6', toggLabelE1, toggLabelE2, 'underlined', 'custom', 'all-');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnStbsrc-', listBtnStbsrc);
 				delChar('#btnStbsrc-48');
@@ -2137,11 +2135,11 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnPltsel-1', toggLabelA1, toggLabelA2, 'underlined', 'off', 'pu-');
-				toggleBtn(2, '#btnPltsel-2', toggLabelB1, toggLabelB2, 'underlined', 'off', 'su-');
-				toggleBtn(3, '#btnPltsel-3', toggLabelC1, toggLabelC2, 'underlined', 'off', 'pa-');
-				toggleBtn(4, '#btnPltsel-4', toggLabelD1, toggLabelD2, 'underlined', 'off', 'sa-');
-				toggleBtn(6, '#btnPltsel-6', toggLabelE1, toggLabelE2, 'underlined', 'off', 'all-');
+				toggleBtn(1, '#btnPltsel-1', toggLabelA1, toggLabelA2, 'underlined', 'custom', 'pu-');
+				toggleBtn(2, '#btnPltsel-2', toggLabelB1, toggLabelB2, 'underlined', 'custom', 'su-');
+				toggleBtn(3, '#btnPltsel-3', toggLabelC1, toggLabelC2, 'underlined', 'custom', 'pa-');
+				toggleBtn(4, '#btnPltsel-4', toggLabelD1, toggLabelD2, 'underlined', 'custom', 'sa-');
+				toggleBtn(6, '#btnPltsel-6', toggLabelE1, toggLabelE2, 'underlined', 'custom', 'all-');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnPltsel-', listBtnPltsel);
 				delChar('#btnPltsel-48');
@@ -2255,11 +2253,11 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(1, '#btnPltsrc-1', toggLabelA1, toggLabelA2, 'underlined', 'off', 'ew1-');
-				toggleBtn(2, '#btnPltsrc-2', toggLabelB1, toggLabelB2, 'underlined', 'off', 'ew2-');
-				toggleBtn(3, '#btnPltsrc-3', toggLabelC1, toggLabelC2, 'underlined', 'off', 'ew3-');
-				toggleBtn(4, '#btnPltsrc-4', toggLabelD1, toggLabelD2, 'underlined', 'off', 'ew4-');
-				toggleBtn(6, '#btnPltsrc-6', toggLabelE1, toggLabelE2, 'underlined', 'off', 'all-');
+				toggleBtn(1, '#btnPltsrc-1', toggLabelA1, toggLabelA2, 'underlined', 'custom', 'ew1-');
+				toggleBtn(2, '#btnPltsrc-2', toggLabelB1, toggLabelB2, 'underlined', 'custom', 'ew2-');
+				toggleBtn(3, '#btnPltsrc-3', toggLabelC1, toggLabelC2, 'underlined', 'custom', 'ew3-');
+				toggleBtn(4, '#btnPltsrc-4', toggLabelD1, toggLabelD2, 'underlined', 'custom', 'ew4-');
+				toggleBtn(6, '#btnPltsrc-6', toggLabelE1, toggLabelE2, 'underlined', 'custom', 'all-');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnPltsrc-', listBtnPltsrc);
 				delChar('#btnPltsrc-48');
@@ -2424,7 +2422,7 @@ function createButton(buttonName) {
 					showBtmNav('#btnSeltm-');
 				});
 
-				toggleBtn(0, '#btnSeltm-0', toggLabelA1, toggLabelA2, 'underlined', 'on');
+				toggleBtn(0, '#btnSeltm-0', toggLabelA1, toggLabelA2, 'underlined', 'default');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnSeltm-', listBtnSeltm);
 				delChar('#btnSeltm-48, #keyboard-clear');
@@ -2513,7 +2511,7 @@ function createButton(buttonName) {
 								resetToggleBtn(id, listBtnCrptm[id][0]);
 								$('#btnCrptm-' + 6).html('<span class="' + b2 + '">' + b2 + '</span>');
 
-								toggleThreeState(btn1, '#btnCrptm-' + id, id);
+								toggleThreeState(btn1, '#btnCrptm-' + id, id, 'default');
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnCrptm-', 30, 40);
 								changeVKWidth('8%', '61.5%');
@@ -2544,7 +2542,7 @@ function createButton(buttonName) {
 								resetToggleBtn(id, listBtnCrptm[id][0]);
 								$('#btnCrptm-' + 5).html('<span class="' + b1 + '">' + b1 + '</span>');
 
-								toggleThreeState(btn2, '#btnCrptm-' + id, id);
+								toggleThreeState(btn2, '#btnCrptm-' + id, id, 'default');
 								$('.cursor i').addClass('d-none');
 								hideNumBtn('#btnCrptm-', 30, 40);
 								changeVKWidth('8%', '61.5%');
@@ -2809,8 +2807,8 @@ function createButton(buttonName) {
 					$('#btnCrptm-' + 6).html('<span class="' + b2 + '">' + b2 + '</span>');
 				}
 
-				toggleBtn(8, '#btnCrptm-8', toggLabelA1, toggLabelA2, '', 'on');
-				toggleBtn(9, '#btnCrptm-9', toggLabelB1, toggLabelB2, '', 'on');
+				toggleBtn(8, '#btnCrptm-8', toggLabelA1, toggLabelA2, 'none', 'default');
+				toggleBtn(9, '#btnCrptm-9', toggLabelB1, toggLabelB2, 'none', 'default');
 				setBtnActive('#btnCrptm-', listBtnCrptm);
 				hideNumBtn('#btnCrptm-', 30, 40);
 				callAlphaVK('#btnCrptm-', 7);
@@ -3797,8 +3795,8 @@ function createButton(buttonName) {
 				});
 
 				showToggle(toggLabelA1, toggLabelA2);
-				toggleBtn(0, '#btnTrial-0', toggLabelA1, toggLabelA2, '', 'on');
-				toggleBtn(4, '#btnTrial-4', toggLabelB1, toggLabelB2, '', 'on');
+				toggleBtn(0, '#btnTrial-0', toggLabelA1, toggLabelA2, 'none', 'default');
+				toggleBtn(4, '#btnTrial-4', toggLabelB1, toggLabelB2, 'none', 'default');
 				setBtnActive('#btnTrial-', listBtnTrial);
 				hideNumBtn('#btnTrial-', 30, 40);
 				callAlphaVK('#btnTrial-', 5);
@@ -4082,7 +4080,7 @@ function createButton(buttonName) {
 					showBtmNav('#btnRecovr-');
 				});
 
-				toggleBtn(2, '#btnRecovr-2', toggLabelA1, toggLabelA2, '', 'on');
+				toggleBtn(2, '#btnRecovr-2', toggLabelA1, toggLabelA2, 'none', 'default');
 				setBtnActive('#btnRecovr-', listBtnRecovr);
 				hideNumBtn('#btnRecovr-', 30, 40);
 				callAlphaVK('#btnRecovr-', 5);
@@ -4367,7 +4365,7 @@ function createButton(buttonName) {
 					}
 				}
 
-				toggleBtn(2, '#btnRunway-2', toggLabelA1, toggLabelA2, '', 'on');
+				toggleBtn(2, '#btnRunway-2', toggLabelA1, toggLabelA2, 'none', 'default');
 				$('.cursor i').removeClass('d-none');
 				setBtnActive('#btnRunway-', listBtnRunway);
 				delChar('#btnRunway-48');
@@ -4624,6 +4622,7 @@ function createButton(buttonName) {
 							case 1:
 								console.log(id + ' fnDefftr called');
 								event.stopImmediatePropagation();
+
 								hideAlphaBtn('#btnDefftr-');
 								showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr, 1);
 								count = id;
@@ -4631,6 +4630,7 @@ function createButton(buttonName) {
 							case 2:
 								console.log(id + ' fnDefftr called');
 								event.stopImmediatePropagation();
+
 								hideAlphaBtn('#btnDefftr-');
 								showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr, 1);
 								count = id;
@@ -4638,6 +4638,7 @@ function createButton(buttonName) {
 							case 4:
 								console.log(id + ' fnDefftr called');
 								event.stopImmediatePropagation();
+
 								hideNumBtn('#btnDefftr-', 30, 40, listBtnDefftr);
 								callAlphaVK('#btnDefftr-', 7);
 								count = id;
@@ -4645,23 +4646,24 @@ function createButton(buttonName) {
 							case 6:
 								console.log(id + ' fnDefftr called');
 								event.stopImmediatePropagation();
+
 								hideAlphaBtn('#btnDefftr-');
 								showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr, 2);
 								break;
 							case 8:
 								console.log(id + ' fnDefftr called');
 								event.stopImmediatePropagation();
+
+								hideAlphaBtn('#btnDefftr-');
 								showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr, 5);
-								callAlphaVK('#btnDefftr-', 5);
 								break;
 							case 10:
-							case 14:
 								console.log(id + ' fnDefftr called');
 								event.stopImmediatePropagation();
 
-								callAlphaVK('#btnDefftr-');
+								hideAlphaBtn('#btnDefftr-');
 								showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr, 2);
-								count = id + 1;
+								count = id;
 								break;
 							case 12:
 								console.log(id + ' fnDefftr called');
@@ -4669,15 +4671,25 @@ function createButton(buttonName) {
 
 								changeVKWidth('8%', '63%');
 								initiateToggleBtn('#btnDefftr-', id, listBtnDefftr[id][0]);
-								hideAlphaBtn('#btnDefftr-');
 
-								if ($('#btnDefftr-' + id).attr('value') != 'tg-on') {
-									setTimeout(function () {
-										showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr);
-										callAlphaVK('#btnDefftr-');
-									}, 125);
-								}
-								count = id + 1;
+								setTimeout(function () {
+									if ($('#input-btn-out').text().toLowerCase() == 'recpos') {
+										showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr, 3);
+										callAlphaVK('#btnDefftr-', 3);
+									} else {
+										showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr, 1);
+										callAlphaVK('#btnDefftr-', 1);
+									}
+								}, 125);
+
+								count = id;
+								break;
+							case 14:
+								console.log(id + ' fnDefftr called');
+								event.stopImmediatePropagation();
+
+								showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr, 4);
+								callAlphaVK('#btnDefftr-', 4);
 								break;
 							case 40:
 								console.log(id + ' fnDefftr called');
@@ -4710,12 +4722,19 @@ function createButton(buttonName) {
 								event.stopImmediatePropagation();
 
 								if ($('#input-VK').val() != '') {
-									if (count > 2 && count != 6) {
-										$('#tree-' + (count - 1)).show();
-										document.getElementById('treeNum-' + (count - 1)).innerHTML = $('#input-VK').val();
-									} else {
-										$('#tree-' + count).show();
-										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									switch (count) {
+										case 3:
+										case 5:
+										case 9:
+										case 11:
+										case 13:
+											document.getElementById('treeNum-' + (count - 1)).innerHTML = $('#input-VK').val();
+											break;
+										default:
+											$('#tree-' + count).show();
+											document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+											break;
 									}
 
 									switch (count) {
@@ -4751,7 +4770,7 @@ function createButton(buttonName) {
 												count++;
 												nextStep(count, '#btnDefftr-', listBtnDefftr);
 												$('#tree-' + (count)).show();
-												callAlphaVK('#btnDefftr-', 5);
+												showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr, 5);
 											}
 											break;
 										case 10:
@@ -4762,13 +4781,16 @@ function createButton(buttonName) {
 												count++;
 												nextStep(count, '#btnDefftr-', listBtnDefftr);
 												$('#tree-' + (count - 1)).show();
+												showToggle(toggLabelA1, toggLabelA2);
+												showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr, 1);
+												callAlphaVK('#btnDefftr-', 1);
 											}
 											break;
 									}
 
 									clearVK();
 								} else {
-									if (count < 16) {
+									if (count < 15) {
 										if (count < 3) {
 											$('#tree-' + (count - 1)).show();
 										} else {
@@ -4800,30 +4822,28 @@ function createButton(buttonName) {
 												break;
 											case 8:
 												count = 9;
+												count++;
+												nextStep(count, '#btnDefftr-', listBtnDefftr);
 												break;
 											case 10:
 												if ($('#input-VK').val() == '') {
 													$('#input-VK').val('0')
 												}
-												count = 11;
 												break;
 											case 12:
-												count = 13;
-												showToggle(toggLabelA1, toggLabelA2);
-												$('.cursor i').addClass('d-none');
-												hideAlphaBtn('#btnDefftr-');
-												hideNumBtn('#btnDefftr-', 30, 40, listBtnDefftr);
-												break;
-											case 14:
-												count = 15;
 												$('#toggle-box-a, #toggle-box-b').empty();
 												$('#toggle-divider').hide();
-												showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr);
-												callAlphaVK('#btnDefftr-');
+												count = 13;
+												count++;
+												nextStep(count, '#btnDefftr-', listBtnDefftr);
 												break;
-											case 16:
+											case 14:
+												console.log('cok' + count)
 												hideAlphaBtn('#btnDefftr-');
 												hideNumBtn('#btnDefftr-', 30, 40, listBtnDefftr);
+
+												count++;
+												nextStep(count, '#btnDefftr-', listBtnDefftr);
 												break;
 										}
 									} else {
@@ -4849,7 +4869,7 @@ function createButton(buttonName) {
 					showBtmNav('#btnDefftr-');
 				});
 
-				toggleBtn(12, '#btnDefftr-12', toggLabelA1, toggLabelA2);
+				toggleBtn(12, '#btnDefftr-12', toggLabelA1, toggLabelA2, 'none', 'default');
 				setBtnActive('#btnDefftr-', listBtnDefftr);
 				hideAlphaBtn('#btnDefftr-');
 				showNumBtn('#btnDefftr-', 30, 40, listBtnDefftr, 1);
@@ -4868,30 +4888,12 @@ function createButton(buttonName) {
 				let toggLabelD2 = 'stnoff';
 				const btn1 = [listBtnTactic[0][0], 'TACTNO', 'OVRRDE'];
 				const btn2 = [listBtnTactic[18][0], 'bank45', 'bank60'];
+				let swapTactic = true;
+				let inputDiv = document.getElementById('input-btn-out');
 
 				for (let varTactic = 0; varTactic < listBtnTactic.length; varTactic++) {
 					generateButtonMenu('#tactic-menu-btn', 'btnTactic-', varTactic, listBtnTactic[varTactic][0]);
 					registToTree(varTactic, listBtnTactic[varTactic][0], 29);
-
-					if ((varTactic < 29) && (varTactic > 0)) {
-						$('#btnTactic-' + varTactic).addClass('text-none');
-						$('#btnTactic-' + varTactic).children('span').hide();
-					}
-				}
-
-				$('#btnTactic-' + 0).on("click", { num: 0 }, fnTacticInit);
-				$('#btnTactic-' + 40).on("click", { num: 40 }, fnTactic);
-				$('#btnTactic-' + 42).on("click", { num: 42 }, fnTactic);
-
-				$.doClick = function () {
-					for (let varTactic = 1; varTactic < listBtnTactic.length; varTactic++) {
-						$('#btnTactic-' + varTactic).on("click", { num: varTactic }, fnTactic);
-					}
-
-					toggleBtn(6, '#btnTactic-6', toggLabelA1, toggLabelA2);
-					toggleBtn(8, '#btnTactic-8', toggLabelB1, toggLabelB2);
-					toggleBtn(10, '#btnTactic-10', toggLabelC1, toggLabelC2);
-					toggleBtn(28, '#btnTactic-28', toggLabelD1, toggLabelD2);
 				}
 
 				function fnTacticInit(event) {
@@ -4915,28 +4917,31 @@ function createButton(buttonName) {
 								$('#three-toggle').empty();
 								changeVKWidth('8%', '59%');
 
-								toggleThreeState(btn1, '#btnTactic-' + id, id);
+								toggleThreeState(btn1, '#btnTactic-' + id, id, 'default');
 
-								if ($('#btnTactic-' + id).text() === 'DEFALT') {
+								if ($('#btnTactic-' + id).text() == 'DEFALT') {
 									for (let i = 1; i < 29; i++) {
 										$('#btnTactic-' + i).off();
 										$('#btnTactic-' + i).children('span').show();
 										$('#tree-' + i).hide();
-										console.log('func die')
+										//console.log('func die')
 									}/**/
 
+									$('#btnTactic-' + 40).on("click", { num: 40 }, fnTactic);
+									$('#btnTactic-' + 42).on("click", { num: 42 }, fnTactic);
 									$('#btnTactic-' + 47).off();
-									$('#btnTactic-' + 49).off();
+									$('#btnTactic-' + 49).on("click", { num: 49 }, fnTactic);
 									hideNumBtn('#btnTactic-', 30, 40);
 									$('.cursor i').addClass('d-none');
 								} else if ($('#btnTactic-' + id).text() === 'TACTNO') {
-									showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+									showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 2);
 									$('#btnTactic-' + 47).on("click", { num: 47 }, fnTactic);
 									$('#btnTactic-' + 49).on("click", { num: 49 }, fnTactic);
 								} else {
 									$.doClick();
 									hideNumBtn('#btnTactic-', 30, 40);
 									$('.cursor i').addClass('d-none');
+									count = 1;
 								}
 								break;
 						}
@@ -4947,7 +4952,26 @@ function createButton(buttonName) {
 					let id = event.data.num;
 					let cases = $('#btnTactic-' + 0).text();
 
-					if (cases === 'TACTNO') {
+					if (cases == 'DEFALT') {
+						if (listBtnTactic[id][0] != '') {
+							if (id < 1) {
+								initiateLoadedMenu('#btnTactic-', id, listBtnTactic[id][0]);
+								count = id;
+							}
+
+							switch (id) {
+								case 40:
+									$.back40();
+									break;
+								case 42:
+									$.back42();
+									break;
+								case 49:
+									$.back49();
+									break;
+							}
+						}
+					} else if (cases == 'TACTNO') {
 						if (listBtnTactic[id][0] != '') {
 							if (id < 1) {
 								initiateLoadedMenu('#btnTactic-', id, listBtnTactic[id][0]);
@@ -4958,28 +4982,15 @@ function createButton(buttonName) {
 								case 40:
 									console.log(id + ' fnTactic called');
 									//event.stopImmediatePropagation();
-
-									backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
-									$('#three-toggle').empty();
-
-									setTimeout(function () {
-										printBtnTree(listBtnLogon[35]);
-										resetVKWidth();
-									}, 125);
+									$.back40();
 									break;
 								case 42:
 									console.log(id + ' fnTactic called | ' + count);
 									//event.stopImmediatePropagation();
-
-									backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#logon-menu&t=0.15s', 'logon');
-									$('#three-toggle').empty();
-
-									setTimeout(function () {
-										resetVKWidth();
-									}, 125);
+									$.back42();
 									break;
 								case 47:
-									event.stopImmediatePropagation();
+									console.log(id + ' fnTactic called | ' + count);
 									event.stopImmediatePropagation();
 									delCharByOne();
 									break;
@@ -4990,24 +5001,25 @@ function createButton(buttonName) {
 									if ($('#input-VK').val() != '') {
 										$('#tree-' + count).show();
 										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-										clearVK();
-									} else {
-										if (count < 0) {
+
+										if (($('#input-VK').val() < 1) || ($('#input-VK').val() > 10)) {
+											printMessage('TACTNO Out of Number');
+										} else {
+											//$.back49();
 											count++;
 											nextStep(count, '#btnTactic-', listBtnTactic);
-											$('#tree-' + (count - 1)).show();
-										} else {
-											printMessage("COMMAND OK");
-											$('#btnTactic-' + count).removeClass('active');
 											$('#three-toggle').empty();
-											forceBack('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#weapon-menu&t=0.15s');
-											count = 0;
-											createButton('weapon');
+											hideNumBtn('#btnTactic-', 30, 40);
+										}
 
-											setTimeout(function () {
-												printBtnTree(listBtnLogon[35]);
-												resetVKWidth();
-											}, 125);
+										clearVK();
+									} else {
+										if (count < 1) {
+											if ($('#input-VK').val() == '') {
+												$('#input-VK').val('0')
+											}
+										} else {
+											$.back49();
 										}
 									}
 									break;
@@ -5022,42 +5034,46 @@ function createButton(buttonName) {
 
 							switch (id) {
 								case 2:
+									count = id + 1;
 									console.log(id + ' fnTactic called | ' + count);
 									event.stopImmediatePropagation();
 
 									$('#toggle-box-a, #toggle-box-b').empty();
 									$('#toggle-divider').hide();
 									$('#three-toggle').empty();
-									showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
-									count = id + 1;
+									resetVKWidth();
+									showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 3);
 									break;
 								case 4:
+									count = id + 1;
 									console.log(id + ' fnTactic called | ' + count);
 									event.stopImmediatePropagation();
 
 									$('#toggle-box-a, #toggle-box-b').empty();
 									$('#toggle-divider').hide();
 									$('#three-toggle').empty();
-									showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
-									count = id + 1;
+									resetVKWidth();
+									showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 3);
 									break;
 								case 6:
+									count = id + 1;
 									console.log(id + ' fnTactic called | ' + count);
 									//event.stopImmediatePropagation();
 									$('#toggle-box-a, #toggle-box-b').empty();
 									$('#toggle-divider').hide();
 									$('#three-toggle').empty();
+									resetVKWidth();
 
 									changeVKWidth('8%', '63%');
 									initiateToggleBtn('#btnTactic-', id, listBtnTactic[id][0]);
 
 									setTimeout(function () {
-										showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+										showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 4);
 									}, 125);
 
-									count = id + 1;
 									break;
 								case 8:
+									count = id + 1;
 									console.log(id + ' fnTactic called | ' + count);
 									//event.stopImmediatePropagation();
 									$('#toggle-box-a, #toggle-box-b').empty();
@@ -5068,12 +5084,12 @@ function createButton(buttonName) {
 									initiateToggleBtn('#btnTactic-', id, listBtnTactic[id][0]);
 
 									setTimeout(function () {
-										showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+										showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 4);
 									}, 125);
 
-									count = id + 1;
 									break;
 								case 10:
+									count = id + 1;
 									console.log(id + ' fnTactic called | ' + count);
 									//event.stopImmediatePropagation();
 									$('#toggle-box-a, #toggle-box-b').empty();
@@ -5083,43 +5099,45 @@ function createButton(buttonName) {
 									changeVKWidth('8%', '63%');
 									initiateToggleBtn('#btnTactic-', id, listBtnTactic[id][0]);
 
-									setTimeout(function () {
-										showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
-									}, 125);
-
-									count = id + 1;
 									break;
 								case 12:
+									count = id + 1;
 									console.log(id + ' fnTactic called | ' + count);
 									event.stopImmediatePropagation();
 
 									$('#toggle-box-a, #toggle-box-b').empty();
 									$('#toggle-divider').hide();
 									$('#three-toggle').empty();
-									showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
-									count = id;
+									resetVKWidth();
+
+									showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 5);
 									break;
 								case 14:
+									count = id + 1;
 									console.log(id + ' fnTactic called | ' + count);
 									event.stopImmediatePropagation();
 
 									$('#toggle-box-a, #toggle-box-b').empty();
 									$('#toggle-divider').hide();
 									$('#three-toggle').empty();
-									showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
-									count = id + 1;
+									resetVKWidth();
+
+									showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 3);
 									break;
 								case 16:
+									count = id + 1;
 									console.log(id + ' fnTactic called | ' + count);
 									event.stopImmediatePropagation();
 
 									$('#toggle-box-a, #toggle-box-b').empty();
 									$('#toggle-divider').hide();
 									$('#three-toggle').empty();
-									showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
-									count = id + 1;
+									resetVKWidth();
+
+									showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 2);
 									break;
 								case 18:
+									count = 19;
 									console.log(id + ' fnTactic called | ' + count);
 									event.stopImmediatePropagation();
 									$('.cursor i').removeClass('d-none');
@@ -5128,28 +5146,24 @@ function createButton(buttonName) {
 									$('#toggle-divider').hide();
 									$('#three-toggle').empty();
 
-									toggleThreeState(btn2, '#btnTactic-' + id, id);
+									toggleThreeState(btn2, '#btnTactic-' + id, id, 'custom', 'base');
 									$('.cursor i').addClass('d-none');
 									hideNumBtn('#btnTactic-', 30, 40);
 									$('#tree-' + id).hide();
-									count = id + 1;
-
-									setTimeout(function () {
-										changeVKWidth('12.5%', '54.5%');
-										$('#input-btn-out').prepend('<span class="mr-2">base</span>');
-									}, 125)
 									break;
 								case 20:
+									count = 27;
 									console.log(id + ' fnTactic called | ' + count);
 									event.stopImmediatePropagation();
 
 									$('#toggle-box-a, #toggle-box-b').empty();
 									$('#toggle-divider').hide();
 									$('#three-toggle').empty();
-									showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
-									count = id + 1;
+									resetVKWidth();
+									showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 2);
 									break;
 								case 28:
+									count = id + 1;
 									console.log(id + ' fnTactic called | ' + count);
 									//event.stopImmediatePropagation();
 									$('#toggle-box-a, #toggle-box-b').empty();
@@ -5158,35 +5172,20 @@ function createButton(buttonName) {
 
 									changeVKWidth('8%', '63%');
 									initiateToggleBtn('#btnTactic-', id, listBtnTactic[id][0]);
+									changeVKWidth('5.5%', '67%');
 
-									setTimeout(function () {
-										showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
-									}, 125);
-
-									count = id + 1;
+									swapTactic = !swapTactic;
+									addCustomToggleInput(swapTactic, 'toggle')
 									break;
 								case 40:
 									console.log(id + ' fnTactic called');
 									//event.stopImmediatePropagation();
-
-									backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
-									$('#three-toggle').empty();
-
-									setTimeout(function () {
-										printBtnTree(listBtnLogon[35]);
-										resetVKWidth();
-									}, 125);
+									$.back40();
 									break;
 								case 42:
 									console.log(id + ' fnTactic called | ' + count);
 									//event.stopImmediatePropagation();
-
-									backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#logon-menu&t=0.15s', 'logon');
-									$('#three-toggle').empty();
-
-									setTimeout(function () {
-										resetVKWidth();
-									}, 125);
+									$.back42();
 									break;
 								case 47:
 									event.stopImmediatePropagation();
@@ -5194,24 +5193,104 @@ function createButton(buttonName) {
 									delCharByOne();
 									break;
 								case 49:
-									console.log(id + ' fnTactic called | ' + count);
+									//console.log(id + ' fnTactic called | ' + count);
 									event.stopImmediatePropagation();
 
 									if ($('#input-VK').val() != '') {
-										if (count > 2) {
+										if (count > 2 && count != 27) {
 											$('#tree-' + (count - 1)).show();
 											document.getElementById('treeNum-' + (count - 1)).innerHTML = $('#input-VK').val();
-										} else {
+										}else if(count == 27){
+											$('#tree-' + (20)).show();
+											document.getElementById('treeNum-' + (20)).innerHTML = $('#input-VK').val();
+										}else {
 											$('#tree-' + count).show();
 											document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 										}
 
+										switch (count) {
+											case 7:
+												if ($('#input-btn-out').text().toLowerCase() == 'crsras') {
+													if ($('#input-VK').val() < 230 || $('#input-VK').val() > 2200) {
+														printMessage('CRSRAS Out of Speed');
+													} else {
+														count = 7;
+														count++;
+														nextStep(count, '#btnTactic-', listBtnTactic);
+														$('#tree-' + (count - 1)).show();
+
+														$('#message-btn-out').empty();
+														showToggle(toggLabelB1, toggLabelB2);
+														showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 4);
+														count = 9;
+													}
+												} else {
+													if ($('#input-VK').val() < 0.4 || $('#input-VK').val() > 3.8) {
+														printMessage('CRSMCH Out of Speed');
+													} else {
+														count = 7;
+														count++;
+														nextStep(count, '#btnTactic-', listBtnTactic);
+														$('#tree-' + (count - 1)).show();
+
+														$('#message-btn-out').empty();
+														showToggle(toggLabelB1, toggLabelB2);
+														showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 4);
+														count = 9;
+													}
+												}
+												break;
+											case 9:
+												if ($('#input-btn-out').text().toLowerCase() == 'atkras') {
+													if ($('#input-VK').val() < 230 || $('#input-VK').val() > 2200) {
+														printMessage('ATKRAS Out of Speed');
+													} else {
+														count = 9;
+														count++;
+														nextStep(count, '#btnTactic-', listBtnTactic);
+														$('#tree-' + (count - 1)).show();
+
+														$('#message-btn-out').empty();
+														showToggle(toggLabelC1, toggLabelC2);
+														hideNumBtn('#btnTactic-', 30, 40);
+														count = 11;
+													}
+												} else {
+													if ($('#input-VK').val() < 0.4 || $('#input-VK').val() > 3.8) {
+														printMessage('ATKMCH Out of Speed');
+													} else {
+														count = 9;
+														count++;
+														nextStep(count, '#btnTactic-', listBtnTactic);
+														$('#tree-' + (count - 1)).show();
+
+														$('#message-btn-out').empty();
+														showToggle(toggLabelC1, toggLabelC2);
+														hideNumBtn('#btnTactic-', 30, 40);
+														count = 11;
+													}
+												}
+												break;
+										}
+										/*
+										count++;
+										nextStep(count, '#btnTactic-', listBtnTactic);
+										$('#three-toggle').empty();
+										*/
+
 										clearVK();
 									} else {
-										if (count < 29) {
-											count++;
-											nextStep(count, '#btnTactic-', listBtnTactic);
-											$('#three-toggle').empty();
+
+										if (count < 30) {
+											if (count == 7 || count == 9) {
+												if ($('#input-VK').val() == '') {
+													$('#input-VK').val('0')
+												}
+											} else {
+												count++;
+												nextStep(count, '#btnTactic-', listBtnTactic);
+												$('#three-toggle').empty();
+											}
 
 											if (count < 3) {
 												$('#tree-' + (count - 1)).show();
@@ -5222,7 +5301,7 @@ function createButton(buttonName) {
 											switch (count) {
 												case 2:
 													count = 3;
-													showNumBtn('#btnTactic-', 30, 40, listBtnTactic);
+													showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 3);
 													break;
 												case 4:
 													count = 5;
@@ -5230,67 +5309,58 @@ function createButton(buttonName) {
 												case 6:
 													count = 7;
 													showToggle(toggLabelA1, toggLabelA2);
-													break;
-												case 8:
-													count = 9;
-													showToggle(toggLabelB1, toggLabelB2);
-													break;
-												case 10:
-													count = 11;
-													showToggle(toggLabelC1, toggLabelC2);
+													showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 4);
 													break;
 												case 12:
 													count = 13;
 													$('#toggle-box-a, #toggle-box-b').empty();
 													$('#toggle-divider').hide();
+													showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 5);
 													break;
 												case 14:
 													count = 15;
+													showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 3);
 													break;
 												case 16:
 													count = 17;
+													showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 2);
 													break;
 												case 18:
-													count = 19;
 													$('#toggle-box-a, #toggle-box-b').empty();
 													$('#toggle-divider').hide();
 													initiateToggleThree(btn2);
+													hideNumBtn('#btnTactic-', 30, 40);
+													$('#tree-' + (count)).children('span:first').text('base ' + listBtnTactic[count][0]);
 
+													inputDiv.removeChild(inputDiv.firstChild);
+													$('#input-btn-out').prepend('<span class="active">' + 'base' + '</span>');
 													$('.cursor i').addClass('d-none');
-													setTimeout(function () {
-														changeVKWidth('12.5%', '54.5%');
-														$('#input-btn-out').prepend('<span class="mr-2">base</span>');
-													}, 125)
+													//$('#input-VK').val(listBtnTactic[count][0]);
+													count = 19;
 													break;
 												case 20:
-													count = 21;
-													$('#three-toggle').empty();
-													break;
-												case 22:
 													count = 27;
+													$('#three-toggle').empty();
+													$('.cursor i').removeClass('d-none');
+													showNumBtn('#btnTactic-', 30, 40, listBtnTactic, 2);
 													break;
 												case 28:
 													count = 29;
 													showToggle(toggLabelD1, toggLabelD2);
+													$('.cursor i').addClass('d-none');
+													hideNumBtn('#btnTactic-', 30, 40);
+													break;
+												case 30:
+													$('#input-btn-out').empty()
+													$('#toggle-box-a, #toggle-box-b').empty();
+													$('#toggle-divider').hide();
 													break;
 											}
 										} else {
-											printMessage("COMMAND OK");
-											$('#btnTactic-' + count).removeClass('active');
-
-											$('#toggle-box-a, #toggle-box-b').empty();
-											$('#toggle-divider').hide();
-											$('#three-toggle').empty();
-
-											forceBack('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#weapon-menu&t=0.15s');
-											count = 0;
-											createButton('weapon');
-
-											setTimeout(function () {
-												printBtnTree(listBtnLogon[35]);
-												resetVKWidth();
-											}, 125);
+											$.back49();
 										}
+
+										console.log(' | ' + count);
 									}
 									break;
 							}
@@ -5298,13 +5368,62 @@ function createButton(buttonName) {
 					}
 				}
 
+				$.doClick = function () {
+					for (let varTactic = 1; varTactic < listBtnTactic.length; varTactic++) {
+						$('#btnTactic-' + varTactic).on("click", { num: varTactic }, fnTactic);
+					}
+
+					toggleBtn(6, '#btnTactic-6', toggLabelA1, toggLabelA2, 'none', 'default');
+					toggleBtn(8, '#btnTactic-8', toggLabelB1, toggLabelB2, 'none', 'default');
+					toggleBtn(10, '#btnTactic-10', toggLabelC1, toggLabelC2, 'none', 'default');
+					toggleBtn(28, '#btnTactic-28', toggLabelD1, toggLabelD2, 'none', 'custom', 'stn');
+				}
+
 				$.init = function () {
 					changeVKWidth('8%', '59%');
 					initiateToggleThree(btn1);
-					setBtnActive('#btnTactic-', listBtnTactic);
 					delChar('#btnTactic-48');
 				}/**/
 
+				$.back40 = function () {
+					backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
+					$('#three-toggle').empty();
+
+					setTimeout(function () {
+						printBtnTree(listBtnLogon[35]);
+						resetVKWidth();
+					}, 125);
+				}
+
+				$.back42 = function () {
+					backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#logon-menu&t=0.15s', 'logon');
+					$('#three-toggle').empty();
+
+					setTimeout(function () {
+						resetVKWidth();
+					}, 125);
+				}
+
+				$.back49 = function () {
+					printMessage("COMMAND OK");
+					$('#btnTactic-' + count).removeClass('active');
+
+					$('#toggle-box-a, #toggle-box-b').empty();
+					$('#toggle-divider').hide();
+					$('#three-toggle').empty();
+
+					forceBack('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#weapon-menu&t=0.15s');
+					count = 0;
+					createButton('weapon');
+
+					setTimeout(function () {
+						printBtnTree(listBtnLogon[35]);
+						resetVKWidth();
+					}, 125);
+				}
+
+				$('#btnTactic-' + 0).on("click", { num: 0 }, fnTacticInit);
+				setBtnActive('#btnTactic-', listBtnTactic);
 				hideNumBtn('#btnTactic-', 30, 40);
 				return;
 			}
@@ -5725,7 +5844,7 @@ function createButton(buttonName) {
 					showBtmNav('#btnAmdftr-');
 				});
 
-				toggleBtn(4, '#btnAmdftr-4', toggLabelA1, toggLabelA2);
+				toggleBtn(4, '#btnAmdftr-4', toggLabelA1, toggLabelA2, 'none', 'default');
 				setBtnActive('#btnAmdftr-', listBtnAmdftr);
 				showNumBtn('#btnAmdftr-', 30, 40, listBtnAmdftr, 1);
 				callAlphaVK('#btnAmdftr-');
@@ -5935,7 +6054,7 @@ function createButton(buttonName) {
 				}
 
 				showToggle(toggLabelA1, toggLabelA2);
-				toggleBtn(1, '#btnSamtrk-1', toggLabelA1, toggLabelA2);
+				toggleBtn(1, '#btnSamtrk-1', toggLabelA1, toggLabelA2, 'none', 'default');
 				setBtnActive('#btnSamtrk-', listBtnSamtrk);
 				$('.cursor i').removeClass('d-none');
 				delChar('#btnSamtrk-48');
@@ -6317,7 +6436,7 @@ function createButton(buttonName) {
 				});
 
 				hideRightNav();
-				toggleBtn(1, '#btnMovbtm-1', toggLabelA, toggLabelB);
+				toggleBtn(1, '#btnMovbtm-1', toggLabelA, toggLabelB, 'none', 'default');
 				showToggle(toggLabelA, toggLabelB);
 				setBtnActive('#btnMovbtm-', listBtnMovbtm);
 				delChar('#keyboard-clear, #btnMovbtm-48');
@@ -6590,9 +6709,9 @@ function createButton(buttonName) {
 						}
 					}
 				}
-				toggleBtn(1, '#btnAinit-1', toggLabelA1, toggLabelA2);
-				toggleBtn(2, '#btnAinit-2', toggLabelB1, toggLabelB2);
-				toggleBtn(3, '#btnAinit-3', toggLabelC1, toggLabelC2);
+				toggleBtn(1, '#btnAinit-1', toggLabelA1, toggLabelA2, 'none', 'default');
+				toggleBtn(2, '#btnAinit-2', toggLabelB1, toggLabelB2, 'none', 'default');
+				toggleBtn(3, '#btnAinit-3', toggLabelC1, toggLabelC2, 'none', 'default');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnAinit-', listBtnAinit);
 				delChar('#keyboard-clear, #btnAinit-48');
@@ -11713,10 +11832,9 @@ function initiateUnderlinedToggleBtn(btnName, num, arrName) {
 }
 
 function singleToggleBtn(targetTreeNum, currTarget, btnArr, toggleId) {
-	let btn = btnArr.toString()
+	let btn = btnArr.toString();
 
 	$(currTarget).html(btn);
-
 	document.getElementById('tree-' + targetTreeNum).innerHTML =
 		'<span>' + btn + '</span>' +
 		'<span id="treeNum-' + targetTreeNum + '" class="ml-2">' + '</span>';
@@ -11726,24 +11844,62 @@ function singleToggleBtn(targetTreeNum, currTarget, btnArr, toggleId) {
 	$(toggleId).siblings('.active').removeClass('active');
 }
 
-function toggleThreeState(btnArr, btnName, targetTreeNum) {
+function singleCustomToggleBtn(targetTreeNum, currTarget, btnArr, toggleId, customLabel) {
+	let btn = btnArr.toString();
+
+	$(currTarget).html(btn);
+	document.getElementById('tree-' + targetTreeNum).innerHTML =
+		'<span>' + btn + '</span>' +
+		'<span id="treeNum-' + targetTreeNum + '" class="ml-2">' + '</span>';
+
+	$('#input-btn-out').prepend('<span class="mr-2">' + customLabel + '</span>');
+	$('#input-btn-out').children('span').addClass('active');
+	//$('#input-VK').width($(toggleId).width());
+	$('#input-VK').val(btn);/**/
+
+	$(toggleId).addClass('active');
+	$(toggleId).siblings('.active').removeClass('active');
+}
+
+function toggleThreeState(btnArr, btnName, targetTreeNum, state, customLabel) {
+	let inputDiv = document.getElementById('input-btn-out');
 	initiateToggleThree(btnArr);
 
-	$(btnName).children('span').each(function () {
-		this.className = btnArr[($.inArray(this.className, btnArr) + 1) % btnArr.length];
+	if (state == 'custom') {
+		inputDiv.removeChild(inputDiv.firstChild);
 
-		switch ($(this).attr('class')) {
-			case btnArr[0].toString():
-				singleToggleBtn(targetTreeNum, this, btnArr[0], '#tg-0');
-				break;
-			case btnArr[1].toString():
-				singleToggleBtn(targetTreeNum, this, btnArr[1], '#tg-1');
-				break;
-			case btnArr[2].toString():
-				singleToggleBtn(targetTreeNum, this, btnArr[2], '#tg-2');
-				break;
-		}
-	});
+		$(btnName).children('span').each(function () {
+			this.className = btnArr[($.inArray(this.className, btnArr) + 1) % btnArr.length];
+
+			switch ($(this).attr('class')) {
+				case btnArr[0].toString():
+					singleCustomToggleBtn(targetTreeNum, this, btnArr[0], '#tg-0', customLabel);
+					break;
+				case btnArr[1].toString():
+					singleCustomToggleBtn(targetTreeNum, this, btnArr[1], '#tg-1', customLabel);
+					break;
+				case btnArr[2].toString():
+					singleCustomToggleBtn(targetTreeNum, this, btnArr[2], '#tg-2', customLabel);
+					break;
+			}
+		});
+	} else if (state == 'default') {
+		$(btnName).children('span').each(function () {
+			this.className = btnArr[($.inArray(this.className, btnArr) + 1) % btnArr.length];
+
+			switch ($(this).attr('class')) {
+				case btnArr[0].toString():
+					singleToggleBtn(targetTreeNum, this, btnArr[0], '#tg-0');
+					break;
+				case btnArr[1].toString():
+					singleToggleBtn(targetTreeNum, this, btnArr[1], '#tg-1');
+					break;
+				case btnArr[2].toString():
+					singleToggleBtn(targetTreeNum, this, btnArr[2], '#tg-2');
+					break;
+			}
+		});
+	}
 }
 
 function initiateToggleThree(btnArr, idx) {
@@ -11765,13 +11921,13 @@ function initiateToggleThree(btnArr, idx) {
 
 function printBtnToggleLabel(btnId, btnName, labelBtn, labelBtnLeft, labelBtnRight, btnType, state, customLabel) {
 
-	if (state == 'off') {
+	if (state == 'custom') {
 		$('#toggle-box-out').show();
 		document.getElementById('toggle-box-a').innerHTML = labelBtnLeft;
 		document.getElementById('toggle-box-b').innerHTML = labelBtnRight;
 		document.getElementById('input-btn-out').innerHTML = '<span class="active">' + customLabel + '</span>';
 		printActive();
-	} else if (state == 'on') {
+	} else if (state == 'default') {
 		$('#toggle-box-out').show();
 		document.getElementById('toggle-box-a').innerHTML = labelBtnLeft;
 		document.getElementById('toggle-box-b').innerHTML = labelBtnRight;
@@ -11783,7 +11939,7 @@ function printBtnToggleLabel(btnId, btnName, labelBtn, labelBtnLeft, labelBtnRig
 		if (btnType === "underlined") {
 			$(btnName).children('div').children('a').html(labelBtn);
 			console.log('-underlined txt-')
-		} else {
+		} else if (btnType === "none") {
 			$(btnName).children('a').html(labelBtn);
 			console.log('-normal txt-')
 		}
