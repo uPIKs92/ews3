@@ -635,7 +635,6 @@ function createButton(buttonName, lastCount) {
 				}
 
 				hideAlphaBtn('#btnCreftr-');
-				saveTemp('loadValue');
 
 				function fnCreftr(event) {
 					let id = event.data.num;
@@ -657,7 +656,7 @@ function createButton(buttonName, lastCount) {
 								console.log(id + ' fnCreftr called');
 								event.stopImmediatePropagation();
 
-								saveTemp('saveValue', 5);
+								saveTemp('saveValue', 4);
 
 								clearMenu('#creftr-menu-btn');
 								hideNumBtn('#btnCreftr-', 30, 40);
@@ -689,6 +688,9 @@ function createButton(buttonName, lastCount) {
 									'maps'
 								);
 
+								countForLineState = 0;
+								countForColorState = 0;
+
 								setTimeout(function() {
 									printBtnTree(listBtnLogon[20]);
 								}, 125);
@@ -703,6 +705,9 @@ function createButton(buttonName, lastCount) {
 									'#logon-menu&t=0.15s',
 									'logon'
 								);
+
+								countForLineState = 0;
+								countForColorState = 0;
 								break;
 							case 47:
 								event.stopImmediatePropagation();
@@ -763,6 +768,8 @@ function createButton(buttonName, lastCount) {
 										);
 										count = 0;
 										createButton('maps');
+										countForLineState = 0;
+										countForColorState = 0;
 
 										setTimeout(function() {
 											printBtnTree(listBtnLogon[20]);
@@ -808,6 +815,7 @@ function createButton(buttonName, lastCount) {
 								console.log(id + ' fnCrevec called');
 								event.stopImmediatePropagation();
 								clearMenu('#crevec-menu-btn');
+								saveTemp('saveValue', 4);
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
 								window.location = '#line-menu&t=0.15s';
@@ -817,6 +825,7 @@ function createButton(buttonName, lastCount) {
 								console.log(id + ' fnCrevec called');
 								event.stopImmediatePropagation();
 								clearMenu('#crevec-menu-btn');
+								saveTemp('saveValue', 4);
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
 								window.location = '#color-menu&t=0.15s';
@@ -924,8 +933,6 @@ function createButton(buttonName, lastCount) {
 					}
 				}
 
-				saveTemp('loadValue');
-
 				function fnCrecir(event) {
 					let id = event.data.num;
 
@@ -951,7 +958,7 @@ function createButton(buttonName, lastCount) {
 								clearMenu('#crecir-menu-btn');
 
 								hideNumBtn('#btnCrecir-', 30, 40);
-								saveTemp('saveValue', 1);
+								saveTemp('saveValue', 2);
 
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
@@ -964,7 +971,7 @@ function createButton(buttonName, lastCount) {
 								clearMenu('#crecir-menu-btn');
 
 								hideNumBtn('#btnCrecir-', 30, 40);
-								saveTemp('saveValue', 1);
+								saveTemp('saveValue', 2);
 
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
@@ -1122,6 +1129,7 @@ function createButton(buttonName, lastCount) {
 								console.log(id + ' fnCrearc called');
 								event.stopImmediatePropagation();
 								clearMenu('#crearc-menu-btn');
+								saveTemp('saveValue', 4);
 
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
@@ -1132,6 +1140,7 @@ function createButton(buttonName, lastCount) {
 								console.log(id + ' fnCrearc called');
 								event.stopImmediatePropagation();
 								clearMenu('#crearc-menu-btn');
+								saveTemp('saveValue', 4);
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
 								window.location = '#color-menu&t=0.15s';
@@ -1359,19 +1368,14 @@ function createButton(buttonName, lastCount) {
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
 											setTimeout(function() {
-												$('#tree-' + 1).show();
-												$('#treeNum-' + 1).append(
-													'<span>' + listBtnLine[countForLineState][0] + '</span>'
-												);
+												hideNumBtn('#btnCrecir-', 30, 40);
+												saveTemp('insertValue', 0, 1, listBtnLine[countForLineState][0]);
+												saveTemp('loadValue');
 
 												if (countForColorState != 0) {
-													$('#tree-' + 2).show();
-													$('#treeNum-' + 2).append(
-														'<span>' + listBtnColor[countForColorState][0] + '</span>'
-													);
+													hideNumBtn('#btnCrecir-', 30, 40);
+													saveTemp('loadValue');
 												}
-
-												$('.cursor i').removeClass('d-none');
 											}, 150);
 											break;
 										case 26:
@@ -1390,16 +1394,11 @@ function createButton(buttonName, lastCount) {
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
 											setTimeout(function() {
-												$('#tree-' + 0).show();
-												$('#treeNum-' + 0).append(
-													'<span>' + listBtnLine[countForLineState][0] + '</span>'
-												);
+												saveTemp('insertValue', 0, 0, listBtnLine[countForLineState][0]);
+												saveTemp('loadValue');
 
 												if (countForColorState != 0) {
-													$('#tree-' + 2).show();
-													$('#treeNum-' + 2).append(
-														'<span>' + listBtnColor[countForColorState][0] + '</span>'
-													);
+													saveTemp('loadValue');
 												}
 
 												$('.cursor i').removeClass('d-none');
@@ -1421,16 +1420,11 @@ function createButton(buttonName, lastCount) {
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
 											setTimeout(function() {
-												$('#tree-' + 3).show();
-												$('#treeNum-' + 3).append(
-													'<span>' + listBtnLine[countForLineState][0] + '</span>'
-												);
+												saveTemp('insertValue', 0, 3, listBtnLine[countForLineState][0]);
+												saveTemp('loadValue');
 
 												if (countForColorState != 0) {
-													$('#tree-' + 4).show();
-													$('#treeNum-' + 4).append(
-														'<span>' + listBtnColor[countForColorState][0] + '</span>'
-													);
+													saveTemp('loadValue');
 												}
 
 												$('.cursor i').removeClass('d-none');
@@ -1604,12 +1598,10 @@ function createButton(buttonName, lastCount) {
 											console.log('Color for creftr');
 
 											setTimeout(function() {
-												$('#tree-' + 2).show();
-												$('#treeNum-' + 2).append(
-													'<span>' + listBtnColor[countForColorState][0] + '</span>'
-												);
 												document.getElementById('input-VK').placeholder = '';
-												showNumBtn('#btnCreftr-', 30, 40, listBtnCreftr, 1);
+												hideNumBtn('#btnCreftr-', 30, 40);
+												saveTemp('insertValue', 0, 2, listBtnColor[countForColorState][0]);
+												saveTemp('loadValue');
 											}, 150);
 											break;
 										case 18:
@@ -1628,19 +1620,14 @@ function createButton(buttonName, lastCount) {
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
 											setTimeout(function() {
-												$('#tree-' + 2).show();
-												$('#treeNum-' + 2).append(
-													'<span>' + listBtnColor[countForColorState][0] + '</span>'
-												);
+												hideNumBtn('#btnCrecir-', 30, 40);
+												saveTemp('insertValue', 0, 2, listBtnColor[countForColorState][0]);
+												saveTemp('loadValue');
 
 												if (countForLineState != 0) {
-													$('#tree-' + 1).show();
-													$('#treeNum-' + 1).append(
-														'<span>' + listBtnLine[countForLineState][0] + '</span>'
-													);
+													hideNumBtn('#btnCrecir-', 30, 40);
+													saveTemp('loadValue');
 												}
-
-												$('.cursor i').removeClass('d-none');
 											}, 150);
 											break;
 										case 26:
@@ -1659,19 +1646,12 @@ function createButton(buttonName, lastCount) {
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
 											setTimeout(function() {
-												$('#tree-' + 2).show();
-												$('#treeNum-' + 2).append(
-													'<span>' + listBtnColor[countForColorState][0] + '</span>'
-												);
+												saveTemp('insertValue', 0, 2, listBtnColor[countForColorState][0]);
+												saveTemp('loadValue');
 
 												if (countForLineState != 0) {
-													$('#tree-' + 0).show();
-													$('#treeNum-' + 0).append(
-														'<span>' + listBtnLine[countForLineState][0] + '</span>'
-													);
+													saveTemp('loadValue');
 												}
-
-												$('.cursor i').removeClass('d-none');
 											}, 150);
 											break;
 										case 27:
@@ -1690,19 +1670,12 @@ function createButton(buttonName, lastCount) {
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
 											setTimeout(function() {
-												$('#tree-' + 4).show();
-												$('#treeNum-' + 4).append(
-													'<span>' + listBtnColor[countForColorState][0] + '</span>'
-												);
+												saveTemp('insertValue', 0, 4, listBtnColor[countForColorState][0]);
+												saveTemp('loadValue');
 
 												if (countForLineState != 0) {
-													$('#tree-' + 3).show();
-													$('#treeNum-' + 3).append(
-														'<span>' + listBtnLine[countForLineState][0] + '</span>'
-													);
+													saveTemp('loadValue');
 												}
-
-												$('.cursor i').removeClass('d-none');
 											}, 150);
 											break;
 									}
@@ -12735,7 +12708,7 @@ function createButton(buttonName, lastCount) {
 					count = 2;
 					setBtnActive('#btnEwoff-', listBtnEwoff);
 				}
-				
+
 				delChar('#btnEwoff-48');
 				return;
 			}
@@ -13739,36 +13712,51 @@ function nextStep(counter, btnName, arrName) {
 	}
 }
 
-function saveTemp(cmd, menuCount) {
+function saveTemp(cmd, menuCount, idx, val) {
 	switch (cmd) {
 		case 'loadValue':
 			if (tempValue.length != 0) {
 				for (let i = 0; i < tempValue.length; i++) {
-					$('#treeNum-' + i).text(tempValue[i].toString());
+					if (tempValue[i][0] == '') {
+						tempValue[i].splice((0, 1), 1);
+					}
+
+					$('#tree-' + i + ' span:first-child').text(tempValue[i][0]);
+					$('#treeNum-' + i).text(tempValue[i][1]);
+
+					if(tempValue[i][0] != tempValue[i][1]){
+						$('#treeNum-' + i).show();
+					}else{
+						$('#treeNum-' + i).hide();
+					}
 
 					if ($('#treeNum-' + i).text() != 'null') {
 						$('#tree-' + i).show();
 					} else {
+						$('#treeNum-' + i).text('');
 						$('#tree-' + i).hide();
 					}
 					/**/
 				}
-
-				console.log('>> temp: ' + tempValue.toString());
+				console.log('>> load temp : ' + tempValue);
 				tempValue.length = 0;
 			} else {
 				console.log('-temp was empty-');
 			}
 			break;
 		case 'saveValue':
-			for (let a = 0; a < menuCount; a++) {
+			for (let a = 0; a <= menuCount; a++) {
 				if ($('#treeNum-' + a).text() != '') {
-					tempValue.push($('#treeNum-' + a).text());
-					console.log('-save value to temp-');
+					tempValue.push([ $('#tree-' + a + ' span:first-child').text(), $('#treeNum-' + a).text() ]);
+					console.log('>> save value to temp : ' + tempValue);
 				} else {
-					tempValue.push('null');
+					tempValue.push([ $('#tree-' + a + ' span:first-child').text(), 'null' ]);
 				}
 			}
+			break;
+		case 'insertValue':
+			tempValue[idx][1] = val;
+			console.log('>> insert to ' + tempValue[idx][0] + ' : ' + tempValue[idx][1])
 			break;
 	}
 }
