@@ -12,9 +12,9 @@
     <div class="plessey-frame container-fluid h-auto p-4">
         <div class="row h-auto">
             <div class="col-12 box-shadow inner-shadow bg-secondary rounded-lg mb-4" style="min-height: 224px;"></div>
-            <div class="col box-shadow inner-shadow bg-black rounded-lg d-flex align-items-center mr-3"
-                style="min-height: 784px;">
-                <div class="row no-gutters text-uppercase" style="font-family: 'pixelmix'; font-size: 14px; color: #fd9727;">
+            <div class="col-5 box-shadow inner-shadow bg-black rounded-lg d-flex align-items-center mr-3"
+                style="min-height: 784px; min-width: 1060px;">
+                <div class="row no-gutters text-uppercase" style="font-family: 'pixelmix'; font-size: 14px; color: #fd9727; min-width: 1020px;">
                     <div class="col-12 p-0 pb-3">
                         <div class="row no-gutters border-bottom border-warning pb-1">
                             <div class="col-3 p-0">op live</div>
@@ -124,7 +124,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-5 carbon-fibre box-shadow inner-shadow rounded-lg d-flex align-items-center ml-3">
+            <div class="col carbon-fibre box-shadow inner-shadow rounded-lg d-flex align-items-center ml-3">
                 <div class="row no-gutters">
                     <div class="col-12 p-0">
                         <ul class="form-inline text-uppercase list-unstyled d-flex justify-content-center m-0">
