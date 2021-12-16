@@ -977,10 +977,12 @@
     background-color: #fd9727;
 }
 
-.btn-box > div > a{
+.btn-box > div > a,
+.btn-box > a{
     color: #fd9727;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
+    text-decoration: none;
 }
 
 .btn-box-sm {
@@ -1017,10 +1019,12 @@
 }
 
 .btn-box:hover,
-.btn-box:hover > div > a {
+.btn-box:hover > div > a,
+.btn-box:hover > a {
     color: #000 !important;
     background-color: #fd9727;
     transition: 0.4s;
+    text-decoration: none;
 }
 
 .btn-box:active {
