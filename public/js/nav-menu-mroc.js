@@ -7231,6 +7231,7 @@ function createButton(buttonName, lastCount) {
 								console.log(id + ' fnFtrres called | ' + count);
 								event.stopImmediatePropagation();
 								resetVKWidth();
+								toggleCount = 0;
 
 								if (count == 2) {
 									count = id + 1;
@@ -7245,7 +7246,6 @@ function createButton(buttonName, lastCount) {
 								hideAlphaBtn('#btnFtrres-');
 								showNumBtn('#btnFtrres-', 30, 41, listBtnFtrres, 1);
 								resetToggleThree(tgThree, 'default');
-								toggleCount = 0;
 								break;
 							case 4:
 								console.log(id + ' fnFtrres called');
@@ -9960,72 +9960,73 @@ function createButton(buttonName, lastCount) {
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0;
+
 								showNumBtn('#btnSetnac-', 30, 41, listBtnSetnac, 1);
 								resetToggleBtn(id, listBtnSetnac[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
-								toggleCount = 0;
 								break;
 							case 3:
 								console.log(id + ' fnSetnac called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0;
 
 								hideNumBtn('#btnSetnac-', 30, 40);
 								resetToggleBtn(id, listBtnSetnac[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
-								toggleCount = 0;
 								break;
 							case 4:
 								console.log(id + ' fnSetnac called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0;
 
 								hideNumBtn('#btnSetnac-', 30, 40);
 								resetToggleBtn(id, listBtnSetnac[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
-								toggleCount = 0;
 								break;
 							case 5:
 								console.log(id + ' fnSetnac called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0;
 
 								showNumBtn('#btnSetnac-', 30, 41, listBtnSetnac, 3);
 								resetToggleBtn(id, listBtnSetnac[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
-								toggleCount = 0;
 								break;
 							case 6:
 								console.log(id + ' fnSetnac called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0;
 
 								showNumBtn('#btnSetnac-', 30, 41, listBtnSetnac, 3);
 								resetToggleBtn(id, listBtnSetnac[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
-								toggleCount = 0;
 								break;
 							case 7:
 								console.log(id + ' fnSetnac called');
 								//event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0;
 
 								initiateToggleBtn('#btnSetnac-', id, listBtnSetnac[id][0]);
 								hideNumBtn('#btnSetnac-', 30, 40);
 								resetToggleBtn(id, listBtnSetnac[id][0], '#btnSetnac-' + id);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
-								toggleCount = 0;
 								break;
 							case 40:
 								console.log(id + ' fnLine called');
@@ -10240,72 +10241,72 @@ function createButton(buttonName, lastCount) {
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0
 
 								showNumBtn('#btnSetnai-', 30, 41, listBtnSetnai, 1);
 								resetToggleBtn(id, listBtnSetnac[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
-								count = id;
-								toggleCount = 0;
+								count = id;;
 								break;
 							case 2:
 								console.log(id + ' fnSetnai called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0;
 
 								showNumBtn('#btnSetnai-', 30, 41, listBtnSetnai, 1);
 								resetToggleBtn(id, listBtnSetnac[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
-								toggleCount = 0;
 								break;
 							case 3:
 								console.log(id + ' fnSetnai called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0;
 
 								hideNumBtn('#btnSetnai-', 30, 40);
 								resetToggleBtn(id, listBtnSetnac[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
-								toggleCount = 0;
 								break;
 							case 4:
 								console.log(id + ' fnSetnai called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0;
 
 								hideNumBtn('#btnSetnai-', 30, 40);
 								resetToggleBtn(id, listBtnSetnac[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
-								toggleCount = 0;
 								break;
 							case 5:
 								console.log(id + ' fnSetnai called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0;
 
 								showNumBtn('#btnSetnai-', 30, 41, listBtnSetnai, 3);
 								resetToggleBtn(id, listBtnSetnac[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
-								toggleCount = 0;
 								break;
 							case 6:
 								console.log(id + ' fnSetnai called');
 								event.stopImmediatePropagation();
 								$('#three-toggle').empty();
 								resetVKWidth();
+								toggleCount = 0;
 
 								showNumBtn('#btnSetnai-', 30, 41, listBtnSetnai, 3);
 								resetToggleBtn(id, listBtnSetnac[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
-								toggleCount = 0;
 								break;
 							case 11:
 								console.log(id + ' fnSetnai called');
@@ -10316,6 +10317,7 @@ function createButton(buttonName, lastCount) {
 								hideNumBtn('#btnSetnai-', 30, 40);
 								resetToggleBtn(id, listBtnSetnai[id][0], '#btnSetnai-' + id);
 								resetToggleThree(tgThree, 'toggleThree', 0);
+								toggleCount = 0;
 
 								if (swapPSR) {
 									$('#input-VK').val('PSR-ON');
@@ -10325,7 +10327,6 @@ function createButton(buttonName, lastCount) {
 									swapPSR = true;
 								}
 								count = id;
-								toggleCount = 0;
 								break;
 							case 12:
 								console.log(id + ' fnSetnai called');
@@ -10336,6 +10337,7 @@ function createButton(buttonName, lastCount) {
 								hideNumBtn('#btnSetnai-', 30, 40);
 								resetToggleBtn(id, listBtnSetnai[id][0], '#btnSetnai-' + id);
 								resetToggleThree(tgThree, 'toggleThree', 0);
+								toggleCount = 0;
 
 								if (swapSSR) {
 									$('#input-VK').val('SSR-ON');
@@ -10345,7 +10347,6 @@ function createButton(buttonName, lastCount) {
 									swapSSR = true;
 								}
 								count = id;
-								toggleCount = 0;
 								break;
 							case 40:
 								console.log(id + ' fnLine called');
@@ -10838,10 +10839,10 @@ function createButton(buttonName, lastCount) {
 								event.stopImmediatePropagation();
 								resetVKWidth();
 								resetToggleThree(tgThree, 'default');
+								toggleCount = 0;
 
 								$('#three-toggle').empty();
 								callAlphaVK('#btnSelfp-', 7);
-								toggleCount = 0;
 								break;
 							case 40:
 								console.log(id + ' fnSelfp called');
@@ -10972,6 +10973,7 @@ function createButton(buttonName, lastCount) {
 							case 0:
 								console.log(id + ' fnAdtpt called');
 								event.stopImmediatePropagation();
+								$('#message-btn-out').empty();
 								resetVKWidth();
 								resetToggleThree(tgThree, 'default');
 
@@ -10984,7 +10986,6 @@ function createButton(buttonName, lastCount) {
 								event.stopImmediatePropagation();
 								changeVKWidth('8%', '59%');
 
-								$('.cursor i').removeClass('d-none');
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 
@@ -11015,6 +11016,7 @@ function createButton(buttonName, lastCount) {
 									'airmov'
 								);
 								$('#three-toggle').empty();
+								$('#message-btn-out').empty();
 
 								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
@@ -11033,6 +11035,7 @@ function createButton(buttonName, lastCount) {
 									'logon'
 								);
 								$('#three-toggle').empty();
+								$('#message-btn-out').empty();
 
 								setTimeout(function() {
 									resetVKWidth();
@@ -11058,36 +11061,22 @@ function createButton(buttonName, lastCount) {
 												isGeoLat('georef', btn[2], btn[1], $('#input-VK').val());
 												cekGeoLat(btn[2]);
 											}
+											break;
 									}
 
 									clearVK();
 								} else {
-									console.log(count);
 									if (count < 13) {
-										switch (count) {
-											case 0:
-												count = 11;
-												break;
-											case 12:
-												changeVKWidth('8%', '59%');
+										console.log(count)
+										showBtn(count);
 
-												$('.cursor i').addClass('d-none');
-												$('#toggle-box-a, #toggle-box-b').empty();
-												$('#toggle-divider').hide();
-
-												initiateToggleThree(btn, 0);
-												hideAlphaBtn('#btnAdtpt-');
-
-												printMessage(btn[1] + ' : ' + btn[2] + ' value should not be empty');
-												break;
-										}
-
-										if(count != 12){
+										if(count == 0){
+											$('#tree-' + (count)).show();
+											count = 11;
 											count++;
 											nextStep(count, '#btnAdtpt-', listBtnAdtpt);
-											$('#tree-' + (count - 1)).show();
-											$('#three-toggle').empty();
 											document.getElementById('input-VK').placeholder = '';
+											hideAlphaBtn('#btnAdtpt-');
 										}
 									} else {
 										printMessage('COMMAND OK');
@@ -11131,12 +11120,13 @@ function createButton(buttonName, lastCount) {
 						}
 					} else {
 						setTimeout(() => {
-							$('#three-toggle').empty();
-							hideAlphaBtn('#btnAdtpt-');
-
-							count++;
-							nextStep(count, '#btnAdtpt-', listBtnAdtpt);
-						}, 200);
+							if ($('#message-btn-out').text() == 'COMMAND OK') {
+								count++;
+								nextStep(count, '#btnAdtpt-', listBtnAdtpt);
+								$('#three-toggle').empty();
+								hideAlphaBtn('#btnAdtpt-');
+							}
+						}, 300);
 					}
 				}
 
@@ -11150,14 +11140,33 @@ function createButton(buttonName, lastCount) {
 					}
 				}
 
+				function showBtn(counts) {
+					switch (counts) {
+						case 12:
+							changeVKWidth('8%', '59%');
+			
+							$('#toggle-box-a, #toggle-box-b').empty();
+							$('#toggle-divider').hide();
+			
+							initiateToggleThree(btn, 0);
+
+							printMessage(btn[1] + ' : ' + btn[2] + ' value should not be empty');
+							break;
+					}
+				}
+
 				callAlphaVK('#btnAdtpt-', 5);
 				setBtnActive('#btnAdtpt-', listBtnAdtpt);
 				delChar('#keyboard-clear, #btnAdtpt-48');
 				return;
 			}
 			case 'amtpt': {
-				let count = 0;
+				let count = 0,
+					toggleCount = 0;
 				const btn = [ listBtnAmtpt[12][0], 'latlng', 'georef' ];
+				let maxCharGeo = 8;
+				let maxCharLat = 15;
+				const tgThree = [ [ '#btnAmtpt-' + 12, btn[0] ] ];
 
 				for (let varAmtpt = 0; varAmtpt < listBtnAmtpt.length; varAmtpt++) {
 					generateButtonMenu('#amtpt-menu-btn', 'btnAmtpt-', varAmtpt, listBtnAmtpt[varAmtpt][0]);
@@ -11180,28 +11189,35 @@ function createButton(buttonName, lastCount) {
 							case 0:
 								console.log(id + ' fnAmtpt called');
 								event.stopImmediatePropagation();
+								$('#message-btn-out').empty();
 								resetVKWidth();
+								resetToggleThree(tgThree, 'default');
 
-								$('.cursor i').removeClass('d-none');
 								$('#three-toggle').empty();
-								callAlphaVK('#btnAmtpt-');
+								callAlphaVK('#btnAmtpt-', 5);
+								toggleCount = 0;
 								break;
 							case 12:
 								console.log(id + ' fnAmtpt called');
 								event.stopImmediatePropagation();
 								changeVKWidth('8%', '59%');
 
-								$('.cursor i').removeClass('d-none');
 								$('#toggle-box-a, #toggle-box-b').empty();
 								$('#toggle-divider').hide();
 
-								toggleThreeState(btn, '#btnAmtpt-' + id, id);
+								toggleThreeState(btn, '#btnAmtpt-' + id, id, 'default'));
 								hideNumBtn('#btnAmtpt-', 30, 40);
+								setVK($('#input-btn-out').text().toLowerCase());
 
-								if ($('#btnAmtpt-' + id).text() != 'btm') {
-									callAlphaVK('#btnAmtpt-');
+								if ($('#btnAmtpt-' + id).text() == btn[1].toLowerCase()) {
+									tipGeoLat();
+									toggleCount = 1;
+								} else if ($('#btnAmtpt-' + id).text() == btn[2].toLowerCase()) {
+									tipGeoLat();
+									toggleCount = 2;
 								} else {
 									hideAlphaBtn('#btnAmtpt-');
+									toggleCount = 0;
 								}
 								break;
 							case 40:
@@ -11216,6 +11232,7 @@ function createButton(buttonName, lastCount) {
 									'airmov'
 								);
 								$('#three-toggle').empty();
+								$('#message-btn-out').empty();
 
 								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
@@ -11234,6 +11251,7 @@ function createButton(buttonName, lastCount) {
 									'logon'
 								);
 								$('#three-toggle').empty();
+								$('#message-btn-out').empty();
 
 								setTimeout(function() {
 									resetVKWidth();
@@ -11248,33 +11266,33 @@ function createButton(buttonName, lastCount) {
 								event.stopImmediatePropagation();
 
 								if ($('#input-VK').val() != '') {
-									/**/
-									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									switch (count) {
+										case 12:
+											if ($('#input-btn-out').text().toLowerCase() == btn[1]) {
+												isGeoLat('lating', btn[2], btn[1], $('#input-VK').val());
+												cekGeoLat(btn[1]);
+											} else {
+												isGeoLat('georef', btn[2], btn[1], $('#input-VK').val());
+												cekGeoLat(btn[2]);
+											}
+											break;
+									}
 
 									clearVK();
 								} else {
 									if (count < 12) {
-										count++;
-										nextStep(count, '#btnAmtpt-', listBtnAmtpt);
-										$('#tree-' + (count - 1)).show();
-										$('#three-toggle').empty();
-										document.getElementById('input-VK').placeholder = '';
+										console.log(count)
+										showBtn(count);
 
-										switch (count) {
-											case 1:
-												count = 11;
-												break;
-											case 12:
-												changeVKWidth('8%', '59%');
-
-												$('.cursor i').addClass('d-none');
-												$('#toggle-box-a, #toggle-box-b').empty();
-												$('#toggle-divider').hide();
-
-												initiateToggleThree(btn);
-												hideAlphaBtn('#btnAmtpt-');
-												break;
+										if(count == 0){
+											$('#tree-' + (count)).show();
+											count = 11;
+											count++;
+											nextStep(count, '#btnAmtpt-', listBtnAmtpt);
+											document.getElementById('input-VK').placeholder = '';
+											hideAlphaBtn('#btnAmtpt-');
 										}
 									} else {
 										printMessage('COMMAND OK');
@@ -11305,7 +11323,55 @@ function createButton(buttonName, lastCount) {
 					showBtmNav('#btnAmtpt-');
 				});
 
-				callAlphaVK('#btnAmtpt-');
+				function cekGeoLat(menuName) {
+					if ($('#message-btn-out').text() != 'COMMAND OK') {
+						$('#input-btn-out').html('<span class="active">' + menuName + '</span>');
+
+						if (menuName == 'latlng') {
+							$('#tg-' + 1).addClass('active');
+							$('#tg-' + 1).siblings('.active').removeClass('active');
+						} else {
+							$('#tg-' + 2).addClass('active');
+							$('#tg-' + 2).siblings('.active').removeClass('active');
+						}
+					} else {
+						setTimeout(() => {
+							if ($('#message-btn-out').text() == 'COMMAND OK') {
+								count++;
+								nextStep(count, '#btnAmtpt-', listBtnAmtpt);
+								$('#three-toggle').empty();
+								hideAlphaBtn('#btnAmtpt-');
+							}
+						}, 300);
+					}
+				}
+
+				function setVK(inputId) {
+					console.log('> ' + inputId);
+
+					if (inputId == btn[1]) {
+						callAlphaVK('#btnAmtpt-', maxCharLat);
+					} else if (inputId == btn[2]) {
+						callAlphaVK('#btnAmtpt-', maxCharGeo);
+					}
+				}
+
+				function showBtn(counts) {
+					switch (counts) {
+						case 12:
+							changeVKWidth('8%', '59%');
+			
+							$('#toggle-box-a, #toggle-box-b').empty();
+							$('#toggle-divider').hide();
+			
+							initiateToggleThree(btn, 0);
+
+							printMessage(btn[1] + ' : ' + btn[2] + ' value should not be empty');
+							break;
+					}
+				}
+
+				callAlphaVK('#btnAmtpt-', 5);
 				setBtnActive('#btnAmtpt-', listBtnAmtpt);
 				delChar('#keyboard-clear, #btnAmtpt-48');
 				return;
@@ -14665,7 +14731,7 @@ function callAlphaVK(btnName, charLimit) {
 	});
 
 	$('.vKeyboard-letter, .vKeyboard-number').on('click', function(event) {
-		console.log('> ' + (limitVK + 1) + ' of ' + charLimit);
+		//console.log('> ' + (limitVK + 1) + ' of ' + charLimit);
 		limitVK++;
 
 		$.enableVK(event);
@@ -14676,7 +14742,7 @@ function callAlphaVK(btnName, charLimit) {
 			$(btnA).off();
 			limitVK = 0;
 
-			console.log('> reset : ' + limitVK);
+			//console.log('> reset : ' + limitVK);
 			$.recallVK();
 		}
 	});
