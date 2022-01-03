@@ -11787,6 +11787,8 @@ function createButton(buttonName, customCount) {
 												break;
 											case 22:
 												count = 24;
+												callAlphaVK('#btnAdsfp-', 4);
+												showNumBtn('#btnAdsfp-', 30, 41, listBtnAdsfp, 4);
 												break;
 										}
 									} else {
@@ -13859,30 +13861,34 @@ function createButton(buttonName, customCount) {
 							case 0:
 								console.log(id + ' fnSettrk called');
 								event.stopImmediatePropagation();
+								count = id;
 
 								hideNumBtn('#btnSettrk-', 30, 40);
-								callAlphaVK('#btnSettrk-');
+								callAlphaVK('#btnSettrk-', 5);
 								break;
 							case 2:
 								console.log(id + ' fnSettrk called');
 								event.stopImmediatePropagation();
+								count = id;
 
 								hideNumBtn('#btnSettrk-', 30, 40);
-								callAlphaVK('#btnSettrk-');
+								callAlphaVK('#btnSettrk-', 7);
 								break;
 							case 4:
 								console.log(id + ' fnSettrk called');
 								event.stopImmediatePropagation();
+								count = id;
 
-								hideAlphaBtn('#btnSettrk-');
-								showNumBtn('#btnSettrk-', 30, 41, listBtnSettrk);
+								callAlphaVK('#btnSettrk-', 4);
+								showNumBtn('#btnSettrk-', 30, 41, listBtnSettrk, 4);
 								break;
 							case 6:
 								console.log(id + ' fnSettrk called');
 								event.stopImmediatePropagation();
+								count = id;
 
-								hideAlphaBtn('#btnSettrk-');
-								showNumBtn('#btnSettrk-', 30, 41, listBtnSettrk);
+								callAlphaVK('#btnSettrk-', 4);
+								showNumBtn('#btnSettrk-', 30, 41, listBtnSettrk, 4);
 								break;
 							case 40:
 							case 42:
@@ -13897,7 +13903,6 @@ function createButton(buttonName, customCount) {
 								);
 								break;
 							case 47:
-								event.stopImmediatePropagation();
 								delCharByOne();
 								break;
 							case 49:
@@ -13905,31 +13910,54 @@ function createButton(buttonName, customCount) {
 								event.stopImmediatePropagation();
 
 								if ($('#input-VK').val() != '') {
+									//console.log('true ' + count);
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-									clearVK();
-								} else {
-									if (count < 7) {
-										count++;
-										nextStep(count, '#btnSettrk-', listBtnSettrk);
-										$('#tree-' + (count - 1)).show();
-										document.getElementById('input-VK').placeholder = '';
 
-										switch (count) {
-											case 2:
-												hideNumBtn('#btnSettrk-', 30, 40);
-												document.getElementById('input-VK').placeholder =
-													'press ALPHA button to start typing..';
-												break;
-											case 4:
-												hideAlphaBtn('#btnSettrk-');
-												showNumBtn('#btnSettrk-', 30, 41, listBtnSettrk);
-												break;
-											case 6:
-												hideAlphaBtn('#btnSettrk-');
-												showNumBtn('#btnSettrk-', 30, 41, listBtnSettrk);
-												break;
-										}
+									switch (count) {
+										case 0:
+											isValidTrackRef($('#input-VK').val(), $('#btnSettrk-' + count).text());
+
+											if (trkRef[0] != null && trkRef[1] != null) {
+												if ($.inArray('null', trkRef[2]) > -1) {
+													count += 0;
+												} else {
+													count = 1;
+													count++;
+													nextStep(count, '#btnSettrk-', listBtnSettrk);
+													$('#tree-' + (count - 1)).show();
+												}
+											}
+											break;
+										case 2:
+											//TrackRef := uShareClient.GetTrackByCSign(paramData[0].value)
+											count = 3;
+											count++;
+											nextStep(count, '#btnSettrk-', listBtnSettrk);
+											$('#message-btn-out').empty();
+											break;
+										case 4:
+											//TrackRef := uShareClient.GetTrackBySSR('2', paramData[0].value)
+											count = 5;
+											count++;
+											nextStep(count, '#btnSettrk-', listBtnSettrk);
+											$('#message-btn-out').empty();
+											break;
+										case 6:
+											//TrackRef := uShareClient.GetTrackBySSR('3A', paramData[0].value)
+											count = 7;
+											count++;
+											nextStep(count, '#btnSettrk-', listBtnSettrk);
+											$('#message-btn-out').empty();
+											break;
+									}
+
+									clearVK();
+									showBtn(count);
+								} else {
+									//console.log('false ' + count)
+									if (count < 7) {
+										printMessage('Input track name first..');
 									} else {
 										printMessage('COMMAND OK');
 										$('#btnSettrk-' + count).removeClass('active');
@@ -13939,12 +13967,38 @@ function createButton(buttonName, customCount) {
 											'#settrk-menu-btn',
 											'#logon-menu&t=0.15s'
 										);
-										count = 0;
 										createButton('logon');
+
+										setTimeout(() => {
+											count = 0;
+										}, 75);
 									}
+
+									showBtn(count);
 								}
 								break;
 						}
+					}
+				}
+
+				function showBtn(count) {
+					switch (count) {
+						case 0:
+							hideNumBtn('#btnSettrk-', 30, 40);
+							callAlphaVK('#btnSettrk-', 5);
+							break;
+						case 2:
+							callAlphaVK('#btnSettrk-', 7);
+							break;
+						case 4:
+						case 6:
+							showNumBtn('#btnSettrk-', 30, 41, listBtnSettrk, 4);
+							callAlphaVK('#btnSettrk-', 4);
+							break;
+						case 8:
+							hideNumBtn('#btnSettrk-', 30, 40);
+							hideAlphaBtn('#btnSettrk-');
+							break;
 					}
 				}
 
@@ -13953,11 +14007,9 @@ function createButton(buttonName, customCount) {
 					showBtmNav('#btnSettrk-');
 				});
 
-				hideNumBtn('#btnSettrk-', 30, 40);
+				showBtn(count);
 				setBtnActive('#btnSettrk-', listBtnSettrk);
-				$('.cursor i').removeClass('d-none');
 				delChar('#keyboard-clear, #btnSettrk-48');
-				document.getElementById('input-VK').placeholder = 'press ALPHA button to start typing..';
 				return;
 			}
 			case 'labpos': {
@@ -14046,17 +14098,41 @@ function createButton(buttonName, customCount) {
 			}
 			case 'trksel': {
 				let count = 0;
+				let toggLabelA1 = listBtnTrksel[1][0];
+				let toggLabelA2 = 'pu-off';
+				let toggLabelB1 = listBtnTrksel[3][0];
+				let toggLabelB2 = 'u-off';
+				let toggLabelC1 = listBtnTrksel[5][0];
+				let toggLabelC2 = 'f-off';
+				let toggLabelD1 = listBtnTrksel[12][0];
+				let toggLabelD2 = 'a-off';
+				let toggLabelE1 = listBtnTrksel[14][0];
+				let toggLabelE2 = 'n-off';
+				let toggLabelF1 = listBtnTrksel[16][0];
+				let toggLabelF2 = 's-off';
+				let toggLabelG1 = listBtnTrksel[21][0];
+				let toggLabelG2 = 'j-off';
+				let toggLabelH1 = listBtnTrksel[23][0];
+				let toggLabelH2 = 'k-off';
+				let toggLabelI1 = listBtnTrksel[25][0];
+				let toggLabelI2 = 'r-off';
+				let toggLabelJ1 = listBtnTrksel[27][0];
+				let toggLabelJ2 = 'z-off';
+				let toggLabelK1 = listBtnTrksel[29][0];
+				let toggLabelK2 = 'alloff';
 
 				for (let varTrksel = 0; varTrksel < listBtnTrksel.length; varTrksel++) {
 					generateButtonMenu('#trksel-menu-btn', 'btnTrksel-', varTrksel, listBtnTrksel[varTrksel][0]);
 					registToTree(varTrksel, listBtnTrksel[varTrksel][0], 30);
 					$('#btnTrksel-' + varTrksel).on('click', { num: varTrksel }, fnTrksel);
 
+					/*
 					let toggLabel = listBtnTrksel[varTrksel][0].slice(0, -2);
 
 					if (listBtnTrksel[varTrksel][0] != '') {
 						toggleBtn(varTrksel, '#btnTrksel-' + varTrksel, listBtnTrksel[varTrksel][0], toggLabel + 'off');
 					}
+					*/
 
 					if (varTrksel < 30 && listBtnTrksel[varTrksel][0] != '') {
 						$('#btnTrksel-' + varTrksel).addClass('text-none');
@@ -14092,7 +14168,6 @@ function createButton(buttonName, customCount) {
 								//event.stopImmediatePropagation();
 								count = id;
 								initiateUnderlinedToggleBtn('#btnTrksel-', id, listBtnTrksel[id][0]);
-								$('.cursor i').addClass('d-none');
 								$('#tree-' + 29).hide();
 								break;
 							case 29:
@@ -14124,9 +14199,14 @@ function createButton(buttonName, customCount) {
 								event.stopImmediatePropagation();
 
 								if ($('#input-VK').val() != '') {
-									$('#message-btn-out').empty();
-									$('#tree-' + count).show();
-									clearVK();
+									if (parseInt($('#input-VK').val()) > 0 && parseInt($('#input-VK').val()) < 4) {
+										$('#message-btn-out').empty();
+										$('#tree-' + count).show();
+										document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+										clearVK();
+									} else {
+										printMessage('ERROR : Valid range is 1 - 3');
+									}
 								} else {
 									printMessage('COMMAND OK');
 									$('#btnTrksel-' + count).removeClass('active');
@@ -14143,8 +14223,20 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				showToggle('p-on', 'p-off');
+				toggleBtn(1, '#btnTrksel-1', toggLabelA1, toggLabelA2, 'underlined', 'default');
+				toggleBtn(3, '#btnTrksel-3', toggLabelB1, toggLabelB2, 'underlined', 'default');
+				toggleBtn(5, '#btnTrksel-5', toggLabelC1, toggLabelC2, 'underlined', 'default');
+				toggleBtn(12, '#btnTrksel-12', toggLabelD1, toggLabelD2, 'underlined', 'default');
+				toggleBtn(14, '#btnTrksel-14', toggLabelE1, toggLabelE2, 'underlined', 'default');
+				toggleBtn(16, '#btnTrksel-16', toggLabelF1, toggLabelF2, 'underlined', 'default');
+				toggleBtn(21, '#btnTrksel-21', toggLabelG1, toggLabelG2, 'underlined', 'default');
+				toggleBtn(23, '#btnTrksel-23', toggLabelH1, toggLabelH2, 'underlined', 'default');
+				toggleBtn(25, '#btnTrksel-25', toggLabelI1, toggLabelI2, 'underlined', 'default');
+				toggleBtn(27, '#btnTrksel-27', toggLabelJ1, toggLabelJ2, 'underlined', 'default');
+				toggleBtn(29, '#btnTrksel-29', toggLabelK1, toggLabelK2, 'underlined', 'default');
+				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnTrksel-', listBtnTrksel);
+				$('.cursor i').removeClass('d-none');
 				delChar('#keyboard-clear, #btnTrksel-48');
 				return;
 			}
