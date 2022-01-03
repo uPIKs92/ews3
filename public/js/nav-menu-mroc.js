@@ -2,13 +2,6 @@ var stateForLineBtn = 0;
 var countForLineState = 0;
 var stateForColorBtn = 0;
 var countForColorState = 0;
-var stateForEwBtn = 0;
-var stateForEwTreeBtn = 0;
-var countForEwState = 0;
-var countForEw1State = 0;
-var countForEw2State = 0;
-var countForEw3State = 0;
-var countForEw4State = 0;
 var stateForIdtrkBtn = 0;
 var countForIdtrkBtn = 0;
 var stateForTrktypBtn = 0;
@@ -21,6 +14,13 @@ var stateForLegBtn = 0;
 var countForLegState = 0;
 var stateForDaysBtn = 0;
 var countForDaysState = 0;
+var stateForEwBtn = 0;
+var stateForEwTreeBtn = 0;
+var countForEwState = 0;
+var countForEw1State = 0;
+var countForEw2State = 0;
+var countForEw3State = 0;
+var countForEw4State = 0;
 var currModalPage = 1;
 var limitVK = 0;
 const amfpArr = [ [], [], [], [], [], [], [], [], [] ];
@@ -30,7 +30,7 @@ const btnArr = [];
 const treeArr = [];
 const trkRef = [ [], [], [] ];
 
-$(() => {
+$(function() {
 	$('div[onload]').trigger('onload');
 });
 
@@ -258,7 +258,7 @@ function createButton(buttonName, customCount) {
 
 								navModal(1, 1, 2, 1, 'radcur', 'totes');
 
-								$.setTitle = () => {
+								$.setTitle = function() {
 									switch (currModalPage) {
 										case 1:
 											$('#radcur-subTitle').html('<span>(operational)</span>');
@@ -279,9 +279,9 @@ function createButton(buttonName, customCount) {
 								//$('#stdfp-row-1, #stdfp-row-2, #stdfp-row-3, #stdfp-row-4, #stdfp-row-5').empty();
 
 								navModal(1, 1, 2, 1, 'stdfp', 'totes');
-								$.setTitle = () => {};
+								$.setTitle = function() {};
 
-								setTimeout(() => {
+								setTimeout(function() {
 									for (let i = 1; i <= 100; i++) {
 										if (i <= 20) {
 											$('#stdfp-row-1').append(
@@ -304,7 +304,7 @@ function createButton(buttonName, customCount) {
 								//$('#plntm-row-1, #plntm-row-2').empty();
 
 								/*
-								setTimeout(() => {
+								setTimeout(function() {
 									for (let i = 1; i <= 40; i++) {
 										if (i <= 20) {
 											$('#plntm-row-1').append(
@@ -337,10 +337,10 @@ function createButton(buttonName, customCount) {
 								//$('#radio-row-1, #radio-row-2').empty();
 
 								navModal(1, 1, 2, 1, 'radio', 'totes');
-								$.setTitle = () => {};
+								$.setTitle = function() {};
 
 								/*
-								setTimeout(() => {
+								setTimeout(function() {
 									for (let i = 1; i <= 20; i++) {
 										$('#radio-row-1').append(
 											'<tr class="border-bottom border-warning">' +
@@ -379,10 +379,10 @@ function createButton(buttonName, customCount) {
 								//$('#actfp-row-1, #actfp-row-2, #actfp-row-3, #actfp-row-4, #actfp-row-5').empty();
 
 								navModal(1, 1, 2, 1, 'actfp', 'totes');
-								$.setTitle = () => {};
+								$.setTitle = function() {};
 
 								/*
-								setTimeout(() => {
+								setTimeout(function() {
 									for (let i = 1; i <= 100; i++) {
 										if (i <= 20) {
 											$('#actfp-row-1').append(
@@ -409,7 +409,7 @@ function createButton(buttonName, customCount) {
 								//$('#acttm-row-1, #acttm-row-2, #acttm-row-3, #acttm-row-4, #acttm-row-5').empty();
 
 								navModal(1, 1, 4, 1, 'acttm', 'totes');
-								$.setTitle = () => {
+								$.setTitle = function() {
 									switch (currModalPage) {
 										case 1:
 											$('#acttm-page-ttl').html('<span>soc</span>');
@@ -427,7 +427,7 @@ function createButton(buttonName, customCount) {
 								};
 
 								/*
-								setTimeout(() => {
+								setTimeout(function() {
 									for (let i = 1; i <= 100; i++) {
 										if (i <= 20) {
 											$('#acttm-row-1').append(
@@ -496,7 +496,7 @@ function createButton(buttonName, customCount) {
 								//$('#turnpt-row-1, #turnpt-row-2, #turnpt-row-3, #turnpt-row-4, #turnpt-row-5').empty();
 
 								navModal(1, 1, 3, 1, 'turnpt', 'totes');
-								$.setTitle = () => {};
+								$.setTitle = function() {};
 
 								lastNum = id;
 								break;
@@ -508,10 +508,10 @@ function createButton(buttonName, customCount) {
 								//$('#curfp-row-1, #curfp-row-2, #curfp-row-3, #curfp-row-4, #curfp-row-5').empty();
 
 								navModal(1, 1, 2, 1, 'curfp', 'totes');
-								$.setTitle = () => {};
+								$.setTitle = function() {};
 
 								/*
-								setTimeout(() => {
+								setTimeout(function() {
 									for (let i = 1; i <= 100; i++) {
 										if (i <= 20) {
 											$('#curfp-row-1').append(
@@ -618,7 +618,7 @@ function createButton(buttonName, customCount) {
 				let count = countIdx;
 
 				if (count > 0) {
-					setTimeout(() => {
+					setTimeout(function() {
 						hideNumBtn('#btnCreftr-', 30, 40);
 						nextStep(count, '#btnCreftr-', listBtnCreftr);
 					}, 125);
@@ -691,7 +691,7 @@ function createButton(buttonName, customCount) {
 								countForLineState = 0;
 								countForColorState = 0;
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[20]);
 								}, 125);
 								break;
@@ -771,7 +771,7 @@ function createButton(buttonName, customCount) {
 										countForLineState = 0;
 										countForColorState = 0;
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[20]);
 										}, 125);
 									}
@@ -790,7 +790,7 @@ function createButton(buttonName, customCount) {
 				let count = countIdx;
 
 				if (count > 0) {
-					setTimeout(() => {
+					setTimeout(function() {
 						nextStep(count, '#btnCrevec-', listBtnCrevec);
 					}, 125);
 				}
@@ -848,7 +848,7 @@ function createButton(buttonName, customCount) {
 								countForLineState = 0;
 								countForColorState = 0;
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[20]);
 								}, 125);
 								break;
@@ -897,7 +897,7 @@ function createButton(buttonName, customCount) {
 										countForColorState = 0;
 										createButton('maps');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[20]);
 										}, 125);
 									}
@@ -917,7 +917,7 @@ function createButton(buttonName, customCount) {
 				let toggLabelB = 'RAD-NM';
 
 				if (count > 0) {
-					setTimeout(() => {
+					setTimeout(function() {
 						hideNumBtn('#btnCrecir-', 30, 40);
 						nextStep(count, '#btnCrecir-', listBtnCrecir);
 					}, 125);
@@ -948,7 +948,7 @@ function createButton(buttonName, customCount) {
 								//event.stopImmediatePropagation()
 								initiateUnderlinedToggleBtn('#btnCrecir-', id, listBtnCrecir[id][0]);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									showNumBtn('#btnCrecir-', 30, 41, listBtnCrecir, 3);
 								}, 125);
 								break;
@@ -991,7 +991,7 @@ function createButton(buttonName, customCount) {
 								countForLineState = 0;
 								countForColorState = 0;
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[20]);
 								}, 125);
 								break;
@@ -1057,7 +1057,7 @@ function createButton(buttonName, customCount) {
 										countForColorState = 0;
 										createButton('maps');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[20]);
 										}, 125);
 									}
@@ -1083,7 +1083,7 @@ function createButton(buttonName, customCount) {
 				let toggLabelD = 'flash';
 
 				if (count > 0) {
-					setTimeout(() => {
+					setTimeout(function() {
 						nextStep(count, '#btnCrearc-', listBtnCrearc);
 					}, 125);
 				}
@@ -1157,7 +1157,7 @@ function createButton(buttonName, customCount) {
 								countForLineState = 0;
 								countForColorState = 0;
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[20]);
 								}, 125);
 								break;
@@ -1207,7 +1207,7 @@ function createButton(buttonName, customCount) {
 											countForColorState = 0;
 											createButton('maps');
 
-											setTimeout(() => {
+											setTimeout(function() {
 												printBtnTree(listBtnLogon[20]);
 											}, 125);
 										}
@@ -1317,7 +1317,7 @@ function createButton(buttonName, customCount) {
 										break;
 								}
 
-								setTimeout(() => {
+								setTimeout(function() {
 									$('#input-VK').val('');
 									$('.cursor i').removeClass('d-none');
 									lastCount = 0;
@@ -1365,7 +1365,7 @@ function createButton(buttonName, customCount) {
 											console.log('line for crecir');
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
-											setTimeout(() => {
+											setTimeout(function() {
 												hideNumBtn('#btnCrecir-', 30, 40);
 												saveTemp('insertValue', 0, 1, listBtnLine[countForLineState][0]);
 												saveTemp('loadValue');
@@ -1391,7 +1391,7 @@ function createButton(buttonName, customCount) {
 											console.log('line for crevec');
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
-											setTimeout(() => {
+											setTimeout(function() {
 												saveTemp('insertValue', 0, 0, listBtnLine[countForLineState][0]);
 												saveTemp('loadValue');
 
@@ -1417,7 +1417,7 @@ function createButton(buttonName, customCount) {
 											console.log('line for crearc');
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
-											setTimeout(() => {
+											setTimeout(function() {
 												saveTemp('insertValue', 0, 3, listBtnLine[countForLineState][0]);
 												saveTemp('loadValue');
 
@@ -1546,7 +1546,7 @@ function createButton(buttonName, customCount) {
 										break;
 								}
 
-								setTimeout(() => {
+								setTimeout(function() {
 									$('#input-VK').val('');
 									$('.cursor i').removeClass('d-none');
 									lastCount = 0;
@@ -1595,7 +1595,7 @@ function createButton(buttonName, customCount) {
 											$('#treeNum-' + 2).text('');
 											console.log('Color for creftr');
 
-											setTimeout(() => {
+											setTimeout(function() {
 												document.getElementById('input-VK').placeholder = '';
 												hideNumBtn('#btnCreftr-', 30, 40);
 												saveTemp('insertValue', 0, 2, listBtnColor[countForColorState][0]);
@@ -1617,7 +1617,7 @@ function createButton(buttonName, customCount) {
 											console.log('Color for crecir');
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
-											setTimeout(() => {
+											setTimeout(function() {
 												hideNumBtn('#btnCrecir-', 30, 40);
 												saveTemp('insertValue', 0, 2, listBtnColor[countForColorState][0]);
 												saveTemp('loadValue');
@@ -1643,7 +1643,7 @@ function createButton(buttonName, customCount) {
 											console.log('Color for crevec');
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
-											setTimeout(() => {
+											setTimeout(function() {
 												saveTemp('insertValue', 0, 2, listBtnColor[countForColorState][0]);
 												saveTemp('loadValue');
 
@@ -1667,7 +1667,7 @@ function createButton(buttonName, customCount) {
 											console.log('Color for crearc');
 											console.log('line: ' + countForLineState + ' color: ' + countForColorState);
 
-											setTimeout(() => {
+											setTimeout(function() {
 												saveTemp('insertValue', 0, 4, listBtnColor[countForColorState][0]);
 												saveTemp('loadValue');
 
@@ -1940,7 +1940,7 @@ function createButton(buttonName, customCount) {
 									'logon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -1973,7 +1973,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('logon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											resetVKWidth();
 										}, 125);
 									}
@@ -2771,7 +2771,7 @@ function createButton(buttonName, customCount) {
 									'tacmis'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[34]);
 								}, 125);
 								break;
@@ -2825,7 +2825,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('tacmis');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[34]);
 										}, 125);
 									}
@@ -2835,7 +2835,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnSeltm-');
 				});
@@ -2999,7 +2999,7 @@ function createButton(buttonName, customCount) {
 								resetToggleBtn(id, listBtnCrptm[id][0], '#btnCrptm-' + id);
 								resetToggleThree(tgThree, 'default');
 
-								setTimeout(() => {
+								setTimeout(function() {
 									callAlphaVK('#btnCrptm-', 4);
 								}, 125);
 								break;
@@ -3088,7 +3088,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[34]);
 									resetVKWidth();
 								}, 125);
@@ -3106,7 +3106,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -3211,7 +3211,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('tacmis');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[34]);
 											resetVKWidth();
 										}, 125);
@@ -3222,7 +3222,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnCrptm-');
 				});
@@ -3280,7 +3280,7 @@ function createButton(buttonName, customCount) {
 									'tacmis'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[34]);
 								}, 125);
 								break;
@@ -3326,7 +3326,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('tacmis');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[34]);
 										}, 125);
 									}
@@ -3336,7 +3336,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnScrmbl-');
 				});
@@ -3396,8 +3396,7 @@ function createButton(buttonName, customCount) {
 											'#idtrk-menu-btn',
 											'#remupd-menu&t=0.15s',
 											'#btnRemupd-',
-											listBtnRemupd,
-											0
+											listBtnRemupd
 										);
 										createButton('remupd', 4);
 										console.log('idtrk for remupd');
@@ -3411,8 +3410,7 @@ function createButton(buttonName, customCount) {
 											'#idtrk-menu-btn',
 											'#tacmis-menu&t=0.15s',
 											'#btnTacmis-',
-											listBtnTacmis,
-											0
+											listBtnTacmis
 										);
 										createButton('tacmis');
 										console.log('idtrk for tacmis');
@@ -3426,8 +3424,7 @@ function createButton(buttonName, customCount) {
 											'#idtrk-menu-btn',
 											'#weapon-menu&t=0.15s',
 											'#btnWeapon-',
-											listBtnWeapon,
-											0
+											listBtnWeapon
 										);
 										createButton('weapon');
 										console.log('idtrk for weapon');
@@ -3441,8 +3438,7 @@ function createButton(buttonName, customCount) {
 											'#idtrk-menu-btn',
 											'#track-menu&t=0.15s',
 											'#btnTrack-',
-											listBtnTrack,
-											0
+											listBtnTrack
 										);
 										createButton('track');
 										console.log('idtrk for track');
@@ -3456,8 +3452,7 @@ function createButton(buttonName, customCount) {
 											'#idtrk-menu-btn',
 											'#airmov-menu&t=0.15s',
 											'#btnAirmov-',
-											listBtnAirmov,
-											0
+											listBtnAirmov
 										);
 										createButton('airmov');
 										console.log('idtrk for airmov');
@@ -3497,7 +3492,7 @@ function createButton(buttonName, customCount) {
 											'#remupd-menu&t=0.15s'
 										);
 
-										setTimeout(() => {
+										setTimeout(function() {
 											createButton('remupd', 4);
 											printBtnTree(listBtnLogon[36]);
 											resetVKWidth();
@@ -3524,7 +3519,7 @@ function createButton(buttonName, customCount) {
 										);
 										createButton('tacmis');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[34]);
 											resetVKWidth();
 										}, 125);
@@ -3538,7 +3533,7 @@ function createButton(buttonName, customCount) {
 										);
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -3552,7 +3547,7 @@ function createButton(buttonName, customCount) {
 										);
 										createButton('track');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 											resetVKWidth();
 										}, 125);
@@ -3566,7 +3561,7 @@ function createButton(buttonName, customCount) {
 										);
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -3639,8 +3634,7 @@ function createButton(buttonName, customCount) {
 											'#trktyp-menu-btn',
 											'#remupd-menu&t=0.15s',
 											'#btnRemupd-',
-											listBtnRemupd,
-											0
+											listBtnRemupd
 										);
 										createButton('remupd', 5);
 										console.log('trktyp for remupd');
@@ -3654,8 +3648,7 @@ function createButton(buttonName, customCount) {
 											'#trktyp-menu-btn',
 											'#tacmis-menu&t=0.15s',
 											'#btnTacmis-',
-											listBtnTacmis,
-											0
+											listBtnTacmis
 										);
 										createButton('tacmis');
 										console.log('trktyp for tacmis');
@@ -3669,8 +3662,7 @@ function createButton(buttonName, customCount) {
 											'#trktyp-menu-btn',
 											'#weapon-menu&t=0.15s',
 											'#btnWeapon-',
-											listBtnWeapon,
-											0
+											listBtnWeapon
 										);
 										createButton('weapon');
 										console.log('trktyp for weapon');
@@ -3684,8 +3676,7 @@ function createButton(buttonName, customCount) {
 											'#trktyp-menu-btn',
 											'#track-menu&t=0.15s',
 											'#btnTrack-',
-											listBtnTrack,
-											0
+											listBtnTrack
 										);
 										createButton('track');
 										console.log('trktyp for track');
@@ -3724,7 +3715,7 @@ function createButton(buttonName, customCount) {
 											'#remupd-menu&t=0.15s'
 										);
 
-										setTimeout(() => {
+										setTimeout(function() {
 											createButton('remupd', 5);
 											printBtnTree(listBtnLogon[36]);
 											resetVKWidth();
@@ -3751,7 +3742,7 @@ function createButton(buttonName, customCount) {
 										);
 										createButton('tacmis');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[34]);
 											resetVKWidth();
 										}, 125);
@@ -3765,7 +3756,7 @@ function createButton(buttonName, customCount) {
 										);
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -3779,7 +3770,7 @@ function createButton(buttonName, customCount) {
 										);
 										createButton('track');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 											resetVKWidth();
 										}, 125);
@@ -3793,7 +3784,7 @@ function createButton(buttonName, customCount) {
 										);
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -3856,7 +3847,7 @@ function createButton(buttonName, customCount) {
 									'tacmis'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[34]);
 								}, 125);
 								break;
@@ -3924,7 +3915,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('tacmis');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[34]);
 										}, 125);
 									}
@@ -3934,7 +3925,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnTmtxt-');
 				});
@@ -4032,7 +4023,7 @@ function createButton(buttonName, customCount) {
 													document.getElementById('input-VK').placeholder = '';
 												} else {
 													if (!lowerVal) {
-														setTimeout(() => {
+														setTimeout(function() {
 															printMessage('INVALID LOWER VALUE');
 															count--;
 															nextStep(count, '#btnTrkblk-', listBtnTrkblk);
@@ -4040,7 +4031,7 @@ function createButton(buttonName, customCount) {
 													}
 
 													if (!upperVal) {
-														setTimeout(() => {
+														setTimeout(function() {
 															printMessage('INVALID UPPER VALUE');
 														}, 700);
 													}
@@ -4064,7 +4055,7 @@ function createButton(buttonName, customCount) {
 										} else {
 											printMessage('Input track name first..');
 
-											setTimeout(() => {
+											setTimeout(function() {
 												$('#message-btn-out').empty();
 											}, 500);
 										}
@@ -4086,7 +4077,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnTrkblk-');
 				});
@@ -4148,8 +4139,6 @@ function createButton(buttonName, customCount) {
 							case 12:
 								event.stopImmediatePropagation();
 								callBtnMenu(id, listBtnLogon[35], listBtnWeapon[id]);
-								stateForColourBtn = id;
-								stateForStatesBtn = id;
 								break;
 							case 14:
 								event.stopImmediatePropagation();
@@ -4240,7 +4229,7 @@ function createButton(buttonName, customCount) {
 								count = id;
 								resetToggleBtn(id, listBtnTrial[id][0], '#btnTrial-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#input-btn-out').text().toLowerCase() == 'ftr') {
 										hideNumBtn('#btnTrial-', 30, 40);
 										callAlphaVK('#btnTrial-', 5);
@@ -4269,7 +4258,7 @@ function createButton(buttonName, customCount) {
 								hideAlphaBtn('#btnTrial-');
 								resetToggleBtn(id, listBtnTrial[id][0], '#btnTrial-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									showNumBtn('#btnTrial-', 30, 41, listBtnTrial, 5);
 									callAlphaVK('#btnTrial-', 5);
 								}, 125);
@@ -4306,7 +4295,7 @@ function createButton(buttonName, customCount) {
 									'weapon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 									resetVKWidth();
 								}, 125);
@@ -4324,7 +4313,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -4392,7 +4381,7 @@ function createButton(buttonName, customCount) {
 											} else {
 												printMessage('Input track name first..');
 
-												setTimeout(() => {
+												setTimeout(function() {
 													$('#message-btn-out').empty();
 												}, 500);
 											}
@@ -4441,7 +4430,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -4452,7 +4441,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnTrial-');
 				});
@@ -4506,7 +4495,7 @@ function createButton(buttonName, customCount) {
 									'weapon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 								}, 125);
 								break;
@@ -4561,7 +4550,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -4620,7 +4609,7 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnRecovr-', id, listBtnRecovr[id][0]);
 								resetToggleBtn(id, listBtnRecovr[id][0], '#btnRecovr-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#input-btn-out').text().toLowerCase() == 'recpos') {
 										callAlphaVK('#btnRecovr-', 3);
 										showNumBtn('#btnRecovr-', 30, 41, listBtnRecovr, 3);
@@ -4642,7 +4631,7 @@ function createButton(buttonName, customCount) {
 									'weapon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 									resetVKWidth();
 								}, 125);
@@ -4660,7 +4649,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -4724,7 +4713,7 @@ function createButton(buttonName, customCount) {
 										if (count == 0) {
 											printMessage('Input track name first..');
 
-											setTimeout(() => {
+											setTimeout(function() {
 												$('#message-btn-out').empty();
 											}, 500);
 										} else if (count == 2) {
@@ -4748,7 +4737,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -4776,7 +4765,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnRecovr-');
 				});
@@ -4827,7 +4816,7 @@ function createButton(buttonName, customCount) {
 									'weapon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 									resetVKWidth();
 								}, 125);
@@ -4845,7 +4834,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -4885,7 +4874,7 @@ function createButton(buttonName, customCount) {
 										if (count == 0) {
 											printMessage('Input track name first..');
 
-											setTimeout(() => {
+											setTimeout(function() {
 												$('#message-btn-out').empty();
 											}, 500);
 										}
@@ -4901,7 +4890,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -4912,7 +4901,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnCanmis-');
 				});
@@ -4931,7 +4920,7 @@ function createButton(buttonName, customCount) {
 				clearTempArr();
 
 				if (count > 0) {
-					setTimeout(() => {
+					setTimeout(function() {
 						hideNumBtn('#btnRunway-', 30, 40);
 						nextStep(count, '#btnRunway-', listBtnRunway);
 						count = count + 1;
@@ -4979,7 +4968,7 @@ function createButton(buttonName, customCount) {
 								hideAlphaBtn('#btnRunway-');
 								resetToggleBtn(id, listBtnRunway[id][0], '#btnRunway-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnRunway-' + id).attr('value') != 'tg-off') {
 										showNumBtn('#btnRunway-', 30, 41, listBtnRunway, 2);
 									}
@@ -4993,6 +4982,8 @@ function createButton(buttonName, customCount) {
 								resetToggleBtn(id, listBtnRunway[id][0]);
 								clearMenu('#runway-menu-btn');
 								hideNumBtn('#btnRunway-', 30, 40);
+								saveTemp('saveValue', 6);
+								stateForColourBtn = id;
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
 								window.location = '#colour-menu&t=0.15s';
@@ -5005,6 +4996,8 @@ function createButton(buttonName, customCount) {
 								resetToggleBtn(id, listBtnRunway[id][0]);
 								clearMenu('#runway-menu-btn');
 								hideNumBtn('#btnRunway-', 30, 40);
+								saveTemp('saveValue', 6);
+								stateForStatesBtn = id;
 								//clearContent();
 								$('#sub-tree, #toggle-box-a, #toggle-box-b').empty();
 								window.location = '#states-menu&t=0.15s';
@@ -5024,7 +5017,7 @@ function createButton(buttonName, customCount) {
 								countForStatesState = 0;
 								countForColourState = 0;
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 								}, 125);
 								break;
@@ -5104,7 +5097,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 										}, 125);
 									}
@@ -5123,7 +5116,6 @@ function createButton(buttonName, customCount) {
 			}
 			case 'colour': {
 				let count = 0;
-				let lastCount = 0;
 				countForColourState = 0;
 
 				for (let varColour = 0; varColour < listBtnColour.length; varColour++) {
@@ -5147,8 +5139,7 @@ function createButton(buttonName, customCount) {
 							//$('.cursor i').removeClass('d-none');
 							//$('#tree-' + id).show();
 							count = id;
-							lastCount = count;
-							countForColourState = lastCount;
+							countForColourState = count;
 						}
 
 						switch (id) {
@@ -5160,14 +5151,13 @@ function createButton(buttonName, customCount) {
 							case 6:
 								console.log(id + ' fnColour called');
 								event.stopImmediatePropagation();
-								//countForColourState = id;
 								break;
 							case 40:
 								console.log(id + ' fnColour called');
 								event.stopImmediatePropagation();
 
 								switch (stateForColourBtn) {
-									case 12:
+									case 4:
 										backToPrevPage(
 											'default',
 											'#btnColour-',
@@ -5175,8 +5165,7 @@ function createButton(buttonName, customCount) {
 											'#colour-menu-btn',
 											'#runway-menu&t=0.15s',
 											'#btnRunway-',
-											listBtnRunway,
-											lastCount
+											listBtnRunway
 										);
 										createButton('runway', 4);
 										console.log('Colour for runway');
@@ -5184,9 +5173,9 @@ function createButton(buttonName, customCount) {
 										break;
 								}
 
-								setTimeout(() => {
+								setTimeout(function() {
 									$('#input-VK').val('');
-									lastCount = 0;
+									$('.cursor i').removeClass('d-none');
 								}, 150);
 								break;
 							case 42:
@@ -5216,35 +5205,22 @@ function createButton(buttonName, customCount) {
 									count = 0;
 
 									switch (stateForColourBtn) {
-										case 12:
+										case 4:
 											backToPrevPage(
+												'default',
 												'#btnColour-',
 												listBtnColour,
 												'#colour-menu-btn',
 												'#runway-menu&t=0.15s',
 												'#btnRunway-',
-												listBtnRunway,
-												lastCount
+												listBtnRunway
 											);
 											createButton('runway', 4);
-											console.log('Colour for runway');
-											console.log(
-												'Runway: ' + countForColourState + ' colour: ' + countForStatesState
-											);
 
-											setTimeout(() => {
-												$('#tree-' + 4).show();
-												$('#treeNum-' + 4).append(
-													'<span>' + listBtnColour[countForColourState][0] + '</span>'
-												);
+											setTimeout(function() {
+												saveTemp('insertValue', 0, 4, listBtnColour[countForColourState][0]);
+												saveTemp('loadValue');
 												$('.cursor i').removeClass('d-none');
-
-												if (countForStatesState != 0) {
-													$('#tree-' + 6).show();
-													$('#treeNum-' + 6).append(
-														'<span>' + listBtnStates[countForStatesState][0] + '</span>'
-													);
-												}
 											}, 150);
 											break;
 									}
@@ -5254,15 +5230,13 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				setBtnActive('#btnColour-', listBtnColour);
-				//$('#input-VK').val(listBtnColour[1][0]);
+				//setBtnActive('#btnColour-', listBtnColour);
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnColour-48');
+				delChar('#keyboard-clear, #btnColour-48');
 				return;
 			}
 			case 'states': {
 				let count = 0;
-				let lastCount = 0;
 				countForStatesState = 0;
 
 				for (let varStates = 0; varStates < listBtnStates.length; varStates++) {
@@ -5286,8 +5260,7 @@ function createButton(buttonName, customCount) {
 							//$('.cursor i').removeClass('d-none');
 							//$('#tree-' + id).show();
 							count = id;
-							lastCount = count;
-							countForStatesState = lastCount;
+							countForStatesState = count;
 						}
 
 						switch (id) {
@@ -5304,7 +5277,7 @@ function createButton(buttonName, customCount) {
 								event.stopImmediatePropagation();
 
 								switch (stateForStatesBtn) {
-									case 12:
+									case 6:
 										backToPrevPage(
 											'default',
 											'#btnStates-',
@@ -5312,8 +5285,7 @@ function createButton(buttonName, customCount) {
 											'#states-menu-btn',
 											'#runway-menu&t=0.15s',
 											'#btnRunway-',
-											listBtnRunway,
-											lastCount
+											listBtnRunway
 										);
 										createButton('runway', 6);
 										console.log('States for runway');
@@ -5321,9 +5293,9 @@ function createButton(buttonName, customCount) {
 										break;
 								}
 
-								setTimeout(() => {
+								setTimeout(function() {
 									$('#input-VK').val('');
-									lastCount = 0;
+									$('.cursor i').removeClass('d-none');
 								}, 150);
 								break;
 							case 42:
@@ -5353,7 +5325,7 @@ function createButton(buttonName, customCount) {
 									count = 0;
 
 									switch (stateForStatesBtn) {
-										case 12:
+										case 6:
 											backToPrevPage(
 												'default',
 												'#btnStates-',
@@ -5361,28 +5333,14 @@ function createButton(buttonName, customCount) {
 												'#states-menu-btn',
 												'#runway-menu&t=0.15s',
 												'#btnRunway-',
-												listBtnRunway,
-												lastCount
+												listBtnRunway
 											);
 											createButton('runway', 6);
-											console.log('States for runway');
-											console.log(
-												'Runway: ' + countForColourState + ' states: ' + countForStatesState
-											);
 
-											setTimeout(() => {
-												$('#tree-' + 6).show();
-												$('#treeNum-' + 6).append(
-													'<span>' + listBtnStates[countForStatesState][0] + '</span>'
-												);
+											setTimeout(function() {
+												saveTemp('insertValue', 0, 6, listBtnStates[countForStatesState][0]);
+												saveTemp('loadValue');
 												$('.cursor i').removeClass('d-none');
-
-												if (countForColourState != 0) {
-													$('#tree-' + 4).show();
-													$('#treeNum-' + 4).append(
-														'<span>' + listBtnColour[countForColourState][0] + '</span>'
-													);
-												}
 											}, 150);
 											break;
 									}
@@ -5392,10 +5350,9 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				setBtnActive('#btnStates-', listBtnStates);
-				//$('#input-VK').val(listBtnStates[1][0]);
+				//setBtnActive('#btnStates-', listBtnStates);
 				$('.cursor i').removeClass('d-none');
-				delChar('#btnStates-48');
+				delChar('#keyboard-clear,#btnStates-48');
 				return;
 			}
 			case 'defftr': {
@@ -5474,7 +5431,7 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnDefftr-', id, listBtnDefftr[id][0]);
 								resetToggleBtn(id, listBtnDefftr[id][0], '#btnDefftr-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#input-btn-out').text().toLowerCase() == 'recpos') {
 										hideAlphaBtn('#btnDefftr-');
 										showNumBtn('#btnDefftr-', 30, 41, listBtnDefftr, 3);
@@ -5508,7 +5465,7 @@ function createButton(buttonName, customCount) {
 									'weapon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 									resetVKWidth();
 								}, 125);
@@ -5526,7 +5483,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -5691,7 +5648,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -5702,7 +5659,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnDefftr-');
 				});
@@ -5916,7 +5873,7 @@ function createButton(buttonName, customCount) {
 									resetToggleBtn(id, listBtnTactic[id][0], '#btnTactic-' + id);
 									resetToggleThree(tgThree, 'default');
 
-									setTimeout(() => {
+									setTimeout(function() {
 										showNumBtn('#btnTactic-', 30, 41, listBtnTactic, 4);
 									}, 125);
 
@@ -5935,7 +5892,7 @@ function createButton(buttonName, customCount) {
 									resetToggleBtn(id, listBtnTactic[id][0], '#btnTactic-' + id);
 									resetToggleThree(tgThree, 'default');
 
-									setTimeout(() => {
+									setTimeout(function() {
 										showNumBtn('#btnTactic-', 30, 41, listBtnTactic, 4);
 									}, 125);
 
@@ -6261,7 +6218,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$.doClick = () => {
+				$.doClick = function() {
 					for (let varTactic = 1; varTactic < listBtnTactic.length; varTactic++) {
 						$('#btnTactic-' + varTactic).on('click', { num: varTactic }, fnTactic);
 					}
@@ -6272,32 +6229,32 @@ function createButton(buttonName, customCount) {
 					toggleBtn(28, '#btnTactic-28', toggLabelD1, toggLabelD2, 'none', 'custom', 'stn');
 				};
 
-				$.init = () => {
+				$.init = function() {
 					changeVKWidth('8%', '59%');
 					initiateToggleThree(btn1);
 					delChar('#btnTactic-48');
 				}; /**/
 
-				$.back40 = () => {
+				$.back40 = function() {
 					backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#weapon-menu&t=0.15s', 'weapon');
 					$('#three-toggle').empty();
 
-					setTimeout(() => {
+					setTimeout(function() {
 						printBtnTree(listBtnLogon[35]);
 						resetVKWidth();
 					}, 125);
 				};
 
-				$.back42 = () => {
+				$.back42 = function() {
 					backNav('#btnTactic-', listBtnTactic.length, '#tactic-menu-btn', '#logon-menu&t=0.15s', 'logon');
 					$('#three-toggle').empty();
 
-					setTimeout(() => {
+					setTimeout(function() {
 						resetVKWidth();
 					}, 125);
 				};
 
-				$.back49 = () => {
+				$.back49 = function() {
 					printMessage('COMMAND OK');
 					$('#btnTactic-' + count).removeClass('active');
 
@@ -6309,7 +6266,7 @@ function createButton(buttonName, customCount) {
 					count = 0;
 					createButton('weapon');
 
-					setTimeout(() => {
+					setTimeout(function() {
 						printBtnTree(listBtnLogon[35]);
 						resetVKWidth();
 					}, 125);
@@ -6360,7 +6317,7 @@ function createButton(buttonName, customCount) {
 									'weapon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 								}, 125);
 								break;
@@ -6404,7 +6361,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -6461,7 +6418,7 @@ function createButton(buttonName, customCount) {
 									'weapon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 								}, 125);
 								break;
@@ -6505,7 +6462,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -6555,7 +6512,7 @@ function createButton(buttonName, customCount) {
 									'weapon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 								}, 125);
 								break;
@@ -6599,7 +6556,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -6675,7 +6632,7 @@ function createButton(buttonName, customCount) {
 								hideAlphaBtn('#btnAmdftr-');
 								resetToggleBtn(id, listBtnAmdftr[id][0], '#btnAmdftr-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnAmdftr-' + id).attr('value') != 'tg-on') {
 										callAlphaVK('#btnAmdftr-', 7);
 									}
@@ -6722,7 +6679,7 @@ function createButton(buttonName, customCount) {
 									'weapon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 									resetVKWidth();
 								}, 125);
@@ -6740,7 +6697,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -6910,7 +6867,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -6921,7 +6878,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnAmdftr-');
 				});
@@ -6983,7 +6940,7 @@ function createButton(buttonName, customCount) {
 									'weapon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 									resetVKWidth();
 								}, 125);
@@ -7001,7 +6958,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -7056,7 +7013,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -7067,7 +7024,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnOncap-');
 				});
@@ -7113,7 +7070,7 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnSamtrk-', id, listBtnSamtrk[id][0]);
 
 								/**/
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnSamtrk-' + id).attr('value') != 'tg-on') {
 										showNumBtn('#btnSamtrk-', 30, 41, listBtnSamtrk, 1);
 									}
@@ -7131,7 +7088,7 @@ function createButton(buttonName, customCount) {
 									'weapon'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 									resetVKWidth();
 								}, 125);
@@ -7149,7 +7106,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -7183,7 +7140,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -7283,7 +7240,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[35]);
 									resetVKWidth();
 								}, 125);
@@ -7301,7 +7258,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -7379,7 +7336,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('weapon');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[35]);
 											resetVKWidth();
 										}, 125);
@@ -7390,7 +7347,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnFtrres-');
 				});
@@ -7427,7 +7384,7 @@ function createButton(buttonName, customCount) {
 							case 1:
 								initiateToggleBtn('#btnMovbtm-', id, listBtnMovbtm[id][0]);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									setVK($('#input-btn-out').text().toLowerCase());
 									tipGeoLat();
 								}, 125);
@@ -7443,6 +7400,8 @@ function createButton(buttonName, customCount) {
 									'#logon-menu&t=0.15s',
 									'logon'
 								);
+
+								$('#message-btn-out').empty();
 								break;
 							case 47:
 								event.stopImmediatePropagation();
@@ -7464,7 +7423,7 @@ function createButton(buttonName, customCount) {
 												isGeoLat(toggLabelB, toggLabelA, toggLabelB, $('#input-VK').val());
 											}
 
-											setTimeout(() => {
+											setTimeout(function() {
 												if ($('#message-btn-out').text() == 'COMMAND OK') {
 													count++;
 													nextStep(count, '#btnMovbtm-', listBtnMovbtm);
@@ -7692,7 +7651,7 @@ function createButton(buttonName, customCount) {
 								resetVKWidth();
 								resetToggleBtn(id, listBtnAinit[id][0], '#btnAinit-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnAinit-' + id).text() == 'SOURCE') {
 										$('.cursor i').removeClass('d-none');
 										showNumBtn('#btnAinit-', 30, 41, listBtnAinit, 2);
@@ -7742,7 +7701,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 								resetVKWidth();
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
@@ -7828,7 +7787,7 @@ function createButton(buttonName, customCount) {
 										createButton('track');
 										resetVKWidth();
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 										}, 125);
 									}
@@ -7881,7 +7840,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 									resetVKWidth();
 								}, 125);
@@ -7899,7 +7858,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -7934,7 +7893,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('track');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 											resetVKWidth();
 										}, 125);
@@ -7984,7 +7943,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
@@ -8086,7 +8045,7 @@ function createButton(buttonName, customCount) {
 								//event.stopImmediatePropagation();
 								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnUpdcde-' + id).attr('value') != 'tg-on') {
 										showNumBtn('#btnUpdcde-', 30, 41, listBtnUpdcde, 4);
 									}
@@ -8099,7 +8058,7 @@ function createButton(buttonName, customCount) {
 								//event.stopImmediatePropagation();
 								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnUpdcde-' + id).attr('value') != 'tg-on') {
 										showNumBtn('#btnUpdcde-', 30, 41, listBtnUpdcde, 4);
 									}
@@ -8112,7 +8071,7 @@ function createButton(buttonName, customCount) {
 								//event.stopImmediatePropagation();
 								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnUpdcde-' + id).attr('value') != 'tg-on') {
 										showNumBtn('#btnUpdcde-', 30, 41, listBtnUpdcde, 3);
 									}
@@ -8125,7 +8084,7 @@ function createButton(buttonName, customCount) {
 								//event.stopImmediatePropagation();
 								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnUpdcde-' + id).attr('value') != 'tg-on') {
 										showNumBtn('#btnUpdcde-', 30, 41, listBtnUpdcde, 4);
 									}
@@ -8139,7 +8098,7 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnUpdcde-', id, listBtnUpdcde[id][0]);
 								hideAlphaBtn('#btnUpdcde-');
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnUpdcde-' + id).attr('value') != 'tg-on') {
 										callAlphaVK('#btnUpdcde-', 7);
 									}
@@ -8170,7 +8129,7 @@ function createButton(buttonName, customCount) {
 								$('#three-toggle').empty();
 								resetVKWidth();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
@@ -8205,7 +8164,7 @@ function createButton(buttonName, customCount) {
 										case 4:
 											isOctal(4, $('#input-VK').val(), $('#btnUpdcde-' + count).text());
 
-											setTimeout(() => {
+											setTimeout(function() {
 												if ($('#message-btn-out').text() == 'COMMAND OK') {
 													count++;
 													nextStep(count, '#btnUpdcde-', listBtnUpdcde);
@@ -8216,7 +8175,7 @@ function createButton(buttonName, customCount) {
 										case 3:
 											isOctal(3, $('#input-VK').val(), $('#btnUpdcde-' + count).text());
 
-											setTimeout(() => {
+											setTimeout(function() {
 												if ($('#message-btn-out').text() == 'COMMAND OK') {
 													count++;
 													nextStep(count, '#btnUpdcde-', listBtnUpdcde);
@@ -8227,7 +8186,7 @@ function createButton(buttonName, customCount) {
 										case 5:
 											//tracslate fungsi dari delphi belum selesai
 
-											setTimeout(() => {
+											setTimeout(function() {
 												if ($('#treeNum-5').text().length == 7) {
 													$('#message-btn-out').empty();
 													count++;
@@ -8242,7 +8201,7 @@ function createButton(buttonName, customCount) {
 											break;
 									}
 
-									setTimeout(() => {
+									setTimeout(function() {
 										clearVK();
 									}, 150);
 								} else {
@@ -8329,7 +8288,7 @@ function createButton(buttonName, customCount) {
 				clearTempArr();
 
 				if (count > 1) {
-					setTimeout(() => {
+					setTimeout(function() {
 						hideAlphaBtn('#btnRemupd-');
 						nextStep(count, '#btnRemupd-', listBtnRemupd);
 					}, 125);
@@ -8373,7 +8332,7 @@ function createButton(buttonName, customCount) {
 								resetToggleBtn(id, listBtnRemupd[id][0], '#btnRemupd-' + id);
 								hideAlphaBtn('#btnRemupd-');
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnRemupd-' + id).attr('value') != 'tg-on') {
 										callAlphaVK('#btnRemupd-', 7);
 									}
@@ -8416,7 +8375,7 @@ function createButton(buttonName, customCount) {
 								countForIdtrkBtn = 0;
 								countForTrktypBtn = 0;
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
@@ -8501,7 +8460,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('track');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 											countForIdtrkBtn = 0;
 											countForTrktypBtn = 0;
@@ -8513,7 +8472,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnRemupd-');
 				});
@@ -8565,7 +8524,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
@@ -8680,7 +8639,7 @@ function createButton(buttonName, customCount) {
 								resetToggleBtn(id, tgBtn[id], '#btnToldin-' + id);
 								resetToggleThree(tgThree, 'default');
 
-								setTimeout(() => {
+								setTimeout(function() {
 									showNumBtn('#btnToldin-', 30, 41, listBtnToldin, 3);
 								}, 125);
 
@@ -8747,7 +8706,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
@@ -8873,7 +8832,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('track');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 										}, 125);
 									}
@@ -8883,7 +8842,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnToldin-');
 				});
@@ -8930,7 +8889,7 @@ function createButton(buttonName, customCount) {
 							$('#tg-' + 2).siblings('.active').removeClass('active');
 						}
 					} else {
-						setTimeout(() => {
+						setTimeout(function() {
 							$('#three-toggle').empty();
 							hideAlphaBtn('#btnToldin-');
 
@@ -9003,7 +8962,7 @@ function createButton(buttonName, customCount) {
 								resetToggleBtn(id, tgBtn[id], '#btnUpdtrk-' + id);
 								resetToggleThree(tgThree, 'default');
 
-								setTimeout(() => {
+								setTimeout(function() {
 									showNumBtn('#btnUpdtrk-', 30, 41, listBtnUpdtrk, 3);
 								}, 125);
 
@@ -9072,7 +9031,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
@@ -9193,7 +9152,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('track');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 										}, 125);
 									}
@@ -9203,7 +9162,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnUpdtrk-');
 				});
@@ -9246,7 +9205,7 @@ function createButton(buttonName, customCount) {
 							$('#tg-' + 2).siblings('.active').removeClass('active');
 						}
 					} else {
-						setTimeout(() => {
+						setTimeout(function() {
 							$('#three-toggle').empty();
 							hideAlphaBtn('#btnUpdtrk-');
 
@@ -9309,7 +9268,7 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnSwap-', id, listBtnSwap[id][2]);
 								resetToggleBtn(id, listBtnSwap[id][0], '#btnSwap-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnSwap-' + id).attr('value') != 'tg-off') {
 										callAlphaVK('#btnSwap-', 7);
 									} else {
@@ -9322,7 +9281,7 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnSwap-', id, listBtnSwap[id][3]);
 								resetToggleBtn(id, listBtnSwap[id][0], '#btnSwap-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnSwap-' + id).attr('value') != 'tg-off') {
 										callAlphaVK('#btnSwap-', 7);
 									} else {
@@ -9341,7 +9300,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
@@ -9395,7 +9354,7 @@ function createButton(buttonName, customCount) {
 										count = 1;
 										createButton('track');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 										}, 125);
 									}
@@ -9405,7 +9364,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnSwap-');
 				});
@@ -9464,7 +9423,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
@@ -9553,7 +9512,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 									resetVKWidth();
 								}, 125);
@@ -9571,7 +9530,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -9606,7 +9565,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('track');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 											resetVKWidth();
 										}, 125);
@@ -9653,7 +9612,7 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnTrkref-', id, listBtnTrkref[id][2]);
 								resetVKWidth();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnTrkref-' + id).attr('value') != 'tg-on') {
 										callAlphaVK('#btnTrkref-', 5);
 									} else {
@@ -9672,7 +9631,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 									resetVKWidth();
 								}, 125);
@@ -9737,7 +9696,7 @@ function createButton(buttonName, customCount) {
 										count = 1;
 										createButton('track');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 											resetVKWidth();
 										}, 125);
@@ -9748,7 +9707,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnTrkref-');
 				});
@@ -9794,7 +9753,7 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnMerge-', id, listBtnMerge[id][2]);
 								resetToggleBtn(id, listBtnMerge[id][0], '#btnMerge-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnMerge-' + id).attr('value') != 'tg-off') {
 										callAlphaVK('#btnMerge-', 7);
 									} else {
@@ -9807,7 +9766,7 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnMerge-', id, listBtnMerge[id][3]);
 								resetToggleBtn(id, listBtnMerge[id][0], '#btnMerge-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnMerge-' + id).attr('value') != 'tg-off') {
 										callAlphaVK('#btnMerge-', 7);
 									} else {
@@ -9826,7 +9785,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
@@ -9880,7 +9839,7 @@ function createButton(buttonName, customCount) {
 										count = 1;
 										createButton('track');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 										}, 125);
 									}
@@ -9890,7 +9849,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnMerge-');
 				});
@@ -10041,7 +10000,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[6]);
 									resetVKWidth();
 								}, 125);
@@ -10362,7 +10321,7 @@ function createButton(buttonName, customCount) {
 								);
 								resetVKWidth();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[6]);
 								}, 125);
 								break;
@@ -10591,7 +10550,7 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnCorr-', id, listBtnCorr[id][2]);
 								resetToggleBtn(id, listBtnCorr[id][0], '#btnCorr-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnCorr-' + id).attr('value') != 'tg-off') {
 										callAlphaVK('#btnCorr-', 7);
 									} else {
@@ -10604,7 +10563,7 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnCorr-', id, listBtnCorr[id][3]);
 								resetToggleBtn(id, listBtnCorr[id][0], '#btnCorr-' + id);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnCorr-' + id).attr('value') != 'tg-off') {
 										callAlphaVK('#btnCorr-', 7);
 									} else {
@@ -10623,7 +10582,7 @@ function createButton(buttonName, customCount) {
 									'track'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[36]);
 								}, 125);
 								break;
@@ -10677,7 +10636,7 @@ function createButton(buttonName, customCount) {
 										count = 1;
 										createButton('track');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[36]);
 										}, 125);
 									}
@@ -10687,7 +10646,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnCorr-');
 				});
@@ -10857,7 +10816,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
@@ -10875,7 +10834,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -10921,7 +10880,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -10932,7 +10891,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnSelfp-');
 				});
@@ -11018,7 +10977,7 @@ function createButton(buttonName, customCount) {
 								$('#three-toggle').empty();
 								$('#message-btn-out').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
@@ -11037,7 +10996,7 @@ function createButton(buttonName, customCount) {
 								$('#three-toggle').empty();
 								$('#message-btn-out').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -11092,7 +11051,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -11103,7 +11062,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnAdtpt-');
 				});
@@ -11120,7 +11079,7 @@ function createButton(buttonName, customCount) {
 							$('#tg-' + 2).siblings('.active').removeClass('active');
 						}
 					} else {
-						setTimeout(() => {
+						setTimeout(function() {
 							if ($('#message-btn-out').text() == 'COMMAND OK') {
 								count++;
 								nextStep(count, '#btnAdtpt-', listBtnAdtpt);
@@ -11235,7 +11194,7 @@ function createButton(buttonName, customCount) {
 								$('#three-toggle').empty();
 								$('#message-btn-out').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
@@ -11254,7 +11213,7 @@ function createButton(buttonName, customCount) {
 								$('#three-toggle').empty();
 								$('#message-btn-out').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -11309,7 +11268,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -11320,7 +11279,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnAmtpt-');
 				});
@@ -11337,7 +11296,7 @@ function createButton(buttonName, customCount) {
 							$('#tg-' + 2).siblings('.active').removeClass('active');
 						}
 					} else {
-						setTimeout(() => {
+						setTimeout(function() {
 							if ($('#message-btn-out').text() == 'COMMAND OK') {
 								count++;
 								nextStep(count, '#btnAmtpt-', listBtnAmtpt);
@@ -11424,7 +11383,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
@@ -11442,7 +11401,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -11479,7 +11438,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -11533,7 +11492,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
@@ -11551,7 +11510,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -11589,7 +11548,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -11600,7 +11559,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnDeltp-');
 				});
@@ -11731,7 +11690,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
@@ -11749,7 +11708,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -11844,7 +11803,7 @@ function createButton(buttonName, customCount) {
 										);
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -11855,7 +11814,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnAdsfp-');
 				});
@@ -11867,7 +11826,15 @@ function createButton(buttonName, customCount) {
 				return;
 			}
 			case 'amfp': {
-				let count = 0;
+				let count = countIdx;
+
+				clearTempArr();
+
+				if (count > 0) {
+					setTimeout(function() {
+						nextStep(count, '#btnAmfp-', listBtnAmfp);
+					}, 125);
+				}
 
 				for (let varAmfp = 0; varAmfp < listBtnAmfp.length; varAmfp++) {
 					generateButtonMenu('#amfp-menu-btn', 'btnAmfp-', varAmfp, listBtnAmfp[varAmfp][0]);
@@ -11908,13 +11875,14 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnAmfp called');
 								event.stopImmediatePropagation();
 
+								stateForLegBtn = id;
 								clearMenu('#amfp-menu-btn');
 								clearContent();
+
 								$('#message-btn-out, #sub-tree').empty();
 								printBtnTree(listBtnAmfp[id][0]);
 								window.location = '#leg-menu&t=0.15s';
 								createButton('leg');
-								stateForLegBtn = id;
 								break;
 							case 9:
 								console.log(id + ' fnAmfp called');
@@ -11934,7 +11902,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
@@ -11954,7 +11922,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 
@@ -11992,7 +11960,7 @@ function createButton(buttonName, customCount) {
 										);
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -12017,7 +11985,6 @@ function createButton(buttonName, customCount) {
 				let count = 0;
 				let treeVal1 = '';
 				let treeVal2 = '';
-				lastCount = 0;
 
 				for (let varStart = 0; varStart < listBtnStart.length; varStart++) {
 					generateButtonMenu('#start-menu-btn', 'btnStart-', varStart, listBtnStart[varStart][0]);
@@ -12032,7 +11999,6 @@ function createButton(buttonName, customCount) {
 						if (id < 5) {
 							initiateLoadedMenu('#btnStart-', id, listBtnStart[id][0]);
 							count = id;
-							//lastCount = count;
 						}
 
 						switch (id) {
@@ -12053,13 +12019,12 @@ function createButton(buttonName, customCount) {
 									'#start-menu-btn',
 									'#amfp-menu&t=0.15s',
 									'#btnAmfp-',
-									listBtnAmfp,
-									lastCount
+									listBtnAmfp
 								);
 								createButton('amfp');
 								console.log('Start for amfp');
 
-								setTimeout(() => {
+								setTimeout(function() {
 									$('#input-VK').val('');
 									document.getElementById('input-VK').placeholder = '';
 									$('#tree-btn-out span:last-child').remove();
@@ -12106,6 +12071,9 @@ function createButton(buttonName, customCount) {
 											case 4:
 												callAlphaVK('#btnStart-', 5);
 												break;
+											case 5:
+												hideAlphaBtn('#btnStart-');
+												break;
 										}
 									} else {
 										$.pushValue();
@@ -12119,12 +12087,11 @@ function createButton(buttonName, customCount) {
 											'#start-menu-btn',
 											'#amfp-menu&t=0.15s',
 											'#btnAmfp-',
-											listBtnAmfp,
-											lastCount
+											listBtnAmfp
 										);
 										createButton('amfp');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											//$('#tree-' + 0).show();
 											//$('#treeNum-' + 0).append('<span>' + 'dummy' + '</span>');
 											$('#input-VK').val('');
@@ -12139,12 +12106,12 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnStart-');
 				});
 
-				$.pushValue = () => {
+				$.pushValue = function() {
 					treeVal1 = $('#treeNum-' + 0).text();
 					treeVal2 = $('#treeNum-' + 4).text();
 					console.log(listBtnAmfp[0][0] + '-> pushed');
@@ -12209,7 +12176,6 @@ function createButton(buttonName, customCount) {
 								toggleThreeState(btn, '#btnLeg-' + id, id, 'default');
 								hideNumBtn('#btnLeg-', 30, 40);
 								callAlphaVK('#btnLeg-', 4);
-								count = id;
 								break;
 							case 5:
 								console.log(id + ' fnLeg called');
@@ -12233,13 +12199,12 @@ function createButton(buttonName, customCount) {
 									'#leg-menu-btn',
 									'#amfp-menu&t=0.15s',
 									'#btnAmfp-',
-									listBtnAmfp,
-									lastCount
+									listBtnAmfp
 								);
-								createButton('amfp');
+								createButton('amfp', stateForLegBtn);
 								console.log('Leg for amfp');
 
-								setTimeout(() => {
+								setTimeout(function() {
 									$('#three-toggle').empty();
 									$('#input-VK').val('');
 									document.getElementById('input-VK').placeholder = '';
@@ -12265,32 +12230,21 @@ function createButton(buttonName, customCount) {
 									/**/
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
-
 									clearVK();
 								} else {
-									if (count < 5) {
+									if (count < 6) {
+										showBtn(count);
+
+										if (count == 0) {
+											$('#tree-' + count).show();
+											count = 2;
+										} else {
+											resetToggleThree(tgThree, 'default');
+										}
+
 										count++;
 										nextStep(count, '#btnLeg-', listBtnLeg);
 										$('#tree-' + (count - 1)).show();
-										document.getElementById('input-VK').placeholder = '';
-
-										switch (count) {
-											case 1:
-												count = 3;
-												hideAlphaBtn('#btnLeg-');
-												break;
-											case 4:
-												changeVKWidth('8%', '59%');
-												initiateToggleThree(btn, 0);
-												callAlphaVK('#btnLeg-', 4);
-												break;
-											case 5:
-												resetVKWidth();
-												$('#three-toggle').empty();
-												callAlphaVK('#btnLeg-', 3);
-												showNumBtn('#btnLeg-', 30, 41, listBtnLeg, 3);
-												break;
-										}
 									} else {
 										$.pushValue();
 
@@ -12304,14 +12258,11 @@ function createButton(buttonName, customCount) {
 											'#leg-menu-btn',
 											'#amfp-menu&t=0.15s',
 											'#btnAmfp-',
-											listBtnAmfp,
-											lastCount
+											listBtnAmfp
 										);
-										createButton('amfp');
+										createButton('amfp', stateForLegBtn);
 
-										setTimeout(() => {
-											//$('#tree-' + 0).show();
-											//$('#treeNum-' + 0).append('<span>' + 'dummy' + '</span>');
+										setTimeout(function() {
 											$('#input-VK').val('');
 											document.getElementById('input-VK').placeholder = '';
 											$('#tree-btn-out span:last-child').remove();
@@ -12324,12 +12275,12 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnLeg-');
 				});
 
-				$.pushValue = () => {
+				$.pushValue = function() {
 					switch (stateForLegBtn) {
 						case 1:
 						case 2:
@@ -12359,6 +12310,28 @@ function createButton(buttonName, customCount) {
 					}
 				};
 
+				function showBtn(counts) {
+					switch (counts) {
+						case 0:
+						case 5:
+							document.getElementById('input-VK').placeholder = '';
+							hideAlphaBtn('#btnLeg-');
+							hideNumBtn('#btnLeg-', 30, 40);
+							break;
+						case 3:
+							changeVKWidth('8%', '59%');
+							initiateToggleThree(btn, 0);
+							callAlphaVK('#btnLeg-', 4);
+							break;
+						case 4:
+							resetVKWidth();
+							$('#three-toggle').empty();
+							showNumBtn('#btnLeg-', 30, 41, listBtnLeg, 3);
+							callAlphaVK('#btnLeg-', 3);
+							break;
+					}
+				}
+
 				hideNumBtn('#btnLeg-', 30, 40);
 				callAlphaVK('#btnLeg-', 5);
 				setBtnActive('#btnLeg-', listBtnLeg);
@@ -12367,9 +12340,10 @@ function createButton(buttonName, customCount) {
 			}
 			case 'schdle': {
 				let count = countIdx;
+				let treeTxt = '';
 
 				if (count > 0) {
-					setTimeout(() => {
+					setTimeout(function() {
 						nextStep(count, '#btnSchdle-', listBtnSchdle);
 						$('#tree-' + stateForDaysBtn).siblings().hide();
 						$('#treeNum-' + 0).text('');
@@ -12426,7 +12400,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
@@ -12444,7 +12418,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -12456,7 +12430,7 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnSchdle called');
 								event.stopImmediatePropagation();
 
-								let treeTxt = $('#tree-' + count + ' span:first-child').text().toLowerCase();
+								treeTxt = $('#tree-' + count + ' span:first-child').text().toLowerCase();
 
 								if ($('#input-VK').val() != '') {
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
@@ -12488,7 +12462,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -12554,8 +12528,7 @@ function createButton(buttonName, customCount) {
 											'#days-menu-btn',
 											'#schdle-menu&t=0.15s',
 											'#btnSchdle-',
-											listBtnSchdle,
-											1
+											listBtnSchdle
 										);
 										createButton('schdle', 1);
 										countForDaysState = 0;
@@ -12564,7 +12537,7 @@ function createButton(buttonName, customCount) {
 
 								/*
 								*/
-								setTimeout(() => {
+								setTimeout(function() {
 									$('#input-VK').val('');
 									$('.cursor i').removeClass('d-none');
 									lastCount = 0;
@@ -12610,7 +12583,7 @@ function createButton(buttonName, customCount) {
 											);
 											createButton('schdle', 1);
 
-											setTimeout(() => {
+											setTimeout(function() {
 												saveTemp('insertValue', 0, 1, listBtnDays[countForDaysState][0]);
 												saveTemp('loadValue');
 												$('.cursor i').removeClass('d-none');
@@ -12629,8 +12602,10 @@ function createButton(buttonName, customCount) {
 				return;
 			}
 			case 'adcfp': {
-				let count = 0;
+				let count = 0,
+					toggleCount = 0;
 				const btn = [ listBtnAdcfp[14][0], 'ras12', 'mach12' ];
+				const tgThree = [ [ '#btnAdcfp-' + 14, btn[0] ] ];
 
 				for (let varAdcfp = 0; varAdcfp < listBtnAdcfp.length; varAdcfp++) {
 					generateButtonMenu('#adcfp-menu-btn', 'btnAdcfp-', varAdcfp, listBtnAdcfp[varAdcfp][0]);
@@ -12654,31 +12629,37 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnAdcfp called | ' + count);
 								event.stopImmediatePropagation();
 								resetVKWidth();
+								resetToggleThree(tgThree, 'default');
+								toggleCount = 0;
 
 								$('#three-toggle').empty();
 								hideNumBtn('#btnAdcfp-', 30, 40);
-								callAlphaVK('#btnAdcfp-');
+								callAlphaVK('#btnAdcfp-', 7);
 								count = id;
 								break;
 							case 3:
 								console.log(id + ' fnAdcfp called | ' + count);
 								event.stopImmediatePropagation();
 								resetVKWidth();
+								resetToggleThree(tgThree, 'default');
+								toggleCount = 0;
 
 								$('#three-toggle').empty();
 								hideNumBtn('#btnAdcfp-', 30, 40);
-								callAlphaVK('#btnAdcfp-');
+								callAlphaVK('#btnAdcfp-', 5);
 								count = id + 2;
 								break;
 							case 6:
 								console.log(id + ' fnAdcfp called | ' + count);
 								event.stopImmediatePropagation();
 								resetVKWidth();
+								resetToggleThree(tgThree, 'default');
+								toggleCount = 0;
 
 								$('#three-toggle').empty();
 								hideNumBtn('#btnAdcfp-', 30, 40);
-								callAlphaVK('#btnAdcfp-');
-								count = id + 8;
+								callAlphaVK('#btnAdcfp-', 5);
+								count = id + 7;
 								break;
 							case 14:
 								console.log(id + ' fnAdcfp called | ' + count);
@@ -12687,39 +12668,45 @@ function createButton(buttonName, customCount) {
 								$('#toggle-divider').hide();
 								changeVKWidth('8%', '59%');
 
-								toggleThreeState(btn, '#btnAdcfp-' + id, id);
+								toggleThreeState(btn, '#btnAdcfp-' + id, id, 'default');
 								hideNumBtn('#btnAdcfp-', 30, 40);
-								callAlphaVK('#btnAdcfp-');
+								callAlphaVK('#btnAdcfp-', 4);
 								count = id;
 								break;
 							case 15:
 								console.log(id + ' fnAdcfp called | ' + count);
 								event.stopImmediatePropagation();
 								resetVKWidth();
+								resetToggleThree(tgThree, 'default');
+								toggleCount = 0;
 
 								$('#three-toggle').empty();
-								hideAlphaBtn('#btnAdcfp-');
-								showNumBtn('#btnAdcfp-', 30, 41, listBtnAdcfp);
+								callAlphaVK('#btnAdcfp-', 3);
+								showNumBtn('#btnAdcfp-', 30, 41, listBtnAdcfp, 3);
 								count = id + 2;
 								break;
 							case 21:
 								console.log(id + ' fnAdcfp called | ' + count);
 								event.stopImmediatePropagation();
 								resetVKWidth();
+								resetToggleThree(tgThree, 'default');
+								toggleCount = 0;
 
 								$('#three-toggle').empty();
-								hideAlphaBtn('#btnAdcfp-');
-								showNumBtn('#btnAdcfp-', 30, 41, listBtnAdcfp);
+								callAlphaVK('#btnAdcfp-', 4);
+								showNumBtn('#btnAdcfp-', 30, 41, listBtnAdcfp, 4);
 								count = id;
 								break;
 							case 22:
 								console.log(id + ' fnAdcfp called | ' + count);
 								event.stopImmediatePropagation();
 								resetVKWidth();
+								resetToggleThree(tgThree, 'default');
+								toggleCount = 0;
 
 								$('#three-toggle').empty();
-								hideAlphaBtn('#btnAdcfp-');
-								showNumBtn('#btnAdcfp-', 30, 41, listBtnAdcfp);
+								callAlphaVK('#btnAdcfp-', 4);
+								showNumBtn('#btnAdcfp-', 30, 41, listBtnAdcfp, 4);
 								count = id + 2;
 								break;
 							case 40:
@@ -12735,7 +12722,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
@@ -12753,7 +12740,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -12795,35 +12782,31 @@ function createButton(buttonName, customCount) {
 										switch (count) {
 											case 1:
 												count = 2;
+												hideAlphaBtn('#btnAdcfp-');
 												break;
 											case 3:
 												count = 5;
-												$('.cursor i').removeClass('d-none');
-												document.getElementById('input-VK').placeholder =
-													'press ALPHA button to start typing..';
+												callAlphaVK('#btnAdcfp-', 5);
 												break;
 											case 6:
 												count = 8;
-												$('.cursor i').removeClass('d-none');
-												document.getElementById('input-VK').placeholder =
-													'press ALPHA button to start typing..';
+												callAlphaVK('#btnAdcfp-', 5);
 												break;
 											case 9:
 												count = 13;
+												hideAlphaBtn('#btnAdcfp-');
 												break;
 											case 14:
 												count = 14;
 												changeVKWidth('8%', '59%');
 												initiateToggleThree(btn, 0);
-												$('.cursor i').removeClass('d-none');
-												document.getElementById('input-VK').placeholder =
-													'press ALPHA button to start typing..';
+												callAlphaVK('#btnAdcfp-', 4);
 												break;
 											case 15:
 												count = 17;
 												$('#three-toggle').empty();
-												hideAlphaBtn('#btnAdcfp-');
-												showNumBtn('#btnAdcfp-', 30, 41, listBtnAdcfp);
+												callAlphaVK('#btnAdcfp-', 3);
+												showNumBtn('#btnAdcfp-', 30, 41, listBtnAdsfp, 3);
 												break;
 											case 18:
 												count = 20;
@@ -12831,7 +12814,8 @@ function createButton(buttonName, customCount) {
 												break;
 											case 21:
 												count = 21;
-												showNumBtn('#btnAdcfp-', 30, 41, listBtnAdcfp);
+												callAlphaVK('#btnAdcfp-', 4);
+												showNumBtn('#btnAdcfp-', 30, 41, listBtnAdcfp, 4);
 												break;
 											case 22:
 												count = 24;
@@ -12850,7 +12834,7 @@ function createButton(buttonName, customCount) {
 										);
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -12861,13 +12845,13 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnAdcfp-');
 				});
 
 				hideNumBtn('#btnAdcfp-', 30, 40);
-				callAlphaVK('#btnAdcfp-');
+				callAlphaVK('#btnAdcfp-', 7);
 				setBtnActive('#btnAdcfp-', listBtnAdcfp);
 				delChar('#keyboard-clear, #btnAdcfp-48');
 				return;
@@ -12893,12 +12877,22 @@ function createButton(buttonName, customCount) {
 						switch (id) {
 							case 0:
 							case 1:
+								console.log(id + ' fnFptxt called');
+								event.stopImmediatePropagation();
+								callAlphaVK('#btnFptxt-', 4);
+								break;
 							case 2:
+								console.log(id + ' fnFptxt called');
+								event.stopImmediatePropagation();
+								callAlphaVK('#btnFptxt-', 4);
+								count = id + 10;
+								break;
 							case 13:
 							case 14:
 							case 15:
 								console.log(id + ' fnFptxt called');
 								event.stopImmediatePropagation();
+								callAlphaVK('#btnFptxt-', 32);
 								break;
 							case 40:
 								console.log(id + ' fnFptxt called');
@@ -12911,7 +12905,7 @@ function createButton(buttonName, customCount) {
 									'airmov'
 								);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 								}, 125);
 								break;
@@ -12955,6 +12949,7 @@ function createButton(buttonName, customCount) {
 												break;
 											case 16:
 												document.getElementById('input-VK').placeholder = '';
+												hideAlphaBtn('#btnFptxt-');
 												break;
 										}
 									} else {
@@ -12969,7 +12964,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 										}, 125);
 									}
@@ -12979,12 +12974,12 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnFptxt-');
 				});
 
-				callAlphaVK('#btnFptxt-');
+				callAlphaVK('#btnFptxt-', 4);
 				setBtnActive('#btnFptxt-', listBtnFptxt);
 				delChar('#keyboard-clear, #btnFptxt-48');
 				return;
@@ -13019,8 +13014,9 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnSfpcur called');
 								event.stopImmediatePropagation();
 
-								showNumBtn('#btnSfpcur-', 30, 41, listBtnSfpcur);
-								callAlphaVK('#btnSfpcur-');
+								showNumBtn('#btnSfpcur-', 30, 41, listBtnSfpcur, 5);
+								callAlphaVK('#btnSfpcur-', 5);
+								resetToggleBtn(id, listBtnSfpcur[id][0]);
 								break;
 							case 1:
 								console.log(id + ' fnSfpcur called');
@@ -13030,10 +13026,10 @@ function createButton(buttonName, customCount) {
 								initiateToggleBtn('#btnSfpcur-', id, listBtnSfpcur[id][0]);
 								hideAlphaBtn('#btnSfpcur-');
 
-								setTimeout(() => {
+								setTimeout(function() {
 									if ($('#btnSfpcur-' + id).attr('value') != 'tg-on') {
-										showNumBtn('#btnSfpcur-', 30, 41, listBtnSfpcur);
-										callAlphaVK('#btnSfpcur-');
+										showNumBtn('#btnSfpcur-', 30, 41, listBtnSfpcur, 7);
+										callAlphaVK('#btnSfpcur-', 7);
 									}
 								}, 125);
 								break;
@@ -13050,7 +13046,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
@@ -13068,7 +13064,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -13087,7 +13083,7 @@ function createButton(buttonName, customCount) {
 
 									clearVK();
 								} else {
-									if (count < 1) {
+									if (count < 2) {
 										count++;
 										nextStep(count, '#btnSfpcur-', listBtnSfpcur);
 										$('#tree-' + (count - 1)).show();
@@ -13097,6 +13093,12 @@ function createButton(buttonName, customCount) {
 										switch (count) {
 											case 1:
 												showToggle(toggLabelA1, toggLabelA2);
+												showNumBtn('#btnSfpcur-', 30, 41, listBtnSfpcur, 7);
+												callAlphaVK('#btnSfpcur-', 7);
+												break;
+											case 2:
+												hideAlphaBtn('#btnSfpcur-');
+												hideNumBtn('#btnSfpcur-', 30, 40);
 												break;
 										}
 									} else {
@@ -13112,7 +13114,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -13123,16 +13125,16 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnSfpcur-');
 				});
 
-				toggleBtn(1, '#btnSfpcur-1', toggLabelA1, toggLabelA2);
-				callAlphaVK('#btnSfpcur-');
+				toggleBtn(1, '#btnSfpcur-1', toggLabelA1, toggLabelA2, 'none', 'default');
+				showNumBtn('#btnSfpcur-', 30, 41, listBtnSfpcur, 5);
+				callAlphaVK('#btnSfpcur-', 5);
 				setBtnActive('#btnSfpcur-', listBtnSfpcur);
 				delChar('#keyboard-clear, #btnSfpcur-48');
-				showNumBtn('#btnSfpcurr-', 30, 41, listBtnSfpcur, 1);
 				return;
 			}
 			case 'cfpact': {
@@ -13157,6 +13159,7 @@ function createButton(buttonName, customCount) {
 							case 0:
 								console.log(id + ' fnCfpact called');
 								event.stopImmediatePropagation();
+								callAlphaVK('#btnCfpact-', 7);
 								break;
 							case 40:
 								console.log(id + ' fnCfpact called');
@@ -13171,7 +13174,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									printBtnTree(listBtnLogon[37]);
 									resetVKWidth();
 								}, 125);
@@ -13189,7 +13192,7 @@ function createButton(buttonName, customCount) {
 								);
 								$('#three-toggle').empty();
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -13227,7 +13230,7 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										createButton('airmov');
 
-										setTimeout(() => {
+										setTimeout(function() {
 											printBtnTree(listBtnLogon[37]);
 											resetVKWidth();
 										}, 125);
@@ -13238,18 +13241,19 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnCfpact-');
 				});
 
-				callAlphaVK('#btnCfpact-');
+				callAlphaVK('#btnCfpact-', 7);
 				setBtnActive('#btnCfpact-', listBtnCfpact);
 				delChar('#keyboard-clear, #btnCfpact-48');
 				return;
 			}
 			case 'sndicm': {
 				let count = 0;
+				let treeTxt = '';
 
 				for (let varSndicm = 0; varSndicm < listBtnSndicm.length; varSndicm++) {
 					generateButtonMenu('#sndicm-menu-btn', 'btnSndicm-', varSndicm, listBtnSndicm[varSndicm][0]);
@@ -13270,6 +13274,7 @@ function createButton(buttonName, customCount) {
 							$(this).addClass('active');
 							document.getElementById('input-VK').value = listBtnSndicm[id][0];
 							$('.cursor i').removeClass('d-none');
+							count = id;
 						}
 
 						switch (id) {
@@ -13288,7 +13293,6 @@ function createButton(buttonName, customCount) {
 							case 13:
 								console.log(id + ' fnSndicm called');
 								event.stopImmediatePropagation();
-								count = id;
 								break;
 							case 40:
 							case 42:
@@ -13310,27 +13314,31 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnSndicm called');
 								event.stopImmediatePropagation();
 
+								treeTxt = $('#tree-' + count + ' span:first-child').text().toLowerCase();
+
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
-									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									if (treeTxt == $('#input-VK').val().toLowerCase()) {
+										$('#tree-' + count).siblings().hide();
+										$('#tree-' + count).show();
+										$('#treeNum-' + count).hide();
+									}
+
+									count++;
 									clearVK();
 								} else {
-									if (count < 1) {
-										count++;
-										nextStep(count, '#btnSndicm-', listBtnSndicm);
-										$('#tree-' + (count - 1)).show();
-									} else {
-										printMessage('COMMAND OK');
-										$('#btnSndicm-' + count).removeClass('active');
-										forceBack(
-											'#btnSndicm-',
-											listBtnSndicm.length,
-											'#sndicm-menu-btn',
-											'#tacmis-menu&t=0.15s'
-										);
-										count = 0;
-										createButton('tacmis');
-									}
+									printMessage('COMMAND OK');
+									$('#btnSndicm-' + count).removeClass('active');
+									forceBack(
+										'#btnSndicm-',
+										listBtnSndicm.length,
+										'#sndicm-menu-btn',
+										'#logon-menu&t=0.15s'
+									);
+									count = 0;
+									createButton('logon');
 								}
 								break;
 						}
@@ -13338,14 +13346,14 @@ function createButton(buttonName, customCount) {
 				}
 
 				setBtnActive('#btnSndicm-', listBtnSndicm);
-				$('#input-VK').val(listBtnSndicm[1][0]);
-				count = 1;
+				$('#input-VK').val(listBtnSndicm[0][0]);
 				$('.cursor i').removeClass('d-none');
 				delChar('#keyboard-clear, #btnSndicm-48');
 				return;
 			}
 			case 'sndism': {
 				let count = 0;
+				let treeTxt = '';
 
 				for (let varSndism = 0; varSndism < listBtnSndism.length; varSndism++) {
 					generateButtonMenu('#sndism-menu-btn', 'btnSndism-', varSndism, listBtnSndism[varSndism][0]);
@@ -13366,6 +13374,7 @@ function createButton(buttonName, customCount) {
 							$(this).addClass('active');
 							document.getElementById('input-VK').value = listBtnSndism[id][0];
 							$('.cursor i').removeClass('d-none');
+							count = id;
 						}
 
 						switch (id) {
@@ -13383,7 +13392,6 @@ function createButton(buttonName, customCount) {
 							case 16:
 								console.log(id + ' fnSndism called');
 								event.stopImmediatePropagation();
-								count = id;
 								break;
 							case 40:
 							case 42:
@@ -13405,27 +13413,31 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnSndism called');
 								event.stopImmediatePropagation();
 
+								treeTxt = $('#tree-' + count + ' span:first-child').text().toLowerCase();
+
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
-									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									if (treeTxt == $('#input-VK').val().toLowerCase()) {
+										$('#tree-' + count).siblings().hide();
+										$('#tree-' + count).show();
+										$('#treeNum-' + count).hide();
+									}
+
+									count++;
 									clearVK();
 								} else {
-									if (count < 1) {
-										count++;
-										nextStep(count, '#btnSndism-', listBtnSndism);
-										$('#tree-' + (count - 1)).show();
-									} else {
 										printMessage('COMMAND OK');
 										$('#btnSndism-' + count).removeClass('active');
 										forceBack(
 											'#btnSndism-',
 											listBtnSndism.length,
 											'#sndism-menu-btn',
-											'#tacmis-menu&t=0.15s'
+											'#logon-menu&t=0.15s'
 										);
 										count = 0;
-										createButton('tacmis');
-									}
+										createButton('logon');
 								}
 								break;
 						}
@@ -13433,8 +13445,7 @@ function createButton(buttonName, customCount) {
 				}
 
 				setBtnActive('#btnSndism-', listBtnSndism);
-				$('#input-VK').val(listBtnSndism[1][0]);
-				count = 1;
+				$('#input-VK').val(listBtnSndism[0][0]);
 				$('.cursor i').removeClass('d-none');
 				delChar('#keyboard-clear, #btnSndism-48');
 				return;
@@ -13464,13 +13475,13 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnEwon called');
 								event.stopImmediatePropagation();
 
+								stateForEwTreeBtn = id;
 								clearMenu('#ewon-menu-btn');
 								clearContent();
 								$('#message-btn-out, #sub-tree').empty();
 								window.location = '#ew-menu&t=0.15s';
 								createButton('ew', id);
 								document.getElementById('input-btn-out').innerHTML = listBtnEwon[id][0];
-								stateForEwTreeBtn = id;
 								break;
 							case 40:
 							case 42:
@@ -13534,7 +13545,7 @@ function createButton(buttonName, customCount) {
 				if (countIdx > 0) {
 					count = countIdx;
 
-					setTimeout(() => {
+					setTimeout(function() {
 						nextStep(count, '#btnEwon-', listBtnEwon);
 					}, 125);
 				} else {
@@ -13641,7 +13652,7 @@ function createButton(buttonName, customCount) {
 				if (countIdx > 0) {
 					count = countIdx;
 
-					setTimeout(() => {
+					setTimeout(function() {
 						nextStep(count, '#btnEwoff-', listBtnEwoff);
 					}, 125);
 				} else {
@@ -13690,9 +13701,9 @@ function createButton(buttonName, customCount) {
 								//event.stopImmediatePropagation();
 								initiateToggleBtn('#btnEw-', id, listBtnEw[id][0]);
 								swapEw[count - 1] = !swapEw[count - 1];
-								addCustomToggleInput(swapEw[count - 1], 'custom', toggLabelA1, toggLabelA2);
+								addCustomToggleInput(swapEw[count - 1], 'custom', toggLabelA2, toggLabelA1);
 
-								setTimeout(() => {
+								setTimeout(function() {
 									label = $('#btnEw-' + id).text();
 
 									switch (label) {
@@ -13720,11 +13731,10 @@ function createButton(buttonName, customCount) {
 											'#ew-menu-btn',
 											'#ewon-menu&t=0.15s',
 											'#btnEwon-',
-											listBtnEwon,
-											lastCount
+											listBtnEwon
 										);
 										createButton('ewon', idSub);
-										console.log('ew for ewon');
+										console.log('ew for ew-on');
 										countForEwState = 0;
 										break;
 									case 29:
@@ -13735,18 +13745,16 @@ function createButton(buttonName, customCount) {
 											'#ew-menu-btn',
 											'#ewoff-menu&t=0.15s',
 											'#btnEwoff-',
-											listBtnEwoff,
-											lastCount
+											listBtnEwoff
 										);
 										createButton('ewoff', idSub);
-										console.log('ew for ewoff');
+										console.log('ew for ew-off');
 										countForEwState = 0;
 										break;
 								}
 
-								setTimeout(() => {
+								setTimeout(function() {
 									$('#input-VK').val('');
-									lastCount = 0;
 									resetVKWidth();
 								}, 150);
 								break;
@@ -13756,7 +13764,7 @@ function createButton(buttonName, customCount) {
 								backNav('#btnEw-', listBtnEw.length, '#ew-menu-btn', '#logon-menu&t=0.15s', 'logon');
 								countForEwState = 0;
 
-								setTimeout(() => {
+								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
 								break;
@@ -13783,13 +13791,12 @@ function createButton(buttonName, customCount) {
 												'#ew-menu-btn',
 												'#ewon-menu&t=0.15s',
 												'#btnEwon-',
-												listBtnEwon,
-												lastCount
+												listBtnEwon
 											);
 											createButton('ewon', idSub);
-											console.log('ew for ewon');
+											console.log('ew for ew-on');
 
-											setTimeout(() => {
+											setTimeout(function() {
 												resetVKWidth();
 
 												switch (stateForEwTreeBtn) {
@@ -13852,14 +13859,13 @@ function createButton(buttonName, customCount) {
 												'#ew-menu-btn',
 												'#ewoff-menu&t=0.15s',
 												'#btnEwon-',
-												listBtnEwon,
-												lastCount
+												listBtnEwon
 											);
 											createButton('ewoff', idSub);
-											console.log('ew for ewoff');
+											console.log('ew for ew-off');
 											console.log('ew: ' + countForEwState);
 
-											setTimeout(() => {
+											setTimeout(function() {
 												resetVKWidth();
 
 												switch (stateForEwTreeBtn) {
@@ -14039,7 +14045,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				$('#keyboard-enter').on('click', () => {
+				$('#keyboard-enter').on('click', function() {
 					window.location = '#closed&t=0.15s';
 					showBtmNav('#btnSettrk-');
 				});
@@ -14355,7 +14361,7 @@ function initiateToggleBtn(btnName, num, arrName) {
 	$(btnName + num).children().hide();
 	$(btnName + num).addClass('toggle-btn').append('<a href="javascript:">' + arrName + '</a>');
 
-	setTimeout(() => {
+	setTimeout(function() {
 		$(btnName + num).find(':hidden').remove();
 
 		hideNumBtn(btnName, 30, 40);
@@ -14377,7 +14383,7 @@ function initiateUnderlinedToggleBtn(btnName, num, arrName) {
 				'</div>'
 		);
 
-	setTimeout(() => {
+	setTimeout(function() {
 		$(btnName + num).find(':hidden').remove();
 		$(btnName + num).find('div:first').remove();
 
@@ -14388,7 +14394,7 @@ function initiateUnderlinedToggleBtn(btnName, num, arrName) {
 
 function toggleBtn(num, btnName, toggLabelA, toggLabelB, btnType, state, customLabel) {
 	$(btnName).toggleButton({
-		on: () => {
+		on: function() {
 			console.log('toggle on');
 			$('#toggle-box-b').addClass('active');
 			$('#toggle-box-b').siblings('.active').removeClass('active');
@@ -14397,7 +14403,7 @@ function toggleBtn(num, btnName, toggLabelA, toggLabelB, btnType, state, customL
 			printBtnToggleLabel(num, btnName, toggLabelB, toggLabelA, toggLabelB, btnType, state, customLabel);
 			$(btnName).attr('value', 'tg-on');
 		},
-		off: () => {
+		off: function() {
 			console.log('toggle off');
 			$('#toggle-box-a').addClass('active');
 			$('#toggle-box-a').siblings('.active').removeClass('active');
@@ -14481,7 +14487,7 @@ function toggleThreeState(btnArr, btnName, targetTreeNum, state, customLabel) {
 	if (state == 'custom') {
 		inputDiv.removeChild(inputDiv.firstChild);
 
-		$(btnName).children('span').each(() => {
+		$(btnName).children('span').each(function() {
 			this.className = btnArr[($.inArray(this.className, btnArr) + 1) % btnArr.length];
 
 			switch ($(this).attr('class')) {
@@ -14497,7 +14503,7 @@ function toggleThreeState(btnArr, btnName, targetTreeNum, state, customLabel) {
 			}
 		});
 	} else if (state == 'default') {
-		$(btnName).children('span').each(() => {
+		$(btnName).children('span').each(function() {
 			this.className = btnArr[($.inArray(this.className, btnArr) + 1) % btnArr.length];
 
 			switch ($(this).attr('class')) {
@@ -14616,7 +14622,7 @@ function clearMenu(menuName) {
 function forceBack(labelBtn, arrLen, menuName, url) {
 	//console.log('fullstep')
 	window.location = url;
-	setTimeout(() => {
+	setTimeout(function() {
 		clearContent();
 		$('#tree-btn-out, #sub-tree, #tree-val, #toggle-box-a, #toggle-box-b').empty();
 		$('#toggle-box-out').hide();
@@ -14636,7 +14642,7 @@ function backToPrevPage(state, labelBtn, arrName, menuName, url, labelParent, ar
 	window.location = url;
 	$('#sub-tree, #tree-val').empty();
 
-	setTimeout(() => {
+	setTimeout(function() {
 		clearContent();
 		$('#toggle-box-out').hide();
 		clearMenu(menuName);
@@ -14720,7 +14726,7 @@ function printMessage(msgVal) {
 }
 
 function clearMessage(btnTarget) {
-	$(btnTarget).on('click', () => {
+	$(btnTarget).on('click', function() {
 		$('#message-btn-out').empty();
 	});
 }
@@ -14759,7 +14765,7 @@ function callAlphaVK(btnName, charLimit) {
 		btnB = btnName + 47,
 		btnC = btnName + 48;
 
-	$(btnA).children('span').fadeTo(100, 1, () => {
+	$(btnA).children('span').fadeTo(100, 1, function() {
 		$(btnA).on('click', function(event) {
 			$.showVK(event);
 		});
@@ -14781,15 +14787,15 @@ function callAlphaVK(btnName, charLimit) {
 		$(`#${currentInputField}`).focus();
 	};
 
-	$.recallVK = () => {
-		setTimeout(() => {
+	$.recallVK = function() {
+		setTimeout(function() {
 			$(btnA).on('click', function(event) {
 				$.showVK(event);
 			});
 		}, 100);
 	};
 
-	$('#keyboard-enter, #keyboard-abort').on('click', () => {
+	$('#keyboard-enter, #keyboard-abort').on('click', function() {
 		window.location = '#closed&t=0.15s';
 		showBtmNav(btnName);
 		$(btnA).off();
@@ -14862,7 +14868,7 @@ function bindBtnNumber(arrName, curNum, maxChar) {
 	let cursor = parseInt(extMax - 1) * 10.5;
 
 	if (curNum >= 30 && curNum < 40) {
-		$('#input-VK').val(() => {
+		$('#input-VK').val(function() {
 			return this.value + arrName[curNum][0].toString();
 		});
 
@@ -14872,7 +14878,7 @@ function bindBtnNumber(arrName, curNum, maxChar) {
 	}
 
 	if (curNum == 41) {
-		$('#input-VK').val(() => {
+		$('#input-VK').val(function() {
 			return this.value + arrName[curNum][0].toString();
 		});
 
@@ -14884,7 +14890,7 @@ function bindBtnNumber(arrName, curNum, maxChar) {
 		let vk = $('#input-VK').val();
 		let vkNew = vk.slice(0, -1);
 
-		setTimeout(() => {
+		setTimeout(function() {
 			$('#input-VK').val(vkNew);
 			$('.cursor i').css('left', cursor.toString());
 			console.log('max input: ' + maxChar);
@@ -14903,7 +14909,7 @@ function clearVK(btnName) {
 }
 
 function delChar(btnName) {
-	$(btnName).on('click', () => {
+	$(btnName).on('click', function() {
 		clearVK(this.id);
 	});
 }
@@ -15368,7 +15374,7 @@ function isOctal(charMax, inputVal, btnName) {
 
 		trkRef.splice(2, 0, octArr);
 
-		setTimeout(() => {
+		setTimeout(function() {
 			let newArray = octArr.filter(function(v) {
 				return v !== 'null';
 			});
@@ -15381,7 +15387,7 @@ function isOctal(charMax, inputVal, btnName) {
 				printMessage('COMMAND OK');
 				console.log('> Valid ' + btnName + ' | ' + trkRef);
 
-				setTimeout(() => {
+				setTimeout(function() {
 					$('#message-btn-out').empty();
 				}, 500);
 			}
@@ -15411,7 +15417,7 @@ function navModal(currNum, min, max, counts, targetMenu, parentMenu) {
 
 	console.log(carR);
 
-	$(carR).on('click', () => {
+	$(carR).on('click', function() {
 		if (numPage < maxPage && numPage != maxPage) {
 			numPage++;
 			count++;
@@ -15429,7 +15435,7 @@ function navModal(currNum, min, max, counts, targetMenu, parentMenu) {
 		} /**/
 	});
 
-	$(carL).on('click', () => {
+	$(carL).on('click', function() {
 		if (numPage > minPage && numPage != minPage) {
 			numPage--;
 			count--;
@@ -15447,7 +15453,7 @@ function navModal(currNum, min, max, counts, targetMenu, parentMenu) {
 		} /**/
 	});
 
-	$(close).on('click', () => {
+	$(close).on('click', function() {
 		window.location = '#' + parentMenu + '-menu&t=0.15s';
 		numPage = 1;
 		count = 1;
