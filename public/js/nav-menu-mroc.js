@@ -17,10 +17,6 @@ var countForDaysState = 0;
 var stateForEwBtn = 0;
 var stateForEwTreeBtn = 0;
 var countForEwState = 0;
-var countForEw1State = 0;
-var countForEw2State = 0;
-var countForEw3State = 0;
-var countForEw4State = 0;
 var currModalPage = 1;
 var limitVK = 0;
 const amfpArr = [ [], [], [], [], [], [], [], [], [] ];
@@ -8596,7 +8592,6 @@ function createButton(buttonName, customCount) {
 				let maxCharLat = 15;
 				const tgBtn = [ toggLabelA1, toggLabelB1, toggLabelC1, btn1[0], btn2[0] ];
 				const tgThree = [ [ '#btnToldin-' + 3, btn1[0] ], [ '#btnToldin-' + 4, btn2[0] ] ];
-				clearTempArr();
 
 				clearTempArr();
 
@@ -9872,6 +9867,8 @@ function createButton(buttonName, customCount) {
 					lower = 0;
 				const tgThree = [ [ '#btnSetnac-' + 0, btn[0] ] ];
 
+				clearTempArr();
+
 				for (let varSetnac = 0; varSetnac < listBtnSetnac.length; varSetnac++) {
 					generateButtonMenu('#setnac-menu-btn', 'btnSetnac-', varSetnac, listBtnSetnac[varSetnac][0]);
 					registToTree(varSetnac, listBtnSetnac[varSetnac][0], 8);
@@ -10156,6 +10153,8 @@ function createButton(buttonName, customCount) {
 					swapSSR = false;
 				const tgThree = [ [ '#btnSetnai-' + 0, btn[0] ] ];
 
+				clearTempArr();
+
 				for (let varSetnai = 0; varSetnai < listBtnSetnai.length; varSetnai++) {
 					generateButtonMenu('#setnai-menu-btn', 'btnSetnai-', varSetnai, listBtnSetnai[varSetnai][0]);
 					registToTree(varSetnai, listBtnSetnai[varSetnai][0], 13);
@@ -10203,7 +10202,7 @@ function createButton(buttonName, customCount) {
 								toggleCount = 0;
 
 								showNumBtn('#btnSetnai-', 30, 41, listBtnSetnai, 1);
-								resetToggleBtn(id, listBtnSetnac[id][0]);
+								resetToggleBtn(id, listBtnSetnai[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
 								break;
@@ -10215,7 +10214,7 @@ function createButton(buttonName, customCount) {
 								toggleCount = 0;
 
 								showNumBtn('#btnSetnai-', 30, 41, listBtnSetnai, 1);
-								resetToggleBtn(id, listBtnSetnac[id][0]);
+								resetToggleBtn(id, listBtnSetnai[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
 								break;
@@ -10227,7 +10226,7 @@ function createButton(buttonName, customCount) {
 								toggleCount = 0;
 
 								hideNumBtn('#btnSetnai-', 30, 40);
-								resetToggleBtn(id, listBtnSetnac[id][0]);
+								resetToggleBtn(id, listBtnSetnai[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
 								break;
@@ -10239,7 +10238,7 @@ function createButton(buttonName, customCount) {
 								toggleCount = 0;
 
 								hideNumBtn('#btnSetnai-', 30, 40);
-								resetToggleBtn(id, listBtnSetnac[id][0]);
+								resetToggleBtn(id, listBtnSetnai[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
 								break;
@@ -10251,7 +10250,7 @@ function createButton(buttonName, customCount) {
 								toggleCount = 0;
 
 								showNumBtn('#btnSetnai-', 30, 41, listBtnSetnai, 3);
-								resetToggleBtn(id, listBtnSetnac[id][0]);
+								resetToggleBtn(id, listBtnSetnai[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
 								break;
@@ -10263,7 +10262,7 @@ function createButton(buttonName, customCount) {
 								toggleCount = 0;
 
 								showNumBtn('#btnSetnai-', 30, 41, listBtnSetnai, 3);
-								resetToggleBtn(id, listBtnSetnac[id][0]);
+								resetToggleBtn(id, listBtnSetnai[id][0]);
 								resetToggleThree(tgThree, 'toggleThree', 0);
 								count = id;
 								break;
@@ -12378,6 +12377,7 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnSchdle called');
 								event.stopImmediatePropagation();
 
+								stateForDaysBtn = id;
 								saveTemp('saveValue', 2);
 								clearMenu('#schdle-menu-btn');
 								//clearContent();
@@ -12385,7 +12385,6 @@ function createButton(buttonName, customCount) {
 								window.location = '#days-menu&t=0.15s';
 								createButton('days');
 								document.getElementById('input-btn-out').innerHTML = listBtnSchdle[id][0];
-								stateForDaysBtn = id;
 								break;
 							case 40:
 								console.log(id + ' fnSchdle called');
@@ -12421,6 +12420,9 @@ function createButton(buttonName, customCount) {
 								setTimeout(function() {
 									resetVKWidth();
 								}, 125);
+
+								stateForDaysBtn = 0;
+								countForDaysState = 0;
 								break;
 							case 47:
 								event.stopImmediatePropagation();
@@ -12460,6 +12462,8 @@ function createButton(buttonName, customCount) {
 											'#airmov-menu&t=0.15s'
 										);
 										count = 0;
+										stateForDaysBtn = 0;
+										countForDaysState = 0;
 										createButton('airmov');
 
 										setTimeout(function() {
@@ -12480,7 +12484,6 @@ function createButton(buttonName, customCount) {
 			}
 			case 'days': {
 				let count = 0;
-				let lastCount = 0;
 
 				for (let varDays = 0; varDays < listBtnDays.length; varDays++) {
 					generateButtonMenu('#days-menu-btn', 'btnDays-', varDays, listBtnDays[varDays][0]);
@@ -12498,7 +12501,6 @@ function createButton(buttonName, customCount) {
 							document.getElementById('input-VK').value = listBtnDays[id][0];
 							//$('.cursor i').removeClass('d-none');
 							count = id;
-							lastCount = count;
 						}
 
 						switch (id) {
@@ -12540,7 +12542,6 @@ function createButton(buttonName, customCount) {
 								setTimeout(function() {
 									$('#input-VK').val('');
 									$('.cursor i').removeClass('d-none');
-									lastCount = 0;
 								}, 150);
 								break;
 							case 42:
@@ -12578,8 +12579,7 @@ function createButton(buttonName, customCount) {
 												'#days-menu-btn',
 												'#schdle-menu&t=0.15s',
 												'#btnSchdle-',
-												listBtnSchdle,
-												lastCount
+												listBtnSchdle
 											);
 											createButton('schdle', 1);
 
@@ -12988,6 +12988,8 @@ function createButton(buttonName, customCount) {
 				let count = 0;
 				let toggLabelA1 = listBtnSfpcur[1][0];
 				let toggLabelA2 = 'cansgn';
+
+				clearTempArr();
 
 				for (let varSfpcur = 0; varSfpcur < listBtnSfpcur.length; varSfpcur++) {
 					generateButtonMenu('#sfpcur-menu-btn', 'btnSfpcur-', varSfpcur, listBtnSfpcur[varSfpcur][0]);
@@ -13451,7 +13453,14 @@ function createButton(buttonName, customCount) {
 				return;
 			}
 			case 'ewon': {
-				let count;
+				let count = countIdx;
+
+				if (count > 0) {
+					setTimeout(function() {
+						nextStep(count, '#btnEwon-', listBtnEwon);
+					}, 175);
+				}
+
 				for (let varEwon = 0; varEwon < listBtnEwon.length; varEwon++) {
 					generateButtonMenu('#ewon-menu-btn', 'btnEwon-', varEwon, listBtnEwon[varEwon][0]);
 					registToTree(varEwon, listBtnEwon[varEwon][0], 6);
@@ -13476,11 +13485,12 @@ function createButton(buttonName, customCount) {
 								event.stopImmediatePropagation();
 
 								stateForEwTreeBtn = id;
+								saveTemp('saveValue', 5);
 								clearMenu('#ewon-menu-btn');
 								clearContent();
 								$('#message-btn-out, #sub-tree').empty();
 								window.location = '#ew-menu&t=0.15s';
-								createButton('ew', id);
+								createButton('ew');
 								document.getElementById('input-btn-out').innerHTML = listBtnEwon[id][0];
 								break;
 							case 40:
@@ -13496,10 +13506,6 @@ function createButton(buttonName, customCount) {
 								);
 								stateForEwTreeBtn = 0;
 								countForEwState = 0;
-								countForEw1State = 0;
-								countForEw2State = 0;
-								countForEw3State = 0;
-								countForEw4State = 0;
 								break;
 							case 47:
 								event.stopImmediatePropagation();
@@ -13530,10 +13536,6 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										stateForEwTreeBtn = 0;
 										countForEwState = 0;
-										countForEw1State = 0;
-										countForEw2State = 0;
-										countForEw3State = 0;
-										countForEw4State = 0;
 										createButton('logon');
 									}
 								}
@@ -13557,7 +13559,13 @@ function createButton(buttonName, customCount) {
 				return;
 			}
 			case 'ewoff': {
-				let count;
+				let count = countIdx;
+
+				if (count > 0) {
+					setTimeout(function() {
+						nextStep(count, '#btnEwoff-', listBtnEwoff);
+					}, 175);
+				}
 
 				for (let varEwoff = 0; varEwoff < listBtnEwoff.length; varEwoff++) {
 					generateButtonMenu('#ewoff-menu-btn', 'btnEwoff-', varEwoff, listBtnEwoff[varEwoff][0]);
@@ -13582,13 +13590,14 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnEwoff called');
 								event.stopImmediatePropagation();
 
+								stateForEwTreeBtn = id;
+								saveTemp('saveValue', 5);
 								clearMenu('#ewoff-menu-btn');
 								clearContent();
 								$('#message-btn-out, #sub-tree').empty();
 								window.location = '#ew-menu&t=0.15s';
-								createButton('ew', id);
+								createButton('ew');
 								document.getElementById('input-btn-out').innerHTML = listBtnEwoff[id][0];
-								stateForEwTreeBtn = id;
 								break;
 							case 40:
 							case 42:
@@ -13603,10 +13612,6 @@ function createButton(buttonName, customCount) {
 								);
 								stateForEwTreeBtn = 0;
 								countForEwState = 0;
-								countForEw1State = 0;
-								countForEw2State = 0;
-								countForEw3State = 0;
-								countForEw4State = 0;
 								break;
 							case 47:
 								event.stopImmediatePropagation();
@@ -13637,10 +13642,6 @@ function createButton(buttonName, customCount) {
 										count = 0;
 										stateForEwTreeBtn = 0;
 										countForEwState = 0;
-										countForEw1State = 0;
-										countForEw2State = 0;
-										countForEw3State = 0;
-										countForEw4State = 0;
 										createButton('logon');
 									}
 								}
@@ -13668,10 +13669,8 @@ function createButton(buttonName, customCount) {
 				let count = 6;
 				let toggLabelA1 = listBtnEw[6][0];
 				let toggLabelA2 = listBtnEw[7][0];
-				let lastCount = 0;
 				countForEwState = 0;
 				const swapEw = [ true ];
-				let idSub = countIdx;
 
 				for (let varEw = 0; varEw < listBtnEw.length; varEw++) {
 					generateButtonMenu('#ew-menu-btn', 'btnEw-', varEw, listBtnEw[varEw][0]);
@@ -13733,7 +13732,7 @@ function createButton(buttonName, customCount) {
 											'#btnEwon-',
 											listBtnEwon
 										);
-										createButton('ewon', idSub);
+										createButton('ewon', stateForEwTreeBtn);
 										console.log('ew for ew-on');
 										countForEwState = 0;
 										break;
@@ -13747,7 +13746,7 @@ function createButton(buttonName, customCount) {
 											'#btnEwoff-',
 											listBtnEwoff
 										);
-										createButton('ewoff', idSub);
+										createButton('ewoff', stateForEwTreeBtn);
 										console.log('ew for ew-off');
 										countForEwState = 0;
 										break;
@@ -13776,6 +13775,7 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnEw called');
 								event.stopImmediatePropagation();
 
+
 								if (label != '') {
 									$('#tree-' + count).append('<span class="mr-2">EW1</span>');
 									$('#tree-' + count).show();
@@ -13793,62 +13793,14 @@ function createButton(buttonName, customCount) {
 												'#btnEwon-',
 												listBtnEwon
 											);
-											createButton('ewon', idSub);
+											createButton('ewon', stateForEwTreeBtn);
 											console.log('ew for ew-on');
 
 											setTimeout(function() {
 												resetVKWidth();
-
-												switch (stateForEwTreeBtn) {
-													case 2:
-														countForEw1State = countForEwState;
-														break;
-													case 3:
-														countForEw2State = countForEwState;
-														break;
-													case 4:
-														countForEw3State = countForEwState;
-														break;
-													case 5:
-														countForEw4State = countForEwState;
-														break;
-												}
-
-												if (countForEw1State != 0) {
-													$('#tree-' + 2).show();
-													$('#treeNum-' + 2).append(
-														'<span>' + listBtnEw[countForEw1State][0] + '</span>'
-													);
-												}
-												if (countForEw2State != 0) {
-													$('#tree-' + 3).show();
-													$('#treeNum-' + 3).append(
-														'<span>' + listBtnEw[countForEw2State][0] + '</span>'
-													);
-												}
-												if (countForEw3State != 0) {
-													$('#tree-' + 4).show();
-													$('#treeNum-' + 4).append(
-														'<span>' + listBtnEw[countForEw3State][0] + '</span>'
-													);
-												}
-												if (countForEw4State != 0) {
-													$('#tree-' + 5).show();
-													$('#treeNum-' + 5).append(
-														'<span>' + listBtnEw[countForEw4State][0] + '</span>'
-													);
-												}
-
-												console.log(
-													'label ew: ' +
-														countForEw1State +
-														' | ' +
-														countForEw2State +
-														' | ' +
-														countForEw3State +
-														' | ' +
-														countForEw4State
-												);
+												saveTemp('insertValue', 0, stateForEwTreeBtn, listBtnEw[countForEwState][0]);
+												saveTemp('loadValue');
+												$('.cursor i').removeClass('d-none');
 											}, 150);
 											break;
 										case 29:
@@ -13859,65 +13811,16 @@ function createButton(buttonName, customCount) {
 												'#ew-menu-btn',
 												'#ewoff-menu&t=0.15s',
 												'#btnEwon-',
-												listBtnEwon
+												listBtnEwoff
 											);
-											createButton('ewoff', idSub);
+											createButton('ewoff', stateForEwTreeBtn);
 											console.log('ew for ew-off');
-											console.log('ew: ' + countForEwState);
 
 											setTimeout(function() {
 												resetVKWidth();
-
-												switch (stateForEwTreeBtn) {
-													case 2:
-														countForEw1State = countForEwState;
-														break;
-													case 3:
-														countForEw2State = countForEwState;
-														break;
-													case 4:
-														countForEw3State = countForEwState;
-														break;
-													case 5:
-														countForEw4State = countForEwState;
-														break;
-												}
-
-												if (countForEw1State != 0) {
-													$('#tree-' + 2).show();
-													$('#treeNum-' + 2).append(
-														'<span>' + listBtnEw[countForEw1State][0] + '</span>'
-													);
-												}
-												if (countForEw2State != 0) {
-													$('#tree-' + 3).show();
-													$('#treeNum-' + 3).append(
-														'<span>' + listBtnEw[countForEw2State][0] + '</span>'
-													);
-												}
-												if (countForEw3State != 0) {
-													$('#tree-' + 4).show();
-													$('#treeNum-' + 4).append(
-														'<span>' + listBtnEw[countForEw3State][0] + '</span>'
-													);
-												}
-												if (countForEw4State != 0) {
-													$('#tree-' + 5).show();
-													$('#treeNum-' + 5).append(
-														'<span>' + listBtnEw[countForEw4State][0] + '</span>'
-													);
-												}
-
-												console.log(
-													'label ew: ' +
-														countForEw1State +
-														' | ' +
-														countForEw2State +
-														' | ' +
-														countForEw3State +
-														' | ' +
-														countForEw4State
-												);
+												saveTemp('insertValue', 0, stateForEwTreeBtn, listBtnEw[countForEwState][0]);
+												saveTemp('loadValue');
+												$('.cursor i').removeClass('d-none');
 											}, 150);
 											break;
 									}
@@ -13927,7 +13830,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				toggleBtn(6, '#btnEw-6', toggLabelA1, toggLabelA2, 'none', 'custom', 'ew' + (idSub - 1));
+				toggleBtn(6, '#btnEw-6', toggLabelA1, toggLabelA2, 'none', 'custom', 'ew' + (stateForEwTreeBtn));
 				showToggle(toggLabelA1, toggLabelA2);
 				changeVKWidth('4.5%', '66.5%');
 				setBtnActive('#btnEw-', listBtnEw);
