@@ -726,12 +726,7 @@ function createButton(buttonName, customCount) {
 										document.getElementById('input-VK').placeholder = '';
 
 										switch (count) {
-											case 0: {
-												event.stopImmediatePropagation();
-												showNumBtn('#btnCreftr-', 30, 41, listBtnCreftr, 1);
-												return;
-											}
-											case 2: {
+											case 1: {
 												event.stopImmediatePropagation();
 												$('.cursor i').addClass('d-none');
 												hideNumBtn('#btnCreftr-', 30, 40);
@@ -2065,7 +2060,7 @@ function createButton(buttonName, customCount) {
 									//document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
 									clearVK();
 								} else {
-									if (count < 7) {
+									if (count < 4) {
 										count++;
 										nextStep(count, '#btnStbsrc-', listBtnStbsrc);
 										$('#tree-' + (count - 1)).show();
@@ -2112,7 +2107,7 @@ function createButton(buttonName, customCount) {
 				toggleBtn(2, '#btnStbsrc-2', toggLabelB1, toggLabelB2, 'underlined', 'custom', 'ew2-');
 				toggleBtn(3, '#btnStbsrc-3', toggLabelC1, toggLabelC2, 'underlined', 'custom', 'ew3-');
 				toggleBtn(4, '#btnStbsrc-4', toggLabelD1, toggLabelD2, 'underlined', 'custom', 'ew4-');
-				toggleBtn(6, '#btnStbsrc-6', toggLabelE1, toggLabelE2, 'underlined', 'custom', 'all-');
+				toggleBtn(6, '#btnStbsrc-6', toggLabelE2, toggLabelE1, 'underlined', 'custom', 'all-');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnStbsrc-', listBtnStbsrc);
 				delChar('#btnStbsrc-48');
@@ -2517,7 +2512,7 @@ function createButton(buttonName, customCount) {
 				toggleBtn(2, '#btnPltsel-2', toggLabelB1, toggLabelB2, 'underlined', 'custom', 'su-');
 				toggleBtn(3, '#btnPltsel-3', toggLabelC1, toggLabelC2, 'underlined', 'custom', 'pa-');
 				toggleBtn(4, '#btnPltsel-4', toggLabelD1, toggLabelD2, 'underlined', 'custom', 'sa-');
-				toggleBtn(6, '#btnPltsel-6', toggLabelE1, toggLabelE2, 'underlined', 'custom', 'all-');
+				toggleBtn(6, '#btnPltsel-6', toggLabelE2, toggLabelE1, 'underlined', 'custom', 'all-');
 				showToggle(toggLabelA1, toggLabelA2);
 				setBtnActive('#btnPltsel-', listBtnPltsel);
 				delChar('#btnPltsel-48');
@@ -3117,6 +3112,13 @@ function createButton(buttonName, customCount) {
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									
+									switch(count){
+										case 8:
+											resetTree(count, '#btnCrptm-');
+											break;
+									}
+									
 									clearVK();
 								} else {
 									if (count < 17) {
@@ -3146,6 +3148,7 @@ function createButton(buttonName, customCount) {
 
 												initiateToggleThree(btn1, toggleCount1);
 												hideNumBtn('#btnCrptm-', 30, 40);
+												hideAlphaBtn('#btnCrptm-');
 												break;
 											case 6:
 												$('.cursor i').removeClass('d-none');
@@ -3167,6 +3170,7 @@ function createButton(buttonName, customCount) {
 												break;
 											case 9:
 												showToggle(toggLabelB1, toggLabelB2);
+												hideAlphaBtn('#btnCrptm-');
 												count = 12;
 												break;
 											case 10:
@@ -3178,16 +3182,12 @@ function createButton(buttonName, customCount) {
 												resetVKWidth();
 												$('#toggle-divider').hide();
 
-												hideAlphaBtn('#btnCrptm-');
-												showNumBtn('#btnCrptm-', 30, 41, listBtnCrptm, 4);
-												break;
-											case 14:
+												
+												callAlphaVK('#btnCrptm-', 4);
 												showNumBtn('#btnCrptm-', 30, 41, listBtnCrptm, 4);
 												break;
 											case 15:
-												showNumBtn('#btnCrptm-', 30, 41, listBtnCrptm, 5);
-												break;
-											case 16:
+												hideAlphaBtn('#btnCrptm-');
 												showNumBtn('#btnCrptm-', 30, 41, listBtnCrptm, 5);
 												break;
 											case 17:
@@ -3474,97 +3474,80 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnIdtrk called');
 								event.stopImmediatePropagation();
 
-								printMessage('COMMAND OK');
-								$('#btnIdtrk-' + count).removeClass('active');
-								//console.log('count : ' + count)
-
-								switch (stateForIdtrkBtn) {
-									case 4:
-										countForIdtrkBtn = count;
-										forceBack(
-											'#btnIdtrk-',
-											listBtnIdtrk.length,
-											'#idtrk-menu-btn',
-											'#remupd-menu&t=0.15s'
-										);
-
-										setTimeout(function() {
-											createButton('remupd', 4);
-											printBtnTree(listBtnLogon[36]);
-											resetVKWidth();
-
-											$('#tree-' + 4).show();
-											$('#treeNum-' + 4).append(
-												'<span>' + listBtnIdtrk[countForIdtrkBtn][0] + '</span>'
-											);
-
-											if (countForTrktypBtn != 0) {
-												$('#tree-' + 5).show();
-												$('#treeNum-' + 5).append(
-													'<span>' + listBtnTrktyp[countForTrktypBtn][0] + '</span>'
-												);
-											}
-										}, 125);
-										break;
-									case 34:
-										forceBack(
-											'#btnIdtrk-',
-											listBtnIdtrk.length,
-											'#idtrk-menu-btn',
-											'#tacmis-menu&t=0.15s'
-										);
-										createButton('tacmis');
-
-										setTimeout(function() {
-											printBtnTree(listBtnLogon[34]);
-											resetVKWidth();
-										}, 125);
-										break;
-									case 35:
-										forceBack(
-											'#btnIdtrk-',
-											listBtnIdtrk.length,
-											'#idtrk-menu-btn',
-											'#weapon-menu&t=0.15s'
-										);
-										createButton('weapon');
-
-										setTimeout(function() {
-											printBtnTree(listBtnLogon[35]);
-											resetVKWidth();
-										}, 125);
-										break;
-									case 36:
-										forceBack(
-											'#btnIdtrk-',
-											listBtnIdtrk.length,
-											'#idtrk-menu-btn',
-											'#track-menu&t=0.15s'
-										);
-										createButton('track');
-
-										setTimeout(function() {
-											printBtnTree(listBtnLogon[36]);
-											resetVKWidth();
-										}, 125);
-										break;
-									case 37:
-										forceBack(
-											'#btnIdtrk-',
-											listBtnIdtrk.length,
-											'#idtrk-menu-btn',
-											'#airmov-menu&t=0.15s'
-										);
-										createButton('airmov');
-
-										setTimeout(function() {
-											printBtnTree(listBtnLogon[37]);
-											resetVKWidth();
-										}, 125);
-										break;
-								}
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).siblings().hide();
+									$('#tree-' + count).show();
+									$('#tree-' + count).children('span:first').hide();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									
+									clearVK();
+									printMessage('COMMAND OK');
+									$('#btnIdtrk-' + count).removeClass('active');
+									bNav(stateForIdtrkBtn);
+								} 
 								break;
 						}
+					}
+				}
+
+				function bNav(counts) {
+					switch (counts) {
+						case 4:
+							countForIdtrkBtn = count;
+							forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#remupd-menu&t=0.15s');
+
+							setTimeout(function() {
+								createButton('remupd', 4);
+								printBtnTree(listBtnLogon[36]);
+								resetVKWidth();
+
+								$('#tree-' + 4).show();
+								$('#treeNum-' + 4).append('<span>' + listBtnIdtrk[countForIdtrkBtn][0] + '</span>');
+
+								if (countForTrktypBtn != 0) {
+									$('#tree-' + 5).show();
+									$('#treeNum-' + 5).append(
+										'<span>' + listBtnTrktyp[countForTrktypBtn][0] + '</span>'
+									);
+								}
+							}, 125);
+							break;
+						case 34:
+							forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#tacmis-menu&t=0.15s');
+							createButton('tacmis');
+
+							setTimeout(function() {
+								printBtnTree(listBtnLogon[34]);
+								resetVKWidth();
+							}, 125);
+							break;
+						case 35:
+							forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#weapon-menu&t=0.15s');
+							createButton('weapon');
+
+							setTimeout(function() {
+								printBtnTree(listBtnLogon[35]);
+								resetVKWidth();
+							}, 125);
+							break;
+						case 36:
+							forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#track-menu&t=0.15s');
+							createButton('track');
+
+							setTimeout(function() {
+								printBtnTree(listBtnLogon[36]);
+								resetVKWidth();
+							}, 125);
+							break;
+						case 37:
+							forceBack('#btnIdtrk-', listBtnIdtrk.length, '#idtrk-menu-btn', '#airmov-menu&t=0.15s');
+							createButton('airmov');
+
+							setTimeout(function() {
+								printBtnTree(listBtnLogon[37]);
+								resetVKWidth();
+							}, 125);
+							break;
 					}
 				}
 
@@ -3698,97 +3681,106 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnTrktyp called');
 								event.stopImmediatePropagation();
 
-								printMessage('COMMAND OK');
-								$('#btnTrktyp-' + count).removeClass('active');
-
-								switch (stateForTrktypBtn) {
-									case 5:
-										countForTrktypBtn = count;
-										forceBack(
-											'#btnTrktyp-',
-											listBtnTrktyp.length,
-											'#trktyp-menu-btn',
-											'#remupd-menu&t=0.15s'
-										);
-
-										setTimeout(function() {
-											createButton('remupd', 5);
-											printBtnTree(listBtnLogon[36]);
-											resetVKWidth();
-
-											$('#tree-' + 5).show();
-											$('#treeNum-' + 5).append(
-												'<span>' + listBtnTrktyp[countForTrktypBtn][0] + '</span>'
-											);
-
-											if (countForIdtrkBtn != 0) {
-												$('#tree-' + 4).show();
-												$('#treeNum-' + 4).append(
-													'<span>' + listBtnIdtrk[countForIdtrkBtn][0] + '</span>'
-												);
-											}
-										}, 125);
-										break;
-									case 34:
-										forceBack(
-											'#btnTrktyp-',
-											listBtnTrktyp.length,
-											'#trktyp-menu-btn',
-											'#tacmis-menu&t=0.15s'
-										);
-										createButton('tacmis');
-
-										setTimeout(function() {
-											printBtnTree(listBtnLogon[34]);
-											resetVKWidth();
-										}, 125);
-										break;
-									case 35:
-										forceBack(
-											'#btnTrktyp-',
-											listBtnTrktyp.length,
-											'#trktyp-menu-btn',
-											'#weapon-menu&t=0.15s'
-										);
-										createButton('weapon');
-
-										setTimeout(function() {
-											printBtnTree(listBtnLogon[35]);
-											resetVKWidth();
-										}, 125);
-										break;
-									case 36:
-										forceBack(
-											'#btnTrktyp-',
-											listBtnTrktyp.length,
-											'#trktyp-menu-btn',
-											'#track-menu&t=0.15s'
-										);
-										createButton('track');
-
-										setTimeout(function() {
-											printBtnTree(listBtnLogon[36]);
-											resetVKWidth();
-										}, 125);
-										break;
-									case 37:
-										forceBack(
-											'#btnTrktyp-',
-											listBtnTrktyp.length,
-											'#trktyp-menu-btn',
-											'#airmov-menu&t=0.15s'
-										);
-										createButton('airmov');
-
-										setTimeout(function() {
-											printBtnTree(listBtnLogon[37]);
-											resetVKWidth();
-										}, 125);
-										break;
+								if ($('#input-VK').val() != '') {
+									$('#tree-' + count).siblings().hide();
+									$('#tree-' + count).show();
+									$('#tree-' + count).children('span:first').hide();
+									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									
+									clearVK();
+									printMessage('COMMAND OK');
+									$('#btnTrktyp-' + count).removeClass('active');
+									bNav(stateForTrktypBtn);
 								}
-
 								break;
 						}
+					}
+				}
+				function bNav(counts){
+					switch (counts) {
+						case 5:
+							countForTrktypBtn = count;
+							forceBack(
+								'#btnTrktyp-',
+								listBtnTrktyp.length,
+								'#trktyp-menu-btn',
+								'#remupd-menu&t=0.15s'
+							);
+
+							setTimeout(function() {
+								createButton('remupd', 5);
+								printBtnTree(listBtnLogon[36]);
+								resetVKWidth();
+
+								$('#tree-' + 5).show();
+								$('#treeNum-' + 5).append(
+									'<span>' + listBtnTrktyp[countForTrktypBtn][0] + '</span>'
+								);
+
+								if (countForIdtrkBtn != 0) {
+									$('#tree-' + 4).show();
+									$('#treeNum-' + 4).append(
+										'<span>' + listBtnIdtrk[countForIdtrkBtn][0] + '</span>'
+									);
+								}
+							}, 125);
+							break;
+						case 34:
+							forceBack(
+								'#btnTrktyp-',
+								listBtnTrktyp.length,
+								'#trktyp-menu-btn',
+								'#tacmis-menu&t=0.15s'
+							);
+							createButton('tacmis');
+
+							setTimeout(function() {
+								printBtnTree(listBtnLogon[34]);
+								resetVKWidth();
+							}, 125);
+							break;
+						case 35:
+							forceBack(
+								'#btnTrktyp-',
+								listBtnTrktyp.length,
+								'#trktyp-menu-btn',
+								'#weapon-menu&t=0.15s'
+							);
+							createButton('weapon');
+
+							setTimeout(function() {
+								printBtnTree(listBtnLogon[35]);
+								resetVKWidth();
+							}, 125);
+							break;
+						case 36:
+							forceBack(
+								'#btnTrktyp-',
+								listBtnTrktyp.length,
+								'#trktyp-menu-btn',
+								'#track-menu&t=0.15s'
+							);
+							createButton('track');
+
+							setTimeout(function() {
+								printBtnTree(listBtnLogon[36]);
+								resetVKWidth();
+							}, 125);
+							break;
+						case 37:
+							forceBack(
+								'#btnTrktyp-',
+								listBtnTrktyp.length,
+								'#trktyp-menu-btn',
+								'#airmov-menu&t=0.15s'
+							);
+							createButton('airmov');
+
+							setTimeout(function() {
+								printBtnTree(listBtnLogon[37]);
+								resetVKWidth();
+							}, 125);
+							break;
 					}
 				}
 
@@ -3820,10 +3812,15 @@ function createButton(buttonName, customCount) {
 						switch (id) {
 							case 0:
 							case 1:
+								console.log(id + ' fnTmtxt called');
+								event.stopImmediatePropagation();
+								callAlphaVK('#btnTmtxt-', 4);
+								break;
 							case 2:
 								console.log(id + ' fnTmtxt called');
 								event.stopImmediatePropagation();
 								callAlphaVK('#btnTmtxt-', 4);
+								count = id + 10;
 								break;
 							case 13:
 							case 14:
@@ -3880,19 +3877,10 @@ function createButton(buttonName, customCount) {
 										switch (count) {
 											case 1:
 												event.stopImmediatePropagation();
-												callAlphaVK('#btnTmtxt-');
-
+												callAlphaVK('#btnTmtxt-', 4);
 												break;
 											case 2:
 												count = 12;
-												break;
-											case 3:
-												document.getElementById('input-VK').placeholder = '';
-												count = 12;
-												break;
-											case 13:
-												document.getElementById('input-VK').placeholder =
-													'press ALPHA button to start typing..';
 												break;
 											case 16:
 												document.getElementById('input-VK').placeholder = '';
@@ -4236,13 +4224,21 @@ function createButton(buttonName, customCount) {
 								}, 125);
 								break;
 							case 1:
-							case 2:
 								console.log(id + ' fnTrial called');
 								event.stopImmediatePropagation();
 
 								hideAlphaBtn('#btnTrial-');
 								showNumBtn('#btnTrial-', 30, 41, listBtnTrial, 1);
 								count = id;
+								resetToggleBtn(id, listBtnTrial[id][0]);
+								break;
+							case 2:
+								console.log(id + ' fnTrial called');
+								event.stopImmediatePropagation();
+
+								hideAlphaBtn('#btnTrial-');
+								showNumBtn('#btnTrial-', 30, 41, listBtnTrial, 1);
+								count = id + 1;
 								resetToggleBtn(id, listBtnTrial[id][0]);
 								break;
 							case 4:
@@ -4360,6 +4356,9 @@ function createButton(buttonName, customCount) {
 												}
 											}
 											break;
+										case 5:
+											resetTree((count - 1), '#btnTrial-');
+											break;
 									}
 
 									clearVK();
@@ -4400,6 +4399,8 @@ function createButton(buttonName, customCount) {
 											case 4:
 												count = 5;
 												showToggle(toggLabelB1, toggLabelB2);
+												showNumBtn('#btnTrial-', 30, 41, listBtnTrial, 5);
+												callAlphaVK('#btnTrial-', 5);
 												break;
 											case 6:
 												count = 7;
@@ -4408,6 +4409,8 @@ function createButton(buttonName, customCount) {
 												break;
 											case 8:
 												count = 9;
+												showNumBtn('#btnTrial-', 30, 41, listBtnTrial, 4);
+												callAlphaVK('#btnTrial-', 4);
 												break;
 											case 10:
 												hideAlphaBtn('#btnTrial-');
@@ -4678,6 +4681,8 @@ function createButton(buttonName, customCount) {
 											}
 											break;
 										case 2:
+											resetTree(count, '#btnRecovr-');
+
 											if ($('#input-btn-out').text().toLowerCase() == 'recpos') {
 												if (parseInt($('#input-VK').val()) > 99) {
 													printMessage('RECPOS Out of Range');
@@ -4715,6 +4720,8 @@ function createButton(buttonName, customCount) {
 										} else if (count == 2) {
 											if ($('#input-VK').val() == '') {
 												$('#input-VK').val('1');
+												resetToggleBtn(id, listBtnRecovr[id][0]);
+												$('#input-btn-out span:first-child').text(listBtnRecovr[count][0]);
 											}
 										} else {
 											count++;
@@ -5570,6 +5577,9 @@ function createButton(buttonName, customCount) {
 												showToggle(toggLabelA1, toggLabelA2);
 											}
 											break;
+										case 12:
+											resetTree(count, '#btnDefftr-');
+											break;
 									}
 
 									clearVK();
@@ -6046,6 +6056,8 @@ function createButton(buttonName, customCount) {
 
 										switch (count) {
 											case 7:
+												resetTree((count - 1), '#btnTactic-');
+
 												if ($('#input-btn-out').text().toLowerCase() == 'crsras') {
 													if (
 														parseInt($('#input-VK').val()) < 230 ||
@@ -6083,6 +6095,8 @@ function createButton(buttonName, customCount) {
 												}
 												break;
 											case 9:
+												resetTree((count - 1), '#btnTactic-');
+
 												if ($('#input-btn-out').text().toLowerCase() == 'atkras') {
 													if (
 														parseInt($('#input-VK').val()) < 230 ||
@@ -8731,6 +8745,8 @@ function createButton(buttonName, customCount) {
 
 									switch (count) {
 										case 1:
+											resetTree(count, '#btnToldin-')
+
 											if (parseInt($('#input-VK').val()) > 360) {
 												printMessage(
 													$('#input-btn-out').text() + ' value should be between 0-360'
@@ -8744,6 +8760,8 @@ function createButton(buttonName, customCount) {
 											}
 											break;
 										case 2:
+											resetTree(count, '#btnToldin-')
+
 											if (parseInt($('#treeNum-' + 1).text()) > 900) {
 												printMessage(listBtnToldin[1][0] + ' value should be between 0-900');
 											} else {
@@ -9056,6 +9074,8 @@ function createButton(buttonName, customCount) {
 
 									switch (count) {
 										case 1:
+											resetTree(count, '#btnUpdtrk-');
+
 											if (parseInt($('#input-VK').val()) > 360) {
 												printMessage(
 													$('#input-btn-out').text() + ' value should be between 0-360'
@@ -9069,6 +9089,8 @@ function createButton(buttonName, customCount) {
 											}
 											break;
 										case 2:
+											resetTree(count, '#btnUpdtrk-');
+
 											if (parseInt($('#treeNum-' + 1).text()) > 900) {
 												printMessage(listBtnUpdtrk[1][0] + ' value should be between 0-900');
 											} else {
@@ -9320,6 +9342,8 @@ function createButton(buttonName, customCount) {
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									
+									resetTree(count, '#btnSwap-');
 									clearVK();
 								} else {
 									if (count < 3) {
@@ -9805,6 +9829,8 @@ function createButton(buttonName, customCount) {
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+
+									resetTree(count, '#btnMerge-');
 									clearVK();
 								} else {
 									if (count < 3) {
@@ -10606,6 +10632,8 @@ function createButton(buttonName, customCount) {
 								if ($('#input-VK').val() != '') {
 									$('#tree-' + count).show();
 									document.getElementById('treeNum-' + count).innerHTML = $('#input-VK').val();
+									
+									resetTree(count, '#btnCorr-');
 									clearVK();
 								} else {
 									if (count < 3) {
@@ -12944,7 +12972,7 @@ function createButton(buttonName, customCount) {
 										switch (count) {
 											case 1:
 												event.stopImmediatePropagation();
-												callAlphaVK('#btnFptxt-');
+												callAlphaVK('#btnFptxt-', 4);
 												break;
 											case 2:
 												count = 12;
@@ -13432,16 +13460,16 @@ function createButton(buttonName, customCount) {
 									count++;
 									clearVK();
 								} else {
-										printMessage('COMMAND OK');
-										$('#btnSndism-' + count).removeClass('active');
-										forceBack(
-											'#btnSndism-',
-											listBtnSndism.length,
-											'#sndism-menu-btn',
-											'#logon-menu&t=0.15s'
-										);
-										count = 0;
-										createButton('logon');
+									printMessage('COMMAND OK');
+									$('#btnSndism-' + count).removeClass('active');
+									forceBack(
+										'#btnSndism-',
+										listBtnSndism.length,
+										'#sndism-menu-btn',
+										'#logon-menu&t=0.15s'
+									);
+									count = 0;
+									createButton('logon');
 								}
 								break;
 						}
@@ -13777,7 +13805,6 @@ function createButton(buttonName, customCount) {
 								console.log(id + ' fnEw called');
 								event.stopImmediatePropagation();
 
-
 								if (label != '') {
 									$('#tree-' + count).append('<span class="mr-2">EW1</span>');
 									$('#tree-' + count).show();
@@ -13800,7 +13827,12 @@ function createButton(buttonName, customCount) {
 
 											setTimeout(function() {
 												resetVKWidth();
-												saveTemp('insertValue', 0, stateForEwTreeBtn, listBtnEw[countForEwState][0]);
+												saveTemp(
+													'insertValue',
+													0,
+													stateForEwTreeBtn,
+													listBtnEw[countForEwState][0]
+												);
 												saveTemp('loadValue');
 												$('.cursor i').removeClass('d-none');
 											}, 150);
@@ -13820,7 +13852,12 @@ function createButton(buttonName, customCount) {
 
 											setTimeout(function() {
 												resetVKWidth();
-												saveTemp('insertValue', 0, stateForEwTreeBtn, listBtnEw[countForEwState][0]);
+												saveTemp(
+													'insertValue',
+													0,
+													stateForEwTreeBtn,
+													listBtnEw[countForEwState][0]
+												);
 												saveTemp('loadValue');
 												$('.cursor i').removeClass('d-none');
 											}, 150);
@@ -13832,7 +13869,7 @@ function createButton(buttonName, customCount) {
 					}
 				}
 
-				toggleBtn(6, '#btnEw-6', toggLabelA1, toggLabelA2, 'none', 'custom', 'ew' + (stateForEwTreeBtn));
+				toggleBtn(6, '#btnEw-6', toggLabelA1, toggLabelA2, 'none', 'custom', 'ew' + stateForEwTreeBtn);
 				showToggle(toggLabelA1, toggLabelA2);
 				changeVKWidth('4.5%', '66.5%');
 				setBtnActive('#btnEw-', listBtnEw);
@@ -14425,10 +14462,19 @@ function resetToggleBtn(id, resetText, currBtn) {
 
 	$(lastBtnName).attr('value', 'tg-off');
 	$(currBtn).siblings().removeClass('toggle_button__on');
-	$('#tree-' + lastTreeNum).children('span:first').text(lastBtnTxt);
+	//$('#tree-' + lastTreeNum).children('span:first').text(lastBtnTxt);
 
 	if (currBtn != '') {
 		$(lastBtnName).html('<a href="javascript:">' + lastBtnTxt + '</a>');
+	}
+}
+
+function resetTree(treeId, btnName){
+	let treeName = $('#tree-' + treeId + ' span:first-child').text();
+	let btn = $(btnName + treeId).text();
+
+	if (btn != treeName) {
+		$('#tree-' + treeId + ' span:first-child').text(btn);
 	}
 }
 
